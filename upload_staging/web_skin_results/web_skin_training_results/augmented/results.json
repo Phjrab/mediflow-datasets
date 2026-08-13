@@ -1,0 +1,27 @@
+{
+    "model": "Augmented",
+    "architecture": "EfficientNet-B0",
+    "pretrained": "ImageNet",
+    "image_size": [
+        224,
+        224
+    ],
+    "batch_size": 32,
+    "epochs": 15,
+    "learning_rate": 0.0001,
+    "best_epoch": 15,
+    "best_val_accuracy": 0.6880000233650208,
+    "test_accuracy": 0.8199999928474426,
+    "test_loss": 0.592468798160553,
+    "macro_precision": 0.8271266230270997,
+    "macro_recall": 0.82,
+    "macro_f1": 0.8195818185502844,
+    "training_time_minutes": 32.9894523580869,
+    "classes": [
+        "건선",
+        "아토피",
+        "여드름",
+        "정상",
+        "주사"
+    ]
+}
