@@ -1,0 +1,40 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mediflow-datasets"
+version = "0.1.0"
+description = "Inference and preprocessing tools for MediFlow skin and scalp classifiers"
+readme = "README.md"
+requires-python = ">=3.10,<3.14"
+dependencies = [
+  "keras==3.13.2",
+  "numpy>=1.26,<3",
+  "opencv-python-headless>=4.10,<5",
+  "pillow>=10,<13",
+  "tensorflow==2.20.0",
+  "tqdm>=4.66,<5",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8,<10", "ruff>=0.12,<1"]
+
+[project.scripts]
+mediflow-infer = "mediflow_datasets.cli:main"
+mediflow-evaluate = "mediflow_datasets.evaluate_cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+addopts = "-ra"
+testpaths = ["tests"]
+markers = ["model: loads the repository's real TensorFlow/Keras model files"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]

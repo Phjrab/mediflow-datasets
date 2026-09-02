@@ -1,3 +1,4 @@
+import argparse
 from pathlib import Path
 import shutil, random
 from PIL import Image, ImageEnhance, ImageFilter, ImageOps
@@ -7,8 +8,20 @@ from tqdm import tqdm
 # =========================
 # 설정
 # =========================
-SOURCE_ROOT = Path(r"C:\Users\sejun\OneDrive\바탕 화면\hair")
-OUTPUT_ROOT = Path(r"C:\Users\sejun\OneDrive\바탕 화면\hair_processed")
+parser = argparse.ArgumentParser(
+    description="USB 현미경 두피 5-class 데이터셋을 전처리합니다."
+)
+parser.add_argument("--source", type=Path, required=True, help="클래스 폴더가 있는 원본 폴더")
+parser.add_argument("--output", type=Path, required=True, help="처리 결과를 저장할 폴더")
+parser.add_argument(
+    "--overwrite",
+    action="store_true",
+    help="출력 폴더가 이미 있으면 삭제 후 다시 생성",
+)
+args = parser.parse_args()
+
+SOURCE_ROOT = args.source.expanduser().resolve()
+OUTPUT_ROOT = args.output.expanduser().resolve()
 
 CLASSES = ["모낭사이홍반", "미세각질", "비듬", "탈모", "피지과다"]
 
@@ -122,6 +135,11 @@ for cls in CLASSES:
 # 출력 폴더 초기화
 # =========================
 if OUTPUT_ROOT.exists():
+    if not args.overwrite:
+        raise FileExistsError(
+            f"출력 폴더가 이미 있습니다: {OUTPUT_ROOT}\n"
+            "삭제 후 다시 생성하려면 --overwrite 옵션을 사용하세요."
+        )
     print(f"기존 출력 폴더 삭제: {OUTPUT_ROOT}")
     shutil.rmtree(OUTPUT_ROOT)
 

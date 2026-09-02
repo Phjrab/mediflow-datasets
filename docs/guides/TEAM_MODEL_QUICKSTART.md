@@ -7,51 +7,44 @@
 ```text
 upload_staging/
 ├─ README.md
-├─ code/
+├─ scripts/
 │  ├─ camera.py
-│  ├─ preprocess.py
-│  ├─ preprocess1.py
-│  └─ preprocess2.py
-├─ skin_results/
-│  ├─ results_original/
-│  │  ├─ best_model.keras
-│  │  ├─ classification_report.txt
-│  │  └─ results.json
-│  └─ results_augmented/
-│     ├─ best_model.keras
-│     ├─ classification_report.txt
-│     └─ results.json
-├─ web_skin_results/
-│  └─ web_skin_training_results/
+│  ├─ preprocess_skin.py
+│  ├─ preprocess_web_skin.py
+│  └─ preprocess_hair.py
+├─ results/
+│  ├─ skin/
+│  │  ├─ original/
+│  │  │  ├─ best_model.keras
+│  │  │  ├─ classification_report.txt
+│  │  │  └─ results.json
+│  │  └─ augmented/
+│  │     ├─ best_model.keras
+│  │     ├─ classification_report.txt
+│  │     └─ results.json
+│  ├─ web_skin/
+│  │  ├─ original/
+│  │  ├─ augmented/
+│  │  └─ original_vs_augmented.csv
+│  └─ hair/
 │     ├─ original/
-│     │  ├─ best_model.keras
-│     │  ├─ classification_report.csv
-│     │  └─ results.json
 │     ├─ augmented/
-│     │  ├─ best_model.keras
-│     │  ├─ classification_report.csv
-│     │  └─ results.json
-│     └─ original_vs_augmented.csv
-└─ hair_results/
-   └─ hair_model_results/
-	  ├─ original/
-	  │  ├─ best_model.keras
-	  │  ├─ class_names.json
-	  │  ├─ classification_report.csv
-	  │  └─ training_config.json
-	  ├─ augmented/
-	  │  ├─ best_model.keras
-	  │  ├─ class_names.json
-	  │  ├─ classification_report.csv
-	  │  └─ training_config.json
-	  └─ final_summary.csv
+│     └─ final_summary.csv
+├─ data_examples/
+│  ├─ skin/
+│  ├─ web_skin/
+│  └─ hair/
+└─ notebooks/
 ```
+
+각 모델의 `original/`과 `augmented/` 폴더에는 기존 모델과 평가 파일이 그대로 보존되어
+있습니다.
 
 ## 2) 어떤 모델을 바로 쓰면 되는가
 
-- Skin Microscopy 10-class: `skin_results/results_augmented/best_model.keras`
-- Web Skin 5-class: `web_skin_results/web_skin_training_results/augmented/best_model.keras`
-- Hair Microscopy 5-class: `hair_results/hair_model_results/augmented/best_model.keras`
+- Skin Microscopy 10-class: `results/skin/augmented/best_model.keras`
+- Web Skin 5-class: `results/web_skin/augmented/best_model.keras`
+- Hair Microscopy 5-class: `results/hair/augmented/best_model.keras`
 
 기본적으로 성능이 더 좋은 Augmented 모델을 기본 배포 후보로 사용하면 됩니다.
 
@@ -70,18 +63,18 @@ from tensorflow.keras.preprocessing import image
 
 def load_class_names(model_type: str):
 	if model_type == "hair":
-		p = Path("hair_results/hair_model_results/augmented/class_names.json")
+		p = Path("results/hair/augmented/class_names.json")
 		data = json.loads(p.read_text(encoding="utf-8"))
 		return [data[str(i)] for i in range(len(data))]
 
 	if model_type == "web_skin":
 		# results.json의 classes 순서를 사용
-		p = Path("web_skin_results/web_skin_training_results/augmented/results.json")
+		p = Path("results/web_skin/augmented/results.json")
 		data = json.loads(p.read_text(encoding="utf-8"))
 		return data["classes"]
 
 	if model_type == "skin":
-		p = Path("skin_results/results_augmented/results.json")
+		p = Path("results/skin/augmented/results.json")
 		data = json.loads(p.read_text(encoding="utf-8"))
 		return data["classes"]
 
@@ -90,9 +83,9 @@ def load_class_names(model_type: str):
 
 def load_model_path(model_type: str):
 	mapping = {
-		"hair": "hair_results/hair_model_results/augmented/best_model.keras",
-		"web_skin": "web_skin_results/web_skin_training_results/augmented/best_model.keras",
-		"skin": "skin_results/results_augmented/best_model.keras",
+		"hair": "results/hair/augmented/best_model.keras",
+		"web_skin": "results/web_skin/augmented/best_model.keras",
+		"skin": "results/skin/augmented/best_model.keras",
 	}
 	return mapping[model_type]
 
@@ -102,7 +95,9 @@ def predict_one(img_path: str, model_type: str):
 	model = tf.keras.models.load_model(load_model_path(model_type))
 
 	img = image.load_img(img_path, target_size=(224, 224))
-	x = image.img_to_array(img).astype("float32") / 255.0
+	# Keras EfficientNetB0 모델 내부에 Rescaling(1/255)이 포함되어 있으므로
+	# 여기서는 0~255 범위의 float32 픽셀을 그대로 전달한다.
+	x = image.img_to_array(img).astype("float32")
 	x = np.expand_dims(x, axis=0)
 
 	probs = model.predict(x, verbose=0)[0]
@@ -137,7 +132,7 @@ if __name__ == "__main__":
 ## 6) 팀원 체크리스트
 
 - 입력 이미지가 모델 목적과 맞는지 확인
-- 리사이즈 224x224 및 `x/255.0` 정규화 적용
+- 리사이즈 224x224 후 0~255 `float32`로 입력 (`/255.0` 금지: 모델 내부에서 정규화)
 - 클래스 순서를 JSON/`results.json` 기준으로 고정
 - 성능 비교는 Original vs Augmented 같은 평가셋에서만 수행
 

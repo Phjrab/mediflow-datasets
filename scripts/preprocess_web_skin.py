@@ -54,6 +54,7 @@
 # 1. 라이브러리
 # ============================================================
 
+import argparse
 import random
 import shutil
 import io
@@ -75,13 +76,20 @@ from tqdm import tqdm
 # 2. 경로 설정
 # ============================================================
 
-SOURCE_DIR = Path(
-    r"C:\Users\sejun\OneDrive\바탕 화면\web_skin\images"
+parser = argparse.ArgumentParser(
+    description="웹캠 얼굴 피부 5-class 데이터셋을 전처리합니다."
 )
+parser.add_argument("--source", type=Path, required=True, help="train/val이 있는 원본 폴더")
+parser.add_argument("--output", type=Path, required=True, help="처리 결과를 저장할 폴더")
+parser.add_argument(
+    "--overwrite",
+    action="store_true",
+    help="출력 폴더가 이미 있으면 삭제 후 다시 생성",
+)
+args = parser.parse_args()
 
-OUTPUT_DIR = Path(
-    r"C:\Users\sejun\OneDrive\바탕 화면\web_skin_processed"
-)
+SOURCE_DIR = args.source.expanduser().resolve()
+OUTPUT_DIR = args.output.expanduser().resolve()
 
 
 # ============================================================
@@ -150,19 +158,13 @@ if not SOURCE_DIR.exists():
 # ============================================================
 
 if OUTPUT_DIR.exists():
-
-    print()
-    print("=" * 75)
-    print("기존 처리 결과 삭제")
-    print("=" * 75)
-
-    print(OUTPUT_DIR)
-
-    shutil.rmtree(
-        OUTPUT_DIR
-    )
-
-    print("삭제 완료")
+    if not args.overwrite:
+        raise FileExistsError(
+            f"출력 폴더가 이미 있습니다: {OUTPUT_DIR}\n"
+            "삭제 후 다시 생성하려면 --overwrite 옵션을 사용하세요."
+        )
+    shutil.rmtree(OUTPUT_DIR)
+    print(f"기존 출력 폴더 삭제 완료: {OUTPUT_DIR}")
 
 
 # ============================================================

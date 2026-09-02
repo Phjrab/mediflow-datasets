@@ -1,3 +1,5 @@
+import argparse
+
 import cv2
 import numpy as np
 import random
@@ -9,8 +11,9 @@ from pathlib import Path
 # 1. 기본 설정
 # ============================================================
 
-SOURCE_ROOT = Path(r"C:\skin_dataset\image")
-OUTPUT_ROOT = Path(r"C:\skin_dataset\processed")
+SOURCE_ROOT = Path()
+OUTPUT_ROOT = Path()
+OVERWRITE = False
 
 RANDOM_SEED = 42
 
@@ -526,7 +529,27 @@ def show_progress(
 # 12. 메인
 # ============================================================
 
+def parse_args():
+    parser = argparse.ArgumentParser(
+        description="USB 현미경 피부 10-class 데이터셋을 전처리합니다."
+    )
+    parser.add_argument("--source", type=Path, required=True, help="train/val이 있는 원본 폴더")
+    parser.add_argument("--output", type=Path, required=True, help="처리 결과를 저장할 폴더")
+    parser.add_argument(
+        "--overwrite",
+        action="store_true",
+        help="출력 폴더가 이미 있으면 삭제 후 다시 생성",
+    )
+    return parser.parse_args()
+
+
 def main():
+
+    global SOURCE_ROOT, OUTPUT_ROOT, OVERWRITE
+    args = parse_args()
+    SOURCE_ROOT = args.source.expanduser().resolve()
+    OUTPUT_ROOT = args.output.expanduser().resolve()
+    OVERWRITE = args.overwrite
 
     print()
     print("=" * 70)
@@ -595,28 +618,12 @@ def main():
     # --------------------------------------------------------
 
     if OUTPUT_ROOT.exists():
-
-        print()
-        print(
-            "⚠️ 기존 processed 폴더가 있습니다."
-        )
-
-        answer = input(
-            "삭제하고 다시 생성할까요? "
-            "(y/n): "
-        )
-
-        if answer.lower() != "y":
-
-            print(
-                "작업을 취소했습니다."
+        if not OVERWRITE:
+            raise FileExistsError(
+                f"출력 폴더가 이미 있습니다: {OUTPUT_ROOT}\n"
+                "삭제 후 다시 생성하려면 --overwrite 옵션을 사용하세요."
             )
-
-            return
-
-        shutil.rmtree(
-            OUTPUT_ROOT
-        )
+        shutil.rmtree(OUTPUT_ROOT)
 
 
     # --------------------------------------------------------
