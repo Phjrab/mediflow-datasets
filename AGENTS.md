@@ -6,6 +6,15 @@ This repository contains research artifacts and executable Python tooling for th
 image classifiers: `skin` (USB microscope skin), `web_skin` (webcam facial skin), and `hair`
 (USB microscope scalp). Keep these domains and their class mappings separate.
 
+- The project owner is responsible for MediFlow's AI work. First complete data validation,
+  reproducible evaluation, performance improvement, inference modules, and result formats for
+  the specialized skin and scalp classifiers. Then expand to Medical VLM and physical device
+  integration. Confirm the shared integration scope before taking on robot control or cluster
+  setup.
+- Treat the OT project plan as overall direction and candidate technology reference material,
+  not as evidence of completed implementation. When it differs from current code or result
+  files, explain the discrepancy using concrete evidence.
+
 ## Safety and preservation
 
 - Keep sample images in `data_examples/`, saved models and their original reports in `results/`,
@@ -16,8 +25,10 @@ image classifiers: `skin` (USB microscope skin), `web_skin` (webcam facial skin)
 - Do not invent, round, or rewrite reported performance metrics.
 - Dataset preprocessing must never delete an existing output directory unless the caller passes
   an explicit `--overwrite` option.
-- Do not add external normalization before the saved EfficientNet models. They contain an
-  internal `Rescaling(1/255)` layer and expect float32 RGB pixels in the 0–255 range.
+- Do not add external normalization such as `/255.0` before the currently saved EfficientNet
+  models. They contain an internal `Rescaling(1/255)` layer and expect float32 RGB pixels in the
+  0–255 range. This rule applies to the current saved models; separately verify preprocessing
+  requirements for any new model or backbone.
 
 ## Development workflow
 
@@ -28,6 +39,34 @@ image classifiers: `skin` (USB microscope skin), `web_skin` (webcam facial skin)
 - Preserve class order from the result JSON files; array index is part of the model contract.
 - Run `ruff check src tests` and `pytest` after Python changes.
 - Model-loading tests require TensorFlow and may be slower than metadata/unit tests.
+
+## Experiments and data validation
+
+- Before training, check for leakage across Train, Validation, and Test at the person, lesion,
+  capture-session, duplicate-image, and augmentation-derived-image levels. If identifying
+  information is unavailable, record what could and could not be verified; do not claim that
+  leakage has been ruled out.
+- Select models and settings using Validation. Do not repeatedly tune against Test results;
+  use Test for evaluation after the selection is fixed, including when following the roadmap's
+  final model comparison phase.
+- Each experiment must test one research hypothesis. Record fixed conditions, the condition
+  being changed, and any necessary accompanying changes with their reasons.
+- For every experiment, record the data version, split information, class order, code commit,
+  environment versions, seed, settings, baseline model, checkpoint, and results. Record any
+  uncommitted code changes needed to reproduce the run as well.
+- Clearly distinguish existing reported results, newly measured results, and expected results.
+
+## Model outputs and system integration
+
+- Document whether each model includes a normal class and how out-of-scope or ambiguous inputs
+  are handled. Do not describe unvalidated prediction scores as actual probabilities of being
+  correct.
+- Keep the roles and evaluations of specialized classifiers and the Medical VLM separate.
+  Do not turn unsupported findings or generated content into ground-truth labels.
+- Use both device information and the photographed body region to select the skin or scalp
+  model.
+- Document input and output formats and error handling so other contributors can integrate
+  their systems with the AI modules.
 
 ## Communication and progress reporting
 
@@ -49,6 +88,7 @@ For every multi-step task:
      write `없음` when none are required.
 - Separate completed work from proposed work. Never imply that a proposal, upload, Colab run,
   training run, commit, or push happened unless it was actually completed and verified.
-- When an experiment changes, list the variables kept fixed and the single variable being tested
-  so the user can understand what caused a result difference.
+- When an experiment changes, list the variables kept fixed, the single variable being tested,
+  and any necessary accompanying changes with their reasons so the user can understand what
+  caused a result difference.
 - When blocked, explain the cause, its impact, and the smallest action needed from the user.
