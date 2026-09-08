@@ -1,0 +1,79 @@
+{
+  "winner": "b0_256_ce",
+  "model_sha256": "d4c834a7fd47480c1c45ddbdc09257942b38b2408d5b28effc34ee68c4fad97b",
+  "validation": {
+    "accuracy": 0.796,
+    "macro_f1": 0.7915394647566528,
+    "class_f1": [
+      0.7606837606837609,
+      0.6847826086956522,
+      0.6818181818181819,
+      0.9345794392523363,
+      0.8958333333333334
+    ],
+    "precision": [
+      0.664179104477612,
+      0.75,
+      0.7894736842105263,
+      0.8771929824561403,
+      0.9347826086956522
+    ],
+    "recall": [
+      0.89,
+      0.63,
+      0.6,
+      1.0,
+      0.86
+    ],
+    "support": [
+      100,
+      100,
+      100,
+      100,
+      100
+    ],
+    "confusion_matrix": [
+      [
+        89,
+        3,
+        3,
+        3,
+        2
+      ],
+      [
+        18,
+        63,
+        8,
+        8,
+        3
+      ],
+      [
+        22,
+        14,
+        60,
+        3,
+        1
+      ],
+      [
+        0,
+        0,
+        0,
+        100,
+        0
+      ],
+      [
+        5,
+        4,
+        5,
+        0,
+        86
+      ]
+    ],
+    "count": 500
+  },
+  "signature": "1a25e7db28792feccf78e2a8ee5787611960d48c728dfe1af25c1b13e5013ba0",
+  "historical_baseline_validation": 0.6880000233650208,
+  "above_historical_val": true,
+  "status": "public_data_candidate_not_device_validated",
+  "selection_policy": "Validation Accuracy, exact ties retain earlier experiment"
+}

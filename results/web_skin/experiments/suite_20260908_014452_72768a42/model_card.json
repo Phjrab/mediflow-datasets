@@ -1,0 +1,165 @@
+{
+  "domain": "web_skin",
+  "class_names": [
+    "건선",
+    "아토피",
+    "여드름",
+    "정상",
+    "주사"
+  ],
+  "normal_included": true,
+  "model": "b0_256_ce",
+  "model_relative_path": "b0_256_ce/attempt_8977c45d04bc/stage2_best.keras",
+  "model_sha256": "d4c834a7fd47480c1c45ddbdc09257942b38b2408d5b28effc34ee68c4fad97b",
+  "input_size": 256,
+  "input": "RGB float32 0..255; internal rescaling; no external normalization",
+  "output": "5 softmax scores in class_names order, not calibrated correctness probabilities",
+  "validation": {
+    "accuracy": 0.796,
+    "macro_f1": 0.7915394647566528,
+    "class_f1": [
+      0.7606837606837609,
+      0.6847826086956522,
+      0.6818181818181819,
+      0.9345794392523363,
+      0.8958333333333334
+    ],
+    "precision": [
+      0.664179104477612,
+      0.75,
+      0.7894736842105263,
+      0.8771929824561403,
+      0.9347826086956522
+    ],
+    "recall": [
+      0.89,
+      0.63,
+      0.6,
+      1.0,
+      0.86
+    ],
+    "support": [
+      100,
+      100,
+      100,
+      100,
+      100
+    ],
+    "confusion_matrix": [
+      [
+        89,
+        3,
+        3,
+        3,
+        2
+      ],
+      [
+        18,
+        63,
+        8,
+        8,
+        3
+      ],
+      [
+        22,
+        14,
+        60,
+        3,
+        1
+      ],
+      [
+        0,
+        0,
+        0,
+        100,
+        0
+      ],
+      [
+        5,
+        4,
+        5,
+        0,
+        86
+      ]
+    ],
+    "count": 500
+  },
+  "test": {
+    "accuracy": 0.8825,
+    "macro_f1": 0.8813822927981046,
+    "class_f1": [
+      0.8395061728395061,
+      0.8456375838926175,
+      0.8407643312101911,
+      0.9815950920245399,
+      0.8994082840236686
+    ],
+    "precision": [
+      0.8292682926829268,
+      0.9130434782608695,
+      0.8571428571428571,
+      0.963855421686747,
+      0.8539325842696629
+    ],
+    "recall": [
+      0.85,
+      0.7875,
+      0.825,
+      1.0,
+      0.95
+    ],
+    "support": [
+      80,
+      80,
+      80,
+      80,
+      80
+    ],
+    "confusion_matrix": [
+      [
+        68,
+        3,
+        5,
+        0,
+        4
+      ],
+      [
+        9,
+        63,
+        4,
+        1,
+        3
+      ],
+      [
+        5,
+        1,
+        66,
+        2,
+        6
+      ],
+      [
+        0,
+        0,
+        0,
+        80,
+        0
+      ],
+      [
+        0,
+        2,
+        2,
+        0,
+        76
+      ]
+    ],
+    "count": 400
+  },
+  "limitations": [
+    "person/lesion/session leakage not verified",
+    "augmentation lineage/modified near-duplicates not verified",
+    "original training data hash unavailable",
+    "no real webcam validation",
+    "one seed only; small differences not established as robust gains",
+    "normal included; out-of-scope rejection not implemented"
+  ]
+}

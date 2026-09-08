@@ -1,0 +1,9 @@
+{
+  "source_zip": "/content/drive/MyDrive/자율설계2/web_skin_processed.zip",
+  "sha256": "f8908af3d54e521ad14c37a44b569d33fe92be3b8b9b66a8d80faf4ba964072d",
+  "prior_audit": "dataset_audit_20260907_174038_67c0377d.zip",
+  "audit_policy": "verified same ZIP; no repeated image duplicate audit",
+  "train": 7200,
+  "validation": 500,
+  "test": 400
+}

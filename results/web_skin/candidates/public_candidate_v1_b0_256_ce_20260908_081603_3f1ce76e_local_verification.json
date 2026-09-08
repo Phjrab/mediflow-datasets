@@ -1,0 +1,20 @@
+{
+  "package_file": "results/web_skin/candidates/public_candidate_v1_b0_256_ce_20260908_081603_3f1ce76e.zip",
+  "package_sha256": "980f92301efdbd0f65971a157620114688ab4368bd4511e112038d8b6dbc1694",
+  "model_sha256": "d4c834a7fd47480c1c45ddbdc09257942b38b2408d5b28effc34ee68c4fad97b",
+  "manifest_files_verified": 34,
+  "reviewed_reports_matched": 27,
+  "model_contract": {
+    "input_shape": [
+      256,
+      256,
+      3
+    ],
+    "output_count": 5,
+    "parameters": 4055976,
+    "dummy_forward_passed": true,
+    "note": "Artificial inputs test execution only; no new performance evaluation"
+  },
+  "performance_policy": "Preserved prior evaluation; no training or Test reevaluation",
+  "status": "public_data_candidate_v1_not_device_validated"
+}

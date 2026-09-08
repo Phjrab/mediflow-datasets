@@ -1,0 +1,218 @@
+{
+  "status": "public_data_candidate_v1_not_device_validated",
+  "domain": "web_skin",
+  "created_at": "2026-09-08T08:16:04.113155+00:00",
+  "source_suite": "suite_20260908_014452_72768a42",
+  "model_file": "web_skin_model.keras",
+  "model_sha256": "d4c834a7fd47480c1c45ddbdc09257942b38b2408d5b28effc34ee68c4fad97b",
+  "model_size_bytes": 28989670,
+  "model_parameter_count": 4055976,
+  "backbone": "EfficientNet-B0",
+  "image_size": [
+    256,
+    256
+  ],
+  "loss": "Categorical Crossentropy",
+  "stage1_epochs": 15,
+  "stage2_epochs_run": 10,
+  "selected_stage2_epoch": 8,
+  "selection_metric": "validation_accuracy; ties keep earlier experiment",
+  "validation_accuracy": 0.796,
+  "test_accuracy": 0.8825,
+  "macro_f1": 0.8813822927981046,
+  "data_zip_sha256": "f8908af3d54e521ad14c37a44b569d33fe92be3b8b9b66a8d80faf4ba964072d",
+  "normal_class_included": true,
+  "class_names_file": "class_names.json",
+  "preprocessing_file": "preprocessing.json",
+  "validation": {
+    "accuracy": 0.796,
+    "macro_f1": 0.7915394647566528,
+    "class_f1": [
+      0.7606837606837609,
+      0.6847826086956522,
+      0.6818181818181819,
+      0.9345794392523363,
+      0.8958333333333334
+    ],
+    "precision": [
+      0.664179104477612,
+      0.75,
+      0.7894736842105263,
+      0.8771929824561403,
+      0.9347826086956522
+    ],
+    "recall": [
+      0.89,
+      0.63,
+      0.6,
+      1.0,
+      0.86
+    ],
+    "support": [
+      100,
+      100,
+      100,
+      100,
+      100
+    ],
+    "confusion_matrix": [
+      [
+        89,
+        3,
+        3,
+        3,
+        2
+      ],
+      [
+        18,
+        63,
+        8,
+        8,
+        3
+      ],
+      [
+        22,
+        14,
+        60,
+        3,
+        1
+      ],
+      [
+        0,
+        0,
+        0,
+        100,
+        0
+      ],
+      [
+        5,
+        4,
+        5,
+        0,
+        86
+      ]
+    ],
+    "count": 500
+  },
+  "test": {
+    "accuracy": 0.8825,
+    "macro_f1": 0.8813822927981046,
+    "class_f1": [
+      0.8395061728395061,
+      0.8456375838926175,
+      0.8407643312101911,
+      0.9815950920245399,
+      0.8994082840236686
+    ],
+    "precision": [
+      0.8292682926829268,
+      0.9130434782608695,
+      0.8571428571428571,
+      0.963855421686747,
+      0.8539325842696629
+    ],
+    "recall": [
+      0.85,
+      0.7875,
+      0.825,
+      1.0,
+      0.95
+    ],
+    "support": [
+      80,
+      80,
+      80,
+      80,
+      80
+    ],
+    "confusion_matrix": [
+      [
+        68,
+        3,
+        5,
+        0,
+        4
+      ],
+      [
+        9,
+        63,
+        4,
+        1,
+        3
+      ],
+      [
+        5,
+        1,
+        66,
+        2,
+        6
+      ],
+      [
+        0,
+        0,
+        0,
+        80,
+        0
+      ],
+      [
+        0,
+        2,
+        2,
+        0,
+        76
+      ]
+    ],
+    "count": 400
+  },
+  "limitations": [
+    "person/lesion/session leakage not verified",
+    "augmentation lineage/modified near-duplicates not verified",
+    "original training data hash unavailable",
+    "no real webcam validation",
+    "one seed only; small differences not established as robust gains",
+    "normal included; out-of-scope rejection not implemented"
+  ],
+  "new_training_or_test_evaluation": false,
+  "packaging_environment": {
+    "python": "3.13.15",
+    "keras": "3.13.2",
+    "tensorflow": "2.20.0",
+    "numpy": "2.1.3"
+  },
+  "artifact_hashes": {
+    "MODEL_CARD.md": "91404484c761f87e690e6d4ff408fdff3ac68ccfc5afd3d847b8289259b6c0b1",
+    "class_names.json": "02fff652c291b04be28f8b769cfa6d1c1ff679b1f7bb87d2af3315b69b4cdae2",
+    "model_contract_check.json": "591dfdf5b680e7f3e1134114a71814574b0dec5d4edd74d514d8a3730f28ada7",
+    "packaging_policy.json": "acdda92df2df86587b145d9592cef296dcd906cde64f03e3c2704cf44ef10e3a",
+    "packaging_source.py": "b7dd73aca8d109a75b533225a5d3b347f3fadbda038d829128017e7128365dac",
+    "preprocessing.json": "7f8695fa50e483909d8cd1527b7d2ee23f4c5ec6cae9a0ebd66095c572ff7b31",
+    "source_reports/all_training_curves.png": "70c14bef7c1029e99b0f9c9e38562891afa15b58b764bcc492da7b677eeab96e",
+    "source_reports/all_validation_confusion_matrices.png": "c310000005c67c1bc9a42477982ed5b5d1544fd5430cb36e99d92da4c316a4f7",
+    "source_reports/all_validation_results.json": "6927b1336d11f55256e223ff7b5cc77827f4568d95fe8b2d04a4c2a5b5aaed0a",
+    "source_reports/b0_256_ce/attempt_8977c45d04bc/record.json": "a85b9059745c64143d17ee3fc4fcd14caa8b3bb8e82bf68e0516fa767f3c8290",
+    "source_reports/b0_256_ce/attempt_8977c45d04bc/spec.json": "9469bcff367946b0863ef1aa3658231b9e5904bab98f790b1c31f95a3b03cb98",
+    "source_reports/b0_256_ce/attempt_8977c45d04bc/stage1_history.json": "893f4a06854fcc2c8520cba6f81f8510d02c9fa009ae109710355cdda8e2d2e3",
+    "source_reports/b0_256_ce/attempt_8977c45d04bc/stage1_log.csv": "60448a11cca11e9bc6be3e603b9063650b55ba9b52967cbf63eed2e354aecce6",
+    "source_reports/b0_256_ce/attempt_8977c45d04bc/stage2_history.json": "d356029838f7af2c9fb8d317397aa67101263551bf4ca999b4d9bc3b9a495984",
+    "source_reports/b0_256_ce/attempt_8977c45d04bc/stage2_log.csv": "3b962c08b9e977a5a32d1633567ffdb4c38ab004a5d3c5a22e3c6acc9afa3e35",
+    "source_reports/b0_256_ce/attempt_8977c45d04bc/training_curves.png": "c09741c1e83e7a7a46ce5bb5dc4b9dd0d0d98a3ad490347ffcd392f09d23e58a",
+    "source_reports/b0_256_ce/attempt_8977c45d04bc/validation_metrics.json": "0db115144157dd134a335f9900222b5eb95528f6c6df8066b12362edc7a40c6e",
+    "source_reports/b0_256_ce/attempt_8977c45d04bc/validation_predictions.csv": "1d2e32bcd1d6d274ff2bc65c74f9cf08b810c549509f99f008b8a4691b0ed8d5",
+    "source_reports/b0_256_ce/completed.json": "9f52b54e0b8cc3a80c1cadf22c873ae81fdaf2e7b464536a0b8e0ca692775dfb",
+    "source_reports/class_mapping.json": "e0dee8e1deac1f5ccda2729c6d107b4499d901a2dac9542649e963d714b09658",
+    "source_reports/data_source.json": "584220774aa3b98c9505a7b11638cbe7fb0fe58564e919ba349e3a4e79b0cea6",
+    "source_reports/environment_20260908_014452_72768a42.json": "399fa6f309930cc4b8ed63482bd2bc1880a099bb5c135ad5abb91b9c2593486b",
+    "source_reports/experiment_comparison.csv": "e7a25033abd687151bc26fd3f7cfd4d0a1b3f4c57299b6eb4b7e76e9c4accfe4",
+    "source_reports/experiment_suite.py": "bb9bf2d355ce68753275c63e30c2a1958e4df1ef7a1df3797ab33d32edf657a1",
+    "source_reports/final_test_confusion_matrix.png": "d5ef9f3ca94fdfc83a98cbe9be9e3f441e31bbdcc17ccfefb393584af00675a5",
+    "source_reports/final_test_metrics.json": "af9e77f41608eeb73acb249079b694f11184f9095d523be5daa9ebdbabe3334c",
+    "source_reports/final_test_predictions.csv": "452a734db2091ff772b1bf1708e14610a12c8f59b02f96c769536db7af179e13",
+    "source_reports/model_card.json": "153000d1173d36c0e7ce4aedc26d3b8a40eccc2b2fec33ecbcfaf755885b77d7",
+    "source_reports/notebook_snapshot_20260908_014452_72768a42.py": "5052600e4e438ab00395d7701ab5ddda99f505cbbf15867d45bbef54a87945f8",
+    "source_reports/selection_before_test.json": "884f6cf4b6b66561828fce52ae41deef2d574ac41eafd611bfc7696c71291b13",
+    "source_reports/suite_config.json": "441134c323fe388e8496c5ef8288b963c570e48908efadff6955fd1fec196f72",
+    "source_reports/test_completed.json": "9b8939d0667fd34e8ac581240d1888ac5502e093fac0289c4d605f6cf5db46a7",
+    "source_reports/validation_performance_dashboard.png": "0478939c3d2c4c4f336f77f5fe73a8221625052d72a57b29ad72fdda5a6f6bfa",
+    "web_skin_model.keras": "d4c834a7fd47480c1c45ddbdc09257942b38b2408d5b28effc34ee68c4fad97b"
+  }
+}

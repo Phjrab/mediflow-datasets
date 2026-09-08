@@ -1,0 +1,6 @@
+{
+  "id": "b0_256_ce",
+  "backbone": "B0",
+  "size": 256,
+  "loss": "ce"
+}

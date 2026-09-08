@@ -1,0 +1,6 @@
+{
+  "id": "b0_256_focal15",
+  "backbone": "B0",
+  "size": 256,
+  "loss": "focal15"
+}

@@ -1,0 +1,9 @@
+{
+  "python": "3.13.15",
+  "tensorflow": "2.20.0",
+  "keras": "3.13.2",
+  "numpy": "2.1.3",
+  "gpu": [
+    "PhysicalDevice(name='/physical_device:GPU:0', device_type='GPU')"
+  ]
+}

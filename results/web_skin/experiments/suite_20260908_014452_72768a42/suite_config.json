@@ -1,0 +1,71 @@
+{
+  "signature": "1a25e7db28792feccf78e2a8ee5787611960d48c728dfe1af25c1b13e5013ba0",
+  "settings": {
+    "protocol": "web_skin_sweep_v1",
+    "engine_sha256": "bb9bf2d355ce68753275c63e30c2a1958e4df1ef7a1df3797ab33d32edf657a1",
+    "notebook_revision": "review_20260908",
+    "data_sha256": "f8908af3d54e521ad14c37a44b569d33fe92be3b8b9b66a8d80faf4ba964072d",
+    "class_names": [
+      "건선",
+      "아토피",
+      "여드름",
+      "정상",
+      "주사"
+    ],
+    "trials": [
+      {
+        "id": "b0_224_ce",
+        "backbone": "B0",
+        "size": 224,
+        "loss": "ce"
+      },
+      {
+        "id": "b0_256_ce",
+        "backbone": "B0",
+        "size": 256,
+        "loss": "ce"
+      },
+      {
+        "id": "b0_256_ls005",
+        "backbone": "B0",
+        "size": 256,
+        "loss": "ls005"
+      },
+      {
+        "id": "b0_256_focal15",
+        "backbone": "B0",
+        "size": 256,
+        "loss": "focal15"
+      },
+      {
+        "id": "b1_256_ls005",
+        "backbone": "B1",
+        "size": 256,
+        "loss": "ls005"
+      }
+    ],
+    "seed": 42,
+    "batch_size": 32,
+    "stage1_epochs": 15,
+    "stage2_epochs": 10,
+    "extension_epochs": 5,
+    "selection": "validation_accuracy; ties keep earlier trial/stage",
+    "test_policy": "final winner only",
+    "preprocessing": "TensorFlow directory loader, RGB float32 0..255, bilinear resize; no external /255"
+  },
+  "code_commit_at_creation": "60970a4389c32768fed2644cd3bdc02c668940d3",
+  "code_state": "new uncommitted module and notebook; engine + notebook snapshot saved",
+  "existing_reported_augmented": {
+    "validation_accuracy": 0.6880000233650208,
+    "test_accuracy": 0.8199999928474426,
+    "macro_f1": 0.8195818185502844
+  },
+  "limitations": [
+    "person/lesion/session leakage not verified",
+    "augmentation lineage/modified near-duplicates not verified",
+    "original training data hash unavailable",
+    "no real webcam validation",
+    "one seed only; small differences not established as robust gains",
+    "normal included; out-of-scope rejection not implemented"
+  ]
+}
