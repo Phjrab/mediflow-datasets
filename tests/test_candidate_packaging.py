@@ -16,8 +16,17 @@ ROOT = Path(__file__).resolve().parents[1]
 NOTEBOOK = ROOT / "notebooks/web_skin_public_candidate_packaging_colab.ipynb"
 
 
+def read_notebook():
+    if NOTEBOOK.exists():
+        return json.loads(NOTEBOOK.read_text("utf-8"))
+    archive = ROOT / "notebooks" / "legacy_notebooks_20260909.zip"
+    with zipfile.ZipFile(archive) as bundle:
+        data = bundle.read(f"legacy_notebooks/{NOTEBOOK.name}")
+    return json.loads(data.decode("utf-8"))
+
+
 def notebook_policy():
-    notebook = json.loads(NOTEBOOK.read_text("utf-8"))
+    notebook = read_notebook()
     for cell in notebook["cells"]:
         source = "".join(cell["source"])
         if source.startswith("SOURCE_SUITE = "):
@@ -30,7 +39,7 @@ def notebook_policy():
 
 
 def test_notebook_code_and_reviewed_report_fingerprints():
-    notebook = json.loads(NOTEBOOK.read_text("utf-8"))
+    notebook = read_notebook()
     for cell in notebook["cells"]:
         if cell["cell_type"] != "code":
             continue

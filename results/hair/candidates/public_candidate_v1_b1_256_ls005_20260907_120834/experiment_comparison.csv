@@ -1,0 +1,6 @@
+﻿experiment,validation_accuracy,test_accuracy,macro_f1,result_root
+B0 CE,0.7699680328369141,0.7891373801916933,0.7886477230068456,/content/drive/MyDrive/mediflow_experiments/hair/clean_256_two_stage_20260907_064214
+B0 LS0.05,0.7739616632461548,0.786741214057508,0.7863134458429594,/content/drive/MyDrive/mediflow_experiments/hair/clean_256_label_smoothing_005_20260907_103757
+B0 Focal1.5,0.7675718665122986,0.7907348242811502,0.7905122039602036,/content/drive/MyDrive/mediflow_experiments/hair/clean_256_focal_gamma_15_20260907_105525
+B1 LS0.05 stage2-10,0.7763578295707703,0.7787539936102237,0.778812327205678,/content/drive/MyDrive/mediflow_experiments/hair/clean_256_efficientnetb1_ls005_20260907_111711
+B1 LS0.05 stage2-15,0.7771565318107605,0.7883386581469649,0.7885764577048346,/content/drive/MyDrive/mediflow_experiments/hair/clean_256_efficientnetb1_ls005_extended5_20260907_114654

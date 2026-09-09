@@ -1,0 +1,24 @@
+{
+  "model": "EfficientNetB0",
+  "weights": "ImageNet",
+  "image_size": [
+    224,
+    224
+  ],
+  "batch_size": 32,
+  "epochs": 15,
+  "learning_rate": 0.0001,
+  "seed": 42,
+  "early_stopping": false,
+  "best_epoch": 15,
+  "best_val_accuracy": 0.704827606678009,
+  "test_accuracy": 0.6910344827586207,
+  "macro_f1": 0.6894861696407794,
+  "class_names": [
+    "모낭사이홍반",
+    "미세각질",
+    "비듬",
+    "탈모",
+    "피지과다"
+  ]
+}

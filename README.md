@@ -95,7 +95,7 @@ mediflow-evaluate hair <hair-test-폴더> --variant augmented --output reports/h
 1차 프로젝트 정리와 발표용 요약은
 [`docs/presentations/1차.md`](docs/presentations/1차.md)에 기록되어 있습니다.
 
-Codex에서 새 작업을 시작할 때는 [`docs/TASK_PROMPT_TEMPLATE.md`](docs/TASK_PROMPT_TEMPLATE.md)를
+Codex에서 새 작업을 시작할 때는 [`TASK_PROMPT_TEMPLATE.md`](docs/archive/setup/TASK_PROMPT_TEMPLATE.md)를
 복사해 사용하면 진행 상황, 완료 내용, 다음 단계와 사용자 작업을 같은 형식으로 확인할 수
 있습니다. 저장소의 상시 작업 규칙은 `AGENTS.md`에 기록되어 있습니다.
 

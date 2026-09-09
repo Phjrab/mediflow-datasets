@@ -181,4 +181,4 @@ Drive 보관 위치: `MyDrive/mediflow_models/web_skin/`. 로컬 보관 위치: 
 
 완료한 것은 공개 데이터에서의 실험 비교, 후보 선정, 자료 시각화, 패키징과 로컬 검증이다. 원래 모델을 다시 평가해 과거 결과를 완전히 재현한 작업, 실제 웹캠 독립 검증, 사람·세션 단위 누수 검증, 범위 밖 입력 거부, 시스템 모델 교체는 완료하지 않았다.
 
-과거 Test 보고값보다 새 Test 기록은 높다. 그러나 과거 학습 당시의 데이터 해시가 없으므로 완전히 동일한 평가 조건에서 재현한 향상이라고 단정하지 않는다. 상세 근거는 [결과 분석](WEB_SKIN_EXPERIMENT_RESULTS_20260908.md)과 [후보 검증 완료 기록](WEB_SKIN_CANDIDATE_VERIFIED_20260908.md)에 보존되어 있다.
+과거 Test 보고값보다 새 Test 기록은 높다. 그러나 과거 학습 당시의 데이터 해시가 없으므로 완전히 동일한 평가 조건에서 재현한 향상이라고 단정하지 않는다. 상세 근거는 [결과 분석](../archive/analysis/WEB_SKIN_EXPERIMENT_RESULTS_20260908.md)과 [후보 검증 완료 기록](../archive/verification/WEB_SKIN_CANDIDATE_VERIFIED_20260908.md)에 보존되어 있다.

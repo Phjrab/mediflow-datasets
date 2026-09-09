@@ -19,6 +19,7 @@ dependencies = [
 
 [project.optional-dependencies]
 dev = ["pytest>=8,<10", "ruff>=0.12,<1"]
+training = ["matplotlib>=3.8,<4", "pandas>=2,<3", "ipython>=8,<10"]
 
 [project.scripts]
 mediflow-infer = "mediflow_datasets.cli:main"

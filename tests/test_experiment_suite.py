@@ -1,6 +1,7 @@
 """Offline checks for selection, validation-only execution, and safe trial reuse."""
 
 import json
+import zipfile
 
 import keras
 import numpy as np
@@ -8,6 +9,15 @@ import pytest
 import tensorflow as tf
 
 from mediflow_datasets import experiment_suite as suite
+
+
+def read_archived_notebook(root, filename):
+    path = root / "notebooks" / filename
+    if path.exists():
+        return json.loads(path.read_text(encoding="utf-8"))
+    archive = root / "notebooks" / "legacy_notebooks_20260909.zip"
+    with zipfile.ZipFile(archive) as bundle:
+        return json.loads(bundle.read(f"legacy_notebooks/{filename}").decode("utf-8"))
 
 
 def test_metrics_keep_missing_classes_and_reject_bad_arrays():
@@ -112,9 +122,7 @@ def test_notebook_embeds_exact_engine_and_has_no_repeated_audit():
     from pathlib import Path
 
     root = Path(__file__).resolve().parents[1]
-    notebook = json.loads(
-        (root / "notebooks/web_skin_all_experiments_colab.ipynb").read_text(encoding="utf-8")
-    )
+    notebook = read_archived_notebook(root, "web_skin_all_experiments_colab.ipynb")
     sources = ["".join(cell["source"]) for cell in notebook["cells"] if cell["cell_type"] == "code"]
     for index, source in enumerate(sources):
         # Colab's pip magic is not Python syntax.

@@ -196,5 +196,5 @@ Seed 한 개의 결과이므로 몇 장 차이의 재현성은 아직 확인되�
 
 - Hair 224 및 6개 실험: [2026-09-07 총정리](HAIR_EXPERIMENT_SUMMARY_20260907.md). 이번 작성에서 224 원실험 ZIP의 지표를 다시 계산한 것은 아니다.
 - Hair 256 이후 비교와 연장: [Hair 후보 ZIP](../../results/hair/candidates/public_candidate_v1_b1_256_ls005_20260907_120834.zip)의 experiment_comparison.csv, source_training_config.json, package_manifest.json을 대조했다. 모델 해시도 manifest와 일치했다.
-- Web Skin: [전체 Validation 원본](../../results/web_skin/experiments/suite_20260908_014452_72768a42/all_validation_results.json), [최종 Test](../../results/web_skin/experiments/suite_20260908_014452_72768a42/final_test_metrics.json), [후보 검증](WEB_SKIN_CANDIDATE_VERIFIED_20260908.md).
+- Web Skin: [전체 Validation 원본](../../results/web_skin/experiments/suite_20260908_014452_72768a42/all_validation_results.json), [최종 Test](../../results/web_skin/experiments/suite_20260908_014452_72768a42/final_test_metrics.json), [후보 검증](../archive/verification/WEB_SKIN_CANDIDATE_VERIFIED_20260908.md).
 - Hair 원문 중 패키징이 아직 실행 전이라는 표현은 당시 상태다. 현재는 ZIP이 존재하고 후보 보관이 완료됐다. 원문은 보존하고 이 문서에서 현재 상태를 구분한다.

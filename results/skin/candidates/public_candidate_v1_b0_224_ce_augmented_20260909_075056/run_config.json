@@ -1,0 +1,47 @@
+{
+  "signature": "446849a28ed5fb9fbff374eb68e2fa636011ee9b9f7e62a2cac5147644415e1c",
+  "settings": {
+    "domain": "skin",
+    "mode": "comparison",
+    "seed": 42,
+    "batch_size": 32,
+    "epochs1": 15,
+    "epochs2": 10,
+    "extension_epochs": 5,
+    "train_variant": "augmented",
+    "classes": [
+      "광선각화증",
+      "기저세포암",
+      "보웬병",
+      "사마귀",
+      "지루각화증",
+      "편평세포암",
+      "표피낭종",
+      "피부섬유종",
+      "혈관종",
+      "흑색점"
+    ],
+    "data_sha256": "db6cf59087b68d4534ff857bdb0eacc1a1a09ed5703772fefc75f038d4570e4b",
+    "source_hashes": {
+      "common_engine": "5bf667815ac6fe31cee45ad582764e02effc360e6564274edf708ecf05dd5a22",
+      "common_audit": "f0d57d14f12c261c64636e11144ce4941e18698e15d93399fbcd508bb439bc3c",
+      "common_workflow": "4e0de9532617167a6786bdf5058c932a96afa146f166da8e8f3b786ec0aec882"
+    },
+    "protocol": "common_v1",
+    "audit": "fac9f6f6f4eb51a776fe6d9631dda32fea4e281ba0b4fcde973b2a0a78f3a98f",
+    "environment": {
+      "tensorflow": "2.20.0",
+      "keras": "3.13.2",
+      "numpy": "2.1.3",
+      "python": "3.13.15"
+    }
+  },
+  "code_commit_at_generation": "90e7419623b3ab37f590966ac249a5abb759f127",
+  "code_state": "embedded sources include uncommitted changes; exact sources saved",
+  "source_zip": "/content/drive/MyDrive/mediflow_Project/datasets/skin_datasets.zip",
+  "audit_source": "expected_data_sha256_only",
+  "baseline": "ImageNet pretrained EfficientNet; historical metrics not reused",
+  "gpu": [
+    "PhysicalDevice(name='/physical_device:GPU:0', device_type='GPU')"
+  ]
+}

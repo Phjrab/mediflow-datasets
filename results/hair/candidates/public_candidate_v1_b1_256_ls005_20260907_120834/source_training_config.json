@@ -1,0 +1,86 @@
+{
+  "experiment": "hair_clean_256_efficientnetb1_extend_stage2_by_5",
+  "reason": "기존 B1 최고 Validation이 마지막 Epoch이며 Validation Loss가 계속 감소함",
+  "single_changed_variable": {
+    "stage2_max_epochs": {
+      "from": 10,
+      "to": 15
+    }
+  },
+  "optimizer_state_restored": true,
+  "data_zip_sha256": "2ac7260663cf69835ba50edb6ae8c7e7ac13be9c73b9f7ea24f60e0342e7e156",
+  "class_names": [
+    "모낭사이홍반",
+    "미세각질",
+    "비듬",
+    "탈모",
+    "피지과다"
+  ],
+  "image_size": [
+    256,
+    256
+  ],
+  "batch_size": 32,
+  "seed": 42,
+  "class_counts": {
+    "train": {
+      "모낭사이홍반": 2985,
+      "미세각질": 3075,
+      "비듬": 2893,
+      "탈모": 2947,
+      "피지과다": 3147
+    },
+    "val": {
+      "모낭사이홍반": 248,
+      "미세각질": 256,
+      "비듬": 241,
+      "탈모": 245,
+      "피지과다": 262
+    },
+    "test": {
+      "모낭사이홍반": 248,
+      "미세각질": 256,
+      "비듬": 241,
+      "탈모": 245,
+      "피지과다": 262
+    }
+  },
+  "class_weight": {
+    "0": 1.008174204355109,
+    "1": 0.9786666666666667,
+    "2": 1.0402350501209816,
+    "3": 1.021174075330845,
+    "4": 0.9562758182395933
+  },
+  "backbone": "EfficientNet-B1",
+  "loss": {
+    "name": "categorical_crossentropy",
+    "label_smoothing": 0.05
+  },
+  "learning_rate": 9.999999747378752e-06,
+  "batch_normalization_frozen": true,
+  "reference_b1": {
+    "validation_accuracy": 0.7763578295707703,
+    "test_accuracy": 0.7787539936102237,
+    "macro_f1": 0.778812327205678
+  },
+  "extension_best_epoch": 15,
+  "extension_best_val_accuracy": 0.7771565318107605,
+  "selected_training": "b1_stage2_extended",
+  "selected_val_accuracy": 0.7771565318107605,
+  "test_accuracy": 0.7883386581469649,
+  "macro_f1": 0.7885764577048346,
+  "selection_metric": "val_accuracy",
+  "test_policy": "연장 여부를 Validation으로 결정한 뒤 선택 모델을 평가",
+  "limitations": [
+    "실제 USB 현미경 환자 데이터 없음",
+    "원천 JSON이 없어 다중 라벨 여부 확인 불가",
+    "사람·촬영 세션 단위 누수 확인 불가"
+  ],
+  "environment": {
+    "python": "3.13.15",
+    "tensorflow": "2.20.0",
+    "keras": "3.13.2",
+    "numpy": "2.1.3"
+  }
+}

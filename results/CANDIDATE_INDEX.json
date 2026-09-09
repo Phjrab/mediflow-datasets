@@ -1,0 +1,54 @@
+{
+  "schema": "mediflow_public_candidates_v1",
+  "status": "public_data_candidates_not_device_validated",
+  "candidates": {
+    "hair": {
+      "backbone": "EfficientNet-B1",
+      "input_size": 256,
+      "loss": "Categorical Crossentropy with Label Smoothing 0.05",
+      "validation_accuracy": 0.7771565318107605,
+      "test_accuracy": 0.7883386581469649,
+      "test_macro_f1": 0.7885764577048346,
+      "normal_class_included": false,
+      "candidate_id": "public_candidate_v1_b1_256_ls005_20260907_120834",
+      "package": "hair/candidates/public_candidate_v1_b1_256_ls005_20260907_120834.zip",
+      "package_sha256_file": "hair/candidates/public_candidate_v1_b1_256_ls005_20260907_120834.zip.sha256",
+      "package_sha256": "fc135708edbbec209ef940898eada586759c1db56b7a27c5508a9a165972efcd",
+      "extracted_directory": "hair/candidates/public_candidate_v1_b1_256_ls005_20260907_120834",
+      "model": "hair/candidates/public_candidate_v1_b1_256_ls005_20260907_120834/hair_model.keras",
+      "model_sha256": "0842822f6b6299ee7a0cb6b6925681d54705e7e26b3682dee0f1c49f8e72057b"
+    },
+    "web_skin": {
+      "backbone": "EfficientNet-B0",
+      "input_size": 256,
+      "loss": "Categorical Crossentropy",
+      "validation_accuracy": 0.796,
+      "test_accuracy": 0.8825,
+      "test_macro_f1": 0.8813822927981046,
+      "normal_class_included": true,
+      "candidate_id": "public_candidate_v1_b0_256_ce_20260908_081603_3f1ce76e",
+      "package": "web_skin/candidates/public_candidate_v1_b0_256_ce_20260908_081603_3f1ce76e.zip",
+      "package_sha256_file": "web_skin/candidates/public_candidate_v1_b0_256_ce_20260908_081603_3f1ce76e.zip.sha256",
+      "package_sha256": "980f92301efdbd0f65971a157620114688ab4368bd4511e112038d8b6dbc1694",
+      "extracted_directory": "web_skin/candidates/public_candidate_v1_b0_256_ce_20260908_081603_3f1ce76e",
+      "model": "web_skin/candidates/public_candidate_v1_b0_256_ce_20260908_081603_3f1ce76e/web_skin_model.keras",
+      "model_sha256": "d4c834a7fd47480c1c45ddbdc09257942b38b2408d5b28effc34ee68c4fad97b"
+    },
+    "skin": {
+      "backbone": "EfficientNet-B0",
+      "input_size": 224,
+      "loss": "Categorical Crossentropy",
+      "validation_accuracy": 0.982,
+      "test_accuracy": 0.9871428571428571,
+      "test_macro_f1": 0.9871314132317626,
+      "normal_class_included": false,
+      "candidate_id": "public_candidate_v1_b0_224_ce_augmented_20260909_075056",
+      "package": "skin/candidates/public_candidate_v1_b0_224_ce_augmented_20260909_075056.zip",
+      "package_sha256_file": "skin/candidates/public_candidate_v1_b0_224_ce_augmented_20260909_075056.zip.sha256",
+      "package_sha256": "9b3e3893a6cd89d58bd8ae3a4b85f4214f6a32a21586094ea416c552312f1686",
+      "extracted_directory": "skin/candidates/public_candidate_v1_b0_224_ce_augmented_20260909_075056",
+      "model": "skin/candidates/public_candidate_v1_b0_224_ce_augmented_20260909_075056/model.keras",
+      "model_sha256": "0b2a757320a113dbc1b285adab8c7745b2f7edc2cb29cc402d06f7882edc9f7a"
+    }
+  }
+}

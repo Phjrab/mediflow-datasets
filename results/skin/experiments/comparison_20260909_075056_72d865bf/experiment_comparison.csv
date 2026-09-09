@@ -1,0 +1,3 @@
+﻿experiment,selected_stage,validation_accuracy,validation_macro_f1,parameters,seconds_this_trial,epochs,model_bytes
+original,stage1,0.973,0.9730455448862949,4062381,213.11485821299993,15,17198406
+augmented,stage1,0.982,0.9820008885656606,4062381,268.81120826899996,15,17198406

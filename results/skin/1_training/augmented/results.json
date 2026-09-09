@@ -1,0 +1,27 @@
+{
+    "dataset": "Augmented",
+    "model": "EfficientNetB0",
+    "image_size": [
+        224,
+        224
+    ],
+    "batch_size": 32,
+    "epochs": 15,
+    "early_stopping": false,
+    "best_val_accuracy": 0.9950000047683716,
+    "best_epoch": 14,
+    "test_loss": 0.013323042541742325,
+    "test_accuracy": 0.9957143068313599,
+    "classes": [
+        "광선각화증",
+        "기저세포암",
+        "보웬병",
+        "사마귀",
+        "지루각화증",
+        "편평세포암",
+        "표피낭종",
+        "피부섬유종",
+        "혈관종",
+        "흑색점"
+    ]
+}

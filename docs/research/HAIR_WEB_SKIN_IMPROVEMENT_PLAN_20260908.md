@@ -1,6 +1,6 @@
 # Hair·Web Skin 후속 개선 방향 종합 계획
 
-기준일: 2026-09-08. **아래는 후속 연구 제안이며 새 기법을 구현하거나 성능 개선을 측정한 결과가 아니다.** 기존 후보와 Test 결과는 보존한다. 이전 [Hair 고급 기법 보류 기록](HAIR_ADVANCED_METHODS_BACKLOG_20260907.md)을 Web Skin까지 확장하고 현재 실험 근거에 맞춰 우선순위를 정리했다.
+기준일: 2026-09-08. **아래는 후속 연구 제안이며 새 기법을 구현하거나 성능 개선을 측정한 결과가 아니다.** 기존 후보와 Test 결과는 보존한다. 이전 [Hair 고급 기법 보류 기록](../archive/planning/HAIR_ADVANCED_METHODS_BACKLOG_20260907.md)을 Web Skin까지 확장하고 현재 실험 근거에 맞춰 우선순위를 정리했다.
 
 현재 완료된 실험의 원리와 효과는 [실험 해설](HAIR_WEB_SKIN_EXPERIMENT_EXPLAINED_20260908.md), Web Skin 진행 전체는 [총정리](WEB_SKIN_FULL_SUMMARY_20260908.md)를 참고한다.
 

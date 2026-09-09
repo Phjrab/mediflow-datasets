@@ -1,0 +1,23 @@
+{
+  "domain": "skin",
+  "class_names": [
+    "광선각화증",
+    "기저세포암",
+    "보웬병",
+    "사마귀",
+    "지루각화증",
+    "편평세포암",
+    "표피낭종",
+    "피부섬유종",
+    "혈관종",
+    "흑색점"
+  ],
+  "data_sha256": "db6cf59087b68d4534ff857bdb0eacc1a1a09ed5703772fefc75f038d4570e4b",
+  "protocol": "expected_sha256_v1",
+  "status": "independent_audit_skipped",
+  "limitations": [
+    "Independent common audit was skipped by the project owner",
+    "Person, lesion and capture-session leakage remains unverified",
+    "Perceptual near-duplicate and clinical label checks were not performed"
+  ]
+}

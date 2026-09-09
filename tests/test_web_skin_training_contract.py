@@ -2,6 +2,7 @@
 
 import ast
 import json
+import zipfile
 from pathlib import Path
 
 import keras
@@ -13,6 +14,15 @@ from PIL import Image
 from mediflow_datasets import experiment_suite as suite
 
 ROOT = Path(__file__).resolve().parents[1]
+
+
+def read_archived_notebook(filename):
+    path = ROOT / "notebooks" / filename
+    if path.exists():
+        return json.loads(path.read_text(encoding="utf-8"))
+    archive = ROOT / "notebooks" / "legacy_notebooks_20260909.zip"
+    with zipfile.ZipFile(archive) as bundle:
+        return json.loads(bundle.read(f"legacy_notebooks/{filename}").decode("utf-8"))
 
 
 @pytest.mark.parametrize("backbone,size,loss", [("B0", 224, "ce"), ("B1", 256, "ls005")])
@@ -69,7 +79,7 @@ def test_real_efficientnet_input_freezing_and_gradient(backbone, size, loss, mon
     ],
 )
 def test_notebook_loader_keeps_web_skin_labels_paths_and_pixel_scale(tmp_path, filename):
-    notebook = json.loads((ROOT / "notebooks" / filename).read_text(encoding="utf-8"))
+    notebook = read_archived_notebook(filename)
     source = next(
         "".join(c["source"])
         for c in notebook["cells"]
@@ -109,9 +119,7 @@ def test_notebook_loader_keeps_web_skin_labels_paths_and_pixel_scale(tmp_path, f
 
 
 def test_reviewed_notebook_syntax_and_engine_match():
-    notebook = json.loads(
-        (ROOT / "notebooks/web_skin_all_experiments_reviewed_colab.ipynb").read_text("utf-8")
-    )
+    notebook = read_archived_notebook("web_skin_all_experiments_reviewed_colab.ipynb")
     for cell in notebook["cells"]:
         if cell["cell_type"] != "code":
             continue
