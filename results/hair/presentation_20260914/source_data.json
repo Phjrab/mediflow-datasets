@@ -1,0 +1,141 @@
+{
+  "sources": {
+    "results/CANDIDATE_INDEX.json": "3dc9ac504bd98cf5209eecc68cd28ec2decd358ea096ae2d20d6a2d7960df9d6",
+    "results/hair/candidates/public_candidate_v1_b1_256_ls005_20260907_120834/class_names.json": "93dd045cd5d6ff62d160c9f802b8c4943f943474950424f3a55c333efc8f77c9",
+    "results/hair/hair_experiment_comparison_20260907.xlsx": "6deee3cfcebc94630bf1c014a7e0ea4c89c9227ed962c23b8283a33729ba280a",
+    "results/hair/_dashboard_parts/curve_1.png": "bd6bc57c65257dea8aaabb3c88d2162ef4f5f7f4bc79ae8a077fc06092359d55",
+    "results/hair/_dashboard_parts/curve_2.png": "addc971e9d287a927082855f1df76df4f75a449f9dbeae1f74c00779a331ffa8",
+    "results/hair/_dashboard_parts/curve_3.png": "af47e6a702468cdf5c9678b08e5ede102b7dbdf62618b8d4651074379f52fed9",
+    "results/hair/_dashboard_parts/curve_4.png": "4a85e5a024dd056b50fbad68e6c39f0808dcf1515e3c258858f2d44fe711a149",
+    "results/hair/_dashboard_parts/curve_5.png": "f9c463253065d8eb158713d54c712c8d74b5089c221a480f3182036a6d42c95b",
+    "results/hair/_dashboard_parts/curve_6.png": "1f05520fda1c0c6e1676999264144f14baf2878025660b8e722b779b5b82882c",
+    "results/hair/candidates/public_candidate_v1_b1_256_ls005_20260907_120834/source_classification_report.csv": "cd9b3a22b27115a0a01c1bcf088b373447af8278a737dc70787ab7ddcd004a0e"
+  },
+  "experiments": [
+    {
+      "key": "b0_224_ce",
+      "histories": [],
+      "curve_image": "results/hair/_dashboard_parts/curve_1.png",
+      "metrics": {
+        "accuracy": 0.7643769979476929,
+        "test_accuracy": 0.7763578274760383,
+        "macro_f1": 0.7757408067550379,
+        "class_f1": [
+          0.8250950570342205,
+          0.724,
+          0.7383966244725738,
+          0.8237704918032787,
+          0.7674418604651163
+        ]
+      }
+    },
+    {
+      "key": "b0_256_ce",
+      "histories": [],
+      "curve_image": "results/hair/_dashboard_parts/curve_2.png",
+      "metrics": {
+        "accuracy": 0.7699680328369141,
+        "test_accuracy": 0.7891373801916933,
+        "macro_f1": 0.7886477230068456,
+        "class_f1": [
+          0.8362235067437379,
+          0.7485148514851485,
+          0.7372881355932204,
+          0.8333333333333334,
+          0.7878787878787878
+        ]
+      }
+    },
+    {
+      "key": "b0_256_ls005",
+      "histories": [],
+      "curve_image": "results/hair/_dashboard_parts/curve_3.png",
+      "metrics": {
+        "accuracy": 0.7739616632461548,
+        "test_accuracy": 0.786741214057508,
+        "macro_f1": 0.7863134458429594,
+        "class_f1": [
+          0.8346153846153846,
+          0.7495069033530573,
+          0.7357293868921776,
+          0.8316008316008316,
+          0.780114722753346
+        ]
+      }
+    },
+    {
+      "key": "b0_256_focal15",
+      "histories": [],
+      "curve_image": "results/hair/_dashboard_parts/curve_4.png",
+      "metrics": {
+        "accuracy": 0.7675718665122986,
+        "test_accuracy": 0.7907348242811502,
+        "macro_f1": 0.7905122039602036,
+        "class_f1": [
+          0.837573385518591,
+          0.7436399217221135,
+          0.7420042643923241,
+          0.8368200836820083,
+          0.7925233644859813
+        ]
+      }
+    },
+    {
+      "key": "b1_256_ls005",
+      "histories": [],
+      "curve_image": "results/hair/_dashboard_parts/curve_5.png",
+      "metrics": {
+        "accuracy": 0.7763578295707703,
+        "test_accuracy": 0.7787539936102237,
+        "macro_f1": 0.778812327205678,
+        "class_f1": [
+          0.821917808219178,
+          0.7349397590361446,
+          0.7329192546583851,
+          0.8405797101449275,
+          0.7637051039697542
+        ]
+      }
+    },
+    {
+      "key": "b1_256_ls005_extend5",
+      "histories": [],
+      "curve_image": "results/hair/_dashboard_parts/curve_6.png",
+      "metrics": {
+        "accuracy": 0.7771565318107605,
+        "test_accuracy": 0.7883386581469649,
+        "macro_f1": 0.7885764577048346,
+        "class_f1": [
+          0.8373015873015873,
+          0.744466800804829,
+          0.7325102880658436,
+          0.8463157894736842,
+          0.7822878228782287
+        ]
+      }
+    }
+  ],
+  "selection": {
+    "winner": "b1_256_ls005_extend5",
+    "criterion": "validation_accuracy"
+  },
+  "test": {
+    "accuracy": 0.7883386581469649,
+    "macro_f1": 0.7885764577048346,
+    "count": 1252,
+    "class_f1": [
+      0.8373015873015873,
+      0.744466800804829,
+      0.7325102880658436,
+      0.8463157894736842,
+      0.7822878228782287
+    ]
+  },
+  "classes": [
+    "모낭사이홍반",
+    "미세각질",
+    "비듬",
+    "탈모",
+    "피지과다"
+  ]
+}

@@ -68,105 +68,64 @@ USB 현미경이라는 정보만으로 Hair와 Skin을 선택하면 안 된다. 
 
 배포 코드에서는 직접 작성한 목록보다 후보 폴더의 `class_names.json`을 읽는 것이 안전하다.
 
-## 4. 입력 전처리
+## 4. 입력 전처리 — 2026-09-14 정정
 
-- 이미지를 EXIF 방향에 맞게 회전한다.
-- RGB 3채널로 변환한다.
-- Hair와 Web Skin은 256×256, Skin은 224×224로 bilinear resize한다.
-- 자료형은 `float32`, 픽셀 범위는 0~255로 유지한다.
-- 외부에서 `/255.0`을 적용하지 않는다.
-- 현재 모델에는 `Rescaling(1/255)`이 포함되어 있다. 외부 정규화를 추가하면 두 번 정규화된다.
-- Crop이나 비율 유지 padding은 학습 전처리에 없으므로 임의로 추가하지 않는다.
+기존 안내의 **EXIF 자동 회전·Pillow resize 예제는 사용하지 않는다.** 재현 기준은 학습에
+사용한 TensorFlow/Keras 이미지 로더다. EXIF는 사진에 들어 있는 방향 정보다.
 
-## 5. Python 최소 실행 예제
+- TensorFlow `tf.io.decode_image(..., channels=3, expand_animations=False)`로 읽는다.
+- EXIF 방향으로 자동 회전하지 않는다.
+- `tf.image.resize(..., method="bilinear", antialias=False)`로 크기를 맞춘다.
+- Hair·Web Skin은 256×256, Skin은 224×224다. 비율 유지 crop/padding은 넣지 않는다.
+- 입력은 `(1, 높이, 너비, 3)`의 RGB `float32`, 픽셀 0~255다.
+- 외부 `/255.0`, ImageNet 평균·표준편차 정규화, 추가 softmax를 적용하지 않는다.
+- 모델 호출은 `training=False`, 로드는 `compile=False`를 사용한다.
 
-아래 예제는 압축을 푼 후보 폴더를 `results` 아래에서 실행하는 경우다.
+근거: Web Skin·Skin 후보의 `preprocessing.json`; Hair는 Git 커밋 `60970a4`의
+`notebooks/hair_clean_256_efficientnetb1_extend5_colab.ipynb`와 부모 B1 학습 노트북에서
+`tf.keras.utils.image_dataset_from_directory` 기본 RGB·bilinear 경로를 확인했다.
+Hair 패키지 JSON에는 resize/EXIF 세부값이 생략되어 있어 이 안내가 보완한다.
+기존 후보 ZIP과 내부 메타데이터는 보존했다.
+
+실시간 OpenCV 프레임은 BGR이므로 RGB로 한 번 변환해야 한다. 이미 RGB인 입력을 다시
+뒤집지 않는다. 브라우저 회전·크롭·JPEG 재압축도 입력을 바꾸므로 최초 비교에서는 원본
+파일을 그대로 사용한다. 실제 촬영의 방향 보정 정책은 재현 확인 후 별도로 검증한다.
+
+## 5. Python 실행과 기준 결과
+
+재사용 가능한 실행 코드는 `src/mediflow_datasets/candidate_reproduction.py`에 있다.
+프로젝트 루트에서 아래 예제를 실행한다. 모델 경로는 현재 작업 폴더가 아니라 코드가 위치한
+저장소를 기준으로 찾는다. 기존 `mediflow-infer`는 과거 모델 경로를 쓰므로 이 후보 검증에
+사용하지 않는다.
 
 ```python
-from pathlib import Path
 import json
-
 import numpy as np
-from PIL import Image, ImageOps
 import tensorflow as tf
+from mediflow_datasets.candidate_reproduction import ROOT, preprocess
 
-
-RESULTS = Path("results")
-
-MODELS = {
-    "hair": {
-        "model": RESULTS / (
-            "hair/candidates/"
-            "public_candidate_v1_b1_256_ls005_20260907_120834/"
-            "hair_model.keras"
-        ),
-        "classes": RESULTS / (
-            "hair/candidates/"
-            "public_candidate_v1_b1_256_ls005_20260907_120834/"
-            "class_names.json"
-        ),
-        "size": (256, 256),
-    },
-    "web_skin": {
-        "model": RESULTS / (
-            "web_skin/candidates/"
-            "public_candidate_v1_b0_256_ce_20260908_081603_3f1ce76e/"
-            "web_skin_model.keras"
-        ),
-        "classes": RESULTS / (
-            "web_skin/candidates/"
-            "public_candidate_v1_b0_256_ce_20260908_081603_3f1ce76e/"
-            "class_names.json"
-        ),
-        "size": (256, 256),
-    },
-    "skin": {
-        "model": RESULTS / (
-            "skin/candidates/"
-            "public_candidate_v1_b0_224_ce_augmented_20260909_075056/"
-            "model.keras"
-        ),
-        "classes": RESULTS / (
-            "skin/candidates/"
-            "public_candidate_v1_b0_224_ce_augmented_20260909_075056/"
-            "class_names.json"
-        ),
-        "size": (224, 224),
-    },
-}
-
-
-def predict(image_path: str, domain: str) -> dict:
-    spec = MODELS[domain]
-    class_names = json.loads(spec["classes"].read_text(encoding="utf-8"))
-    model = tf.keras.models.load_model(spec["model"], compile=False)
-
-    with Image.open(image_path) as opened:
-        image = ImageOps.exif_transpose(opened).convert("RGB")
-        image = image.resize(spec["size"], Image.Resampling.BILINEAR)
-        inputs = np.expand_dims(np.asarray(image, dtype=np.float32), axis=0)
-
-    outputs = np.asarray(model.predict(inputs, verbose=0)[0])
-    if len(outputs) != len(class_names):
-        raise ValueError("모델 출력 수와 class_names.json이 다릅니다.")
-
-    index = int(np.argmax(outputs))
-    return {
-        "domain": domain,
-        "predicted_class": class_names[index],
-        "score": float(outputs[index]),
-        "scores": {
-            name: float(value)
-            for name, value in zip(class_names, outputs, strict=True)
-        },
-    }
-
-
-print(predict("sample.jpg", "hair"))
+index = json.loads((ROOT / "results/CANDIDATE_INDEX.json").read_text(encoding="utf-8"))
+spec = index["candidates"]["hair"]
+model_path = ROOT / "results" / spec["model"]
+classes = json.loads(model_path.with_name("class_names.json").read_text(encoding="utf-8"))
+model = tf.keras.models.load_model(model_path, compile=False)
+inputs = preprocess(ROOT / "data_examples/hair/비듬_0006.jpg", spec["input_size"])
+scores = np.asarray(model(inputs, training=False))[0]
+assert scores.shape == (len(classes),)
+print({"candidate": spec["candidate_id"], "classes": classes, "scores": scores.tolist()})
 ```
 
-여러 사진을 처리할 때는 매번 `load_model`을 호출하지 말고 프로그램 시작 시 모델을 한 번 불러와
-메모리에 보관한다.
+위는 최소 예제다. 실제 전달 검증에는 모델 해시·입력 크기·클래스 수·출력값 검사까지 포함한
+아래 명령을 사용한다. 여러 요청을 처리하는 서비스에서는 모델을 한 번 로드해 재사용한다.
+
+```bash
+python -m mediflow_datasets.candidate_reproduction --output results/reproduction_team_run1 --reference results/reproducibility_v1_20260914
+```
+
+출력 폴더는 매번 새 이름을 쓴다. 기존 결과는 덮어쓰지 않는다. 비교 성공 시
+`{"passed": true, "failures": []}`가 출력된다. 실패 시 새 `reference.json`에 원인을 기록하고
+종료 코드 1을 반환한다. 입력 파일/모델 누락이나 손상 오류는 실행을 중단하며 정상 결과를
+대신 만들지 않는다. 자세한 전달 목록·허용 오차는 [재현 기준](REPRODUCTION_GUIDE.md)을 따른다.
 
 ## 6. SHA-256 확인
 
@@ -190,7 +149,9 @@ Get-FileHash -Algorithm SHA256 public_candidate_v1_....zip
 
 - 가장 큰 출력값의 클래스를 `predicted_class`로 사용한다.
 - softmax `score`는 정답일 확률로 보정된 값이 아니다.
-- Hair와 Skin에는 정상 클래스가 없다.
+- Hair와 Skin에는 정상 클래스가 없다. 낮은 점수를 정상으로 바꾸지 않는다.
+- 현재 정상 여부 판단은 지원하지 않으며, 불확실한 결과는 추가 확인 대상으로 설명한다.
+- 낮은 점수 거부 임계값도 아직 검증하지 않았다. 임의로 50% 등을 기준으로 붙이지 않는다.
 - Web Skin에는 정상 클래스가 있지만 범위 밖 이미지 거부 기능은 없다.
 - 파일이 없거나 이미지 디코딩에 실패하면 예측하지 말고 오류를 반환한다.
 - 장비와 촬영 부위 조합이 맞지 않으면 모델을 임의로 선택하지 않는다.
@@ -199,3 +160,7 @@ Get-FileHash -Algorithm SHA256 public_candidate_v1_....zip
 학습 당시 확인한 환경은 TensorFlow 2.20.0, Keras 3.13.2다. Jetson에서 ONNX 또는 TensorRT로
 변환할 경우에도 RGB 순서, 입력 크기, 0~255 픽셀 범위, 내부 Rescaling과 클래스 순서를 동일하게
 유지해야 한다.
+
+LLM에는 domain, candidate_id, 클래스 순서와 점수, normal_class_included,
+calibration_status를 함께 전달한다. Hair·Skin은 normal_class_included=false,
+normal_assessment=not_supported로 전달하며 점수와 의료적 위험도를 구분한다.
