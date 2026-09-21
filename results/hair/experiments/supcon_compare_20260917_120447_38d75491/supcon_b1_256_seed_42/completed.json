@@ -1,0 +1,231 @@
+{
+  "id": "supcon_b1_256_seed_42",
+  "spec": {
+    "method": "supcon",
+    "backbone": "B1",
+    "size": 256,
+    "loss": "ls005",
+    "contrastive_epochs": 15,
+    "classifier_epochs": 15,
+    "paper": "Khosla et al., NeurIPS 2020",
+    "hypothesis": "Supervised contrastive features separate visually similar scalp classes",
+    "id": "supcon_b1_256_seed_42",
+    "experiment_id": "supcon_b1_256",
+    "variant": "augmented",
+    "class_count": 5,
+    "class_names": [
+      "모낭사이홍반",
+      "미세각질",
+      "비듬",
+      "탈모",
+      "피지과다"
+    ],
+    "seed": 42,
+    "protocol": "hair_supcon_comparison_v1"
+  },
+  "signature": "208e6021cb3d72bdd025fd28347c233b67fb6e69318efe08270b410e5d5d935d",
+  "attempt": "attempt_2fae80f3ccea",
+  "selected_model": "classifier_best.keras",
+  "selected_stage": "supcon_then_classifier",
+  "validation": {
+    "accuracy": 0.7915335463258786,
+    "macro_f1": 0.7910880666407202,
+    "class_f1": [
+      0.8388349514563107,
+      0.7261663286004058,
+      0.7379032258064515,
+      0.8384458077709612,
+      0.8140900195694716
+    ],
+    "precision": [
+      0.8089887640449438,
+      0.7552742616033755,
+      0.7176470588235294,
+      0.8401639344262295,
+      0.8353413654618473
+    ],
+    "recall": [
+      0.8709677419354839,
+      0.69921875,
+      0.7593360995850622,
+      0.8367346938775511,
+      0.7938931297709924
+    ],
+    "support": [
+      248,
+      256,
+      241,
+      245,
+      262
+    ],
+    "confusion_matrix": [
+      [
+        216,
+        7,
+        6,
+        17,
+        2
+      ],
+      [
+        14,
+        179,
+        38,
+        13,
+        12
+      ],
+      [
+        7,
+        31,
+        183,
+        0,
+        20
+      ],
+      [
+        17,
+        9,
+        7,
+        205,
+        7
+      ],
+      [
+        13,
+        11,
+        21,
+        9,
+        208
+      ]
+    ],
+    "count": 1252
+  },
+  "training_seconds": 704.768204991,
+  "parameters": 6581644,
+  "model_bytes": 47236989,
+  "trainable_backbone_layers": [
+    "block7a_expand_activation",
+    "block7a_dwconv",
+    "block7a_activation",
+    "block7a_se_squeeze",
+    "block7a_se_reshape",
+    "block7a_se_reduce",
+    "block7a_se_expand",
+    "block7a_se_excite",
+    "block7a_project_conv",
+    "block7b_expand_conv",
+    "block7b_expand_activation",
+    "block7b_dwconv",
+    "block7b_activation",
+    "block7b_se_squeeze",
+    "block7b_se_reshape",
+    "block7b_se_reduce",
+    "block7b_se_expand",
+    "block7b_se_excite",
+    "block7b_project_conv",
+    "block7b_drop",
+    "block7b_add",
+    "top_conv",
+    "top_activation"
+  ],
+  "history": {
+    "accuracy": [
+      0.5690835118293762,
+      0.6990097761154175,
+      0.7309762835502625,
+      0.7457300424575806,
+      0.7568950653076172,
+      0.7609490156173706,
+      0.7721804976463318,
+      0.7772977948188782,
+      0.7800226211547852,
+      0.7860702872276306,
+      0.7899249196052551,
+      0.7931149005889893,
+      0.7949092984199524,
+      0.800292432308197,
+      0.8034159541130066
+    ],
+    "loss": [
+      1.1282384395599365,
+      0.8880901336669922,
+      0.8269620537757874,
+      0.7947845458984375,
+      0.7696227431297302,
+      0.7551995515823364,
+      0.7387924790382385,
+      0.7267723679542542,
+      0.7130007743835449,
+      0.7047276496887207,
+      0.6984073519706726,
+      0.6916912794113159,
+      0.6821271777153015,
+      0.6705034375190735,
+      0.6683527827262878
+    ],
+    "val_accuracy": [
+      0.7484025359153748,
+      0.7619808316230774,
+      0.7659744620323181,
+      0.7675718665122986,
+      0.7771565318107605,
+      0.7835463285446167,
+      0.7811501622200012,
+      0.7835463285446167,
+      0.7843450307846069,
+      0.7819488644599915,
+      0.7859424948692322,
+      0.779552698135376,
+      0.7843450307846069,
+      0.7851437926292419,
+      0.7915335297584534
+    ],
+    "val_loss": [
+      0.8159839510917664,
+      0.7746946811676025,
+      0.7542576193809509,
+      0.74449622631073,
+      0.7351725697517395,
+      0.7293444871902466,
+      0.7242370843887329,
+      0.7221646308898926,
+      0.7170168161392212,
+      0.7162883281707764,
+      0.7122536301612854,
+      0.7111589312553406,
+      0.7102289199829102,
+      0.7088977694511414,
+      0.7081166505813599
+    ]
+  },
+  "contrastive_history": {
+    "loss": [
+      3.872015953063965,
+      3.6954736709594727,
+      3.6333630084991455,
+      3.5937793254852295,
+      3.568830966949463,
+      3.5459530353546143,
+      3.52805233001709,
+      3.5097310543060303,
+      3.4962751865386963,
+      3.4819881916046143,
+      3.46944260597229,
+      3.454608917236328,
+      3.439281463623047,
+      3.4286186695098877,
+      3.416517972946167
+    ]
+  },
+  "stage_boundary": 0,
+  "test_evaluated": false,
+  "artifact_hashes": {
+    "attempt_2fae80f3ccea/spec.json": "53b1093b66761806205985e8b60362a63f5878f8c06ee87122d5a12c744f77c2",
+    "attempt_2fae80f3ccea/contrastive_log.csv": "d0bcce66f91a171b99d8cd8f699fafaaacb746a9f9082da5a08bf4500a437a66",
+    "attempt_2fae80f3ccea/contrastive_history.json": "0d1b59192ef87f13ad6b5c9dd5f8e03cec911ca76c2d916cec062f532db7d21c",
+    "attempt_2fae80f3ccea/classifier_log.csv": "276e0f522e64db67dbaa803baef52057f4890bec7bdd66a50d9df6f370785a3d",
+    "attempt_2fae80f3ccea/classifier_best.keras": "1e860b168851002d6a57a4723b7b77649ca764201602833d4877352501f520a3",
+    "attempt_2fae80f3ccea/classifier_history.json": "4f953232c8e613297760fe9ff86eb8872feb51c3fd7180d498d87501313c7950",
+    "attempt_2fae80f3ccea/classifier_last.keras": "5aa3481933c357df2a8350390ab49d299fd8a2afa707070f488ebec30c747dae",
+    "attempt_2fae80f3ccea/validation_metrics.json": "2a8da1306610235552501c26d588f3956e44a3defe2bb54a43c4bbc99d4b64a5",
+    "attempt_2fae80f3ccea/validation_predictions.csv": "d8c871a1e029923b3f206247769439186d54f46ea3316d66778ad81d0d93e8bc",
+    "attempt_2fae80f3ccea/record.json": "fbdec7997243a0086eeba706541576cb6b18842273df8d6bac865099c60fff6c"
+  }
+}

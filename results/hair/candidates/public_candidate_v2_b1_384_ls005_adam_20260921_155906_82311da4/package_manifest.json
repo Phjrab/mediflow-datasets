@@ -1,0 +1,170 @@
+{
+  "protocol": "hair_b1_384_final_candidate_v1",
+  "created_at": "2026-09-21T16:01:24.014723+00:00",
+  "model_file": "hair_model.keras",
+  "model_sha256": "9faa33b8f79f45ef6e7be415473e2ee5225f6195fff04d098828733db23ed3c2",
+  "source_run": "paper_screen_20260917_141641_874f03f1",
+  "source_trial": "multires_b1_384_seed_42",
+  "validation": {
+    "accuracy": 0.7963258785942492,
+    "macro_f1": 0.7957146810115047,
+    "class_f1": [
+      0.8378378378378377,
+      0.7400000000000001,
+      0.7479338842975207,
+      0.8353413654618472,
+      0.8174603174603174
+    ],
+    "precision": [
+      0.8037037037037037,
+      0.7581967213114754,
+      0.7448559670781894,
+      0.8221343873517787,
+      0.8512396694214877
+    ],
+    "recall": [
+      0.875,
+      0.72265625,
+      0.7510373443983402,
+      0.8489795918367347,
+      0.7862595419847328
+    ],
+    "support": [
+      248,
+      256,
+      241,
+      245,
+      262
+    ],
+    "confusion_matrix": [
+      [
+        217,
+        7,
+        4,
+        17,
+        3
+      ],
+      [
+        12,
+        185,
+        36,
+        13,
+        10
+      ],
+      [
+        7,
+        35,
+        181,
+        0,
+        18
+      ],
+      [
+        19,
+        7,
+        6,
+        208,
+        5
+      ],
+      [
+        15,
+        10,
+        16,
+        15,
+        206
+      ]
+    ],
+    "count": 1252
+  },
+  "test": {
+    "accuracy": 0.8003194888178914,
+    "macro_f1": 0.8002222282821301,
+    "class_f1": [
+      0.8275862068965518,
+      0.7807692307692308,
+      0.7499999999999999,
+      0.8442622950819672,
+      0.7984934086629002
+    ],
+    "precision": [
+      0.8326530612244898,
+      0.7689393939393939,
+      0.7662337662337663,
+      0.8477366255144033,
+      0.7881040892193308
+    ],
+    "recall": [
+      0.8225806451612904,
+      0.79296875,
+      0.7344398340248963,
+      0.8408163265306122,
+      0.8091603053435115
+    ],
+    "support": [
+      248,
+      256,
+      241,
+      245,
+      262
+    ],
+    "confusion_matrix": [
+      [
+        204,
+        11,
+        8,
+        18,
+        7
+      ],
+      [
+        10,
+        203,
+        27,
+        3,
+        13
+      ],
+      [
+        1,
+        40,
+        177,
+        1,
+        22
+      ],
+      [
+        14,
+        4,
+        6,
+        206,
+        15
+      ],
+      [
+        16,
+        6,
+        13,
+        15,
+        212
+      ]
+    ],
+    "count": 1252
+  },
+  "data_zip_sha256": "2ac7260663cf69835ba50edb6ae8c7e7ac13be9c73b9f7ea24f60e0342e7e156",
+  "test_evaluated_in_this_run": true,
+  "artifact_hashes": {
+    "MODEL_CARD.md": "5b012475253c832de455399d46034d95781fed52cfd4065343a8e4e45c88619f",
+    "audit_summary.json": "b301e52d59468a8d14e98735face604e069223a72cfe4848cdcec60b2fbaf75e",
+    "class_names.json": "93dd045cd5d6ff62d160c9f802b8c4943f943474950424f3a55c333efc8f77c9",
+    "common_audit.py": "7665e87be73c6f4462b3429ffcebf34ecb6287a94f2c1122a95ab7e37f85f1e7",
+    "common_engine.py": "9bb8b0bbbc1e293d45792a8263903f322051aac1209c536c8dbc11a40c7b1038",
+    "common_workflow.py": "a8f5db6c4d0973e2bdf0c4855d28d27780526d4761426d504ad27be76ee2f705",
+    "final_test_confusion_matrix.png": "18d1f8c5139efd62564ddab8a5f6df0cfdf3e6e7b8cc03e4a3a6d589088f88e9",
+    "final_test_errors.png": "2da935dfe593f25431f5560812e3dcbe57e7023b994291a33129f85de99551d1",
+    "final_test_metrics.json": "4f6073a994f4348f2d498f1ca74c429204c403798c4ae1239da94430c105886a",
+    "final_test_predictions.csv": "f40761a3b026e7e7f0e974c16006c389b15cecacdcc4c74926bfe15c35f458b8",
+    "hair_final.py": "9f2c228fe594d4a364d29017ef3544d686365508f27d607030d01a92c4d3493f",
+    "hair_model.keras": "9faa33b8f79f45ef6e7be415473e2ee5225f6195fff04d098828733db23ed3c2",
+    "model_card.json": "00497cfb6cf5582d641c19148ede1dfc1578fa20f9a380c787bab8f2a9d9f21d",
+    "model_contract_check.json": "2cc94a0db4fc7f7c4cb4592c5be00a3b433eaf46fb45e70ece20eee4b6b0480a",
+    "preprocessing.json": "7fdb3031b1354ba50b603f39189b6dab6775036cf90be86a0380dd5d9c313bb9",
+    "run_config.json": "e930008e0c3b6529446bfcdee440cb6bc5a224bdd54b99e4c11161a71f8fae8e",
+    "selection_before_test.json": "26ff39aa7de2e3c0d318bf931d2beee34575228df727178d2fa5060a379f7b3e",
+    "test_completed.json": "bca735e455be294c3a61fc2b4075aa6ab55a1ff646ad20cc35eb28648ba1a174"
+  }
+}

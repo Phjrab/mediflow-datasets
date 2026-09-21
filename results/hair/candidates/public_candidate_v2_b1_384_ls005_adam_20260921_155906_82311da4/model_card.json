@@ -1,0 +1,174 @@
+{
+  "protocol": "hair_b1_384_final_candidate_v1",
+  "status": "public_data_candidate_not_device_validated",
+  "domain": "hair",
+  "class_names": [
+    "모낭사이홍반",
+    "미세각질",
+    "비듬",
+    "탈모",
+    "피지과다"
+  ],
+  "normal_class_included": false,
+  "backbone": "EfficientNet-B1",
+  "input_size": [
+    384,
+    384
+  ],
+  "loss": "Categorical Crossentropy with Label Smoothing 0.05",
+  "optimizer": "Adam",
+  "stage1_epochs": 15,
+  "stage2_epochs": 15,
+  "selected_model": "multires_b1_384_seed_42",
+  "model_sha256": "9faa33b8f79f45ef6e7be415473e2ee5225f6195fff04d098828733db23ed3c2",
+  "model_parameter_count": 6581644,
+  "validation": {
+    "accuracy": 0.7963258785942492,
+    "macro_f1": 0.7957146810115047,
+    "class_f1": [
+      0.8378378378378377,
+      0.7400000000000001,
+      0.7479338842975207,
+      0.8353413654618472,
+      0.8174603174603174
+    ],
+    "precision": [
+      0.8037037037037037,
+      0.7581967213114754,
+      0.7448559670781894,
+      0.8221343873517787,
+      0.8512396694214877
+    ],
+    "recall": [
+      0.875,
+      0.72265625,
+      0.7510373443983402,
+      0.8489795918367347,
+      0.7862595419847328
+    ],
+    "support": [
+      248,
+      256,
+      241,
+      245,
+      262
+    ],
+    "confusion_matrix": [
+      [
+        217,
+        7,
+        4,
+        17,
+        3
+      ],
+      [
+        12,
+        185,
+        36,
+        13,
+        10
+      ],
+      [
+        7,
+        35,
+        181,
+        0,
+        18
+      ],
+      [
+        19,
+        7,
+        6,
+        208,
+        5
+      ],
+      [
+        15,
+        10,
+        16,
+        15,
+        206
+      ]
+    ],
+    "count": 1252
+  },
+  "test": {
+    "accuracy": 0.8003194888178914,
+    "macro_f1": 0.8002222282821301,
+    "class_f1": [
+      0.8275862068965518,
+      0.7807692307692308,
+      0.7499999999999999,
+      0.8442622950819672,
+      0.7984934086629002
+    ],
+    "precision": [
+      0.8326530612244898,
+      0.7689393939393939,
+      0.7662337662337663,
+      0.8477366255144033,
+      0.7881040892193308
+    ],
+    "recall": [
+      0.8225806451612904,
+      0.79296875,
+      0.7344398340248963,
+      0.8408163265306122,
+      0.8091603053435115
+    ],
+    "support": [
+      248,
+      256,
+      241,
+      245,
+      262
+    ],
+    "confusion_matrix": [
+      [
+        204,
+        11,
+        8,
+        18,
+        7
+      ],
+      [
+        10,
+        203,
+        27,
+        3,
+        13
+      ],
+      [
+        1,
+        40,
+        177,
+        1,
+        22
+      ],
+      [
+        14,
+        4,
+        6,
+        206,
+        15
+      ],
+      [
+        16,
+        6,
+        13,
+        15,
+        212
+      ]
+    ],
+    "count": 1252
+  },
+  "data_zip_sha256": "2ac7260663cf69835ba50edb6ae8c7e7ac13be9c73b9f7ea24f60e0342e7e156",
+  "limitations": [
+    "Independent common audit was skipped by the project owner",
+    "Person, lesion and capture-session leakage remains unverified",
+    "Perceptual near-duplicate and clinical label checks were not performed",
+    "Actual USB microscope patient images were not evaluated",
+    "No normal or out-of-scope rejection class",
+    "Softmax scores are not calibrated correctness probabilities"
+  ]
+}

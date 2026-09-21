@@ -1,0 +1,10 @@
+{
+  "input_shape": [
+    384,
+    384,
+    3
+  ],
+  "output_count": 5,
+  "parameters": 6581644,
+  "dummy_forward_passed": true
+}

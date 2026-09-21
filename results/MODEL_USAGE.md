@@ -8,11 +8,11 @@
 
 | 대상 | 모델 파일 | 입력 | 출력 |
 |---|---|---:|---:|
-| Hair | `hair/candidates/public_candidate_v1_b1_256_ls005_20260907_120834/hair_model.keras` | 256×256 RGB | 5 |
+| Hair | `hair/candidates/public_candidate_v2_b1_384_ls005_adam_20260921_155906_82311da4/hair_model.keras` | 384×384 RGB | 5 |
 | Web Skin | `web_skin/candidates/public_candidate_v1_b0_256_ce_20260908_081603_3f1ce76e/web_skin_model.keras` | 256×256 RGB | 5 |
 | Skin | `skin/candidates/public_candidate_v1_b0_224_ce_augmented_20260909_075056/model.keras` | 224×224 RGB | 10 |
 
-팀원에게는 각 `candidates` 폴더의 `public_candidate_v1_....zip`을 전달하면 된다. ZIP 안에는 모델,
+팀원에게는 `CANDIDATE_INDEX.json`에 지정된 각 도메인의 후보 ZIP을 전달하면 된다. ZIP 안에는 모델,
 클래스 순서, 전처리 정보와 평가 기록이 들어 있다. 같은 이름의 `.zip.sha256`은 전달 중 파일이
 바뀌거나 손상되지 않았는지 확인할 때 사용한다.
 
@@ -76,16 +76,13 @@ USB 현미경이라는 정보만으로 Hair와 Skin을 선택하면 안 된다. 
 - TensorFlow `tf.io.decode_image(..., channels=3, expand_animations=False)`로 읽는다.
 - EXIF 방향으로 자동 회전하지 않는다.
 - `tf.image.resize(..., method="bilinear", antialias=False)`로 크기를 맞춘다.
-- Hair·Web Skin은 256×256, Skin은 224×224다. 비율 유지 crop/padding은 넣지 않는다.
+- Hair는 384×384, Web Skin은 256×256, Skin은 224×224다. 비율 유지 crop/padding은 넣지 않는다.
 - 입력은 `(1, 높이, 너비, 3)`의 RGB `float32`, 픽셀 0~255다.
 - 외부 `/255.0`, ImageNet 평균·표준편차 정규화, 추가 softmax를 적용하지 않는다.
 - 모델 호출은 `training=False`, 로드는 `compile=False`를 사용한다.
 
-근거: Web Skin·Skin 후보의 `preprocessing.json`; Hair는 Git 커밋 `60970a4`의
-`notebooks/hair_clean_256_efficientnetb1_extend5_colab.ipynb`와 부모 B1 학습 노트북에서
-`tf.keras.utils.image_dataset_from_directory` 기본 RGB·bilinear 경로를 확인했다.
-Hair 패키지 JSON에는 resize/EXIF 세부값이 생략되어 있어 이 안내가 보완한다.
-기존 후보 ZIP과 내부 메타데이터는 보존했다.
+근거: 각 현재 후보의 `preprocessing.json`. Hair v2 패키지는 입력 크기, resize, 픽셀 범위와
+내부 정규화를 명시한다. 기존 Hair v1 후보 ZIP은 과거 실험 기록으로 보존했다.
 
 실시간 OpenCV 프레임은 BGR이므로 RGB로 한 번 변환해야 한다. 이미 RGB인 입력을 다시
 뒤집지 않는다. 브라우저 회전·크롭·JPEG 재압축도 입력을 바꾸므로 최초 비교에서는 원본
@@ -119,13 +116,13 @@ print({"candidate": spec["candidate_id"], "classes": classes, "scores": scores.t
 아래 명령을 사용한다. 여러 요청을 처리하는 서비스에서는 모델을 한 번 로드해 재사용한다.
 
 ```bash
-python -m mediflow_datasets.candidate_reproduction --output results/reproduction_team_run1 --reference results/reproducibility_v1_20260914
+python -m mediflow_datasets.candidate_reproduction --output results/reproduction_team_run1
 ```
 
 출력 폴더는 매번 새 이름을 쓴다. 기존 결과는 덮어쓰지 않는다. 비교 성공 시
-`{"passed": true, "failures": []}`가 출력된다. 실패 시 새 `reference.json`에 원인을 기록하고
-종료 코드 1을 반환한다. 입력 파일/모델 누락이나 손상 오류는 실행을 중단하며 정상 결과를
-대신 만들지 않는다. 자세한 전달 목록·허용 오차는 [재현 기준](REPRODUCTION_GUIDE.md)을 따른다.
+모델 해시, 입력 shape, 클래스 수와 softmax 출력을 검사한 새 `reference.json`이 생성된다.
+입력 파일이나 모델이 없거나 손상되면 실행을 중단하며 정상 결과를 대신 만들지 않는다.
+자세한 전달 목록은 [재현 기준](REPRODUCTION_GUIDE.md)을 따른다.
 
 ## 6. SHA-256 확인
 
@@ -134,13 +131,13 @@ ZIP이 있는 폴더에서 확인한다.
 ### Linux / Jetson
 
 ```bash
-sha256sum -c public_candidate_v1_....zip.sha256
+sha256sum -c public_candidate_vN_....zip.sha256
 ```
 
 ### Windows PowerShell
 
 ```powershell
-Get-FileHash -Algorithm SHA256 public_candidate_v1_....zip
+Get-FileHash -Algorithm SHA256 public_candidate_vN_....zip
 ```
 
 계산된 값은 `.zip.sha256` 또는 `CANDIDATE_INDEX.json`의 `package_sha256`과 같아야 한다.

@@ -1,0 +1,18 @@
+{
+  "domain": "hair",
+  "class_names": [
+    "모낭사이홍반",
+    "미세각질",
+    "비듬",
+    "탈모",
+    "피지과다"
+  ],
+  "data_sha256": "2ac7260663cf69835ba50edb6ae8c7e7ac13be9c73b9f7ea24f60e0342e7e156",
+  "protocol": "expected_sha256_v1",
+  "status": "independent_audit_skipped",
+  "limitations": [
+    "Independent common audit was skipped by the project owner",
+    "Person, lesion and capture-session leakage remains unverified",
+    "Perceptual near-duplicate and clinical label checks were not performed"
+  ]
+}

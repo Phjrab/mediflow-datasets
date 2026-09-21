@@ -1,0 +1,12 @@
+{
+  "id": "sam_b1_384_seed_42",
+  "method": "sam",
+  "backbone": "B1",
+  "size": 384,
+  "loss": "ls005",
+  "seed": 42,
+  "epochs": 15,
+  "rho": 0.05,
+  "parent_stage1_sha256": "0e064976688f8c0f08869d2e6a31b4ebff3992720e21c8bb838bf5ba921e622e",
+  "protocol": "hair_sam_screen_v1"
+}

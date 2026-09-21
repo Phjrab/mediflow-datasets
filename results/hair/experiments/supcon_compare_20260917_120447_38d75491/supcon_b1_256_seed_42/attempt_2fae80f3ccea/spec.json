@@ -1,0 +1,23 @@
+{
+  "method": "supcon",
+  "backbone": "B1",
+  "size": 256,
+  "loss": "ls005",
+  "contrastive_epochs": 15,
+  "classifier_epochs": 15,
+  "paper": "Khosla et al., NeurIPS 2020",
+  "hypothesis": "Supervised contrastive features separate visually similar scalp classes",
+  "id": "supcon_b1_256_seed_42",
+  "experiment_id": "supcon_b1_256",
+  "variant": "augmented",
+  "class_count": 5,
+  "class_names": [
+    "모낭사이홍반",
+    "미세각질",
+    "비듬",
+    "탈모",
+    "피지과다"
+  ],
+  "seed": 42,
+  "protocol": "hair_supcon_comparison_v1"
+}

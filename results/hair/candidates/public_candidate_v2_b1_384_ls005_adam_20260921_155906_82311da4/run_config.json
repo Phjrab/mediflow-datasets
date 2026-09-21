@@ -1,0 +1,48 @@
+{
+  "signature": "c108e513efe6f7f2f10e674763678b828656fbf32dd7c088e9e506951f2015ed",
+  "settings": {
+    "domain": "hair",
+    "mode": "final_candidate",
+    "seed": 42,
+    "seeds": [
+      42
+    ],
+    "batch_size": 32,
+    "epochs1": 15,
+    "epochs2": 15,
+    "extension_epochs": 1,
+    "train_variant": "augmented",
+    "classes": [
+      "모낭사이홍반",
+      "미세각질",
+      "비듬",
+      "탈모",
+      "피지과다"
+    ],
+    "data_sha256": "2ac7260663cf69835ba50edb6ae8c7e7ac13be9c73b9f7ea24f60e0342e7e156",
+    "source_hashes": {
+      "common_engine": "60df806e368f97d651c83a250f62bb4f8959670e3d8676a6def6b79683e8c50f",
+      "common_audit": "f0d57d14f12c261c64636e11144ce4941e18698e15d93399fbcd508bb439bc3c",
+      "common_workflow": "78215a283864147aaf91cc0cf7a3743c8b30332ed4ecc5b0b8c6c656c67c8bd2",
+      "hair_final": "633419568809099688c921ff25af91e72ab9bef6bc98a016dd7f170499ae8e6f"
+    },
+    "protocol": "common_v1",
+    "audit": "10f6992b1f8006bcf55f7c45ce82485af8e85193fb77e19cabf4b40146f00157",
+    "environment": {
+      "tensorflow": "2.20.0",
+      "keras": "3.13.2",
+      "numpy": "2.1.3",
+      "python": "3.13.15"
+    },
+    "parent_run_dir": "/content/drive/MyDrive/mediflow_Project/2_results/hair/paper_screen_20260917_141641_874f03f1",
+    "parent_model_sha256": "9faa33b8f79f45ef6e7be415473e2ee5225f6195fff04d098828733db23ed3c2"
+  },
+  "code_commit_at_generation": "b850a513eaed27982b1f3856d4980baeb7fcd601",
+  "code_state": "embedded sources include uncommitted changes; exact sources saved",
+  "source_zip": "/content/drive/MyDrive/mediflow_Project/datasets/hair_datasets.zip",
+  "audit_source": "expected_data_sha256_only",
+  "baseline": "ImageNet pretrained EfficientNet; historical metrics not reused",
+  "gpu": [
+    "PhysicalDevice(name='/physical_device:GPU:0', device_type='GPU')"
+  ]
+}

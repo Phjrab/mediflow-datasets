@@ -15,14 +15,14 @@ results/
 각 `candidates` 폴더는 같은 형식을 사용한다.
 
 ```text
-public_candidate_v1_<설정>_<실행ID>.zip
-public_candidate_v1_<설정>_<실행ID>.zip.sha256
-public_candidate_v1_<설정>_<실행ID>/
+public_candidate_vN_<설정>_<실행ID>.zip
+public_candidate_vN_<설정>_<실행ID>.zip.sha256
+public_candidate_vN_<설정>_<실행ID>/
 ```
 
 | 도메인 | 현재 후보 | 입력 | 출력 클래스 |
 |---|---|---:|---:|
-| Hair | EfficientNet-B1 / LS 0.05 | 256×256 | 5 |
+| Hair | EfficientNet-B1 / LS 0.05 / Adam | 384×384 | 5 |
 | Web Skin | EfficientNet-B0 / CE | 256×256 | 5 |
 | Skin | EfficientNet-B0 / CE / Augmented | 224×224 | 10 |
 

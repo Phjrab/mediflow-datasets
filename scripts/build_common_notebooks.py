@@ -106,7 +106,7 @@ def cell(text, code=False):
 def build():
     profiles = {}
     for domain in ("hair", "web_skin", "skin"):
-        base = ROOT / "results" / domain / "original"
+        base = ROOT / "results" / domain / "1_training" / "original"
         name = "class_names.json" if domain == "hair" else "results.json"
         data = json.loads((base / name).read_text(encoding="utf-8"))
         profiles[domain] = (

@@ -1,22 +1,22 @@
 {
-  "schema": "mediflow_public_candidates_v1",
+  "schema": "mediflow_public_candidates_v2",
   "status": "public_data_candidates_not_device_validated",
   "candidates": {
     "hair": {
       "backbone": "EfficientNet-B1",
-      "input_size": 256,
+      "input_size": 384,
       "loss": "Categorical Crossentropy with Label Smoothing 0.05",
-      "validation_accuracy": 0.7771565318107605,
-      "test_accuracy": 0.7883386581469649,
-      "test_macro_f1": 0.7885764577048346,
+      "validation_accuracy": 0.7963258785942492,
+      "test_accuracy": 0.8003194888178914,
+      "test_macro_f1": 0.8002222282821301,
       "normal_class_included": false,
-      "candidate_id": "public_candidate_v1_b1_256_ls005_20260907_120834",
-      "package": "hair/candidates/public_candidate_v1_b1_256_ls005_20260907_120834.zip",
-      "package_sha256_file": "hair/candidates/public_candidate_v1_b1_256_ls005_20260907_120834.zip.sha256",
-      "package_sha256": "fc135708edbbec209ef940898eada586759c1db56b7a27c5508a9a165972efcd",
-      "extracted_directory": "hair/candidates/public_candidate_v1_b1_256_ls005_20260907_120834",
-      "model": "hair/candidates/public_candidate_v1_b1_256_ls005_20260907_120834/hair_model.keras",
-      "model_sha256": "0842822f6b6299ee7a0cb6b6925681d54705e7e26b3682dee0f1c49f8e72057b"
+      "candidate_id": "public_candidate_v2_b1_384_ls005_adam_20260921_155906_82311da4",
+      "package": "hair/candidates/public_candidate_v2_b1_384_ls005_adam_20260921_155906_82311da4.zip",
+      "package_sha256_file": "hair/candidates/public_candidate_v2_b1_384_ls005_adam_20260921_155906_82311da4.zip.sha256",
+      "package_sha256": "870356a8b079539e8e6963b937964f790653a1b39994ee2b6b7c7bdfed0134d5",
+      "extracted_directory": "hair/candidates/public_candidate_v2_b1_384_ls005_adam_20260921_155906_82311da4",
+      "model": "hair/candidates/public_candidate_v2_b1_384_ls005_adam_20260921_155906_82311da4/hair_model.keras",
+      "model_sha256": "9faa33b8f79f45ef6e7be415473e2ee5225f6195fff04d098828733db23ed3c2"
     },
     "web_skin": {
       "backbone": "EfficientNet-B0",

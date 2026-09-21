@@ -114,7 +114,9 @@ def test_notebook_loader_keeps_web_skin_labels_paths_and_pixel_scale(tmp_path, f
     assert labels == list(range(5))
     np.testing.assert_allclose(values, [20, 60, 100, 140, 180])
     assert [Path(p).parts[1] for p in paths] == suite.CLASSES
-    reported = json.loads((ROOT / "results/web_skin/augmented/results.json").read_text("utf-8"))
+    reported = json.loads(
+        (ROOT / "results/web_skin/1_training/augmented/results.json").read_text("utf-8")
+    )
     assert suite.CLASSES == reported["classes"]
 
 

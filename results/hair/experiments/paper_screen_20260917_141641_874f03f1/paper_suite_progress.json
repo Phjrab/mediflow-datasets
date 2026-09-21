@@ -1,0 +1,7 @@
+{
+  "completed": [
+    "dinov2_small_224_seed_42",
+    "efficientnetv2s_256_seed_42",
+    "multires_b1_384_seed_42"
+  ]
+}

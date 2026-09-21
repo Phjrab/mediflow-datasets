@@ -1,0 +1,23 @@
+{
+  "method": "standard",
+  "backbone": "B1",
+  "size": 256,
+  "loss": "ls005",
+  "epochs1": 15,
+  "epochs2": 15,
+  "paper": "Current MediFlow validation baseline",
+  "hypothesis": "Reference condition for measuring gains beyond seed variation",
+  "id": "baseline_b1_256_seed_42",
+  "experiment_id": "baseline_b1_256",
+  "variant": "augmented",
+  "class_count": 5,
+  "class_names": [
+    "모낭사이홍반",
+    "미세각질",
+    "비듬",
+    "탈모",
+    "피지과다"
+  ],
+  "seed": 42,
+  "protocol": "hair_supcon_comparison_v1"
+}

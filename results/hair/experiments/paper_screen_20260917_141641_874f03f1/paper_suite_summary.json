@@ -1,0 +1,134 @@
+{
+  "protocol": "hair_paper_suite_v1",
+  "domain": "hair",
+  "data_sha256": "2ac7260663cf69835ba50edb6ae8c7e7ac13be9c73b9f7ea24f60e0342e7e156",
+  "class_names": [
+    "모낭사이홍반",
+    "미세각질",
+    "비듬",
+    "탈모",
+    "피지과다"
+  ],
+  "seeds": [
+    42
+  ],
+  "selection_metric": "validation_macro_f1_single_seed_screen",
+  "test_evaluated": false,
+  "experiments": {
+    "dinov2_small_224": {
+      "paper": "Oquab et al., TMLR 2024",
+      "hypothesis": "Self-supervised foundation features transfer better than ImageNet CNN features",
+      "validation_accuracy": {
+        "mean": 0.7699680511182109,
+        "std_population": 0.0
+      },
+      "validation_macro_f1": {
+        "mean": 0.7705341251195019,
+        "std_population": 0.0
+      },
+      "class_f1": {
+        "모낭사이홍반": {
+          "mean": 0.8081632653061224,
+          "std_population": 0.0
+        },
+        "미세각질": {
+          "mean": 0.7286245353159851,
+          "std_population": 0.0
+        },
+        "비듬": {
+          "mean": 0.7374999999999999,
+          "std_population": 0.0
+        },
+        "탈모": {
+          "mean": 0.7848605577689243,
+          "std_population": 0.0
+        },
+        "피지과다": {
+          "mean": 0.7935222672064778,
+          "std_population": 0.0
+        }
+      },
+      "training_seconds": {
+        "mean": 504.30501069499996,
+        "std_population": 0.0
+      }
+    },
+    "efficientnetv2s_256": {
+      "paper": "Tan and Le, ICML 2021",
+      "hypothesis": "A newer efficient CNN backbone improves discriminative features",
+      "validation_accuracy": {
+        "mean": 0.7691693290734825,
+        "std_population": 0.0
+      },
+      "validation_macro_f1": {
+        "mean": 0.7681559382466019,
+        "std_population": 0.0
+      },
+      "class_f1": {
+        "모낭사이홍반": {
+          "mean": 0.8037735849056605,
+          "std_population": 0.0
+        },
+        "미세각질": {
+          "mean": 0.707269155206287,
+          "std_population": 0.0
+        },
+        "비듬": {
+          "mean": 0.7257019438444924,
+          "std_population": 0.0
+        },
+        "탈모": {
+          "mean": 0.7885010266940451,
+          "std_population": 0.0
+        },
+        "피지과다": {
+          "mean": 0.8155339805825244,
+          "std_population": 0.0
+        }
+      },
+      "training_seconds": {
+        "mean": 704.8830730919999,
+        "std_population": 0.0
+      }
+    },
+    "multires_b1_384": {
+      "paper": "Gessert et al., MethodsX 2020",
+      "hypothesis": "Higher resolution preserves subtle scalp texture cues",
+      "validation_accuracy": {
+        "mean": 0.7963258785942492,
+        "std_population": 0.0
+      },
+      "validation_macro_f1": {
+        "mean": 0.7957146810115047,
+        "std_population": 0.0
+      },
+      "class_f1": {
+        "모낭사이홍반": {
+          "mean": 0.8378378378378377,
+          "std_population": 0.0
+        },
+        "미세각질": {
+          "mean": 0.7400000000000001,
+          "std_population": 0.0
+        },
+        "비듬": {
+          "mean": 0.7479338842975207,
+          "std_population": 0.0
+        },
+        "탈모": {
+          "mean": 0.8353413654618472,
+          "std_population": 0.0
+        },
+        "피지과다": {
+          "mean": 0.8174603174603174,
+          "std_population": 0.0
+        }
+      },
+      "training_seconds": {
+        "mean": 773.3170999580002,
+        "std_population": 0.0
+      }
+    }
+  },
+  "provisional_validation_leader": "multires_b1_384"
+}

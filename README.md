@@ -1,16 +1,19 @@
 # MediFlow 피부·두피 이미지 분류
 
-피부·두피 연구 결과를 보존하면서 세 EfficientNet-B0 모델을 재현 가능하게 추론하고,
+피부·두피 연구 결과를 보존하면서 세 전문 이미지 분류 모델을 재현 가능하게 관리하고,
 데이터셋 전처리를 실행하기 위한 Python 프로젝트입니다. 이 결과는 의료 진단이 아닌 연구 및
 스크리닝 보조 목적으로 사용해야 합니다.
 
+현재 프로젝트 전체 현황은 [`MEDIFLOW_PROJECT_MASTER_SUMMARY_20260922.md`](docs/research/MEDIFLOW_PROJECT_MASTER_SUMMARY_20260922.md),
+최종 후보의 경로·해시·성능은 [`CANDIDATE_INDEX.json`](results/CANDIDATE_INDEX.json)을 기준으로 확인합니다.
+
 ## 모델
 
-| CLI 이름 | 입력 환경 | 클래스 수 | 기본 모델 |
+| 도메인 | 입력 환경 | 클래스 수 | 현재 공개 데이터 후보 |
 |---|---|---:|---|
-| `skin` | USB 현미경 피부 병변 | 10 | augmented |
-| `web_skin` | 웹캠 얼굴 피부 | 5 | augmented |
-| `hair` | USB 현미경 두피 | 5 | augmented |
+| `skin` | USB 현미경 피부 병변 | 10 | EfficientNet-B0 · 224 · CE · Augmented |
+| `web_skin` | 웹캠 얼굴 피부 | 5 | EfficientNet-B0 · 256 · CE |
+| `hair` | USB 현미경 두피 | 5 | EfficientNet-B1 · 384 · LS 0.05 · Adam |
 
 기존 자료는 용도에 따라 정리되어 있습니다. 샘플 이미지는 [`data_examples/`](data_examples/),
 저장 모델과 평가 결과는 [`results/`](results/), 학습 노트북은 [`notebooks/`](notebooks/)에
@@ -43,9 +46,12 @@ python -m mediflow_datasets.cli skin "data_examples/skin/광선각화증_0001.pn
 python -m mediflow_datasets.cli hair "data_examples/hair/비듬_0006.jpg"
 ```
 
-출력은 예측 클래스, 최고 확률, 전체 클래스별 확률을 포함한 JSON입니다. 저장된
-EfficientNetB0 안에 `Rescaling(1/255)`이 있으므로 CLI는 RGB 픽셀을 0–255 `float32`로
+출력은 예측 클래스, 최고 점수, 전체 클래스별 점수를 포함한 JSON입니다. 현재 저장된
+EfficientNet 후보 안에 `Rescaling(1/255)`이 있으므로 RGB 픽셀을 0–255 `float32`로
 전달하며 별도의 `/255.0` 정규화를 하지 않습니다.
+
+위 CLI는 기존 `results/*/1_training` 모델을 읽는 연구용 실행 경로다. 팀 통합에서는
+`results/*/candidates`의 현재 후보와 [`MODEL_USAGE.md`](results/MODEL_USAGE.md)를 사용한다.
 
 ## 데이터 전처리
 

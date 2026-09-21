@@ -39,8 +39,8 @@ MODEL_VARIANTS: dict[str, dict[str, ModelSpec]] = {
         variant: ModelSpec(
             name="skin",
             purpose=f"USB 현미경 피부 병변 10-class ({variant})",
-            model_path=RESULTS_ROOT / f"skin/{variant}/best_model.keras",
-            classes_path=RESULTS_ROOT / f"skin/{variant}/results.json",
+            model_path=RESULTS_ROOT / f"skin/1_training/{variant}/best_model.keras",
+            classes_path=RESULTS_ROOT / f"skin/1_training/{variant}/results.json",
         )
         for variant in ("original", "augmented")
     },
@@ -48,8 +48,8 @@ MODEL_VARIANTS: dict[str, dict[str, ModelSpec]] = {
         variant: ModelSpec(
             name="web_skin",
             purpose=f"웹캠 얼굴 피부 5-class ({variant})",
-            model_path=RESULTS_ROOT / f"web_skin/{variant}/best_model.keras",
-            classes_path=RESULTS_ROOT / f"web_skin/{variant}/results.json",
+            model_path=RESULTS_ROOT / f"web_skin/1_training/{variant}/best_model.keras",
+            classes_path=RESULTS_ROOT / f"web_skin/1_training/{variant}/results.json",
         )
         for variant in ("original", "augmented")
     },
@@ -57,8 +57,8 @@ MODEL_VARIANTS: dict[str, dict[str, ModelSpec]] = {
         variant: ModelSpec(
             name="hair",
             purpose=f"USB 현미경 두피 5-class ({variant})",
-            model_path=RESULTS_ROOT / f"hair/{variant}/best_model.keras",
-            classes_path=RESULTS_ROOT / f"hair/{variant}/class_names.json",
+            model_path=RESULTS_ROOT / f"hair/1_training/{variant}/best_model.keras",
+            classes_path=RESULTS_ROOT / f"hair/1_training/{variant}/class_names.json",
             classes_key=None,
         )
         for variant in ("original", "augmented")

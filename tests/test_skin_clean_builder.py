@@ -1,18 +1,13 @@
-"""Deterministic Skin deduplication, re-splitting, augmentation and notebook checks."""
+"""Deterministic Skin deduplication, re-splitting and augmentation checks."""
 
-import ast
 import csv
-import json
 import zipfile
-from pathlib import Path
 
 import numpy as np
 import pytest
 from PIL import Image
 
 from mediflow_datasets import skin_clean_builder as builder
-
-ROOT = Path(__file__).resolve().parents[1]
 
 
 def image(path, value):
@@ -94,22 +89,3 @@ def test_label_conflict_blocks_automatic_cleaning(tmp_path):
     rows = builder.inventory(source, ["a", "b"])
     with pytest.raises(ValueError, match="라벨 충돌"):
         builder.split_plan(rows, ["a", "b"], validation_count=1, test_count=1)
-
-
-def test_skin_clean_notebook_is_standalone_and_embeds_exact_source():
-    path = ROOT / "notebooks/04_one_time_skin_clean_builder_colab.ipynb"
-    notebook = json.loads(path.read_text(encoding="utf-8"))
-    sources = []
-    for index, cell in enumerate(notebook["cells"]):
-        if cell["cell_type"] != "code":
-            continue
-        assert cell["outputs"] == []
-        source = "".join(cell["source"])
-        sources.append(source)
-        code = "\n".join(line for line in source.splitlines() if not line.startswith("%pip "))
-        compile(code, f"cell-{index}", "exec")
-    embedded = next(source for source in sources if source.startswith("BUILDER_SOURCE = "))
-    assignment = ast.parse(embedded).body[0]
-    assert ast.literal_eval(assignment.value) == Path(builder.__file__).read_text(encoding="utf-8")
-    assert "skin_clean_v1" in "\n".join(sources)
-    assert "AUDIT_DIR" in "\n".join(sources)

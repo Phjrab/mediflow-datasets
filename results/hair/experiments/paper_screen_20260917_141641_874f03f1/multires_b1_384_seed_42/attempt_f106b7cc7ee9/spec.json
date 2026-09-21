@@ -1,0 +1,23 @@
+{
+  "method": "standard",
+  "backbone": "B1",
+  "size": 384,
+  "loss": "ls005",
+  "epochs1": 15,
+  "epochs2": 15,
+  "paper": "Gessert et al., MethodsX 2020",
+  "hypothesis": "Higher resolution preserves subtle scalp texture cues",
+  "id": "multires_b1_384_seed_42",
+  "experiment_id": "multires_b1_384",
+  "variant": "augmented",
+  "class_count": 5,
+  "class_names": [
+    "모낭사이홍반",
+    "미세각질",
+    "비듬",
+    "탈모",
+    "피지과다"
+  ],
+  "seed": 42,
+  "protocol": "hair_paper_suite_v1"
+}

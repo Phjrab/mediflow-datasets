@@ -1,0 +1,183 @@
+{
+  "protocol": "hair_supcon_comparison_v1",
+  "paper": {
+    "title": "Supervised Contrastive Learning",
+    "authors": "Khosla et al.",
+    "venue": "NeurIPS 2020",
+    "url": "https://proceedings.neurips.cc/paper/2020/hash/d89a66c7c80a29b1bdbab0f2a1a94af8-Abstract.html"
+  },
+  "hypothesis": "Supervised contrastive representation learning reduces confusion between visually similar Hair classes compared with the fixed B1/256 baseline.",
+  "fixed_conditions": {
+    "data_sha256": "2ac7260663cf69835ba50edb6ae8c7e7ac13be9c73b9f7ea24f60e0342e7e156",
+    "split": "same immutable Train and Validation folders",
+    "train_variant": "augmented",
+    "validation_variant": "original",
+    "class_names": [
+      "모낭사이홍반",
+      "미세각질",
+      "비듬",
+      "탈모",
+      "피지과다"
+    ],
+    "backbone": "EfficientNet-B1",
+    "input_size": 256,
+    "seed": 42,
+    "test_access": false
+  },
+  "changed_condition": "B1 supervised head/partial fine-tuning versus 15-epoch SupCon representation training followed by 15-epoch supervised classifier fine-tuning",
+  "necessary_accompanying_change": "SupCon creates two weak augmented views per image because positive pairs are required by the method",
+  "baseline": {
+    "accuracy": 0.7755591054313099,
+    "macro_f1": 0.7746028470442391,
+    "class_f1": [
+      0.8183556405353728,
+      0.7136929460580914,
+      0.7191919191919192,
+      0.8202020202020203,
+      0.8015717092337917
+    ],
+    "precision": [
+      0.7781818181818182,
+      0.7610619469026548,
+      0.7007874015748031,
+      0.812,
+      0.8259109311740891
+    ],
+    "recall": [
+      0.8629032258064516,
+      0.671875,
+      0.7385892116182573,
+      0.8285714285714286,
+      0.7786259541984732
+    ],
+    "support": [
+      248,
+      256,
+      241,
+      245,
+      262
+    ],
+    "confusion_matrix": [
+      [
+        214,
+        7,
+        4,
+        20,
+        3
+      ],
+      [
+        15,
+        172,
+        41,
+        15,
+        13
+      ],
+      [
+        11,
+        33,
+        178,
+        0,
+        19
+      ],
+      [
+        22,
+        5,
+        7,
+        203,
+        8
+      ],
+      [
+        13,
+        9,
+        24,
+        12,
+        204
+      ]
+    ],
+    "count": 1252
+  },
+  "supcon": {
+    "accuracy": 0.7915335463258786,
+    "macro_f1": 0.7910880666407202,
+    "class_f1": [
+      0.8388349514563107,
+      0.7261663286004058,
+      0.7379032258064515,
+      0.8384458077709612,
+      0.8140900195694716
+    ],
+    "precision": [
+      0.8089887640449438,
+      0.7552742616033755,
+      0.7176470588235294,
+      0.8401639344262295,
+      0.8353413654618473
+    ],
+    "recall": [
+      0.8709677419354839,
+      0.69921875,
+      0.7593360995850622,
+      0.8367346938775511,
+      0.7938931297709924
+    ],
+    "support": [
+      248,
+      256,
+      241,
+      245,
+      262
+    ],
+    "confusion_matrix": [
+      [
+        216,
+        7,
+        6,
+        17,
+        2
+      ],
+      [
+        14,
+        179,
+        38,
+        13,
+        12
+      ],
+      [
+        7,
+        31,
+        183,
+        0,
+        20
+      ],
+      [
+        17,
+        9,
+        7,
+        205,
+        7
+      ],
+      [
+        13,
+        11,
+        21,
+        9,
+        208
+      ]
+    ],
+    "count": 1252
+  },
+  "delta": {
+    "validation_accuracy": 0.015974440894568676,
+    "validation_macro_f1": 0.016485219596481082,
+    "class_f1": {
+      "모낭사이홍반": 0.02047931092093791,
+      "미세각질": 0.012473382542314337,
+      "비듬": 0.018711306614532353,
+      "탈모": 0.01824378756894096,
+      "피지과다": 0.01251831033567985
+    }
+  },
+  "screening_only": true,
+  "repeat_policy": "Run seeds 43 and 44 only if seed 42 shows a useful Validation improvement without a material regression in another core class.",
+  "test_evaluated": false
+}

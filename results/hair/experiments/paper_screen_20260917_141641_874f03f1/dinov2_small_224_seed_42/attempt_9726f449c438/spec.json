@@ -1,0 +1,23 @@
+{
+  "method": "dinov2",
+  "preset": "dinov2_small",
+  "size": 224,
+  "loss": "ls005",
+  "epochs1": 15,
+  "epochs2": 0,
+  "paper": "Oquab et al., TMLR 2024",
+  "hypothesis": "Self-supervised foundation features transfer better than ImageNet CNN features",
+  "id": "dinov2_small_224_seed_42",
+  "experiment_id": "dinov2_small_224",
+  "variant": "augmented",
+  "class_count": 5,
+  "class_names": [
+    "모낭사이홍반",
+    "미세각질",
+    "비듬",
+    "탈모",
+    "피지과다"
+  ],
+  "seed": 42,
+  "protocol": "hair_paper_suite_v1"
+}

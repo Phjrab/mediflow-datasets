@@ -3,6 +3,13 @@
 이 문서는 `docs/research/PROJECT_BACKGROUND.md`의 연구 방향을 실제 개발 단계와 완료 기준으로
 구체화한다. 한 번에 여러 변수를 바꾸지 않고 각 단계의 입력, 설정, 결과를 기록한다.
 
+## 2026-09-14 이후 우선 방향
+
+프로젝트 소유자의 범위 변경에 따라 실제 장비 연결과 LLM/VLM 통합은 현재 작업에서 보류한다.
+기존 공개 데이터 후보 모델과 클래스 구성을 기준선으로 보존하고, 우선 논문 기반 학습법을
+검증한다. 정상 클래스 추가는 현재 강화 실험 뒤의 후속 과제로 보류한다. 세부 실험은
+[`PAPER_BASED_MODEL_ENHANCEMENT_PLAN.md`](research/PAPER_BASED_MODEL_ENHANCEMENT_PLAN.md)를 따른다.
+
 ## 1. 현재 모델·평가 재현
 
 - [x] TensorFlow 2.20.0 / Keras 3.13.2 환경 고정
@@ -66,7 +73,45 @@
 
 완료 기준: 모델 카드와 재현 가능한 평가 JSON을 남긴다.
 
-## 8. Router와 시스템 통합
+## 8. 논문 기반 모델 강화
+
+- 현재 `skin` 10-class, `web_skin` 5-class, `hair` 5-class와 Clean 분할 유지
+- [x] Hair 반복 기준선 실행 노트북 준비, 현재 계획에서는 사용하지 않음
+- [x] Hair 통합 실행 노트북 준비 후 계산 비용 때문에 실행 보류
+- [x] Hair 기준선 대 SupCon seed 42 단일 비교 노트북 준비
+- [x] Hair SupCon seed 42 단독 선별 실험
+- [x] Hair 기준선·SupCon 반복 검증 노트북 준비, 현재 계획에서는 사용하지 않음
+- [x] Hair 최종 후보 고정: B1 384·Label Smoothing 0.05·Adam
+- [x] Hair의 유사 클래스에 Supervised Contrastive Learning 1차 비교
+- [x] DINOv2·EfficientNetV2·B1 384 단일 seed 통합 선별 노트북 준비
+- [x] DINOv2와 EfficientNetV2의 seed 42 선별 결과 생성
+- [x] B1 256·384의 seed 42 입력 해상도 비교 결과 생성
+- [x] 저장된 SupCon·B1 384의 오답 보완성과 1:1 ensemble 필요성 판단
+  - 1:1 ensemble Macro F1 `0.7942285284`로 B1 384 단일 모델 `0.7957146810`보다 낮아 미채택
+- [x] 최선 단일 모델 B1 384용 SAM optimizer 비교 노트북 준비
+- [x] B1 384 Adam 대 SAM seed 42 Validation 비교 실행
+  - Accuracy 동일, SAM Macro F1이 `0.0002397889` 낮아 미채택
+- [x] 고정된 B1 384 Adam 최종 Test·패키징 노트북 준비
+- [x] 고정된 B1 384 Adam Hair Test 최종 1회 평가와 후보 v2 패키징
+  - Test Accuracy `0.8003194888`, Macro F1 `0.8002222283`
+- [ ] Web Skin 현재 B0 256과 B0 384를 동일 Validation 조건에서 비교
+- [ ] Web Skin 최종 후보 확정 후 Test 평가와 패키징
+- 후보 선정 전 Test를 열지 않고 Validation Macro F1 사용
+
+완료 기준: 각 실험의 논문 근거, 고정 조건과 단일 변경 변수가 기록되고, 최종 후보 하나만
+고정 Test에서 평가된다.
+
+## 9. 정상 클래스 데이터셋 v2 — 후속 보류
+
+- Hair 원천 JSON에서 `양호`와 증상별 0단계 정의 확인
+- Skin 정상피부의 촬영 장비·배율·출처 확인
+- 사람·병변·촬영 세션 단위 분할과 exact/near duplicate 검사
+- 기존 Clean v1과 후보 모델은 수정하지 않고 별도 v2 생성
+
+완료 기준: 정상 라벨의 근거, 출처, 클래스 수량, split manifest, 증강 lineage와 ZIP SHA-256이
+보존된 `skin` 11-class 및 `hair` 6-class 데이터가 존재한다.
+
+## 10. Router와 시스템 통합 — 보류
 
 - 안구, 웹캠 피부, 현미경 피부, 현미경 두피 입력을 명시적으로 구분
 - 자동 라우팅 전에는 사용자가 입력 종류를 선택하는 안전한 방식부터 구현
