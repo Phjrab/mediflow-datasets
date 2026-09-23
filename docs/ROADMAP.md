@@ -3,6 +3,11 @@
 이 문서는 `docs/research/PROJECT_BACKGROUND.md`의 연구 방향을 실제 개발 단계와 완료 기준으로
 구체화한다. 한 번에 여러 변수를 바꾸지 않고 각 단계의 입력, 설정, 결과를 기록한다.
 
+현재 공개 데이터 연구는 8단계까지 완료했다. Skin, Web Skin, Hair 최종 후보와 사용 계약은
+`results/CANDIDATE_INDEX.json`, 전체 과정과 논문 근거는
+`docs/research/MEDIFLOW_PROJECT_COMPREHENSIVE_FINAL_20260923.md`를 기준으로 한다. 2·3·9·10단계는
+프로젝트 범위가 다시 열릴 때 진행하는 후속 과제다.
+
 ## 2026-09-14 이후 우선 방향
 
 프로젝트 소유자의 범위 변경에 따라 실제 장비 연결과 LLM/VLM 통합은 현재 작업에서 보류한다.
@@ -94,8 +99,20 @@
 - [x] 고정된 B1 384 Adam 최종 Test·패키징 노트북 준비
 - [x] 고정된 B1 384 Adam Hair Test 최종 1회 평가와 후보 v2 패키징
   - Test Accuracy `0.8003194888`, Macro F1 `0.8002222283`
-- [ ] Web Skin 현재 B0 256과 B0 384를 동일 Validation 조건에서 비교
-- [ ] Web Skin 최종 후보 확정 후 Test 평가와 패키징
+- [x] Web Skin 기준선 대비 WS-DAN·PMG·MixStyle 통합 노트북 준비
+- [x] Web Skin 논문 기반 세 방법을 Colab에서 실행하고 Validation 결과 생성
+- [x] 세 방법 중 Validation Macro F1 선두 후보 PMG 고정
+  - Validation Accuracy `0.85`, Macro F1 `0.8473279632397033`
+  - 기존 B0·256·CE 대비 Accuracy `+0.054`, Macro F1 `+0.0557884984830505`
+- [x] PMG 선두 후보의 B1·384 scale 추가 실험 노트북 준비
+- [x] PMG·B1·384를 Validation에서 실행하고 기존 PMG·B0·256과 비교
+  - B1·384 Accuracy `0.866`, Macro F1 `0.8643216544321994`
+  - B0·256 대비 Accuracy `+0.016`, Macro F1 `+0.0169936911924961`
+  - B1·384는 공개 Validation 성능 선두 연구 후보로 보존
+- [x] 입력 비용과 모델 크기를 함께 고려해 Web Skin 배포 후보를 PMG·B0·256으로 고정
+- [x] 고정된 PMG·B0·256 최종 Test·패키징 노트북 준비
+- [x] 고정된 PMG·B0·256 Test 1회 평가와 후보 v2 패키징
+  - Test Accuracy `0.915`, Macro F1 `0.9141049081029712`
 - 후보 선정 전 Test를 열지 않고 Validation Macro F1 사용
 
 완료 기준: 각 실험의 논문 근거, 고정 조건과 단일 변경 변수가 기록되고, 최종 후보 하나만

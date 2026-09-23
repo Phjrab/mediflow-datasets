@@ -9,7 +9,7 @@
 | 대상 | 모델 파일 | 입력 | 출력 |
 |---|---|---:|---:|
 | Hair | `hair/candidates/public_candidate_v2_b1_384_ls005_adam_20260921_155906_82311da4/hair_model.keras` | 384×384 RGB | 5 |
-| Web Skin | `web_skin/candidates/public_candidate_v1_b0_256_ce_20260908_081603_3f1ce76e/web_skin_model.keras` | 256×256 RGB | 5 |
+| Web Skin | `web_skin/candidates/public_candidate_v2_pmg_b0_256_ce_20260922_235840_093d10de/web_skin_pmg_model.keras` | 256×256 RGB | 4 logits×5 → 5 |
 | Skin | `skin/candidates/public_candidate_v1_b0_224_ce_augmented_20260909_075056/model.keras` | 224×224 RGB | 10 |
 
 팀원에게는 `CANDIDATE_INDEX.json`에 지정된 각 도메인의 후보 ZIP을 전달하면 된다. ZIP 안에는 모델,
@@ -78,8 +78,12 @@ USB 현미경이라는 정보만으로 Hair와 Skin을 선택하면 안 된다. 
 - `tf.image.resize(..., method="bilinear", antialias=False)`로 크기를 맞춘다.
 - Hair는 384×384, Web Skin은 256×256, Skin은 224×224다. 비율 유지 crop/padding은 넣지 않는다.
 - 입력은 `(1, 높이, 너비, 3)`의 RGB `float32`, 픽셀 0~255다.
-- 외부 `/255.0`, ImageNet 평균·표준편차 정규화, 추가 softmax를 적용하지 않는다.
+- 외부 `/255.0`, ImageNet 평균·표준편차 정규화를 적용하지 않는다.
 - 모델 호출은 `training=False`, 로드는 `compile=False`를 사용한다.
+
+Hair와 Skin은 단일 softmax 출력을 그대로 사용한다. Web Skin PMG 모델은 네 개의 logit
+출력을 반환하므로 후보 ZIP의 `inference.py`처럼 네 출력을 합산한 뒤 softmax를 한 번
+적용한다. 첫 출력만 사용하거나 branch마다 softmax를 적용하면 재현 결과와 달라진다.
 
 근거: 각 현재 후보의 `preprocessing.json`. Hair v2 패키지는 입력 크기, resize, 픽셀 범위와
 내부 정규화를 명시한다. 기존 Hair v1 후보 ZIP은 과거 실험 기록으로 보존했다.
@@ -107,7 +111,10 @@ model_path = ROOT / "results" / spec["model"]
 classes = json.loads(model_path.with_name("class_names.json").read_text(encoding="utf-8"))
 model = tf.keras.models.load_model(model_path, compile=False)
 inputs = preprocess(ROOT / "data_examples/hair/비듬_0006.jpg", spec["input_size"])
-scores = np.asarray(model(inputs, training=False))[0]
+outputs = model(inputs, training=False)
+if spec.get("output_adapter") == "sum_logits_softmax":
+    outputs = tf.nn.softmax(tf.add_n(outputs), axis=-1)
+scores = np.asarray(outputs)[0]
 assert scores.shape == (len(classes),)
 print({"candidate": spec["candidate_id"], "classes": classes, "scores": scores.tolist()})
 ```

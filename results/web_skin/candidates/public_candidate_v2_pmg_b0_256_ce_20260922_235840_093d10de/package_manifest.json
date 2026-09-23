@@ -1,0 +1,171 @@
+{
+  "protocol": "web_skin_pmg_b0_256_final_candidate_v1",
+  "created_at": "2026-09-23T00:10:41.934988+00:00",
+  "model_file": "web_skin_pmg_model.keras",
+  "inference_file": "inference.py",
+  "model_sha256": "83e659dd09a9355135ee0de0197037e81ece962777f59dedae8d9a37b49a3fc4",
+  "source_run": "web_skin_paper_suite_20260922_124758_717b465e",
+  "source_trial": "pmg_b0_256_ce_seed_42",
+  "validation": {
+    "accuracy": 0.85,
+    "macro_f1": 0.8473279632397033,
+    "class_f1": [
+      0.8252427184466019,
+      0.7835051546391754,
+      0.7634408602150538,
+      0.9615384615384615,
+      0.9029126213592233
+    ],
+    "precision": [
+      0.8018867924528302,
+      0.8085106382978723,
+      0.8255813953488372,
+      0.9259259259259259,
+      0.8773584905660378
+    ],
+    "recall": [
+      0.85,
+      0.76,
+      0.71,
+      1.0,
+      0.93
+    ],
+    "support": [
+      100,
+      100,
+      100,
+      100,
+      100
+    ],
+    "confusion_matrix": [
+      [
+        85,
+        5,
+        4,
+        3,
+        3
+      ],
+      [
+        7,
+        76,
+        8,
+        1,
+        8
+      ],
+      [
+        12,
+        12,
+        71,
+        3,
+        2
+      ],
+      [
+        0,
+        0,
+        0,
+        100,
+        0
+      ],
+      [
+        2,
+        1,
+        3,
+        1,
+        93
+      ]
+    ],
+    "count": 500
+  },
+  "test": {
+    "accuracy": 0.915,
+    "macro_f1": 0.9141049081029712,
+    "class_f1": [
+      0.8627450980392157,
+      0.8860759493670887,
+      0.888888888888889,
+      0.9815950920245399,
+      0.951219512195122
+    ],
+    "precision": [
+      0.9041095890410958,
+      0.8974358974358975,
+      0.8780487804878049,
+      0.963855421686747,
+      0.9285714285714286
+    ],
+    "recall": [
+      0.825,
+      0.875,
+      0.9,
+      1.0,
+      0.975
+    ],
+    "support": [
+      80,
+      80,
+      80,
+      80,
+      80
+    ],
+    "confusion_matrix": [
+      [
+        66,
+        6,
+        6,
+        0,
+        2
+      ],
+      [
+        3,
+        70,
+        4,
+        2,
+        1
+      ],
+      [
+        3,
+        1,
+        72,
+        1,
+        3
+      ],
+      [
+        0,
+        0,
+        0,
+        80,
+        0
+      ],
+      [
+        1,
+        1,
+        0,
+        0,
+        78
+      ]
+    ],
+    "count": 400
+  },
+  "data_zip_sha256": "f8908af3d54e521ad14c37a44b569d33fe92be3b8b9b66a8d80faf4ba964072d",
+  "test_evaluated_in_this_run": true,
+  "artifact_hashes": {
+    "MODEL_CARD.md": "c998ce7e68b1563088a2223eb5ddb6adab5391b4e0bdb290bf7130e67df76771",
+    "audit_summary.json": "c38be5ddc8e9c7ca5c22de0e6c5df0e4d7860cdb19f4970773db10f35aa90f6c",
+    "class_names.json": "02fff652c291b04be28f8b769cfa6d1c1ff679b1f7bb87d2af3315b69b4cdae2",
+    "common_engine.py": "9bb8b0bbbc1e293d45792a8263903f322051aac1209c536c8dbc11a40c7b1038",
+    "common_workflow.py": "99360156b441d49b7241acb39602b57be1c2e1ff263e005a85a53983f7247e6b",
+    "final_test_confusion_matrix.png": "97811a85bd21679932788fdd3b3a4bd39898a6275945ec3cba5c9152d8f24e6a",
+    "final_test_errors.png": "e3b954bf6d5d91d837a8dddfad884d8deb0e1db3a3fa3bf1f309f2644e282be6",
+    "final_test_metrics.json": "f0ab05e27edcc3f3f7d4a33db0fb7ad2a96ca4050b8b1c165333067ce285ae7d",
+    "final_test_predictions.csv": "b40f79f9349ce587bbb3ff2c25cc7db7d37a20c09b163b00ac0f71ca0865cbba",
+    "inference.py": "69ed8e66de60679e5a336ec11bc403c5774109fa0c3b3f90dcd0e20844c9edc6",
+    "model_card.json": "fa701f783cc64b7dadee57d0f50cf2782e8bc1b8f307758dbbbc1605924029a0",
+    "model_contract_check.json": "b93722f58fdd82a24fb1121029878c6b13fcd5b886dde48dad586f93f6f7148d",
+    "preprocessing.json": "5a56f9691b81badc8e3b05222c87d2e1a32c07af4d0b498aa955621d76e51011",
+    "run_config.json": "220acb420aa4b1ae1095fdeb84944f1921b5773548776ada9f2744f4e51f175d",
+    "selection_before_test.json": "078591580a593b60a5d9dee8e8168686a9e06453c1bd775f04cb9e70d1bf0858",
+    "test_completed.json": "ed92c18159225584e70fecd0f4ce41993603710b65c528bc8bb1c2468eb6cbd5",
+    "web_skin_pmg_final.py": "1d645c69846907f13791218b1a0764d1e2fe62a1c9c62139c3d3318fab344a81",
+    "web_skin_pmg_model.keras": "83e659dd09a9355135ee0de0197037e81ece962777f59dedae8d9a37b49a3fc4"
+  }
+}

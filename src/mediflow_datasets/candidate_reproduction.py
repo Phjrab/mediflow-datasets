@@ -17,7 +17,7 @@ SAMPLES = {
     "web_skin": ["정상_000002.png", "여드름_000034.png"],
     "skin": ["광선각화증_0001.png", "보웬병_0001.png"],
 }
-PROTOCOL = "candidate_reproduction_v1"
+PROTOCOL = "candidate_reproduction_v2"
 
 
 def sha256(path: Path) -> str:
@@ -39,6 +39,22 @@ def preprocess(path: Path, size: int):
     )
 
 
+def prediction_scores(model, inputs, adapter: str):
+    """Apply the packaged candidate's public output contract."""
+    import tensorflow as tf
+
+    outputs = model(inputs, training=False)
+    if adapter == "direct_softmax":
+        if isinstance(outputs, (list, tuple)):
+            raise ValueError("direct_softmax expects one model output")
+        return outputs
+    if adapter == "sum_logits_softmax":
+        if not isinstance(outputs, (list, tuple)) or len(outputs) != 4:
+            raise ValueError("sum_logits_softmax expects four PMG logit outputs")
+        return tf.nn.softmax(tf.add_n(outputs), axis=-1)
+    raise ValueError("unknown output adapter: " + str(adapter))
+
+
 def compare(reference: dict, actual: dict, reference_dir: Path, actual_dir: Path) -> list[str]:
     """Fixed engineering tolerances; failures must be investigated, not auto-relaxed."""
     failures = []
@@ -54,6 +70,7 @@ def compare(reference: dict, actual: dict, reference_dir: Path, actual_dir: Path
             "image_sha256",
             "model_sha256",
             "candidate_id",
+            "output_adapter",
             "class_names",
             "normal_class_included",
             "input_shape",
@@ -127,12 +144,23 @@ def run(output: Path, reference: Path | None = None) -> dict:
         size = spec["input_size"]
         if tuple(model.input_shape[1:]) != (size, size, 3):
             raise ValueError(f"{domain}: input shape mismatch")
-        if model.output_shape[-1] != len(classes):
-            raise ValueError(f"{domain}: class count mismatch")
+        adapter = spec.get("output_adapter", "direct_softmax")
+        shapes = model.output_shape
+        if adapter == "direct_softmax":
+            valid_outputs = not isinstance(shapes, list) and shapes[-1] == len(classes)
+        else:
+            valid_outputs = (
+                adapter == "sum_logits_softmax"
+                and isinstance(shapes, list)
+                and len(shapes) == 4
+                and all(shape[-1] == len(classes) for shape in shapes)
+            )
+        if not valid_outputs:
+            raise ValueError(f"{domain}: class count or output contract mismatch")
         for number, filename in enumerate(filenames):
             image = ROOT / "data_examples" / domain / filename
             inputs = preprocess(image, size)
-            scores = np.asarray(model(inputs, training=False))[0]
+            scores = np.asarray(prediction_scores(model, inputs, adapter))[0]
             if (
                 scores.shape != (len(classes),)
                 or not np.isfinite(scores).all()
@@ -148,6 +176,7 @@ def run(output: Path, reference: Path | None = None) -> dict:
             report["cases"][case_id] = {
                 "domain": domain,
                 "candidate_id": spec["candidate_id"],
+                "output_adapter": adapter,
                 "model_sha256": digest,
                 "class_names": classes,
                 "normal_class_included": spec["normal_class_included"],

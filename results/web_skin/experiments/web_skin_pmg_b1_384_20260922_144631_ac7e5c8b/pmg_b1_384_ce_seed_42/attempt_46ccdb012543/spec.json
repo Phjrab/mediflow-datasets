@@ -1,0 +1,22 @@
+{
+  "id": "pmg_b1_384_ce_seed_42",
+  "method": "efficientnet_b1_384_pmg_adaptation",
+  "papers": {
+    "pmg": "https://www.ecva.net/papers/eccv_2020/papers_ECCV/papers/123650154.pdf",
+    "efficientnet": "https://proceedings.mlr.press/v97/tan19a.html"
+  },
+  "backbone": "B1",
+  "input_size": 384,
+  "loss": "ce",
+  "jigsaw_grids": [
+    8,
+    4,
+    2
+  ],
+  "batch_size": 16,
+  "epochs1": 15,
+  "epochs2": 10,
+  "seed": 42,
+  "selection_split": "validation",
+  "test_evaluated": false
+}

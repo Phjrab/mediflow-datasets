@@ -1,0 +1,54 @@
+{
+  "protocol": "web_skin_three_papers_v2",
+  "data_sha256": "f8908af3d54e521ad14c37a44b569d33fe92be3b8b9b66a8d80faf4ba964072d",
+  "classes": [
+    "건선",
+    "아토피",
+    "여드름",
+    "정상",
+    "주사"
+  ],
+  "baseline_retrained": false,
+  "test_evaluated": false,
+  "completed_experiments": [
+    "wsdan_b0_256_ce_seed_42",
+    "pmg_b0_256_ce_seed_42",
+    "mixstyle_b0_256_ce_seed_42"
+  ],
+  "excluded_experiments": [
+    "derm_foundation_mlp_seed_42"
+  ],
+  "exclusion_reason": "Derm Foundation CPU embedding extraction was excluded because of excessive Colab execution time.",
+  "comparison": [
+    {
+      "experiment": "saved_b0_256_ce_baseline",
+      "validation_accuracy": 0.796,
+      "validation_macro_f1": 0.7915394647566528,
+      "trained_in_this_run": false
+    },
+    {
+      "experiment": "wsdan_b0_256_ce_seed_42",
+      "validation_accuracy": 0.764,
+      "validation_macro_f1": 0.7546949301321499,
+      "trained_in_this_run": true
+    },
+    {
+      "experiment": "pmg_b0_256_ce_seed_42",
+      "validation_accuracy": 0.85,
+      "validation_macro_f1": 0.8473279632397033,
+      "trained_in_this_run": true
+    },
+    {
+      "experiment": "mixstyle_b0_256_ce_seed_42",
+      "validation_accuracy": 0.806,
+      "validation_macro_f1": 0.8033767539683495,
+      "trained_in_this_run": true
+    }
+  ],
+  "winner_by_validation_macro_f1": {
+    "experiment": "pmg_b0_256_ce_seed_42",
+    "validation_accuracy": 0.85,
+    "validation_macro_f1": 0.8473279632397033,
+    "trained_in_this_run": true
+  }
+}

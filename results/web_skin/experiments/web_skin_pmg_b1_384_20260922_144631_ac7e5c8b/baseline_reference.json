@@ -1,0 +1,53 @@
+{
+  "id": "pmg_b0_256_ce_seed_42",
+  "validation_accuracy": 0.85,
+  "validation_macro_f1": 0.8473279632397033,
+  "validation_count": 500,
+  "class_f1": [
+    0.8252427184466019,
+    0.7835051546391754,
+    0.7634408602150538,
+    0.9615384615384615,
+    0.9029126213592233
+  ],
+  "confusion_matrix": [
+    [
+      85,
+      5,
+      4,
+      3,
+      3
+    ],
+    [
+      7,
+      76,
+      8,
+      1,
+      8
+    ],
+    [
+      12,
+      12,
+      71,
+      3,
+      2
+    ],
+    [
+      0,
+      0,
+      0,
+      100,
+      0
+    ],
+    [
+      2,
+      1,
+      3,
+      1,
+      93
+    ]
+  ],
+  "data_sha256": "f8908af3d54e521ad14c37a44b569d33fe92be3b8b9b66a8d80faf4ba964072d",
+  "source": "web_skin_paper_suite_20260922_124758_717b465e/pmg_b0_256_ce_seed_42/attempt_a8364775fcb8/validation_metrics.json",
+  "test_evaluated": false
+}

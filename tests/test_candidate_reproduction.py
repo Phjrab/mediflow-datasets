@@ -4,7 +4,12 @@ import numpy as np
 import pytest
 from PIL import Image
 
-from mediflow_datasets.candidate_reproduction import compare, preprocess, run
+from mediflow_datasets.candidate_reproduction import (
+    compare,
+    prediction_scores,
+    preprocess,
+    run,
+)
 
 
 @pytest.mark.parametrize("suffix", ["png", "jpg"])
@@ -35,6 +40,7 @@ def test_compare_rejects_wrong_labels_inputs_and_scores(tmp_path):
         image_sha256="a",
         model_sha256="b",
         candidate_id="id",
+        output_adapter="direct_softmax",
         class_names=["a", "b"],
         normal_class_included=False,
         input_shape=[1, 2, 2, 3],
@@ -61,3 +67,25 @@ def test_output_is_never_overwritten(tmp_path):
     with pytest.raises(FileExistsError):
         run(tmp_path)
     assert marker.read_text() == "keep"
+
+
+def test_pmg_adapter_sums_four_logits_before_softmax():
+    tf = pytest.importorskip("tensorflow")
+
+    class FourOutputs:
+        def __call__(self, inputs, training=False):
+            assert training is False
+            batch = tf.shape(inputs)[0]
+            values = [
+                tf.broadcast_to(tf.constant([[1.0, 0.0]]), (batch, 2)),
+                tf.broadcast_to(tf.constant([[0.0, 1.0]]), (batch, 2)),
+                tf.broadcast_to(tf.constant([[2.0, 0.0]]), (batch, 2)),
+                tf.broadcast_to(tf.constant([[0.0, 0.0]]), (batch, 2)),
+            ]
+            return values
+
+    scores = prediction_scores(FourOutputs(), tf.zeros((1, 2)), "sum_logits_softmax")
+    expected = tf.nn.softmax([[3.0, 1.0]])
+    np.testing.assert_allclose(scores.numpy(), expected.numpy())
+    with pytest.raises(ValueError, match="unknown output adapter"):
+        prediction_scores(FourOutputs(), tf.zeros((1, 2)), "other")

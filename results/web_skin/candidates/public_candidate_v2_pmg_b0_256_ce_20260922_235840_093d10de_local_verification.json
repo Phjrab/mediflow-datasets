@@ -1,0 +1,31 @@
+{
+  "status": "verified",
+  "candidate_id": "public_candidate_v2_pmg_b0_256_ce_20260922_235840_093d10de",
+  "zip_sha256": "38bd47493ec06bcf2be351a7d12b8f889489fd5d8205e4fcb39557a400471db9",
+  "zip_crc_passed": true,
+  "manifest_artifacts_verified": 18,
+  "model_sha256": "83e659dd09a9355135ee0de0197037e81ece962777f59dedae8d9a37b49a3fc4",
+  "test_accuracy": 0.915,
+  "test_macro_f1": 0.9141049081029712,
+  "test_count": 400,
+  "model_runtime_contract_pending": false,
+  "model_runtime_contract": {
+    "input_shape": [
+      256,
+      256,
+      3
+    ],
+    "internal_output_count": 4,
+    "public_output_count": 5,
+    "parameters": 8872375,
+    "dummy_forward_passed": true,
+    "output_adapter": "sum_logits_softmax"
+  },
+  "common_inference_check": {
+    "protocol": "candidate_reproduction_v2",
+    "passed": true,
+    "sample_count": 2,
+    "output_adapter": "sum_logits_softmax",
+    "score_sums_equal_one": true
+  }
+}

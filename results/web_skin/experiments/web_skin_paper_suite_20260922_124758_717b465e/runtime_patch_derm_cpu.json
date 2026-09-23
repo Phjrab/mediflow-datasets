@@ -1,0 +1,9 @@
+{
+  "reason": "Derm Foundation variables and inference were placed on different devices",
+  "change": "Restore Derm Foundation SavedModel variables on CPU",
+  "completed_results_reused": [
+    "WS-DAN",
+    "PMG",
+    "MixStyle"
+  ]
+}

@@ -1,0 +1,175 @@
+{
+  "protocol": "web_skin_pmg_b0_256_final_candidate_v1",
+  "status": "public_data_candidate_not_device_validated",
+  "domain": "web_skin",
+  "class_names": [
+    "건선",
+    "아토피",
+    "여드름",
+    "정상",
+    "주사"
+  ],
+  "normal_class_included": true,
+  "architecture": "PMG with ImageNet EfficientNet-B0",
+  "input_size": [
+    256,
+    256
+  ],
+  "loss": "Categorical Crossentropy",
+  "optimizer": "Adam",
+  "stage1_epochs": 15,
+  "stage2_epochs": 10,
+  "selected_model": "pmg_b0_256_ce_seed_42",
+  "selection_reason": "validation quality and deployment cost balance",
+  "model_sha256": "83e659dd09a9355135ee0de0197037e81ece962777f59dedae8d9a37b49a3fc4",
+  "model_parameter_count": 8872375,
+  "validation": {
+    "accuracy": 0.85,
+    "macro_f1": 0.8473279632397033,
+    "class_f1": [
+      0.8252427184466019,
+      0.7835051546391754,
+      0.7634408602150538,
+      0.9615384615384615,
+      0.9029126213592233
+    ],
+    "precision": [
+      0.8018867924528302,
+      0.8085106382978723,
+      0.8255813953488372,
+      0.9259259259259259,
+      0.8773584905660378
+    ],
+    "recall": [
+      0.85,
+      0.76,
+      0.71,
+      1.0,
+      0.93
+    ],
+    "support": [
+      100,
+      100,
+      100,
+      100,
+      100
+    ],
+    "confusion_matrix": [
+      [
+        85,
+        5,
+        4,
+        3,
+        3
+      ],
+      [
+        7,
+        76,
+        8,
+        1,
+        8
+      ],
+      [
+        12,
+        12,
+        71,
+        3,
+        2
+      ],
+      [
+        0,
+        0,
+        0,
+        100,
+        0
+      ],
+      [
+        2,
+        1,
+        3,
+        1,
+        93
+      ]
+    ],
+    "count": 500
+  },
+  "test": {
+    "accuracy": 0.915,
+    "macro_f1": 0.9141049081029712,
+    "class_f1": [
+      0.8627450980392157,
+      0.8860759493670887,
+      0.888888888888889,
+      0.9815950920245399,
+      0.951219512195122
+    ],
+    "precision": [
+      0.9041095890410958,
+      0.8974358974358975,
+      0.8780487804878049,
+      0.963855421686747,
+      0.9285714285714286
+    ],
+    "recall": [
+      0.825,
+      0.875,
+      0.9,
+      1.0,
+      0.975
+    ],
+    "support": [
+      80,
+      80,
+      80,
+      80,
+      80
+    ],
+    "confusion_matrix": [
+      [
+        66,
+        6,
+        6,
+        0,
+        2
+      ],
+      [
+        3,
+        70,
+        4,
+        2,
+        1
+      ],
+      [
+        3,
+        1,
+        72,
+        1,
+        3
+      ],
+      [
+        0,
+        0,
+        0,
+        80,
+        0
+      ],
+      [
+        1,
+        1,
+        0,
+        0,
+        78
+      ]
+    ],
+    "count": 400
+  },
+  "data_zip_sha256": "f8908af3d54e521ad14c37a44b569d33fe92be3b8b9b66a8d80faf4ba964072d",
+  "limitations": [
+    "Independent common audit was skipped by the project owner",
+    "Person, lesion and capture-session leakage remains unverified",
+    "Perceptual near-duplicate and clinical label checks were not performed",
+    "Actual webcam patient images were not evaluated",
+    "No out-of-scope rejection mechanism",
+    "Softmax scores are not calibrated correctness probabilities"
+  ]
+}

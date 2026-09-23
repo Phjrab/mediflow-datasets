@@ -16,23 +16,28 @@
       "package_sha256": "870356a8b079539e8e6963b937964f790653a1b39994ee2b6b7c7bdfed0134d5",
       "extracted_directory": "hair/candidates/public_candidate_v2_b1_384_ls005_adam_20260921_155906_82311da4",
       "model": "hair/candidates/public_candidate_v2_b1_384_ls005_adam_20260921_155906_82311da4/hair_model.keras",
-      "model_sha256": "9faa33b8f79f45ef6e7be415473e2ee5225f6195fff04d098828733db23ed3c2"
+      "model_sha256": "9faa33b8f79f45ef6e7be415473e2ee5225f6195fff04d098828733db23ed3c2",
+      "output_adapter": "direct_softmax"
     },
     "web_skin": {
+      "architecture": "PMG with EfficientNet-B0",
       "backbone": "EfficientNet-B0",
       "input_size": 256,
       "loss": "Categorical Crossentropy",
-      "validation_accuracy": 0.796,
-      "test_accuracy": 0.8825,
-      "test_macro_f1": 0.8813822927981046,
+      "validation_accuracy": 0.85,
+      "validation_macro_f1": 0.8473279632397033,
+      "test_accuracy": 0.915,
+      "test_macro_f1": 0.9141049081029712,
       "normal_class_included": true,
-      "candidate_id": "public_candidate_v1_b0_256_ce_20260908_081603_3f1ce76e",
-      "package": "web_skin/candidates/public_candidate_v1_b0_256_ce_20260908_081603_3f1ce76e.zip",
-      "package_sha256_file": "web_skin/candidates/public_candidate_v1_b0_256_ce_20260908_081603_3f1ce76e.zip.sha256",
-      "package_sha256": "980f92301efdbd0f65971a157620114688ab4368bd4511e112038d8b6dbc1694",
-      "extracted_directory": "web_skin/candidates/public_candidate_v1_b0_256_ce_20260908_081603_3f1ce76e",
-      "model": "web_skin/candidates/public_candidate_v1_b0_256_ce_20260908_081603_3f1ce76e/web_skin_model.keras",
-      "model_sha256": "d4c834a7fd47480c1c45ddbdc09257942b38b2408d5b28effc34ee68c4fad97b"
+      "output_adapter": "sum_logits_softmax",
+      "candidate_id": "public_candidate_v2_pmg_b0_256_ce_20260922_235840_093d10de",
+      "package": "web_skin/candidates/public_candidate_v2_pmg_b0_256_ce_20260922_235840_093d10de.zip",
+      "package_sha256_file": "web_skin/candidates/public_candidate_v2_pmg_b0_256_ce_20260922_235840_093d10de.zip.sha256",
+      "package_sha256": "38bd47493ec06bcf2be351a7d12b8f889489fd5d8205e4fcb39557a400471db9",
+      "extracted_directory": "web_skin/candidates/public_candidate_v2_pmg_b0_256_ce_20260922_235840_093d10de",
+      "model": "web_skin/candidates/public_candidate_v2_pmg_b0_256_ce_20260922_235840_093d10de/web_skin_pmg_model.keras",
+      "inference": "web_skin/candidates/public_candidate_v2_pmg_b0_256_ce_20260922_235840_093d10de/inference.py",
+      "model_sha256": "83e659dd09a9355135ee0de0197037e81ece962777f59dedae8d9a37b49a3fc4"
     },
     "skin": {
       "backbone": "EfficientNet-B0",
@@ -48,7 +53,8 @@
       "package_sha256": "9b3e3893a6cd89d58bd8ae3a4b85f4214f6a32a21586094ea416c552312f1686",
       "extracted_directory": "skin/candidates/public_candidate_v1_b0_224_ce_augmented_20260909_075056",
       "model": "skin/candidates/public_candidate_v1_b0_224_ce_augmented_20260909_075056/model.keras",
-      "model_sha256": "0b2a757320a113dbc1b285adab8c7745b2f7edc2cb29cc402d06f7882edc9f7a"
+      "model_sha256": "0b2a757320a113dbc1b285adab8c7745b2f7edc2cb29cc402d06f7882edc9f7a",
+      "output_adapter": "direct_softmax"
     }
   }
 }

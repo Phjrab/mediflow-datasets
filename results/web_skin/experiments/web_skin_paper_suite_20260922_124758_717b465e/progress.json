@@ -1,0 +1,10 @@
+{
+  "completed": [
+    "wsdan_b0_256_ce_seed_42",
+    "pmg_b0_256_ce_seed_42",
+    "mixstyle_b0_256_ce_seed_42"
+  ],
+  "excluded": [
+    "derm_foundation_mlp_seed_42"
+  ]
+}

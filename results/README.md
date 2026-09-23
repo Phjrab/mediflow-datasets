@@ -23,7 +23,7 @@ public_candidate_vN_<설정>_<실행ID>/
 | 도메인 | 현재 후보 | 입력 | 출력 클래스 |
 |---|---|---:|---:|
 | Hair | EfficientNet-B1 / LS 0.05 / Adam | 384×384 | 5 |
-| Web Skin | EfficientNet-B0 / CE | 256×256 | 5 |
+| Web Skin | PMG / EfficientNet-B0 / CE | 256×256 | 5 |
 | Skin | EfficientNet-B0 / CE / Augmented | 224×224 | 10 |
 
 `1_training`, `experiments`, `archives`, `selected_models`는 과거 결과와 실험 근거를
@@ -33,3 +33,5 @@ public_candidate_vN_<설정>_<실행ID>/
 
 세 후보 모두 공개 데이터 기준이며 실제 장비 데이터 검증 전 상태다. EfficientNet 모델 내부에
 `Rescaling(1/255)`이 있으므로 입력은 RGB float32 0–255를 사용하고 외부 `/255`를 적용하지 않는다.
+Web Skin 후보는 네 PMG logit 출력을 합산한 뒤 softmax를 적용해야 하므로 후보 ZIP의
+`inference.py` 또는 공통 재현 모듈을 사용한다.

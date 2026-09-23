@@ -1,0 +1,18 @@
+{
+  "domain": "web_skin",
+  "class_names": [
+    "건선",
+    "아토피",
+    "여드름",
+    "정상",
+    "주사"
+  ],
+  "data_sha256": "f8908af3d54e521ad14c37a44b569d33fe92be3b8b9b66a8d80faf4ba964072d",
+  "protocol": "expected_sha256_v1",
+  "status": "independent_audit_skipped",
+  "limitations": [
+    "Independent common audit was skipped by the project owner",
+    "Person, lesion and capture-session leakage remains unverified",
+    "Perceptual near-duplicate and clinical label checks were not performed"
+  ]
+}

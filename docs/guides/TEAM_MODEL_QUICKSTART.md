@@ -8,7 +8,7 @@
 | 대상 | 입력 | 현재 모델 |
 |---|---:|---|
 | Hair | 384×384 RGB | `results/hair/candidates/public_candidate_v2_b1_384_ls005_adam_20260921_155906_82311da4/hair_model.keras` |
-| Web Skin | 256×256 RGB | `results/web_skin/candidates/public_candidate_v1_b0_256_ce_20260908_081603_3f1ce76e/web_skin_model.keras` |
+| Web Skin | 256×256 RGB | `results/web_skin/candidates/public_candidate_v2_pmg_b0_256_ce_20260922_235840_093d10de/web_skin_pmg_model.keras` |
 | Skin | 224×224 RGB | `results/skin/candidates/public_candidate_v1_b0_224_ce_augmented_20260909_075056/model.keras` |
 
 각 후보 ZIP에는 모델, `class_names.json`, `preprocessing.json`, 평가 결과와 SHA-256 manifest가
@@ -30,8 +30,12 @@
 2. 후보별 크기에 맞게 TensorFlow bilinear 방식으로 resize한다.
 3. `float32` 픽셀 0–255를 그대로 모델에 전달한다.
 4. 모델 내부에 `Rescaling(1/255)`이 있으므로 외부 `/255`를 적용하지 않는다.
-5. 추가 ImageNet 정규화, 추가 softmax, crop과 padding을 적용하지 않는다.
+5. 추가 ImageNet 정규화, crop과 padding을 적용하지 않는다.
 6. 출력 인덱스는 각 후보의 `class_names.json` 순서로 해석한다.
+
+Hair와 Skin은 모델의 단일 softmax 출력을 그대로 사용합니다. Web Skin PMG 모델은 네 개의
+logit 출력을 반환하므로 패키지의 `inference.py`처럼 네 출력을 합산한 뒤 softmax를 한 번
+적용해야 합니다. 첫 출력만 사용하거나 각 출력에 softmax를 따로 적용하면 안 됩니다.
 
 세부 Python 예제와 오류 처리는
 [`results/MODEL_USAGE.md`](../../results/MODEL_USAGE.md)를 따른다.

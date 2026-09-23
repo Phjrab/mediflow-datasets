@@ -1,0 +1,11 @@
+{
+  "id": "derm_foundation_mlp_seed_42",
+  "method": "derm_foundation_6144_embedding_mlp",
+  "paper": "https://developers.google.com/health-ai-developer-foundations/derm-foundation/model-card",
+  "model_id": "google/derm-foundation",
+  "input_size": 448,
+  "embedding_size": 6144,
+  "classifier": "Dense256-Dropout0.1-Dense128-Dropout0.1-Softmax",
+  "seed": 42,
+  "test_evaluated": false
+}

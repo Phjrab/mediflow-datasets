@@ -1,0 +1,47 @@
+{
+  "signature": "e262ce8ea665f8314e964372f210fa2f615a47a8c97bfe9343ee878328a572cf",
+  "settings": {
+    "domain": "web_skin",
+    "mode": "web_skin_pmg_final",
+    "seed": 42,
+    "seeds": [
+      42
+    ],
+    "batch_size": 32,
+    "epochs1": 15,
+    "epochs2": 10,
+    "extension_epochs": 1,
+    "train_variant": "augmented",
+    "classes": [
+      "건선",
+      "아토피",
+      "여드름",
+      "정상",
+      "주사"
+    ],
+    "data_sha256": "f8908af3d54e521ad14c37a44b569d33fe92be3b8b9b66a8d80faf4ba964072d",
+    "source_hashes": {
+      "common_engine": "60df806e368f97d651c83a250f62bb4f8959670e3d8676a6def6b79683e8c50f",
+      "common_workflow": "932e8ec18af5239d056930e7d00aba8204e78e7576a76988cd00128de4ca210f",
+      "web_skin_pmg_final": "0276130e954a27bb48f586d3c4b4e90b388cb2a56dea2ef363c71b8aba3db18e"
+    },
+    "protocol": "common_v1",
+    "audit": "35f2e5a4600a588311a788c9cccb5c7dd137a7a10f3af53a5e07eb2dc0490ac7",
+    "environment": {
+      "tensorflow": "2.20.0",
+      "keras": "3.13.2",
+      "numpy": "2.1.3",
+      "python": "3.13.15"
+    },
+    "parent_run_dir": "/content/drive/MyDrive/mediflow_Project/2_results/web_skin/web_skin_paper_suite_20260922_124758_717b465e",
+    "parent_model_sha256": "83e659dd09a9355135ee0de0197037e81ece962777f59dedae8d9a37b49a3fc4"
+  },
+  "code_commit_at_generation": "268e2ad22fd23ca37d6a2987ef391944b9c7fd1b",
+  "code_state": "embedded sources include uncommitted changes; exact sources saved",
+  "source_zip": "/content/drive/MyDrive/mediflow_Project/datasets/web_skin_datasets.zip",
+  "audit_source": "expected_data_sha256_only",
+  "baseline": "Fixed PMG B0/256 Validation candidate reused; model not retrained",
+  "gpu": [
+    "PhysicalDevice(name='/physical_device:GPU:0', device_type='GPU')"
+  ]
+}

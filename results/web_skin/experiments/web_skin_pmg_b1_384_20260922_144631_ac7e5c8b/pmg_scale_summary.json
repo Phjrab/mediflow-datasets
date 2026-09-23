@@ -1,0 +1,37 @@
+{
+  "protocol": "web_skin_pmg_b1_384_screen_v1",
+  "data_sha256": "f8908af3d54e521ad14c37a44b569d33fe92be3b8b9b66a8d80faf4ba964072d",
+  "classes": [
+    "건선",
+    "아토피",
+    "여드름",
+    "정상",
+    "주사"
+  ],
+  "baseline_retrained": false,
+  "completed_experiments": [
+    "pmg_b1_384_ce_seed_42"
+  ],
+  "comparison": [
+    {
+      "experiment": "pmg_b0_256_ce_seed_42",
+      "validation_accuracy": 0.85,
+      "validation_macro_f1": 0.8473279632397033,
+      "trained_in_this_run": false
+    },
+    {
+      "experiment": "pmg_b1_384_ce_seed_42",
+      "validation_accuracy": 0.866,
+      "validation_macro_f1": 0.8643216544321994,
+      "trained_in_this_run": true
+    }
+  ],
+  "winner_by_validation_macro_f1": {
+    "experiment": "pmg_b1_384_ce_seed_42",
+    "validation_accuracy": 0.866,
+    "validation_macro_f1": 0.8643216544321994,
+    "trained_in_this_run": true
+  },
+  "test_evaluated": false,
+  "necessary_accompanying_change": "Batch size 16 is used for B1/384 GPU memory; the earlier B0/256 PMG used 32."
+}

@@ -1,5 +1,8 @@
 # MediFlow 이미지 분류 프로젝트 최종 종합 정리
 
+> 이 문서는 2026-09-22 시점의 종합 기록이다. Web Skin PMG 최종 결과까지 반영한 현재 기준은
+> `MEDIFLOW_PROJECT_COMPREHENSIVE_FINAL_20260923.md`다.
+
 기준일: 2026-09-22  
 범위: Skin, Web Skin, Hair 공개 데이터 분류 모델  
 
@@ -95,6 +98,16 @@ Accuracy `0.982`, Macro F1 `0.9820008885656606`가 Original의 `0.973`,
 가장 높고 사전 동점 규칙을 만족한 B0·256·CE를 선택했다. 고정 Test 400장에서 353장을 맞혀
 Accuracy `0.8825`, Macro F1 `0.8813822927981046`을 기록했다.
 
+2026-09-23 논문 기반 후속 Validation에서는 PMG가 기존 B0·256·CE 기준선보다 높았고,
+PMG를 B1·384로 확장한 모델이 Accuracy `0.866`, Macro F1 `0.8643216544321994`로 다시
+Validation 선두가 되었다. 이 모델은 아직 Test 평가와 패키징 전이므로 아래 기존 공개 후보의
+Test 수치를 대체하지 않는다.
+
+이후 배포 비용을 함께 검토해 입력 픽셀이 2.25배이고 모델 파일이 약 29% 큰 B1·384 대신
+PMG·B0·256을 최종 Test 후보로 고정했다. B1·384는 공개 Validation 성능 선두 연구 후보로
+보존하며 Test는 평가하지 않는다. B0·256의 최종 Test 결과는 Accuracy `0.915`, Macro F1
+`0.9141049081029712`이며 후보 v2 패키지와 로컬 무결성 검증을 완료했다.
+
 ### Hair
 
 Clean 데이터에서 B0/B1, 224/256, CE/Label Smoothing/Focal과 미세조정 길이를 비교한 뒤,
@@ -107,10 +120,12 @@ Clean 데이터에서 B0/B1, 224/256, CE/Label Smoothing/Focal과 미세조정 �
 | 도메인 | 최종 후보 | 입력 | Validation Accuracy | Test Accuracy | Test Macro F1 |
 |---|---|---:|---:|---:|---:|
 | Hair | EfficientNet-B1·LS 0.05·Adam | 384 | 0.7963258786 | 0.8003194888 | 0.8002222283 |
-| Web Skin | EfficientNet-B0·CE | 256 | 0.796 | 0.8825 | 0.8813822928 |
+| Web Skin | PMG·EfficientNet-B0·CE | 256 | 0.85 | 0.915 | 0.9141049081 |
 | Skin | EfficientNet-B0·CE·Augmented | 224 | 0.982 | 0.9871428571 | 0.9871314132 |
 
 정확한 후보 ID, 모델 경로와 SHA-256은 `results/CANDIDATE_INDEX.json`이 기준이다.
+Web Skin은 PMG·B0·256 후보 v2를 현재 배포 후보로 등록했다. PMG·B1·384는 Validation 성능
+선두 연구 후보이며 현재 배포 후보가 아니다.
 
 ## 8. 논문 기반 Hair 강화에서 얻은 결론
 
@@ -136,8 +151,9 @@ Clean 데이터에서 B0/B1, 224/256, CE/Label Smoothing/Focal과 미세조정 �
 
 ## 10. 완료 범위와 남은 범위
 
-완료한 것은 공개 데이터 검사, clean 데이터 구성, 전이학습·미세조정, 실험 비교, 최종 후보
-선정, Test 평가, 결과 시각화, 모델 패키징과 로컬 입출력 검증이다.
+완료한 것은 공개 데이터 검사, clean 데이터 구성, 전이학습·미세조정, 실험 비교, 기존 후보의
+Test 평가, 결과 시각화, 모델 패키징과 로컬 입출력 검증이다. Web Skin PMG·B0·256도
+최종 Test, 후보 v2 패키징과 로컬 모델 계약 검증까지 완료했다.
 
 아직 하지 않은 일은 실제 USB 현미경·웹캠 독립 검증, 범위 밖 이미지 거부, Hair/Skin 정상
 클래스 추가, 확률 보정, 사람·세션 단위 누수 검증이다. 장비 연결과 LLM/VLM 통합은 현재 작업
@@ -160,4 +176,3 @@ Clean 데이터에서 B0/B1, 224/256, CE/Label Smoothing/Focal과 미세조정 �
 - 최종 모델 요약표: `results/FINAL_MODEL_SUMMARY_20260922.csv`
 - 팀 모델 사용법: `docs/guides/TEAM_MODEL_QUICKSTART.md`
 - 문서 상태 색인: `docs/DOCUMENT_STATUS_INDEX_20260922.md`
-

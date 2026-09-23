@@ -1,0 +1,10 @@
+{
+  "id": "mixstyle_b0_256_ce_seed_42",
+  "method": "mixstyle_after_efficientnet_block2b",
+  "paper": "https://openreview.net/forum?id=6xHJ37MVxxp",
+  "alpha": 0.1,
+  "probability": 0.5,
+  "input_size": 256,
+  "seed": 42,
+  "test_evaluated": false
+}

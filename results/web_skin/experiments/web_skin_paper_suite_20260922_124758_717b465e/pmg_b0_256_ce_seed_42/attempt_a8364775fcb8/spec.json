@@ -1,0 +1,13 @@
+{
+  "id": "pmg_b0_256_ce_seed_42",
+  "method": "efficientnet_b0_pmg_adaptation",
+  "paper": "https://www.ecva.net/papers/eccv_2020/papers_ECCV/papers/123650154.pdf",
+  "jigsaw_grids": [
+    8,
+    4,
+    2
+  ],
+  "input_size": 256,
+  "seed": 42,
+  "test_evaluated": false
+}

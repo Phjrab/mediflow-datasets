@@ -1,0 +1,5 @@
+{
+  "reason": "RandomGamma is unsupported by XLA_GPU_JIT",
+  "change": "MixStyle Stage 1 and Stage 2 use jit_compile=False",
+  "completed_results_reused": true
+}

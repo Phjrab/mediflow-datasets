@@ -1,0 +1,25 @@
+{
+  "id": "wsdan_b0_256_ce_seed_42",
+  "method": "wsdan_inspired_attention_crop_drop",
+  "paper": "https://arxiv.org/abs/1901.09891",
+  "backbone": "B0",
+  "size": 256,
+  "loss": "ce",
+  "variant": "augmented",
+  "epochs1": 15,
+  "epochs2": 10,
+  "attention_maps": 8,
+  "crop_threshold": 0.5,
+  "drop_threshold": 0.7,
+  "seed": 42,
+  "class_count": 5,
+  "class_names": [
+    "건선",
+    "아토피",
+    "여드름",
+    "정상",
+    "주사"
+  ],
+  "protocol": "web_skin_wsdan_screen_v1",
+  "test_evaluated": false
+}

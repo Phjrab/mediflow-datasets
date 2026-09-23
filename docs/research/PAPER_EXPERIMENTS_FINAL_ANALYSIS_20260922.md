@@ -1,5 +1,8 @@
 # MediFlow 논문 기반 모델 강화 실험 최종 분석
 
+> 이 문서는 Hair 논문 기반 실험의 상세 기록이다. Web Skin 논문 실험과 세 도메인 전체 결론은
+> `MEDIFLOW_PROJECT_COMPREHENSIVE_FINAL_20260923.md`를 따른다.
+
 기준일: 2026-09-22  
 대상: Hair 5-class 공개 데이터 모델  
 선정 기준: 동일 Validation 분할의 Accuracy와 Macro F1  

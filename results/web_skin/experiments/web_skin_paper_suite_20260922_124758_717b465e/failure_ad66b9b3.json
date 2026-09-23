@@ -1,0 +1,9 @@
+{
+  "error": "InvalidArgumentError()",
+  "completed": [
+    "wsdan_b0_256_ce_seed_42",
+    "pmg_b0_256_ce_seed_42",
+    "mixstyle_b0_256_ce_seed_42"
+  ],
+  "resume_dir": "/content/drive/MyDrive/mediflow_Project/2_results/web_skin/web_skin_paper_suite_20260922_124758_717b465e"
+}

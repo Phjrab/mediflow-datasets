@@ -1,0 +1,52 @@
+{
+  "id": "b0_256_ce",
+  "validation_accuracy": 0.796,
+  "validation_macro_f1": 0.7915394647566528,
+  "validation_count": 500,
+  "class_f1": [
+    0.7606837606837609,
+    0.6847826086956522,
+    0.6818181818181819,
+    0.9345794392523363,
+    0.8958333333333334
+  ],
+  "confusion_matrix": [
+    [
+      89,
+      3,
+      3,
+      3,
+      2
+    ],
+    [
+      18,
+      63,
+      8,
+      8,
+      3
+    ],
+    [
+      22,
+      14,
+      60,
+      3,
+      1
+    ],
+    [
+      0,
+      0,
+      0,
+      100,
+      0
+    ],
+    [
+      5,
+      4,
+      5,
+      0,
+      86
+    ]
+  ],
+  "data_sha256": "f8908af3d54e521ad14c37a44b569d33fe92be3b8b9b66a8d80faf4ba964072d",
+  "source": "results/web_skin/experiments/suite_20260908_014452_72768a42/b0_256_ce/attempt_8977c45d04bc/validation_metrics.json"
+}
