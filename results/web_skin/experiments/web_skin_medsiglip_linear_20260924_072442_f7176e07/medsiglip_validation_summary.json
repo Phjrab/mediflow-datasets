@@ -1,0 +1,104 @@
+{
+  "protocol": "web_skin_medsiglip_448_linear_probe_v1",
+  "hypothesis": "Frozen medical image embeddings improve Web Skin linear separability.",
+  "fixed": {
+    "data_sha256": "f8908af3d54e521ad14c37a44b569d33fe92be3b8b9b66a8d80faf4ba964072d",
+    "class_names": [
+      "건선",
+      "아토피",
+      "여드름",
+      "정상",
+      "주사"
+    ],
+    "train_variant": "augmented",
+    "train_count": 7200,
+    "validation_count": 500,
+    "seed": 42
+  },
+  "changed_variable": "Frozen MedSigLIP-448 image encoder plus a single Linear head",
+  "necessary_accompanying_change": "Input preprocessing follows the official MedSigLIP processor at 448 pixels.",
+  "baseline": {
+    "id": "pmg_b0_256_ce_seed_42",
+    "validation_accuracy": 0.85,
+    "validation_macro_f1": 0.8473279632397033,
+    "validation_count": 500,
+    "data_sha256": "f8908af3d54e521ad14c37a44b569d33fe92be3b8b9b66a8d80faf4ba964072d",
+    "source": "web_skin_paper_suite_20260922_124758_717b465e"
+  },
+  "medsiglip_validation": {
+    "accuracy": 0.824,
+    "macro_f1": 0.8195774288599683,
+    "class_f1": [
+      0.8181818181818183,
+      0.7078651685393258,
+      0.7878787878787878,
+      0.8940092165898618,
+      0.8899521531100477
+    ],
+    "precision": [
+      0.826530612244898,
+      0.8076923076923077,
+      0.7959183673469388,
+      0.8290598290598291,
+      0.8532110091743119
+    ],
+    "recall": [
+      0.81,
+      0.63,
+      0.78,
+      0.97,
+      0.93
+    ],
+    "support": [
+      100,
+      100,
+      100,
+      100,
+      100
+    ],
+    "confusion_matrix": [
+      [
+        81,
+        3,
+        3,
+        3,
+        10
+      ],
+      [
+        7,
+        63,
+        15,
+        9,
+        6
+      ],
+      [
+        8,
+        7,
+        78,
+        7,
+        0
+      ],
+      [
+        0,
+        3,
+        0,
+        97,
+        0
+      ],
+      [
+        2,
+        2,
+        2,
+        1,
+        93
+      ]
+    ],
+    "count": 500
+  },
+  "selection_rule": "Higher Validation Macro F1; Accuracy breaks an exact Macro F1 tie.",
+  "eligible_for_separate_final_test": false,
+  "current_v2_replaced": false,
+  "test_evaluated": false,
+  "model_card": "https://huggingface.co/google/medsiglip-448",
+  "official_guide": "https://developers.google.com/health-ai-developer-foundations/medsiglip/get-started"
+}

@@ -1,0 +1,88 @@
+{
+  "id": "medsiglip_448_frozen_linear_seed_42",
+  "protocol": "web_skin_medsiglip_448_linear_probe_v1",
+  "signature": "961053007efb9eece11ac4024ed081f1e113463c8194808be6fe8aa8aa510212",
+  "model_id": "google/medsiglip-448",
+  "encoder_frozen": true,
+  "head": "single Linear layer",
+  "best_epoch": 50,
+  "validation": {
+    "accuracy": 0.824,
+    "macro_f1": 0.8195774288599683,
+    "class_f1": [
+      0.8181818181818183,
+      0.7078651685393258,
+      0.7878787878787878,
+      0.8940092165898618,
+      0.8899521531100477
+    ],
+    "precision": [
+      0.826530612244898,
+      0.8076923076923077,
+      0.7959183673469388,
+      0.8290598290598291,
+      0.8532110091743119
+    ],
+    "recall": [
+      0.81,
+      0.63,
+      0.78,
+      0.97,
+      0.93
+    ],
+    "support": [
+      100,
+      100,
+      100,
+      100,
+      100
+    ],
+    "confusion_matrix": [
+      [
+        81,
+        3,
+        3,
+        3,
+        10
+      ],
+      [
+        7,
+        63,
+        15,
+        9,
+        6
+      ],
+      [
+        8,
+        7,
+        78,
+        7,
+        0
+      ],
+      [
+        0,
+        3,
+        0,
+        97,
+        0
+      ],
+      [
+        2,
+        2,
+        2,
+        1,
+        93
+      ]
+    ],
+    "count": 500
+  },
+  "elapsed_seconds": 640.596978215,
+  "test_evaluated": false,
+  "artifact_hashes": {
+    "medsiglip_linear_head.pt": "c685c51b4b63781b557ef862acdf0f9332ff938baaa4ee5d8a73f680058187f7",
+    "validation_metrics.json": "d21b7d32afea5789812e59f7f23e8247f4cadec16d6c1615abf88679003622ff",
+    "linear_history.json": "b1c040fa9c393e2abc5b43ce1316a5a9ed6e31296898ea53a406046f6258807c",
+    "validation_predictions.csv": "22446ba93d2f6972339354c869435073e7e5901e31e92668819e776c588698f8",
+    "medsiglip_environment.json": "d99b9e4742ac799c371394b040a9ef9bbe774cd53dfad55207a3598976584c68"
+  }
+}

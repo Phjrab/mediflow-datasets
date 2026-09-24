@@ -168,7 +168,7 @@
     "Person, lesion and capture-session leakage remains unverified",
     "Perceptual near-duplicate and clinical label checks were not performed",
     "Actual USB microscope patient images were not evaluated",
-    "No normal or out-of-scope rejection class",
+    "No out-of-scope rejection class",
     "Softmax scores are not calibrated correctness probabilities"
   ]
 }

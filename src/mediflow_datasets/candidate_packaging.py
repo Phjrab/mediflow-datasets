@@ -198,7 +198,7 @@ def build_package(source, output_parent, policy, packaging_source=None):
         f"Test Accuracy: {manifest['test_accuracy']}\n\n"
         f"Test Macro F1: {manifest['macro_f1']}\n\n"
         "위 수치는 완료된 실험의 보고값을 그대로 보존한 것으로 새 평가가 아닙니다.\n"
-        "정상 클래스는 포함하지만 범위 밖 입력 거부 기능은 없습니다.\n"
+        "범위 밖 입력 거부 기능은 없습니다.\n"
         "사람·병변·촬영 세션 누수 및 실제 웹캠 성능은 미검증입니다.\n"
         "입력은 얼굴 정면 RGB float32 0~255이며 외부 /255를 적용하지 않습니다.\n"
         "모델 출력은 보정되지 않은 점수입니다. 자세한 계약은 preprocessing.json을 보세요.\n",

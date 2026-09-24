@@ -1,12 +1,16 @@
 # MediFlow 피부·두피 분류 프로젝트 최종 종합 정리
 
 기준일: 2026-09-23  
+최종 갱신: 2026-09-24
 범위: Skin, Web Skin, Hair 공개 데이터 분류 모델  
 현재 상태: 데이터 정제·재학습·논문 기반 실험·최종 Test·후보 패키징 완료
 
 이 문서는 발표, 보고서, 팀 인계에 사용하는 최종 기준 문서다. 논문의 원래 주장, MediFlow가
 실제로 적용한 범위, 측정 결과를 구분한다. 논문 벤치마크 성능을 MediFlow 성능으로 옮겨 적지
 않으며, 실제 결과는 `results/`의 JSON·CSV와 후보 패키지를 기준으로 한다.
+
+각 실험의 선택 이유, 방법 원리, 실제 적용, 결과와 채택 여부를 연결한 전체 대장은
+[`ALL_EXPERIMENTS_RATIONALE_AND_RESULTS_20260924.md`](ALL_EXPERIMENTS_RATIONALE_AND_RESULTS_20260924.md)다.
 
 ## 1. 프로젝트가 해결한 문제
 
@@ -15,9 +19,9 @@
 
 | 도메인 | 입력 장비·부위 | 모델이 보는 특징 | 현재 출력 |
 |---|---|---|---|
-| Skin | USB 현미경·확대 피부 병변 | 병변 표면, 경계, 색과 미세 형태 | 10종, 정상 없음 |
+| Skin | USB 현미경·확대 피부 병변 | 병변 표면, 경계, 색과 미세 형태 | 10종 |
 | Web Skin | 웹캠·얼굴 정면 | 얼굴 전체의 색, 홍반, 분포와 국소 특징 | 5종, 정상 있음 |
-| Hair | USB 현미경·두피 확대 | 각질, 피지, 모낭, 홍반과 모발 | 5종, 정상 없음 |
+| Hair | USB 현미경·두피 확대 | 각질, 피지, 모낭, 홍반과 모발 | 5종 |
 
 따라서 최종 구조는 입력 장비와 촬영 부위로 세 전문 분류기를 선택하는 방식이다. 현재 결과는
 의료 진단 시스템이나 하나의 Medical VLM이 아니라 세 개의 이미지 분류 후보 모델이다.
@@ -155,6 +159,7 @@ Hair의 핵심 연구 질문은 미세각질과 비듬처럼 유사한 클래스
 | B1·384 | 고해상도에서 미세 특징 보존 | B1·384 부분 미세조정 | **0.7957146810** | 단일 모델 선두 |
 | B1·384 SAM | 주변에서도 손실이 낮은 flat minimum | 같은 Stage 1에서 Adam과 SAM 비교 | 0.7954748921 | Adam보다 낮아 미채택 |
 | SupCon+B1·384 평균 | 서로 다른 오답의 보완 | 두 softmax 1:1 평균 | 0.7942285284 | 단일 B1·384보다 낮음 |
+| MedSigLIP-448 Linear | 의료 사전학습 embedding | encoder 고정, Linear head 50회 | 0.7687534260 | 5개 클래스 F1 모두 낮아 미채택 |
 
 [Supervised Contrastive Learning](https://proceedings.neurips.cc/paper/2020/hash/d89a66c7c80a29b1bdbab0f2a1a94af8-Abstract.html)은
 같은 클래스 표현을 모으고 다른 클래스를 분리한다. MediFlow에서 기준선보다 Accuracy가
@@ -170,6 +175,11 @@ Hair의 핵심 연구 질문은 미세각질과 비듬처럼 유사한 클래스
 손실값과 주변의 sharpness를 함께 줄이는 최적화다. Adam과 Accuracy는 같았지만 Macro F1이
 `0.0002397889` 낮아 추가 계산을 정당화하지 못했다. SupCon과 B1·384는 서로 다르게 맞힌 사진이
 있었지만 단순 평균은 B1·384 단일 모델보다 낮았다.
+
+MedSigLIP-448은 의료 사전학습 특징의 전이 가능성을 보기 위해 frozen Linear Probe로
+검증했다. Accuracy `0.7699680511`, Macro F1 `0.7687534260`으로 현재 Hair v2보다 각각
+약 2.64%p, 2.70%p 낮았다. Test와 패키징은 진행하지 않았다. 이 결과는 full fine-tuning이 아닌
+고정 embedding과 Linear head 설정에 한정한다.
 
 최종 Hair 후보는 `EfficientNet-B1·384·Label Smoothing 0.05·Adam`이다. Test 1,252장에서
 Accuracy `0.8003194888`, Macro F1 `0.8002222283`을 기록했다. 미세각질 F1은 `0.7807692308`,
@@ -187,6 +197,7 @@ Web Skin은 얼굴 전체에서 질환별로 중요한 영역, 서로 다른 크
 | WS-DAN adaptation | attention으로 중요한 부분을 crop/drop | 8 attention map, 원본·attention crop 예측 평균 | 0.7546949301 | -0.0368445346 | 미채택 |
 | PMG B0·256 | 여러 크기의 jigsaw로 multi-granularity 학습 | 8·4·2 grid branch와 fusion logit 합산 | **0.8473279632** | **+0.0557884985** | 채택 |
 | MixStyle | 얕은 feature 통계 혼합으로 새 style 생성 | block2b 뒤, alpha 0.1, 확률 0.5 | 0.8033767540 | +0.0118372892 | 개선했지만 PMG보다 낮음 |
+| MedSigLIP-448 Linear | 의료 사전학습 embedding | encoder 고정, Linear head 50회 | 0.8195774289 | -0.0277505344 | 미채택 |
 
 [WS-DAN](https://arxiv.org/abs/1901.09891)은 약한 지도만으로 attention map을 만들고 attention
 crop과 drop으로 중요한 부위를 더 보게 한다. 얼굴 질환의 중요한 영역을 자동으로 찾는 가설은
@@ -203,6 +214,10 @@ crop과 drop으로 중요한 부위를 더 보게 한다. 얼굴 질환의 중�
 샘플 사이에서 섞어 색감·질감 style의 새 domain을 만든다. 웹캠 조명·색감 변화에 대응하는
 가설로 사용했고 기준선보다 소폭 높았지만 PMG보다 낮았다. 실제 환자 웹캠 domain에서 강건성이
 개선됐는지는 아직 측정하지 않았다.
+
+MedSigLIP-448 frozen Linear Probe는 Accuracy `0.824`, Macro F1 `0.8195774289`로 PMG v2보다
+낮았다. 여드름 F1은 개선됐지만 아토피와 정상 F1이 하락해 전체 균형 성능을 넘지 못했다. 따라서
+Test와 패키징은 진행하지 않았다.
 
 PMG를 B1·384로 확장했을 때 Validation Accuracy `0.866`, Macro F1 `0.8643216544`로 B0·256보다
 높았다. 그러나 입력 픽셀이 2.25배, 모델 파일이 약 29% 크고 기록된 학습 시간도 약 2.49배였다.
@@ -233,7 +248,13 @@ Skin은 완전 동일 중복 51장을 제거한 Clean 데이터에서 Original�
 | Hair | EfficientNet-B1·LS 0.05·Adam | 384 | 0.7963258786 | 0.8003194888 | 0.8002222283 |
 
 정확한 후보 ID, 로컬 경로, ZIP·모델 SHA-256은 `results/CANDIDATE_INDEX.json`이 기계 판독
-기준이다. 세 후보 모두 원본 ZIP과 압축 해제본을 `results/<domain>/candidates/`에 보존했다.
+기준이다. 팀 통합용 모델은 `results/<domain>/selected_models/vN/`에 버전별로 정리했고,
+원본 ZIP과 전체 압축 해제본은 `results/<domain>/candidates/`에 보존했다.
+
+Skin은 실제로 선정·패키징한 후보가 v1 하나다. Original과 Augmented는 별도 모델 버전이 아니라
+v1을 고르기 위한 비교 실험이며, Validation에서 Augmented가 선택됐다. Web Skin v1과 Hair v1은
+각각 논문 기반 강화 실험 전에 Validation으로 선정하고 Test 평가·패키징까지 완료한 당시의 최종
+후보다. 이후 Web Skin은 PMG v2로, Hair는 B1·384 v2로 교체됐다.
 
 | 도메인 | 후보 ZIP SHA-256 | 모델 SHA-256 |
 |---|---|---|
@@ -251,20 +272,20 @@ Skin은 완전 동일 중복 51장을 제거한 Clean 데이터에서 Original�
 6. Web Skin PMG는 네 logit 출력을 합산한 뒤 softmax를 한 번 적용한다. 패키지의
    `inference.py` 또는 `candidate_reproduction.py`를 사용한다.
 7. softmax 점수를 실제 정답 확률이나 의료적 위험도로 해석하지 않는다.
-8. Hair와 Skin은 정상 클래스가 없으므로 낮은 점수를 정상으로 바꾸지 않는다.
-
 공통 추론 모듈은 세 후보 모델을 실제로 불러와 샘플 입력, 모델 해시, 입력 shape, 클래스 수와
 출력 합이 1인지 검사했다. Web Skin의 네 출력 합산 계약도 로컬 dummy·샘플 추론을 통과했다.
 
 ## 12. 코드와 노트북 구조
 
-- `notebooks/01~03`: 공통 데이터 감사, Original/Augmented 비교, 6개 기본 실험
+- `notebooks/01~03`: 공통 데이터 감사, Original/Augmented 비교, 논문 강화 전 6개 설정 비교
 - `notebooks/04~10`: Hair 논문 기반 실험과 최종 패키징 기록
-- `notebooks/11~13`: Web Skin WS-DAN·PMG·MixStyle, B1·384, 최종 패키징
+- `notebooks/11~15`: Web Skin WS-DAN·PMG·MixStyle, B1·384, 최종 패키징과 두 도메인의
+  MedSigLIP frozen Linear 실험
 - `src/mediflow_datasets/`: 재사용 가능한 감사·학습·평가·추론 코드
 - `scripts/`: 노트북 생성기와 전처리 도구
 - `results/<domain>/experiments/`: 실험 기록과 그림
-- `results/<domain>/candidates/`: 팀 통합용 현재·과거 후보
+- `results/<domain>/selected_models/`: 선정된 모델의 v1·v2 사용 파일과 선정 이유
+- `results/<domain>/candidates/`: 원본 후보 ZIP과 전체 재현 자료
 - `docs/research/`: 연구 근거와 결과 해석
 - `docs/archive/`: 당시 계획과 중간 검토 기록
 
@@ -281,6 +302,7 @@ Skin은 완전 동일 중복 51장을 제거한 Clean 데이터에서 Original�
 - Hair·Skin Clean 데이터 재구성
 - Original/Augmented와 2단계 미세조정 비교
 - Hair·Web Skin 논문 기반 강화 실험
+- Web Skin·Hair MedSigLIP-448 frozen Linear 선별과 미채택 분석
 - Validation 기반 후보 선택과 최종 Test
 - 모델 ZIP, 해시, 모델 카드, 전처리·추론 계약
 - 로컬 모델 load와 공통 추론 검사
@@ -293,7 +315,6 @@ Skin은 완전 동일 중복 51장을 제거한 Clean 데이터에서 Original�
 - 임상 전문가 라벨 검토
 - 범위 밖 입력과 저품질 이미지 거부
 - 점수 calibration
-- Hair·Skin 정상 클래스 추가
 - Jetson 변환·지연시간·메모리 측정
 - LLM/VLM 및 장비 통합
 
@@ -301,9 +322,9 @@ Skin은 완전 동일 중복 51장을 제거한 Clean 데이터에서 Original�
 
 발표의 핵심은 “논문 방법을 사용했기 때문에 무조건 좋아졌다”가 아니다. 데이터 중복 문제를
 먼저 고치고, 각 방법이 해결하려는 문제와 현재 데이터의 문제를 연결해 하나씩 검증했다.
-SupCon과 MixStyle은 개선됐지만 최종 선두는 아니었고, DINOv2·EfficientNetV2·SAM·WS-DAN과
-단순 앙상블은 채택하지 않았다. Hair에서는 고해상도 B1, Web Skin에서는 multi-granularity PMG,
-Skin에서는 Clean 데이터와 저장 증강본이 실제로 선택됐다.
+SupCon과 MixStyle은 개선됐지만 최종 선두는 아니었고, DINOv2·EfficientNetV2·SAM·WS-DAN,
+단순 앙상블과 MedSigLIP frozen Linear는 채택하지 않았다. Hair에서는 고해상도 B1, Web Skin에서는
+multi-granularity PMG, Skin에서는 Clean 데이터와 저장 증강본이 실제로 선택됐다.
 
 다음 표현을 사용한다.
 
@@ -317,7 +338,6 @@ Skin에서는 Clean 데이터와 저장 증강본이 실제로 선택됐다.
 - “모든 데이터 누수를 제거했다.”
 - “91.5% 확률로 진단한다.”
 - “논문을 완전히 재현했다.”
-- “정상 클래스가 없는 모델에서 낮은 점수는 정상이다.”
 
 ## 15. 최종 결론
 
@@ -343,10 +363,12 @@ Skin에서는 Clean 데이터와 저장 증강본이 실제로 선택됐다.
 9. Hu et al., [WS-DAN](https://arxiv.org/abs/1901.09891), 2019.
 10. Du et al., [PMG](https://www.ecva.net/papers/eccv_2020/papers_ECCV/html/3399_ECCV_2020_paper.php), ECCV 2020.
 11. Zhou et al., [MixStyle](https://arxiv.org/abs/2107.02053), 2021.
+12. Google, [MedSigLIP-448 model card](https://huggingface.co/google/medsiglip-448).
 
 ## 17. 실제 근거 파일
 
 - 현재 후보: `results/CANDIDATE_INDEX.json`
+- 모델 v1·v2 종합 비교: `results/MODEL_VERSION_COMPARISON.md`
 - 모델 사용: `results/MODEL_USAGE.md`
 - Hair 논문 분석: `docs/research/PAPER_EXPERIMENTS_FINAL_ANALYSIS_20260922.md`
 - Web Skin 세 방법: `docs/research/WEB_SKIN_PAPER_METHOD_RESULT_20260922.md`
@@ -355,6 +377,10 @@ Skin에서는 Clean 데이터와 저장 증강본이 실제로 선택됐다.
 - Web Skin 최종 후보: `docs/research/WEB_SKIN_FINAL_CANDIDATE_V2_20260923.md`
 - Skin 최종 결과: `docs/research/SKIN_ORIGINAL_VS_AUGMENTED_20260909.md`
 - 데이터·파일 위치: `docs/PROJECT_ARTIFACT_MAP_20260923.md`
+- 전체 실험의 이유·방법·결과 대장:
+  `docs/research/ALL_EXPERIMENTS_RATIONALE_AND_RESULTS_20260924.md`
+- Web Skin MedSigLIP 결과: `docs/research/WEB_SKIN_MEDSIGLIP_LINEAR_RESULT_20260924.md`
+- Hair MedSigLIP 결과: `docs/research/HAIR_MEDSIGLIP_LINEAR_RESULT_20260924.md`
 
 ## 18. 현재 후보 기계 판독 기준
 

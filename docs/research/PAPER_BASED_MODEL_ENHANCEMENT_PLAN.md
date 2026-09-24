@@ -7,7 +7,6 @@
 - `skin`: 현재 Clean 10-class 유지
 - `web_skin`: 현재 5-class 유지
 - `hair`: 현재 Clean 5-class 유지
-- 정상 클래스 추가: 지금 진행하지 않고 후속 데이터 연구로 보류
 - 장비 연결, LLM, VLM 통합: 현재 범위에서 보류
 
 기존 후보 모델과 결과는 기준선으로 보존한다. 논문에 소개된 방법을 한 번에 여러 개 섞지 않고 하나씩 적용해 Validation 결과가 실제로 좋아지는지 확인한다.
@@ -286,20 +285,6 @@ Validation Macro F1으로 후보 고정
 
 ---
 
-## 13. 정상 클래스 추가 — 후속 보류 과제
-
-정상 클래스는 현재 학습 강화가 끝난 뒤 별도 데이터 버전으로 진행한다. 기존 모델 점수가 낮은 사진을 정상으로 바꾸지 않으며, 실제 정상 라벨이 있는 원본만 사용한다.
-
-- Hair: AI Hub **유형별 두피 이미지**의 `양호` 811건과 증상별 0단계 원본 JSON 검토[^7]
-- Skin의 현재 원천인 AI Hub **피부종양 이미지 합성 데이터**는 15개 종양 클래스만 제공하고 정상 클래스는 없다. 따라서 Skin 정상은 이 데이터셋에서 추가할 수 없으며 별도 출처가 필요하다.[^8]
-- Web Skin의 얼굴 정상 사진을 현미경 Skin 정상으로 재사용하지 않음
-- `skin_clean_v2_normal` 11-class와 `hair_clean_v2_normal` 6-class를 현재 v1과 별도로 생성
-- 사람·촬영 세션 단위 분할과 정상/질환 촬영 출처 차이 검사
-
-정상 추가는 클래스 수와 데이터가 바뀌는 새 과제다. 현재 10-class/5-class Accuracy와 새 11-class/6-class Accuracy를 직접 비교하지 않는다.
-
----
-
 ## 14. 성공 기준
 
 새 방법은 다음 조건을 만족할 때 채택한다.
@@ -324,7 +309,6 @@ Validation Macro F1으로 후보 고정
 [^5]: Pierre Foret et al., “Sharpness-Aware Minimization for Efficiently Improving Generalization,” *ICLR*, 2021.
 [^6]: Yin Cui et al., “Class-Balanced Loss Based on Effective Number of Samples,” *CVPR*, 2019.
 [^7]: AI Hub, “유형별 두피 이미지,” 데이터셋 번호 216. 통계에 `양호` 811건을 기록한다.
-[^8]: AI Hub, “피부종양 이미지 합성 데이터,” 데이터셋 번호 71864. 15종을 각 1,000장씩 제공하며 정상 클래스는 없다.
 
 ## Sources
 

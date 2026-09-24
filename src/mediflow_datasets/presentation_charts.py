@@ -320,10 +320,10 @@ def render(domain, run_name, prepared=None):
     note = (
         "동률은 사전 실험 순서로 선정 · B1 추가 학습 행은 부모 최고 유지 결과"
         if domain == "web_skin"
-        else "증강 학습 후보 선정 · 정상 클래스 없음"
+        else "증강 학습 후보 선정"
     )
     if prepared:
-        note = "B1 · 256 · LS 0.05 · Stage 2 총 15 Epoch 후보 · 정상 클래스 없음"
+        note = "B1 · 256 · LS 0.05 · Stage 2 총 15 Epoch 후보"
     text(draw, (1600, 1990), note, 28, GREEN, "ma", True)
     text(
         draw,

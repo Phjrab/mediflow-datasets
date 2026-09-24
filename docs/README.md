@@ -16,7 +16,7 @@
 5. [문서·노트북 상태 색인](DOCUMENT_STATUS_INDEX_20260922.md):
    현재 기준, 상세 근거, 과거 기록과 노트북 실행 상태 구분
 6. [논문 기반 모델 강화 계획](research/PAPER_BASED_MODEL_ENHANCEMENT_PLAN.md):
-   기존 세 분류 과제를 유지한 고급 학습법의 검증 순서와 후속 정상 클래스 계획
+   기존 세 분류 과제를 유지한 고급 학습법의 검증 순서
 7. [Hair SupCon 선별 결과](research/HAIR_SUPCON_RESULT_20260917.md):
    기준선과 SupCon의 Validation 성능, 클래스별 F1, 혼동 변화와 후속 검증 조건
 8. [Hair 남은 방법 선별 결과](research/HAIR_REMAINING_METHODS_RESULT_20260917.md):
@@ -53,6 +53,16 @@
     B1·384와 B0·256의 성능·비용 비교, B0·256 Test 후보 고정과 패키징 계약
 28. [Web Skin 최종 공개 데이터 후보 v2](research/WEB_SKIN_FINAL_CANDIDATE_V2_20260923.md):
     PMG·B0·256 최종 Test, 클래스별 결과, 패키지 검증과 다중 출력 추론 계약
+29. [Web Skin MedSigLIP-448 Linear Probe 계획](research/WEB_SKIN_MEDSIGLIP_LINEAR_PLAN_20260924.md):
+    의료 foundation model을 고정 특징 추출기로 검증하는 단일 가설과 재개·선정 규칙
+30. [Web Skin MedSigLIP-448 Linear Probe 결과](research/WEB_SKIN_MEDSIGLIP_LINEAR_RESULT_20260924.md):
+    PMG v2 대비 Validation 성능, 클래스별 혼동과 미채택 판단
+31. [Hair MedSigLIP-448 Linear Probe 계획](research/HAIR_MEDSIGLIP_LINEAR_PLAN_20260924.md):
+    두피 현미경 영상에서 의료 embedding 전이를 검증하는 단일 가설과 재개·선정 규칙
+32. [Hair MedSigLIP-448 Linear Probe 결과](research/HAIR_MEDSIGLIP_LINEAR_RESULT_20260924.md):
+    Hair v2 대비 Validation 성능, 클래스별 혼동과 미채택 판단
+33. [전체 실험 선택 이유·방법·결과 대장](research/ALL_EXPERIMENTS_RATIONALE_AND_RESULTS_20260924.md):
+    데이터 정제부터 증강·미세조정·Loss·논문 강화·MedSigLIP까지 모든 실험의 이유와 실제 결론
 
 [1차 발표 정리](presentations/1차.md)는 발표 자료를 만들 때 참고한다.
 

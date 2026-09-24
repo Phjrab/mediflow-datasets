@@ -12,7 +12,7 @@
 
 프로젝트 소유자의 범위 변경에 따라 실제 장비 연결과 LLM/VLM 통합은 현재 작업에서 보류한다.
 기존 공개 데이터 후보 모델과 클래스 구성을 기준선으로 보존하고, 우선 논문 기반 학습법을
-검증한다. 정상 클래스 추가는 현재 강화 실험 뒤의 후속 과제로 보류한다. 세부 실험은
+검증한다. 세부 실험은
 [`PAPER_BASED_MODEL_ENHANCEMENT_PLAN.md`](research/PAPER_BASED_MODEL_ENHANCEMENT_PLAN.md)를 따른다.
 
 ## 1. 현재 모델·평가 재현
@@ -113,6 +113,22 @@
 - [x] 고정된 PMG·B0·256 최종 Test·패키징 노트북 준비
 - [x] 고정된 PMG·B0·256 Test 1회 평가와 후보 v2 패키징
   - Test Accuracy `0.915`, Macro F1 `0.9141049081029712`
+- [x] Web Skin MedSigLIP-448 frozen Linear Probe 선별 노트북 구현
+  - 동일 clean 데이터·seed 42에서 의료 embedding 한 변수만 검증
+  - 128장 단위 embedding cache와 중단 후 재개 지원
+  - 기존 PMG v2는 보존하고 Test는 실행하지 않음
+- [x] Web Skin MedSigLIP-448 Linear Probe Colab 실행과 Validation 결과 분석
+  - Accuracy `0.824`, Macro F1 `0.8195774289`
+  - PMG v2보다 Macro F1 `0.0277505344` 낮아 미채택, Test 미실행
+- [x] Hair MedSigLIP-448 frozen Linear Probe 선별 노트북 구현
+  - Hair clean 데이터·seed 42·기존 v2 지표를 고정
+  - 128장 단위 embedding cache와 중단 후 재개 지원
+  - 기존 Hair v2는 보존하고 Test는 실행하지 않음
+- [x] Hair MedSigLIP-448 Linear Probe Colab 실행과 Validation 결과 분석
+  - Accuracy `0.7699680511`, Macro F1 `0.7687534260`
+  - Hair v2보다 Macro F1 `0.0269612550` 낮고 5개 클래스 F1이 모두 낮아 미채택
+  - Test와 후보 패키징 미실행
+- [x] 세 도메인의 전체 실험을 선택 이유·방법 원리·실제 적용·결과·채택 여부 기준으로 통합 기록
 - 후보 선정 전 Test를 열지 않고 Validation Macro F1 사용
 
 완료 기준: 각 실험의 논문 근거, 고정 조건과 단일 변경 변수가 기록되고, 최종 후보 하나만

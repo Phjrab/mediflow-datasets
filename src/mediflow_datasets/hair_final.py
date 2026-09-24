@@ -207,7 +207,7 @@ def _package(context, record, model_path, model_hash, metrics, contract):
         "limitations": context["audit"]["limitations"]
         + [
             "Actual USB microscope patient images were not evaluated",
-            "No normal or out-of-scope rejection class",
+            "No out-of-scope rejection class",
             "Softmax scores are not calibrated correctness probabilities",
         ],
     }
@@ -261,7 +261,7 @@ def _package(context, record, model_path, model_hash, metrics, contract):
         f"Test Accuracy: {metrics['accuracy']}\n\n"
         f"Test Macro F1: {metrics['macro_f1']}\n\n"
         "입력은 두피 RGB float32 0~255를 384×384로 resize합니다. 외부 /255는 금지합니다.\n"
-        "정상 및 범위 밖 입력 거부 기능과 실제 USB 현미경 환자 검증은 포함되지 않습니다.\n",
+        "범위 밖 입력 거부 기능과 실제 USB 현미경 환자 검증은 포함되지 않습니다.\n",
         encoding="utf-8",
     )
     manifest = {

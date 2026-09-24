@@ -15,9 +15,11 @@
       "package_sha256_file": "hair/candidates/public_candidate_v2_b1_384_ls005_adam_20260921_155906_82311da4.zip.sha256",
       "package_sha256": "870356a8b079539e8e6963b937964f790653a1b39994ee2b6b7c7bdfed0134d5",
       "extracted_directory": "hair/candidates/public_candidate_v2_b1_384_ls005_adam_20260921_155906_82311da4",
-      "model": "hair/candidates/public_candidate_v2_b1_384_ls005_adam_20260921_155906_82311da4/hair_model.keras",
+      "model": "hair/selected_models/v2/hair_model.keras",
       "model_sha256": "9faa33b8f79f45ef6e7be415473e2ee5225f6195fff04d098828733db23ed3c2",
-      "output_adapter": "direct_softmax"
+      "output_adapter": "direct_softmax",
+      "selected_version": "v2",
+      "selected_directory": "hair/selected_models/v2"
     },
     "web_skin": {
       "architecture": "PMG with EfficientNet-B0",
@@ -35,9 +37,11 @@
       "package_sha256_file": "web_skin/candidates/public_candidate_v2_pmg_b0_256_ce_20260922_235840_093d10de.zip.sha256",
       "package_sha256": "38bd47493ec06bcf2be351a7d12b8f889489fd5d8205e4fcb39557a400471db9",
       "extracted_directory": "web_skin/candidates/public_candidate_v2_pmg_b0_256_ce_20260922_235840_093d10de",
-      "model": "web_skin/candidates/public_candidate_v2_pmg_b0_256_ce_20260922_235840_093d10de/web_skin_pmg_model.keras",
-      "inference": "web_skin/candidates/public_candidate_v2_pmg_b0_256_ce_20260922_235840_093d10de/inference.py",
-      "model_sha256": "83e659dd09a9355135ee0de0197037e81ece962777f59dedae8d9a37b49a3fc4"
+      "model": "web_skin/selected_models/v2/web_skin_model.keras",
+      "inference": "web_skin/selected_models/v2/inference.py",
+      "model_sha256": "83e659dd09a9355135ee0de0197037e81ece962777f59dedae8d9a37b49a3fc4",
+      "selected_version": "v2",
+      "selected_directory": "web_skin/selected_models/v2"
     },
     "skin": {
       "backbone": "EfficientNet-B0",
@@ -52,9 +56,11 @@
       "package_sha256_file": "skin/candidates/public_candidate_v1_b0_224_ce_augmented_20260909_075056.zip.sha256",
       "package_sha256": "9b3e3893a6cd89d58bd8ae3a4b85f4214f6a32a21586094ea416c552312f1686",
       "extracted_directory": "skin/candidates/public_candidate_v1_b0_224_ce_augmented_20260909_075056",
-      "model": "skin/candidates/public_candidate_v1_b0_224_ce_augmented_20260909_075056/model.keras",
+      "model": "skin/selected_models/v1/skin_model.keras",
       "model_sha256": "0b2a757320a113dbc1b285adab8c7745b2f7edc2cb29cc402d06f7882edc9f7a",
-      "output_adapter": "direct_softmax"
+      "output_adapter": "direct_softmax",
+      "selected_version": "v1",
+      "selected_directory": "skin/selected_models/v1"
     }
   }
 }

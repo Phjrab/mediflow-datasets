@@ -2,8 +2,8 @@
   "sources": {
     "results/skin/experiments/comparison_20260909_075056_72d865bf/selection_before_test.json": "d2f01649a72e86d7c9cb7720083f0a23fd15f87c7a0109740b57afec4192f913",
     "results/skin/experiments/comparison_20260909_075056_72d865bf/final_test_metrics.json": "85ea8511d54c79b6a1e57614e1996cc71fd2ace14d99af1f96f470f3fd04d04c",
-    "results/CANDIDATE_INDEX.json": "3dc9ac504bd98cf5209eecc68cd28ec2decd358ea096ae2d20d6a2d7960df9d6",
-    "results/skin/candidates/public_candidate_v1_b0_224_ce_augmented_20260909_075056/class_names.json": "6caeff9548025d10ed3a0b25c5652492a53d0765dfcfba5f5c2e1634234db43d",
+    "results/CANDIDATE_INDEX.json": "bb45755cfca0d8169932bfc305a6b3d077c9aca82c8eb09b2a62ecee8603f61c",
+    "results/skin/selected_models/v1/class_names.json": "6caeff9548025d10ed3a0b25c5652492a53d0765dfcfba5f5c2e1634234db43d",
     "results/skin/experiments/comparison_20260909_075056_72d865bf/original/completed.json": "4b76706a7f77cf85de960f7b0e47ab01c52835ad13b68c90c48673eae699f851",
     "results/skin/experiments/comparison_20260909_075056_72d865bf/original/attempt_619032bceced/stage1_history.json": "2fc7434da453fee8259073dc9ba05cb8d29938adf7b1cde4aeda3009e491cc54",
     "results/skin/experiments/comparison_20260909_075056_72d865bf/augmented/completed.json": "12a0482aaf94c0f41a7ad0c1b227ffdaf827e13ba238018777b56841ec56be9a",

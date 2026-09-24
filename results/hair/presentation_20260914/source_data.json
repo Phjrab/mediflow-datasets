@@ -1,6 +1,7 @@
 {
   "sources": {
     "results/CANDIDATE_INDEX.json": "3dc9ac504bd98cf5209eecc68cd28ec2decd358ea096ae2d20d6a2d7960df9d6",
+    "results/hair/selected_models/v2/class_names.json": "93dd045cd5d6ff62d160c9f802b8c4943f943474950424f3a55c333efc8f77c9",
     "results/hair/candidates/public_candidate_v1_b1_256_ls005_20260907_120834/class_names.json": "93dd045cd5d6ff62d160c9f802b8c4943f943474950424f3a55c333efc8f77c9",
     "results/hair/hair_experiment_comparison_20260907.xlsx": "6deee3cfcebc94630bf1c014a7e0ea4c89c9227ed962c23b8283a33729ba280a",
     "results/hair/_dashboard_parts/curve_1.png": "bd6bc57c65257dea8aaabb3c88d2162ef4f5f7f4bc79ae8a077fc06092359d55",

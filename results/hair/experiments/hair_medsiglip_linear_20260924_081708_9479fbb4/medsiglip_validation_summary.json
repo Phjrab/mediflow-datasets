@@ -1,0 +1,104 @@
+{
+  "protocol": "hair_medsiglip_448_linear_probe_v1",
+  "hypothesis": "Frozen medical image embeddings improve Hair linear separability.",
+  "fixed": {
+    "data_sha256": "2ac7260663cf69835ba50edb6ae8c7e7ac13be9c73b9f7ea24f60e0342e7e156",
+    "class_names": [
+      "모낭사이홍반",
+      "미세각질",
+      "비듬",
+      "탈모",
+      "피지과다"
+    ],
+    "train_variant": "augmented",
+    "train_count": 15047,
+    "validation_count": 1252,
+    "seed": 42
+  },
+  "changed_variable": "Frozen MedSigLIP-448 image encoder plus a single Linear head",
+  "necessary_accompanying_change": "Input preprocessing follows the official MedSigLIP processor at 448 pixels.",
+  "baseline": {
+    "id": "multires_b1_384_seed_42",
+    "validation_accuracy": 0.7963258785942492,
+    "validation_macro_f1": 0.7957146810115047,
+    "validation_count": 1252,
+    "data_sha256": "2ac7260663cf69835ba50edb6ae8c7e7ac13be9c73b9f7ea24f60e0342e7e156",
+    "source": "paper_screen_20260917_141641_874f03f1/multires_b1_384_seed_42"
+  },
+  "medsiglip_validation": {
+    "accuracy": 0.7699680511182109,
+    "macro_f1": 0.7687534259685547,
+    "class_f1": [
+      0.8228571428571427,
+      0.7028112449799198,
+      0.7253218884120172,
+      0.8065173116089613,
+      0.7862595419847328
+    ],
+    "precision": [
+      0.779783393501805,
+      0.7231404958677686,
+      0.7511111111111111,
+      0.8048780487804879,
+      0.7862595419847328
+    ],
+    "recall": [
+      0.8709677419354839,
+      0.68359375,
+      0.7012448132780082,
+      0.8081632653061225,
+      0.7862595419847328
+    ],
+    "support": [
+      248,
+      256,
+      241,
+      245,
+      262
+    ],
+    "confusion_matrix": [
+      [
+        216,
+        7,
+        4,
+        15,
+        6
+      ],
+      [
+        15,
+        175,
+        30,
+        19,
+        17
+      ],
+      [
+        9,
+        37,
+        169,
+        1,
+        25
+      ],
+      [
+        23,
+        12,
+        4,
+        198,
+        8
+      ],
+      [
+        14,
+        11,
+        18,
+        13,
+        206
+      ]
+    ],
+    "count": 1252
+  },
+  "selection_rule": "Higher Validation Macro F1; Accuracy breaks an exact Macro F1 tie.",
+  "eligible_for_separate_final_test": false,
+  "hair_v2_replaced": false,
+  "test_evaluated": false,
+  "model_card": "https://huggingface.co/google/medsiglip-448",
+  "official_guide": "https://developers.google.com/health-ai-developer-foundations/medsiglip/get-started"
+}

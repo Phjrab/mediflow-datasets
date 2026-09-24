@@ -1,0 +1,53 @@
+{
+  "signature": "937461e5901fbf6918355ecfb24ec1f13cb7efc54bfe99b61c62dbee733a5556",
+  "settings": {
+    "domain": "hair",
+    "mode": "hair_medsiglip_linear",
+    "seed": 42,
+    "seeds": [
+      42
+    ],
+    "batch_size": 8,
+    "epochs1": 50,
+    "epochs2": 1,
+    "extension_epochs": 1,
+    "train_variant": "augmented",
+    "classes": [
+      "모낭사이홍반",
+      "미세각질",
+      "비듬",
+      "탈모",
+      "피지과다"
+    ],
+    "data_sha256": "2ac7260663cf69835ba50edb6ae8c7e7ac13be9c73b9f7ea24f60e0342e7e156",
+    "source_hashes": {
+      "common_engine": "60df806e368f97d651c83a250f62bb4f8959670e3d8676a6def6b79683e8c50f",
+      "common_workflow": "6744e0550f5c4d686936a631dc342bc6410aa75dc99c493c0a689b6c255b9be6",
+      "hair_medsiglip_linear": "bb7e41be8ec3705d3da09c00c777c79800968502f1c7c42b058fb1361f72678b"
+    },
+    "protocol": "common_v1",
+    "audit": "10f6992b1f8006bcf55f7c45ce82485af8e85193fb77e19cabf4b40146f00157",
+    "environment": {
+      "tensorflow": "2.20.0",
+      "keras": "3.13.2",
+      "numpy": "2.1.3",
+      "python": "3.13.15"
+    },
+    "experiments": [
+      "hair_medsiglip_448_frozen_linear_seed_42"
+    ],
+    "model_id": "google/medsiglip-448",
+    "embedding_shard_size": 128,
+    "linear_batch_size": 256,
+    "linear_learning_rate": 0.001,
+    "linear_weight_decay": 0.0001
+  },
+  "code_commit_at_generation": "5997df7e2d4e3ea2b26417f4725467140e9d6f64",
+  "code_state": "embedded sources include uncommitted changes; exact sources saved",
+  "source_zip": "/content/drive/MyDrive/mediflow_Project/datasets/hair_datasets.zip",
+  "audit_source": "expected_data_sha256_only",
+  "baseline": "Fixed Hair B1/384 Validation candidate reused; model not retrained",
+  "gpu": [
+    "PhysicalDevice(name='/physical_device:GPU:0', device_type='GPU')"
+  ]
+}

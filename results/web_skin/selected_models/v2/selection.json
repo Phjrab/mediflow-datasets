@@ -1,0 +1,24 @@
+{
+  "schema": "mediflow_selected_model_v1",
+  "domain": "web_skin",
+  "version": "v2",
+  "status": "current",
+  "candidate_id": "public_candidate_v2_pmg_b0_256_ce_20260922_235840_093d10de",
+  "architecture": "PMG with EfficientNet-B0",
+  "input_size": [
+    256,
+    256
+  ],
+  "loss": "Categorical Crossentropy",
+  "validation_accuracy": 0.85,
+  "test_accuracy": 0.915,
+  "test_macro_f1": 0.9141049081029712,
+  "normal_class_included": true,
+  "output_adapter": "sum_logits_softmax",
+  "model_file": "web_skin_model.keras",
+  "model_sha256": "83e659dd09a9355135ee0de0197037e81ece962777f59dedae8d9a37b49a3fc4",
+  "source_candidate_directory": "web_skin/candidates/public_candidate_v2_pmg_b0_256_ce_20260922_235840_093d10de",
+  "source_candidate_package": "web_skin/candidates/public_candidate_v2_pmg_b0_256_ce_20260922_235840_093d10de.zip",
+  "selection_reason": "논문 기반 Web Skin 실험에서 PMG·B0·256이 기존 v1보다 Validation 성능을 높였고, B1·384보다 가벼우면서 실제 배포 비용과 성능의 균형이 좋아 현재 후보로 선정했다.",
+  "version_note": "현재 버전이다. 모델의 네 logit 출력을 합산한 뒤 softmax를 적용해야 한다."
+}

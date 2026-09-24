@@ -17,7 +17,7 @@ Hair의 정리 데이터 224/256, Label Smoothing, Focal Loss, B1 실험과 Web 
 | 학습 출발점 | ImageNet 사전학습 B0/B1 | 동일. 기존 Hair/Web Skin 질환 모델을 불러오는 방식이 아님 |
 | 학습 데이터 | 정리된 Augmented Train | 검사 완료된 Web Skin Augmented Train 7,200장 |
 | 평가 데이터 | 원본 Validation/Test | 기존 감사에서 원본과 일치한 Validation 500장/Test 400장 |
-| 클래스 | 두피 5종, 정상 없음 | 건선·아토피·여드름·정상·주사. 기존 Web Skin 결과 JSON 순서와 일치 |
+| 클래스 | 모낭사이홍반·미세각질·비듬·탈모·피지과다 | 건선·아토피·여드름·정상·주사. 기존 Web Skin 결과 JSON 순서와 일치 |
 | 이미지 입력 | RGB float32 0~255, 내부 정규화 | 동일. 외부 /255 없음, 224/256 bilinear resize |
 | 1단계 | 특징 추출부 고정, 15 Epoch, Adam 1e-4 | 동일 |
 | 2단계 | 1단계 최고 모델 로드, 마지막 30개 계층 중 BN 제외, 10 Epoch, 새 Adam 1e-5 | 동일 |

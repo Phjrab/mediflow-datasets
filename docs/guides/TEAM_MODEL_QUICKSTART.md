@@ -7,12 +7,13 @@
 
 | 대상 | 입력 | 현재 모델 |
 |---|---:|---|
-| Hair | 384×384 RGB | `results/hair/candidates/public_candidate_v2_b1_384_ls005_adam_20260921_155906_82311da4/hair_model.keras` |
-| Web Skin | 256×256 RGB | `results/web_skin/candidates/public_candidate_v2_pmg_b0_256_ce_20260922_235840_093d10de/web_skin_pmg_model.keras` |
-| Skin | 224×224 RGB | `results/skin/candidates/public_candidate_v1_b0_224_ce_augmented_20260909_075056/model.keras` |
+| Hair | 384×384 RGB | `results/hair/selected_models/v2/hair_model.keras` |
+| Web Skin | 256×256 RGB | `results/web_skin/selected_models/v2/web_skin_model.keras` |
+| Skin | 224×224 RGB | `results/skin/selected_models/v1/skin_model.keras` |
 
-각 후보 ZIP에는 모델, `class_names.json`, `preprocessing.json`, 평가 결과와 SHA-256 manifest가
-들어 있다. 정확한 경로와 해시는 `results/CANDIDATE_INDEX.json`을 기준으로 읽는다.
+각 버전의 선정 이유는 해당 `selected_models/vN/MODEL_INFO.md`에 있다. 후보 ZIP에는 모델,
+`class_names.json`, `preprocessing.json`, 평가 결과와 SHA-256 manifest가 들어 있다. 정확한 현재
+경로와 해시는 `results/CANDIDATE_INDEX.json`을 기준으로 읽는다.
 
 ## 모델 선택
 
@@ -42,7 +43,6 @@ logit 출력을 반환하므로 패키지의 `inference.py`처럼 네 출력을 
 
 ## 결과 해석
 
-- Hair와 Skin에는 정상 클래스가 없다. 낮은 점수를 정상으로 바꾸지 않는다.
-- Web Skin에는 정상 클래스가 있지만 범위 밖 입력을 거부하는 기능은 없다.
 - softmax 점수는 정답일 확률로 보정된 값이 아니다.
+- 범위 밖 입력을 자동으로 거부하는 기능은 검증되지 않았다.
 - 현재 성능은 공개 데이터 기준이며 실제 장비 환자 데이터 성능을 의미하지 않는다.

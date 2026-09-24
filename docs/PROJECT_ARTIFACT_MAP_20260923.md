@@ -9,6 +9,7 @@
 | 프로젝트 전체 설명 | `research/MEDIFLOW_PROJECT_COMPREHENSIVE_FINAL_20260923.md` |
 | 현재 단계와 남은 일 | `ROADMAP.md` |
 | 세 최종 후보 경로·해시·성능 | `../results/CANDIDATE_INDEX.json` |
+| v1·v2 학습 방법·성능·선정 이유 비교 | `../results/MODEL_VERSION_COMPARISON.md` |
 | 팀 모델 사용법 | `guides/TEAM_MODEL_QUICKSTART.md`, `../results/MODEL_USAGE.md` |
 | 노트북 사용법 | `../notebooks/사용안내.md` |
 
@@ -16,12 +17,13 @@
 
 | 도메인 | 현재 후보 폴더 | 이전 후보 처리 |
 |---|---|---|
-| Skin | `results/skin/candidates/public_candidate_v1_b0_224_ce_augmented_20260909_075056/` | 현재 후보 |
-| Web Skin | `results/web_skin/candidates/public_candidate_v2_pmg_b0_256_ce_20260922_235840_093d10de/` | v1은 과거 비교 기록으로 보존 |
-| Hair | `results/hair/candidates/public_candidate_v2_b1_384_ls005_adam_20260921_155906_82311da4/` | v1은 과거 비교 기록으로 보존 |
+| Skin | `results/skin/selected_models/v1/` | 실제 선정 후보는 v1 하나이며 Original/Augmented는 비교 실험 |
+| Web Skin | `results/web_skin/selected_models/v2/` | v1은 논문 강화 전 최종 선정 모델, v2는 강화 후 현재 모델 |
+| Hair | `results/hair/selected_models/v2/` | v1은 논문 강화 전 최종 선정 모델, v2는 강화 후 현재 모델 |
 
-각 후보의 원본 ZIP과 `.zip.sha256`은 같은 `candidates` 폴더에 있다. 모델을 선택할 때 폴더
-이름만 추측하지 말고 `results/CANDIDATE_INDEX.json`을 읽는다.
+각 버전의 모델과 선정 이유는 `selected_models/vN`에 있고, 원본 ZIP과 `.zip.sha256`은
+`candidates`에 있다. 모델을 선택할 때 폴더 이름만 추측하지 말고
+`results/CANDIDATE_INDEX.json`을 읽는다.
 
 ## 노트북
 
@@ -35,6 +37,8 @@
 | Web Skin | `11_web_skin_wsdan_attention_colab.ipynb` | 실행 완료 |
 | Web Skin | `12_web_skin_pmg_b1_384_colab.ipynb` | 실행 완료 |
 | Web Skin | `13_web_skin_pmg_b0_256_final_test_package_colab.ipynb` | 실행 완료 |
+| Web Skin | `14_web_skin_medsiglip_linear_probe_colab.ipynb` | 실행 완료, PMG v2보다 낮아 미채택 |
+| Hair | `15_hair_medsiglip_linear_probe_colab.ipynb` | 실행 완료, Hair v2보다 낮아 미채택 |
 
 `common_colab_notebooks_v1.zip`과 `legacy_notebooks_20260909.zip`은 보관용이다.
 
@@ -50,7 +54,8 @@
 
 ## 결과 폴더의 의미
 
-- `results/<domain>/candidates/`: 현재 통합 후보와 과거 후보
+- `results/<domain>/selected_models/`: 실제 선정 모델의 v1·v2 사용 파일과 선정 이유
+- `results/<domain>/candidates/`: 원본 후보 ZIP과 전체 재현 보고서
 - `results/<domain>/experiments/`: 학습 지표·예측·그래프·실험 소스
 - `results/<domain>/presentation_*`: 발표용 시각자료
 - `results/<domain>/archives/`: 원본 보고서 ZIP 등 보관 자료

@@ -8,13 +8,14 @@
 
 | 대상 | 모델 파일 | 입력 | 출력 |
 |---|---|---:|---:|
-| Hair | `hair/candidates/public_candidate_v2_b1_384_ls005_adam_20260921_155906_82311da4/hair_model.keras` | 384×384 RGB | 5 |
-| Web Skin | `web_skin/candidates/public_candidate_v2_pmg_b0_256_ce_20260922_235840_093d10de/web_skin_pmg_model.keras` | 256×256 RGB | 4 logits×5 → 5 |
-| Skin | `skin/candidates/public_candidate_v1_b0_224_ce_augmented_20260909_075056/model.keras` | 224×224 RGB | 10 |
+| Hair | `hair/selected_models/v2/hair_model.keras` | 384×384 RGB | 5 |
+| Web Skin | `web_skin/selected_models/v2/web_skin_model.keras` | 256×256 RGB | 4 logits×5 → 5 |
+| Skin | `skin/selected_models/v1/skin_model.keras` | 224×224 RGB | 10 |
 
-팀원에게는 `CANDIDATE_INDEX.json`에 지정된 각 도메인의 후보 ZIP을 전달하면 된다. ZIP 안에는 모델,
-클래스 순서, 전처리 정보와 평가 기록이 들어 있다. 같은 이름의 `.zip.sha256`은 전달 중 파일이
-바뀌거나 손상되지 않았는지 확인할 때 사용한다.
+로컬 통합에서는 `selected_models`의 현재 버전을 사용한다. 팀원에게 단일 패키지로 전달할 때는
+`CANDIDATE_INDEX.json`에 지정된 후보 ZIP을 사용한다. ZIP 안에는 모델, 클래스 순서, 전처리
+정보와 평가 기록이 들어 있다. 같은 이름의 `.zip.sha256`은 전달 중 파일이 바뀌거나 손상되지
+않았는지 확인할 때 사용한다.
 
 ## 2. 모델 선택 기준
 
@@ -153,10 +154,9 @@ Get-FileHash -Algorithm SHA256 public_candidate_vN_....zip
 
 - 가장 큰 출력값의 클래스를 `predicted_class`로 사용한다.
 - softmax `score`는 정답일 확률로 보정된 값이 아니다.
-- Hair와 Skin에는 정상 클래스가 없다. 낮은 점수를 정상으로 바꾸지 않는다.
-- 현재 정상 여부 판단은 지원하지 않으며, 불확실한 결과는 추가 확인 대상으로 설명한다.
 - 낮은 점수 거부 임계값도 아직 검증하지 않았다. 임의로 50% 등을 기준으로 붙이지 않는다.
-- Web Skin에는 정상 클래스가 있지만 범위 밖 이미지 거부 기능은 없다.
+- 불확실한 결과는 추가 확인 대상으로 설명한다.
+- 범위 밖 이미지 거부 기능은 검증되지 않았다.
 - 파일이 없거나 이미지 디코딩에 실패하면 예측하지 말고 오류를 반환한다.
 - 장비와 촬영 부위 조합이 맞지 않으면 모델을 임의로 선택하지 않는다.
 - 실제 장비 촬영 데이터 성능은 아직 검증되지 않았다.
@@ -165,6 +165,5 @@ Get-FileHash -Algorithm SHA256 public_candidate_vN_....zip
 변환할 경우에도 RGB 순서, 입력 크기, 0~255 픽셀 범위, 내부 Rescaling과 클래스 순서를 동일하게
 유지해야 한다.
 
-LLM에는 domain, candidate_id, 클래스 순서와 점수, normal_class_included,
-calibration_status를 함께 전달한다. Hair·Skin은 normal_class_included=false,
-normal_assessment=not_supported로 전달하며 점수와 의료적 위험도를 구분한다.
+LLM에는 domain, candidate_id, 클래스 순서와 점수, calibration_status를 함께 전달하며 점수와
+의료적 위험도를 구분한다.

@@ -1,0 +1,25 @@
+{
+  "schema": "mediflow_selected_model_v1",
+  "domain": "skin",
+  "version": "v1",
+  "status": "current",
+  "candidate_id": "public_candidate_v1_b0_224_ce_augmented_20260909_075056",
+  "architecture": "EfficientNet-B0",
+  "input_size": [
+    224,
+    224
+  ],
+  "loss": "Categorical Crossentropy",
+  "validation_accuracy": 0.982,
+  "test_accuracy": 0.9871428571428571,
+  "test_macro_f1": 0.9871314132317626,
+  "normal_class_included": false,
+  "output_adapter": "direct_softmax",
+  "model_file": "skin_model.keras",
+  "model_sha256": "0b2a757320a113dbc1b285adab8c7745b2f7edc2cb29cc402d06f7882edc9f7a",
+  "source_candidate_directory": "skin/candidates/public_candidate_v1_b0_224_ce_augmented_20260909_075056",
+  "source_candidate_package": "skin/candidates/public_candidate_v1_b0_224_ce_augmented_20260909_075056.zip",
+  "selection_reason": "Original과 Augmented를 같은 Clean 분할과 B0·224·CE 조건에서 비교했을 때 Augmented가 Validation Accuracy 0.982로 Original 0.973보다 높아 현재 Skin 모델로 선정했다.",
+  "version_note": "현재 Skin의 최초이자 유일한 선정 모델이다. Original과 Augmented는 버전 구분이 아니라 같은 후보 선정을 위한 비교 조건이었다.",
+  "validation_macro_f1": 0.9820008885656606
+}
