@@ -1,0 +1,27 @@
+{
+  "schema": "mediflow_selected_model_v1",
+  "domain": "hair",
+  "class_count": 6,
+  "version": "6class_performance_v1",
+  "role": "performance_primary",
+  "status": "public_data_candidate_not_device_validated",
+  "candidate_id": "public_candidate_6class_v1_b1_384_original_20260928_024655",
+  "architecture": "EfficientNet-B1",
+  "input_size": [
+    384,
+    384
+  ],
+  "loss": "categorical crossentropy with label smoothing 0.05",
+  "validation_accuracy": 0.7992337164750958,
+  "validation_macro_f1": 0.8144942091318823,
+  "test_accuracy": 0.7915708812260537,
+  "test_macro_f1": 0.8091500773460419,
+  "output_adapter": "direct_softmax",
+  "model_file": "hair_model.keras",
+  "model_sha256": "5ee54f51e65d8656fc81e88de96ad82a6d119991aa74684f921e4cd7e8b7efbb",
+  "data_zip_sha256": "e2a6b4347d94bd7050d17bd3aca404161693083b12afb51d7e20aa9b284f0f93",
+  "source_candidate_package": "hair/candidates/public_candidate_6class_v1_b1_384_original_20260928_024655.zip",
+  "source_package_sha256": "fc138d4615442605c1b6b8333a01cd70e5c07100401fee5d468fa938455b7293",
+  "selection_reason": "B1 384 original; highest validation macro F1 among four six-class experiments",
+  "benchmark_record": "runtime_benchmark_20260928_051423/benchmark.json"
+}

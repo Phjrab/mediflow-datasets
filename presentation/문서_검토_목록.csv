@@ -1,0 +1,61 @@
+﻿path,document_title,lines,presentation_phase,reading_role
+docs/archive/analysis/TRAINING_RESULTS_ANALYSIS.md,Training Results Analysis,156,과거 기록,archive: 실행 현황 판단에 사용하지 않음
+docs/archive/analysis/WEB_SKIN_EXPERIMENT_RESULTS_20260908.md,Web Skin 자동 실험 결과 분석 (2026-09-08),93,과거 기록,archive: 실행 현황 판단에 사용하지 않음
+docs/archive/planning/DRIVE_ORGANIZATION_PLAN_20260908.md,MediFlow Google Drive 정리안,51,과거 기록,archive: 실행 현황 판단에 사용하지 않음
+docs/archive/planning/EVALUATION_READINESS.md,기존 평가 재현 준비 점검,77,과거 기록,archive: 실행 현황 판단에 사용하지 않음
+docs/archive/planning/HAIR_ADVANCED_METHODS_BACKLOG_20260907.md,Hair 고급 기법 후속 실험 — 보류 기록,75,과거 기록,archive: 실행 현황 판단에 사용하지 않음
+docs/archive/planning/WEB_SKIN_AUTO_SUITE_20260908.md,Web Skin 자동 실험 실행 안내,118,과거 기록,archive: 실행 현황 판단에 사용하지 않음
+docs/archive/planning/WEB_SKIN_RETRAINING_PLAN_20260907.md,Web Skin 재학습 시작 기록,86,과거 기록,archive: 실행 현황 판단에 사용하지 않음
+docs/archive/process/WEB_SKIN_CANDIDATE_PACKAGING_20260908.md,Web Skin 공개 데이터 후보 v1 패키징 안내,70,과거 기록,archive: 실행 현황 판단에 사용하지 않음
+docs/archive/setup/TASK_PROMPT_TEMPLATE.md,Codex 작업 프롬프트 템플릿,27,과거 기록,archive: 실행 현황 판단에 사용하지 않음
+docs/archive/verification/WEB_SKIN_CANDIDATE_VERIFIED_20260908.md,Web Skin 공개 데이터 후보 패키지 검증 완료,52,과거 기록,archive: 실행 현황 판단에 사용하지 않음
+docs/archive/verification/WEB_SKIN_HAIR_PARITY_REVIEW_20260908.md,Web Skin 자동 학습 코드와 Hair 실험 대조 검토,58,과거 기록,archive: 실행 현황 판단에 사용하지 않음
+docs/DOCUMENT_STATUS_INDEX_20260922.md,MediFlow 문서·노트북 상태 색인,103,전체/연결,현재 상태·배경·과거 종합(작성일 확인)
+docs/guides/TEAM_MODEL_QUICKSTART.md,팀 모델 빠른 사용 안내,55,전체/연결,현재 상태·배경·과거 종합(작성일 확인)
+docs/presentations/1차.md,MediFlow 1차 프로젝트 정리,201,전체/연결,현재 상태·배경·과거 종합(작성일 확인)
+docs/presentations/DATA_SOURCE_CLASS_TABLE.md,MediFlow 원천 데이터·클래스 선정·사용 수량표,74,1차,초기 시점 근거
+docs/presentations/INITIAL_DATA_SELECTION_TABLE.md,MediFlow 초기 데이터 수집·클래스 선정표,82,1차,초기 시점 근거
+docs/PROJECT_ARTIFACT_MAP_20260923.md,MediFlow 문서·코드·모델 위치 지도,78,전체/연결,현재 상태·배경·과거 종합(작성일 확인)
+docs/PROJECT_STATUS_20260928.md,MediFlow 현재 상태와 자료 찾기,39,전체/연결,현재 상태·배경·과거 종합(작성일 확인)
+docs/README.md,MediFlow 문서 안내,88,전체/연결,현재 상태·배경·과거 종합(작성일 확인)
+docs/research/ALL_EXPERIMENTS_RATIONALE_AND_RESULTS_20260924.md,MediFlow 전체 실험: 선택 이유·방법·결과 대장,389,3차,논문 기반 실험 근거
+docs/research/COMMON_COLAB_NOTEBOOKS_GUIDE.md,공통 Colab 노트북 사용 안내,132,2차,정제·재학습 근거
+docs/research/EVALUATION_REPRODUCTION_AUDIT_20260927.md,저장 모델·평가 기록 재현 점검 — 2026-09-27,64,전체/연결,현재 상태·배경·과거 종합(작성일 확인)
+docs/research/HAIR_5CLASS_6CLASS_EXPERIMENT_ANALYSIS_20260928.md,Hair 5클래스 v1·v2와 새 6클래스 실험 종합 분석,115,4차,6종·실행시간 근거
+docs/research/HAIR_CANDIDATE_COMPLEMENTARITY_20260921.md,Hair 후보 오답 보완성과 ensemble 검토,42,3차,논문 기반 실험 근거
+docs/research/HAIR_EXPERIMENT_SUMMARY_20260907.md,Hair 두피 분류 모델 실험 총정리,382,2차,정제·재학습 근거
+docs/research/HAIR_FINAL_CANDIDATE_V2_20260921.md,Hair 최종 공개 데이터 후보 v2,74,3차,논문 기반 실험 근거
+docs/research/HAIR_GOOD_CROSS_AUDIT_REVIEW_20260928.md,Hair ‘양호’ 교차 검사 결과 검토,39,4차,6종·실행시간 근거
+docs/research/HAIR_GOOD_UPLOAD_AUDIT_20260928.md,Hair 양호 원본 ZIP 1차 점검,36,4차,6종·실행시간 근거
+docs/research/HAIR_MEDSIGLIP_LINEAR_PLAN_20260924.md,Hair MedSigLIP-448 Linear Probe 실험 계획,85,3차,논문 기반 실험 근거
+docs/research/HAIR_MEDSIGLIP_LINEAR_RESULT_20260924.md,Hair MedSigLIP-448 Linear Probe 결과,93,3차,논문 기반 실험 근거
+docs/research/HAIR_NORMAL_V2_DATA_PLAN_20260928.md,Hair ‘양호’ 후보 데이터 검증과 6-class v2 구성 계획,31,4차,6종·실행시간 근거
+docs/research/HAIR_REMAINING_METHODS_RESULT_20260917.md,Hair 남은 논문 기반 방법 seed 42 선별 결과,50,3차,논문 기반 실험 근거
+docs/research/HAIR_SAM_RESULT_20260921.md,Hair B1·384 Adam 대 SAM 선별 결과,78,3차,논문 기반 실험 근거
+docs/research/HAIR_SIX_CLASS_FOUR_EXPERIMENTS_PLAN_20260928.md,Hair 6클래스 원본·증강 × 두 모델 실험 계약,51,4차,6종·실행시간 근거
+docs/research/HAIR_SIX_CLASS_FOUR_RESULTS_20260928.md,Hair 6클래스 원본·증강 × B0·B1 실험 결과,72,4차,6종·실행시간 근거
+docs/research/HAIR_SIX_CLASS_LIGHT_HEAVY_COMPARISON_20260928.md,Hair 6클래스 성능 우선·경량 후보 비교 (2026-09-28),31,4차,6종·실행시간 근거
+docs/research/HAIR_SUPCON_RESULT_20260917.md,Hair Supervised Contrastive Learning seed 42 선별 결과,85,3차,논문 기반 실험 근거
+docs/research/HAIR_WEB_SKIN_EXPERIMENT_EXPLAINED_20260908.md,"Hair·Web Skin 실험 해설 — 무엇을, 왜 바꿨고, 실제로 무엇이 달라졌나",199,2차,정제·재학습 근거
+docs/research/HAIR_WEB_SKIN_IMPROVEMENT_PLAN_20260908.md,Hair·Web Skin 후속 개선 방향 종합 계획,199,전체/연결,현재 상태·배경·과거 종합(작성일 확인)
+docs/research/KIOSK_CORE_REVIEW_20260913.md,MediFlow Kiosk 저장소 분석과 피부·두피 AI 연결 계획,270,전체/연결,현재 상태·배경·과거 종합(작성일 확인)
+docs/research/MEDIFLOW_PROJECT_COMPREHENSIVE_FINAL_20260923.md,MediFlow 피부·두피 분류 프로젝트 최종 종합 정리,402,전체/연결,현재 상태·배경·과거 종합(작성일 확인)
+docs/research/MEDIFLOW_PROJECT_FINAL_REPORT_20260914.md,MediFlow 피부·두피 AI 연구 개발 최종 정리,692,전체/연결,현재 상태·배경·과거 종합(작성일 확인)
+docs/research/MEDIFLOW_PROJECT_MASTER_SUMMARY_20260922.md,MediFlow 이미지 분류 프로젝트 최종 종합 정리,179,전체/연결,현재 상태·배경·과거 종합(작성일 확인)
+docs/research/PAPER_BASED_MODEL_ENHANCEMENT_PLAN.md,논문 기반 모델 강화 계획,326,3차,논문 기반 실험 근거
+docs/research/PAPER_EXPERIMENTS_FINAL_ANALYSIS_20260922.md,MediFlow 논문 기반 모델 강화 실험 최종 분석,129,3차,논문 기반 실험 근거
+docs/research/PROJECT_BACKGROUND.md,피부·두피 질환 분류 AI 시스템,1055,1차,초기 시점 근거
+docs/research/RUNTIME_BENCHMARK_REVIEW_20260928.md,저장 모델 34개 실행 시간 측정 결과 검토 (2026-09-28),92,4차,6종·실행시간 근거
+docs/research/SKIN_DATA_AUDIT_20260909.md,Skin 데이터 감사 결과와 정제 계획,63,2차,정제·재학습 근거
+docs/research/SKIN_FULL_SUMMARY_20260909.md,Skin 데이터 정제·재학습·후보 모델 총정리,129,2차,정제·재학습 근거
+docs/research/SKIN_ORIGINAL_VS_AUGMENTED_20260909.md,Skin 원본 대 증강 비교 결과,72,2차,정제·재학습 근거
+docs/research/WEB_SKIN_FINAL_CANDIDATE_V2_20260923.md,Web Skin 최종 공개 데이터 후보 v2,64,3차,논문 기반 실험 근거
+docs/research/WEB_SKIN_FULL_SUMMARY_20260908.md,Web Skin 연구·실험·후보 패키징 총정리,190,2차,정제·재학습 근거
+docs/research/WEB_SKIN_MEDSIGLIP_LINEAR_PLAN_20260924.md,Web Skin MedSigLIP-448 Linear Probe 실험 계획,85,3차,논문 기반 실험 근거
+docs/research/WEB_SKIN_MEDSIGLIP_LINEAR_RESULT_20260924.md,Web Skin MedSigLIP-448 Linear Probe 결과,89,3차,논문 기반 실험 근거
+docs/research/WEB_SKIN_PAPER_METHOD_RESULT_20260922.md,Web Skin 논문 기반 3개 방법 Validation 결과,115,3차,논문 기반 실험 근거
+docs/research/WEB_SKIN_PMG_B1_384_EXPERIMENT_PLAN_20260922.md,Web Skin PMG·B1·384 마지막 Validation 실험 계획,59,3차,논문 기반 실험 근거
+docs/research/WEB_SKIN_PMG_B1_384_RESULT_20260923.md,Web Skin PMG·B1·384 Validation 결과,112,3차,논문 기반 실험 근거
+docs/research/WEB_SKIN_PMG_FINAL_SELECTION_20260923.md,Web Skin PMG 최종 배포 후보 선정,63,3차,논문 기반 실험 근거
+docs/research/WEB_SKIN_WSDAN_EXPERIMENT_PLAN_20260922.md,Web Skin 논문 기반 3개 방법 통합 실험,48,3차,논문 기반 실험 근거
+docs/ROADMAP.md,MediFlow 실행 로드맵,213,전체/연결,현재 상태·배경·과거 종합(작성일 확인)

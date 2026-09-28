@@ -4,8 +4,10 @@
 데이터셋 전처리를 실행하기 위한 Python 프로젝트입니다. 이 결과는 의료 진단이 아닌 연구 및
 스크리닝 보조 목적으로 사용해야 합니다.
 
-현재 프로젝트 전체 현황은 [`MEDIFLOW_PROJECT_COMPREHENSIVE_FINAL_20260923.md`](docs/research/MEDIFLOW_PROJECT_COMPREHENSIVE_FINAL_20260923.md),
-최종 후보의 경로·해시·성능은 [`CANDIDATE_INDEX.json`](results/CANDIDATE_INDEX.json)을 기준으로 확인합니다.
+처음 보는 팀원은 [최종 상세 보고서](docs/FINAL_DETAILED_REPORT_20260928.md)부터 읽으면 됩니다.
+빠른 현황은 [현재 상태](docs/PROJECT_STATUS_20260928.md), 선정 결과는
+[2026-09-28 모델 선정](results/FINAL_MODEL_SELECTION_20260928.md)에 있습니다.
+실제 선정 모델 7개의 경로와 사용 상태는 [모델 경로 안내](results/SELECTED_MODEL_PATHS.md)에 모았습니다.
 
 ## 모델
 
@@ -14,6 +16,11 @@
 | `skin` | USB 현미경 피부 병변 | 10 | EfficientNet-B0 · 224 · CE · Augmented |
 | `web_skin` | 웹캠 얼굴 피부 | 5 | PMG · EfficientNet-B0 · 256 · CE |
 | `hair` | USB 현미경 두피 | 5 | EfficientNet-B1 · 384 · LS 0.05 · Adam |
+
+위 표는 기존 세 모델 통합 색인인 [CANDIDATE_INDEX.json](results/CANDIDATE_INDEX.json)의 경로입니다.
+Hair 6클래스는 별도의 성능 우선·경량 후보가 있으며, 기존 5클래스 경로를 자동으로 바꾸지
+않았습니다. 다섯 선정본의 경로·해시·지표는
+[PUBLIC_MODEL_SELECTION_20260928.json](results/PUBLIC_MODEL_SELECTION_20260928.json)에 있습니다.
 
 기존 자료는 용도에 따라 정리되어 있습니다. 샘플 이미지는 [`data_examples/`](data_examples/),
 저장 모델과 평가 결과는 [`results/`](results/), 학습 노트북은 [`notebooks/`](notebooks/)에
@@ -35,7 +42,7 @@ python -m pip install -e ".[dev]"
 
 ## 현재 후보 확인
 
-팀에서 사용할 세 후보의 모델 파일, 입력 크기, 클래스 순서와 Web Skin PMG의 네 출력 결합 방법은
+기존 통합 경로의 세 후보 모델 파일, 입력 크기, 클래스 순서와 Web Skin PMG의 네 출력 결합 방법은
 [`MODEL_USAGE.md`](results/MODEL_USAGE.md)를 따릅니다. 보관된 샘플 이미지로 세 후보의 추론
 계약을 검사하려면 새 출력 폴더를 지정해 다음을 실행합니다.
 
@@ -45,7 +52,7 @@ python -m mediflow_datasets.candidate_reproduction --output candidate_check
 
 이는 샘플 입력에 대한 기능 확인이며 새로운 Test 성능 측정은 아닙니다.
 
-## 초기 학습 모델의 단일 이미지 추론
+## 초기 학습 모델의 단일 이미지 추론 — 과거 연구용
 
 ```bash
 mediflow-infer web_skin "data_examples/web_skin/정상_000002.png"
@@ -110,14 +117,14 @@ mediflow-evaluate hair <hair-test-폴더> --variant augmented --output reports/h
 포함됩니다. 출력 JSON이 이미 존재하면 `--overwrite` 없이는 덮어쓰지 않습니다.
 
 전체 연구 진행 순서와 단계별 완료 기준은 [`docs/ROADMAP.md`](docs/ROADMAP.md)를
-참고하세요.
+참고하세요. 34개 저장 모델의 Colab 실행 시간 측정과 그 한계는
+[측정 해석](docs/research/RUNTIME_BENCHMARK_REVIEW_20260928.md)에 있습니다.
 
 1차 프로젝트 정리와 발표용 요약은
 [`docs/presentations/1차.md`](docs/presentations/1차.md)에 기록되어 있습니다.
 
-Codex에서 새 작업을 시작할 때는 [`TASK_PROMPT_TEMPLATE.md`](docs/archive/setup/TASK_PROMPT_TEMPLATE.md)를
-복사해 사용하면 진행 상황, 완료 내용, 다음 단계와 사용자 작업을 같은 형식으로 확인할 수
-있습니다. 저장소의 상시 작업 규칙은 `AGENTS.md`에 기록되어 있습니다.
+과거 작업 양식은 [보관 ZIP](docs/zip/README.md)의 `docs/archive/setup/TASK_PROMPT_TEMPLATE.md`에
+남아 있습니다. 현재 작업 규칙은 `AGENTS.md`를 따릅니다.
 
 ## 저장소 구조
 

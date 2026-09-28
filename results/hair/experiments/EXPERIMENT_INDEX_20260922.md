@@ -1,7 +1,9 @@
 # Hair 실험 결과 색인
 
-현재 최종 후보는 B1·384·Label Smoothing 0.05·Adam이다. Test Accuracy는
+이 문서는 Hair **5클래스** 논문 실험의 2026-09-22 결과 색인이다. 해당 과제의 선정 후보는
+B1·384·Label Smoothing 0.05·Adam이다. Test Accuracy는
 `0.8003194888178914`, Test Macro F1은 `0.8002222282821301`이다.
+별도 Hair 6클래스 선정 결과는 [2026-09-28 종합 선정](../../FINAL_MODEL_SELECTION_20260928.md)을 따른다.
 
 | 단계 | 결과 폴더/문서 | 핵심 결과 | 채택 |
 |---|---|---|---|

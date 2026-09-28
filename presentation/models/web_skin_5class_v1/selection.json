@@ -1,0 +1,25 @@
+{
+  "schema": "mediflow_selected_model_v1",
+  "domain": "web_skin",
+  "version": "v1",
+  "status": "superseded",
+  "candidate_id": "public_candidate_v1_b0_256_ce_20260908_081603_3f1ce76e",
+  "architecture": "EfficientNet-B0",
+  "input_size": [
+    256,
+    256
+  ],
+  "loss": "Categorical Crossentropy",
+  "validation_accuracy": 0.796,
+  "test_accuracy": 0.8825,
+  "test_macro_f1": 0.8813822927981046,
+  "normal_class_included": true,
+  "output_adapter": "direct_softmax",
+  "model_file": "web_skin_model.keras",
+  "model_sha256": "d4c834a7fd47480c1c45ddbdc09257942b38b2408d5b28effc34ee68c4fad97b",
+  "source_candidate_directory": "web_skin/candidates/public_candidate_v1_b0_256_ce_20260908_081603_3f1ce76e",
+  "source_candidate_package": "web_skin/candidates/public_candidate_v1_b0_256_ce_20260908_081603_3f1ce76e.zip",
+  "selection_reason": "논문 기반 강화 실험을 시작하기 전, 여섯 학습 설정을 같은 Validation에서 비교했다. B0·256·CE가 최고 Validation Accuracy를 기록했고 동률 선택 규칙을 적용해 당시 최종 Web Skin 후보로 선정한 뒤 Test 평가와 패키징까지 완료했다.",
+  "version_note": "논문 강화 전 최종 선정 모델이다. 이후 PMG가 Validation과 고정 Test 성능을 높여 v2로 교체됐지만, v1도 당시 정식 선정·패키징된 후보로 보존한다.",
+  "selection_stage": "final_candidate_before_paper_based_enhancement"
+}

@@ -5,7 +5,12 @@
 범위: Skin, Web Skin, Hair 공개 데이터 분류 모델  
 현재 상태: 데이터 정제·재학습·논문 기반 실험·최종 Test·후보 패키징 완료
 
-이 문서는 발표, 보고서, 팀 인계에 사용하는 최종 기준 문서다. 논문의 원래 주장, MediFlow가
+이 문서는 **2026-09-24까지의 기록**이다. 이후 Hair 6클래스, 저장 모델 34개 Colab 측정과
+공개 데이터 후보 종합 선정은 [현재 상태](../PROJECT_STATUS_20260928.md)와
+[2026-09-28 선정 결과](../../results/FINAL_MODEL_SELECTION_20260928.md)를 우선한다.
+아래의 `최종` 표현은 이 문서 작성 당시의 세 후보를 뜻한다.
+
+이 문서는 발표, 보고서, 팀 인계에 사용하는 당시의 종합 기록이다. 논문의 원래 주장, MediFlow가
 실제로 적용한 범위, 측정 결과를 구분한다. 논문 벤치마크 성능을 MediFlow 성능으로 옮겨 적지
 않으며, 실제 결과는 `results/`의 JSON·CSV와 후보 패키지를 기준으로 한다.
 
@@ -287,10 +292,10 @@ v1을 고르기 위한 비교 실험이며, Validation에서 Augmented가 선택
 - `results/<domain>/selected_models/`: 선정된 모델의 v1·v2 사용 파일과 선정 이유
 - `results/<domain>/candidates/`: 원본 후보 ZIP과 전체 재현 자료
 - `docs/research/`: 연구 근거와 결과 해석
-- `docs/archive/`: 당시 계획과 중간 검토 기록
+- `docs/zip/HISTORICAL_DOCS_20260928.zip`: 당시 계획과 중간 검토 기록의 원문 보관
 
-현재 실행 기준은 `docs/ROADMAP.md`, 이 문서, `results/CANDIDATE_INDEX.json`,
-`docs/guides/TEAM_MODEL_QUICKSTART.md`다. 과거 문서는 실험 당시 기록을 보존하며 현재 후보를
+현재 실행 기준은 `docs/ROADMAP.md`, `docs/FINAL_DETAILED_REPORT_20260928.md`,
+`results/SELECTED_MODEL_PATHS.md`, `results/MODEL_USAGE.md`다. 이 문서는 9월 23일 당시 기록이며 현재 후보를
 고르는 기준으로 사용하지 않는다.
 
 ## 13. 완료한 일과 완료하지 않은 일
@@ -376,7 +381,7 @@ multi-granularity PMG, Skin에서는 Clean 데이터와 저장 증강본이 실�
 - Hair 최종 후보: `docs/research/HAIR_FINAL_CANDIDATE_V2_20260921.md`
 - Web Skin 최종 후보: `docs/research/WEB_SKIN_FINAL_CANDIDATE_V2_20260923.md`
 - Skin 최종 결과: `docs/research/SKIN_ORIGINAL_VS_AUGMENTED_20260909.md`
-- 데이터·파일 위치: `docs/PROJECT_ARTIFACT_MAP_20260923.md`
+- 데이터·파일 위치: `docs/README.md`와 `results/SELECTED_MODEL_PATHS.md`
 - 전체 실험의 이유·방법·결과 대장:
   `docs/research/ALL_EXPERIMENTS_RATIONALE_AND_RESULTS_20260924.md`
 - Web Skin MedSigLIP 결과: `docs/research/WEB_SKIN_MEDSIGLIP_LINEAR_RESULT_20260924.md`

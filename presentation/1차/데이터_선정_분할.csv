@@ -1,0 +1,4 @@
+﻿stage,domain,source_dataset,source_count,selected_classes,original_train,validation,test,note
+initial,skin,AI Hub 71864,15 classes x about 1000,10,7300,1000,700,selected 10 x 1000; first split 10 x 900; before duplicate audit
+initial,hair,AI Hub 216,101027 unique images,5,11600,1450,1450,5 x 2900; before duplicate audit
+later first training,web_skin,AI Hub 71863,6 classes x frontal/side x about 1000,5,3600,500,400,not used at initial Skin/Hair selection snapshot; later frontal 5 x 900

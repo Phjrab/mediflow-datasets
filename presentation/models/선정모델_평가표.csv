@@ -1,0 +1,8 @@
+﻿model,class_count,class_order,architecture,input_size,validation_accuracy,test_accuracy,test_macro_f1,model_sha256
+skin_10class_v1,10,광선각화증 / 기저세포암 / 보웬병 / 사마귀 / 지루각화증 / 편평세포암 / 표피낭종 / 피부섬유종 / 혈관종 / 흑색점,EfficientNet-B0,"[224, 224]",0.982,0.9871428571428571,0.9871314132317626,0b2a757320a113dbc1b285adab8c7745b2f7edc2cb29cc402d06f7882edc9f7a
+web_skin_5class_v1,5,건선 / 아토피 / 여드름 / 정상 / 주사,EfficientNet-B0,"[256, 256]",0.796,0.8825,0.8813822927981046,d4c834a7fd47480c1c45ddbdc09257942b38b2408d5b28effc34ee68c4fad97b
+web_skin_5class_v2,5,건선 / 아토피 / 여드름 / 정상 / 주사,PMG with EfficientNet-B0,"[256, 256]",0.85,0.915,0.9141049081029712,83e659dd09a9355135ee0de0197037e81ece962777f59dedae8d9a37b49a3fc4
+hair_5class_v1,5,모낭사이홍반 / 미세각질 / 비듬 / 탈모 / 피지과다,EfficientNet-B1,"[256, 256]",0.7771565318107605,0.7883386581469649,0.7885764577048346,0842822f6b6299ee7a0cb6b6925681d54705e7e26b3682dee0f1c49f8e72057b
+hair_5class_v2,5,모낭사이홍반 / 미세각질 / 비듬 / 탈모 / 피지과다,EfficientNet-B1,"[384, 384]",0.7963258785942492,0.8003194888178914,0.8002222282821301,9faa33b8f79f45ef6e7be415473e2ee5225f6195fff04d098828733db23ed3c2
+hair_6class_performance_v1,6,모낭사이홍반 / 미세각질 / 비듬 / 탈모 / 피지과다 / 양호,EfficientNet-B1,"[384, 384]",0.7992337164750958,0.7915708812260537,0.8091500773460419,5ee54f51e65d8656fc81e88de96ad82a6d119991aa74684f921e4cd7e8b7efbb
+hair_6class_light_v1,6,모낭사이홍반 / 미세각질 / 비듬 / 탈모 / 피지과다 / 양호,EfficientNet-B0,"[256, 256]",0.7777777777777778,0.7869731800766283,0.8021613486071133,38e91fee1c514b75165d07f5dfbb0c52fdb7ac92313b40d47abb50c71367d432

@@ -1,20 +1,19 @@
 # MediFlow 로컬 결과 구조
 
-현재 팀 통합 대상 모델은 각 도메인의 `selected_models` 폴더에 버전별로 정리했다. 정확한 현재
-버전, 모델 경로, 설정, 성능과 SHA-256은 [CANDIDATE_INDEX.json](CANDIDATE_INDEX.json)을
-기준으로 확인한다. 전체 버전 목록은 [SELECTED_MODELS.md](SELECTED_MODELS.md)를 참고한다.
-이 기존 색인의 Hair는 **5-class**다. 별도 Hair **6-class** 성능 우선·경량 후보를 포함한
-공개 데이터 모델 종합 선정은 [FINAL_MODEL_SELECTION_20260928.md](FINAL_MODEL_SELECTION_20260928.md),
-경로·지표 색인은 [PUBLIC_MODEL_SELECTION_20260928.json](PUBLIC_MODEL_SELECTION_20260928.json)을 본다.
-학습 방법과 v1→v2 개선 이유는 [MODEL_VERSION_COMPARISON.md](MODEL_VERSION_COMPARISON.md)에
-표로 정리했다.
-표 계산에는 `CURRENT_SELECTED_MODELS.csv`, 버전 비교에는
-`SELECTED_MODEL_HISTORY_20260923.csv`를 사용한다. `FINAL_MODEL_SUMMARY_20260922.csv`는 Web Skin
-v2 선정 전의 과거 스냅샷이다.
-팀원에게 전달할 입력·클래스·실행 예제는 [MODEL_USAGE.md](MODEL_USAGE.md)를 참고한다.
-2026-09-27 저장 평가 기록 점검 결과는
-[EVALUATION_RECORD_AUDIT_20260927.json](EVALUATION_RECORD_AUDIT_20260927.json)에 있다.
-이는 저장된 예측과 모델 해시의 대조 결과이며 새 이미지 추론 결과는 아니다.
+이 폴더는 **선정 모델과 평가 원본을 함께 보존**한다. 모델을 찾거나 팀원에게 전달할 때는 아래 순서로 읽는다.
+
+| 찾을 것 | 기준 파일 |
+|---|---|
+| 선정 모델 7개의 실제 경로·현재 사용 상태 | [선정 모델 경로](SELECTED_MODEL_PATHS.md) |
+| 기존 세 분류기의 프로그램 연결 경로 | [CANDIDATE_INDEX.json](CANDIDATE_INDEX.json) — Hair는 **5클래스** |
+| Hair 6클래스 연구 후보를 포함한 다섯 현재 선정본의 경로·해시·지표 | [PUBLIC_MODEL_SELECTION_20260928.json](PUBLIC_MODEL_SELECTION_20260928.json) |
+| 선정 이유와 성능·실행 비용 비교 | [최종 선정](FINAL_MODEL_SELECTION_20260928.md), [v1→v2 비교](MODEL_VERSION_COMPARISON.md) |
+| 입력·출력·오류 처리 및 전달 방법 | [모델 사용법](MODEL_USAGE.md), [재현 기준](REPRODUCTION_GUIDE.md) |
+
+`CURRENT_SELECTED_MODELS.csv`와 `SELECTED_MODEL_HISTORY_20260923.csv`는 비교표 계산 자료다.
+`FINAL_MODEL_SUMMARY_20260922.csv`는 Web Skin v2 선정 **전**의 과거 스냅샷으로 읽는다.
+[저장 평가 기록 대조](EVALUATION_RECORD_AUDIT_20260927.json)는 기존 예측·모델 해시의 확인이며 새 이미지 추론이 아니다.
+프로젝트 단계와 전체 연구 설명은 [문서 안내](../docs/README.md)를 따른다.
 
 2026-09-28 저장 모델 34개 실행 시간 측정의 원본 ZIP, 수치 CSV/JSON, 발표용 그림 12장은
 [runtime_benchmark_20260928_051423](runtime_benchmark_20260928_051423/README.md)에 정리했다.
@@ -23,7 +22,7 @@ v2 선정 전의 과거 스냅샷이다.
 ```text
 results/
   CANDIDATE_INDEX.json
-  SELECTED_MODELS.md
+  SELECTED_MODEL_PATHS.md
   hair/selected_models/v1, v2/
   hair/selected_models/6class_performance_v1, 6class_light_v1/
   web_skin/selected_models/v1, v2/
@@ -37,6 +36,14 @@ results/
 `preprocessing.json`이 있다. Web Skin v2에는 PMG 출력 처리를 위한 `inference.py`도 있다.
 Hair 6-class의 두 폴더에도 모델과 사용 계약을 같은 형식으로 복사했다. 원본 ZIP은
 `hair/candidates/`에 그대로 보존하고 각각 SHA-256 확인 파일을 추가했다.
+
+2026-09-28 로컬 점검에서 `.keras` 파일은 18개, 파일 내용 기준 서로 다른 모델은 13개였다.
+차이 5개는 Hair 5클래스 v1/v2, Skin v1, Web Skin v1/v2의 `candidates/` 원본과
+`selected_models/` 사용 사본이 같은 해시로 존재하기 때문이다. **중복을 이유로 어느 쪽도
+삭제하지 않는다.** 18개 모두 Keras 아카이브 구조 검사를 통과했고, 내용이 다른 13개 모델은
+TensorFlow 2.20.0에서 `compile=False`로 실제 로드되어 각 출력 차원을 확인했다. 결과 ZIP 18개는
+CRC 검사에 통과했고, 후보 ZIP의 SHA-256 확인 파일 7개는 모두 해당 ZIP과 일치했다.
+이 검사는 새 이미지 추론·정확도 재평가를 뜻하지 않는다.
 
 각 `candidates` 폴더는 원본 배포 ZIP과 전체 평가 보고서를 다음 형식으로 보존한다.
 
@@ -70,7 +77,7 @@ Macro F1 `0.8195774288599683`으로 현재 PMG v2보다 낮아 미채택했다. 
 ZIP은 `hair/archives`에 보존한다. 이 실험은 `selected_models`에 포함하지 않으며 Test도 실행하지
 않았다.
 
-세 후보 모두 공개 데이터 기준이며 실제 장비 데이터 검증 전 상태다. EfficientNet 모델 내부에
+위 다섯 선정본 모두 공개 데이터 기준이며 실제 장비 데이터 검증 전 상태다. EfficientNet 모델 내부에
 `Rescaling(1/255)`이 있으므로 입력은 RGB float32 0–255를 사용하고 외부 `/255`를 적용하지 않는다.
 Web Skin 후보는 네 PMG logit 출력을 합산한 뒤 softmax를 적용해야 하므로 후보 ZIP의
 `inference.py` 또는 공통 재현 모듈을 사용한다.

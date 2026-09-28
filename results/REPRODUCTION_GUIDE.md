@@ -3,6 +3,13 @@
 작성일: 2026-09-14. 목적은 같은 모델과 같은 사진에서 같은 입력·점수가 나오는지 확인하는 것이다.
 정확도 재평가, 정상 판별 검증, 실제 장비 성능 검증을 대신하지 않는다.
 
+**2026-09-28 상태 정정:** 아래에서 당시 사용한 `results/reproducibility_v1_20260914/`와
+`results/reproducibility_check_20260914/`는 현재 로컬에 없다. 두 폴더를 `--reference`로
+지정하는 과거 명령은 그대로 실행할 수 없다. 현재 세 후보의 모델·입력·클래스·해시를
+새로 확인할 때는 [MODEL_USAGE.md](MODEL_USAGE.md)의 `--output` 예제를 사용한다.
+이 실행은 **새 기준 기록 생성**이며 2026-09-14 당시 수치와의 재비교 성공을 뜻하지 않는다.
+Hair 6클래스는 기존 세 후보와 별도 계약이다.
+
 ## 전달할 자료
 
 | 자료 | 위치 |
@@ -10,7 +17,7 @@
 | 세 후보 ZIP과 해시 | `results/<domain>/candidates/`의 후보 ZIP·SHA-256 |
 | 후보 경로·모델 해시 목록 | `results/CANDIDATE_INDEX.json` |
 | 정정한 사용 안내 | `results/MODEL_USAGE.md` |
-| 이번 기준 결과·입력 배열 | `results/reproducibility_v1_20260914/` 전체 |
+| 2026-09-14 당시 기준 결과·입력 배열 | 당시 `results/reproducibility_v1_20260914/`에 있었으나 현재 로컬에는 없음 |
 | 실행 코드 | `src/mediflow_datasets/candidate_reproduction.py` |
 | 환경 정보 | `pyproject.toml`, 기준 결과의 `environment` |
 | 원본 예시 사진 | 아래 여섯 파일 |
@@ -30,22 +37,23 @@
 파일명은 예시를 식별하기 위한 것이며 이번에 전문가가 확인한 정답 라벨이 아니다.
 표본 두 장씩으로 모델의 정확도나 일반화 성능을 판단하지 않는다.
 
-## 실행 방법
+## 현재 실행 방법과 당시 비교 방법
 
-이 저장소 구조를 유지하고 후보 ZIP을 `CANDIDATE_INDEX.json`에 적힌 위치에 압축 해제한다.
+이 저장소 구조를 유지하고 현재 `selected_models`와 `data_examples`의 파일을 사용한다.
 별도 Python 가상환경에서 프로젝트 루트의 다음 명령으로 필요한 패키지를 설치한다.
 Jetson에 호환성이 확인되지 않은 TensorFlow를 바로 설치하라는 뜻은 아니다. 먼저 호환되는
 PC 환경에서 재현하고, Jetson 실행 환경과 변환은 담당 팀원이 별도 검증한다.
 
 ```bash
 python -m pip install -e .
-python -m mediflow_datasets.candidate_reproduction --output results/reproduction_team_run1 --reference results/reproducibility_v1_20260914
+python -m mediflow_datasets.candidate_reproduction --output candidate_check_new
 ```
 
-출력은 반드시 새 폴더를 지정한다. 이미 있는 폴더는 오류로 중단한다. 기준 결과를 다시 만들거나
-덮어쓰면 비교 기준이 사라지므로 `--reference`를 생략하지 않는다.
+출력은 반드시 새 폴더를 지정한다. 이미 있는 폴더는 오류로 중단한다. 이 명령은 현재 로컬에서
+새 기준을 만든다. 독립된 두 번째 실행을 이 기준과 비교하고 싶을 때만 첫 출력 폴더를
+`--reference`로 지정한다. **삭제된 2026-09-14 폴더를 지정하지 않는다.**
 
-## 기준 결과의 구성
+## 새로 생성되는 기준 결과의 구성
 
 - `reference.json`: 실제 측정한 여섯 예시의 전체 점수, 예측 인덱스, 클래스 순서,
   원본 사진·모델 해시, 환경, 코드 해시, Git 커밋과 변경 상태.
@@ -83,23 +91,27 @@ CPU/GPU·라이브러리 차이로 실패하면 차이 원인을 기록하고 �
 
 오류·낮은 점수·범위 밖 입력은 예측 결과와 구분하고 별도 상태로 처리한다.
 
-## 이번 확인과 남은 확인
+## 2026-09-14 당시 확인 기록과 남은 확인
 
 이번 기준은 로컬 Windows CPU, TensorFlow 2.20.0 / Keras 3.13.2에서 실제 세 후보를 읽어 만들었다.
-완료된 실행의 상세 환경과 비교 결과는 각 실행 폴더 JSON을 기준으로 한다.
+당시 완료된 실행의 상세 환경과 비교 결과는 당시 실행 폴더 JSON을 기준으로 했으나,
+그 폴더는 현재 로컬에 없으므로 이 문서만으로 당시 점수를 다시 대조할 수 없다.
 JPEG·PNG와 EXIF 방향 정보가 있는 테스트 파일을 대상으로 새 전처리와 학습 당시 디렉터리
 로더의 배열을 비교하는 자동 테스트를 추가했다.
 
 팀원 환경·키오스크·Jetson에서의 재현은 아직 수행하지 않았다. 단계 1 준비 이후 팀원이 같은
 명령으로 비교하고, 통과한 입력·출력 계약을 웹과 LLM에 연결하는 것이 다음 단계다.
 
-로컬에서 독립적으로 두 번째 실행을 수행했고 여섯 사례 모두 비교를 통과했다.
-결과: `results/reproducibility_check_20260914/reference.json`의 `comparison.passed=true`.
+당시 로컬에서 독립적으로 두 번째 실행을 수행했고 여섯 사례 모두 비교를 통과했다고 기록했다.
+당시 결과 위치는 `results/reproducibility_check_20260914/reference.json`이었으나 현재
+파일이 없어 `comparison.passed=true`를 다시 열어 검증할 수 없다.
 이는 기존 Test Accuracy를 재측정하거나 질환 판단의 타당성을 검증한 결과가 아니다.
 
+**아래는 2026-09-14 당시의 테스트 상태이며 현재 상태가 아니다.**
 `ruff check src tests`와 새 재현 테스트 4개는 통과했다. 테스트의 pytest 캐시 저장 권한 경고는
 검사 성공 여부에 영향을 주지 않았다. 전체 `pytest`는 31 passed / 25 failed / 3 skipped였다.
 실패 항목은 기존 `models.py`가 참조하는 `results/<domain>/original|augmented` 경로와
 정리 후 없는 이전 노트북을 찾는 테스트들이다. 현재 파일은 `1_training` 등에 보관되어 있으며,
 이번 작업에서는 과거 경로의 실행 코드·테스트나 노트북을 복원/변경하지 않았다.
-따라서 **새 후보 재현은 통과했지만 저장소 전체 테스트는 통과하지 않았다.**
+따라서 당시에는 새 후보 재현은 통과했지만 저장소 전체 테스트는 통과하지 않았다.
+이후 노트북 형식 정리 시점의 전체 테스트는 129 passed / 3 skipped로 기록돼 있다.

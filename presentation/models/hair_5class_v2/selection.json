@@ -1,0 +1,24 @@
+{
+  "schema": "mediflow_selected_model_v1",
+  "domain": "hair",
+  "version": "v2",
+  "status": "current",
+  "candidate_id": "public_candidate_v2_b1_384_ls005_adam_20260921_155906_82311da4",
+  "architecture": "EfficientNet-B1",
+  "input_size": [
+    384,
+    384
+  ],
+  "loss": "Categorical Crossentropy with Label Smoothing 0.05",
+  "validation_accuracy": 0.7963258785942492,
+  "test_accuracy": 0.8003194888178914,
+  "test_macro_f1": 0.8002222282821301,
+  "normal_class_included": false,
+  "output_adapter": "direct_softmax",
+  "model_file": "hair_model.keras",
+  "model_sha256": "9faa33b8f79f45ef6e7be415473e2ee5225f6195fff04d098828733db23ed3c2",
+  "source_candidate_directory": "hair/candidates/public_candidate_v2_b1_384_ls005_adam_20260921_155906_82311da4",
+  "source_candidate_package": "hair/candidates/public_candidate_v2_b1_384_ls005_adam_20260921_155906_82311da4.zip",
+  "selection_reason": "논문 기반 비교에서 고해상도 B1·384가 SupCon, DINOv2, EfficientNetV2-S, SAM과 앙상블보다 최종 후보로 적합했고, 작은 각질·피지·모낭 특징을 더 잘 보존해 현재 후보로 선정했다.",
+  "version_note": "현재 버전이다. 실제 USB 현미경 환자 데이터에서는 아직 검증하지 않았다."
+}

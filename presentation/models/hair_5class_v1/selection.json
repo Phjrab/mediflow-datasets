@@ -1,0 +1,25 @@
+{
+  "schema": "mediflow_selected_model_v1",
+  "domain": "hair",
+  "version": "v1",
+  "status": "superseded",
+  "candidate_id": "public_candidate_v1_b1_256_ls005_20260907_120834",
+  "architecture": "EfficientNet-B1",
+  "input_size": [
+    256,
+    256
+  ],
+  "loss": "Categorical Crossentropy with Label Smoothing 0.05",
+  "validation_accuracy": 0.7771565318107605,
+  "test_accuracy": 0.7883386581469649,
+  "test_macro_f1": 0.7885764577048346,
+  "normal_class_included": false,
+  "output_adapter": "direct_softmax",
+  "model_file": "hair_model.keras",
+  "model_sha256": "0842822f6b6299ee7a0cb6b6925681d54705e7e26b3682dee0f1c49f8e72057b",
+  "source_candidate_directory": "hair/candidates/public_candidate_v1_b1_256_ls005_20260907_120834",
+  "source_candidate_package": "hair/candidates/public_candidate_v1_b1_256_ls005_20260907_120834.zip",
+  "selection_reason": "논문 기반 강화 실험을 시작하기 전, 해상도·Loss·Backbone·미세조정 조건을 비교했다. B1·256·Label Smoothing의 미세조정 연장 결과가 가장 높은 Validation Accuracy를 기록해 당시 최종 Hair 후보로 선정한 뒤 Test 평가와 패키징까지 완료했다.",
+  "version_note": "논문 강화 전 최종 선정 모델이다. 이후 B1·384가 Validation과 고정 Test 성능을 높여 v2로 교체됐지만, v1도 당시 정식 선정·패키징된 후보로 보존한다.",
+  "selection_stage": "final_candidate_before_paper_based_enhancement"
+}

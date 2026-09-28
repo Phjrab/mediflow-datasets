@@ -1,0 +1,19 @@
+{
+  "input_shape": [
+    384,
+    384,
+    3
+  ],
+  "color_order": "RGB",
+  "input_dtype": "float32",
+  "input_pixel_range": [
+    0,
+    255
+  ],
+  "external_normalization": false,
+  "internal_rescaling": "1/255",
+  "resize": "TensorFlow bilinear, antialias=False",
+  "aspect_ratio": "resize to 384x384, no crop/pad",
+  "exif_transpose": false,
+  "output": "5 softmax scores in class_names.json order"
+}
