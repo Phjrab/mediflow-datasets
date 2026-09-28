@@ -1,6 +1,5 @@
 """Packaging is tested with random weights; it does not assert candidate performance."""
 
-import ast
 import json
 import shutil
 import zipfile
@@ -13,46 +12,20 @@ from mediflow_datasets import candidate_packaging as packaging
 from mediflow_datasets import experiment_suite
 
 ROOT = Path(__file__).resolve().parents[1]
-NOTEBOOK = ROOT / "notebooks/web_skin_public_candidate_packaging_colab.ipynb"
-
-
-def read_notebook():
-    if NOTEBOOK.exists():
-        return json.loads(NOTEBOOK.read_text("utf-8"))
-    archive = ROOT / "notebooks" / "legacy_notebooks_20260909.zip"
-    with zipfile.ZipFile(archive) as bundle:
-        data = bundle.read(f"legacy_notebooks/{NOTEBOOK.name}")
-    return json.loads(data.decode("utf-8"))
+PACKAGE = (
+    ROOT
+    / "results/web_skin/candidates/public_candidate_v1_b0_256_ce_20260908_081603_3f1ce76e"
+)
 
 
 def notebook_policy():
-    notebook = read_notebook()
-    for cell in notebook["cells"]:
-        source = "".join(cell["source"])
-        if source.startswith("SOURCE_SUITE = "):
-            return next(
-                ast.literal_eval(node.value)
-                for node in ast.parse(source).body
-                if isinstance(node, ast.Assign) and node.targets[0].id == "POLICY"
-            )
-    raise AssertionError("Missing policy")
+    return json.loads((PACKAGE / "packaging_policy.json").read_text("utf-8"))
 
 
-def test_notebook_code_and_reviewed_report_fingerprints():
-    notebook = read_notebook()
-    for cell in notebook["cells"]:
-        if cell["cell_type"] != "code":
-            continue
-        source = "".join(cell["source"])
-        compile(
-            "\n".join(line for line in source.splitlines() if not line.startswith("%pip ")),
-            "package-cell",
-            "exec",
-        )
-        if source.startswith("PACKAGING_SOURCE = "):
-            assert ast.literal_eval(ast.parse(source).body[0].value) == Path(
-                packaging.__file__
-            ).read_text("utf-8")
+def test_packaged_source_and_reviewed_report_fingerprints():
+    packaged_source = (PACKAGE / "packaging_source.py").read_text("utf-8")
+    compile(packaged_source, "packaging_source.py", "exec")
+    assert packaged_source == Path(packaging.__file__).read_text("utf-8")
     source = ROOT / "results/web_skin/experiments/suite_20260908_014452_72768a42"
     policy = notebook_policy()
     for relative, digest in policy["report_hashes"].items():

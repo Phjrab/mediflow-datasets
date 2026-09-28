@@ -1,7 +1,5 @@
 """Offline checks for selection, validation-only execution, and safe trial reuse."""
 
-import json
-import zipfile
 
 import keras
 import numpy as np
@@ -9,15 +7,6 @@ import pytest
 import tensorflow as tf
 
 from mediflow_datasets import experiment_suite as suite
-
-
-def read_archived_notebook(root, filename):
-    path = root / "notebooks" / filename
-    if path.exists():
-        return json.loads(path.read_text(encoding="utf-8"))
-    archive = root / "notebooks" / "legacy_notebooks_20260909.zip"
-    with zipfile.ZipFile(archive) as bundle:
-        return json.loads(bundle.read(f"legacy_notebooks/{filename}").decode("utf-8"))
 
 
 def test_metrics_keep_missing_classes_and_reject_bad_arrays():
@@ -118,20 +107,30 @@ def test_interrupted_attempt_is_preserved(tmp_path, monkeypatch):
     assert file.read_text(encoding="utf-8") == "old incomplete log"
 
 
-def test_notebook_embeds_exact_engine_and_has_no_repeated_audit():
+def test_saved_experiment_snapshot_embeds_exact_engine_and_has_no_repeated_audit():
     from pathlib import Path
 
     root = Path(__file__).resolve().parents[1]
-    notebook = read_archived_notebook(root, "web_skin_all_experiments_colab.ipynb")
-    sources = ["".join(cell["source"]) for cell in notebook["cells"] if cell["cell_type"] == "code"]
-    for index, source in enumerate(sources):
-        # Colab's pip magic is not Python syntax.
-        code = "\n".join(line for line in source.splitlines() if not line.startswith("%pip "))
-        compile(code, f"cell-{index}", "exec")
-    embedded = next(source for source in sources if source.startswith("ENGINE_SOURCE = "))
+    snapshot = (
+        root
+        / "results/web_skin/experiments/suite_20260908_014452_72768a42"
+        / "notebook_snapshot_20260908_014452_72768a42.py"
+    ).read_text(encoding="utf-8")
+    python_source = "\n".join(
+        line for line in snapshot.splitlines() if not line.startswith("%pip ")
+    )
+    compile(python_source, "experiment-snapshot", "exec")
     import ast
 
-    assignment = ast.parse(embedded).body[0]
+    assignment = next(
+        node
+        for node in ast.parse(python_source).body
+        if isinstance(node, ast.Assign)
+        and any(
+            isinstance(target, ast.Name) and target.id == "ENGINE_SOURCE"
+            for target in node.targets
+        )
+    )
     assert ast.literal_eval(assignment.value) == Path(suite.__file__).read_text(encoding="utf-8")
-    assert "pixel_sha256" not in "\n".join(sources)
-    assert "f8908af3d54e521ad14c37a44b569d33fe92be3b8b9b66a8d80faf4ba964072d" in "\n".join(sources)
+    assert "pixel_sha256" not in snapshot
+    assert "f8908af3d54e521ad14c37a44b569d33fe92be3b8b9b66a8d80faf4ba964072d" in snapshot

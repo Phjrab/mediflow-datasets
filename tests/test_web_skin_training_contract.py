@@ -2,7 +2,6 @@
 
 import ast
 import json
-import zipfile
 from pathlib import Path
 
 import keras
@@ -16,13 +15,15 @@ from mediflow_datasets import experiment_suite as suite
 ROOT = Path(__file__).resolve().parents[1]
 
 
-def read_archived_notebook(filename):
-    path = ROOT / "notebooks" / filename
-    if path.exists():
-        return json.loads(path.read_text(encoding="utf-8"))
-    archive = ROOT / "notebooks" / "legacy_notebooks_20260909.zip"
-    with zipfile.ZipFile(archive) as bundle:
-        return json.loads(bundle.read(f"legacy_notebooks/{filename}").decode("utf-8"))
+SNAPSHOT = (
+    ROOT
+    / "results/web_skin/experiments/suite_20260908_014452_72768a42"
+    / "notebook_snapshot_20260908_014452_72768a42.py"
+)
+
+
+def read_snapshot():
+    return SNAPSHOT.read_text(encoding="utf-8")
 
 
 @pytest.mark.parametrize("backbone,size,loss", [("B0", 224, "ce"), ("B1", 256, "ls005")])
@@ -71,25 +72,9 @@ def test_real_efficientnet_input_freezing_and_gradient(backbone, size, loss, mon
     keras.backend.clear_session()
 
 
-@pytest.mark.parametrize(
-    "filename",
-    [
-        "web_skin_all_experiments_colab.ipynb",
-        "web_skin_all_experiments_reviewed_colab.ipynb",
-    ],
-)
-def test_notebook_loader_keeps_web_skin_labels_paths_and_pixel_scale(tmp_path, filename):
-    notebook = read_archived_notebook(filename)
-    source = next(
-        "".join(c["source"])
-        for c in notebook["cells"]
-        if "def dataset_factory(" in "".join(c["source"])
-    )
-    node = next(
-        n
-        for n in ast.parse(source).body
-        if isinstance(n, ast.FunctionDef) and n.name == "dataset_factory"
-    )
+def test_saved_snapshot_loader_keeps_web_skin_labels_paths_and_pixel_scale(tmp_path):
+    source = "def dataset_factory" + read_snapshot().split("def dataset_factory", 1)[1]
+    node = ast.parse(source.split("# ---- cell ----", 1)[0]).body[0]
     for index, name in enumerate(suite.CLASSES):
         directory = tmp_path / "val" / name
         directory.mkdir(parents=True)
@@ -120,21 +105,22 @@ def test_notebook_loader_keeps_web_skin_labels_paths_and_pixel_scale(tmp_path, f
     assert suite.CLASSES == reported["classes"]
 
 
-def test_reviewed_notebook_syntax_and_engine_match():
-    notebook = read_archived_notebook("web_skin_all_experiments_reviewed_colab.ipynb")
-    for cell in notebook["cells"]:
-        if cell["cell_type"] != "code":
-            continue
-        source = "".join(cell["source"])
-        compile(
-            "\n".join(line for line in source.splitlines() if not line.startswith("%pip ")),
-            "reviewed-cell",
-            "exec",
+def test_saved_snapshot_syntax_and_engine_match():
+    source = read_snapshot()
+    python_source = "\n".join(
+        line for line in source.splitlines() if not line.startswith("%pip ")
+    )
+    compile(python_source, "experiment-snapshot", "exec")
+    assignment = next(
+        node
+        for node in ast.parse(python_source).body
+        if isinstance(node, ast.Assign)
+        and any(
+            isinstance(target, ast.Name) and target.id == "ENGINE_SOURCE"
+            for target in node.targets
         )
-        if source.startswith("ENGINE_SOURCE = "):
-            assert ast.literal_eval(ast.parse(source).body[0].value) == Path(
-                suite.__file__
-            ).read_text("utf-8")
+    )
+    assert ast.literal_eval(assignment.value) == Path(suite.__file__).read_text("utf-8")
 
 
 @pytest.mark.parametrize("loss_name", ["ce", "ls005", "focal15"])
