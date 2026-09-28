@@ -1,6 +1,6 @@
 # Web Skin 연구·실험·후보 패키징 총정리
 
-기준일: 2026-09-08. 발표와 보고서에 사용할 현재 상태의 종합 기록이다. 수치는 원본 JSON/CSV의 정밀도를 보존한다. 재학습이나 새로운 성능 측정을 수행한 문서는 아니다.
+기준일: 2026-09-08. 이 문서는 당시 실험의 종합 기록이다. 현재 후보는 이후 선정된 PMG v2이며, [`최종 종합 기록`](MEDIFLOW_PROJECT_COMPREHENSIVE_FINAL_20260923.md)과 [`후보 색인`](../../results/CANDIDATE_INDEX.json)을 우선한다. 수치는 원본 JSON/CSV의 정밀도를 보존한다. 재학습이나 새로운 성능 측정을 수행한 문서는 아니다.
 
 함께 읽을 문서: [실험의 원리·목적·효과](HAIR_WEB_SKIN_EXPERIMENT_EXPLAINED_20260908.md), [두 모델의 후속 개선 방향](HAIR_WEB_SKIN_IMPROVEMENT_PLAN_20260908.md).
 
@@ -33,7 +33,7 @@ Web Skin은 웹캠 등으로 촬영한 얼굴 정면 이미지를 대상으로 �
 | Original | 0.6679999828338623 | 0.7850000262260437 | 0.7833125866587888 |
 | Augmented | 0.6880000233650208 | 0.8199999928474426 | 0.8195818185502844 |
 
-출처: [Original 결과](../../results/web_skin/original/results.json), [Augmented 결과](../../results/web_skin/augmented/results.json). 이 표는 과거 보고값이며 이번에 기존 모델을 다시 측정한 결과가 아니다.
+출처: [Original 결과](../../results/web_skin/1_training/original/results.json), [Augmented 결과](../../results/web_skin/1_training/augmented/results.json). 이 표는 과거 보고값이며 이번에 기존 모델을 다시 측정한 결과가 아니다.
 
 정상에 비해 아토피·여드름의 성능이 낮았다. 개선 원인 후보는 일반 이미지 특징이 피부에 충분히 맞춰지지 않았다는 점, 작은 특징의 축소, 클래스 간 시각적 유사성, 라벨·출처·촬영 조건 차이였다. 원인이 하나라고 확정하고 모델만 크게 바꾸기보다 데이터 확인과 단계별 실험을 먼저 진행했다.
 

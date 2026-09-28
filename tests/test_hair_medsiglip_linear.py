@@ -1,10 +1,10 @@
-import ast
 import inspect
 import json
 from pathlib import Path
 
 import numpy as np
 import pytest
+from notebook_support import assert_notebook_sources
 
 from mediflow_datasets import hair_medsiglip_linear as module
 
@@ -90,7 +90,6 @@ def test_selection_rule_uses_macro_f1_then_accuracy():
 def test_notebook_embeds_current_sources_and_fixed_settings():
     path = ROOT / "notebooks/15_hair_medsiglip_linear_probe_colab.ipynb"
     notebook = json.loads(path.read_text(encoding="utf-8"))
-    assert len(notebook["cells"]) == 13
     all_source = "\n".join("".join(item["source"]) for item in notebook["cells"])
     for expected in (
         "MODE = 'hair_medsiglip_linear'",
@@ -102,27 +101,4 @@ def test_notebook_embeds_current_sources_and_fixed_settings():
         "hair_datasets.zip",
     ):
         assert expected in all_source
-    for item in notebook["cells"]:
-        if item["cell_type"] != "code":
-            continue
-        assert item["outputs"] == []
-        source = "".join(item["source"])
-        python_source = "\n".join(
-            line for line in source.splitlines() if not line.lstrip().startswith("%pip ")
-        )
-        compile(
-            python_source,
-            path.name,
-            "exec",
-        )
-        if "SOURCES = " not in source:
-            continue
-        assignments = {
-            node.targets[0].id: node.value
-            for node in ast.parse(source).body
-            if isinstance(node, ast.Assign) and isinstance(node.targets[0], ast.Name)
-        }
-        embedded = ast.literal_eval(assignments["SOURCES"])
-        for name, code in embedded.items():
-            expected = (ROOT / f"src/mediflow_datasets/{name}.py").read_text(encoding="utf-8")
-            assert code == expected
+    assert_notebook_sources(path, notebook)

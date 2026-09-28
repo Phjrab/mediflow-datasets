@@ -1,10 +1,10 @@
-import ast
 import json
 from pathlib import Path
 
 import numpy as np
 import pytest
 import tensorflow as tf
+from notebook_support import assert_notebook_sources
 
 from mediflow_datasets import paper_suite
 
@@ -72,27 +72,4 @@ def test_supcon_loss_is_finite_and_rewards_same_class_alignment():
 def test_paper_suite_notebook_embeds_current_sources():
     path = ROOT / "notebooks/05_hair_paper_experiment_suite_colab.ipynb"
     notebook = json.loads(path.read_text(encoding="utf-8"))
-    assert len(notebook["cells"]) == 13
-    for item in notebook["cells"]:
-        if item["cell_type"] != "code":
-            continue
-        assert item["outputs"] == []
-        source = "".join(item["source"])
-        compile(
-            "\n".join(line for line in source.splitlines() if not line.startswith("%pip ")),
-            path.name,
-            "exec",
-        )
-        if "SOURCES = " not in source:
-            continue
-        assignments = {
-            node.targets[0].id: node.value
-            for node in ast.parse(source).body
-            if isinstance(node, ast.Assign) and isinstance(node.targets[0], ast.Name)
-        }
-        embedded = ast.literal_eval(assignments["SOURCES"])
-        for name, code in embedded.items():
-            expected = (ROOT / f"src/mediflow_datasets/{name}.py").read_text(
-                encoding="utf-8"
-            )
-            assert code == expected
+    assert_notebook_sources(path, notebook)

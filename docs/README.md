@@ -63,6 +63,8 @@
     Hair v2 대비 Validation 성능, 클래스별 혼동과 미채택 판단
 33. [전체 실험 선택 이유·방법·결과 대장](research/ALL_EXPERIMENTS_RATIONALE_AND_RESULTS_20260924.md):
     데이터 정제부터 증강·미세조정·Loss·논문 강화·MedSigLIP까지 모든 실험의 이유와 실제 결론
+34. [저장 모델·평가 기록 재현 점검](research/EVALUATION_REPRODUCTION_AUDIT_20260927.md):
+    초기 6개 모델의 과거 기록 내부 대조, 현재 후보 3개의 저장 예측 재계산, 재실행 한계
 
 [1차 발표 정리](presentations/1차.md)는 발표 자료를 만들 때 참고한다.
 

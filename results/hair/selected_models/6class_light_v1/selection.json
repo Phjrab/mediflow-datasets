@@ -1,0 +1,27 @@
+{
+  "schema": "mediflow_selected_model_v1",
+  "domain": "hair",
+  "class_count": 6,
+  "version": "6class_light_v1",
+  "role": "lightweight_alternate",
+  "status": "public_data_candidate_not_device_validated",
+  "candidate_id": "public_candidate_6class_light_b0_256_augmented_v1",
+  "architecture": "EfficientNet-B0",
+  "input_size": [
+    256,
+    256
+  ],
+  "loss": "categorical crossentropy",
+  "validation_accuracy": 0.7777777777777778,
+  "validation_macro_f1": 0.7819142733310591,
+  "test_accuracy": 0.7869731800766283,
+  "test_macro_f1": 0.8021613486071133,
+  "output_adapter": "direct_softmax",
+  "model_file": "hair_model.keras",
+  "model_sha256": "38e91fee1c514b75165d07f5dfbb0c52fdb7ac92313b40d47abb50c71367d432",
+  "data_zip_sha256": "e2a6b4347d94bd7050d17bd3aca404161693083b12afb51d7e20aa9b284f0f93",
+  "source_candidate_package": "hair/candidates/public_candidate_6class_light_b0_256_augmented_v1.zip",
+  "source_package_sha256": "a83be0946a929285f12431d50692e890f2913d4a539dd6142a95396f43505b23",
+  "selection_reason": "B0 256 augmented; selected for lower measured latency and checkpoint size",
+  "benchmark_record": "runtime_benchmark_20260928_051423/benchmark.json"
+}

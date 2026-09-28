@@ -1,6 +1,6 @@
 # MediFlow 문서·노트북 상태 색인
 
-기준일: 2026-09-23. 파일을 이동하거나 삭제하지 않고, 현재 기준과 과거 기록의 역할을 구분한다.
+최초 작성: 2026-09-23. 상태 갱신: 2026-09-28. 파일을 이동하거나 삭제하지 않고, 현재 기준과 과거 기록의 역할을 구분한다.
 
 ## 1. 현재 기준 문서
 
@@ -12,6 +12,8 @@
 | 4 | `../results/CANDIDATE_INDEX.json` | 최종 후보 ID·경로·해시·성능의 기계 판독 기준 |
 | 5 | `guides/TEAM_MODEL_QUICKSTART.md` | 팀원용 모델 사용법 |
 | 6 | `research/PAPER_EXPERIMENTS_FINAL_ANALYSIS_20260922.md` | Hair 논문 기반 방법의 상세 결과 |
+| 7 | `research/ALL_EXPERIMENTS_RATIONALE_AND_RESULTS_20260924.md` | 초기 재학습부터 MedSigLIP까지 실험 이유와 결과 |
+| 8 | `research/EVALUATION_REPRODUCTION_AUDIT_20260927.md` | 저장 평가 기록의 확인 범위와 원래 Test 사진 부재 |
 
 ## 2. 도메인별 상세 근거
 
@@ -66,6 +68,8 @@
 | `11_web_skin_wsdan_attention_colab.ipynb` | 실행 완료 | 기준선과 WS-DAN·PMG·MixStyle 비교, PMG 선정 |
 | `12_web_skin_pmg_b1_384_colab.ipynb` | 실행 완료 | PMG·B1·384 Validation 성능과 비용 확인 |
 | `13_web_skin_pmg_b0_256_final_test_package_colab.ipynb` | 실행 완료 | 고정된 PMG·B0·256 최종 Test와 후보 v2 패키징 |
+| `14_web_skin_medsiglip_linear_probe_colab.ipynb` | 실행 완료 | Web Skin MedSigLIP 선별; 현재 후보보다 낮아 미채택 |
+| `15_hair_medsiglip_linear_probe_colab.ipynb` | 실행 완료 | Hair MedSigLIP 선별; 현재 후보보다 낮아 미채택 |
 
 `common_colab_notebooks_v1.zip`과 `legacy_notebooks_20260909.zip`은 보관용 묶음이다.
 
@@ -82,7 +86,7 @@
 ## 6. 결과 폴더 읽는 순서
 
 1. `results/CANDIDATE_INDEX.json`
-2. `results/FINAL_MODEL_SUMMARY_20260922.csv`
+2. `results/SELECTED_MODELS.md`와 `results/CURRENT_SELECTED_MODELS.csv`
 3. `results/<domain>/candidates/`의 현재 후보 ZIP
 4. `results/<domain>/experiments/`의 실험별 원본 기록
 5. `results/<domain>/presentation_20260914/`의 발표용 그래프

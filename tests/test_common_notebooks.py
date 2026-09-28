@@ -9,6 +9,7 @@ from pathlib import Path
 import keras
 import numpy as np
 import pytest
+from notebook_support import assert_notebook_sources
 from PIL import Image
 
 from mediflow_datasets import common_engine as engine
@@ -205,32 +206,10 @@ def test_notebooks_are_standalone_and_class_order_matches_original_reports():
     assert len(notebooks) == 3
     for path in notebooks:
         notebook = json.loads(path.read_text(encoding="utf-8"))
-        for cell in notebook["cells"]:
-            if cell["cell_type"] != "code":
-                continue
-            assert cell["outputs"] == []
-            source = "".join(cell["source"])
-            compile(
-                "\n".join(s for s in source.splitlines() if not s.startswith("%pip ")),
-                path.name,
-                "exec",
-            )
-            if "SOURCES = " not in source:
-                continue
-            nodes = ast.parse(source).body
-            assignments = {
-                n.targets[0].id: n.value
-                for n in nodes
-                if isinstance(n, ast.Assign) and isinstance(n.targets[0], ast.Name)
-            }
-            sources = ast.literal_eval(assignments["SOURCES"])
-            for name, code in sources.items():
-                assert code == (ROOT / f"src/mediflow_datasets/{name}.py").read_text(
-                    encoding="utf-8"
-                )
-            profiles = ast.literal_eval(assignments["PROFILES"])
-            for domain, classes in profiles.items():
-                assert classes == MODEL_VARIANTS[domain]["original"].class_names()
+        assignments = assert_notebook_sources(path, notebook)
+        profiles = ast.literal_eval(assignments["PROFILES"])
+        for domain, classes in profiles.items():
+            assert classes == MODEL_VARIANTS[domain]["original"].class_names()
 
 
 @pytest.mark.parametrize("count,epochs2", [(5, 0), (10, 1)])

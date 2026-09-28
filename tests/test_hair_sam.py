@@ -1,9 +1,9 @@
-import ast
 import inspect
 import json
 from pathlib import Path
 
 import pytest
+from notebook_support import assert_notebook_sources
 
 from mediflow_datasets import hair_sam
 
@@ -53,32 +53,9 @@ def test_sam_contract_requires_exact_parent_checkpoint(tmp_path):
 def test_sam_notebook_embeds_current_sources():
     path = ROOT / "notebooks/09_hair_b1_384_sam_screen_colab.ipynb"
     notebook = json.loads(path.read_text(encoding="utf-8"))
-    assert len(notebook["cells"]) == 13
     all_source = "\n".join("".join(item["source"]) for item in notebook["cells"])
     assert "MODE = 'sam_screen'" in all_source
     assert "SAM_RHO = 0.05" in all_source
     assert "STAGE2_EPOCHS = 15" in all_source
     assert "PARENT_STAGE1_SHA256 =" in all_source
-    for item in notebook["cells"]:
-        if item["cell_type"] != "code":
-            continue
-        assert item["outputs"] == []
-        source = "".join(item["source"])
-        compile(
-            "\n".join(line for line in source.splitlines() if not line.startswith("%pip ")),
-            path.name,
-            "exec",
-        )
-        if "SOURCES = " not in source:
-            continue
-        assignments = {
-            node.targets[0].id: node.value
-            for node in ast.parse(source).body
-            if isinstance(node, ast.Assign) and isinstance(node.targets[0], ast.Name)
-        }
-        embedded = ast.literal_eval(assignments["SOURCES"])
-        for name, code in embedded.items():
-            expected = (ROOT / f"src/mediflow_datasets/{name}.py").read_text(
-                encoding="utf-8"
-            )
-            assert code == expected
+    assert_notebook_sources(path, notebook)

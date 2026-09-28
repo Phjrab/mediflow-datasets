@@ -4,7 +4,7 @@
 데이터셋 전처리를 실행하기 위한 Python 프로젝트입니다. 이 결과는 의료 진단이 아닌 연구 및
 스크리닝 보조 목적으로 사용해야 합니다.
 
-현재 프로젝트 전체 현황은 [`MEDIFLOW_PROJECT_MASTER_SUMMARY_20260922.md`](docs/research/MEDIFLOW_PROJECT_MASTER_SUMMARY_20260922.md),
+현재 프로젝트 전체 현황은 [`MEDIFLOW_PROJECT_COMPREHENSIVE_FINAL_20260923.md`](docs/research/MEDIFLOW_PROJECT_COMPREHENSIVE_FINAL_20260923.md),
 최종 후보의 경로·해시·성능은 [`CANDIDATE_INDEX.json`](results/CANDIDATE_INDEX.json)을 기준으로 확인합니다.
 
 ## 모델
@@ -12,7 +12,7 @@
 | 도메인 | 입력 환경 | 클래스 수 | 현재 공개 데이터 후보 |
 |---|---|---:|---|
 | `skin` | USB 현미경 피부 병변 | 10 | EfficientNet-B0 · 224 · CE · Augmented |
-| `web_skin` | 웹캠 얼굴 피부 | 5 | EfficientNet-B0 · 256 · CE |
+| `web_skin` | 웹캠 얼굴 피부 | 5 | PMG · EfficientNet-B0 · 256 · CE |
 | `hair` | USB 현미경 두피 | 5 | EfficientNet-B1 · 384 · LS 0.05 · Adam |
 
 기존 자료는 용도에 따라 정리되어 있습니다. 샘플 이미지는 [`data_examples/`](data_examples/),
@@ -33,7 +33,19 @@ python -m pip install --upgrade pip
 python -m pip install -e ".[dev]"
 ```
 
-## 단일 이미지 추론
+## 현재 후보 확인
+
+팀에서 사용할 세 후보의 모델 파일, 입력 크기, 클래스 순서와 Web Skin PMG의 네 출력 결합 방법은
+[`MODEL_USAGE.md`](results/MODEL_USAGE.md)를 따릅니다. 보관된 샘플 이미지로 세 후보의 추론
+계약을 검사하려면 새 출력 폴더를 지정해 다음을 실행합니다.
+
+```bash
+python -m mediflow_datasets.candidate_reproduction --output candidate_check
+```
+
+이는 샘플 입력에 대한 기능 확인이며 새로운 Test 성능 측정은 아닙니다.
+
+## 초기 학습 모델의 단일 이미지 추론
 
 ```bash
 mediflow-infer web_skin "data_examples/web_skin/정상_000002.png"
@@ -50,8 +62,8 @@ python -m mediflow_datasets.cli hair "data_examples/hair/비듬_0006.jpg"
 EfficientNet 후보 안에 `Rescaling(1/255)`이 있으므로 RGB 픽셀을 0–255 `float32`로
 전달하며 별도의 `/255.0` 정규화를 하지 않습니다.
 
-위 CLI는 기존 `results/*/1_training` 모델을 읽는 연구용 실행 경로다. 팀 통합에서는
-`results/*/candidates`의 현재 후보와 [`MODEL_USAGE.md`](results/MODEL_USAGE.md)를 사용한다.
+위 CLI는 기존 `results/*/1_training` 모델을 읽는 과거 연구용 실행 경로입니다. 현재 선정
+후보의 성능이나 동작을 확인하는 명령으로 해석하지 않습니다.
 
 ## 데이터 전처리
 
@@ -84,8 +96,10 @@ pytest
 
 ## 기존 평가 재현
 
-원래 Test 데이터셋의 클래스 폴더를 지정하면 original/augmented 모델의 지표를 다시
-계산할 수 있습니다.
+정제 전 원래 Test 데이터셋의 클래스 폴더가 있을 때에만 original/augmented 모델의 지표를
+다시 계산할 수 있습니다. 현재 보관 자료에는 이 사진이 없어 원래 평가의 추론 재실행은
+완료하지 못했습니다. 가능한 범위와 이미 확인한 결과는
+[`평가 재현 점검`](docs/research/EVALUATION_REPRODUCTION_AUDIT_20260927.md)에 기록했습니다.
 
 ```bash
 mediflow-evaluate hair <hair-test-폴더> --variant original --output reports/hair-original.json

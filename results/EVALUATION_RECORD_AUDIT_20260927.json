@@ -1,0 +1,418 @@
+{
+  "audit_type": "saved_prediction_and_model_integrity",
+  "new_model_inference_performed": false,
+  "original_six_model_test_reproduced": false,
+  "reason": "Original pre-cleaning Test splits are unavailable; cleaned splits are different.",
+  "historical_initial_reports": {
+    "skin_original": {
+      "model": "skin\\1_training\\original\\best_model.keras",
+      "model_sha256": "1b146a6a53742226ec677865aa71bd842a28c9db9c3174b352dd8bc87270770b",
+      "summary_file": "skin\\1_training\\original\\results.json",
+      "class_report_file": "skin\\1_training\\original\\classification_report.txt",
+      "class_order": [
+        "광선각화증",
+        "기저세포암",
+        "보웬병",
+        "사마귀",
+        "지루각화증",
+        "편평세포암",
+        "표피낭종",
+        "피부섬유종",
+        "혈관종",
+        "흑색점"
+      ],
+      "reported_test_accuracy": 0.9942857027053833,
+      "reported_test_macro_f1": null,
+      "test_image_count_from_report": 700,
+      "accuracy_from_class_report": 0.9942799999999999,
+      "macro_f1_from_class_report": 0.99429,
+      "report_precision": "4 decimals"
+    },
+    "skin_augmented": {
+      "model": "skin\\1_training\\augmented\\best_model.keras",
+      "model_sha256": "6d0c3d60fceebcd9299e6d79eef3266c4521906e92058b28f1841ec3535942bd",
+      "summary_file": "skin\\1_training\\augmented\\results.json",
+      "class_report_file": "skin\\1_training\\augmented\\classification_report.txt",
+      "class_order": [
+        "광선각화증",
+        "기저세포암",
+        "보웬병",
+        "사마귀",
+        "지루각화증",
+        "편평세포암",
+        "표피낭종",
+        "피부섬유종",
+        "혈관종",
+        "흑색점"
+      ],
+      "reported_test_accuracy": 0.9957143068313599,
+      "reported_test_macro_f1": null,
+      "test_image_count_from_report": 700,
+      "accuracy_from_class_report": 0.99571,
+      "macro_f1_from_class_report": 0.9957100000000001,
+      "report_precision": "4 decimals"
+    },
+    "web_skin_original": {
+      "model": "web_skin\\1_training\\original\\best_model.keras",
+      "model_sha256": "11c5a160ddeb406c4e80802e38a372e90a0222c1dddf208e270676f795f177ae",
+      "summary_file": "web_skin\\1_training\\original\\results.json",
+      "class_report_file": "web_skin\\1_training\\original\\classification_report.csv",
+      "class_order": [
+        "건선",
+        "아토피",
+        "여드름",
+        "정상",
+        "주사"
+      ],
+      "reported_test_accuracy": 0.7850000262260437,
+      "reported_test_macro_f1": 0.7833125866587888,
+      "test_image_count_from_report": 400,
+      "accuracy_from_class_report": 0.785,
+      "macro_f1_from_class_report": 0.7833125866587889,
+      "report_precision": "full saved precision"
+    },
+    "web_skin_augmented": {
+      "model": "web_skin\\1_training\\augmented\\best_model.keras",
+      "model_sha256": "3b05c59500c272600438026b758842728b21d2ad2ce376cb435f436d4167310f",
+      "summary_file": "web_skin\\1_training\\augmented\\results.json",
+      "class_report_file": "web_skin\\1_training\\augmented\\classification_report.csv",
+      "class_order": [
+        "건선",
+        "아토피",
+        "여드름",
+        "정상",
+        "주사"
+      ],
+      "reported_test_accuracy": 0.8199999928474426,
+      "reported_test_macro_f1": 0.8195818185502844,
+      "test_image_count_from_report": 400,
+      "accuracy_from_class_report": 0.82,
+      "macro_f1_from_class_report": 0.8195818185502844,
+      "report_precision": "full saved precision"
+    },
+    "hair_original": {
+      "model": "hair\\1_training\\original\\best_model.keras",
+      "model_sha256": "d1695bf35701dee5b5a7b4623d105009053afc800d3900e265de4607550e5771",
+      "summary_file": "hair\\1_training\\original\\training_config.json",
+      "class_report_file": "hair\\1_training\\original\\classification_report.csv",
+      "class_order": [
+        "모낭사이홍반",
+        "미세각질",
+        "비듬",
+        "탈모",
+        "피지과다"
+      ],
+      "reported_test_accuracy": 0.6841379310344827,
+      "reported_test_macro_f1": 0.6827345904185209,
+      "test_image_count_from_report": 1450,
+      "accuracy_from_class_report": 0.6841379310344827,
+      "macro_f1_from_class_report": 0.6827345904185209,
+      "report_precision": "full saved precision"
+    },
+    "hair_augmented": {
+      "model": "hair\\1_training\\augmented\\best_model.keras",
+      "model_sha256": "324107bb1773e2f288b88985ebd81d07d1a8527a7e0963b3b964602d89042e68",
+      "summary_file": "hair\\1_training\\augmented\\training_config.json",
+      "class_report_file": "hair\\1_training\\augmented\\classification_report.csv",
+      "class_order": [
+        "모낭사이홍반",
+        "미세각질",
+        "비듬",
+        "탈모",
+        "피지과다"
+      ],
+      "reported_test_accuracy": 0.6910344827586207,
+      "reported_test_macro_f1": 0.6894861696407794,
+      "test_image_count_from_report": 1450,
+      "accuracy_from_class_report": 0.6910344827586207,
+      "macro_f1_from_class_report": 0.6894861696407794,
+      "report_precision": "full saved precision"
+    }
+  },
+  "candidates": {
+    "skin": {
+      "selected_version": "v1",
+      "model": "skin/selected_models/v1/skin_model.keras",
+      "model_sha256": "0b2a757320a113dbc1b285adab8c7745b2f7edc2cb29cc402d06f7882edc9f7a",
+      "class_order": [
+        "광선각화증",
+        "기저세포암",
+        "보웬병",
+        "사마귀",
+        "지루각화증",
+        "편평세포암",
+        "표피낭종",
+        "피부섬유종",
+        "혈관종",
+        "흑색점"
+      ],
+      "prediction_file": "skin/experiments/comparison_20260909_075056_72d865bf/final_test_predictions.csv",
+      "prediction_sha256": "4116eba4261868fe96898c44ef8cbe78411c0a26a87885cee8869f14f5b4f780",
+      "metrics_file": "skin/experiments/comparison_20260909_075056_72d865bf/final_test_metrics.json",
+      "metrics_sha256": "85ea8511d54c79b6a1e57614e1996cc71fd2ace14d99af1f96f470f3fd04d04c",
+      "image_count": 700,
+      "accuracy": 0.9871428571428571,
+      "macro_f1": 0.9871314132317626,
+      "support": [
+        70,
+        70,
+        70,
+        70,
+        70,
+        70,
+        70,
+        70,
+        70,
+        70
+      ],
+      "confusion_matrix": [
+        [
+          67,
+          0,
+          0,
+          1,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          69,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          69,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          67,
+          0,
+          1,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          70,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          0,
+          0,
+          69,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          70,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          70,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          70,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          70
+        ]
+      ]
+    },
+    "web_skin": {
+      "selected_version": "v2",
+      "model": "web_skin/selected_models/v2/web_skin_model.keras",
+      "model_sha256": "83e659dd09a9355135ee0de0197037e81ece962777f59dedae8d9a37b49a3fc4",
+      "class_order": [
+        "건선",
+        "아토피",
+        "여드름",
+        "정상",
+        "주사"
+      ],
+      "prediction_file": "web_skin/candidates/public_candidate_v2_pmg_b0_256_ce_20260922_235840_093d10de/final_test_predictions.csv",
+      "prediction_sha256": "b40f79f9349ce587bbb3ff2c25cc7db7d37a20c09b163b00ac0f71ca0865cbba",
+      "metrics_file": "web_skin/candidates/public_candidate_v2_pmg_b0_256_ce_20260922_235840_093d10de/final_test_metrics.json",
+      "metrics_sha256": "f0ab05e27edcc3f3f7d4a33db0fb7ad2a96ca4050b8b1c165333067ce285ae7d",
+      "image_count": 400,
+      "accuracy": 0.915,
+      "macro_f1": 0.9141049081029712,
+      "support": [
+        80,
+        80,
+        80,
+        80,
+        80
+      ],
+      "confusion_matrix": [
+        [
+          66,
+          6,
+          6,
+          0,
+          2
+        ],
+        [
+          3,
+          70,
+          4,
+          2,
+          1
+        ],
+        [
+          3,
+          1,
+          72,
+          1,
+          3
+        ],
+        [
+          0,
+          0,
+          0,
+          80,
+          0
+        ],
+        [
+          1,
+          1,
+          0,
+          0,
+          78
+        ]
+      ]
+    },
+    "hair": {
+      "selected_version": "v2",
+      "model": "hair/selected_models/v2/hair_model.keras",
+      "model_sha256": "9faa33b8f79f45ef6e7be415473e2ee5225f6195fff04d098828733db23ed3c2",
+      "class_order": [
+        "모낭사이홍반",
+        "미세각질",
+        "비듬",
+        "탈모",
+        "피지과다"
+      ],
+      "prediction_file": "hair/candidates/public_candidate_v2_b1_384_ls005_adam_20260921_155906_82311da4/final_test_predictions.csv",
+      "prediction_sha256": "f40761a3b026e7e7f0e974c16006c389b15cecacdcc4c74926bfe15c35f458b8",
+      "metrics_file": "hair/candidates/public_candidate_v2_b1_384_ls005_adam_20260921_155906_82311da4/final_test_metrics.json",
+      "metrics_sha256": "4f6073a994f4348f2d498f1ca74c429204c403798c4ae1239da94430c105886a",
+      "image_count": 1252,
+      "accuracy": 0.8003194888178914,
+      "macro_f1": 0.8002222282821301,
+      "support": [
+        248,
+        256,
+        241,
+        245,
+        262
+      ],
+      "confusion_matrix": [
+        [
+          204,
+          11,
+          8,
+          18,
+          7
+        ],
+        [
+          10,
+          203,
+          27,
+          3,
+          13
+        ],
+        [
+          1,
+          40,
+          177,
+          1,
+          22
+        ],
+        [
+          14,
+          4,
+          6,
+          206,
+          15
+        ],
+        [
+          16,
+          6,
+          13,
+          15,
+          212
+        ]
+      ]
+    }
+  }
+}

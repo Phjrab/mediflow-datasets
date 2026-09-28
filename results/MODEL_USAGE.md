@@ -12,6 +12,12 @@
 | Web Skin | `web_skin/selected_models/v2/web_skin_model.keras` | 256×256 RGB | 4 logits×5 → 5 |
 | Skin | `skin/selected_models/v1/skin_model.keras` | 224×224 RGB | 10 |
 
+Hair 6-class는 위 Hair 5-class 모델의 출력 계약과 다르다. 공개 데이터 연구상 성능 우선
+후보는 `hair/selected_models/6class_performance_v1/hair_model.keras`(384×384 RGB, 6출력),
+경량 대안은 `hair/selected_models/6class_light_v1/hair_model.keras`(256×256 RGB, 6출력)이다.
+두 후보의 선정 이유·평가·측정 지표는
+[종합 선정 문서](FINAL_MODEL_SELECTION_20260928.md)에 있다.
+
 로컬 통합에서는 `selected_models`의 현재 버전을 사용한다. 팀원에게 단일 패키지로 전달할 때는
 `CANDIDATE_INDEX.json`에 지정된 후보 ZIP을 사용한다. ZIP 안에는 모델, 클래스 순서, 전처리
 정보와 평가 기록이 들어 있다. 같은 이름의 `.zip.sha256`은 전달 중 파일이 바뀌거나 손상되지
@@ -41,6 +47,9 @@ USB 현미경이라는 정보만으로 Hair와 Skin을 선택하면 안 된다. 
 3 탈모
 4 피지과다
 ```
+
+위 순서는 **Hair 5-class** 모델용이다. Hair 6-class 두 후보는 같은 다섯 클래스 뒤에
+`5 양호`가 추가된다. 각 후보의 `class_names.json`을 읽고 출력 길이 6을 확인한다.
 
 ### Web Skin
 
@@ -86,6 +95,12 @@ Hair와 Skin은 단일 softmax 출력을 그대로 사용한다. Web Skin PMG �
 출력을 반환하므로 후보 ZIP의 `inference.py`처럼 네 출력을 합산한 뒤 softmax를 한 번
 적용한다. 첫 출력만 사용하거나 branch마다 softmax를 적용하면 재현 결과와 달라진다.
 
+Hair 6-class 두 후보도 단일 softmax 출력이다. 입력 크기는 각각의 `preprocessing.json`을
+따른다. 아래 5-class 재현 예제의 `index["candidates"]["hair"]`를 6-class 모델에 그대로
+사용하면 모델과 클래스 수가 어긋난다. 6-class 경로는
+[별도 선정 색인](PUBLIC_MODEL_SELECTION_20260928.json)의 `hair_6class_primary` 또는
+`hair_6class_light`에서 명시적으로 고른다.
+
 근거: 각 현재 후보의 `preprocessing.json`. Hair v2 패키지는 입력 크기, resize, 픽셀 범위와
 내부 정규화를 명시한다. 기존 Hair v1 후보 ZIP은 과거 실험 기록으로 보존했다.
 
@@ -120,8 +135,21 @@ assert scores.shape == (len(classes),)
 print({"candidate": spec["candidate_id"], "classes": classes, "scores": scores.tolist()})
 ```
 
+Hair **6-class**를 시험할 때는 위 코드의 `index`·`spec` 두 줄만 다음처럼 바꾼다.
+`hair_6class_light`를 선택하면 같은 코드에서 경량 대안을 불러온다. 파일 이름과
+출력 클래스 수를 직접 추측하지 않는다.
+
+```python
+selection = json.loads(
+    (ROOT / "results/PUBLIC_MODEL_SELECTION_20260928.json").read_text(encoding="utf-8")
+)
+spec = selection["selections"]["hair_6class_primary"]
+```
+
 위는 최소 예제다. 실제 전달 검증에는 모델 해시·입력 크기·클래스 수·출력값 검사까지 포함한
 아래 명령을 사용한다. 여러 요청을 처리하는 서비스에서는 모델을 한 번 로드해 재사용한다.
+현재 이 명령의 검증 범위는 기존 색인의 Skin, Web Skin, Hair **5-class** 세 모델이다.
+Hair 6-class는 별도 선정 색인과 패키지의 평가 기록을 사용한다.
 
 ```bash
 python -m mediflow_datasets.candidate_reproduction --output results/reproduction_team_run1

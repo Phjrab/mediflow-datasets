@@ -1,4 +1,3 @@
-import ast
 import inspect
 import json
 from pathlib import Path
@@ -6,6 +5,7 @@ from pathlib import Path
 import numpy as np
 import pytest
 import tensorflow as tf
+from notebook_support import assert_notebook_sources
 
 from mediflow_datasets import web_skin_paper_suite, web_skin_wsdan
 
@@ -128,7 +128,6 @@ def test_official_method_components_are_recorded():
 def test_web_skin_notebook_embeds_current_sources():
     path = ROOT / "notebooks/11_web_skin_wsdan_attention_colab.ipynb"
     notebook = json.loads(path.read_text(encoding="utf-8"))
-    assert len(notebook["cells"]) == 13
     all_source = "\n".join("".join(item["source"]) for item in notebook["cells"])
     assert "MODE = 'web_skin_paper_suite'" in all_source
     assert "PMG_JIGSAW_GRIDS = [8, 4, 2]" in all_source
@@ -142,26 +141,4 @@ def test_web_skin_notebook_embeds_current_sources():
     assert "자율설계2/web_skin_processed.zip" not in all_source
     assert "force_remount=True" in all_source
     assert "zipfile.is_zipfile(data_path)" in all_source
-    for item in notebook["cells"]:
-        if item["cell_type"] != "code":
-            continue
-        assert item["outputs"] == []
-        source = "".join(item["source"])
-        compile(
-            "\n".join(line for line in source.splitlines() if not line.startswith("%pip ")),
-            path.name,
-            "exec",
-        )
-        if "SOURCES = " not in source:
-            continue
-        assignments = {
-            node.targets[0].id: node.value
-            for node in ast.parse(source).body
-            if isinstance(node, ast.Assign) and isinstance(node.targets[0], ast.Name)
-        }
-        embedded = ast.literal_eval(assignments["SOURCES"])
-        for name, code in embedded.items():
-            expected = (ROOT / f"src/mediflow_datasets/{name}.py").read_text(
-                encoding="utf-8"
-            )
-            assert code == expected
+    assert_notebook_sources(path, notebook)

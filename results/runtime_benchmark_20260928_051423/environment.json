@@ -1,0 +1,14 @@
+{
+  "measured_at": "2026-09-28T05:14:23.610614",
+  "python": "3.13.15",
+  "tensorflow": "2.20.0",
+  "gpu": [
+    "/physical_device:GPU:0"
+  ],
+  "warmup": 10,
+  "repeats_per_metric": 30,
+  "batch_size": 1,
+  "sample": "constant RGB 512x512; no dataset or labels used",
+  "training_time_source": "original run metadata, not remeasured",
+  "latency_definition": "model and image-to-prediction, synchronous, excluding model load"
+}

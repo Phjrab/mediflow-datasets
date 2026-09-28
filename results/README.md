@@ -3,18 +3,29 @@
 현재 팀 통합 대상 모델은 각 도메인의 `selected_models` 폴더에 버전별로 정리했다. 정확한 현재
 버전, 모델 경로, 설정, 성능과 SHA-256은 [CANDIDATE_INDEX.json](CANDIDATE_INDEX.json)을
 기준으로 확인한다. 전체 버전 목록은 [SELECTED_MODELS.md](SELECTED_MODELS.md)를 참고한다.
+이 기존 색인의 Hair는 **5-class**다. 별도 Hair **6-class** 성능 우선·경량 후보를 포함한
+공개 데이터 모델 종합 선정은 [FINAL_MODEL_SELECTION_20260928.md](FINAL_MODEL_SELECTION_20260928.md),
+경로·지표 색인은 [PUBLIC_MODEL_SELECTION_20260928.json](PUBLIC_MODEL_SELECTION_20260928.json)을 본다.
 학습 방법과 v1→v2 개선 이유는 [MODEL_VERSION_COMPARISON.md](MODEL_VERSION_COMPARISON.md)에
 표로 정리했다.
 표 계산에는 `CURRENT_SELECTED_MODELS.csv`, 버전 비교에는
 `SELECTED_MODEL_HISTORY_20260923.csv`를 사용한다. `FINAL_MODEL_SUMMARY_20260922.csv`는 Web Skin
 v2 선정 전의 과거 스냅샷이다.
 팀원에게 전달할 입력·클래스·실행 예제는 [MODEL_USAGE.md](MODEL_USAGE.md)를 참고한다.
+2026-09-27 저장 평가 기록 점검 결과는
+[EVALUATION_RECORD_AUDIT_20260927.json](EVALUATION_RECORD_AUDIT_20260927.json)에 있다.
+이는 저장된 예측과 모델 해시의 대조 결과이며 새 이미지 추론 결과는 아니다.
+
+2026-09-28 저장 모델 34개 실행 시간 측정의 원본 ZIP, 수치 CSV/JSON, 발표용 그림 12장은
+[runtime_benchmark_20260928_051423](runtime_benchmark_20260928_051423/README.md)에 정리했다.
+수치 해석과 비교 가능 범위는 [측정 결과 검토](../docs/research/RUNTIME_BENCHMARK_REVIEW_20260928.md)를 따른다.
 
 ```text
 results/
   CANDIDATE_INDEX.json
   SELECTED_MODELS.md
   hair/selected_models/v1, v2/
+  hair/selected_models/6class_performance_v1, 6class_light_v1/
   web_skin/selected_models/v1, v2/
   skin/selected_models/v1/
   hair/candidates/
@@ -24,6 +35,8 @@ results/
 
 각 `selected_models/vN`에는 실제 모델, `MODEL_INFO.md`, `selection.json`, `class_names.json`,
 `preprocessing.json`이 있다. Web Skin v2에는 PMG 출력 처리를 위한 `inference.py`도 있다.
+Hair 6-class의 두 폴더에도 모델과 사용 계약을 같은 형식으로 복사했다. 원본 ZIP은
+`hair/candidates/`에 그대로 보존하고 각각 SHA-256 확인 파일을 추가했다.
 
 각 `candidates` 폴더는 원본 배포 ZIP과 전체 평가 보고서를 다음 형식으로 보존한다.
 
@@ -35,9 +48,11 @@ public_candidate_vN_<설정>_<실행ID>/
 
 | 도메인 | 현재 후보 | 입력 | 출력 클래스 |
 |---|---|---:|---:|
-| Hair | EfficientNet-B1 / LS 0.05 / Adam | 384×384 | 5 |
+| Hair 5-class (기존 통합) | EfficientNet-B1 / LS 0.05 / Adam | 384×384 | 5 |
 | Web Skin | PMG / EfficientNet-B0 / CE | 256×256 | 5 |
 | Skin | EfficientNet-B0 / CE / Augmented | 224×224 | 10 |
+| Hair 6-class (별도 성능 우선 후보) | EfficientNet-B1 / LS 0.05 / Adam | 384×384 | 6 |
+| Hair 6-class (별도 경량 대안) | EfficientNet-B0 / CE / Augmented | 256×256 | 6 |
 
 `1_training`, `experiments`, `archives`는 학습·비교·보관 자료다. 실제 통합에서는
 `selected_models`와 `CANDIDATE_INDEX.json`을 사용하고, 재현용 원본 ZIP과 상세 보고서는

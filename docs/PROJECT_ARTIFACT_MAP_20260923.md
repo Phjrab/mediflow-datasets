@@ -8,6 +8,7 @@
 |---|---|
 | 프로젝트 전체 설명 | `research/MEDIFLOW_PROJECT_COMPREHENSIVE_FINAL_20260923.md` |
 | 현재 단계와 남은 일 | `ROADMAP.md` |
+| 저장 평가 기록의 재현 범위 | `research/EVALUATION_REPRODUCTION_AUDIT_20260927.md` |
 | 세 최종 후보 경로·해시·성능 | `../results/CANDIDATE_INDEX.json` |
 | v1·v2 학습 방법·성능·선정 이유 비교 | `../results/MODEL_VERSION_COMPARISON.md` |
 | 팀 모델 사용법 | `guides/TEAM_MODEL_QUICKSTART.md`, `../results/MODEL_USAGE.md` |
@@ -48,6 +49,7 @@
 - `src/mediflow_datasets/common_engine.py`: 공통 학습·평가 도구
 - `src/mediflow_datasets/common_workflow.py`: Colab 실행·기록·재개
 - `src/mediflow_datasets/candidate_reproduction.py`: 세 현재 후보 공통 추론 검사
+- `src/mediflow_datasets/reproduction_audit.py`: 보관된 평가 기록·예측 수치 점검
 - `src/mediflow_datasets/hair_*.py`: Hair 논문 실험과 최종화
 - `src/mediflow_datasets/web_skin_*.py`: Web Skin 논문 실험과 최종화
 - `scripts/build_*.py`: 독립 실행 가능한 Colab 노트북 생성기

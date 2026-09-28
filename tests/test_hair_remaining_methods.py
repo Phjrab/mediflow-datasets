@@ -1,7 +1,8 @@
-import ast
 import inspect
 import json
 from pathlib import Path
+
+from notebook_support import assert_notebook_sources
 
 from mediflow_datasets import paper_suite
 
@@ -66,27 +67,4 @@ def test_dinov2_uses_token_pooling_instead_of_2d_pooling():
 def test_remaining_methods_notebook_embeds_current_sources():
     path = ROOT / "notebooks/08_hair_remaining_methods_screen_colab.ipynb"
     notebook = json.loads(path.read_text(encoding="utf-8"))
-    assert len(notebook["cells"]) == 13
-    for item in notebook["cells"]:
-        if item["cell_type"] != "code":
-            continue
-        assert item["outputs"] == []
-        source = "".join(item["source"])
-        compile(
-            "\n".join(line for line in source.splitlines() if not line.startswith("%pip ")),
-            path.name,
-            "exec",
-        )
-        if "SOURCES = " not in source:
-            continue
-        assignments = {
-            node.targets[0].id: node.value
-            for node in ast.parse(source).body
-            if isinstance(node, ast.Assign) and isinstance(node.targets[0], ast.Name)
-        }
-        embedded = ast.literal_eval(assignments["SOURCES"])
-        for name, code in embedded.items():
-            expected = (ROOT / f"src/mediflow_datasets/{name}.py").read_text(
-                encoding="utf-8"
-            )
-            assert code == expected
+    assert_notebook_sources(path, notebook)
