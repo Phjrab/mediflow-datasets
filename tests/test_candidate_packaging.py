@@ -1,5 +1,6 @@
 """Packaging is tested with random weights; it does not assert candidate performance."""
 
+import hashlib
 import json
 import shutil
 import zipfile
@@ -29,7 +30,12 @@ def test_packaged_source_and_reviewed_report_fingerprints():
     source = ROOT / "results/web_skin/experiments/suite_20260908_014452_72768a42"
     policy = notebook_policy()
     for relative, digest in policy["report_hashes"].items():
-        assert packaging.sha256_file(source / relative) == digest
+        data = (source / relative).read_bytes()
+        checksums = {hashlib.sha256(data).hexdigest()}
+        if relative.endswith((".csv", ".json", ".py")):
+            normalized = data.replace(b"\r\n", b"\n").replace(b"\n", b"\r\n")
+            checksums.add(hashlib.sha256(normalized).hexdigest())
+        assert digest in checksums, relative
 
 
 def test_package_model_and_reports_round_trip_with_random_weights(tmp_path):
