@@ -2,10 +2,18 @@
 
 **처음 읽을 문서:** [최종 상세 보고서](FINAL_DETAILED_REPORT_20260928.md). 초기 데이터 수집·증강·학습, 데이터 감사, 논문 기반 실험, Hair 6클래스, 실행 비용, 모델 선정과 향후 계획을 한 파일에서 읽을 수 있다.
 
+**최신 점검과 진행 방향:** [LLM·VLM 착수 전 종합 점검](research/PRE_LLM_VLM_PROJECT_AUDIT_20261026.md).
+팀원의 실제 학습 코드와 연결 방법은 [LLM·VLM 저장소 분석](research/TEAM_LLM_VLM_REPOSITORY_REVIEW_20261026.md),
+[결과 설명 LLM과 독립 질환 분류 VLM 가이드](research/LLM_VLM_PROJECT_INTEGRATION_GUIDE_20261026.md)에 있다.
+발표의 1~4차 순서로 다시 쓴 상세 원고는 [단계별 보고서](MEDIFLOW_4_PHASE_DETAILED_REPORT_20260930.md),
+Word 파일은 [단계별 Word 보고서](MEDIFLOW_4_PHASE_DETAILED_REPORT_20260930.docx)다.
+
 | 목적 | 문서 |
 |---|---|
 | 선정 모델 7개의 실제 파일 경로와 현재 사용 상태 | [선정 모델 경로 안내](../results/SELECTED_MODEL_PATHS.md) |
-| 지금 끝난 일과 보류한 일만 빠르게 보기 | [현재 상태](PROJECT_STATUS_20260928.md) |
+| 최신 파일·평가·추론 확인과 LLM·VLM 준비 | [2026-10-26 종합 점검](research/PRE_LLM_VLM_PROJECT_AUDIT_20261026.md) |
+| 팀원 학습 결과와 우리 분류 모델 연결 | [저장소 분석](research/TEAM_LLM_VLM_REPOSITORY_REVIEW_20261026.md), [실행 가이드](research/LLM_VLM_PROJECT_INTEGRATION_GUIDE_20261026.md) |
+| 9월 연구 마감 당시 끝난 일과 보류한 일 | [2026-09-28 상태](PROJECT_STATUS_20260928.md) |
 | 다음 실험·검증의 순서와 완료 기준 | [실행 로드맵](ROADMAP.md) |
 | 선정 모델과 원본 성능·속도 | [모델 최종 선정](../results/FINAL_MODEL_SELECTION_20260928.md) |
 | 팀원이 모델을 불러 쓰는 방법 | [모델 사용법](../results/MODEL_USAGE.md) |

@@ -1,0 +1,504 @@
+{
+  "purpose": "local selected model execution check; not Test accuracy",
+  "environment": {
+    "python": "3.12.14",
+    "tensorflow": "2.20.0",
+    "keras": "3.13.2",
+    "numpy": "2.5.2",
+    "devices": [
+      "PhysicalDevice(name='/physical_device:CPU:0', device_type='CPU')"
+    ]
+  },
+  "cases": [
+    {
+      "domain": "hair",
+      "version": "6class_light_v1",
+      "candidate_id": "public_candidate_6class_light_b0_256_augmented_v1",
+      "model_sha256": "38e91fee1c514b75165d07f5dfbb0c52fdb7ac92313b40d47abb50c71367d432",
+      "image": "data_examples/hair/비듬_0006.jpg",
+      "image_sha256": "f8c88ea31a98c3aeb7eb5773d7d73260bf8a3a79193332b553bb190ef13ef744",
+      "class_names": [
+        "모낭사이홍반",
+        "미세각질",
+        "비듬",
+        "탈모",
+        "피지과다",
+        "양호"
+      ],
+      "output_adapter": "direct_softmax",
+      "input_shape": [
+        1,
+        256,
+        256,
+        3
+      ],
+      "input_min": 0.140625,
+      "input_max": 255.0,
+      "scores": [
+        0.00030504786991514266,
+        0.09126883000135422,
+        0.8994382619857788,
+        6.059898078092374e-05,
+        0.008861906826496124,
+        6.537581793963909e-05
+      ],
+      "predicted_index": 2,
+      "predicted_label": "비듬"
+    },
+    {
+      "domain": "hair",
+      "version": "6class_light_v1",
+      "candidate_id": "public_candidate_6class_light_b0_256_augmented_v1",
+      "model_sha256": "38e91fee1c514b75165d07f5dfbb0c52fdb7ac92313b40d47abb50c71367d432",
+      "image": "data_examples/hair/미세각질_0012.jpg",
+      "image_sha256": "497abdff9e02499e13092e079e65361df4b934e3cd1d661f86654b9e5c3e64b6",
+      "class_names": [
+        "모낭사이홍반",
+        "미세각질",
+        "비듬",
+        "탈모",
+        "피지과다",
+        "양호"
+      ],
+      "output_adapter": "direct_softmax",
+      "input_shape": [
+        1,
+        256,
+        256,
+        3
+      ],
+      "input_min": 0.0,
+      "input_max": 255.0,
+      "scores": [
+        3.1861927709542215e-05,
+        0.7975900769233704,
+        0.19756443798542023,
+        0.0006818717229180038,
+        0.00404014578089118,
+        9.156054875347763e-05
+      ],
+      "predicted_index": 1,
+      "predicted_label": "미세각질"
+    },
+    {
+      "domain": "hair",
+      "version": "6class_performance_v1",
+      "candidate_id": "public_candidate_6class_v1_b1_384_original_20260928_024655",
+      "model_sha256": "5ee54f51e65d8656fc81e88de96ad82a6d119991aa74684f921e4cd7e8b7efbb",
+      "image": "data_examples/hair/비듬_0006.jpg",
+      "image_sha256": "f8c88ea31a98c3aeb7eb5773d7d73260bf8a3a79193332b553bb190ef13ef744",
+      "class_names": [
+        "모낭사이홍반",
+        "미세각질",
+        "비듬",
+        "탈모",
+        "피지과다",
+        "양호"
+      ],
+      "output_adapter": "direct_softmax",
+      "input_shape": [
+        1,
+        384,
+        384,
+        3
+      ],
+      "input_min": 1.0000076293945312,
+      "input_max": 255.0,
+      "scores": [
+        0.0014551635831594467,
+        0.0689723938703537,
+        0.9182930588722229,
+        0.0016162018291652203,
+        0.004745975602418184,
+        0.004917286802083254
+      ],
+      "predicted_index": 2,
+      "predicted_label": "비듬"
+    },
+    {
+      "domain": "hair",
+      "version": "6class_performance_v1",
+      "candidate_id": "public_candidate_6class_v1_b1_384_original_20260928_024655",
+      "model_sha256": "5ee54f51e65d8656fc81e88de96ad82a6d119991aa74684f921e4cd7e8b7efbb",
+      "image": "data_examples/hair/미세각질_0012.jpg",
+      "image_sha256": "497abdff9e02499e13092e079e65361df4b934e3cd1d661f86654b9e5c3e64b6",
+      "class_names": [
+        "모낭사이홍반",
+        "미세각질",
+        "비듬",
+        "탈모",
+        "피지과다",
+        "양호"
+      ],
+      "output_adapter": "direct_softmax",
+      "input_shape": [
+        1,
+        384,
+        384,
+        3
+      ],
+      "input_min": 0.0,
+      "input_max": 255.0,
+      "scores": [
+        0.0003487835347186774,
+        0.6151824593544006,
+        0.36806720495224,
+        0.00823089201003313,
+        0.006339609622955322,
+        0.0018310367595404387
+      ],
+      "predicted_index": 1,
+      "predicted_label": "미세각질"
+    },
+    {
+      "domain": "hair",
+      "version": "v1",
+      "candidate_id": "public_candidate_v1_b1_256_ls005_20260907_120834",
+      "model_sha256": "0842822f6b6299ee7a0cb6b6925681d54705e7e26b3682dee0f1c49f8e72057b",
+      "image": "data_examples/hair/비듬_0006.jpg",
+      "image_sha256": "f8c88ea31a98c3aeb7eb5773d7d73260bf8a3a79193332b553bb190ef13ef744",
+      "class_names": [
+        "모낭사이홍반",
+        "미세각질",
+        "비듬",
+        "탈모",
+        "피지과다"
+      ],
+      "output_adapter": "direct_softmax",
+      "input_shape": [
+        1,
+        256,
+        256,
+        3
+      ],
+      "input_min": 0.140625,
+      "input_max": 255.0,
+      "scores": [
+        0.0036724619567394257,
+        0.07351694256067276,
+        0.9049497246742249,
+        0.0021319419611245394,
+        0.015728965401649475
+      ],
+      "predicted_index": 2,
+      "predicted_label": "비듬"
+    },
+    {
+      "domain": "hair",
+      "version": "v1",
+      "candidate_id": "public_candidate_v1_b1_256_ls005_20260907_120834",
+      "model_sha256": "0842822f6b6299ee7a0cb6b6925681d54705e7e26b3682dee0f1c49f8e72057b",
+      "image": "data_examples/hair/미세각질_0012.jpg",
+      "image_sha256": "497abdff9e02499e13092e079e65361df4b934e3cd1d661f86654b9e5c3e64b6",
+      "class_names": [
+        "모낭사이홍반",
+        "미세각질",
+        "비듬",
+        "탈모",
+        "피지과다"
+      ],
+      "output_adapter": "direct_softmax",
+      "input_shape": [
+        1,
+        256,
+        256,
+        3
+      ],
+      "input_min": 0.0,
+      "input_max": 255.0,
+      "scores": [
+        0.0018410360207781196,
+        0.5683555006980896,
+        0.3928096294403076,
+        0.014924539253115654,
+        0.02206922322511673
+      ],
+      "predicted_index": 1,
+      "predicted_label": "미세각질"
+    },
+    {
+      "domain": "hair",
+      "version": "v2",
+      "candidate_id": "public_candidate_v2_b1_384_ls005_adam_20260921_155906_82311da4",
+      "model_sha256": "9faa33b8f79f45ef6e7be415473e2ee5225f6195fff04d098828733db23ed3c2",
+      "image": "data_examples/hair/비듬_0006.jpg",
+      "image_sha256": "f8c88ea31a98c3aeb7eb5773d7d73260bf8a3a79193332b553bb190ef13ef744",
+      "class_names": [
+        "모낭사이홍반",
+        "미세각질",
+        "비듬",
+        "탈모",
+        "피지과다"
+      ],
+      "output_adapter": "direct_softmax",
+      "input_shape": [
+        1,
+        384,
+        384,
+        3
+      ],
+      "input_min": 1.0000076293945312,
+      "input_max": 255.0,
+      "scores": [
+        0.0013439873000606894,
+        0.054821863770484924,
+        0.9338065981864929,
+        0.0016660360852256417,
+        0.008361583575606346
+      ],
+      "predicted_index": 2,
+      "predicted_label": "비듬"
+    },
+    {
+      "domain": "hair",
+      "version": "v2",
+      "candidate_id": "public_candidate_v2_b1_384_ls005_adam_20260921_155906_82311da4",
+      "model_sha256": "9faa33b8f79f45ef6e7be415473e2ee5225f6195fff04d098828733db23ed3c2",
+      "image": "data_examples/hair/미세각질_0012.jpg",
+      "image_sha256": "497abdff9e02499e13092e079e65361df4b934e3cd1d661f86654b9e5c3e64b6",
+      "class_names": [
+        "모낭사이홍반",
+        "미세각질",
+        "비듬",
+        "탈모",
+        "피지과다"
+      ],
+      "output_adapter": "direct_softmax",
+      "input_shape": [
+        1,
+        384,
+        384,
+        3
+      ],
+      "input_min": 0.0,
+      "input_max": 255.0,
+      "scores": [
+        0.0012429553316906095,
+        0.6058790683746338,
+        0.36663758754730225,
+        0.01563981920480728,
+        0.010600478388369083
+      ],
+      "predicted_index": 1,
+      "predicted_label": "미세각질"
+    },
+    {
+      "domain": "skin",
+      "version": "v1",
+      "candidate_id": "public_candidate_v1_b0_224_ce_augmented_20260909_075056",
+      "model_sha256": "0b2a757320a113dbc1b285adab8c7745b2f7edc2cb29cc402d06f7882edc9f7a",
+      "image": "data_examples/skin/광선각화증_0001.png",
+      "image_sha256": "81834f1b680decc53417f3e69105c01ad05cef67b3961f52360a3819af0ac3b9",
+      "class_names": [
+        "광선각화증",
+        "기저세포암",
+        "보웬병",
+        "사마귀",
+        "지루각화증",
+        "편평세포암",
+        "표피낭종",
+        "피부섬유종",
+        "혈관종",
+        "흑색점"
+      ],
+      "output_adapter": "direct_softmax",
+      "input_shape": [
+        1,
+        224,
+        224,
+        3
+      ],
+      "input_min": 35.53569793701172,
+      "input_max": 249.8009796142578,
+      "scores": [
+        0.9797633290290833,
+        0.002057983074337244,
+        0.0044368659146130085,
+        0.000513886974658817,
+        7.920763891888782e-05,
+        0.012550084851682186,
+        5.373755993787199e-05,
+        0.00034384315949864686,
+        3.490136441541836e-05,
+        0.00016622222028672695
+      ],
+      "predicted_index": 0,
+      "predicted_label": "광선각화증"
+    },
+    {
+      "domain": "skin",
+      "version": "v1",
+      "candidate_id": "public_candidate_v1_b0_224_ce_augmented_20260909_075056",
+      "model_sha256": "0b2a757320a113dbc1b285adab8c7745b2f7edc2cb29cc402d06f7882edc9f7a",
+      "image": "data_examples/skin/보웬병_0001.png",
+      "image_sha256": "ac71509bc71be0fc35cd96fd357b0c2381cafeba4a4ee3587d8b8f24f58e160e",
+      "class_names": [
+        "광선각화증",
+        "기저세포암",
+        "보웬병",
+        "사마귀",
+        "지루각화증",
+        "편평세포암",
+        "표피낭종",
+        "피부섬유종",
+        "혈관종",
+        "흑색점"
+      ],
+      "output_adapter": "direct_softmax",
+      "input_shape": [
+        1,
+        224,
+        224,
+        3
+      ],
+      "input_min": 11.213871955871582,
+      "input_max": 227.85723876953125,
+      "scores": [
+        0.0007586486754007638,
+        0.0013187400763854384,
+        0.9968593120574951,
+        0.00014632451348006725,
+        8.1144469731953e-05,
+        4.788592195836827e-05,
+        2.587306198620354e-06,
+        0.0007371161482296884,
+        2.2726720999344252e-05,
+        2.5450774046476e-05
+      ],
+      "predicted_index": 2,
+      "predicted_label": "보웬병"
+    },
+    {
+      "domain": "web_skin",
+      "version": "v1",
+      "candidate_id": "public_candidate_v1_b0_256_ce_20260908_081603_3f1ce76e",
+      "model_sha256": "d4c834a7fd47480c1c45ddbdc09257942b38b2408d5b28effc34ee68c4fad97b",
+      "image": "data_examples/web_skin/정상_000002.png",
+      "image_sha256": "fce437d6abcdec6bf08865ca4835b74a42e5e0e8b4d1de1fd13bf2376d7c09c0",
+      "class_names": [
+        "건선",
+        "아토피",
+        "여드름",
+        "정상",
+        "주사"
+      ],
+      "output_adapter": "direct_softmax",
+      "input_shape": [
+        1,
+        256,
+        256,
+        3
+      ],
+      "input_min": 0.0,
+      "input_max": 255.0,
+      "scores": [
+        0.0002188729413319379,
+        0.029460884630680084,
+        5.5380714911734685e-05,
+        0.9702504873275757,
+        1.4496816220344044e-05
+      ],
+      "predicted_index": 3,
+      "predicted_label": "정상"
+    },
+    {
+      "domain": "web_skin",
+      "version": "v1",
+      "candidate_id": "public_candidate_v1_b0_256_ce_20260908_081603_3f1ce76e",
+      "model_sha256": "d4c834a7fd47480c1c45ddbdc09257942b38b2408d5b28effc34ee68c4fad97b",
+      "image": "data_examples/web_skin/여드름_000034.png",
+      "image_sha256": "d3db7dd46d435e0a994787870377c800158cf0a6279c7d82e71e44a6d0b72a3a",
+      "class_names": [
+        "건선",
+        "아토피",
+        "여드름",
+        "정상",
+        "주사"
+      ],
+      "output_adapter": "direct_softmax",
+      "input_shape": [
+        1,
+        256,
+        256,
+        3
+      ],
+      "input_min": 0.0,
+      "input_max": 240.5,
+      "scores": [
+        0.009154713712632656,
+        0.004101109690964222,
+        0.9841448664665222,
+        0.00034595641773194075,
+        0.0022532441653311253
+      ],
+      "predicted_index": 2,
+      "predicted_label": "여드름"
+    },
+    {
+      "domain": "web_skin",
+      "version": "v2",
+      "candidate_id": "public_candidate_v2_pmg_b0_256_ce_20260922_235840_093d10de",
+      "model_sha256": "83e659dd09a9355135ee0de0197037e81ece962777f59dedae8d9a37b49a3fc4",
+      "image": "data_examples/web_skin/정상_000002.png",
+      "image_sha256": "fce437d6abcdec6bf08865ca4835b74a42e5e0e8b4d1de1fd13bf2376d7c09c0",
+      "class_names": [
+        "건선",
+        "아토피",
+        "여드름",
+        "정상",
+        "주사"
+      ],
+      "output_adapter": "sum_logits_softmax",
+      "input_shape": [
+        1,
+        256,
+        256,
+        3
+      ],
+      "input_min": 0.0,
+      "input_max": 255.0,
+      "scores": [
+        0.0,
+        4.783082084218128e-25,
+        0.0,
+        1.0,
+        0.0
+      ],
+      "predicted_index": 3,
+      "predicted_label": "정상"
+    },
+    {
+      "domain": "web_skin",
+      "version": "v2",
+      "candidate_id": "public_candidate_v2_pmg_b0_256_ce_20260922_235840_093d10de",
+      "model_sha256": "83e659dd09a9355135ee0de0197037e81ece962777f59dedae8d9a37b49a3fc4",
+      "image": "data_examples/web_skin/여드름_000034.png",
+      "image_sha256": "d3db7dd46d435e0a994787870377c800158cf0a6279c7d82e71e44a6d0b72a3a",
+      "class_names": [
+        "건선",
+        "아토피",
+        "여드름",
+        "정상",
+        "주사"
+      ],
+      "output_adapter": "sum_logits_softmax",
+      "input_shape": [
+        1,
+        256,
+        256,
+        3
+      ],
+      "input_min": 0.0,
+      "input_max": 240.5,
+      "scores": [
+        1.9162072332431864e-17,
+        4.3225340728852814e-20,
+        1.0,
+        1.4837547948238762e-25,
+        1.7594195685869535e-14
+      ],
+      "predicted_index": 2,
+      "predicted_label": "여드름"
+    }
+  ]
+}

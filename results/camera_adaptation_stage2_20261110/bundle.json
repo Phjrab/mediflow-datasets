@@ -1,0 +1,12 @@
+{
+  "sha256": "4ae6e07eb4af122531439519ae2207aad57a1c8dfb8f158152a2093fa65a91fe",
+  "stage": 2,
+  "environment": {
+    "tensorflow": "2.20.0",
+    "keras": "3.13.2",
+    "gpu": [
+      "PhysicalDevice(name='/physical_device:GPU:0', device_type='GPU')"
+    ]
+  },
+  "stage2_launcher_sha256": "08ef95691ca844524651a6561444279aeca2ae4daf0069ab9f573b0be08d6c73"
+}

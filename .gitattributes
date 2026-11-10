@@ -1,0 +1,24 @@
+# Keep newly authored runtime source stable on Windows.
+*.py text eol=lf
+*.md text eol=lf
+*.ps1 text eol=lf
+*.cmd text eol=crlf
+.gitignore text eol=lf
+.gitattributes text eol=lf
+
+# Preserve exact archived bytes, including original CRLFs, for recorded SHA-256 checks.
+/configs/** -text
+/notebooks/camera_adaptation/** -text
+/output/** -text
+/presentation/report_assets/** -text
+/results/camera_adaptation_*/** -text
+/results/pre_llm_vlm_audit_20261026/** -text
+/results/team_llm_vlm_review_20261026/** -text
+
+*.keras binary
+*.zip binary
+*.npz binary
+*.png binary
+*.jpg binary
+*.pdf binary
+*.docx binary

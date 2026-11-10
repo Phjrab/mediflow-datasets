@@ -5,3 +5,15 @@ __pycache__/
 .ruff_cache/
 .tmp/
 *.egg-info/
+/camera_capture/
+
+# Runtime archives and private capture inputs stay in local/Drive storage.
+*.zip
+*.npz
+*_Key_*.txt
+*.log
+
+# These comparison sheets include identifiable pilot participants.
+/presentation/report_assets/camera_profile_revision_20261110/revised_examples.png
+/presentation/report_assets/camera_similarity_check_20261110/actual_comparison.png
+/presentation/report_assets/stage4_strength_examples_20261111/stage2_vs_stage4_examples.png

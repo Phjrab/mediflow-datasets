@@ -1,0 +1,107 @@
+{
+  "domain": "web_skin",
+  "profile_version": "measured_photometric_v2",
+  "brightness_offset": [
+    -32.0,
+    -23.21954917907715
+  ],
+  "contrast": [
+    1.15,
+    1.15
+  ],
+  "scale_x": [
+    1.0,
+    1.0
+  ],
+  "scale_y": [
+    1.0,
+    1.0
+  ],
+  "left_light": [
+    13.776813507080078,
+    15.418357372283936
+  ],
+  "evidence": {
+    "target_people": [
+      "P01",
+      "P02",
+      "P03",
+      "P04"
+    ],
+    "brightness_changes": [
+      32.560543060302734,
+      38.91480255126953,
+      33.98937225341797,
+      10.20164680480957
+    ],
+    "brightness_raw_shifts": [
+      -84.482421875,
+      -51.921878814697266,
+      -66.10503005981445,
+      -27.190227508544922,
+      -63.98012924194336,
+      -29.99075698852539,
+      -81.23253059387207,
+      -71.0308837890625
+    ],
+    "source_brightness_anchor": 166.70813369750977,
+    "source_anchor_policy": "median of per-class valid ROI medians",
+    "source_roi_by_class": {
+      "0": {
+        "rows": 720,
+        "valid_roi": 362
+      },
+      "1": {
+        "rows": 720,
+        "valid_roi": 603
+      },
+      "2": {
+        "rows": 720,
+        "valid_roi": 676
+      },
+      "3": {
+        "rows": 720,
+        "valid_roi": 719
+      },
+      "4": {
+        "rows": 720,
+        "valid_roi": 688
+      }
+    },
+    "paired_contrast_ratios": [
+      1.6263662882815677,
+      1.472437315707068,
+      1.2731524082072867,
+      1.515907968399698
+    ],
+    "paired_left_minus_right_change": [
+      30.114463806152344,
+      26.19317626953125,
+      28.007110595703125,
+      33.00346755981445
+    ]
+  },
+  "bounds": {
+    "fraction_of_measured_shift": 0.5,
+    "max_brightness_offset": 32,
+    "contrast": [
+      0.9,
+      1.15
+    ],
+    "geometry": [
+      0.4,
+      1.0
+    ]
+  },
+  "held_back": [
+    "color: unmatched disease color",
+    "blur/noise: texture/scale confounding",
+    "hair mask: not validated and could change class evidence",
+    "geometry: no rescaling onto artificial padding; composition is an input policy"
+  ],
+  "input_policy": "center_square",
+  "train_visual_review": "pending",
+  "source_sha256": "f8908af3d54e521ad14c37a44b569d33fe92be3b8b9b66a8d80faf4ba964072d",
+  "model_sha256": "83e659dd09a9355135ee0de0197037e81ece962777f59dedae8d9a37b49a3fc4",
+  "calibration_fingerprint": "20dc5244d16d7e28a2eede6ad323a97a5db98fba2f5bb06420b0941dd1e481df"
+}

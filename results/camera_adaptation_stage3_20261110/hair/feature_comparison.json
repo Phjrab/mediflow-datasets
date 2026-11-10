@@ -1,0 +1,69 @@
+{
+  "scope": "Expanded Source Validation sample vs unlabeled Target training images",
+  "class_names": [
+    "모낭사이홍반",
+    "미세각질",
+    "비듬",
+    "탈모",
+    "피지과다"
+  ],
+  "target_accuracy": null,
+  "models": {
+    "stage3_aligned": {
+      "mmd": 0.14654260873794556,
+      "coral": 0.07997066527605057,
+      "source_validation_count": 40,
+      "target_training_count": 40,
+      "target_predicted_class_counts": [
+        7,
+        4,
+        0,
+        3,
+        26
+      ],
+      "predicted_class_changes_vs_initial": 0
+    },
+    "initial": {
+      "mmd": 0.2323296070098877,
+      "coral": 0.1777438521385193,
+      "source_validation_count": 40,
+      "target_training_count": 40,
+      "target_predicted_class_counts": [
+        7,
+        4,
+        0,
+        3,
+        26
+      ],
+      "predicted_class_changes_vs_initial": 0
+    },
+    "stage1_lighting": {
+      "mmd": 0.221396803855896,
+      "coral": 0.21734537184238434,
+      "source_validation_count": 40,
+      "target_training_count": 40,
+      "target_predicted_class_counts": [
+        9,
+        2,
+        0,
+        3,
+        26
+      ],
+      "predicted_class_changes_vs_initial": 2
+    },
+    "stage2_expanded": {
+      "mmd": 0.21444439888000488,
+      "coral": 0.23160523176193237,
+      "source_validation_count": 40,
+      "target_training_count": 40,
+      "target_predicted_class_counts": [
+        8,
+        3,
+        0,
+        3,
+        26
+      ],
+      "predicted_class_changes_vs_initial": 1
+    }
+  }
+}

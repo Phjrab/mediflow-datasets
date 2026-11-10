@@ -59,7 +59,9 @@ python -m mediflow_datasets.candidate_reproduction --output candidate_check_new
   원본 사진·모델 해시, 환경, 코드 해시, Git 커밋과 변경 상태.
 - `hair_0.npy` 등 여섯 배열: 디코딩·resize를 끝낸 모델 입력의 실제 float32 값.
   이미지 파일이 아니라 모델에 전달한 숫자 배열이며 `allow_pickle=False`로 읽는다.
-- `reference_source.py.txt`: 실행에 사용한 코드 사본. 원본 모듈은 `src/`에 있다.
+- 실행 소스는 `src/mediflow_datasets/candidate_reproduction.py`다. 현재 명령은
+  `reference_source.py.txt` 사본을 만들지 않는다. JSON의 `code_sha256`·Git 커밋·변경 상태를
+  함께 보존하고 해당 소스 버전을 확인한다. (2026-10-26 생성물 안내 정정)
 
 표시용 반올림 점수 대신 JSON의 전체 소수값을 비교한다. 입력값은 RGB 0~255이며 정상 여부를
 나타내는 값이 아니다. 모델의 softmax 결과는 이미 출력에 포함되어 있어 다시 softmax하지 않는다.

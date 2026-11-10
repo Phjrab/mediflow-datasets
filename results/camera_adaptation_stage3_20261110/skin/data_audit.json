@@ -1,0 +1,35 @@
+{
+  "blocking_leaks_or_conflicts": [],
+  "near_duplicate_review": [],
+  "identity_metadata": {
+    "person": {
+      "identified_rows": 0,
+      "total": 8353,
+      "complete": false
+    },
+    "lesion": {
+      "identified_rows": 0,
+      "total": 8353,
+      "complete": false
+    },
+    "session": {
+      "identified_rows": 0,
+      "total": 8353,
+      "complete": false
+    },
+    "origin": {
+      "identified_rows": 8353,
+      "total": 8353,
+      "complete": true
+    }
+  },
+  "near_duplicate_rule": "64-bit dHash, Hamming <=3",
+  "excluded_augmented_descendants": [],
+  "source_target_pixel_overlap": 0,
+  "source_sha256": "db6cf59087b68d4534ff857bdb0eacc1a1a09ed5703772fefc75f038d4570e4b",
+  "retained_counts": {
+    "train": 6753,
+    "val": 900,
+    "test": 700
+  }
+}

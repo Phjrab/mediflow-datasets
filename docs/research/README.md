@@ -4,6 +4,9 @@
 
 ## 전체 흐름·공통 기준
 
+- [2026-10-26 LLM·VLM 착수 전 종합 점검](PRE_LLM_VLM_PROJECT_AUDIT_20261026.md) — 실제 선정 모델·기존 지표·샘플 추론과 다음 구현 공백
+- [팀원 LLM·VLM 두 저장소 분석](TEAM_LLM_VLM_REPOSITORY_REVIEW_20261026.md) — 기본/최신 브랜치, 실제 의료 학습 기록, 코드 문제와 역할
+- [결과 설명 LLM과 독립 질환 분류 VLM 가이드](LLM_VLM_PROJECT_INTEGRATION_GUIDE_20261026.md) — 입력·평가·SFT·GitHub 실행 순서
 - [연구 배경](PROJECT_BACKGROUND.md), [전체 실험 이유·방법·결과](ALL_EXPERIMENTS_RATIONALE_AND_RESULTS_20260924.md), [논문 실험 최종 분석](PAPER_EXPERIMENTS_FINAL_ANALYSIS_20260922.md)
 - [저장 평가 기록 재현 점검](EVALUATION_REPRODUCTION_AUDIT_20260927.md), [34개 저장 모델 실행 시간 검토](RUNTIME_BENCHMARK_REVIEW_20260928.md)
 - [공통 Colab 안내](COMMON_COLAB_NOTEBOOKS_GUIDE.md), [Hair·Web Skin 학습 설정 해설](HAIR_WEB_SKIN_EXPERIMENT_EXPLAINED_20260908.md)

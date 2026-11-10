@@ -1,0 +1,29 @@
+{
+  "skin": {
+    "source": "data_examples/skin/광선각화증_0001.png",
+    "source_sha256": "81834f1b680decc53417f3e69105c01ad05cef67b3961f52360a3819af0ac3b9",
+    "size": 224,
+    "seed": 42,
+    "forced_transform_example": true,
+    "mean_absolute_rgb_delta_weak": 2.4600329399108887,
+    "mean_absolute_rgb_delta_strong": 28.37856674194336
+  },
+  "web_skin": {
+    "source": "data_examples/web_skin/여드름_000034.png",
+    "source_sha256": "d3db7dd46d435e0a994787870377c800158cf0a6279c7d82e71e44a6d0b72a3a",
+    "size": 256,
+    "seed": 42,
+    "forced_transform_example": true,
+    "mean_absolute_rgb_delta_weak": 12.588200569152832,
+    "mean_absolute_rgb_delta_strong": 25.993806838989258
+  },
+  "hair": {
+    "source": "data_examples/hair/비듬_0006.jpg",
+    "source_sha256": "f8c88ea31a98c3aeb7eb5773d7d73260bf8a3a79193332b553bb190ef13ef744",
+    "size": 384,
+    "seed": 42,
+    "forced_transform_example": true,
+    "mean_absolute_rgb_delta_weak": 9.772591590881348,
+    "mean_absolute_rgb_delta_strong": 21.803434371948242
+  }
+}

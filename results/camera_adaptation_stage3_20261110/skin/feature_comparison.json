@@ -1,0 +1,94 @@
+{
+  "scope": "Expanded Source Validation sample vs unlabeled Target training images",
+  "class_names": [
+    "광선각화증",
+    "기저세포암",
+    "보웬병",
+    "사마귀",
+    "지루각화증",
+    "편평세포암",
+    "표피낭종",
+    "피부섬유종",
+    "혈관종",
+    "흑색점"
+  ],
+  "target_accuracy": null,
+  "models": {
+    "stage3_aligned": {
+      "mmd": 0.22636711597442627,
+      "coral": 0.35027027130126953,
+      "source_validation_count": 80,
+      "target_training_count": 42,
+      "target_predicted_class_counts": [
+        0,
+        0,
+        0,
+        0,
+        8,
+        0,
+        0,
+        0,
+        0,
+        34
+      ],
+      "predicted_class_changes_vs_initial": 2
+    },
+    "initial": {
+      "mmd": 0.257715106010437,
+      "coral": 0.2739834785461426,
+      "source_validation_count": 80,
+      "target_training_count": 42,
+      "target_predicted_class_counts": [
+        0,
+        0,
+        0,
+        0,
+        8,
+        0,
+        0,
+        0,
+        0,
+        34
+      ],
+      "predicted_class_changes_vs_initial": 0
+    },
+    "stage1_lighting": {
+      "mmd": 0.25922340154647827,
+      "coral": 0.8421478271484375,
+      "source_validation_count": 80,
+      "target_training_count": 42,
+      "target_predicted_class_counts": [
+        0,
+        0,
+        0,
+        0,
+        10,
+        0,
+        0,
+        0,
+        0,
+        32
+      ],
+      "predicted_class_changes_vs_initial": 2
+    },
+    "stage2_expanded": {
+      "mmd": 0.2598424553871155,
+      "coral": 0.8401726484298706,
+      "source_validation_count": 80,
+      "target_training_count": 42,
+      "target_predicted_class_counts": [
+        0,
+        0,
+        0,
+        0,
+        10,
+        0,
+        0,
+        0,
+        0,
+        32
+      ],
+      "predicted_class_changes_vs_initial": 2
+    }
+  }
+}

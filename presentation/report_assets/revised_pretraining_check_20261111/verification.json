@@ -1,0 +1,60 @@
+{
+  "date": "2026-11-11",
+  "status": "local_pretraining_checks_passed",
+  "config_sha256": "492ee01afb4579b6402fca29459c59d56618243589642fc022db18bbbe45a165",
+  "notebook_sha256": "8bdf57e11a156c3fb8a60d35e8726872694ecfc05f1e4b859f67096eef04bff1",
+  "parent_config_sha256": "988987c379978a71192d1efb4345f2759554df4922ca192fd715c7eaeb825050",
+  "profile_and_training_settings_unchanged": true,
+  "full_training_executed": false,
+  "colab_gpu_verified_here": false,
+  "current_drive_files_verified_here": false,
+  "colab_startup_checks": "required stage1/stage2 metadata, initial/comparison hashes, source ZIP discovery, disk space, then GPU/environment",
+  "tests": {
+    "passed": 191,
+    "skipped": 3,
+    "failed": 0,
+    "ruff": "passed"
+  },
+  "actual_model_smokes": {
+    "skin": {
+      "status": "passed",
+      "disposable_batch_size": 16,
+      "optimizer_updates_per_batch": 1,
+      "checkpoint_restored": true,
+      "keras_save_reload_verified": true,
+      "original_model_unchanged": true
+    },
+    "web_skin": {
+      "status": "passed",
+      "disposable_batch_size": 8,
+      "optimizer_updates_per_batch": 4,
+      "checkpoint_restored": true,
+      "keras_save_reload_verified": true,
+      "original_model_unchanged": true
+    },
+    "hair": {
+      "status": "passed",
+      "disposable_batch_size": 8,
+      "optimizer_updates_per_batch": 1,
+      "checkpoint_restored": true,
+      "keras_save_reload_verified": true,
+      "original_model_unchanged": true
+    }
+  },
+  "packaging_fixture_files": 30,
+  "synthetic_plot_check": "passed",
+  "notebook_embedded_inputs": "byte_identical",
+  "git_commit": "ffd71eca68ff1e21c145ed56158f4cfa77f7f037",
+  "uncommitted_code_sha256": {
+    "src/mediflow_datasets/adaptation_strength.py": "4f52fc89b9e56dab6842bd44de97d9b760a2e5b8335e7efd434db474f4f4ba15",
+    "src/mediflow_datasets/adaptation_smoke.py": "bd140e6222bd100be08ced9be4f1e0b0d3f40b8009622dde82c947ad27e91a63",
+    "scripts/build_adaptation_revised.py": "35a41b2626140358210f39563700598f86e2cb0fd83c2e828044d72773b7ada6",
+    "tests/test_adaptation_strength.py": "578fbfbfe45a015071c95cc7ec93590682f78319a8805b8a110120fb4eaa2165"
+  },
+  "environment": {
+    "python": "3.12.14",
+    "tensorflow": "2.20.0",
+    "keras": "3.13.2",
+    "hardware_scope": "local CPU only"
+  }
+}

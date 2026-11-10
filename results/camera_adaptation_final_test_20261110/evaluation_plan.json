@@ -1,0 +1,174 @@
+{
+  "plan_sha256": "bc4d235c1354b937f9f12c0927e6dd3c5e2d4e754ed442fc13a7962ddf0614c6",
+  "evaluator_sha256": "e8b943f8a9a81fe1178caa04f493b4ff6a1d04ccfe9a8d3e31970d52d3dee1b6",
+  "plan": {
+    "scope": "source_test_only_historical_checkpoint_independence_unverified",
+    "bundle_sha256": "4ae6e07eb4af122531439519ae2207aad57a1c8dfb8f158152a2093fa65a91fe",
+    "validation_sha256": "5bd16693270fa0962825588a95508412677da866e6d15a745b535bf5d84a32f4",
+    "selection_rule": "Maximize minimum of clean, lighting and expanded Validation Macro-F1; then clean Validation Macro-F1; then earlier arm.",
+    "transform_seed": 1707,
+    "conditions": [
+      "clean",
+      "lighting",
+      "expanded"
+    ],
+    "git_commit": "ffd71eca68ff1e21c145ed56158f4cfa77f7f037",
+    "domains": {
+      "skin": {
+        "start_role": "basic",
+        "models": {
+          "initial": {
+            "stage": 0,
+            "path": "results/skin/1_training/original/best_model.keras",
+            "sha256": "1b146a6a53742226ec677865aa71bd842a28c9db9c3174b352dd8bc87270770b"
+          },
+          "stage1_lighting": {
+            "stage": 1,
+            "path": "skin/basic/best.keras",
+            "sha256": "4bca967a479f40745e2d48e81579d442831e955a6193934b5840364fc1e419bb"
+          },
+          "stage2_expanded": {
+            "stage": 2,
+            "path": "skin/best.keras",
+            "sha256": "9687fa503d8287b880e58e5014cae0a0efd47e750f5ececcc11d813367e7ce6b"
+          },
+          "stage3_aligned": {
+            "stage": 3,
+            "path": "skin/best.keras",
+            "sha256": "98d9de1af93d31cf2a07cb828d6c29b33b7166f7169da14ca1bc53b7bc2f6f3f"
+          }
+        },
+        "selected_on_validation": "stage1_lighting",
+        "validation_macro_f1": {
+          "initial": {
+            "clean": 0.9965963674000184,
+            "lighting": 0.9976017479221756,
+            "expanded": 0.9976017479221756
+          },
+          "stage1_lighting": {
+            "clean": 0.9976017479221756,
+            "lighting": 0.9976017479221756,
+            "expanded": 0.9976017479221756
+          },
+          "stage2_expanded": {
+            "clean": 0.9976017479221756,
+            "lighting": 0.9976017479221756,
+            "expanded": 0.9976017479221756
+          },
+          "stage3_aligned": {
+            "clean": 0.9976017479221756,
+            "lighting": 0.9976017479221756,
+            "expanded": 0.9976017479221756
+          }
+        },
+        "reference_sha256": "1837fd554de1363d4695b01190d0625420e5fdde9775313d732fb93e69876172",
+        "manifest_sha256": "36f79b61a42e9ed634ffa7d4c490efefe5e5031a8bbdce1daf630b1e01e7e27d",
+        "test_count": 700
+      },
+      "web_skin": {
+        "start_role": "selected",
+        "models": {
+          "initial": {
+            "stage": 0,
+            "path": "results/web_skin/selected_models/v2/web_skin_model.keras",
+            "sha256": "83e659dd09a9355135ee0de0197037e81ece962777f59dedae8d9a37b49a3fc4"
+          },
+          "stage1_lighting": {
+            "stage": 1,
+            "path": "web_skin/selected/best.keras",
+            "sha256": "beb992fa2bf51c28c7b2e760b1c7000bb5b65decef47c0e196ed07c9a62070e5"
+          },
+          "stage2_expanded": {
+            "stage": 2,
+            "path": "web_skin/best.keras",
+            "sha256": "5e181c1ff064eb1d501c57ccecba91703cfe59b14d02b258152b3ca737c46981"
+          },
+          "stage3_aligned": {
+            "stage": 3,
+            "path": "web_skin/best.keras",
+            "sha256": "9df65bdf905434e8671afdc034e832170c667193ba803213771d11d5afa5ff71"
+          }
+        },
+        "selected_on_validation": "stage2_expanded",
+        "validation_macro_f1": {
+          "initial": {
+            "clean": 0.8471375958306038,
+            "lighting": 0.8264309294807919,
+            "expanded": 0.8330199818760329
+          },
+          "stage1_lighting": {
+            "clean": 0.8436210626904069,
+            "lighting": 0.8354160598851343,
+            "expanded": 0.8197582784927677
+          },
+          "stage2_expanded": {
+            "clean": 0.8452139236284577,
+            "lighting": 0.8414941635470983,
+            "expanded": 0.8297960345454877
+          },
+          "stage3_aligned": {
+            "clean": 0.8463380823691281,
+            "lighting": 0.8360852895678168,
+            "expanded": 0.8261149876826673
+          }
+        },
+        "reference_sha256": "239245cc7a0804c931ddd45b5b9408474fb8cce5838a00b00d65471b87221b4e",
+        "manifest_sha256": "7c8b41878883193e5dd340ab8a4b7f804a3ab7f37c8159093b663937d997a738",
+        "test_count": 400
+      },
+      "hair": {
+        "start_role": "selected",
+        "models": {
+          "initial": {
+            "stage": 0,
+            "path": "results/hair/selected_models/v2/hair_model.keras",
+            "sha256": "9faa33b8f79f45ef6e7be415473e2ee5225f6195fff04d098828733db23ed3c2"
+          },
+          "stage1_lighting": {
+            "stage": 1,
+            "path": "hair/selected/best.keras",
+            "sha256": "983001b0b116cd913b4cf1e349b47d11ab6246cf78fbaa607dc75b4578108b7f"
+          },
+          "stage2_expanded": {
+            "stage": 2,
+            "path": "hair/best.keras",
+            "sha256": "fa2c59ae6a0b1342b8c693014d0a951c59064a4c8439a313f2520e1ce8c224fd"
+          },
+          "stage3_aligned": {
+            "stage": 3,
+            "path": "hair/best.keras",
+            "sha256": "940b398c7bfdba033df58e99b2639eef8e8eabb0c8c19945dd8f89cfd265e1d7"
+          }
+        },
+        "selected_on_validation": "stage2_expanded",
+        "validation_macro_f1": {
+          "initial": {
+            "clean": 0.7948815320131865,
+            "lighting": 0.7932265946320327,
+            "expanded": 0.7812966127563242
+          },
+          "stage1_lighting": {
+            "clean": 0.7940808319964521,
+            "lighting": 0.790851219358226,
+            "expanded": 0.7717843351060846
+          },
+          "stage2_expanded": {
+            "clean": 0.7933089589962153,
+            "lighting": 0.7891828841548413,
+            "expanded": 0.7892573288809733
+          },
+          "stage3_aligned": {
+            "clean": 0.7924600237364962,
+            "lighting": 0.7891245054928616,
+            "expanded": 0.7884731261645151
+          }
+        },
+        "reference_sha256": "1a44a143fe6f5ef3021865b75f4797ffff16b1e21bae7dc7ca838eb70a09a81f",
+        "manifest_sha256": "c6320fa7d2ef25332d508b3da868d2731d61ce7c8cd3ed2ebc505e6cd0b54717",
+        "test_count": 1252
+      }
+    },
+    "configuration_sha256": "ee9604c652ace8a6d7d0df5656b70ef7512f0ae40f7ef2211f081432b75d9366",
+    "predictor_code_sha256": "6b5aae35bcbe1af85fe19b6a47ebce6ed57bfca780129a82e95dd9dd0c9d4c8a"
+  }
+}

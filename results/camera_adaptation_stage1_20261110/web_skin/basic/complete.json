@@ -1,0 +1,178 @@
+{
+  "initial": {
+    "file": "initial.keras",
+    "sha256": "11c5a160ddeb406c4e80802e38a372e90a0222c1dddf208e270676f795f177ae"
+  },
+  "best_model": {
+    "file": "best.keras",
+    "sha256": "61d22c3d3c2f0b620f0a4aed41ad17b38331ad3cdccfd1e1e6041c994d6b3087"
+  },
+  "model_config": {
+    "architecture": "b0",
+    "size": 224,
+    "label_smoothing": 0.0,
+    "initialization": "saved original-only early checkpoint",
+    "model": "results/web_skin/1_training/original/best_model.keras",
+    "model_sha256": "11c5a160ddeb406c4e80802e38a372e90a0222c1dddf208e270676f795f177ae",
+    "role": "basic"
+  },
+  "validation": {
+    "epoch": 4,
+    "train_loss_mean_per_update": 0.6067342307941137,
+    "training_batches": 442,
+    "optimizer_updates": 442,
+    "train_seconds": 21.323428113999853,
+    "validation_seconds": 4.104214293000041,
+    "clean": {
+      "status": "measured",
+      "labeled_count": 499,
+      "accuracy": 0.7334669338677354,
+      "macro_f1": 0.7284227875396322,
+      "class_f1": [
+        0.7155172413793103,
+        0.6129032258064515,
+        0.6000000000000001,
+        0.8868778280542986,
+        0.8268156424581006
+      ],
+      "precision": [
+        0.6287878787878788,
+        0.6627906976744186,
+        0.675,
+        0.8099173553719008,
+        0.925
+      ],
+      "recall": [
+        0.83,
+        0.57,
+        0.54,
+        0.98,
+        0.7474747474747475
+      ],
+      "support": [
+        100,
+        100,
+        100,
+        100,
+        99
+      ],
+      "confusion_matrix": [
+        [
+          83,
+          5,
+          5,
+          4,
+          3
+        ],
+        [
+          16,
+          57,
+          9,
+          15,
+          3
+        ],
+        [
+          24,
+          19,
+          54,
+          3,
+          0
+        ],
+        [
+          0,
+          2,
+          0,
+          98,
+          0
+        ],
+        [
+          9,
+          3,
+          12,
+          1,
+          74
+        ]
+      ],
+      "count": 499
+    },
+    "lighting": {
+      "status": "measured",
+      "labeled_count": 499,
+      "accuracy": 0.717434869739479,
+      "macro_f1": 0.7104971241872645,
+      "class_f1": [
+        0.6974789915966386,
+        0.5649717514124294,
+        0.5777777777777778,
+        0.8789237668161434,
+        0.8333333333333334
+      ],
+      "precision": [
+        0.6014492753623188,
+        0.6493506493506493,
+        0.65,
+        0.7967479674796748,
+        0.9259259259259259
+      ],
+      "recall": [
+        0.83,
+        0.5,
+        0.52,
+        0.98,
+        0.7575757575757576
+      ],
+      "support": [
+        100,
+        100,
+        100,
+        100,
+        99
+      ],
+      "confusion_matrix": [
+        [
+          83,
+          5,
+          5,
+          4,
+          3
+        ],
+        [
+          19,
+          50,
+          11,
+          17,
+          3
+        ],
+        [
+          26,
+          19,
+          52,
+          3,
+          0
+        ],
+        [
+          0,
+          2,
+          0,
+          98,
+          0
+        ],
+        [
+          10,
+          1,
+          12,
+          1,
+          75
+        ]
+      ],
+      "count": 499
+    },
+    "snapshot": "snapshot_868e969176634e538a055fccd21a0900",
+    "files": {
+      "state.data-00000-of-00001": "511dfe02f755fc57a465566129705105f134981a811517881c807e7b10e93acb",
+      "state.index": "6863bd1e824bc785f32fa36566e650b8d6a0bfd3f30d476c944f0539d0e4b24c"
+    }
+  },
+  "source_test_evaluated": false,
+  "validation_scope": "exploratory_historical_checkpoint_exposure_unverified"
+}

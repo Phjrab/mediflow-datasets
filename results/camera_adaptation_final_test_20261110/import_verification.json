@@ -1,0 +1,108 @@
+{
+  "source_zip_name": "final_test_bc4d235c1354.zip",
+  "source_zip_sha256": "bc04c86ad3a7a7fb96683e54e170cfeebd89d5dc5a138c0b83ba83b30a8b4776",
+  "source_zip_bytes": 584566,
+  "evaluation_plan_sha256": "bc4d235c1354b937f9f12c0927e6dd3c5e2d4e754ed442fc13a7962ddf0614c6",
+  "validation_comparison": "results/camera_adaptation_stage3_20261110/validation_comparison.csv",
+  "imported_members_sha256": {
+    "evaluation_plan.json": "64942a94580c4ff954c434197a50519c471031349f5f83677a301642ff1c6707",
+    "summary.json": "c80430f58b85a17a626d3ed856825b66e221f7b63b54c6fd6aa2a009dfced29f",
+    "skin.json": "969c75a24b5879ef0ad3246cb00fffcbe13918e58513f79a0baaca8ce6090e92",
+    "web_skin.json": "8fc4eb46116c4a9c9c4722505e894bfaec9975051ace1b99f890f5254c1a11d1",
+    "hair.json": "1adbcdb98d2e3f3fab33512b8cb098915e0242ea80dd4ccfd2fa7923d7ef8f0f",
+    "test_comparison.csv": "179e195ebd5d586a535183c174b54643934e0892376e997fdf02e516b9876a81",
+    "class_metrics.csv": "03ad24270d549262511c64adf717fc7ab7649bcc8ce93e5ddf2507e0ee11b095",
+    "code/adaptation_final_test.py": "e8b943f8a9a81fe1178caa04f493b4ff6a1d04ccfe9a8d3e31970d52d3dee1b6",
+    "code/adaptation_stage1.py": "6b5aae35bcbe1af85fe19b6a47ebce6ed57bfca780129a82e95dd9dd0c9d4c8a",
+    "plots/test_comparison.png": "1e0580262f0fe101b36321a5362c0e0f7865d6c4b298bb2726177b2f98d82bc2",
+    "plots/selected_confusion_matrices.png": "e34923821f0ea9a505a021a00e137b2b822e3a0f31b1aada1814425690180d6b"
+  },
+  "verification": {
+    "zip_crc": true,
+    "frozen_plan": true,
+    "model_code_hashes": true,
+    "json_csv_and_confusion_matrix_consistency": true,
+    "comparison_count": 36,
+    "class_metric_rows": 240
+  },
+  "domains": {
+    "skin": {
+      "test_count": 700,
+      "correct_counts": {
+        "initial": {
+          "clean": 699,
+          "lighting": 699,
+          "expanded": 699
+        },
+        "stage1_lighting": {
+          "clean": 699,
+          "lighting": 699,
+          "expanded": 699
+        },
+        "stage2_expanded": {
+          "clean": 699,
+          "lighting": 699,
+          "expanded": 699
+        },
+        "stage3_aligned": {
+          "clean": 699,
+          "lighting": 699,
+          "expanded": 699
+        }
+      },
+      "selected_on_validation": "stage1_lighting"
+    },
+    "web_skin": {
+      "test_count": 400,
+      "correct_counts": {
+        "initial": {
+          "clean": 366,
+          "lighting": 359,
+          "expanded": 359
+        },
+        "stage1_lighting": {
+          "clean": 361,
+          "lighting": 360,
+          "expanded": 358
+        },
+        "stage2_expanded": {
+          "clean": 363,
+          "lighting": 359,
+          "expanded": 358
+        },
+        "stage3_aligned": {
+          "clean": 364,
+          "lighting": 361,
+          "expanded": 363
+        }
+      },
+      "selected_on_validation": "stage2_expanded"
+    },
+    "hair": {
+      "test_count": 1252,
+      "correct_counts": {
+        "initial": {
+          "clean": 1002,
+          "lighting": 997,
+          "expanded": 994
+        },
+        "stage1_lighting": {
+          "clean": 998,
+          "lighting": 997,
+          "expanded": 991
+        },
+        "stage2_expanded": {
+          "clean": 995,
+          "lighting": 995,
+          "expanded": 992
+        },
+        "stage3_aligned": {
+          "clean": 995,
+          "lighting": 995,
+          "expanded": 993
+        }
+      },
+      "selected_on_validation": "stage2_expanded"
+    }
+  }
+}

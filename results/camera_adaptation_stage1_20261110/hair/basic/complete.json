@@ -1,0 +1,178 @@
+{
+  "initial": {
+    "file": "initial.keras",
+    "sha256": "d1695bf35701dee5b5a7b4623d105009053afc800d3900e265de4607550e5771"
+  },
+  "best_model": {
+    "file": "best.keras",
+    "sha256": "e123c93fb22235f8a0e01c823d3e06fc0ffddd33aead1b5adc107c596d0a7ab2"
+  },
+  "model_config": {
+    "architecture": "b0",
+    "size": 224,
+    "label_smoothing": 0.0,
+    "initialization": "saved original-only early checkpoint",
+    "model": "results/hair/1_training/original/best_model.keras",
+    "model_sha256": "d1695bf35701dee5b5a7b4623d105009053afc800d3900e265de4607550e5771",
+    "role": "basic"
+  },
+  "validation": {
+    "epoch": 4,
+    "train_loss_mean_per_update": 0.6439234626314572,
+    "training_batches": 1254,
+    "optimizer_updates": 1254,
+    "train_seconds": 82.27370028599944,
+    "validation_seconds": 8.510928596000667,
+    "clean": {
+      "status": "measured",
+      "labeled_count": 1252,
+      "accuracy": 0.762779552715655,
+      "macro_f1": 0.762120457202011,
+      "class_f1": [
+        0.8291746641074855,
+        0.6746031746031745,
+        0.7041666666666666,
+        0.8141962421711901,
+        0.7884615384615384
+      ],
+      "precision": [
+        0.7912087912087912,
+        0.6854838709677419,
+        0.7071129707112971,
+        0.8333333333333334,
+        0.7945736434108527
+      ],
+      "recall": [
+        0.8709677419354839,
+        0.6640625,
+        0.7012448132780082,
+        0.7959183673469388,
+        0.7824427480916031
+      ],
+      "support": [
+        248,
+        256,
+        241,
+        245,
+        262
+      ],
+      "confusion_matrix": [
+        [
+          216,
+          8,
+          5,
+          14,
+          5
+        ],
+        [
+          16,
+          170,
+          42,
+          15,
+          13
+        ],
+        [
+          7,
+          40,
+          169,
+          1,
+          24
+        ],
+        [
+          21,
+          13,
+          5,
+          195,
+          11
+        ],
+        [
+          13,
+          17,
+          18,
+          9,
+          205
+        ]
+      ],
+      "count": 1252
+    },
+    "lighting": {
+      "status": "measured",
+      "labeled_count": 1252,
+      "accuracy": 0.7587859424920128,
+      "macro_f1": 0.7580573324780453,
+      "class_f1": [
+        0.823076923076923,
+        0.6758349705304518,
+        0.7006369426751593,
+        0.8091286307053941,
+        0.7816091954022988
+      ],
+      "precision": [
+        0.7867647058823529,
+        0.6798418972332015,
+        0.717391304347826,
+        0.8227848101265823,
+        0.7846153846153846
+      ],
+      "recall": [
+        0.8629032258064516,
+        0.671875,
+        0.6846473029045643,
+        0.7959183673469388,
+        0.7786259541984732
+      ],
+      "support": [
+        248,
+        256,
+        241,
+        245,
+        262
+      ],
+      "confusion_matrix": [
+        [
+          214,
+          8,
+          5,
+          15,
+          6
+        ],
+        [
+          15,
+          172,
+          39,
+          16,
+          14
+        ],
+        [
+          9,
+          42,
+          165,
+          1,
+          24
+        ],
+        [
+          21,
+          14,
+          3,
+          195,
+          12
+        ],
+        [
+          13,
+          17,
+          18,
+          10,
+          204
+        ]
+      ],
+      "count": 1252
+    },
+    "snapshot": "snapshot_9e4f0b923b704c03980570033e425f12",
+    "files": {
+      "state.data-00000-of-00001": "f8e1916a62afa8580b18c1f8985ae5f96becbe74e5a66b0410604caf49190781",
+      "state.index": "40bfc927ffd328a22e03c7d9b887b55cddb29506edbd76ea9c98dd8666123e91"
+    }
+  },
+  "source_test_evaluated": false,
+  "validation_scope": "exploratory_historical_checkpoint_exposure_unverified"
+}

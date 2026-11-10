@@ -1,0 +1,1011 @@
+{
+  "stage": 2,
+  "identity": {
+    "bundle_sha256": "4ae6e07eb4af122531439519ae2207aad57a1c8dfb8f158152a2093fa65a91fe",
+    "selection_sha256": "16c9a9dfa889704a2da5d50a1f21b9bebf3b0269925a9c994d3b54fa57850de0",
+    "source_manifest_sha256": "c6320fa7d2ef25332d508b3da868d2731d61ce7c8cd3ed2ebc505e6cd0b54717",
+    "reference_sha256": "1a44a143fe6f5ef3021865b75f4797ffff16b1e21bae7dc7ca838eb70a09a81f",
+    "configuration_sha256": "ee9604c652ace8a6d7d0df5656b70ef7512f0ae40f7ef2211f081432b75d9366",
+    "code_sha256": {
+      "stage2": "08ef95691ca844524651a6561444279aeca2ae4daf0069ab9f573b0be08d6c73",
+      "training": "0375c56c27280d6bc9cd6e6215686a924766107702a076a4e55932010499099b"
+    }
+  },
+  "training_configuration": {
+    "schema": "mediflow_staged_adaptation_v1",
+    "seed": 42,
+    "epochs": 5,
+    "initialization_policy": "saved_only",
+    "validation_scope": "exploratory_historical_checkpoint_exposure_unverified",
+    "learning_rate": 1e-05,
+    "augmentation_probability": 0.5,
+    "tasks": {
+      "skin": {
+        "domain": "skin",
+        "classes": [
+          "광선각화증",
+          "기저세포암",
+          "보웬병",
+          "사마귀",
+          "지루각화증",
+          "편평세포암",
+          "표피낭종",
+          "피부섬유종",
+          "혈관종",
+          "흑색점"
+        ],
+        "source_name": "skin_datasets",
+        "source_sha256": "db6cf59087b68d4534ff857bdb0eacc1a1a09ed5703772fefc75f038d4570e4b",
+        "input_policy": "legacy_resize",
+        "batch_size": 16,
+        "models": {
+          "basic": {
+            "architecture": "b0",
+            "size": 224,
+            "label_smoothing": 0.0,
+            "initialization": "saved original-only early checkpoint",
+            "model": "results/skin/1_training/original/best_model.keras",
+            "model_sha256": "1b146a6a53742226ec677865aa71bd842a28c9db9c3174b352dd8bc87270770b"
+          },
+          "selected": {
+            "architecture": "b0",
+            "size": 224,
+            "label_smoothing": 0.0,
+            "reference_candidate_id": "public_candidate_v1_b0_224_ce_augmented_20260909_075056",
+            "initialization": "saved selected checkpoint",
+            "model": "results/skin/selected_models/v1/skin_model.keras",
+            "model_sha256": "0b2a757320a113dbc1b285adab8c7745b2f7edc2cb29cc402d06f7882edc9f7a"
+          }
+        }
+      },
+      "web_skin": {
+        "domain": "web_skin",
+        "classes": [
+          "건선",
+          "아토피",
+          "여드름",
+          "정상",
+          "주사"
+        ],
+        "source_name": "web_skin_datasets",
+        "source_sha256": "f8908af3d54e521ad14c37a44b569d33fe92be3b8b9b66a8d80faf4ba964072d",
+        "input_policy": "center_square",
+        "batch_size": 8,
+        "models": {
+          "basic": {
+            "architecture": "b0",
+            "size": 224,
+            "label_smoothing": 0.0,
+            "initialization": "saved original-only early checkpoint",
+            "model": "results/web_skin/1_training/original/best_model.keras",
+            "model_sha256": "11c5a160ddeb406c4e80802e38a372e90a0222c1dddf208e270676f795f177ae"
+          },
+          "selected": {
+            "architecture": "pmg",
+            "size": 256,
+            "label_smoothing": 0.0,
+            "reference_candidate_id": "public_candidate_v2_pmg_b0_256_ce_20260922_235840_093d10de",
+            "initialization": "saved selected checkpoint",
+            "model": "results/web_skin/selected_models/v2/web_skin_model.keras",
+            "model_sha256": "83e659dd09a9355135ee0de0197037e81ece962777f59dedae8d9a37b49a3fc4"
+          }
+        }
+      },
+      "hair": {
+        "domain": "hair",
+        "classes": [
+          "모낭사이홍반",
+          "미세각질",
+          "비듬",
+          "탈모",
+          "피지과다"
+        ],
+        "source_name": "hair_datasets",
+        "source_sha256": "2ac7260663cf69835ba50edb6ae8c7e7ac13be9c73b9f7ea24f60e0342e7e156",
+        "input_policy": "legacy_resize",
+        "batch_size": 8,
+        "models": {
+          "basic": {
+            "architecture": "b0",
+            "size": 224,
+            "label_smoothing": 0.0,
+            "initialization": "saved original-only early checkpoint",
+            "model": "results/hair/1_training/original/best_model.keras",
+            "model_sha256": "d1695bf35701dee5b5a7b4623d105009053afc800d3900e265de4607550e5771"
+          },
+          "selected": {
+            "architecture": "b1",
+            "size": 384,
+            "label_smoothing": 0.05,
+            "reference_candidate_id": "public_candidate_v2_b1_384_ls005_adam_20260921_155906_82311da4",
+            "initialization": "saved selected checkpoint",
+            "model": "results/hair/selected_models/v2/hair_model.keras",
+            "model_sha256": "9faa33b8f79f45ef6e7be415473e2ee5225f6195fff04d098828733db23ed3c2",
+            "training_source_sha256": "2ac7260663cf69835ba50edb6ae8c7e7ac13be9c73b9f7ea24f60e0342e7e156"
+          }
+        }
+      }
+    }
+  },
+  "model": {
+    "architecture": "b1",
+    "size": 384,
+    "label_smoothing": 0.05,
+    "reference_candidate_id": "public_candidate_v2_b1_384_ls005_adam_20260921_155906_82311da4",
+    "initialization": "saved selected checkpoint",
+    "model": "results/hair/selected_models/v2/hair_model.keras",
+    "model_sha256": "9faa33b8f79f45ef6e7be415473e2ee5225f6195fff04d098828733db23ed3c2",
+    "training_source_sha256": "2ac7260663cf69835ba50edb6ae8c7e7ac13be9c73b9f7ea24f60e0342e7e156",
+    "role": "selected"
+  },
+  "stage1_best": {
+    "path": "hair/selected/best.keras",
+    "sha256": "983001b0b116cd913b4cf1e349b47d11ab6246cf78fbaa607dc75b4578108b7f"
+  },
+  "treatment": "expanded",
+  "profile": {
+    "schema": "measured_camera_extended_v1",
+    "domain": "hair",
+    "lighting": {
+      "domain": "hair",
+      "profile_version": "measured_bounded_v3",
+      "brightness_offset": [
+        -0.6363735198974609,
+        12.4506196975708
+      ],
+      "contrast": [
+        1.0,
+        1.0
+      ],
+      "scale_x": [
+        1.0,
+        1.0
+      ],
+      "scale_y": [
+        1.0,
+        1.0
+      ],
+      "left_light": [
+        0.0,
+        0.0
+      ],
+      "evidence": {
+        "target_people": [
+          "P01",
+          "P02",
+          "P03",
+          "P04"
+        ],
+        "brightness_changes": [
+          26.342445373535156,
+          -8.323577880859375,
+          1.0775299072265625,
+          24.42083740234375
+        ],
+        "brightness_raw_shifts": [
+          26.342445373535156,
+          -8.323577880859375,
+          1.0775299072265625,
+          24.42083740234375
+        ],
+        "coverage_matched_contrast": {
+          "status": "measured_proxy_sensitivity",
+          "people": {
+            "P01": {
+              "overlap": [
+                0.06057400173611111,
+                0.23128255208333334
+              ],
+              "rows": [
+                3,
+                4
+              ],
+              "contrast_ratio": 0.8013651835465757
+            },
+            "P02": {
+              "overlap": [
+                0.1156955295138889,
+                0.187255859375
+              ],
+              "rows": [
+                3,
+                2
+              ],
+              "contrast_ratio": 1.1874806550120445
+            },
+            "P03": {
+              "overlap": [
+                0.05539279513888889,
+                0.21533203125
+              ],
+              "rows": [
+                2,
+                5
+              ],
+              "contrast_ratio": 0.9777449369774952
+            },
+            "P04": {
+              "overlap": [
+                0.1003689236111111,
+                0.15445963541666666
+              ],
+              "rows": [
+                5,
+                3
+              ],
+              "contrast_ratio": 0.8889063036430638
+            }
+          }
+        }
+      },
+      "bounds": {
+        "fraction_of_measured_shift": 0.5,
+        "max_brightness_offset": 32,
+        "contrast": [
+          0.9,
+          1.15
+        ],
+        "geometry": [
+          0.4,
+          1.0
+        ]
+      },
+      "held_back": [
+        "color: unmatched disease color",
+        "blur/noise: texture/scale confounding",
+        "hair mask: not validated and could change class evidence",
+        "geometry: no rescaling onto artificial padding; composition is an input policy",
+        "contrast/highlights: hair coverage and scalp visibility changed"
+      ],
+      "source_sha256": "2ac7260663cf69835ba50edb6ae8c7e7ac13be9c73b9f7ea24f60e0342e7e156",
+      "model_sha256": "9faa33b8f79f45ef6e7be415473e2ee5225f6195fff04d098828733db23ed3c2",
+      "calibration_fingerprint": "2d2ab5106e7f079147d4cd1e2e6e0ce1c27e8494d554085b4ad4947e3cd2b22c",
+      "input_policy": "legacy_resize",
+      "train_visual_review": "approved",
+      "selected_from": "verified_train_and_target_calibration",
+      "photometric_operator": "bounded_additive_v3",
+      "review_note": "Codex inspected all 120 fixed Train before/after previews (pages 1-15). No gross hair/scale boundary loss or artificial geometry observed at preview resolution. Bounded brightness operator retained for a limited pilot, not a clinical validation. The full Source leakage audit is repeated before training; model inputs and augmentation use float32 RGB 0-255."
+    },
+    "color_a": [
+      -0.5859375,
+      -0.23046875
+    ],
+    "color_b": [
+      -0.517578125,
+      -0.0859375
+    ],
+    "texture_gain": [
+      0.9061414267639694,
+      0.9644937194736967
+    ],
+    "blur_sigma_roi64": [
+      0.0,
+      0.35625
+    ],
+    "blur_input_scale": 3.0,
+    "evidence": {
+      "chroma": {
+        "lab_a": {
+          "participant_changes": [
+            -1.265625,
+            0.59375,
+            -0.8125,
+            -1.140625
+          ],
+          "range": [
+            -0.5859375,
+            -0.23046875
+          ]
+        },
+        "lab_b": {
+          "participant_changes": [
+            -0.640625,
+            -2.21875,
+            0.390625,
+            -0.359375
+          ],
+          "range": [
+            -0.517578125,
+            -0.0859375
+          ]
+        }
+      },
+      "normalized_detail_ratios": [
+        0.7956155523836431,
+        0.903396231148771,
+        0.8178386205760373,
+        1.00576106234326
+      ],
+      "focus_fits": [
+        {
+          "person": "P01",
+          "condition": "alt",
+          "sigma_roi64": 0.5,
+          "reference_path": "hair/P01/S01/P01_S01_hair_alt_20261108T153239675963.png",
+          "compared_paths": [
+            "hair/P01/S01/P01_S01_hair_alt_20261108T153159444214.png",
+            "hair/P01/S01/P01_S01_hair_alt_20261108T153239675963.png",
+            "hair/P01/S01/P01_S01_hair_alt_20261108T153151051139.png"
+          ],
+          "normalized_detail_reference": 0.06333822011947632,
+          "normalized_detail_target_q25": 0.048252301290631294,
+          "fit_at_search_limit": false
+        },
+        {
+          "person": "P01",
+          "condition": "ref",
+          "sigma_roi64": 0.7000000000000001,
+          "reference_path": "hair/P01/S01/P01_S01_hair_ref_20261108T153045788746.png",
+          "compared_paths": [
+            "hair/P01/S01/P01_S01_hair_ref_20261108T153045788746.png",
+            "hair/P01/S01/P01_S01_hair_ref_20261108T153121869582.png",
+            "hair/P01/S01/P01_S01_hair_ref_20261108T153051029359.png"
+          ],
+          "normalized_detail_reference": 0.06347747892141342,
+          "normalized_detail_target_q25": 0.04593171179294586,
+          "fit_at_search_limit": false
+        },
+        {
+          "person": "P02",
+          "condition": "alt",
+          "sigma_roi64": 0.5,
+          "reference_path": "hair/P02/S01/P02_S01_hair_alt_20261108T155856007554.png",
+          "compared_paths": [
+            "hair/P02/S01/P02_S01_hair_alt_20261108T155902899143.png",
+            "hair/P02/S01/P02_S01_hair_alt_20261108T155856007554.png",
+            "hair/P02/S01/P02_S01_hair_alt_20261108T155847429457.png"
+          ],
+          "normalized_detail_reference": 0.0768783763051033,
+          "normalized_detail_target_q25": 0.06241852976381779,
+          "fit_at_search_limit": false
+        },
+        {
+          "person": "P02",
+          "condition": "ref",
+          "sigma_roi64": 0.4,
+          "reference_path": "hair/P02/S01/P02_S01_hair_ref_20261108T155823882222.png",
+          "compared_paths": [
+            "hair/P02/S01/P02_S01_hair_ref_20261108T155823882222.png",
+            "hair/P02/S01/P02_S01_hair_ref_20261108T155807961945.png",
+            "hair/P02/S01/P02_S01_hair_ref_20261108T155819402127.png"
+          ],
+          "normalized_detail_reference": 0.07383783161640167,
+          "normalized_detail_target_q25": 0.06689455173909664,
+          "fit_at_search_limit": false
+        },
+        {
+          "person": "P03",
+          "condition": "alt",
+          "sigma_roi64": 0.65,
+          "reference_path": "hair/P03/S01/P03_S01_hair_alt_20261108T160524791795.png",
+          "compared_paths": [
+            "hair/P03/S01/P03_S01_hair_alt_20261108T160524791795.png",
+            "hair/P03/S01/P03_S01_hair_alt_20261108T160528077321.png",
+            "hair/P03/S01/P03_S01_hair_alt_20261108T160534515213.png"
+          ],
+          "normalized_detail_reference": 0.04810452461242676,
+          "normalized_detail_target_q25": 0.034384097903966904,
+          "fit_at_search_limit": false
+        },
+        {
+          "person": "P03",
+          "condition": "ref",
+          "sigma_roi64": 0.8,
+          "reference_path": "hair/P03/S01/P03_S01_hair_ref_20261108T160432797868.png",
+          "compared_paths": [
+            "hair/P03/S01/P03_S01_hair_ref_20261108T160447415708.png",
+            "hair/P03/S01/P03_S01_hair_ref_20261108T160414107183.png",
+            "hair/P03/S01/P03_S01_hair_ref_20261108T160432797868.png"
+          ],
+          "normalized_detail_reference": 0.08795812726020813,
+          "normalized_detail_target_q25": 0.05506112985312939,
+          "fit_at_search_limit": false
+        },
+        {
+          "person": "P04",
+          "condition": "alt",
+          "sigma_roi64": 0.4,
+          "reference_path": "hair/P04/S01/P04_S01_hair_alt_20261108T161821606621.png",
+          "compared_paths": [
+            "hair/P04/S01/P04_S01_hair_alt_20261108T161818945430.png",
+            "hair/P04/S01/P04_S01_hair_alt_20261108T161821606621.png",
+            "hair/P04/S01/P04_S01_hair_alt_20261108T161755328976.png"
+          ],
+          "normalized_detail_reference": 0.0599982924759388,
+          "normalized_detail_target_q25": 0.05631589889526367,
+          "fit_at_search_limit": false
+        },
+        {
+          "person": "P04",
+          "condition": "ref",
+          "sigma_roi64": 0.75,
+          "reference_path": "hair/P04/S01/P04_S01_hair_ref_20261108T161741046903.png",
+          "compared_paths": [
+            "hair/P04/S01/P04_S01_hair_ref_20261108T161656311169.png",
+            "hair/P04/S01/P04_S01_hair_ref_20261108T161717832940.png",
+            "hair/P04/S01/P04_S01_hair_ref_20261108T161741046903.png"
+          ],
+          "normalized_detail_reference": 0.06583444774150848,
+          "normalized_detail_target_q25": 0.04240403510630131,
+          "fit_at_search_limit": false
+        }
+      ],
+      "source_train_statistics": {
+        "width": {
+          "n": 10032,
+          "mean": 640.0,
+          "var": 0.0,
+          "q05": 640.0,
+          "q25": 640.0,
+          "q50": 640.0,
+          "q75": 640.0,
+          "q95": 640.0
+        },
+        "height": {
+          "n": 10032,
+          "mean": 480.0,
+          "var": 0.0,
+          "q05": 480.0,
+          "q25": 480.0,
+          "q50": 480.0,
+          "q75": 480.0,
+          "q95": 480.0
+        },
+        "aspect": {
+          "n": 10032,
+          "mean": 1.3333333333333333,
+          "var": 0.0,
+          "q05": 1.3333333333333333,
+          "q25": 1.3333333333333333,
+          "q50": 1.3333333333333333,
+          "q75": 1.3333333333333333,
+          "q95": 1.3333333333333333
+        },
+        "frame_y_mean": {
+          "n": 10032,
+          "mean": 151.29554827449297,
+          "var": 45.89208796768109,
+          "q05": 140.40998828125,
+          "q25": 146.89392415364583,
+          "q50": 151.2693359375,
+          "q75": 155.68573893229166,
+          "q95": 162.4778154296875
+        },
+        "y_mean": {
+          "n": 10032,
+          "mean": 155.6826136944967,
+          "var": 130.13233446255578,
+          "q05": 136.8667984008789,
+          "q25": 147.92795181274414,
+          "q50": 155.83558654785156,
+          "q75": 163.58118057250977,
+          "q95": 174.12792510986327
+        },
+        "y_std": {
+          "n": 10032,
+          "mean": 29.953676802880075,
+          "var": 73.51660025014611,
+          "q05": 15.744802856445313,
+          "q25": 23.93495750427246,
+          "q50": 30.09425640106201,
+          "q75": 35.900136947631836,
+          "q95": 44.008992195129395
+        },
+        "y_p10": {
+          "n": 10032,
+          "mean": 118.73763829463977,
+          "var": 560.5050425503916,
+          "q05": 73.80268222808837,
+          "q25": 102.88904209136963,
+          "q50": 123.861079788208,
+          "q75": 137.00472869873047,
+          "q95": 150.05238952636716
+        },
+        "y_p50": {
+          "n": 10032,
+          "mean": 158.98320664249158,
+          "var": 145.1415514473159,
+          "q05": 139.57371711730957,
+          "q25": 150.6834716796875,
+          "q50": 158.9146385192871,
+          "q75": 167.0275421142578,
+          "q95": 179.19177665710447
+        },
+        "y_p90": {
+          "n": 10032,
+          "mean": 186.38956678153227,
+          "var": 287.0178060840724,
+          "q05": 160.2778648376465,
+          "q25": 173.7174224853516,
+          "q50": 185.64989242553713,
+          "q75": 197.79513931274414,
+          "q95": 215.30248764038083
+        },
+        "contrast": {
+          "n": 10032,
+          "mean": 67.65192802785116,
+          "var": 869.3538685090921,
+          "q05": 26.21061782836914,
+          "q25": 44.13491439819336,
+          "q50": 63.77436447143555,
+          "q75": 88.79049301147461,
+          "q95": 120.14251708984374
+        },
+        "very_bright": {
+          "n": 10032,
+          "mean": 5.6784435639287606e-08,
+          "var": 1.537151928674455e-12,
+          "q05": 0.0,
+          "q25": 0.0,
+          "q50": 0.0,
+          "q75": 0.0,
+          "q95": 0.0
+        },
+        "very_dark": {
+          "n": 10032,
+          "mean": 0.0,
+          "var": 0.0,
+          "q05": 0.0,
+          "q25": 0.0,
+          "q50": 0.0,
+          "q75": 0.0,
+          "q95": 0.0
+        },
+        "detail": {
+          "n": 10032,
+          "mean": 7.9486075215980385,
+          "var": 6.836524631497128,
+          "q05": 3.89287109375,
+          "q25": 6.066689610481262,
+          "q50": 7.8241846561431885,
+          "q75": 9.658596277236938,
+          "q95": 12.415809583663938
+        },
+        "lab_a": {
+          "n": 10032,
+          "mean": 1.548149048046252,
+          "var": 93.81593158000446,
+          "q05": -11.36640625,
+          "q25": -5.875,
+          "q50": -0.546875,
+          "q75": 8.275390625,
+          "q95": 19.3125
+        },
+        "lab_b": {
+          "n": 10032,
+          "mean": 6.404843563098086,
+          "var": 47.66745941111487,
+          "q05": -4.296875,
+          "q25": 1.71875,
+          "q50": 6.078125,
+          "q75": 10.546875,
+          "q95": 18.710156249999983
+        },
+        "lighting_range": {
+          "n": 10032,
+          "mean": 20.021714983184182,
+          "var": 145.52417187959475,
+          "q05": 5.645606994628906,
+          "q25": 11.416168212890625,
+          "q50": 17.636642456054688,
+          "q75": 25.657127380371094,
+          "q95": 42.85272674560545
+        },
+        "r_p10": {
+          "n": 10032,
+          "mean": 122.83078115849592,
+          "var": 843.9024052340699,
+          "q05": 72.25,
+          "q25": 102.3291681289673,
+          "q50": 125.08958549499512,
+          "q75": 144.0,
+          "q95": 167.6666717529297
+        },
+        "r_p50": {
+          "n": 10032,
+          "mean": 167.46787159979058,
+          "var": 243.81335583496457,
+          "q05": 143.625,
+          "q25": 156.58333587646484,
+          "q50": 166.5833282470703,
+          "q75": 177.5416660308838,
+          "q95": 194.83333511352538
+        },
+        "r_p90": {
+          "n": 10032,
+          "mean": 189.73281665053665,
+          "var": 229.85646193840952,
+          "q05": 165.92083053588868,
+          "q25": 179.375,
+          "q50": 188.9104209899903,
+          "q75": 199.5833282470703,
+          "q95": 215.875
+        },
+        "g_p10": {
+          "n": 10032,
+          "mean": 117.43019380143575,
+          "var": 560.2681108291806,
+          "q05": 73.98125114440919,
+          "q25": 101.54166412353516,
+          "q50": 120.58958549499512,
+          "q75": 135.05416870117188,
+          "q95": 151.6854171752929
+        },
+        "g_p50": {
+          "n": 10032,
+          "mean": 157.09712873729603,
+          "var": 315.9570630042419,
+          "q05": 127.93958282470703,
+          "q25": 144.0416717529297,
+          "q50": 157.4166717529297,
+          "q75": 170.0416660308838,
+          "q95": 185.9166717529297
+        },
+        "g_p90": {
+          "n": 10032,
+          "mean": 187.1766518092422,
+          "var": 489.9436178101222,
+          "q05": 151.18270950317392,
+          "q25": 170.3333282470703,
+          "q50": 187.75,
+          "q75": 203.21562080383305,
+          "q95": 223.20145492553718
+        },
+        "b_p10": {
+          "n": 10032,
+          "mean": 104.9410540757567,
+          "var": 536.7216484610998,
+          "q05": 64.375,
+          "q25": 89.625,
+          "q50": 106.29166412353516,
+          "q75": 121.375,
+          "q95": 140.7916717529297
+        },
+        "b_p50": {
+          "n": 10032,
+          "mean": 147.03057508643545,
+          "var": 382.9799729408593,
+          "q05": 115.95833244323731,
+          "q25": 133.25,
+          "q50": 146.625,
+          "q75": 160.42187881469727,
+          "q95": 180.0
+        },
+        "b_p90": {
+          "n": 10032,
+          "mean": 182.3092101091784,
+          "var": 615.5828331807069,
+          "q05": 141.0,
+          "q25": 164.66667060852052,
+          "q50": 182.8479209899903,
+          "q75": 200.375,
+          "q95": 222.91250457763664
+        },
+        "dark_ridge": {
+          "n": 10032,
+          "mean": 0.12943713039281243,
+          "var": 0.0035930118071247218,
+          "q05": 0.036717393663194445,
+          "q25": 0.0853610568576389,
+          "q50": 0.125244140625,
+          "q75": 0.16943359375,
+          "q95": 0.23448350694444445
+        }
+      },
+      "target_statistics": {
+        "width": {
+          "n": 40,
+          "mean": 640.0,
+          "var": 0.0,
+          "q05": 640.0,
+          "q25": 640.0,
+          "q50": 640.0,
+          "q75": 640.0,
+          "q95": 640.0
+        },
+        "height": {
+          "n": 40,
+          "mean": 480.0,
+          "var": 0.0,
+          "q05": 480.0,
+          "q25": 480.0,
+          "q50": 480.0,
+          "q75": 480.0,
+          "q95": 480.0
+        },
+        "aspect": {
+          "n": 40,
+          "mean": 1.3333333333333333,
+          "var": 0.0,
+          "q05": 1.3333333333333333,
+          "q25": 1.3333333333333333,
+          "q50": 1.3333333333333333,
+          "q75": 1.3333333333333333,
+          "q95": 1.3333333333333333
+        },
+        "frame_y_mean": {
+          "n": 40,
+          "mean": 129.3877598470052,
+          "var": 227.04159751607412,
+          "q05": 108.03277636718751,
+          "q25": 127.07451578776042,
+          "q50": 133.569970703125,
+          "q75": 137.4266650390625,
+          "q95": 142.24065006510418
+        },
+        "y_mean": {
+          "n": 40,
+          "mean": 150.14063701629638,
+          "var": 448.04424967062334,
+          "q05": 105.40777053833008,
+          "q25": 142.20550918579102,
+          "q50": 154.28058624267578,
+          "q75": 165.46496200561523,
+          "q95": 171.9572799682617
+        },
+        "y_std": {
+          "n": 40,
+          "mean": 63.410143756866454,
+          "var": 84.45266875594243,
+          "q05": 47.934397315979005,
+          "q25": 59.69694900512695,
+          "q50": 64.1294059753418,
+          "q75": 69.64577865600586,
+          "q95": 77.99204025268554
+        },
+        "y_p10": {
+          "n": 40,
+          "mean": 41.933959406614306,
+          "var": 958.1521278850385,
+          "q05": 2.6368062615394594,
+          "q25": 18.843915605545057,
+          "q50": 32.772714614868164,
+          "q75": 61.99440174102783,
+          "q95": 109.34296669006349
+        },
+        "y_p50": {
+          "n": 40,
+          "mean": 173.0009801864624,
+          "var": 645.5022337511291,
+          "q05": 124.96294689178467,
+          "q25": 163.11760330200195,
+          "q50": 181.49776458740234,
+          "q75": 188.64525032043457,
+          "q95": 193.22096557617186
+        },
+        "y_p90": {
+          "n": 40,
+          "mean": 210.17519733428952,
+          "var": 295.3613638653209,
+          "q05": 183.68099594116222,
+          "q25": 208.27590675354006,
+          "q50": 213.28709335327147,
+          "q75": 216.74776496887208,
+          "q95": 233.09896827697756
+        },
+        "contrast": {
+          "n": 40,
+          "mean": 168.2412368774414,
+          "var": 1074.1118161923218,
+          "q05": 99.46612167358398,
+          "q25": 158.83081817626953,
+          "q50": 173.03665924072266,
+          "q75": 189.48519897460938,
+          "q95": 211.66148376464844
+        },
+        "very_bright": {
+          "n": 40,
+          "mean": 0.004967583550347222,
+          "var": 0.00026568657040228086,
+          "q05": 0.0,
+          "q25": 0.0,
+          "q50": 0.00029839409722222225,
+          "q75": 0.002163357204861111,
+          "q95": 0.018929036458333288
+        },
+        "very_dark": {
+          "n": 40,
+          "mean": 0.04101901584201389,
+          "var": 0.0017355358596017327,
+          "q05": 0.0003350151909722223,
+          "q25": 0.014112684461805556,
+          "q50": 0.023491753472222224,
+          "q75": 0.05970594618055555,
+          "q95": 0.14106445312499996
+        },
+        "detail": {
+          "n": 40,
+          "mean": 10.617775154113769,
+          "var": 15.142611563012437,
+          "q05": 4.960670614242554,
+          "q25": 8.365247249603271,
+          "q50": 10.384588241577148,
+          "q75": 11.909588098526001,
+          "q95": 16.43147802352905
+        },
+        "lab_a": {
+          "n": 40,
+          "mean": -3.1611328125,
+          "var": 1.1246114730834962,
+          "q05": -4.60703125,
+          "q25": -3.75,
+          "q50": -3.328125,
+          "q75": -2.48046875,
+          "q95": -1.2265625000000004
+        },
+        "lab_b": {
+          "n": 40,
+          "mean": 14.0974609375,
+          "var": 7.331787071228026,
+          "q05": 10.19765625,
+          "q25": 11.80078125,
+          "q50": 13.8203125,
+          "q75": 16.4296875,
+          "q95": 18.154687499999998
+        },
+        "lighting_range": {
+          "n": 40,
+          "mean": 56.37495832443237,
+          "var": 835.1875440829211,
+          "q05": 22.528936004638673,
+          "q25": 34.36559295654297,
+          "q50": 54.25605773925781,
+          "q75": 70.88351821899414,
+          "q95": 116.78360519409178
+        },
+        "r_p10": {
+          "n": 40,
+          "mean": 48.72812503933907,
+          "var": 966.3664832597153,
+          "q05": 7.367291672229768,
+          "q25": 26.8125,
+          "q50": 39.375,
+          "q75": 67.0510410308838,
+          "q95": 113.98833583831788
+        },
+        "r_p50": {
+          "n": 40,
+          "mean": 179.26197872161865,
+          "var": 661.7000408236996,
+          "q05": 132.64375,
+          "q25": 169.18749618530273,
+          "q50": 188.64583587646484,
+          "q75": 194.12499618530273,
+          "q95": 200.77708358764647
+        },
+        "r_p90": {
+          "n": 40,
+          "mean": 214.31541709899903,
+          "var": 282.4515446650902,
+          "q05": 187.3104118347168,
+          "q25": 210.65625,
+          "q50": 216.91041564941415,
+          "q75": 221.28125381469727,
+          "q95": 240.01041717529296
+        },
+        "g_p10": {
+          "n": 40,
+          "mean": 41.64218744665385,
+          "var": 1019.8722548788097,
+          "q05": 0.48687498867512474,
+          "q25": 17.690624952316284,
+          "q50": 32.35416603088379,
+          "q75": 62.35000019073487,
+          "q95": 110.67562660217285
+        },
+        "g_p50": {
+          "n": 40,
+          "mean": 175.17812471389772,
+          "var": 661.0801369134093,
+          "q05": 126.98125,
+          "q25": 164.6041717529297,
+          "q50": 184.14583206176758,
+          "q75": 191.56250762939453,
+          "q95": 195.47708282470703
+        },
+        "g_p90": {
+          "n": 40,
+          "mean": 212.95385398864747,
+          "var": 299.5880323434888,
+          "q05": 185.92291641235352,
+          "q25": 211.34374618530273,
+          "q50": 216.0833282470703,
+          "q75": 219.43750381469727,
+          "q95": 235.725
+        },
+        "b_p10": {
+          "n": 40,
+          "mean": 25.2124998831749,
+          "var": 711.475031435818,
+          "q05": 0.0,
+          "q25": 4.603124964237219,
+          "q50": 14.979166507720947,
+          "q75": 41.250000953674316,
+          "q95": 88.94229175567627
+        },
+        "b_p50": {
+          "n": 40,
+          "mean": 145.1359375,
+          "var": 583.7990686353174,
+          "q05": 100.77291908264161,
+          "q25": 138.78125,
+          "q50": 150.83333587646484,
+          "q75": 161.79166412353516,
+          "q95": 166.6375
+        },
+        "b_p90": {
+          "n": 40,
+          "mean": 186.04812545776372,
+          "var": 340.0548890277736,
+          "q05": 159.0110397338869,
+          "q25": 181.09375,
+          "q50": 188.01458740234384,
+          "q75": 197.07291793823242,
+          "q95": 209.48958816528318
+        },
+        "dark_ridge": {
+          "n": 40,
+          "mean": 0.14239705403645836,
+          "var": 0.00478912869307362,
+          "q05": 0.05533989800347222,
+          "q25": 0.09922960069444445,
+          "q50": 0.1377902560763889,
+          "q75": 0.1697048611111111,
+          "q95": 0.24119873046874996
+        }
+      }
+    },
+    "engineering_bounds": {
+      "measured_change_fraction": 0.5,
+      "chroma_limit_lab": 3,
+      "texture_gain_limits": [
+        0.85,
+        1.15
+      ],
+      "focus_fit_grid_roi64": [
+        0,
+        1.5,
+        0.05
+      ],
+      "blur_max_roi64": 0.75
+    },
+    "limitations": [
+      "Within-person variation includes pose/content; not an isolated camera calibration",
+      "Texture and focus proxies are not independent physical measurements",
+      "Global disease colors/textures are not matched to unlabeled participants",
+      "Four participants are not a general camera population or independent Target Test"
+    ]
+  },
+  "validation_conditions": [
+    "clean",
+    "lighting",
+    "expanded"
+  ],
+  "validation_seed": 1707,
+  "tensorflow": "2.20.0",
+  "keras": "3.13.2",
+  "numpy": "2.5.4",
+  "opencv": "4.14.0",
+  "gpu": [
+    {
+      "compute_capability": [
+        7,
+        5
+      ],
+      "device_name": "Tesla T4"
+    }
+  ],
+  "bundle_provenance": {
+    "repository_commit": "ffd71eca68ff1e21c145ed56158f4cfa77f7f037",
+    "code_state": "exact bundled source files and member SHA-256 manifest",
+    "planned_stage_counts": [
+      6,
+      3,
+      3
+    ],
+    "implemented_stages": [
+      1
+    ],
+    "encrypted_target_data_reserved_for_stage3": true
+  }
+}

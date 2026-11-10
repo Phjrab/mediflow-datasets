@@ -1,0 +1,17 @@
+{
+  "date": "2026-10-26",
+  "repository": "Phjrab/forge-finetune-dashboard",
+  "commit": "d9a4656a5bee38cc9903e8caf5c4b680709423d2",
+  "scope": "read-only source review; no download, installation or real training",
+  "interpreter": "C:/VS Code/upload_staging/.venv/Scripts/python.exe",
+  "tests": [
+    {"command": "python -m unittest discover -s tests -p test_workspace.py -v", "total": 33, "passed": 33, "errors": 0, "skipped": 0},
+    {"command": "python -m unittest discover -s tests -p test_architectures.py -v", "total": 5, "passed": 2, "errors": 0, "skipped": 3, "skip_reason": "Optional torch/transformers/peft training runtime is not installed"},
+    {"command": "python -m unittest discover -s tests -p test_training.py -v", "total": 11, "passed": 9, "errors": 2, "skipped": 0, "error_reason": "Windows WinError 1314: symbolic-link creation privilege unavailable", "error_tests": ["test_artifact_exports_adapter_without_optimizer_or_symlink", "test_paths_refuse_symlink_escape"]}
+  ],
+  "probes": [
+    {"name": "embedded_only_vlm_content", "setup": "Two VLM rows with inline messages content image/text blocks, no top-level images; fake staged metadata and mocked available capabilities only; no weights loaded", "import_valid": true, "normalized_keys": ["messages"], "preflight_exception": "KeyError", "exception_text": "images", "source": "workspace.py:141-177; training.py:209"},
+    {"name": "same_image_different_question_split", "setup": "Two VLM rows both refer to images/same.jpg but use different question text", "train_count": 1, "validation_count": 1, "split_warning_codes": ["split_only", "small_split"], "duplicate_leakage_warning": false, "source": "workspace.py:392-407"}
+  ],
+  "temp_directory": "C:/VS Code/upload_staging/.tmp/forge_train_review_runtime_20261026"
+}

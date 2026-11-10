@@ -1,0 +1,22 @@
+{
+  "artifact_sha256": {
+    "Domain_Adaptation_Colab.ipynb": "f99c8fd8576ec7e3f516e615a13547219bb23144e461ffc2b8cc401752dea09d",
+    "mediflow_da_runtime.zip": "144e9bf7d9087deb6bb75fcb193daf08f885733de2eff3b806a285fa946b41b3"
+  },
+  "checks": {
+    "ruff_src_tests": "passed",
+    "pytest_passed": 133,
+    "pytest_skipped": 3,
+    "pytest_failed": 0,
+    "portable_archive": "passed",
+    "notebook_syntax": "passed"
+  },
+  "research_execution": {
+    "target_photos": 124,
+    "source_reference_images": 20,
+    "full_source_train_analyzed": false,
+    "new_disease_training_executed": false,
+    "source_test_re_evaluated": false,
+    "target_accuracy": null
+  }
+}

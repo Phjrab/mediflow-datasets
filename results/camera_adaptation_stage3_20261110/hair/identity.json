@@ -1,0 +1,13 @@
+{
+  "bundle_sha256": "4ae6e07eb4af122531439519ae2207aad57a1c8dfb8f158152a2093fa65a91fe",
+  "selection_sha256": "16c9a9dfa889704a2da5d50a1f21b9bebf3b0269925a9c994d3b54fa57850de0",
+  "source_manifest_sha256": "c6320fa7d2ef25332d508b3da868d2731d61ce7c8cd3ed2ebc505e6cd0b54717",
+  "reference_sha256": "1a44a143fe6f5ef3021865b75f4797ffff16b1e21bae7dc7ca838eb70a09a81f",
+  "configuration_sha256": "ee9604c652ace8a6d7d0df5656b70ef7512f0ae40f7ef2211f081432b75d9366",
+  "code_sha256": {
+    "stage2": "764f19cf835450eb31224079d33d625a5aa9ff890a56c04285f862dc275696b9",
+    "training": "6b5aae35bcbe1af85fe19b6a47ebce6ed57bfca780129a82e95dd9dd0c9d4c8a",
+    "alignment": "9de3ea0e0a5667c31b6886535a8c03a3f3bc515936b7ee889b306ae25e91d617"
+  },
+  "stage2_best_sha256": "fa2c59ae6a0b1342b8c693014d0a951c59064a4c8439a313f2520e1ce8c224fd"
+}

@@ -4,10 +4,35 @@
 데이터셋 전처리를 실행하기 위한 Python 프로젝트입니다. 이 결과는 의료 진단이 아닌 연구 및
 스크리닝 보조 목적으로 사용해야 합니다.
 
+## 현재 작업 상태 · 2026-11-11
+
+실제 카메라 환경 적응을 먼저 진행하고 LLM·VLM 작업은 이후로 미뤘습니다.
+1차 조명 적응 6회, 2차 색·미세 대비·흐림 확장 3회, 3차 MMD·CORAL 정렬 3회와
+[최종 Source Test 분석](docs/research/ADAPTATION_FINAL_TEST_RESULT_REVIEW_20261110.md)을 완료했습니다.
+실제 촬영 4명·124장은 질환 정답이 없는 촬영 특성 조사 자료이며 독립 Target Test가 아닙니다.
+
+4차는 분야별 촬영 변환을 재검토한 [수정본 노트북](notebooks/camera_adaptation/MediFlow_Camera_Revised_Adaptation_20261111.ipynb)을
+준비하고 [학습 직전 검사](docs/research/REVISED_ADAPTATION_PRETRAINING_CHECK_20261111.md)를 마쳤습니다.
+**4차 정식 학습은 아직 실행하지 않았습니다.** 현재 단계와 남은 일은 [로드맵](docs/ROADMAP.md)을 따릅니다.
+
+코드·설정·노트북·보고서·수치 결과·학습 완료 모델을 Git에 보관합니다.
+`camera_capture/`, 복호화 키, 실행 ZIP, 실제 참여자 사진이 들어간 비교 그림은 로컬 전용입니다.
+해당 자료를 가리키는 문서 링크는 로컬 작업 공간에서만 열립니다.
+카메라 노트북 실행에는 기존 Drive의 공통 ZIP·원본 데이터 ZIP·이전 단계 결과가 필요합니다.
+
+## 기존 연구 안내
+
 처음 보는 팀원은 [최종 상세 보고서](docs/FINAL_DETAILED_REPORT_20260928.md)부터 읽으면 됩니다.
-빠른 현황은 [현재 상태](docs/PROJECT_STATUS_20260928.md), 선정 결과는
+최신 점검과 다음 작업은 [LLM·VLM 착수 전 종합 점검](docs/research/PRE_LLM_VLM_PROJECT_AUDIT_20261026.md),
+9월 연구 마감 당시의 현황은 [2026-09-28 상태](docs/PROJECT_STATUS_20260928.md), 선정 결과는
 [2026-09-28 모델 선정](results/FINAL_MODEL_SELECTION_20260928.md)에 있습니다.
 실제 선정 모델 7개의 경로와 사용 상태는 [모델 경로 안내](results/SELECTED_MODEL_PATHS.md)에 모았습니다.
+
+2026-10-26부터 LLM 결과 설명과 VLM 독립 질환 분류 실험을 준비합니다. 선정 모델 7개는 파일·ZIP·
+클래스·전처리를 대조하고 실제 샘플 추론을 확인했습니다. 먼저 최신 후보용 공통 추론과
+결과 형식을 준비하며, 기존 초기 모델용 CLI와 구분합니다. LLM·VLM 런타임은 아직 구현 전입니다.
+팀원의 별도 MedVLM 저장소에는 최신 개발 브랜치의 의료 QA/VQA 학습·평가가 있으므로,
+[두 저장소 분석과 연결 방향](docs/research/TEAM_LLM_VLM_REPOSITORY_REVIEW_20261026.md)을 참고합니다.
 
 ## 모델
 

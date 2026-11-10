@@ -1,0 +1,40 @@
+{
+  "date": "2026-11-09",
+  "purpose": "Hair and Skin sequential analysis and review exports only",
+  "artifact_sha256": {
+    "Hair_Skin_Analysis_Colab.ipynb": "a3cb29993fd5e3711946122357fea41745d1e894cd05086db56cb9748819e523",
+    "Hair_Skin_Analysis_Colab.py": "9e660ff6acc20f407153793992025285f23cc78decdd8078bee997213fbcb562",
+    "README.md": "fcc7fb859c262c37f442cbe8ff7498e3b201059edfd7be2925f23bb5f4ecd81c"
+  },
+  "source_sha256": {
+    "src/mediflow_datasets/domain_adaptation_batch.py": "20bd372dc2e9f39681f6a8e4a9617110c8d60576fc3dcb78afe93854b142a216",
+    "scripts/build_domain_adaptation_batch_colab.py": "b526a5f8e6c2596cbf663028e380afaa3c1e8ebff1bec34af844bdd82a8cd151",
+    "tests/test_domain_adaptation_batch.py": "6d250de7c92d42cdfa806dc1c6a0802ee2978e62fa613eed1a839d7b8d1a6e98"
+  },
+  "checks": {
+    "ruff_src_tests_and_builder": "passed",
+    "pytest_passed": 138,
+    "pytest_skipped": 3,
+    "pytest_failed": 0,
+    "new_batch_tests_passed": 5,
+    "notebook_single_code_cell_syntax": "passed",
+    "notebook_embedded_source_matches_module": "passed",
+    "existing_runtime_bundle_integrity_and_hash": "passed",
+    "original_notebook_preserved": "passed",
+    "two_download_requests_and_retry_callbacks": "passed_with_mock_colab",
+    "local_python_probe": {
+      "tensorflow": "2.20.0",
+      "keras": "3.13.2",
+      "gpu": []
+    }
+  },
+  "execution": {
+    "colab_batch_executed": false,
+    "full_hair_source_analysis_executed": false,
+    "full_skin_source_analysis_executed": false,
+    "training_executed": false,
+    "target_accuracy": null,
+    "existing_runtime_zip": "output/domain_adaptation_20261108_final/mediflow_da_runtime.zip",
+    "expected_runtime_zip_sha256": "144e9bf7d9087deb6bb75fcb193daf08f885733de2eff3b806a285fa946b41b3"
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "scope": "Expanded Source Validation sample vs unlabeled Target training images",
+  "class_names": [
+    "건선",
+    "아토피",
+    "여드름",
+    "정상",
+    "주사"
+  ],
+  "target_accuracy": null,
+  "models": {
+    "stage3_aligned": {
+      "mmd": 0.21141201257705688,
+      "coral": 0.07790988683700562,
+      "source_validation_count": 40,
+      "target_training_count": 42,
+      "target_predicted_class_counts": [
+        5,
+        32,
+        5,
+        0,
+        0
+      ],
+      "predicted_class_changes_vs_initial": 4
+    },
+    "initial": {
+      "mmd": 0.20260989665985107,
+      "coral": 0.03378517925739288,
+      "source_validation_count": 40,
+      "target_training_count": 42,
+      "target_predicted_class_counts": [
+        1,
+        36,
+        5,
+        0,
+        0
+      ],
+      "predicted_class_changes_vs_initial": 0
+    },
+    "stage1_lighting": {
+      "mmd": 0.2268836498260498,
+      "coral": 0.11731623858213425,
+      "source_validation_count": 40,
+      "target_training_count": 42,
+      "target_predicted_class_counts": [
+        5,
+        32,
+        5,
+        0,
+        0
+      ],
+      "predicted_class_changes_vs_initial": 4
+    },
+    "stage2_expanded": {
+      "mmd": 0.2405034303665161,
+      "coral": 0.11883683502674103,
+      "source_validation_count": 40,
+      "target_training_count": 42,
+      "target_predicted_class_counts": [
+        1,
+        36,
+        5,
+        0,
+        0
+      ],
+      "predicted_class_changes_vs_initial": 0
+    }
+  }
+}

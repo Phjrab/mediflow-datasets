@@ -1,0 +1,155 @@
+{
+  "purpose": "Visual illustration of saved Stage 1/2/3 input transformations",
+  "source_role": "local dataset examples; membership in training split is not established",
+  "training_seed": 42,
+  "epoch_index": 0,
+  "transformation_forced_for_illustration": true,
+  "actual_training_augmentation_probability": 0.5,
+  "stage3": "Stage 2 photo transform plus MMD and CORAL on model features during training",
+  "display": "float32 RGB 0-255 tensors rounded to uint8 for display, no additional contrast boost",
+  "environment": {
+    "python": "3.12.14",
+    "tensorflow": "2.20.0",
+    "keras": "3.13.2",
+    "numpy": "2.5.2",
+    "opencv": "4.14.0",
+    "matplotlib": "3.11.2"
+  },
+  "code_sha256": {
+    "camera_extended.py": "7a1cd1e25c025398cb06baab4b6675f0d7d6a11bd3d9f56d35424a23a6e49da1",
+    "domain_adaptation_experiment.py": "216d01c860cf977d7a8f9093605a90a5f4cda495c4d4f363b5862e8b69d63d2b"
+  },
+  "examples": {
+    "skin": {
+      "source": "data_examples/skin/광선각화증_0001.png",
+      "source_sha256": "81834f1b680decc53417f3e69105c01ad05cef67b3961f52360a3819af0ac3b9",
+      "original_size": [
+        512,
+        512
+      ],
+      "input_size": 224,
+      "input_policy": "legacy_resize",
+      "classes": [
+        "광선각화증",
+        "기저세포암",
+        "보웬병",
+        "사마귀",
+        "지루각화증",
+        "편평세포암",
+        "표피낭종",
+        "피부섬유종",
+        "혈관종",
+        "흑색점"
+      ],
+      "recorded_class_name": "광선각화증",
+      "seed": 15257007507732008168,
+      "configuration": "results/camera_adaptation_stage3_20261110/skin/run_configuration.json",
+      "configuration_sha256": "1490b0d93c9ec6471064618f6e5113d656b36a5585b9bcda5e6546efc125b142",
+      "applied_parameters": {
+        "brightness_offset": -0.9253382383348951,
+        "contrast": 0.951249175984686,
+        "left_light": 0.0,
+        "color_a": -0.11953104895942279,
+        "color_b": -0.11071435987444367,
+        "texture_gain": 1.0339746746101715,
+        "blur_sigma_input": 0.3776060360910683
+      },
+      "stage2_stage3_exactly_equal": true,
+      "mean_absolute_rgb_delta_from_input": {
+        "stage1": 1.1831458806991577,
+        "stage2": 1.405320167541504,
+        "stage3": 1.405320167541504
+      },
+      "crop_fraction_xyxy_for_zoom": [
+        0.27,
+        0.3,
+        0.67,
+        0.7
+      ]
+    },
+    "web_skin": {
+      "source": "data_examples/web_skin/여드름_000034.png",
+      "source_sha256": "d3db7dd46d435e0a994787870377c800158cf0a6279c7d82e71e44a6d0b72a3a",
+      "original_size": [
+        1024,
+        1024
+      ],
+      "input_size": 256,
+      "input_policy": "center_square",
+      "classes": [
+        "건선",
+        "아토피",
+        "여드름",
+        "정상",
+        "주사"
+      ],
+      "recorded_class_name": "여드름",
+      "seed": 1888620899595741413,
+      "configuration": "results/camera_adaptation_stage3_20261110/web_skin/run_configuration.json",
+      "configuration_sha256": "0d083c6ef293b0e045c2815f161b8713d763fb28bd890575c3bf99ee26f7ade5",
+      "applied_parameters": {
+        "brightness_offset": 14.771627874578465,
+        "contrast": 1.15,
+        "left_light": 14.33434507972498,
+        "color_a": -0.5287531506535538,
+        "color_b": 0.32425726636299335,
+        "texture_gain": 0.9328781917831742,
+        "blur_sigma_input": 0.14317805402117512
+      },
+      "stage2_stage3_exactly_equal": true,
+      "mean_absolute_rgb_delta_from_input": {
+        "stage1": 11.542637825012207,
+        "stage2": 11.00083065032959,
+        "stage3": 11.00083065032959
+      },
+      "crop_fraction_xyxy_for_zoom": [
+        0.23,
+        0.4,
+        0.53,
+        0.7
+      ]
+    },
+    "hair": {
+      "source": "data_examples/hair/비듬_0006.jpg",
+      "source_sha256": "f8c88ea31a98c3aeb7eb5773d7d73260bf8a3a79193332b553bb190ef13ef744",
+      "original_size": [
+        640,
+        480
+      ],
+      "input_size": 384,
+      "input_policy": "legacy_resize",
+      "classes": [
+        "모낭사이홍반",
+        "미세각질",
+        "비듬",
+        "탈모",
+        "피지과다"
+      ],
+      "recorded_class_name": "비듬",
+      "seed": 9771752543564509517,
+      "configuration": "results/camera_adaptation_stage3_20261110/hair/run_configuration.json",
+      "configuration_sha256": "2434ac90ab308f9036af1ca4891e721411161e0c6c7c3f17bd18592c04156fce",
+      "applied_parameters": {
+        "brightness_offset": -0.06864902570277676,
+        "contrast": 1.0,
+        "left_light": 0.0,
+        "color_a": -0.5238617784784646,
+        "color_b": -0.32546073919455565,
+        "texture_gain": 0.907485737889372,
+        "blur_sigma_input": 0.7575940387519131
+      },
+      "stage2_stage3_exactly_equal": true,
+      "mean_absolute_rgb_delta_from_input": {
+        "stage1": 0.06862844526767731,
+        "stage2": 3.4359683990478516,
+        "stage3": 3.4359683990478516
+      },
+      "crop_fraction_xyxy_for_zoom": [
+        0.3,
+        0.27,
+        0.7,
+        0.67
+      ]
+    }
+  }
+}

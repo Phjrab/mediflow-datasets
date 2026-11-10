@@ -1,0 +1,35 @@
+{
+  "date": "2026-10-26",
+  "repository": "Phjrab/mediflow-medvlm",
+  "branch": "codex/medical-finetune-v1-20261023",
+  "commit": "e16f8c6df3244a78cd9c30ba5ce7e43d5b8f45a3",
+  "review_conclusion": "Reuse the active branch native training and evaluation runner as research core rather than porting current models into the older Forge worker. No critical assistant-token masking or frozen-vision policy bug was found during static review.",
+  "implemented_controls": [
+    "Native model-class dispatch, pinned Hub revisions and processor templates",
+    "Exact token-identical prompt-prefix masking, padding masking, model-specific image-token masking",
+    "Full processor tensors preserved and microbatch size fixed to one",
+    "Language-only LoRA targets with frozen-base and vision/projector checks",
+    "Frozen train/validation digests and test-reference-only loading in trainer",
+    "Minimum fixed validation-loss checkpoint selection",
+    "Strict model/data/template/code/base-file resume identity and partial optimizer-group rollback",
+    "Separate-process checkpoint reload and selected adapter validation in complete_v1 campaign",
+    "Frozen test IDs, input/image hashes, base/tuned paired metrics and missing-prediction denominators"
+  ],
+  "hardening_gaps": [
+    {"priority": "P2", "source": "src/mediflow_medvlm/evaluation/runner.py:183-204", "finding": "Evaluation resume/cache identity does not bind evaluation source code digests or dependency versions. The separate code field is informational. Source changes without bumping version constants can reuse old completed results or merge prior partial predictions.", "scope": "Potential future reproducibility gap; no claim existing fixed campaign results are invalid"},
+    {"priority": "P2", "source": "src/mediflow_medvlm/evaluation/runner.py:17-34,316-331; scripts/complete_v1.py:132-146,303", "finding": "Raw evaluator verifies adapter parent but not selected best checkpoint or reload_verified. Raw compare does not require base has no adapter and tuned has one. The complete_v1 campaign does enforce selection and reload; reuse that controlled path or move guards into public evaluate/compare.", "scope": "Interface-hardening gap; actual campaign is stronger than individual CLI functions"}
+  ],
+  "tests": {
+    "command": "python -m pytest tests/test_training_contracts.py tests/test_training_hardening.py tests/test_evaluation_integrity.py -q --basetemp <task-temp> -p no:cacheprovider",
+    "passed": 25,
+    "skipped": 5,
+    "failed_due_to_windows_fcntl": 3,
+    "failure_tests": [
+      "TrainingContractTests.test_budget_is_model_scoped_not_revision_or_run_scoped",
+      "TrainingContractTests.test_gpu_lease_excludes_second_owner",
+      "AttemptHistoryTests.test_budget_restore_uses_maximum_and_keeps_new_session_time"
+    ],
+    "skip_reason": "Optional torch/native training profiles not installed or enabled",
+    "no_gpu_training_or_model_download": true
+  }
+}

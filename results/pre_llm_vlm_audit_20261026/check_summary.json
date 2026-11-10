@@ -1,0 +1,23 @@
+{
+  "date": "2026-10-26",
+  "ruff": {
+    "command": "ruff check src tests",
+    "passed": true
+  },
+  "pip_check": {
+    "passed": true
+  },
+  "pytest": {
+    "tests": 131,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 3,
+    "passed": 128,
+    "seconds": "163.836",
+    "skip_reason": "matplotlib optional training dependency not installed",
+    "temp_directory": "workspace .tmp task-specific directory; TEMP and TMP overridden per process",
+    "tensorflow_intraop_threads": 2,
+    "tensorflow_interop_threads": 2
+  },
+  "initial_attempt": "default Windows sandbox temp path failed; no model or assertion failure; repeated with task-local OS and pytest temp directories"
+}

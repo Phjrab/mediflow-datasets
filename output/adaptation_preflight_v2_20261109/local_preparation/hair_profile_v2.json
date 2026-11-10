@@ -1,0 +1,117 @@
+{
+  "domain": "hair",
+  "profile_version": "measured_photometric_v2",
+  "brightness_offset": [
+    -0.6363735198974609,
+    12.4506196975708
+  ],
+  "contrast": [
+    1.0,
+    1.0
+  ],
+  "scale_x": [
+    1.0,
+    1.0
+  ],
+  "scale_y": [
+    1.0,
+    1.0
+  ],
+  "left_light": [
+    0.0,
+    0.0
+  ],
+  "evidence": {
+    "target_people": [
+      "P01",
+      "P02",
+      "P03",
+      "P04"
+    ],
+    "brightness_changes": [
+      26.342445373535156,
+      -8.323577880859375,
+      1.0775299072265625,
+      24.42083740234375
+    ],
+    "brightness_raw_shifts": [
+      26.342445373535156,
+      -8.323577880859375,
+      1.0775299072265625,
+      24.42083740234375
+    ],
+    "coverage_matched_contrast": {
+      "status": "measured_proxy_sensitivity",
+      "people": {
+        "P01": {
+          "overlap": [
+            0.06057400173611111,
+            0.23128255208333334
+          ],
+          "rows": [
+            3,
+            4
+          ],
+          "contrast_ratio": 0.8013651835465757
+        },
+        "P02": {
+          "overlap": [
+            0.1156955295138889,
+            0.187255859375
+          ],
+          "rows": [
+            3,
+            2
+          ],
+          "contrast_ratio": 1.1874806550120445
+        },
+        "P03": {
+          "overlap": [
+            0.05539279513888889,
+            0.21533203125
+          ],
+          "rows": [
+            2,
+            5
+          ],
+          "contrast_ratio": 0.9777449369774952
+        },
+        "P04": {
+          "overlap": [
+            0.1003689236111111,
+            0.15445963541666666
+          ],
+          "rows": [
+            5,
+            3
+          ],
+          "contrast_ratio": 0.8889063036430638
+        }
+      }
+    }
+  },
+  "bounds": {
+    "fraction_of_measured_shift": 0.5,
+    "max_brightness_offset": 32,
+    "contrast": [
+      0.9,
+      1.15
+    ],
+    "geometry": [
+      0.4,
+      1.0
+    ]
+  },
+  "held_back": [
+    "color: unmatched disease color",
+    "blur/noise: texture/scale confounding",
+    "hair mask: not validated and could change class evidence",
+    "geometry: no rescaling onto artificial padding; composition is an input policy",
+    "contrast/highlights: hair coverage and scalp visibility changed"
+  ],
+  "input_policy": "legacy_resize",
+  "train_visual_review": "pending",
+  "source_sha256": "2ac7260663cf69835ba50edb6ae8c7e7ac13be9c73b9f7ea24f60e0342e7e156",
+  "model_sha256": "9faa33b8f79f45ef6e7be415473e2ee5225f6195fff04d098828733db23ed3c2",
+  "calibration_fingerprint": "2d2ab5106e7f079147d4cd1e2e6e0ce1c27e8494d554085b4ad4947e3cd2b22c"
+}

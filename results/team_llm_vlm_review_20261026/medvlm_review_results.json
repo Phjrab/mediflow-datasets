@@ -1,0 +1,79 @@
+{
+  "schema_version": "mediflow.team_repo_review.v1",
+  "review_date": "2026-10-26",
+  "platform": "Windows local desktop sandbox",
+  "repository": "Phjrab/mediflow-medvlm",
+  "source_modified": false,
+  "gpu_training_or_download_performed": false,
+  "main": {
+    "commit": "87df64d03acb79eb86f432456141aa9a518239b5",
+    "snapshot": "C:/VS Code/upload_staging/.tmp/team_repo_review_20261026/mediflow-medvlm",
+    "command": "PYTHONPATH=src C:/VS Code/upload_staging/.venv/Scripts/python.exe -m unittest discover -s tests -v",
+    "passed": 8,
+    "failed": 0,
+    "errors": 0,
+    "scope": "standard library tests with FakeAdapter; main is scaffold only",
+    "log_preservation": "Observed tool output retained in conversation; no separate text log was written."
+  },
+  "active_branch": {
+    "branch": "codex/medical-finetune-v1-20261023",
+    "commit": "e16f8c6df3244a78cd9c30ba5ce7e43d5b8f45a3",
+    "snapshot": "C:/VS Code/upload_staging/.tmp/team_repo_review_20261026/mediflow-medvlm-active",
+    "python_executable": "C:/VS Code/upload_staging/.venv/Scripts/python.exe",
+    "command": "python -m pytest -q tests/test_domain.py tests/test_validation.py tests/test_workflows.py tests/test_evaluation.py tests/test_evaluation_integrity.py tests/test_expert_review.py tests/test_image_diagnostics.py -p no:cacheprovider --basetemp C:/Users/sejun/.codex/visualizations/2026/09/07/01a07a2b-6429-7120-93fa-fc48af0c6385/medvlm_review_pytest_active_20261026",
+    "environment": {
+      "PYTHONPATH": "<snapshot>/src;<snapshot>/tests",
+      "TEMP": "C:/Users/sejun/.codex/visualizations/2026/09/07/01a07a2b-6429-7120-93fa-fc48af0c6385/medvlm_review_temp_20261026",
+      "TMP": "C:/Users/sejun/.codex/visualizations/2026/09/07/01a07a2b-6429-7120-93fa-fc48af0c6385/medvlm_review_temp_20261026"
+    },
+    "selected_tests": 65,
+    "passed": 64,
+    "failed": 1,
+    "errors": 0,
+    "failure": {
+      "test": "tests/test_expert_review.py::test_packet_fixed_blinded_local_and_unscored",
+      "assertion_line": 55,
+      "expected": "stat.S_IMODE(packet.stat().st_mode) == 0o700",
+      "observed_mode_decimal": 511,
+      "expected_mode_decimal": 448,
+      "reason": "Windows directory mode reports 0o777 rather than POSIX 0o700; all earlier packet behavior assertions in that test passed."
+    },
+    "log_preservation": "Observed pytest tool output retained in conversation; no separate raw text log was written.",
+    "additional_platform_observation": {
+      "path": "src/mediflow_medvlm/runtime.py",
+      "lines": [76, 92],
+      "condition": "GPULease imports fcntl unconditionally",
+      "observed": "ModuleNotFoundError: No module named fcntl in earlier training-contract test attempt on Windows",
+      "scope": "Not part of final selected 65 tests; Linux runtime requirement, not model-quality failure."
+    },
+    "earlier_attempts": [
+      "Default Windows temporary directory denied writes; rerun with writable task TEMP/TMP.",
+      "Expert-review tests under repository .tmp were rejected by intentional outside-Git data guard; rerun outside Git in writable visualization root."
+    ]
+  },
+  "malformed_result_probe_active": {
+    "invocation": "run_workflow(BadAdapter(), InferenceRequest(study_id='r1', task=TaskType.TEXT_QA, current_images=(), question='Explain the classifier result.'))",
+    "adapter_result": {
+      "content": {"answer": 123, "status": "answered", "limitations": "   "},
+      "model_id": "",
+      "model_revision": null,
+      "prompt_version": "unversioned",
+      "latency_ms_representation": "float('nan')"
+    },
+    "observed": "accepted and returned unchanged",
+    "evidence": "workflows.py:52-68 checks prompt version, latency<0 and field truthiness but not field types, whitespace or finite latency",
+    "not_a_medical_model_run": true
+  },
+  "main_only_findings_resolved_in_active_branch": [
+    "StrEnum Python3.10 import incompatibility replaced with StringEnum(str, Enum)",
+    "String task bypass fixed by isinstance(request.task, TaskType)",
+    "TEXT_QA added so legitimate image-free text QA is supported"
+  ],
+  "active_branch_scope": "Native Transformers/PEFT training and offline evaluation implemented; clinical QA/VQA model results are published aggregate evidence. No live trained model inference was rerun in this review.",
+  "remaining_integration_gaps": [
+    "MedicalVLM is still a Protocol; no concrete application-serving adapter or chat endpoint.",
+    "Offline evaluation model.generate path is separate from run_workflow and its instruction/validation.",
+    "No explicit specialist classifier-result/explanation schema or skin/hair class mapping.",
+    "Published radiology VQA/general medical QA results do not measure facial skin/scalp diagnosis performance."
+  ]
+}

@@ -1,0 +1,73 @@
+{
+  "schema": "mediflow_adaptation_stage1_selection_v1",
+  "selected": {
+    "skin": {
+      "role": "basic",
+      "model_config": {
+        "architecture": "b0",
+        "size": 224,
+        "label_smoothing": 0.0,
+        "initialization": "saved original-only early checkpoint",
+        "model": "results/skin/1_training/original/best_model.keras",
+        "model_sha256": "1b146a6a53742226ec677865aa71bd842a28c9db9c3174b352dd8bc87270770b",
+        "role": "basic"
+      },
+      "initial_checkpoint": {
+        "path": "skin/basic/initial.keras",
+        "sha256": "1b146a6a53742226ec677865aa71bd842a28c9db9c3174b352dd8bc87270770b"
+      },
+      "stage1_checkpoint": {
+        "path": "skin/basic/best.keras",
+        "sha256": "4bca967a479f40745e2d48e81579d442831e955a6193934b5840364fc1e419bb"
+      }
+    },
+    "web_skin": {
+      "role": "selected",
+      "model_config": {
+        "architecture": "pmg",
+        "size": 256,
+        "label_smoothing": 0.0,
+        "reference_candidate_id": "public_candidate_v2_pmg_b0_256_ce_20260922_235840_093d10de",
+        "initialization": "saved selected checkpoint",
+        "model": "results/web_skin/selected_models/v2/web_skin_model.keras",
+        "model_sha256": "83e659dd09a9355135ee0de0197037e81ece962777f59dedae8d9a37b49a3fc4",
+        "role": "selected"
+      },
+      "initial_checkpoint": {
+        "path": "web_skin/selected/initial.keras",
+        "sha256": "83e659dd09a9355135ee0de0197037e81ece962777f59dedae8d9a37b49a3fc4"
+      },
+      "stage1_checkpoint": {
+        "path": "web_skin/selected/best.keras",
+        "sha256": "beb992fa2bf51c28c7b2e760b1c7000bb5b65decef47c0e196ed07c9a62070e5"
+      }
+    },
+    "hair": {
+      "role": "selected",
+      "model_config": {
+        "architecture": "b1",
+        "size": 384,
+        "label_smoothing": 0.05,
+        "reference_candidate_id": "public_candidate_v2_b1_384_ls005_adam_20260921_155906_82311da4",
+        "initialization": "saved selected checkpoint",
+        "model": "results/hair/selected_models/v2/hair_model.keras",
+        "model_sha256": "9faa33b8f79f45ef6e7be415473e2ee5225f6195fff04d098828733db23ed3c2",
+        "training_source_sha256": "2ac7260663cf69835ba50edb6ae8c7e7ac13be9c73b9f7ea24f60e0342e7e156",
+        "role": "selected"
+      },
+      "initial_checkpoint": {
+        "path": "hair/selected/initial.keras",
+        "sha256": "9faa33b8f79f45ef6e7be415473e2ee5225f6195fff04d098828733db23ed3c2"
+      },
+      "stage1_checkpoint": {
+        "path": "hair/selected/best.keras",
+        "sha256": "983001b0b116cd913b4cf1e349b47d11ab6246cf78fbaa607dc75b4578108b7f"
+      }
+    }
+  },
+  "criteria": "Maximize worst Val Macro-F1. Break ties by clean Val, then basic.",
+  "source_test_evaluated": false,
+  "target_accuracy": null,
+  "selection_scope": "provisional_followup_candidate",
+  "historical_train_evaluation_independence_verified": false
+}

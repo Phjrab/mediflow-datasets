@@ -1,0 +1,83 @@
+{
+  "study_sha256": "492ee01afb4579b6402fca29459c59d56618243589642fc022db18bbbe45a165",
+  "notebook_sha256": "8bdf57e11a156c3fb8a60d35e8726872694ecfc05f1e4b859f67096eef04bff1",
+  "source_archives_checked_in_colab_at_run": true,
+  "colab_gpu_checked_here": false,
+  "full_training_executed": false,
+  "domains": {
+    "skin": {
+      "model": {
+        "architecture": "b0",
+        "size": 224,
+        "label_smoothing": 0.0,
+        "initialization": "saved original-only early checkpoint",
+        "model": "results/skin/1_training/original/best_model.keras",
+        "model_sha256": "1b146a6a53742226ec677865aa71bd842a28c9db9c3174b352dd8bc87270770b",
+        "role": "basic"
+      },
+      "classes": [
+        "광선각화증",
+        "기저세포암",
+        "보웬병",
+        "사마귀",
+        "지루각화증",
+        "편평세포암",
+        "표피낭종",
+        "피부섬유종",
+        "혈관종",
+        "흑색점"
+      ],
+      "train_count": 6753,
+      "validation_count": 900,
+      "cache_bytes": 6233665536,
+      "metadata_and_checkpoint_hashes": "passed"
+    },
+    "web_skin": {
+      "model": {
+        "architecture": "pmg",
+        "size": 256,
+        "label_smoothing": 0.0,
+        "reference_candidate_id": "public_candidate_v2_pmg_b0_256_ce_20260922_235840_093d10de",
+        "initialization": "saved selected checkpoint",
+        "model": "results/web_skin/selected_models/v2/web_skin_model.keras",
+        "model_sha256": "83e659dd09a9355135ee0de0197037e81ece962777f59dedae8d9a37b49a3fc4",
+        "role": "selected"
+      },
+      "classes": [
+        "건선",
+        "아토피",
+        "여드름",
+        "정상",
+        "주사"
+      ],
+      "train_count": 3535,
+      "validation_count": 499,
+      "cache_bytes": 4349755392,
+      "metadata_and_checkpoint_hashes": "passed"
+    },
+    "hair": {
+      "model": {
+        "architecture": "b1",
+        "size": 384,
+        "label_smoothing": 0.05,
+        "reference_candidate_id": "public_candidate_v2_b1_384_ls005_adam_20260921_155906_82311da4",
+        "initialization": "saved selected checkpoint",
+        "model": "results/hair/selected_models/v2/hair_model.keras",
+        "model_sha256": "9faa33b8f79f45ef6e7be415473e2ee5225f6195fff04d098828733db23ed3c2",
+        "training_source_sha256": "2ac7260663cf69835ba50edb6ae8c7e7ac13be9c73b9f7ea24f60e0342e7e156",
+        "role": "selected"
+      },
+      "classes": [
+        "모낭사이홍반",
+        "미세각질",
+        "비듬",
+        "탈모",
+        "피지과다"
+      ],
+      "train_count": 10032,
+      "validation_count": 1252,
+      "cache_bytes": 26612858880,
+      "metadata_and_checkpoint_hashes": "passed"
+    }
+  }
+}

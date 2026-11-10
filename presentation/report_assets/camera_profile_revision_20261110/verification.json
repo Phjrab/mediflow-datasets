@@ -1,0 +1,33 @@
+{
+  "completed_local_date": "2026-11-11",
+  "analysis_folder_started_local_date": "2026-11-10",
+  "config_sha256": "988987c379978a71192d1efb4345f2759554df4922ca192fd715c7eaeb825050",
+  "notebook_sha256": "f90ea9b6911fa7ac2c63352dc8a52030570a415a72c7ed7528575c9ed6aae247",
+  "analysis_code_sha256": "9f1a5e65dc5f29e5efca9b684a8edc6cf8ee6ae7bfe1d9f2b93811ecbb5776c5",
+  "builder_sha256": "6aae628e58baf545893b888dc29d097ba6e9807f13da1886c5f2a50f433324b8",
+  "decisions_sha256": "95e0cd59bdaf785eddd8489b1013b1bbde99062ca3be79d4fc4d0ca6b545fa17",
+  "summary_sha256": "974ee15e7b90364de97c2158d1e7bace7718406b1c67a33593ec5b3a39adf613",
+  "measurements_sha256": "eaf34fe0e38da8cdd6379539ec5446965f05e9db44dc53a13120a35d8df82ad7",
+  "environment": {
+    "python": "3.12.14",
+    "numpy": "2.5.2",
+    "opencv": "4.14.0",
+    "pillow": "12.3.0",
+    "matplotlib": "3.11.2"
+  },
+  "checks": {
+    "ruff": "passed",
+    "pytest_passed": 190,
+    "pytest_skipped": 3,
+    "pytest_failed": 0,
+    "notebook_syntax": "passed",
+    "embedded_code_and_config_hashes": "passed",
+    "figures_visually_inspected": true
+  },
+  "training_executed": false,
+  "source_test_used": false,
+  "target_accuracy": null,
+  "preserved_parent_config_sha256": "d1054f86cf155c7cc2fe8a20a386ca9cf206f6a7e47fa53798bc179e002d6be5",
+  "source_preview_count": 461,
+  "target_count": 124
+}

@@ -1,0 +1,25 @@
+{
+  "analysis_code_sha256": "86aac6f4e497e295636706e070c171660a0b6887597dcd43c6e64884263cbfed",
+  "study_sha256": "d1054f86cf155c7cc2fe8a20a386ca9cf206f6a7e47fa53798bc179e002d6be5",
+  "notebook_sha256": "3b1745b9d6cf3656d4ab64ced1ac2ce4f8e796343cfd810cec749323de1e2bb7",
+  "summary_sha256": "4240f9165813f48e6c6a35da211e54aad64272a0a63440d6defbb7c784ad40d7",
+  "measurement_sha256": "9b8fa5d23cb7550f974d14c59b420c7f40e3d0c5d8a393b5762d25c7507c9b87",
+  "environment": {
+    "python": "3.12.14",
+    "numpy": "2.5.2",
+    "opencv": "4.14.0",
+    "pillow": "12.3.0",
+    "matplotlib": "3.11.2"
+  },
+  "tests": {
+    "passed": 187,
+    "skipped": 3,
+    "failed": 0,
+    "ruff": "passed"
+  },
+  "training_executed": false,
+  "config_modified": false,
+  "matplotlib_location": ".tmp/final-test-report-libraries",
+  "reproduction_command": ".venv/Scripts/python.exe -X utf8 -B -m mediflow_datasets.camera_similarity --output presentation/report_assets/NEW_EMPTY_DIRECTORY",
+  "output_policy": "New directory only; existing output causes an error"
+}

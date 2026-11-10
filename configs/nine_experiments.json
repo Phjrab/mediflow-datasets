@@ -1,0 +1,50 @@
+{
+  "schema": "mediflow_nine_v1",
+  "seed": 42,
+  "epochs": 3,
+  "batch_size": 8,
+  "learning_rate": 1e-05,
+  "augmentation_probability": 0.5,
+  "validation_clean_macro_f1_tolerance": 0.01,
+  "validation_min_shift_gain": 0.005,
+  "validation_clean_recall_tolerance": 0.05,
+  "tasks": {
+    "web_skin": {
+      "source_name": "web_skin_datasets",
+      "source_drive_url": "https://drive.google.com/file/d/1e7Zuj8b7CWmV8XoDMmnNQY_OKzvRJrnC/view",
+      "source_sha256": "f8908af3d54e521ad14c37a44b569d33fe92be3b8b9b66a8d80faf4ba964072d",
+      "loss": "ce",
+      "geometry": false,
+      "input_policy": "center_square",
+      "train_variant": "original"
+    },
+    "skin": {
+      "source_name": "skin_datasets",
+      "source_drive_url": "https://drive.google.com/file/d/1fCivi2l1hE13S4RMyiFVXu0v88FT_dCL/view",
+      "source_sha256": "db6cf59087b68d4534ff857bdb0eacc1a1a09ed5703772fefc75f038d4570e4b",
+      "loss": "ce",
+      "geometry": false,
+      "input_policy": "legacy_resize",
+      "train_variant": "original"
+    },
+    "hair": {
+      "source_name": "hair_datasets",
+      "source_drive_url": "https://drive.google.com/file/d/1Se80pBLPsLKI7jhMrVjIeC5-_obolgHt/view",
+      "source_sha256": "2ac7260663cf69835ba50edb6ae8c7e7ac13be9c73b9f7ea24f60e0342e7e156",
+      "loss": "ls005",
+      "geometry": false,
+      "input_policy": "legacy_resize",
+      "train_variant": "augmented"
+    }
+  },
+  "arms": [
+    "lighting",
+    "expanded",
+    "aligned"
+  ],
+  "baseline_head_epochs": 15,
+  "baseline_partial_epochs": 10,
+  "alignment_fraction_per_loss": 0.05,
+  "gradient_clip_norm": 1.0,
+  "experiment_revision": "nine_measured_camera_and_combined_alignment_v1"
+}

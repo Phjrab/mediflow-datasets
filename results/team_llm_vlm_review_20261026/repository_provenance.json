@@ -1,0 +1,910 @@
+{
+  "review_date": "2026-10-26",
+  "scope": "read_only_remote_review_and_local_cpu_checks",
+  "repositories": [
+    {
+      "full_name": "Phjrab/mediflow-medvlm",
+      "default_branch": "main",
+      "main_sha": "87df64d03acb79eb86f432456141aa9a518239b5",
+      "reviewed_branch": "codex/medical-finetune-v1-20261023",
+      "reviewed_sha": "e16f8c6df3244a78cd9c30ba5ce7e43d5b8f45a3",
+      "branch_comparison": {
+        "repository_full_name": "Phjrab/mediflow-medvlm",
+        "base": "87df64d03acb79eb86f432456141aa9a518239b5",
+        "head": "e16f8c6df3244a78cd9c30ba5ce7e43d5b8f45a3",
+        "status": "ahead",
+        "ahead_by": 5,
+        "behind_by": 0,
+        "total_commits": 5,
+        "too_large": null,
+        "base_commit": {
+          "sha": "87df64d03acb79eb86f432456141aa9a518239b5",
+          "url": "https://api.github.com/repos/Phjrab/mediflow-medvlm/commits/87df64d03acb79eb86f432456141aa9a518239b5",
+          "html_url": "https://github.com/Phjrab/mediflow-medvlm/commit/87df64d03acb79eb86f432456141aa9a518239b5"
+        },
+        "merge_base_commit": {
+          "sha": "87df64d03acb79eb86f432456141aa9a518239b5",
+          "url": "https://api.github.com/repos/Phjrab/mediflow-medvlm/commits/87df64d03acb79eb86f432456141aa9a518239b5",
+          "html_url": "https://github.com/Phjrab/mediflow-medvlm/commit/87df64d03acb79eb86f432456141aa9a518239b5"
+        },
+        "files": [
+          {
+            "filename": ".github/workflows/test.yml",
+            "status": "modified",
+            "additions": 2,
+            "deletions": 2,
+            "changes": 4,
+            "previous_filename": null
+          },
+          {
+            "filename": ".gitignore",
+            "status": "modified",
+            "additions": 11,
+            "deletions": 1,
+            "changes": 12,
+            "previous_filename": null
+          },
+          {
+            "filename": "DATA_GOVERNANCE.md",
+            "status": "modified",
+            "additions": 17,
+            "deletions": 0,
+            "changes": 17,
+            "previous_filename": null
+          },
+          {
+            "filename": "EVALUATION.md",
+            "status": "modified",
+            "additions": 15,
+            "deletions": 0,
+            "changes": 15,
+            "previous_filename": null
+          },
+          {
+            "filename": "README.md",
+            "status": "modified",
+            "additions": 52,
+            "deletions": 7,
+            "changes": 59,
+            "previous_filename": null
+          },
+          {
+            "filename": "configs/dataset_sources.yaml",
+            "status": "added",
+            "additions": 233,
+            "deletions": 0,
+            "changes": 233,
+            "previous_filename": null
+          },
+          {
+            "filename": "configs/evaluation_policy.json",
+            "status": "added",
+            "additions": 13,
+            "deletions": 0,
+            "changes": 13,
+            "previous_filename": null
+          },
+          {
+            "filename": "configs/model_matrix.yaml",
+            "status": "added",
+            "additions": 160,
+            "deletions": 0,
+            "changes": 160,
+            "previous_filename": null
+          },
+          {
+            "filename": "configs/requirements-training.lock.txt",
+            "status": "added",
+            "additions": 72,
+            "deletions": 0,
+            "changes": 72,
+            "previous_filename": null
+          },
+          {
+            "filename": "configs/runtime.example.yaml",
+            "status": "added",
+            "additions": 194,
+            "deletions": 0,
+            "changes": 194,
+            "previous_filename": null
+          },
+          {
+            "filename": "configs/training.qwen3-17b.example.json",
+            "status": "added",
+            "additions": 37,
+            "deletions": 0,
+            "changes": 37,
+            "previous_filename": null
+          },
+          {
+            "filename": "configs/training.qwen3-17b.smoke.example.json",
+            "status": "added",
+            "additions": 37,
+            "deletions": 0,
+            "changes": 37,
+            "previous_filename": null
+          },
+          {
+            "filename": "configs/training.qwen3-4b.example.json",
+            "status": "added",
+            "additions": 37,
+            "deletions": 0,
+            "changes": 37,
+            "previous_filename": null
+          },
+          {
+            "filename": "configs/training.smolvlm.example.json",
+            "status": "added",
+            "additions": 39,
+            "deletions": 0,
+            "changes": 39,
+            "previous_filename": null
+          },
+          {
+            "filename": "docs/agent/HANDOFF.md",
+            "status": "added",
+            "additions": 80,
+            "deletions": 0,
+            "changes": 80,
+            "previous_filename": null
+          },
+          {
+            "filename": "docs/agent/IMPLEMENTATION_PLAN.md",
+            "status": "added",
+            "additions": 24,
+            "deletions": 0,
+            "changes": 24,
+            "previous_filename": null
+          },
+          {
+            "filename": "docs/agent/PROJECT_CONTEXT.md",
+            "status": "added",
+            "additions": 13,
+            "deletions": 0,
+            "changes": 13,
+            "previous_filename": null
+          },
+          {
+            "filename": "docs/agent/WORKLOG.md",
+            "status": "added",
+            "additions": 24,
+            "deletions": 0,
+            "changes": 24,
+            "previous_filename": null
+          },
+          {
+            "filename": "docs/research/CURRENT_REPOSITORY_AUDIT.md",
+            "status": "added",
+            "additions": 18,
+            "deletions": 0,
+            "changes": 18,
+            "previous_filename": null
+          },
+          {
+            "filename": "docs/research/DATA_PREPARATION.md",
+            "status": "added",
+            "additions": 63,
+            "deletions": 0,
+            "changes": 63,
+            "previous_filename": null
+          },
+          {
+            "filename": "docs/research/DATA_REPORT_KO.md",
+            "status": "added",
+            "additions": 179,
+            "deletions": 0,
+            "changes": 179,
+            "previous_filename": null
+          },
+          {
+            "filename": "docs/research/EXPERT_REVIEW_RUBRIC_KO.md",
+            "status": "added",
+            "additions": 35,
+            "deletions": 0,
+            "changes": 35,
+            "previous_filename": null
+          },
+          {
+            "filename": "docs/research/TRAINING.md",
+            "status": "added",
+            "additions": 77,
+            "deletions": 0,
+            "changes": 77,
+            "previous_filename": null
+          },
+          {
+            "filename": "docs/research/VISION_SOURCES.md",
+            "status": "added",
+            "additions": 51,
+            "deletions": 0,
+            "changes": 51,
+            "previous_filename": null
+          },
+          {
+            "filename": "pyproject.toml",
+            "status": "modified",
+            "additions": 9,
+            "deletions": 1,
+            "changes": 10,
+            "previous_filename": null
+          },
+          {
+            "filename": "reports/public_summary/ADAPTER_CARDS.md",
+            "status": "added",
+            "additions": 217,
+            "deletions": 0,
+            "changes": 217,
+            "previous_filename": null
+          },
+          {
+            "filename": "reports/public_summary/RESULTS_KO.md",
+            "status": "added",
+            "additions": 222,
+            "deletions": 0,
+            "changes": 222,
+            "previous_filename": null
+          },
+          {
+            "filename": "reports/public_summary/data_forge_compatibility.json",
+            "status": "added",
+            "additions": 35,
+            "deletions": 0,
+            "changes": 35,
+            "previous_filename": null
+          },
+          {
+            "filename": "reports/public_summary/data_freeze.json",
+            "status": "added",
+            "additions": 319,
+            "deletions": 0,
+            "changes": 319,
+            "previous_filename": null
+          },
+          {
+            "filename": "reports/public_summary/data_quality.json",
+            "status": "added",
+            "additions": 126,
+            "deletions": 0,
+            "changes": 126,
+            "previous_filename": null
+          },
+          {
+            "filename": "reports/public_summary/data_resume_safety_review.json",
+            "status": "added",
+            "additions": 42,
+            "deletions": 0,
+            "changes": 42,
+            "previous_filename": null
+          },
+          {
+            "filename": "reports/public_summary/data_sources.json",
+            "status": "added",
+            "additions": 176,
+            "deletions": 0,
+            "changes": 176,
+            "previous_filename": null
+          },
+          {
+            "filename": "reports/public_summary/final_artifact_verification.json",
+            "status": "added",
+            "additions": 225,
+            "deletions": 0,
+            "changes": 225,
+            "previous_filename": null
+          },
+          {
+            "filename": "reports/public_summary/medgemma_format_diagnostic.json",
+            "status": "added",
+            "additions": 61,
+            "deletions": 0,
+            "changes": 61,
+            "previous_filename": null
+          },
+          {
+            "filename": "reports/public_summary/paired_metrics.csv",
+            "status": "added",
+            "additions": 33,
+            "deletions": 0,
+            "changes": 33,
+            "previous_filename": null
+          },
+          {
+            "filename": "reports/public_summary/paired_scores.png",
+            "status": "added",
+            "additions": 0,
+            "deletions": 0,
+            "changes": 0,
+            "previous_filename": null
+          },
+          {
+            "filename": "reports/public_summary/paired_scores.svg",
+            "status": "added",
+            "additions": 2474,
+            "deletions": 0,
+            "changes": 2474,
+            "previous_filename": null
+          },
+          {
+            "filename": "reports/public_summary/run_summary.json",
+            "status": "added",
+            "additions": 10639,
+            "deletions": 0,
+            "changes": 10639,
+            "previous_filename": null
+          },
+          {
+            "filename": "reports/public_summary/stage_status.json",
+            "status": "added",
+            "additions": 812,
+            "deletions": 0,
+            "changes": 812,
+            "previous_filename": null
+          },
+          {
+            "filename": "reports/public_summary/upstream_exposure.json",
+            "status": "added",
+            "additions": 485,
+            "deletions": 0,
+            "changes": 485,
+            "previous_filename": null
+          },
+          {
+            "filename": "reports/public_summary/verification.json",
+            "status": "added",
+            "additions": 121,
+            "deletions": 0,
+            "changes": 121,
+            "previous_filename": null
+          },
+          {
+            "filename": "reports/public_summary/vision_sources.json",
+            "status": "added",
+            "additions": 326,
+            "deletions": 0,
+            "changes": 326,
+            "previous_filename": null
+          },
+          {
+            "filename": "reports/public_summary/vqarad_image_provenance_repair.json",
+            "status": "added",
+            "additions": 26,
+            "deletions": 0,
+            "changes": 26,
+            "previous_filename": null
+          },
+          {
+            "filename": "scripts/complete_v1.py",
+            "status": "added",
+            "additions": 332,
+            "deletions": 0,
+            "changes": 332,
+            "previous_filename": null
+          },
+          {
+            "filename": "scripts/report_v1.py",
+            "status": "added",
+            "additions": 391,
+            "deletions": 0,
+            "changes": 391,
+            "previous_filename": null
+          },
+          {
+            "filename": "scripts/summarize_vision_sources.py",
+            "status": "added",
+            "additions": 61,
+            "deletions": 0,
+            "changes": 61,
+            "previous_filename": null
+          },
+          {
+            "filename": "src/mediflow_medvlm/__main__.py",
+            "status": "added",
+            "additions": 3,
+            "deletions": 0,
+            "changes": 3,
+            "previous_filename": null
+          },
+          {
+            "filename": "src/mediflow_medvlm/cli.py",
+            "status": "added",
+            "additions": 112,
+            "deletions": 0,
+            "changes": 112,
+            "previous_filename": null
+          },
+          {
+            "filename": "src/mediflow_medvlm/data/__init__.py",
+            "status": "added",
+            "additions": 1,
+            "deletions": 0,
+            "changes": 1,
+            "previous_filename": null
+          },
+          {
+            "filename": "src/mediflow_medvlm/data/__main__.py",
+            "status": "added",
+            "additions": 36,
+            "deletions": 0,
+            "changes": 36,
+            "previous_filename": null
+          },
+          {
+            "filename": "src/mediflow_medvlm/data/forge_export.py",
+            "status": "added",
+            "additions": 87,
+            "deletions": 0,
+            "changes": 87,
+            "previous_filename": null
+          },
+          {
+            "filename": "src/mediflow_medvlm/data/io.py",
+            "status": "added",
+            "additions": 237,
+            "deletions": 0,
+            "changes": 237,
+            "previous_filename": null
+          },
+          {
+            "filename": "src/mediflow_medvlm/data/kormedmcqa.py",
+            "status": "added",
+            "additions": 62,
+            "deletions": 0,
+            "changes": 62,
+            "previous_filename": null
+          },
+          {
+            "filename": "src/mediflow_medvlm/data/medquad.py",
+            "status": "added",
+            "additions": 83,
+            "deletions": 0,
+            "changes": 83,
+            "previous_filename": null
+          },
+          {
+            "filename": "src/mediflow_medvlm/data/pipeline.py",
+            "status": "added",
+            "additions": 192,
+            "deletions": 0,
+            "changes": 192,
+            "previous_filename": null
+          },
+          {
+            "filename": "src/mediflow_medvlm/data/pubmedqa.py",
+            "status": "added",
+            "additions": 54,
+            "deletions": 0,
+            "changes": 54,
+            "previous_filename": null
+          },
+          {
+            "filename": "src/mediflow_medvlm/data/schema.py",
+            "status": "added",
+            "additions": 66,
+            "deletions": 0,
+            "changes": 66,
+            "previous_filename": null
+          },
+          {
+            "filename": "src/mediflow_medvlm/data/slake.py",
+            "status": "added",
+            "additions": 348,
+            "deletions": 0,
+            "changes": 348,
+            "previous_filename": null
+          },
+          {
+            "filename": "src/mediflow_medvlm/data/supplemental.py",
+            "status": "added",
+            "additions": 118,
+            "deletions": 0,
+            "changes": 118,
+            "previous_filename": null
+          },
+          {
+            "filename": "src/mediflow_medvlm/data/vqarad.py",
+            "status": "added",
+            "additions": 221,
+            "deletions": 0,
+            "changes": 221,
+            "previous_filename": null
+          },
+          {
+            "filename": "src/mediflow_medvlm/devices.py",
+            "status": "added",
+            "additions": 125,
+            "deletions": 0,
+            "changes": 125,
+            "previous_filename": null
+          },
+          {
+            "filename": "src/mediflow_medvlm/domain.py",
+            "status": "modified",
+            "additions": 12,
+            "deletions": 2,
+            "changes": 14,
+            "previous_filename": null
+          },
+          {
+            "filename": "src/mediflow_medvlm/evaluation/__init__.py",
+            "status": "added",
+            "additions": 1,
+            "deletions": 0,
+            "changes": 1,
+            "previous_filename": null
+          },
+          {
+            "filename": "src/mediflow_medvlm/evaluation/__main__.py",
+            "status": "added",
+            "additions": 30,
+            "deletions": 0,
+            "changes": 30,
+            "previous_filename": null
+          },
+          {
+            "filename": "src/mediflow_medvlm/evaluation/expert_review.py",
+            "status": "added",
+            "additions": 125,
+            "deletions": 0,
+            "changes": 125,
+            "previous_filename": null
+          },
+          {
+            "filename": "src/mediflow_medvlm/evaluation/image_diagnostics.py",
+            "status": "added",
+            "additions": 164,
+            "deletions": 0,
+            "changes": 164,
+            "previous_filename": null
+          },
+          {
+            "filename": "src/mediflow_medvlm/evaluation/metrics.py",
+            "status": "added",
+            "additions": 179,
+            "deletions": 0,
+            "changes": 179,
+            "previous_filename": null
+          },
+          {
+            "filename": "src/mediflow_medvlm/evaluation/runner.py",
+            "status": "added",
+            "additions": 331,
+            "deletions": 0,
+            "changes": 331,
+            "previous_filename": null
+          },
+          {
+            "filename": "src/mediflow_medvlm/runtime.py",
+            "status": "added",
+            "additions": 224,
+            "deletions": 0,
+            "changes": 224,
+            "previous_filename": null
+          },
+          {
+            "filename": "src/mediflow_medvlm/training/__init__.py",
+            "status": "added",
+            "additions": 1,
+            "deletions": 0,
+            "changes": 1,
+            "previous_filename": null
+          },
+          {
+            "filename": "src/mediflow_medvlm/training/__main__.py",
+            "status": "added",
+            "additions": 36,
+            "deletions": 0,
+            "changes": 36,
+            "previous_filename": null
+          },
+          {
+            "filename": "src/mediflow_medvlm/training/config.py",
+            "status": "added",
+            "additions": 118,
+            "deletions": 0,
+            "changes": 118,
+            "previous_filename": null
+          },
+          {
+            "filename": "src/mediflow_medvlm/training/models.py",
+            "status": "added",
+            "additions": 221,
+            "deletions": 0,
+            "changes": 221,
+            "previous_filename": null
+          },
+          {
+            "filename": "src/mediflow_medvlm/training/rendering.py",
+            "status": "added",
+            "additions": 179,
+            "deletions": 0,
+            "changes": 179,
+            "previous_filename": null
+          },
+          {
+            "filename": "src/mediflow_medvlm/training/runner.py",
+            "status": "added",
+            "additions": 591,
+            "deletions": 0,
+            "changes": 591,
+            "previous_filename": null
+          },
+          {
+            "filename": "src/mediflow_medvlm/validation.py",
+            "status": "modified",
+            "additions": 10,
+            "deletions": 4,
+            "changes": 14,
+            "previous_filename": null
+          },
+          {
+            "filename": "src/mediflow_medvlm/workflows.py",
+            "status": "modified",
+            "additions": 12,
+            "deletions": 0,
+            "changes": 12,
+            "previous_filename": null
+          },
+          {
+            "filename": "tests/test_campaign_resume.py",
+            "status": "added",
+            "additions": 224,
+            "deletions": 0,
+            "changes": 224,
+            "previous_filename": null
+          },
+          {
+            "filename": "tests/test_data_forge.py",
+            "status": "added",
+            "additions": 42,
+            "deletions": 0,
+            "changes": 42,
+            "previous_filename": null
+          },
+          {
+            "filename": "tests/test_data_io_safety.py",
+            "status": "added",
+            "additions": 99,
+            "deletions": 0,
+            "changes": 99,
+            "previous_filename": null
+          },
+          {
+            "filename": "tests/test_data_pipeline.py",
+            "status": "added",
+            "additions": 119,
+            "deletions": 0,
+            "changes": 119,
+            "previous_filename": null
+          },
+          {
+            "filename": "tests/test_domain.py",
+            "status": "modified",
+            "additions": 11,
+            "deletions": 0,
+            "changes": 11,
+            "previous_filename": null
+          },
+          {
+            "filename": "tests/test_evaluation.py",
+            "status": "added",
+            "additions": 54,
+            "deletions": 0,
+            "changes": 54,
+            "previous_filename": null
+          },
+          {
+            "filename": "tests/test_evaluation_integrity.py",
+            "status": "added",
+            "additions": 137,
+            "deletions": 0,
+            "changes": 137,
+            "previous_filename": null
+          },
+          {
+            "filename": "tests/test_expert_review.py",
+            "status": "added",
+            "additions": 102,
+            "deletions": 0,
+            "changes": 102,
+            "previous_filename": null
+          },
+          {
+            "filename": "tests/test_image_diagnostics.py",
+            "status": "added",
+            "additions": 182,
+            "deletions": 0,
+            "changes": 182,
+            "previous_filename": null
+          },
+          {
+            "filename": "tests/test_slake.py",
+            "status": "added",
+            "additions": 150,
+            "deletions": 0,
+            "changes": 150,
+            "previous_filename": null
+          },
+          {
+            "filename": "tests/test_supplemental.py",
+            "status": "added",
+            "additions": 23,
+            "deletions": 0,
+            "changes": 23,
+            "previous_filename": null
+          },
+          {
+            "filename": "tests/test_training_contracts.py",
+            "status": "added",
+            "additions": 68,
+            "deletions": 0,
+            "changes": 68,
+            "previous_filename": null
+          },
+          {
+            "filename": "tests/test_training_hardening.py",
+            "status": "added",
+            "additions": 316,
+            "deletions": 0,
+            "changes": 316,
+            "previous_filename": null
+          },
+          {
+            "filename": "tests/test_training_native.py",
+            "status": "added",
+            "additions": 68,
+            "deletions": 0,
+            "changes": 68,
+            "previous_filename": null
+          },
+          {
+            "filename": "tests/test_validation.py",
+            "status": "modified",
+            "additions": 14,
+            "deletions": 0,
+            "changes": 14,
+            "previous_filename": null
+          },
+          {
+            "filename": "tests/test_vqarad.py",
+            "status": "added",
+            "additions": 151,
+            "deletions": 0,
+            "changes": 151,
+            "previous_filename": null
+          },
+          {
+            "filename": "tests/test_workflows.py",
+            "status": "modified",
+            "additions": 11,
+            "deletions": 0,
+            "changes": 11,
+            "previous_filename": null
+          }
+        ]
+      },
+      "branches": [
+        {
+          "name": "codex/medical-finetune-v1-20261023",
+          "sha": "e16f8c6df3244a78cd9c30ba5ce7e43d5b8f45a3"
+        },
+        {
+          "name": "main",
+          "sha": "87df64d03acb79eb86f432456141aa9a518239b5"
+        }
+      ],
+      "pull_request_count": 0,
+      "ci": [
+        {
+          "id": 39965707522,
+          "head_sha": "e16f8c6df3244a78cd9c30ba5ce7e43d5b8f45a3",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/Phjrab/mediflow-medvlm/actions/runs/39965707522"
+        }
+      ]
+    },
+    {
+      "full_name": "Phjrab/forge-finetune-dashboard",
+      "default_branch": "main",
+      "reviewed_branch": "main",
+      "reviewed_sha": "d9a4656a5bee38cc9903e8caf5c4b680709423d2",
+      "followup_branch": "codex/ui-forge-training-workbench",
+      "branch_comparison": {
+        "repository_full_name": "Phjrab/forge-finetune-dashboard",
+        "base": "d9a4656a5bee38cc9903e8caf5c4b680709423d2",
+        "head": "74e98a44279248906b77f87cbe5bca2d0add18cb",
+        "status": "diverged",
+        "ahead_by": 2,
+        "behind_by": 1,
+        "total_commits": 2,
+        "too_large": null,
+        "base_commit": {
+          "sha": "d9a4656a5bee38cc9903e8caf5c4b680709423d2",
+          "url": "https://api.github.com/repos/Phjrab/forge-finetune-dashboard/commits/d9a4656a5bee38cc9903e8caf5c4b680709423d2",
+          "html_url": "https://github.com/Phjrab/forge-finetune-dashboard/commit/d9a4656a5bee38cc9903e8caf5c4b680709423d2"
+        },
+        "merge_base_commit": {
+          "sha": "839bcc94d1271ac6efe9ded42b562f3cfa65cc1c",
+          "url": "https://api.github.com/repos/Phjrab/forge-finetune-dashboard/commits/839bcc94d1271ac6efe9ded42b562f3cfa65cc1c",
+          "html_url": "https://github.com/Phjrab/forge-finetune-dashboard/commit/839bcc94d1271ac6efe9ded42b562f3cfa65cc1c"
+        },
+        "files": [
+          {
+            "filename": "docs/deployment.md",
+            "status": "modified",
+            "additions": 2,
+            "deletions": 0,
+            "changes": 2,
+            "previous_filename": null
+          },
+          {
+            "filename": "docs/ui-redesign/PRODUCTION_DEPLOYMENT.md",
+            "status": "added",
+            "additions": 59,
+            "deletions": 0,
+            "changes": 59,
+            "previous_filename": null
+          },
+          {
+            "filename": "docs/ui-redesign/production-verification.json",
+            "status": "added",
+            "additions": 127,
+            "deletions": 0,
+            "changes": 127,
+            "previous_filename": null
+          }
+        ]
+      },
+      "branches": [
+        {
+          "name": "codex/real-gpu-training",
+          "sha": "92f0f1900b43c210861e90f3b13cd2aca09c2c77"
+        },
+        {
+          "name": "codex/ui-forge-training-workbench",
+          "sha": "74e98a44279248906b77f87cbe5bca2d0add18cb"
+        },
+        {
+          "name": "feature/local-finetune-dashboard",
+          "sha": "92f0f1900b43c210861e90f3b13cd2aca09c2c77"
+        },
+        {
+          "name": "main",
+          "sha": "d9a4656a5bee38cc9903e8caf5c4b680709423d2"
+        }
+      ],
+      "ci": [
+        {
+          "id": 37605147909,
+          "head_sha": "d9a4656a5bee38cc9903e8caf5c4b680709423d2",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/Phjrab/forge-finetune-dashboard/actions/runs/37605147909"
+        }
+      ]
+    }
+  ],
+  "snapshot_scope": {
+    "mediflow_medvlm_main_text_files": 14,
+    "mediflow_medvlm_active_text_files": 95,
+    "forge_core_text_files": 57,
+    "excluded": "Binary images/fonts, generated HTML preview and most UI-capture-only data; no trained weights or original medical data downloaded."
+  },
+  "evidence_levels": {
+    "code": "reviewed immutable GitHub source snapshots",
+    "reported_gpu_results": "teammate published summaries; original weights/predictions not available locally",
+    "independent_verification": "local CPU unit checks and targeted invalid-input/export probes",
+    "ci": "read GitHub Actions status at exact review commits"
+  },
+  "performed": {
+    "remote_code_edits": false,
+    "remote_comments_or_messages": false,
+    "model_download": false,
+    "gpu_training": false,
+    "medical_image_upload": false,
+    "remote_server_restart": false,
+    "commit_or_push": false
+  },
+  "recommendation": "Reuse active MedVLM native training/evaluation; separate classifier-result LLM explanation and independent disease image VLM; Forge optional."
+}
+

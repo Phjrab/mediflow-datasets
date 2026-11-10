@@ -1,0 +1,11 @@
+{
+  "status": "passed",
+  "synthetic_history_only": true,
+  "png_size": [
+    2340,
+    1800
+  ],
+  "source_metrics_generated": false,
+  "model_selection_and_plot_logic_unchanged": true,
+  "zip_packaging_fixture_files": 30
+}

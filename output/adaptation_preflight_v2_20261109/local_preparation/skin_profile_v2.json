@@ -1,0 +1,73 @@
+{
+  "domain": "skin",
+  "profile_version": "measured_photometric_v2",
+  "brightness_offset": [
+    -1.3492517471313477,
+    -0.7292451858520508
+  ],
+  "contrast": [
+    0.9399699904076788,
+    0.957350048293398
+  ],
+  "scale_x": [
+    1.0,
+    1.0
+  ],
+  "scale_y": [
+    1.0,
+    1.0
+  ],
+  "left_light": [
+    0.0,
+    0.0
+  ],
+  "evidence": {
+    "target_people": [
+      "P01",
+      "P02",
+      "P03",
+      "P04"
+    ],
+    "brightness_changes": [
+      -2.557281494140625,
+      -1.6053237915039062,
+      -3.1221694946289062,
+      -1.0179901123046875
+    ],
+    "brightness_raw_shifts": [
+      -2.557281494140625,
+      -1.6053237915039062,
+      -3.1221694946289062,
+      -1.0179901123046875
+    ],
+    "paired_contrast_ratios": [
+      0.9314376352508611,
+      0.794510872336215,
+      0.9084163503084051,
+      0.9091209170321075
+    ]
+  },
+  "bounds": {
+    "fraction_of_measured_shift": 0.5,
+    "max_brightness_offset": 32,
+    "contrast": [
+      0.9,
+      1.15
+    ],
+    "geometry": [
+      0.4,
+      1.0
+    ]
+  },
+  "held_back": [
+    "color: unmatched disease color",
+    "blur/noise: texture/scale confounding",
+    "hair mask: not validated and could change class evidence",
+    "geometry: no rescaling onto artificial padding; composition is an input policy"
+  ],
+  "input_policy": "legacy_resize",
+  "train_visual_review": "pending",
+  "source_sha256": "db6cf59087b68d4534ff857bdb0eacc1a1a09ed5703772fefc75f038d4570e4b",
+  "model_sha256": "0b2a757320a113dbc1b285adab8c7745b2f7edc2cb29cc402d06f7882edc9f7a",
+  "calibration_fingerprint": "659c8bb3edf406ba89fe782781b4fe9b7ac065cfc87411d26c895aff7a4b75ea"
+}

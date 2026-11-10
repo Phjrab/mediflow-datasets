@@ -1,0 +1,225 @@
+{
+  "identity": {
+    "config_sha256": "ee9604c652ace8a6d7d0df5656b70ef7512f0ae40f7ef2211f081432b75d9366",
+    "reference_sha256": "1837fd554de1363d4695b01190d0625420e5fdde9775313d732fb93e69876172",
+    "code_sha256": "1fc91a7a53fd0da7c164b2011e073242394190fe5f812f1d1e69143bdf06ed22"
+  },
+  "configuration": {
+    "schema": "mediflow_staged_adaptation_v1",
+    "seed": 42,
+    "epochs": 5,
+    "initialization_policy": "saved_only",
+    "validation_scope": "exploratory_historical_checkpoint_exposure_unverified",
+    "learning_rate": 1e-05,
+    "augmentation_probability": 0.5,
+    "tasks": {
+      "skin": {
+        "domain": "skin",
+        "classes": [
+          "광선각화증",
+          "기저세포암",
+          "보웬병",
+          "사마귀",
+          "지루각화증",
+          "편평세포암",
+          "표피낭종",
+          "피부섬유종",
+          "혈관종",
+          "흑색점"
+        ],
+        "source_name": "skin_datasets",
+        "source_sha256": "db6cf59087b68d4534ff857bdb0eacc1a1a09ed5703772fefc75f038d4570e4b",
+        "input_policy": "legacy_resize",
+        "batch_size": 16,
+        "models": {
+          "basic": {
+            "architecture": "b0",
+            "size": 224,
+            "label_smoothing": 0.0,
+            "initialization": "saved original-only early checkpoint",
+            "model": "results/skin/1_training/original/best_model.keras",
+            "model_sha256": "1b146a6a53742226ec677865aa71bd842a28c9db9c3174b352dd8bc87270770b"
+          },
+          "selected": {
+            "architecture": "b0",
+            "size": 224,
+            "label_smoothing": 0.0,
+            "reference_candidate_id": "public_candidate_v1_b0_224_ce_augmented_20260909_075056",
+            "initialization": "saved selected checkpoint",
+            "model": "results/skin/selected_models/v1/skin_model.keras",
+            "model_sha256": "0b2a757320a113dbc1b285adab8c7745b2f7edc2cb29cc402d06f7882edc9f7a"
+          }
+        }
+      },
+      "web_skin": {
+        "domain": "web_skin",
+        "classes": [
+          "건선",
+          "아토피",
+          "여드름",
+          "정상",
+          "주사"
+        ],
+        "source_name": "web_skin_datasets",
+        "source_sha256": "f8908af3d54e521ad14c37a44b569d33fe92be3b8b9b66a8d80faf4ba964072d",
+        "input_policy": "center_square",
+        "batch_size": 8,
+        "models": {
+          "basic": {
+            "architecture": "b0",
+            "size": 224,
+            "label_smoothing": 0.0,
+            "initialization": "saved original-only early checkpoint",
+            "model": "results/web_skin/1_training/original/best_model.keras",
+            "model_sha256": "11c5a160ddeb406c4e80802e38a372e90a0222c1dddf208e270676f795f177ae"
+          },
+          "selected": {
+            "architecture": "pmg",
+            "size": 256,
+            "label_smoothing": 0.0,
+            "reference_candidate_id": "public_candidate_v2_pmg_b0_256_ce_20260922_235840_093d10de",
+            "initialization": "saved selected checkpoint",
+            "model": "results/web_skin/selected_models/v2/web_skin_model.keras",
+            "model_sha256": "83e659dd09a9355135ee0de0197037e81ece962777f59dedae8d9a37b49a3fc4"
+          }
+        }
+      },
+      "hair": {
+        "domain": "hair",
+        "classes": [
+          "모낭사이홍반",
+          "미세각질",
+          "비듬",
+          "탈모",
+          "피지과다"
+        ],
+        "source_name": "hair_datasets",
+        "source_sha256": "2ac7260663cf69835ba50edb6ae8c7e7ac13be9c73b9f7ea24f60e0342e7e156",
+        "input_policy": "legacy_resize",
+        "batch_size": 8,
+        "models": {
+          "basic": {
+            "architecture": "b0",
+            "size": 224,
+            "label_smoothing": 0.0,
+            "initialization": "saved original-only early checkpoint",
+            "model": "results/hair/1_training/original/best_model.keras",
+            "model_sha256": "d1695bf35701dee5b5a7b4623d105009053afc800d3900e265de4607550e5771"
+          },
+          "selected": {
+            "architecture": "b1",
+            "size": 384,
+            "label_smoothing": 0.05,
+            "reference_candidate_id": "public_candidate_v2_b1_384_ls005_adam_20260921_155906_82311da4",
+            "initialization": "saved selected checkpoint",
+            "model": "results/hair/selected_models/v2/hair_model.keras",
+            "model_sha256": "9faa33b8f79f45ef6e7be415473e2ee5225f6195fff04d098828733db23ed3c2",
+            "training_source_sha256": "2ac7260663cf69835ba50edb6ae8c7e7ac13be9c73b9f7ea24f60e0342e7e156"
+          }
+        }
+      }
+    }
+  },
+  "profile": {
+    "domain": "skin",
+    "profile_version": "quarantined_within_person_bounded_v4",
+    "brightness_offset": [
+      -1.3492517471313477,
+      -0.7292451858520508
+    ],
+    "contrast": [
+      0.9399699904076788,
+      0.957350048293398
+    ],
+    "scale_x": [
+      1.0,
+      1.0
+    ],
+    "scale_y": [
+      1.0,
+      1.0
+    ],
+    "left_light": [
+      0.0,
+      0.0
+    ],
+    "evidence": {
+      "target_people": [
+        "P01",
+        "P02",
+        "P03",
+        "P04"
+      ],
+      "brightness_changes": [
+        -2.557281494140625,
+        -1.6053237915039062,
+        -3.1221694946289062,
+        -1.0179901123046875
+      ],
+      "brightness_raw_shifts": [
+        -2.557281494140625,
+        -1.6053237915039062,
+        -3.1221694946289062,
+        -1.0179901123046875
+      ],
+      "brightness_policy": "within_participant",
+      "paired_contrast_ratios": [
+        0.9314376352508611,
+        0.794510872336215,
+        0.9084163503084051,
+        0.9091209170321075
+      ]
+    },
+    "bounds": {
+      "fraction_of_measured_shift": 0.5,
+      "max_brightness_offset": 32,
+      "contrast": [
+        0.9,
+        1.15
+      ],
+      "geometry": [
+        0.4,
+        1.0
+      ]
+    },
+    "held_back": [
+      "color: unmatched disease color",
+      "blur/noise: texture/scale confounding",
+      "hair mask: not validated and could change class evidence",
+      "geometry: no rescaling onto artificial padding; composition is an input policy"
+    ],
+    "photometric_operator": "bounded_additive_v3",
+    "input_policy": "legacy_resize",
+    "source_sha256": "db6cf59087b68d4534ff857bdb0eacc1a1a09ed5703772fefc75f038d4570e4b",
+    "reference_model_sha256": "0b2a757320a113dbc1b285adab8c7745b2f7edc2cb29cc402d06f7882edc9f7a",
+    "calibration_fingerprint": "659c8bb3edf406ba89fe782781b4fe9b7ac065cfc87411d26c895aff7a4b75ea",
+    "source_subset_sha256": "59766e93e57214d1922caa5579fe78f8790a56a9fa5cdc7b439c43a93efc529b",
+    "train_visual_review": "approved",
+    "review_note": "Inspected class-stratified retained Train previews and worst observed clipping examples. No gross lesion-boundary loss or artificial geometry observed at preview scale. All retained preview metrics and parameter corners were calculated. Some highlights approach bounds; this is a limited pilot approval, not image information or clinical accuracy validation. No face identity assessment performed. Source ROI missingness does not set brightness; within-person Target lighting differences are used. Whole Source/Target appearance matching is not claimed."
+  },
+  "tensorflow": "2.20.0",
+  "keras": "3.13.2",
+  "numpy": "2.0.2",
+  "gpu": [
+    {
+      "compute_capability": [
+        7,
+        5
+      ],
+      "device_name": "Tesla T4"
+    }
+  ],
+  "code_provenance": {
+    "repository_commit": "ffd71eca68ff1e21c145ed56158f4cfa77f7f037",
+    "code_state": "exact bundled source files and member SHA-256 manifest",
+    "planned_stage_counts": [
+      6,
+      3,
+      3
+    ],
+    "implemented_stages": [
+      1
+    ],
+    "encrypted_target_data_reserved_for_stage3": true
+  }
+}

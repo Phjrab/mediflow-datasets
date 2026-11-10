@@ -1,0 +1,1003 @@
+{
+  "date": "2026-10-26",
+  "files": [
+    {
+      "snapshot": "mediflow-medvlm",
+      "path": ".github/workflows/test.yml",
+      "bytes": 466,
+      "local_sha256": "02948c5622a4e46aed096f24aee714bd392948f76d17a3ff2b5ba090542a54c6"
+    },
+    {
+      "snapshot": "mediflow-medvlm",
+      "path": "ARCHITECTURE.md",
+      "bytes": 2048,
+      "local_sha256": "8262d8bb7ac7f484621c2fa779ac9fb6d3bdeced06d89f7f0cbb04a5793766f5"
+    },
+    {
+      "snapshot": "mediflow-medvlm",
+      "path": "DATA_GOVERNANCE.md",
+      "bytes": 1464,
+      "local_sha256": "6816ae6957c4d35710ec147eb4e249d33aa2e4f917ff8b1077fb1c3517a2ae3f"
+    },
+    {
+      "snapshot": "mediflow-medvlm",
+      "path": "EVALUATION.md",
+      "bytes": 1310,
+      "local_sha256": "afa1712a079038d1f80536eae6d7b914a33422e8a02b923ee619b7e27bfd2111"
+    },
+    {
+      "snapshot": "mediflow-medvlm",
+      "path": "pyproject.toml",
+      "bytes": 543,
+      "local_sha256": "69015f7f3c277062779f5af648fad4c3215690967fd5993d0f2bf0b0cc75a138"
+    },
+    {
+      "snapshot": "mediflow-medvlm",
+      "path": "README.md",
+      "bytes": 1674,
+      "local_sha256": "6633565f806732a15a4418dd51ae8f79ce9fe5cb9b1ad8501ef2bd811d7f9064"
+    },
+    {
+      "snapshot": "mediflow-medvlm",
+      "path": "src/mediflow_medvlm/__init__.py",
+      "bytes": 334,
+      "local_sha256": "9fc59c4d011c7ec00a9e04285e029b130b77b24c7c87b22190101295831fcc75"
+    },
+    {
+      "snapshot": "mediflow-medvlm",
+      "path": "src/mediflow_medvlm/adapters.py",
+      "bytes": 446,
+      "local_sha256": "61bf2e5901846608753682163b102623da2a0a739172c7b0ac377ff6d6b97a93"
+    },
+    {
+      "snapshot": "mediflow-medvlm",
+      "path": "src/mediflow_medvlm/domain.py",
+      "bytes": 1545,
+      "local_sha256": "3615c93c20e516b89b7b69beef9202500ac6e4cc4177f4e773d62876761b1032"
+    },
+    {
+      "snapshot": "mediflow-medvlm",
+      "path": "src/mediflow_medvlm/validation.py",
+      "bytes": 2186,
+      "local_sha256": "8f553afab51d38d85d96728c941361bd0fd440b56bc6664155cebc3e89cf50db"
+    },
+    {
+      "snapshot": "mediflow-medvlm",
+      "path": "src/mediflow_medvlm/workflows.py",
+      "bytes": 2370,
+      "local_sha256": "a1f91b0469c27d009897d8813e8ed147628cae07098c331fcd312d754cd84134"
+    },
+    {
+      "snapshot": "mediflow-medvlm",
+      "path": "tests/test_domain.py",
+      "bytes": 820,
+      "local_sha256": "80bd0e4294a6c248d9587826fd1c7003c73190df0307a2c3ba5397777207c0ef"
+    },
+    {
+      "snapshot": "mediflow-medvlm",
+      "path": "tests/test_validation.py",
+      "bytes": 1646,
+      "local_sha256": "6a435ade84076f177a8c6736e7a478f643369bc8924bfd81aa6a39a7231b65b2"
+    },
+    {
+      "snapshot": "mediflow-medvlm",
+      "path": "tests/test_workflows.py",
+      "bytes": 1887,
+      "local_sha256": "00bc3e02162a2eaa04d358cf54b0cd5ce97c690e746b3df736bfc38dd7b6cc3c"
+    },
+    {
+      "snapshot": "mediflow-medvlm-active",
+      "path": ".github/workflows/test.yml",
+      "bytes": 450,
+      "local_sha256": "89860ad9da1e6617e49cc27776464b10a59b93a208bf5784976b08e6b94ae89e"
+    },
+    {
+      "snapshot": "mediflow-medvlm-active",
+      "path": ".gitignore",
+      "bytes": 176,
+      "local_sha256": "93a46b27510bd97b710600f19335f0211a5f492fd6439dc3c2b00b932544ab81"
+    },
+    {
+      "snapshot": "mediflow-medvlm-active",
+      "path": "ARCHITECTURE.md",
+      "bytes": 2048,
+      "local_sha256": "8262d8bb7ac7f484621c2fa779ac9fb6d3bdeced06d89f7f0cbb04a5793766f5"
+    },
+    {
+      "snapshot": "mediflow-medvlm-active",
+      "path": "configs/dataset_sources.yaml",
+      "bytes": 9823,
+      "local_sha256": "807f2e466a12bfdbfa16e702c1643540d85948287f1243ee8cb3bac359dbb5de"
+    },
+    {
+      "snapshot": "mediflow-medvlm-active",
+      "path": "configs/evaluation_policy.json",
+      "bytes": 619,
+      "local_sha256": "594ef424d70740d53e4c0b685ca02980de1b66906511e250f37ed983c214c2f8"
+    },
+    {
+      "snapshot": "mediflow-medvlm-active",
+      "path": "configs/model_matrix.yaml",
+      "bytes": 6160,
+      "local_sha256": "d021d037934bf455bdd5f9b5b7ce17da5e055d2d6c683502ed94139618e8799a"
+    },
+    {
+      "snapshot": "mediflow-medvlm-active",
+      "path": "configs/requirements-training.lock.txt",
+      "bytes": 1347,
+      "local_sha256": "0381bfc48fdd4f244a129465abf4cfcf074904078b03fa48bcf9a6906795576b"
+    },
+    {
+      "snapshot": "mediflow-medvlm-active",
+      "path": "configs/runtime.example.yaml",
+      "bytes": 6502,
+      "local_sha256": "8bfcc015843c16f36a8f2c225f18ab6d5a6d74c5c4da5cff43f17ebfc8b050f3"
+    },
+    {
+      "snapshot": "mediflow-medvlm-active",
+      "path": "configs/training.qwen3-17b.example.json",
+      "bytes": 1183,
+      "local_sha256": "35a95cf3118bba271f46d3de90726546b6abc9d7ad945325fb774095e8f6ae32"
+    },
+    {
+      "snapshot": "mediflow-medvlm-active",
+      "path": "configs/training.qwen3-17b.smoke.example.json",
+      "bytes": 1191,
+      "local_sha256": "dc1e7c1ad81c36c16167527d729686d9638716eff7d560015287e7e5e64edc98"
+    },
+    {
+      "snapshot": "mediflow-medvlm-active",
+      "path": "configs/training.qwen3-4b.example.json",
+      "bytes": 1178,
+      "local_sha256": "0ed2dfbea39af1396719b0ccfbf6a5c92a3165fadb3ed0bb815bea6a9a368110"
+    },
+    {
+      "snapshot": "mediflow-medvlm-active",
+      "path": "configs/training.smolvlm.example.json",
+      "bytes": 1260,
+      "local_sha256": "6bbe825441e3d29864323514ce82244cf9eadd59b442b6f8029f33e247554d15"
+    },
+    {
+      "snapshot": "mediflow-medvlm-active",
+      "path": "DATA_GOVERNANCE.md",
+      "bytes": 2493,
+      "local_sha256": "2791e9dc045b9665bbff2e7e3fc6a86135e49960a751dc3c276aca13cd25eb7c"
+    },
+    {
+      "snapshot": "mediflow-medvlm-active",
+      "path": "docs/agent/HANDOFF.md",
+      "bytes": 8248,
+      "local_sha256": "059c08b0aa4e87ea16ae38538d5735c32b691e12c92f4cf611940523ad873a76"
+    },
+    {
+      "snapshot": "mediflow-medvlm-active",
+      "path": "docs/agent/IMPLEMENTATION_PLAN.md",
+      "bytes": 2656,
+      "local_sha256": "fbeab0fd118651c9d5231c8ada4702ace4f1ed2b565e043fb9db3c83c8090afa"
+    },
+    {
+      "snapshot": "mediflow-medvlm-active",
+      "path": "docs/agent/PROJECT_CONTEXT.md",
+      "bytes": 2981,
+      "local_sha256": "8370d31a552607c3cc2c27987a7fac128c6074208d2048a82136e5dc11d78c66"
+    },
+    {
+      "snapshot": "mediflow-medvlm-active",
+      "path": "docs/agent/WORKLOG.md",
+      "bytes": 7803,
+      "local_sha256": "84a888029c7ecf7b9a79151297e12a3d4a0af713ee0bf5f7279ec7d22cc4c0c1"
+    },
+    {
+      "snapshot": "mediflow-medvlm-active",
+      "path": "docs/research/CURRENT_REPOSITORY_AUDIT.md",
+      "bytes": 2244,
+      "local_sha256": "a6ad444c8060ed1e4b21d9094ce4f47790add29e4f3eb725c289392e9a549b5d"
+    },
+    {
+      "snapshot": "mediflow-medvlm-active",
+      "path": "docs/research/DATA_PREPARATION.md",
+      "bytes": 8321,
+      "local_sha256": "7c922c331455f47e2aa10972ef7f91fd45bcd496b501834e6b38dc2cacbb92b0"
+    },
+    {
+      "snapshot": "mediflow-medvlm-active",
+      "path": "docs/research/DATA_REPORT_KO.md",
+      "bytes": 21191,
+      "local_sha256": "4197e5cecf8e78ed1d4ec51b92f60bacc20eff6be8881fca9b24f236fa753068"
+    },
+    {
+      "snapshot": "mediflow-medvlm-active",
+      "path": "docs/research/EXPERT_REVIEW_RUBRIC_KO.md",
+      "bytes": 5787,
+      "local_sha256": "8c4326072cfcc7aaeb0f1f04d18cd0f2b7d784b57247cffb6fb951d15362950d"
+    },
+    {
+      "snapshot": "mediflow-medvlm-active",
+      "path": "docs/research/TRAINING.md",
+      "bytes": 8308,
+      "local_sha256": "57b640a7052f214040d245989bd496af7d6c6482b20c688e9764da670ad4f6f4"
+    },
+    {
+      "snapshot": "mediflow-medvlm-active",
+      "path": "docs/research/VISION_SOURCES.md",
+      "bytes": 9808,
+      "local_sha256": "7ab977000de919f9efbcde32d04619bb023b94764cbb47966daf42b19d5ce42b"
+    },
+    {
+      "snapshot": "mediflow-medvlm-active",
+      "path": "EVALUATION.md",
+      "bytes": 2208,
+      "local_sha256": "db8e79064ea2a2cc85bd3e18007567484adf66944a87c0a5dd954a6bc837d11a"
+    },
+    {
+      "snapshot": "mediflow-medvlm-active",
+      "path": "pyproject.toml",
+      "bytes": 886,
+      "local_sha256": "46b382eb7e25dfd8d818b794ed56e9805cc61a822cae95abf040e3e90b0fcc63"
+    },
+    {
+      "snapshot": "mediflow-medvlm-active",
+      "path": "README.md",
+      "bytes": 4546,
+      "local_sha256": "c07087b1b27c55f068260c13a4ee96587d631eee059b4f2334e3af5bda213ecf"
+    },
+    {
+      "snapshot": "mediflow-medvlm-active",
+      "path": "reports/public_summary/ADAPTER_CARDS.md",
+      "bytes": 15860,
+      "local_sha256": "e7dc697bf91151d385bf45fdd267c88a99444f51c505bde2aab783892057a5d4"
+    },
+    {
+      "snapshot": "mediflow-medvlm-active",
+      "path": "reports/public_summary/data_forge_compatibility.json",
+      "bytes": 1432,
+      "local_sha256": "d4ff51231bfb2e55bc9da6270da31a87e4e8c863c30be4feabd88bb857b81651"
+    },
+    {
+      "snapshot": "mediflow-medvlm-active",
+      "path": "reports/public_summary/data_freeze.json",
+      "bytes": 15722,
+      "local_sha256": "b7083a5247d384210edc7332bdde9ee622967b582becc20afd886d4f4793377f"
+    },
+    {
+      "snapshot": "mediflow-medvlm-active",
+      "path": "reports/public_summary/data_quality.json",
+      "bytes": 3120,
+      "local_sha256": "7354eed606e8be41810796c52525e42cf88363ca354b38c8394a4992c3930ce1"
+    },
+    {
+      "snapshot": "mediflow-medvlm-active",
+      "path": "reports/public_summary/data_resume_safety_review.json",
+      "bytes": 2896,
+      "local_sha256": "f7b18a897340c4e54b2b6ec64ed28c9c77720c5ebef9ba9a9dca72e8c448d6b5"
+    },
+    {
+      "snapshot": "mediflow-medvlm-active",
+      "path": "reports/public_summary/data_sources.json",
+      "bytes": 6491,
+      "local_sha256": "5c5de8305def2ff51c4173b04c07ebb1242043481de0cf6dd60ab8208dcd4c66"
+    },
+    {
+      "snapshot": "mediflow-medvlm-active",
+      "path": "reports/public_summary/final_artifact_verification.json",
+      "bytes": 9532,
+      "local_sha256": "a04d6dbc0e7cffcb9366ba04a02d0a4616d1c724bf575b2abec984a4fe997e70"
+    },
+    {
+      "snapshot": "mediflow-medvlm-active",
+      "path": "reports/public_summary/medgemma_format_diagnostic.json",
+      "bytes": 3308,
+      "local_sha256": "cbb3257ae54d3a11da924e1607d8eb2ed147ccb4e43dd10c619e516a2d53c1b0"
+    },
+    {
+      "snapshot": "mediflow-medvlm-active",
+      "path": "reports/public_summary/paired_metrics.csv",
+      "bytes": 6759,
+      "local_sha256": "a2552fe30de982cd31b79dba9b4b9de1128c63d5cfd8b98823e6382d32eb6b32"
+    },
+    {
+      "snapshot": "mediflow-medvlm-active",
+      "path": "reports/public_summary/RESULTS_KO.md",
+      "bytes": 20809,
+      "local_sha256": "1876a74a81e4bdd16213eea20cbbe0b33830fb08e19353c59b1aea91d76e7943"
+    },
+    {
+      "snapshot": "mediflow-medvlm-active",
+      "path": "reports/public_summary/run_summary.json",
+      "bytes": 393895,
+      "local_sha256": "451f25bc0c89b1ce366ea2944fa241448640420a8c9f1ed18b3ecad58bcd7bc5"
+    },
+    {
+      "snapshot": "mediflow-medvlm-active",
+      "path": "reports/public_summary/stage_status.json",
+      "bytes": 29353,
+      "local_sha256": "91128784a1d07bf8ffdd3954ab3dd07e899070cf9976bd8c4a47e2e306e2b463"
+    },
+    {
+      "snapshot": "mediflow-medvlm-active",
+      "path": "reports/public_summary/upstream_exposure.json",
+      "bytes": 22560,
+      "local_sha256": "4c31a51da00342fcdd1d05f7e97a6c3d53a50026ee4e39180c6742cb87d340e2"
+    },
+    {
+      "snapshot": "mediflow-medvlm-active",
+      "path": "reports/public_summary/verification.json",
+      "bytes": 5136,
+      "local_sha256": "9aac9c2e3734d0e6b6f12f7959b44ad70f10f0795d3758a8de2b2238b4dc8bc4"
+    },
+    {
+      "snapshot": "mediflow-medvlm-active",
+      "path": "reports/public_summary/vision_sources.json",
+      "bytes": 12869,
+      "local_sha256": "4a3a217b5c86cd90c4f0b17d26796020efe4d6b7c9153bf55bac31000f6ef7c0"
+    },
+    {
+      "snapshot": "mediflow-medvlm-active",
+      "path": "reports/public_summary/vqarad_image_provenance_repair.json",
+      "bytes": 1314,
+      "local_sha256": "04e7258cf800db5e8da6f4a060388ca1ce4aa4725b3e4bc88317791691185846"
+    },
+    {
+      "snapshot": "mediflow-medvlm-active",
+      "path": "scripts/complete_v1.py",
+      "bytes": 20528,
+      "local_sha256": "fdc99aa3667788ec4cbd59f26b0d8fd6bfb6d5b07c003647752998e58d7d62d0"
+    },
+    {
+      "snapshot": "mediflow-medvlm-active",
+      "path": "scripts/report_v1.py",
+      "bytes": 37125,
+      "local_sha256": "95dc07c12d07bdac93790346a476e726afd08717e445f0d359e1dbf5054c40f9"
+    },
+    {
+      "snapshot": "mediflow-medvlm-active",
+      "path": "scripts/summarize_vision_sources.py",
+      "bytes": 7902,
+      "local_sha256": "d4731f8c5498e8c8121ad292eaccb7767c4952ec37731cd30fefd4f652c1aa64"
+    },
+    {
+      "snapshot": "mediflow-medvlm-active",
+      "path": "src/mediflow_medvlm/__init__.py",
+      "bytes": 334,
+      "local_sha256": "9fc59c4d011c7ec00a9e04285e029b130b77b24c7c87b22190101295831fcc75"
+    },
+    {
+      "snapshot": "mediflow-medvlm-active",
+      "path": "src/mediflow_medvlm/__main__.py",
+      "bytes": 31,
+      "local_sha256": "11cf323249f4ba4e79c9fb7660c0979fc91a3822bc5362286376b69808b41195"
+    },
+    {
+      "snapshot": "mediflow-medvlm-active",
+      "path": "src/mediflow_medvlm/adapters.py",
+      "bytes": 446,
+      "local_sha256": "61bf2e5901846608753682163b102623da2a0a739172c7b0ac377ff6d6b97a93"
+    },
+    {
+      "snapshot": "mediflow-medvlm-active",
+      "path": "src/mediflow_medvlm/cli.py",
+      "bytes": 6679,
+      "local_sha256": "4b943a999f375b20a40cbaa1b7a85d246876a0312607d7b19558795f5517a661"
+    },
+    {
+      "snapshot": "mediflow-medvlm-active",
+      "path": "src/mediflow_medvlm/data/__init__.py",
+      "bytes": 79,
+      "local_sha256": "907e2516a3afd2e1c1903f092c7d30378ad9a9aadf540f5af2152b0366763d58"
+    },
+    {
+      "snapshot": "mediflow-medvlm-active",
+      "path": "src/mediflow_medvlm/data/__main__.py",
+      "bytes": 2587,
+      "local_sha256": "8a98f8ce0550f551ad77036e0b4295465abbf5ee9019e2f0860f81e8bb4a80a0"
+    },
+    {
+      "snapshot": "mediflow-medvlm-active",
+      "path": "src/mediflow_medvlm/data/forge_export.py",
+      "bytes": 5423,
+      "local_sha256": "ca5266e1645a994b5196357c60f06c9fa6cf4f4e4b6527c4f6650a74342a5b57"
+    },
+    {
+      "snapshot": "mediflow-medvlm-active",
+      "path": "src/mediflow_medvlm/data/io.py",
+      "bytes": 11641,
+      "local_sha256": "e35790d1243305f84435495424e28f99f6be80c43468e316302e9315a687b5c6"
+    },
+    {
+      "snapshot": "mediflow-medvlm-active",
+      "path": "src/mediflow_medvlm/data/kormedmcqa.py",
+      "bytes": 4540,
+      "local_sha256": "08126965dd5c2670059e647a0447f52b108a8e8b3c18f336b4099b00163fc762"
+    },
+    {
+      "snapshot": "mediflow-medvlm-active",
+      "path": "src/mediflow_medvlm/data/medquad.py",
+      "bytes": 5115,
+      "local_sha256": "33a86e8c3ec9dc42a5101f38a644a97f87f48b2fc8471a232a0579bc90301866"
+    },
+    {
+      "snapshot": "mediflow-medvlm-active",
+      "path": "src/mediflow_medvlm/data/pipeline.py",
+      "bytes": 15475,
+      "local_sha256": "33bf5e5351b3a6a0cec68349a8aa1edc2a0592924f4e57ad73c49ddefc791af4"
+    },
+    {
+      "snapshot": "mediflow-medvlm-active",
+      "path": "src/mediflow_medvlm/data/pubmedqa.py",
+      "bytes": 3638,
+      "local_sha256": "ceacf8c016981cc7320d7957d489b5e02ce10a1242b6631045d9ab23ceaa25f5"
+    },
+    {
+      "snapshot": "mediflow-medvlm-active",
+      "path": "src/mediflow_medvlm/data/schema.py",
+      "bytes": 4026,
+      "local_sha256": "4ca3636b298a3fab358a64a5b725d58cd5838823b6f933212f7d8957f64fbe9a"
+    },
+    {
+      "snapshot": "mediflow-medvlm-active",
+      "path": "src/mediflow_medvlm/data/slake.py",
+      "bytes": 20054,
+      "local_sha256": "db170791f57071ac9324950d1beb575f5a0c10331b32b447bcfcbf59ab477034"
+    },
+    {
+      "snapshot": "mediflow-medvlm-active",
+      "path": "src/mediflow_medvlm/data/supplemental.py",
+      "bytes": 6592,
+      "local_sha256": "7d28966527950e18e02f9f1fa726ca7bcbcceafd58f2b169026bf7f3a32a85a5"
+    },
+    {
+      "snapshot": "mediflow-medvlm-active",
+      "path": "src/mediflow_medvlm/data/vqarad.py",
+      "bytes": 12649,
+      "local_sha256": "e263ea5cf42dbfb173f0fae4632cef407d62e94439874f91241b3d1189b16fdb"
+    },
+    {
+      "snapshot": "mediflow-medvlm-active",
+      "path": "src/mediflow_medvlm/devices.py",
+      "bytes": 8590,
+      "local_sha256": "da9ed8bc7d7fbba81a00c068e84641329d1d40be21f80a1f39ec385a9e3a5559"
+    },
+    {
+      "snapshot": "mediflow-medvlm-active",
+      "path": "src/mediflow_medvlm/domain.py",
+      "bytes": 1820,
+      "local_sha256": "ab6c4fad735b4f669c5d4d654175c38a194e16f56fbf065f3fe2717f7f7d5989"
+    },
+    {
+      "snapshot": "mediflow-medvlm-active",
+      "path": "src/mediflow_medvlm/evaluation/__init__.py",
+      "bytes": 78,
+      "local_sha256": "e4c640180ab72fa716e44d6ee2d097abcb0e33fe39e0d4c1e7c0bde8b929addf"
+    },
+    {
+      "snapshot": "mediflow-medvlm-active",
+      "path": "src/mediflow_medvlm/evaluation/__main__.py",
+      "bytes": 1989,
+      "local_sha256": "f9f0ed2899f6b13059a4386ffef99489ec725853b792f037ce9f817e61fc3eca"
+    },
+    {
+      "snapshot": "mediflow-medvlm-active",
+      "path": "src/mediflow_medvlm/evaluation/expert_review.py",
+      "bytes": 7396,
+      "local_sha256": "7bc23e007a22827cd11be1029457cbba12472c1e675c108c655508d5552bcc1c"
+    },
+    {
+      "snapshot": "mediflow-medvlm-active",
+      "path": "src/mediflow_medvlm/evaluation/image_diagnostics.py",
+      "bytes": 10945,
+      "local_sha256": "a9e0c61a950ec6be360aba4ecd9ed05d4c7d5c5b8d0d9862fd39fc7cb4036933"
+    },
+    {
+      "snapshot": "mediflow-medvlm-active",
+      "path": "src/mediflow_medvlm/evaluation/metrics.py",
+      "bytes": 10360,
+      "local_sha256": "a182d7d7a772de51aa9958701834a5602ebfb67525fe19f197c863804c1a65ca"
+    },
+    {
+      "snapshot": "mediflow-medvlm-active",
+      "path": "src/mediflow_medvlm/evaluation/runner.py",
+      "bytes": 20930,
+      "local_sha256": "b293551e3633d2f48fa22c3755d513f13551842a921fd31f44c57d1d40d0733e"
+    },
+    {
+      "snapshot": "mediflow-medvlm-active",
+      "path": "src/mediflow_medvlm/runtime.py",
+      "bytes": 9692,
+      "local_sha256": "df6dfa3992ba59f5c2263e2673a75860edbdf830595d6c8d823b3b3758b483c7"
+    },
+    {
+      "snapshot": "mediflow-medvlm-active",
+      "path": "src/mediflow_medvlm/training/__init__.py",
+      "bytes": 84,
+      "local_sha256": "8b1827d91c1e513c942c8bab1e576f917bb5416707f3ac2df1adce6fd11f77a2"
+    },
+    {
+      "snapshot": "mediflow-medvlm-active",
+      "path": "src/mediflow_medvlm/training/__main__.py",
+      "bytes": 1658,
+      "local_sha256": "e9acc0f4eee2ec9e3eb9d5521f1353eb844ac6f3fc2f573153b00c6214c5efc0"
+    },
+    {
+      "snapshot": "mediflow-medvlm-active",
+      "path": "src/mediflow_medvlm/training/config.py",
+      "bytes": 7179,
+      "local_sha256": "c8fa556b38e6052b7bd6faff0d573868ab9b671680326351c0bcf88d57d05499"
+    },
+    {
+      "snapshot": "mediflow-medvlm-active",
+      "path": "src/mediflow_medvlm/training/models.py",
+      "bytes": 12404,
+      "local_sha256": "0673304a2c347a2426e84825345407f6413aae53798523ecaaadafbf439c5d6b"
+    },
+    {
+      "snapshot": "mediflow-medvlm-active",
+      "path": "src/mediflow_medvlm/training/rendering.py",
+      "bytes": 8674,
+      "local_sha256": "65a79b7387b17515d28c6684a6d7976492070a2e5aff2a8f44dd3a3646ebea97"
+    },
+    {
+      "snapshot": "mediflow-medvlm-active",
+      "path": "src/mediflow_medvlm/training/runner.py",
+      "bytes": 36508,
+      "local_sha256": "773564e9d00f2f29647c6094416e2308728c2eac45c763bb2379becddd47aaaa"
+    },
+    {
+      "snapshot": "mediflow-medvlm-active",
+      "path": "src/mediflow_medvlm/validation.py",
+      "bytes": 2840,
+      "local_sha256": "e322dd381a765fad115d7ff3c4064823eab706826e4050bdf950b6a94faa7d85"
+    },
+    {
+      "snapshot": "mediflow-medvlm-active",
+      "path": "src/mediflow_medvlm/workflows.py",
+      "bytes": 3321,
+      "local_sha256": "b371060c4c81a572a66392da1392f87d0787a678cd02b5268e774e4dfb3670f1"
+    },
+    {
+      "snapshot": "mediflow-medvlm-active",
+      "path": "tests/test_campaign_resume.py",
+      "bytes": 13786,
+      "local_sha256": "3445bd3334a5c7b75d4e3f1ca0849fe45d5c75dcd81e64d2f0a20fa7c17c3929"
+    },
+    {
+      "snapshot": "mediflow-medvlm-active",
+      "path": "tests/test_data_forge.py",
+      "bytes": 2041,
+      "local_sha256": "fdddcfb602ba4f809c6abac6c1f25339b39e9d4d6819ff6c0056f06e37f8470c"
+    },
+    {
+      "snapshot": "mediflow-medvlm-active",
+      "path": "tests/test_data_io_safety.py",
+      "bytes": 5188,
+      "local_sha256": "6d25feb4bf08bebce9af812d2a69f3cf935cb98057ce62569513d76ef8ea2716"
+    },
+    {
+      "snapshot": "mediflow-medvlm-active",
+      "path": "tests/test_data_pipeline.py",
+      "bytes": 6498,
+      "local_sha256": "941d5c688531fc1179169e0d992ac3912755f09b9de67433ba4ac8f5a4400834"
+    },
+    {
+      "snapshot": "mediflow-medvlm-active",
+      "path": "tests/test_domain.py",
+      "bytes": 1287,
+      "local_sha256": "f7d70be2e9e9e13e80519176a179c091c1027b4bbcdc29397e525926df12ffbe"
+    },
+    {
+      "snapshot": "mediflow-medvlm-active",
+      "path": "tests/test_evaluation.py",
+      "bytes": 2991,
+      "local_sha256": "534e10dcf186c7c03c067de94845f51e4f6dd6cb2e102795548e2f402540f1fa"
+    },
+    {
+      "snapshot": "mediflow-medvlm-active",
+      "path": "tests/test_evaluation_integrity.py",
+      "bytes": 6817,
+      "local_sha256": "9a33a9f801ca32d7c244b8f75a506bcbf4cb88eee1416b303fe5d79436fcf461"
+    },
+    {
+      "snapshot": "mediflow-medvlm-active",
+      "path": "tests/test_expert_review.py",
+      "bytes": 5789,
+      "local_sha256": "6dbabc8980d183f27dde2cb41bf34feac503e960fa0823dba251ddc4131cc975"
+    },
+    {
+      "snapshot": "mediflow-medvlm-active",
+      "path": "tests/test_image_diagnostics.py",
+      "bytes": 10160,
+      "local_sha256": "830c1d6f49a13a342447cec847ea7a6d7ff43b8fc8658b44b1709dabdc8d0952"
+    },
+    {
+      "snapshot": "mediflow-medvlm-active",
+      "path": "tests/test_slake.py",
+      "bytes": 6587,
+      "local_sha256": "3674c6970397d8ca54907430639c7f6e0ab7681bd98349525e91152e3a891917"
+    },
+    {
+      "snapshot": "mediflow-medvlm-active",
+      "path": "tests/test_supplemental.py",
+      "bytes": 1512,
+      "local_sha256": "0374cfc654021886a378693c516b352b0ca0ba4741f5ab278ea65f5d0cdb3d2f"
+    },
+    {
+      "snapshot": "mediflow-medvlm-active",
+      "path": "tests/test_training_contracts.py",
+      "bytes": 3695,
+      "local_sha256": "19be2734c989958680aca720996a3b4e24a235a271853b61e500c80dc79e7386"
+    },
+    {
+      "snapshot": "mediflow-medvlm-active",
+      "path": "tests/test_training_hardening.py",
+      "bytes": 21453,
+      "local_sha256": "e548fdf77b91dcf955ddfb4a4df7cb87a72e862fc6ed9d854cd887100710bf43"
+    },
+    {
+      "snapshot": "mediflow-medvlm-active",
+      "path": "tests/test_training_native.py",
+      "bytes": 5265,
+      "local_sha256": "bae5828ce5f33e715e3a695528c2e1fd4afb6ae19fdef5d89f5b2b8b1c82857c"
+    },
+    {
+      "snapshot": "mediflow-medvlm-active",
+      "path": "tests/test_validation.py",
+      "bytes": 2599,
+      "local_sha256": "3476b0450374bb860e0953ef9b919487accd9dd6671c9f8cdac61bc06cd48b9f"
+    },
+    {
+      "snapshot": "mediflow-medvlm-active",
+      "path": "tests/test_vqarad.py",
+      "bytes": 7461,
+      "local_sha256": "f787998ff206db1dfb6a47a9a2e27588342bfe527d3ddec87f1bec686afe688d"
+    },
+    {
+      "snapshot": "mediflow-medvlm-active",
+      "path": "tests/test_workflows.py",
+      "bytes": 2618,
+      "local_sha256": "094bbe2d250b44c444ab9ffe20303f9540fd29a5ad0fedb54b696b75bd01c5c2"
+    },
+    {
+      "snapshot": "forge-finetune-dashboard",
+      "path": ".github/workflows/test.yml",
+      "bytes": 1413,
+      "local_sha256": "6d0dfd8437cba508962091183f86ffb1534ee165298e36e483cff7a47fc66d41"
+    },
+    {
+      "snapshot": "forge-finetune-dashboard",
+      "path": "adapter.py",
+      "bytes": 945,
+      "local_sha256": "ab4cdfdb3b02e50132bcaac6c8b10be134f24096b92c1e9aeb94f043bdda5a9a"
+    },
+    {
+      "snapshot": "forge-finetune-dashboard",
+      "path": "architectures.py",
+      "bytes": 2187,
+      "local_sha256": "3d4a6d5429350096b4b0b965576378e7e413f926850888a56bd0c50d20e95e00"
+    },
+    {
+      "snapshot": "forge-finetune-dashboard",
+      "path": "auth.py",
+      "bytes": 11917,
+      "local_sha256": "21408fa6a2abc21b666978f2ffee20b7981a6e2a942a84bf4cd3a4d956304f26"
+    },
+    {
+      "snapshot": "forge-finetune-dashboard",
+      "path": "docs/adapter-contract.md",
+      "bytes": 6607,
+      "local_sha256": "1e5d761b486a42312bfe15cb146322bd2bcdc6e30a77c138746fe3b8afc199e0"
+    },
+    {
+      "snapshot": "forge-finetune-dashboard",
+      "path": "docs/architecture-validation.json",
+      "bytes": 3711,
+      "local_sha256": "474c2477b577e4dae3fbf9e1f359a3caa3206cbcef6a0dc5fcdaf0242247e93b"
+    },
+    {
+      "snapshot": "forge-finetune-dashboard",
+      "path": "docs/beginner-guide.md",
+      "bytes": 6674,
+      "local_sha256": "6256373b5a0b7d0767d8507f02d814f4d624c4bc9f74b4eec58bd1b7575097e2"
+    },
+    {
+      "snapshot": "forge-finetune-dashboard",
+      "path": "docs/deployment.md",
+      "bytes": 3143,
+      "local_sha256": "edf605271d11b2629145964e9bbafbfb62f40ce869c6e7993c0b82707fe418bd"
+    },
+    {
+      "snapshot": "forge-finetune-dashboard",
+      "path": "docs/huggingface-api.md",
+      "bytes": 4563,
+      "local_sha256": "48844e74016bd57d0dd7ff9e5b50b4ae20a43e21a81b30bd80de1321436c3eff"
+    },
+    {
+      "snapshot": "forge-finetune-dashboard",
+      "path": "docs/huggingface-validation.json",
+      "bytes": 2136,
+      "local_sha256": "99e86df6159299dcf7f8c910a490c19dd806fbb7b5a1448fb3af8f0c7d975bed"
+    },
+    {
+      "snapshot": "forge-finetune-dashboard",
+      "path": "docs/lan-access.md",
+      "bytes": 12027,
+      "local_sha256": "9652b0db550cbad7625830601dd368ff82f0642713dd3e05d10ad2ebff815583"
+    },
+    {
+      "snapshot": "forge-finetune-dashboard",
+      "path": "docs/sample-run.json",
+      "bytes": 282,
+      "local_sha256": "9daab560a7d3b314c6399a8306e3c9c9b8fbe5968deece5d3c7e5351a9182af5"
+    },
+    {
+      "snapshot": "forge-finetune-dashboard",
+      "path": "docs/sample-snapshot.json",
+      "bytes": 47746,
+      "local_sha256": "1032c79f94116ea14951e3b48f667cbc1b539391a5cded9cc8cd71ebf5e967e6"
+    },
+    {
+      "snapshot": "forge-finetune-dashboard",
+      "path": "docs/samples/llm-chat.jsonl",
+      "bytes": 373,
+      "local_sha256": "8fe76e5e144cf5106d176fd0e0aef470143e0f5a0cc17ae141db4f56d47a7717"
+    },
+    {
+      "snapshot": "forge-finetune-dashboard",
+      "path": "docs/samples/llm-instruction.jsonl",
+      "bytes": 301,
+      "local_sha256": "192ad918b031840ecf151b447da119cc45be577c2e58fcd051d1d78b7334ac09"
+    },
+    {
+      "snapshot": "forge-finetune-dashboard",
+      "path": "docs/samples/vlm-image-text.jsonl",
+      "bytes": 514,
+      "local_sha256": "1a4fffd422a2538a77e02fced7fefd71f2fe7a6c56189ea61201f0a46fbe2d19"
+    },
+    {
+      "snapshot": "forge-finetune-dashboard",
+      "path": "docs/security.md",
+      "bytes": 5690,
+      "local_sha256": "5ecb465c9013f4949ee4434fcc8aada6ae295b95a1defdefe4f1682cb97b2dd6"
+    },
+    {
+      "snapshot": "forge-finetune-dashboard",
+      "path": "docs/training-validation.json",
+      "bytes": 5149,
+      "local_sha256": "46806c5872da1965e81aa2ce7ba076cf8080c2943f2bbc60f68ce01eae213906"
+    },
+    {
+      "snapshot": "forge-finetune-dashboard",
+      "path": "docs/validation.json",
+      "bytes": 18716,
+      "local_sha256": "5313f0d06a1d24fe9a45fe74af9faddc6515b4ebd4d460ce9b3e2c7d8b84cd72"
+    },
+    {
+      "snapshot": "forge-finetune-dashboard",
+      "path": "docs/validation.md",
+      "bytes": 13242,
+      "local_sha256": "a0f140d2456b770cf9b0e0974e5b11e97967859e0661909306244d9b4341ddc7"
+    },
+    {
+      "snapshot": "forge-finetune-dashboard",
+      "path": "docs/workspace-api.md",
+      "bytes": 13221,
+      "local_sha256": "4a6930ecbfeeb549564516c3072ae2184e590cf8b6e70201e572e2a77952edaa"
+    },
+    {
+      "snapshot": "forge-finetune-dashboard",
+      "path": "huggingface.py",
+      "bytes": 13142,
+      "local_sha256": "debb356fee3b17dff869c94bc197c1e995a5b49a2ff762bf0abbf934c47339a5"
+    },
+    {
+      "snapshot": "forge-finetune-dashboard",
+      "path": "model_downloads.py",
+      "bytes": 6202,
+      "local_sha256": "d590c7ec7c8a0e392ee98cc3573473b809e6c8f0d89a9c936412a075cb2e6aae"
+    },
+    {
+      "snapshot": "forge-finetune-dashboard",
+      "path": "README.md",
+      "bytes": 13010,
+      "local_sha256": "9e6857d9b17b2e716cb260bb7eda5b62c197995225d7628e9487e44ccf675942"
+    },
+    {
+      "snapshot": "forge-finetune-dashboard",
+      "path": "requirements-training.txt",
+      "bytes": 247,
+      "local_sha256": "ddb4e746cb440d5e29bec58af2e24ab2a2bf474b84b9a7253f2ca5b60f46bdb7"
+    },
+    {
+      "snapshot": "forge-finetune-dashboard",
+      "path": "requirements.txt",
+      "bytes": 86,
+      "local_sha256": "8fff8bd1606a75b973c8e9b28433f84fb8b4a951c9c65de81eeceb4094787390"
+    },
+    {
+      "snapshot": "forge-finetune-dashboard",
+      "path": "server.py",
+      "bytes": 40408,
+      "local_sha256": "2d08494470a95328a597db4bb14ca8a34cb833d4383c9279816eec686c62465c"
+    },
+    {
+      "snapshot": "forge-finetune-dashboard",
+      "path": "simulator.py",
+      "bytes": 20881,
+      "local_sha256": "670867f51c6307239f6190a2bf5683e167e789bef61e634f839ba211a5167bf2"
+    },
+    {
+      "snapshot": "forge-finetune-dashboard",
+      "path": "static/app.js",
+      "bytes": 28397,
+      "local_sha256": "8b0687d0b8fa7e08bd35914aadc351c89e64e6c5aa14fc8999a9815ffb0b21b0"
+    },
+    {
+      "snapshot": "forge-finetune-dashboard",
+      "path": "static/builder.js",
+      "bytes": 16522,
+      "local_sha256": "261b05a4245f0543dfcc86c0d687f28db1c7ab93abc529073c39b5987e03972a"
+    },
+    {
+      "snapshot": "forge-finetune-dashboard",
+      "path": "static/huggingface.js",
+      "bytes": 15189,
+      "local_sha256": "027c33b75ed881b8fddf880a7cc24d5cbb5ea8f8c441f01477cfedd49888ed46"
+    },
+    {
+      "snapshot": "forge-finetune-dashboard",
+      "path": "static/i18n.js",
+      "bytes": 72377,
+      "local_sha256": "6859ed181c43677c83bde4a0a143de364ee2087c792fe6a3d13045e6c7c9227b"
+    },
+    {
+      "snapshot": "forge-finetune-dashboard",
+      "path": "static/theme.js",
+      "bytes": 1775,
+      "local_sha256": "0e09a52ece530dd1f9a1e609accf2e1c2a3671a81af4cc5bfe8f076553986063"
+    },
+    {
+      "snapshot": "forge-finetune-dashboard",
+      "path": "static/training.js",
+      "bytes": 6506,
+      "local_sha256": "35155530dec8e8d418a709ea5fa4dc20ed3b84d49780246ab61e1348b3c83638"
+    },
+    {
+      "snapshot": "forge-finetune-dashboard",
+      "path": "static/workspace.js",
+      "bytes": 38526,
+      "local_sha256": "5c1b33d84a4cd5588271eb83e0572b78fe39b7e02bce78ba0cef103aae9f9579"
+    },
+    {
+      "snapshot": "forge-finetune-dashboard",
+      "path": "tests/test_architectures.py",
+      "bytes": 7147,
+      "local_sha256": "0a641ef48d088097491de9eddc8022600651f78b4e731f94cab9169a2180d4d9"
+    },
+    {
+      "snapshot": "forge-finetune-dashboard",
+      "path": "tests/test_auth.py",
+      "bytes": 22198,
+      "local_sha256": "cd32df37d7133af9cd84865f2dba1e28ec4f673954be19b5bdc2d179a4b597a8"
+    },
+    {
+      "snapshot": "forge-finetune-dashboard",
+      "path": "tests/test_frontend.js",
+      "bytes": 20873,
+      "local_sha256": "da24bf592eb723e84f832c010c355cd5313d0bf367be77a3a948a59d90685595"
+    },
+    {
+      "snapshot": "forge-finetune-dashboard",
+      "path": "tests/test_huggingface.py",
+      "bytes": 11211,
+      "local_sha256": "5f0fc1170e44da7e2c4f7915b6c8559f6729140c04e6a14f1b6553ef0394f5d9"
+    },
+    {
+      "snapshot": "forge-finetune-dashboard",
+      "path": "tests/test_huggingface_api.py",
+      "bytes": 2546,
+      "local_sha256": "fb9ef89932221940dff0cb93aa09cc07ea516d2a1bd13c71404f8d2d94e3d05c"
+    },
+    {
+      "snapshot": "forge-finetune-dashboard",
+      "path": "tests/test_i18n.js",
+      "bytes": 3056,
+      "local_sha256": "4a9125c9d87dd42445c26cb7239a0d0708bfd7f9e65e2411048c0fc6f45c9d08"
+    },
+    {
+      "snapshot": "forge-finetune-dashboard",
+      "path": "tests/test_samples.py",
+      "bytes": 1634,
+      "local_sha256": "bc4ace5a391073204aeab12053098880487059bc60d613fda3a1bf62fc706483"
+    },
+    {
+      "snapshot": "forge-finetune-dashboard",
+      "path": "tests/test_server.py",
+      "bytes": 15729,
+      "local_sha256": "8f80c0dec644815defca95a3fabf948688ae3103155ac73ef2e9295eae1216cf"
+    },
+    {
+      "snapshot": "forge-finetune-dashboard",
+      "path": "tests/test_simulator.py",
+      "bytes": 11235,
+      "local_sha256": "fc75ae619a474105a252a61643fbc4eb999ccd36d6d949810c1e5c419e8e3a61"
+    },
+    {
+      "snapshot": "forge-finetune-dashboard",
+      "path": "tests/test_training.py",
+      "bytes": 8208,
+      "local_sha256": "086170e4b699bbb3447c91a9048484c9e7e9c181927391b67710e48b500584c8"
+    },
+    {
+      "snapshot": "forge-finetune-dashboard",
+      "path": "tests/test_training_api.py",
+      "bytes": 4822,
+      "local_sha256": "45bbdb4110d85dfb98038bc32e3c28dad23550e26797494039113aac0837a240"
+    },
+    {
+      "snapshot": "forge-finetune-dashboard",
+      "path": "tests/test_ui_fixture.py",
+      "bytes": 4013,
+      "local_sha256": "3f34db94f24e6ed8550da1a4562f51ae5807524df8b1342b1abcccb0eb6f2c44"
+    },
+    {
+      "snapshot": "forge-finetune-dashboard",
+      "path": "tests/test_workspace.py",
+      "bytes": 26014,
+      "local_sha256": "4a7da997a6a8f57c559d9d28094208cabe1a064432d438ea0f1682db5035b8f0"
+    },
+    {
+      "snapshot": "forge-finetune-dashboard",
+      "path": "tools/build_preview.py",
+      "bytes": 5391,
+      "local_sha256": "e64a1cd2959b304b4116e6bcc9f24d69078f61fb28ff17271675675f82d078cd"
+    },
+    {
+      "snapshot": "forge-finetune-dashboard",
+      "path": "tools/build_typography_proof.py",
+      "bytes": 3964,
+      "local_sha256": "c4c28cdc76e7fb9837d9dcfb163ab9da0c52cfc9c244797eba963108690e73bb"
+    },
+    {
+      "snapshot": "forge-finetune-dashboard",
+      "path": "tools/capture_workbench.cua.js",
+      "bytes": 13857,
+      "local_sha256": "56ad9b3fe6b93d01a761f7ae8bd44dcc8737ae1fff0f5a55e9637b30d60229b8"
+    },
+    {
+      "snapshot": "forge-finetune-dashboard",
+      "path": "tools/download_models.py",
+      "bytes": 2616,
+      "local_sha256": "774fee90b3bd685bd7a4a615a1a0baad28da35b19b5243850e73bb5b5bff2e4e"
+    },
+    {
+      "snapshot": "forge-finetune-dashboard",
+      "path": "tools/ui_fixture_server.py",
+      "bytes": 11826,
+      "local_sha256": "a839a6852ee455d7ad6274e42fc0ead23e248a6358d69c5c122bf6d4e3751f08"
+    },
+    {
+      "snapshot": "forge-finetune-dashboard",
+      "path": "tools/verify_browser.js",
+      "bytes": 8774,
+      "local_sha256": "8b26c7bfc525dea089fbbd31fcda016006cee861f9feeae8fca13a6f46f9f19d"
+    },
+    {
+      "snapshot": "forge-finetune-dashboard",
+      "path": "train_worker.py",
+      "bytes": 18413,
+      "local_sha256": "560347f34756ec9fb025a108986a92286b7cdc195043a4d2e3054d66f18d688b"
+    },
+    {
+      "snapshot": "forge-finetune-dashboard",
+      "path": "training.py",
+      "bytes": 29669,
+      "local_sha256": "9ea1d7325fa8ee4bc7810dcf4c76fb3fcc2a1cc362545e76e9eb6bbbbcd0de53"
+    },
+    {
+      "snapshot": "forge-finetune-dashboard",
+      "path": "workspace.py",
+      "bytes": 33489,
+      "local_sha256": "d2138f50c71466848e3faba750ae5ce3acb09bfbff72b7e385139019634405bc"
+    }
+  ],
+  "local_text_snapshot_only": true,
+  "binary_images_and_weights_fetched": false
+}

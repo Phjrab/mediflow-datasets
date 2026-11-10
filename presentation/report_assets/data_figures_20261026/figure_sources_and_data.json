@@ -1,0 +1,2158 @@
+{
+  "created": "2026-10-26",
+  "canvas": {
+    "width": 3840,
+    "height": 2160,
+    "aspect": "16:9"
+  },
+  "render": "SVG text and data diagrams rendered with sharp",
+  "initial": [
+    {
+      "key": "skin",
+      "name": "SKIN",
+      "n": 10,
+      "color": "#387EFA",
+      "soft": "#EAF2FF",
+      "per": [
+        730,
+        100,
+        70
+      ],
+      "counts": [
+        7300,
+        1000,
+        700
+      ],
+      "total": 9000
+    },
+    {
+      "key": "web_skin",
+      "name": "WEB SKIN",
+      "n": 5,
+      "color": "#8A5BEF",
+      "soft": "#F1ECFC",
+      "per": [
+        720,
+        100,
+        80
+      ],
+      "counts": [
+        3600,
+        500,
+        400
+      ],
+      "total": 4500
+    },
+    {
+      "key": "hair",
+      "name": "HAIR",
+      "n": 5,
+      "color": "#10B5A5",
+      "soft": "#E5F7F4",
+      "per": [
+        2320,
+        290,
+        290
+      ],
+      "counts": [
+        11600,
+        1450,
+        1450
+      ],
+      "total": 14500
+    }
+  ],
+  "clean": [
+    {
+      "name": "SKIN",
+      "n": 10,
+      "color": "#387EFA",
+      "soft": "#EAF2FF",
+      "before": 9000,
+      "total": 8949,
+      "counts": [
+        7249,
+        1000,
+        700
+      ],
+      "aug": 7249,
+      "augTrain": 14498
+    },
+    {
+      "name": "WEB SKIN",
+      "n": 5,
+      "color": "#8A5BEF",
+      "soft": "#F1ECFC",
+      "before": 4500,
+      "total": 4500,
+      "counts": [
+        3600,
+        500,
+        400
+      ],
+      "aug": 3600,
+      "augTrain": 7200
+    },
+    {
+      "name": "HAIR",
+      "n": 5,
+      "color": "#10B5A5",
+      "soft": "#E5F7F4",
+      "before": 14500,
+      "total": 12536,
+      "counts": [
+        10032,
+        1252,
+        1252
+      ],
+      "aug": 5015,
+      "augTrain": 15047
+    }
+  ],
+  "hair6": {
+    "classes": [
+      "모낭사이홍반",
+      "미세각질",
+      "비듬",
+      "탈모",
+      "피지과다",
+      "양호"
+    ],
+    "original": [
+      10460,
+      1305,
+      1305
+    ],
+    "good": [
+      428,
+      53,
+      53
+    ],
+    "goodFilenameIDs": 105,
+    "augTrain": 17615,
+    "generated": 7155,
+    "goodGenerated": 2140
+  },
+  "figures": [
+    {
+      "name": "01_initial_data_selection",
+      "title": "세 분류기의 초기 데이터 선정",
+      "texts": [
+        {
+          "text": "01  DATA SELECTION",
+          "x": 205.5,
+          "y": 73,
+          "size": 22,
+          "anchor": "middle"
+        },
+        {
+          "text": "세 분류기의 초기 데이터 선정",
+          "x": 70,
+          "y": 157,
+          "size": 48,
+          "anchor": "start"
+        },
+        {
+          "text": "촬영 대상에 따라 분류기를 나누고, 원천 제공량과 실제 첫 사용량을 구분",
+          "x": 70,
+          "y": 204,
+          "size": 26,
+          "anchor": "start"
+        },
+        {
+          "text": "분류 대상",
+          "x": 70,
+          "y": 272,
+          "size": 22,
+          "anchor": "start"
+        },
+        {
+          "text": "원천 데이터와 제공 규모",
+          "x": 295,
+          "y": 272,
+          "size": 22,
+          "anchor": "start"
+        },
+        {
+          "text": "선정 기준",
+          "x": 850,
+          "y": 272,
+          "size": 22,
+          "anchor": "start"
+        },
+        {
+          "text": "첫 분할에 사용한 원본",
+          "x": 1410,
+          "y": 272,
+          "size": 22,
+          "anchor": "start"
+        },
+        {
+          "text": "SKIN",
+          "x": 165,
+          "y": 365,
+          "size": 32,
+          "anchor": "middle"
+        },
+        {
+          "text": "확대 피부 병변",
+          "x": 165,
+          "y": 411,
+          "size": 23,
+          "anchor": "middle"
+        },
+        {
+          "text": "10종 분류",
+          "x": 165,
+          "y": 447,
+          "size": 23,
+          "anchor": "middle"
+        },
+        {
+          "text": "AI Hub 71864",
+          "x": 318,
+          "y": 335,
+          "size": 23,
+          "anchor": "start"
+        },
+        {
+          "text": "피부종양 이미지 합성 데이터",
+          "x": 318,
+          "y": 373,
+          "size": 27,
+          "anchor": "start"
+        },
+        {
+          "text": "15종 × 1,000장",
+          "x": 318,
+          "y": 425,
+          "size": 29,
+          "anchor": "start"
+        },
+        {
+          "text": "원천 약 15,000장",
+          "x": 318,
+          "y": 466,
+          "size": 22,
+          "anchor": "start"
+        },
+        {
+          "text": "15종 중 10종 선정",
+          "x": 858,
+          "y": 354,
+          "size": 26,
+          "anchor": "start"
+        },
+        {
+          "text": "선택된 클래스의 원천 10,000장",
+          "x": 858,
+          "y": 401,
+          "size": 26,
+          "anchor": "start"
+        },
+        {
+          "text": "클래스별 제외 사유표는 미보관",
+          "x": 858,
+          "y": 448,
+          "size": 26,
+          "anchor": "start"
+        },
+        {
+          "text": "9,000장",
+          "x": 1425,
+          "y": 391,
+          "size": 52,
+          "anchor": "start"
+        },
+        {
+          "text": "10종 × 900장",
+          "x": 1425,
+          "y": 447,
+          "size": 28,
+          "anchor": "start"
+        },
+        {
+          "text": "WEB SKIN",
+          "x": 165,
+          "y": 591,
+          "size": 28,
+          "anchor": "middle"
+        },
+        {
+          "text": "얼굴 정면 사진",
+          "x": 165,
+          "y": 637,
+          "size": 23,
+          "anchor": "middle"
+        },
+        {
+          "text": "5종 분류",
+          "x": 165,
+          "y": 673,
+          "size": 23,
+          "anchor": "middle"
+        },
+        {
+          "text": "AI Hub 71863",
+          "x": 318,
+          "y": 561,
+          "size": 23,
+          "anchor": "start"
+        },
+        {
+          "text": "안면부 피부질환 이미지 합성 데이터",
+          "x": 318,
+          "y": 599,
+          "size": 25,
+          "anchor": "start"
+        },
+        {
+          "text": "6종 × 정면·측면 각 1,000장",
+          "x": 318,
+          "y": 651,
+          "size": 29,
+          "anchor": "start"
+        },
+        {
+          "text": "원천 약 12,000장",
+          "x": 318,
+          "y": 692,
+          "size": 22,
+          "anchor": "start"
+        },
+        {
+          "text": "정면 5종 선택, 측면 미사용",
+          "x": 858,
+          "y": 580,
+          "size": 26,
+          "anchor": "start"
+        },
+        {
+          "text": "지루성 피부염은 주사와의",
+          "x": 858,
+          "y": 627,
+          "size": 26,
+          "anchor": "start"
+        },
+        {
+          "text": "시각적 유사성을 검토한 뒤 제외",
+          "x": 858,
+          "y": 674,
+          "size": 26,
+          "anchor": "start"
+        },
+        {
+          "text": "4,500장",
+          "x": 1425,
+          "y": 617,
+          "size": 52,
+          "anchor": "start"
+        },
+        {
+          "text": "정면 5종 × 900장",
+          "x": 1425,
+          "y": 673,
+          "size": 28,
+          "anchor": "start"
+        },
+        {
+          "text": "HAIR",
+          "x": 165,
+          "y": 817,
+          "size": 32,
+          "anchor": "middle"
+        },
+        {
+          "text": "확대 두피 사진",
+          "x": 165,
+          "y": 863,
+          "size": 23,
+          "anchor": "middle"
+        },
+        {
+          "text": "초기 5종 분류",
+          "x": 165,
+          "y": 899,
+          "size": 23,
+          "anchor": "middle"
+        },
+        {
+          "text": "AI Hub 216",
+          "x": 318,
+          "y": 787,
+          "size": 23,
+          "anchor": "start"
+        },
+        {
+          "text": "유형별 두피 이미지",
+          "x": 318,
+          "y": 825,
+          "size": 27,
+          "anchor": "start"
+        },
+        {
+          "text": "고유 이미지 101,027건",
+          "x": 318,
+          "y": 877,
+          "size": 29,
+          "anchor": "start"
+        },
+        {
+          "text": "한 사진에 여러 증상 라벨 가능",
+          "x": 318,
+          "y": 918,
+          "size": 22,
+          "anchor": "start"
+        },
+        {
+          "text": "중등도·중증 중심으로 5종 선별",
+          "x": 858,
+          "y": 806,
+          "size": 26,
+          "anchor": "start"
+        },
+        {
+          "text": "모낭홍반/농포 제외",
+          "x": 858,
+          "y": 853,
+          "size": 26,
+          "anchor": "start"
+        },
+        {
+          "text": "가장 적은 비듬 2,900장에 맞춤",
+          "x": 858,
+          "y": 900,
+          "size": 26,
+          "anchor": "start"
+        },
+        {
+          "text": "14,500장",
+          "x": 1425,
+          "y": 843,
+          "size": 52,
+          "anchor": "start"
+        },
+        {
+          "text": "5종 × 2,900장",
+          "x": 1425,
+          "y": 899,
+          "size": 28,
+          "anchor": "start"
+        },
+        {
+          "text": "원천 규모는 당시 조사 기록 기준. Skin·Web Skin에서 클래스당 미사용 100장의 개별 제외 기준은 기록이 남아 있지 않음.",
+          "x": 70,
+          "y": 1016,
+          "size": 19,
+          "anchor": "start"
+        },
+        {
+          "text": "출처: AI Hub 71864·71863·216 / 프로젝트 원천 데이터·클래스 선정표",
+          "x": 70,
+          "y": 1050,
+          "size": 18,
+          "anchor": "start"
+        },
+        {
+          "text": "MediFlow",
+          "x": 1850,
+          "y": 1050,
+          "size": 20,
+          "anchor": "end"
+        }
+      ]
+    },
+    {
+      "name": "02_initial_class_scope",
+      "title": "초기 분류 클래스와 선정 범위",
+      "texts": [
+        {
+          "text": "02  CLASS SCOPE",
+          "x": 187.5,
+          "y": 73,
+          "size": 22,
+          "anchor": "middle"
+        },
+        {
+          "text": "초기 분류 클래스와 선정 범위",
+          "x": 70,
+          "y": 157,
+          "size": 48,
+          "anchor": "start"
+        },
+        {
+          "text": "클래스는 모델이 구분하도록 정한 범주이며, 아래 순서는 저장된 모델의 출력 순서",
+          "x": 70,
+          "y": 204,
+          "size": 26,
+          "anchor": "start"
+        },
+        {
+          "text": "SKIN",
+          "x": 100,
+          "y": 331,
+          "size": 30,
+          "anchor": "start"
+        },
+        {
+          "text": "확대 피부 병변 10종",
+          "x": 100,
+          "y": 377,
+          "size": 29,
+          "anchor": "start"
+        },
+        {
+          "text": "광선각화증",
+          "x": 222.5,
+          "y": 440,
+          "size": 24,
+          "anchor": "middle"
+        },
+        {
+          "text": "기저세포암",
+          "x": 477.5,
+          "y": 440,
+          "size": 24,
+          "anchor": "middle"
+        },
+        {
+          "text": "보웬병",
+          "x": 222.5,
+          "y": 499,
+          "size": 24,
+          "anchor": "middle"
+        },
+        {
+          "text": "사마귀",
+          "x": 477.5,
+          "y": 499,
+          "size": 24,
+          "anchor": "middle"
+        },
+        {
+          "text": "지루각화증",
+          "x": 222.5,
+          "y": 558,
+          "size": 24,
+          "anchor": "middle"
+        },
+        {
+          "text": "편평세포암",
+          "x": 477.5,
+          "y": 558,
+          "size": 24,
+          "anchor": "middle"
+        },
+        {
+          "text": "표피낭종",
+          "x": 222.5,
+          "y": 617,
+          "size": 24,
+          "anchor": "middle"
+        },
+        {
+          "text": "피부섬유종",
+          "x": 477.5,
+          "y": 617,
+          "size": 24,
+          "anchor": "middle"
+        },
+        {
+          "text": "혈관종",
+          "x": 222.5,
+          "y": 676,
+          "size": 24,
+          "anchor": "middle"
+        },
+        {
+          "text": "흑색점",
+          "x": 477.5,
+          "y": 676,
+          "size": 24,
+          "anchor": "middle"
+        },
+        {
+          "text": "원천 15종 중 아래 5종 미사용",
+          "x": 100,
+          "y": 756,
+          "size": 22,
+          "anchor": "start"
+        },
+        {
+          "text": "악성흑색종, 멜라닌세포모반,",
+          "x": 100,
+          "y": 790,
+          "size": 22,
+          "anchor": "start"
+        },
+        {
+          "text": "피지샘증식증, 화농육아종, 비립종",
+          "x": 100,
+          "y": 824,
+          "size": 22,
+          "anchor": "start"
+        },
+        {
+          "text": "클래스별 제외 판정표는 미보관",
+          "x": 100,
+          "y": 937,
+          "size": 20,
+          "anchor": "start"
+        },
+        {
+          "text": "WEB SKIN",
+          "x": 710,
+          "y": 331,
+          "size": 30,
+          "anchor": "start"
+        },
+        {
+          "text": "얼굴 정면 피부 5종",
+          "x": 710,
+          "y": 377,
+          "size": 29,
+          "anchor": "start"
+        },
+        {
+          "text": "건선",
+          "x": 832.5,
+          "y": 440,
+          "size": 24,
+          "anchor": "middle"
+        },
+        {
+          "text": "아토피",
+          "x": 1087.5,
+          "y": 440,
+          "size": 24,
+          "anchor": "middle"
+        },
+        {
+          "text": "여드름",
+          "x": 832.5,
+          "y": 499,
+          "size": 24,
+          "anchor": "middle"
+        },
+        {
+          "text": "정상",
+          "x": 1087.5,
+          "y": 499,
+          "size": 24,
+          "anchor": "middle"
+        },
+        {
+          "text": "주사",
+          "x": 832.5,
+          "y": 558,
+          "size": 24,
+          "anchor": "middle"
+        },
+        {
+          "text": "지루성 피부염은 주사와의 유사성 검토 후 제외",
+          "x": 710,
+          "y": 756,
+          "size": 22,
+          "anchor": "start"
+        },
+        {
+          "text": "정면·측면의 동일 대상 짝 관계가",
+          "x": 710,
+          "y": 790,
+          "size": 22,
+          "anchor": "start"
+        },
+        {
+          "text": "불확실하여 정면 사진만 사용",
+          "x": 710,
+          "y": 824,
+          "size": 22,
+          "anchor": "start"
+        },
+        {
+          "text": "Skin·Hair 선정 이후 별도 구성",
+          "x": 710,
+          "y": 937,
+          "size": 20,
+          "anchor": "start"
+        },
+        {
+          "text": "HAIR",
+          "x": 1320,
+          "y": 331,
+          "size": 30,
+          "anchor": "start"
+        },
+        {
+          "text": "확대 두피 상태 5종",
+          "x": 1320,
+          "y": 377,
+          "size": 29,
+          "anchor": "start"
+        },
+        {
+          "text": "모낭사이홍반",
+          "x": 1442.5,
+          "y": 440,
+          "size": 24,
+          "anchor": "middle"
+        },
+        {
+          "text": "미세각질",
+          "x": 1697.5,
+          "y": 440,
+          "size": 24,
+          "anchor": "middle"
+        },
+        {
+          "text": "비듬",
+          "x": 1442.5,
+          "y": 499,
+          "size": 24,
+          "anchor": "middle"
+        },
+        {
+          "text": "탈모",
+          "x": 1697.5,
+          "y": 499,
+          "size": 24,
+          "anchor": "middle"
+        },
+        {
+          "text": "피지과다",
+          "x": 1442.5,
+          "y": 558,
+          "size": 24,
+          "anchor": "middle"
+        },
+        {
+          "text": "원천 증상 중 중등도·중증을 중심으로 사용",
+          "x": 1320,
+          "y": 756,
+          "size": 22,
+          "anchor": "start"
+        },
+        {
+          "text": "초기에는 양호·경증을 제외",
+          "x": 1320,
+          "y": 790,
+          "size": 22,
+          "anchor": "start"
+        },
+        {
+          "text": "모낭홍반/농포는 시각적 유사성 검토 후 제외",
+          "x": 1320,
+          "y": 824,
+          "size": 22,
+          "anchor": "start"
+        },
+        {
+          "text": "양호를 추가한 6종은 별도 데이터 버전",
+          "x": 1320,
+          "y": 937,
+          "size": 20,
+          "anchor": "start"
+        },
+        {
+          "text": "Hair 원천은 다중 증상 라벨을 포함하며, 프로젝트에서는 선정한 5개 범주의 단일 분류 문제로 구성함.",
+          "x": 70,
+          "y": 1016,
+          "size": 19,
+          "anchor": "start"
+        },
+        {
+          "text": "출처: 모델별 class_names.json / 원천 데이터·클래스 선정표 / 초기 연구 기록",
+          "x": 70,
+          "y": 1050,
+          "size": 18,
+          "anchor": "start"
+        },
+        {
+          "text": "MediFlow",
+          "x": 1850,
+          "y": 1050,
+          "size": 20,
+          "anchor": "end"
+        }
+      ]
+    },
+    {
+      "name": "03_initial_data_split",
+      "title": "초기 원본 데이터의 학습·검증·평가 분할",
+      "texts": [
+        {
+          "text": "03  INITIAL DATA SPLIT",
+          "x": 233.5,
+          "y": 73,
+          "size": 22,
+          "anchor": "middle"
+        },
+        {
+          "text": "초기 원본 데이터의 학습·검증·평가 분할",
+          "x": 70,
+          "y": 157,
+          "size": 48,
+          "anchor": "start"
+        },
+        {
+          "text": "세 분류기의 첫 학습 데이터 구성. Web Skin은 Skin·Hair 선정 이후 별도로 구성",
+          "x": 70,
+          "y": 204,
+          "size": 26,
+          "anchor": "start"
+        },
+        {
+          "text": "SKIN",
+          "x": 165,
+          "y": 344,
+          "size": 32,
+          "anchor": "middle"
+        },
+        {
+          "text": "10종 분류",
+          "x": 165,
+          "y": 390,
+          "size": 23,
+          "anchor": "middle"
+        },
+        {
+          "text": "원본 9,000장",
+          "x": 165,
+          "y": 426,
+          "size": 23,
+          "anchor": "middle"
+        },
+        {
+          "text": "분할 방법",
+          "x": 318,
+          "y": 312,
+          "size": 23,
+          "anchor": "start"
+        },
+        {
+          "text": "원천 1,000장 중 900장/class 사용",
+          "x": 318,
+          "y": 354,
+          "size": 22,
+          "anchor": "start"
+        },
+        {
+          "text": "Train 800장에서 Test 70장 분리",
+          "x": 318,
+          "y": 391,
+          "size": 22,
+          "anchor": "start"
+        },
+        {
+          "text": "클래스당 730 / 100 / 70장",
+          "x": 318,
+          "y": 428,
+          "size": 24,
+          "anchor": "start"
+        },
+        {
+          "text": "Train",
+          "x": 908,
+          "y": 387,
+          "size": 24,
+          "anchor": "start"
+        },
+        {
+          "text": "7,300장",
+          "x": 908,
+          "y": 429,
+          "size": 31,
+          "anchor": "start"
+        },
+        {
+          "text": "Validation",
+          "x": 1235,
+          "y": 387,
+          "size": 24,
+          "anchor": "start"
+        },
+        {
+          "text": "1,000장",
+          "x": 1235,
+          "y": 429,
+          "size": 31,
+          "anchor": "start"
+        },
+        {
+          "text": "Test",
+          "x": 1555,
+          "y": 387,
+          "size": 24,
+          "anchor": "start"
+        },
+        {
+          "text": "700장",
+          "x": 1555,
+          "y": 429,
+          "size": 31,
+          "anchor": "start"
+        },
+        {
+          "text": "WEB SKIN",
+          "x": 165,
+          "y": 554,
+          "size": 28,
+          "anchor": "middle"
+        },
+        {
+          "text": "5종 분류",
+          "x": 165,
+          "y": 600,
+          "size": 23,
+          "anchor": "middle"
+        },
+        {
+          "text": "원본 4,500장",
+          "x": 165,
+          "y": 636,
+          "size": 23,
+          "anchor": "middle"
+        },
+        {
+          "text": "분할 방법",
+          "x": 318,
+          "y": 522,
+          "size": 23,
+          "anchor": "start"
+        },
+        {
+          "text": "원천 1,000장 중 900장/class 사용",
+          "x": 318,
+          "y": 564,
+          "size": 22,
+          "anchor": "start"
+        },
+        {
+          "text": "Train 800장에서 Test 80장 분리",
+          "x": 318,
+          "y": 601,
+          "size": 22,
+          "anchor": "start"
+        },
+        {
+          "text": "클래스당 720 / 100 / 80장",
+          "x": 318,
+          "y": 638,
+          "size": 24,
+          "anchor": "start"
+        },
+        {
+          "text": "Train",
+          "x": 908,
+          "y": 597,
+          "size": 24,
+          "anchor": "start"
+        },
+        {
+          "text": "3,600장",
+          "x": 908,
+          "y": 639,
+          "size": 31,
+          "anchor": "start"
+        },
+        {
+          "text": "Validation",
+          "x": 1235,
+          "y": 597,
+          "size": 24,
+          "anchor": "start"
+        },
+        {
+          "text": "500장",
+          "x": 1235,
+          "y": 639,
+          "size": 31,
+          "anchor": "start"
+        },
+        {
+          "text": "Test",
+          "x": 1555,
+          "y": 597,
+          "size": 24,
+          "anchor": "start"
+        },
+        {
+          "text": "400장",
+          "x": 1555,
+          "y": 639,
+          "size": 31,
+          "anchor": "start"
+        },
+        {
+          "text": "HAIR",
+          "x": 165,
+          "y": 764,
+          "size": 32,
+          "anchor": "middle"
+        },
+        {
+          "text": "5종 분류",
+          "x": 165,
+          "y": 810,
+          "size": 23,
+          "anchor": "middle"
+        },
+        {
+          "text": "원본 14,500장",
+          "x": 165,
+          "y": 846,
+          "size": 23,
+          "anchor": "middle"
+        },
+        {
+          "text": "분할 방법",
+          "x": 318,
+          "y": 732,
+          "size": 23,
+          "anchor": "start"
+        },
+        {
+          "text": "클래스당 2,900장을 무작위 선택",
+          "x": 318,
+          "y": 774,
+          "size": 22,
+          "anchor": "start"
+        },
+        {
+          "text": "클래스별 8:1:1 분할, 분할 후 Train만 증강",
+          "x": 318,
+          "y": 811,
+          "size": 22,
+          "anchor": "start"
+        },
+        {
+          "text": "클래스당 2,320 / 290 / 290장",
+          "x": 318,
+          "y": 848,
+          "size": 24,
+          "anchor": "start"
+        },
+        {
+          "text": "Train",
+          "x": 908,
+          "y": 807,
+          "size": 24,
+          "anchor": "start"
+        },
+        {
+          "text": "11,600장",
+          "x": 908,
+          "y": 849,
+          "size": 31,
+          "anchor": "start"
+        },
+        {
+          "text": "Validation",
+          "x": 1235,
+          "y": 807,
+          "size": 24,
+          "anchor": "start"
+        },
+        {
+          "text": "1,450장",
+          "x": 1235,
+          "y": 849,
+          "size": 31,
+          "anchor": "start"
+        },
+        {
+          "text": "Test",
+          "x": 1555,
+          "y": 807,
+          "size": 24,
+          "anchor": "start"
+        },
+        {
+          "text": "1,450장",
+          "x": 1555,
+          "y": 849,
+          "size": 31,
+          "anchor": "start"
+        },
+        {
+          "text": "Train  특징을 학습",
+          "x": 100,
+          "y": 967,
+          "size": 24,
+          "anchor": "start"
+        },
+        {
+          "text": "Validation  후보·설정 선택",
+          "x": 610,
+          "y": 967,
+          "size": 24,
+          "anchor": "start"
+        },
+        {
+          "text": "Test  선택 후 최종 평가",
+          "x": 1240,
+          "y": 967,
+          "size": 24,
+          "anchor": "start"
+        },
+        {
+          "text": "분할 수량은 원본 기준. 원본 Train과 원본+증강 Train을 비교하며 Validation·Test에는 증강을 적용하지 않음.",
+          "x": 70,
+          "y": 1016,
+          "size": 19,
+          "anchor": "start"
+        },
+        {
+          "text": "출처: 초기 분할 CSV / Skin·Web Skin·Hair 전처리 코드. Skin·Web Skin 미사용 100장/class의 세부 기준은 미기록",
+          "x": 70,
+          "y": 1050,
+          "size": 18,
+          "anchor": "start"
+        },
+        {
+          "text": "MediFlow",
+          "x": 1850,
+          "y": 1050,
+          "size": 20,
+          "anchor": "end"
+        }
+      ]
+    },
+    {
+      "name": "04_first_training_comparison",
+      "title": "세 기본 모델의 초기 원본·증강 학습 결과",
+      "texts": [
+        {
+          "text": "04  FIRST TRAINING",
+          "x": 205.5,
+          "y": 73,
+          "size": 22,
+          "anchor": "middle"
+        },
+        {
+          "text": "세 기본 모델의 초기 원본·증강 학습 결과",
+          "x": 70,
+          "y": 157,
+          "size": 48,
+          "anchor": "start"
+        },
+        {
+          "text": "ImageNet EfficientNet-B0, 입력 224×224, 분류층 15 epoch. 아래 점수는 정제 전 Test 저장 기록",
+          "x": 70,
+          "y": 204,
+          "size": 26,
+          "anchor": "start"
+        },
+        {
+          "text": "SKIN",
+          "x": 100,
+          "y": 333,
+          "size": 31,
+          "anchor": "start"
+        },
+        {
+          "text": "초기 Test 700장",
+          "x": 100,
+          "y": 375,
+          "size": 24,
+          "anchor": "start"
+        },
+        {
+          "text": "Test Accuracy",
+          "x": 100,
+          "y": 426,
+          "size": 24,
+          "anchor": "start"
+        },
+        {
+          "text": "원본 Train",
+          "x": 100,
+          "y": 475,
+          "size": 22,
+          "anchor": "start"
+        },
+        {
+          "text": "0.9942857027053833",
+          "x": 600,
+          "y": 475,
+          "size": 25,
+          "anchor": "end"
+        },
+        {
+          "text": "원본 + 증강 Train",
+          "x": 100,
+          "y": 586,
+          "size": 22,
+          "anchor": "start"
+        },
+        {
+          "text": "0.9957143068313599",
+          "x": 600,
+          "y": 586,
+          "size": 25,
+          "anchor": "end"
+        },
+        {
+          "text": "초기 Skin 요약에는 Macro F1 미기록",
+          "x": 100,
+          "y": 682,
+          "size": 23,
+          "anchor": "start"
+        },
+        {
+          "text": "높은 점수의 평가 신뢰성도 추가 점검",
+          "x": 100,
+          "y": 725,
+          "size": 23,
+          "anchor": "start"
+        },
+        {
+          "text": "관찰과 후속 점검",
+          "x": 100,
+          "y": 816,
+          "size": 24,
+          "anchor": "start"
+        },
+        {
+          "text": "높은 초기 점수 뒤 동일 사진 중복 발견",
+          "x": 100,
+          "y": 861,
+          "size": 23,
+          "anchor": "start"
+        },
+        {
+          "text": "데이터 정제 후 별도 평가로 재확인",
+          "x": 100,
+          "y": 900,
+          "size": 23,
+          "anchor": "start"
+        },
+        {
+          "text": "WEB SKIN",
+          "x": 710,
+          "y": 333,
+          "size": 31,
+          "anchor": "start"
+        },
+        {
+          "text": "초기 Test 400장",
+          "x": 710,
+          "y": 375,
+          "size": 24,
+          "anchor": "start"
+        },
+        {
+          "text": "Test Accuracy",
+          "x": 710,
+          "y": 426,
+          "size": 24,
+          "anchor": "start"
+        },
+        {
+          "text": "원본 Train",
+          "x": 710,
+          "y": 475,
+          "size": 22,
+          "anchor": "start"
+        },
+        {
+          "text": "0.7850000262260437",
+          "x": 1210,
+          "y": 475,
+          "size": 25,
+          "anchor": "end"
+        },
+        {
+          "text": "원본 + 증강 Train",
+          "x": 710,
+          "y": 586,
+          "size": 22,
+          "anchor": "start"
+        },
+        {
+          "text": "0.8199999928474426",
+          "x": 1210,
+          "y": 586,
+          "size": 25,
+          "anchor": "end"
+        },
+        {
+          "text": "Test Macro F1",
+          "x": 710,
+          "y": 666,
+          "size": 23,
+          "anchor": "start"
+        },
+        {
+          "text": "원본  0.7833125866587888",
+          "x": 710,
+          "y": 706,
+          "size": 22,
+          "anchor": "start"
+        },
+        {
+          "text": "증강  0.8195818185502844",
+          "x": 710,
+          "y": 744,
+          "size": 22,
+          "anchor": "start"
+        },
+        {
+          "text": "관찰과 후속 점검",
+          "x": 710,
+          "y": 816,
+          "size": 24,
+          "anchor": "start"
+        },
+        {
+          "text": "증강 조건의 점수는 높았으나",
+          "x": 710,
+          "y": 861,
+          "size": 23,
+          "anchor": "start"
+        },
+        {
+          "text": "얼굴 질환 간 혼동이 남아 학습법 개선",
+          "x": 710,
+          "y": 900,
+          "size": 23,
+          "anchor": "start"
+        },
+        {
+          "text": "HAIR",
+          "x": 1320,
+          "y": 333,
+          "size": 31,
+          "anchor": "start"
+        },
+        {
+          "text": "초기 Test 1,450장",
+          "x": 1320,
+          "y": 375,
+          "size": 24,
+          "anchor": "start"
+        },
+        {
+          "text": "Test Accuracy",
+          "x": 1320,
+          "y": 426,
+          "size": 24,
+          "anchor": "start"
+        },
+        {
+          "text": "원본 Train",
+          "x": 1320,
+          "y": 475,
+          "size": 22,
+          "anchor": "start"
+        },
+        {
+          "text": "0.6841379310344827",
+          "x": 1820,
+          "y": 475,
+          "size": 25,
+          "anchor": "end"
+        },
+        {
+          "text": "원본 + 증강 Train",
+          "x": 1320,
+          "y": 586,
+          "size": 22,
+          "anchor": "start"
+        },
+        {
+          "text": "0.6910344827586207",
+          "x": 1820,
+          "y": 586,
+          "size": 25,
+          "anchor": "end"
+        },
+        {
+          "text": "Test Macro F1",
+          "x": 1320,
+          "y": 666,
+          "size": 23,
+          "anchor": "start"
+        },
+        {
+          "text": "원본  0.6827345904185209",
+          "x": 1320,
+          "y": 706,
+          "size": 22,
+          "anchor": "start"
+        },
+        {
+          "text": "증강  0.6894861696407794",
+          "x": 1320,
+          "y": 744,
+          "size": 22,
+          "anchor": "start"
+        },
+        {
+          "text": "관찰과 후속 점검",
+          "x": 1320,
+          "y": 816,
+          "size": 24,
+          "anchor": "start"
+        },
+        {
+          "text": "증강의 이득이 작고 두피 증상 구분이 부족",
+          "x": 1320,
+          "y": 861,
+          "size": 23,
+          "anchor": "start"
+        },
+        {
+          "text": "중복·라벨 검사와 학습법 개선으로 진행",
+          "x": 1320,
+          "y": 900,
+          "size": 23,
+          "anchor": "start"
+        },
+        {
+          "text": "초기 점수는 당시 보고값 그대로 표기. 정제 후에는 평가 분할이 달라 초기 점수와 단순 개선률로 연결하지 않음.",
+          "x": 70,
+          "y": 1016,
+          "size": 19,
+          "anchor": "start"
+        },
+        {
+          "text": "출처: results/skin·web_skin·hair/1_training/의 original·augmented 결과 JSON / 연구·데이터 검사 기록",
+          "x": 70,
+          "y": 1050,
+          "size": 18,
+          "anchor": "start"
+        },
+        {
+          "text": "MediFlow",
+          "x": 1850,
+          "y": 1050,
+          "size": 20,
+          "anchor": "end"
+        }
+      ]
+    },
+    {
+      "name": "05_clean_dataset_composition",
+      "title": "중복 검사 후 세 데이터셋의 최종 구성",
+      "texts": [
+        {
+          "text": "05  CLEAN DATASET",
+          "x": 198.5,
+          "y": 73,
+          "size": 22,
+          "anchor": "middle"
+        },
+        {
+          "text": "중복 검사 후 세 데이터셋의 최종 구성",
+          "x": 70,
+          "y": 157,
+          "size": 48,
+          "anchor": "start"
+        },
+        {
+          "text": "최종 원본의 Train·Validation·Test 수량과 증강 조건의 Train 수량을 구분",
+          "x": 70,
+          "y": 204,
+          "size": 26,
+          "anchor": "start"
+        },
+        {
+          "text": "데이터셋",
+          "x": 100,
+          "y": 318,
+          "size": 25,
+          "anchor": "start"
+        },
+        {
+          "text": "초기 원본",
+          "x": 478,
+          "y": 318,
+          "size": 25,
+          "anchor": "middle"
+        },
+        {
+          "text": "정제 후 원본 합계",
+          "x": 790,
+          "y": 318,
+          "size": 25,
+          "anchor": "middle"
+        },
+        {
+          "text": "Train",
+          "x": 1118,
+          "y": 318,
+          "size": 25,
+          "anchor": "middle"
+        },
+        {
+          "text": "Validation",
+          "x": 1405,
+          "y": 318,
+          "size": 25,
+          "anchor": "middle"
+        },
+        {
+          "text": "Test",
+          "x": 1715,
+          "y": 318,
+          "size": 25,
+          "anchor": "middle"
+        },
+        {
+          "text": "SKIN 10종",
+          "x": 100,
+          "y": 403,
+          "size": 29,
+          "anchor": "start"
+        },
+        {
+          "text": "9,000",
+          "x": 478,
+          "y": 404,
+          "size": 36,
+          "anchor": "middle"
+        },
+        {
+          "text": "8,949",
+          "x": 790,
+          "y": 404,
+          "size": 36,
+          "anchor": "middle"
+        },
+        {
+          "text": "7,249",
+          "x": 1118,
+          "y": 404,
+          "size": 36,
+          "anchor": "middle"
+        },
+        {
+          "text": "1,000",
+          "x": 1405,
+          "y": 404,
+          "size": 36,
+          "anchor": "middle"
+        },
+        {
+          "text": "700",
+          "x": 1715,
+          "y": 404,
+          "size": 36,
+          "anchor": "middle"
+        },
+        {
+          "text": "WEB SKIN 5종",
+          "x": 100,
+          "y": 506,
+          "size": 26,
+          "anchor": "start"
+        },
+        {
+          "text": "4,500",
+          "x": 478,
+          "y": 507,
+          "size": 36,
+          "anchor": "middle"
+        },
+        {
+          "text": "4,500",
+          "x": 790,
+          "y": 507,
+          "size": 36,
+          "anchor": "middle"
+        },
+        {
+          "text": "3,600",
+          "x": 1118,
+          "y": 507,
+          "size": 36,
+          "anchor": "middle"
+        },
+        {
+          "text": "500",
+          "x": 1405,
+          "y": 507,
+          "size": 36,
+          "anchor": "middle"
+        },
+        {
+          "text": "400",
+          "x": 1715,
+          "y": 507,
+          "size": 36,
+          "anchor": "middle"
+        },
+        {
+          "text": "HAIR 5종",
+          "x": 100,
+          "y": 609,
+          "size": 29,
+          "anchor": "start"
+        },
+        {
+          "text": "14,500",
+          "x": 478,
+          "y": 610,
+          "size": 36,
+          "anchor": "middle"
+        },
+        {
+          "text": "12,536",
+          "x": 790,
+          "y": 610,
+          "size": 36,
+          "anchor": "middle"
+        },
+        {
+          "text": "10,032",
+          "x": 1118,
+          "y": 610,
+          "size": 36,
+          "anchor": "middle"
+        },
+        {
+          "text": "1,252",
+          "x": 1405,
+          "y": 610,
+          "size": 36,
+          "anchor": "middle"
+        },
+        {
+          "text": "1,252",
+          "x": 1715,
+          "y": 610,
+          "size": 36,
+          "anchor": "middle"
+        },
+        {
+          "text": "SKIN 검사·처리",
+          "x": 97,
+          "y": 730,
+          "size": 26,
+          "anchor": "start"
+        },
+        {
+          "text": "동일 RGB 픽셀의 중복 51장 정리",
+          "x": 97,
+          "y": 773,
+          "size": 23,
+          "anchor": "start"
+        },
+        {
+          "text": "클래스당 Val 100장·Test 70장 배정",
+          "x": 97,
+          "y": 811,
+          "size": 23,
+          "anchor": "start"
+        },
+        {
+          "text": "나머지 원본은 Train에 배정",
+          "x": 97,
+          "y": 849,
+          "size": 23,
+          "anchor": "start"
+        },
+        {
+          "text": "증강 조건 Train  14,498장",
+          "x": 97,
+          "y": 910,
+          "size": 27,
+          "anchor": "start"
+        },
+        {
+          "text": "원본 7,249 + 생성 7,249",
+          "x": 97,
+          "y": 947,
+          "size": 22,
+          "anchor": "start"
+        },
+        {
+          "text": "WEB SKIN 검사·처리",
+          "x": 707,
+          "y": 730,
+          "size": 26,
+          "anchor": "start"
+        },
+        {
+          "text": "검사에서 완전 동일 교차 중복 미발견",
+          "x": 707,
+          "y": 773,
+          "size": 23,
+          "anchor": "start"
+        },
+        {
+          "text": "기존 Train·Validation·Test 분할 유지",
+          "x": 707,
+          "y": 811,
+          "size": 23,
+          "anchor": "start"
+        },
+        {
+          "text": "평가에는 원본 사진 사용",
+          "x": 707,
+          "y": 849,
+          "size": 23,
+          "anchor": "start"
+        },
+        {
+          "text": "증강 조건 Train  7,200장",
+          "x": 707,
+          "y": 910,
+          "size": 27,
+          "anchor": "start"
+        },
+        {
+          "text": "원본 3,600 + 생성 3,600",
+          "x": 707,
+          "y": 947,
+          "size": 22,
+          "anchor": "start"
+        },
+        {
+          "text": "HAIR 검사·처리",
+          "x": 1317,
+          "y": 730,
+          "size": 26,
+          "anchor": "start"
+        },
+        {
+          "text": "완전 동일 사진과 라벨 충돌 정리",
+          "x": 1317,
+          "y": 773,
+          "size": 23,
+          "anchor": "start"
+        },
+        {
+          "text": "클래스별 8:1:1 원칙으로 새 분할",
+          "x": 1317,
+          "y": 811,
+          "size": 23,
+          "anchor": "start"
+        },
+        {
+          "text": "새 Train 원본에서만 증강본 생성",
+          "x": 1317,
+          "y": 849,
+          "size": 23,
+          "anchor": "start"
+        },
+        {
+          "text": "증강 조건 Train  15,047장",
+          "x": 1317,
+          "y": 910,
+          "size": 27,
+          "anchor": "start"
+        },
+        {
+          "text": "원본 10,032 + 생성 5,015",
+          "x": 1317,
+          "y": 947,
+          "size": 22,
+          "anchor": "start"
+        },
+        {
+          "text": "완전 동일 바이트·픽셀 검사 범위의 결과. 유사 사진과 사람·병변·촬영 세션 단위의 독립성은 미검증 항목이 남아 있음.",
+          "x": 70,
+          "y": 1016,
+          "size": 19,
+          "anchor": "start"
+        },
+        {
+          "text": "출처: Skin 데이터 감사(2026-09-09) / Hair·Web Skin 검사·실험 기록 / 2차 데이터 검증 기록",
+          "x": 70,
+          "y": 1050,
+          "size": 18,
+          "anchor": "start"
+        },
+        {
+          "text": "MediFlow",
+          "x": 1850,
+          "y": 1050,
+          "size": 20,
+          "anchor": "end"
+        }
+      ]
+    },
+    {
+      "name": "06_hair_good_added_dataset",
+      "title": "Hair 양호 추가 후 6종 데이터 구성",
+      "texts": [
+        {
+          "text": "06  HAIR SIX CLASSES",
+          "x": 219.5,
+          "y": 73,
+          "size": 22,
+          "anchor": "middle"
+        },
+        {
+          "text": "Hair 양호 추가 후 6종 데이터 구성",
+          "x": 70,
+          "y": 157,
+          "size": 48,
+          "anchor": "start"
+        },
+        {
+          "text": "기존 5종의 분할을 유지하고, 새 양호 사진만 파일명 ID별로 묶어 분리한 별도 데이터 버전",
+          "x": 70,
+          "y": 204,
+          "size": 26,
+          "anchor": "start"
+        },
+        {
+          "text": "구성",
+          "x": 100,
+          "y": 318,
+          "size": 25,
+          "anchor": "start"
+        },
+        {
+          "text": "Train",
+          "x": 492,
+          "y": 318,
+          "size": 25,
+          "anchor": "middle"
+        },
+        {
+          "text": "Validation",
+          "x": 728,
+          "y": 318,
+          "size": 25,
+          "anchor": "middle"
+        },
+        {
+          "text": "Test",
+          "x": 944,
+          "y": 318,
+          "size": 25,
+          "anchor": "middle"
+        },
+        {
+          "text": "기존 5종 원본",
+          "x": 100,
+          "y": 400,
+          "size": 28,
+          "anchor": "start"
+        },
+        {
+          "text": "10,032",
+          "x": 492,
+          "y": 401,
+          "size": 35,
+          "anchor": "middle"
+        },
+        {
+          "text": "1,252",
+          "x": 728,
+          "y": 401,
+          "size": 35,
+          "anchor": "middle"
+        },
+        {
+          "text": "1,252",
+          "x": 944,
+          "y": 401,
+          "size": 35,
+          "anchor": "middle"
+        },
+        {
+          "text": "새 양호 원본",
+          "x": 100,
+          "y": 498,
+          "size": 28,
+          "anchor": "start"
+        },
+        {
+          "text": "428",
+          "x": 492,
+          "y": 499,
+          "size": 35,
+          "anchor": "middle"
+        },
+        {
+          "text": "53",
+          "x": 728,
+          "y": 499,
+          "size": 35,
+          "anchor": "middle"
+        },
+        {
+          "text": "53",
+          "x": 944,
+          "y": 499,
+          "size": 35,
+          "anchor": "middle"
+        },
+        {
+          "text": "6종 원본 합계",
+          "x": 100,
+          "y": 596,
+          "size": 28,
+          "anchor": "start"
+        },
+        {
+          "text": "10,460",
+          "x": 492,
+          "y": 597,
+          "size": 35,
+          "anchor": "middle"
+        },
+        {
+          "text": "1,305",
+          "x": 728,
+          "y": 597,
+          "size": 35,
+          "anchor": "middle"
+        },
+        {
+          "text": "1,305",
+          "x": 944,
+          "y": 597,
+          "size": 35,
+          "anchor": "middle"
+        },
+        {
+          "text": "원본 합계",
+          "x": 1165,
+          "y": 324,
+          "size": 26,
+          "anchor": "start"
+        },
+        {
+          "text": "13,070장",
+          "x": 1165,
+          "y": 402,
+          "size": 62,
+          "anchor": "start"
+        },
+        {
+          "text": "기존 12,536 + 양호 534",
+          "x": 1165,
+          "y": 452,
+          "size": 30,
+          "anchor": "start"
+        },
+        {
+          "text": "새 양호 분할 방법",
+          "x": 1165,
+          "y": 518,
+          "size": 25,
+          "anchor": "start"
+        },
+        {
+          "text": "파일명에서 구분한 105개 ID를 묶어 분할",
+          "x": 1165,
+          "y": 560,
+          "size": 24,
+          "anchor": "start"
+        },
+        {
+          "text": "같은 새 ID를 여러 분할에 나누지 않도록 구성",
+          "x": 1165,
+          "y": 599,
+          "size": 24,
+          "anchor": "start"
+        },
+        {
+          "text": "최종 6개 클래스",
+          "x": 100,
+          "y": 722,
+          "size": 27,
+          "anchor": "start"
+        },
+        {
+          "text": "모낭사이홍반",
+          "x": 223.5,
+          "y": 784,
+          "size": 24,
+          "anchor": "middle"
+        },
+        {
+          "text": "미세각질",
+          "x": 490.5,
+          "y": 784,
+          "size": 24,
+          "anchor": "middle"
+        },
+        {
+          "text": "비듬",
+          "x": 757.5,
+          "y": 784,
+          "size": 24,
+          "anchor": "middle"
+        },
+        {
+          "text": "탈모",
+          "x": 223.5,
+          "y": 849,
+          "size": 24,
+          "anchor": "middle"
+        },
+        {
+          "text": "피지과다",
+          "x": 490.5,
+          "y": 849,
+          "size": 24,
+          "anchor": "middle"
+        },
+        {
+          "text": "양호",
+          "x": 757.5,
+          "y": 849,
+          "size": 24,
+          "anchor": "middle"
+        },
+        {
+          "text": "양호: 원천 6개 증상 값이 모두 0이라는 사용자 확인",
+          "x": 100,
+          "y": 926,
+          "size": 23,
+          "anchor": "start"
+        },
+        {
+          "text": "증강 조건의 학습 데이터",
+          "x": 980,
+          "y": 722,
+          "size": 27,
+          "anchor": "start"
+        },
+        {
+          "text": "Train 17,615장",
+          "x": 980,
+          "y": 777,
+          "size": 41,
+          "anchor": "start"
+        },
+        {
+          "text": "원본 10,460 + 생성 7,155",
+          "x": 980,
+          "y": 824,
+          "size": 29,
+          "anchor": "start"
+        },
+        {
+          "text": "양호 Train 428장에서 2,140장 생성, 합계 2,568장",
+          "x": 980,
+          "y": 875,
+          "size": 23,
+          "anchor": "start"
+        },
+        {
+          "text": "기존 5종에서 생성 5,015장. Validation·Test는 원본 유지",
+          "x": 980,
+          "y": 913,
+          "size": 23,
+          "anchor": "start"
+        },
+        {
+          "text": "양호의 파일별 원천 JSON 재확인과 기존 5종을 포함한 사람·세션 독립성 검증은 남아 있음. 양호는 전체 질환 부재 판정이 아님.",
+          "x": 70,
+          "y": 1016,
+          "size": 19,
+          "anchor": "start"
+        },
+        {
+          "text": "출처: Hair 양호 교차 감사 / Hair 6종 생성·실험 기록(2026-09-28). 기존 5종과 6종은 별도 분류 과제",
+          "x": 70,
+          "y": 1050,
+          "size": 18,
+          "anchor": "start"
+        },
+        {
+          "text": "MediFlow",
+          "x": 1850,
+          "y": 1050,
+          "size": 20,
+          "anchor": "end"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "path": "docs/presentations/DATA_SOURCE_CLASS_TABLE.md",
+      "sha256": "9927c41072a74301312f63cfc41058156bab9f632be65fd561eb748af979b780"
+    },
+    {
+      "path": "presentation/1차/내용.md",
+      "sha256": "baa3728962405bcee9ac0fb14f5166982f6e8b0c292a451f78d28b9ebe85df57"
+    },
+    {
+      "path": "presentation/1차/데이터_선정_분할.csv",
+      "sha256": "e3962537105a5988cc42c9350e48f0828fa5b393daeb7ab71537c9fc930ef05b"
+    },
+    {
+      "path": "presentation/2차/내용.md",
+      "sha256": "71ea2842c7205e4de12f4be3729336a1f8c9808883fada411cf629bd0f9161fe"
+    },
+    {
+      "path": "presentation/4차/내용.md",
+      "sha256": "ecda5e742064a79e01bde54682edb76cff03cb3200415f4ad20ddbdb866263bc"
+    },
+    {
+      "path": "docs/research/SKIN_DATA_AUDIT_20260909.md",
+      "sha256": "f0c413021d17b9518051ec1569d943820cfa433c098a56645a74c6e1ae3548f6"
+    },
+    {
+      "path": "docs/research/HAIR_GOOD_CROSS_AUDIT_REVIEW_20260928.md",
+      "sha256": "a12517b9964c59b30226f98e0391bad7da5d6d82d8184957a1be9b21ef14e75c"
+    },
+    {
+      "path": "results/skin/1_training/original/results.json",
+      "sha256": "574d94c904654108b494877241dcefdc17e9a41a10f03cc3cae77d9faf1f8794"
+    },
+    {
+      "path": "results/skin/1_training/augmented/results.json",
+      "sha256": "34231de5e5daee8c0f284fcc893f7bc1ff069b9fe65dae436775427e934e0401"
+    },
+    {
+      "path": "results/web_skin/1_training/original/results.json",
+      "sha256": "c4129246458698335636bd8d17b759f1a322d1312de814bd9b48ad221afca84e"
+    },
+    {
+      "path": "results/web_skin/1_training/augmented/results.json",
+      "sha256": "2955bf051360a69b786a7357891309cdd818565026791a3385a6b246ea25046d"
+    },
+    {
+      "path": "results/hair/1_training/original/training_config.json",
+      "sha256": "48cd1923ecddef2117b1e1633718ed828ea9902fb58be85dfb8892e4c013d680"
+    },
+    {
+      "path": "results/hair/1_training/augmented/training_config.json",
+      "sha256": "c8ad79d7030ec3ec82f86147a2aeb46e1308c5ee4f09c1e463fb2d23dc44031a"
+    },
+    {
+      "path": "results/skin/selected_models/v1/class_names.json",
+      "sha256": "6caeff9548025d10ed3a0b25c5652492a53d0765dfcfba5f5c2e1634234db43d"
+    },
+    {
+      "path": "results/web_skin/selected_models/v2/class_names.json",
+      "sha256": "02fff652c291b04be28f8b769cfa6d1c1ff679b1f7bb87d2af3315b69b4cdae2"
+    },
+    {
+      "path": "results/hair/selected_models/6class_performance_v1/class_names.json",
+      "sha256": "7c5b636d150bc38194138fbdfb9d0dd4a59e786fe7fcbab5cdac5b22aa04a728"
+    }
+  ],
+  "sourceLinks": [
+    {
+      "title": "AI Hub 피부종양 이미지 합성 데이터",
+      "url": "https://www.aihub.or.kr/aihubdata/data/view.do?dataSetSn=71864"
+    },
+    {
+      "title": "AI Hub 안면부 피부질환 이미지 합성 데이터",
+      "url": "https://www.aihub.or.kr/aihubdata/data/view.do?dataSetSn=71863"
+    },
+    {
+      "title": "AI Hub 유형별 두피 이미지",
+      "url": "https://aihub.or.kr/aihubdata/data/view.do?dataSetSn=216"
+    }
+  ],
+  "limits": [
+    "Public source quantities are historical investigation records; original entire source ZIPs were not recounted.",
+    "AI Hub 216 web page was readable on 2026-10-26; AI Hub 71864/71863 page content could not be retrieved by the web tool, so source descriptions use preserved project records.",
+    "Existing images, models, results, and research documents were not modified.",
+    "No training, new dataset preprocessing, or new model evaluation was run.",
+    "Initial Test metrics are copied verbatim from original saved JSON, without rounding."
+  ]
+}

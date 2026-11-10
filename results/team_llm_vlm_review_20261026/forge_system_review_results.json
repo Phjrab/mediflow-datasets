@@ -1,0 +1,61 @@
+{
+  "repository": "Phjrab/forge-finetune-dashboard",
+  "commit": "d9a4656a5bee38cc9903e8caf5c4b680709423d2",
+  "review_date": "2026-10-26",
+  "scope": "read-only core source and document review; no GPU training, downloads or remote writes",
+  "auth_store_tests": {
+    "command": "PYTHONPATH=tests python -m unittest test_auth.AuthStoreTests -v",
+    "interpreter": "C:/VS Code/upload_staging/.venv/Scripts/python.exe",
+    "cwd": "C:/VS Code/upload_staging/.tmp/team_repo_review_20261026/forge-finetune-dashboard",
+    "temp_and_tmp": "C:/VS Code/upload_staging/.tmp/forge_review_test_temp_20261026",
+    "tests": 11,
+    "passed": 11,
+    "failed": 0,
+    "seconds": 16.822
+  },
+  "full_auth_file_attempt": {
+    "command": "python -m unittest discover -s tests -p test_auth.py -v",
+    "tests": 17,
+    "passed": 12,
+    "errors": 5,
+    "seconds": 19.023,
+    "cause": "HTTP loopback connect denied by execution sandbox: PermissionError WinError 10013; no source assertion failure identified",
+    "not_claimed": "Full HTTP authentication test suite success"
+  },
+  "artifact_export_probe": {
+    "method": "TrainingManager.__new__, temporary isolated fake checkpoint and run/job metadata, call real TrainingManager.artifact",
+    "checkpoint_files": ["adapter_config.json", "adapter_model.safetensors", "chat_template.jinja"],
+    "exported_zip_files": ["adapter_config.json", "adapter_model.safetensors"],
+    "conclusion": "Separate chat_template.jinja is excluded by the export suffix allowlist",
+    "model_downloaded": false,
+    "gpu_used": false,
+    "files_cleaned_by_temporary_directory": true,
+    "source": "training.py:460-480",
+    "scope_limit": "Models relying on separate template assets can fail or change prompting after export; not a claim that historical default SmolVLM failed"
+  },
+  "findings": [
+    {
+      "type": "integration_gap",
+      "description": "Forge exposes training/data/artifact management APIs, not dedicated LLM/VLM inference serving. adapter.py is a TrainingEvent extension Protocol, not the MedVLM model.generate adapter.",
+      "sources": ["server.py:433-625", "adapter.py:20-30", "docs/adapter-contract.md:52-54"]
+    },
+    {
+      "type": "conditional_reproducibility_bug",
+      "description": "Template .jinja is excluded during Hub download and checkpoint ZIP export; .tiktoken/nested assets are also excluded from export.",
+      "sources": ["huggingface.py:209-215", "tools/download_models.py:16-18", "training.py:469-479", "train_worker.py:239-240"]
+    },
+    {
+      "type": "supported_environment_boundary",
+      "description": "Enabled training uses Unix fcntl host lease, Hub token save uses os.fchmod; documented validated training host is native Ubuntu CUDA, not Windows dashboard or Colab tunnel.",
+      "sources": ["training.py:70-78", "huggingface.py:96-101", "docs/deployment.md", "docs/security.md:3-23"]
+    },
+    {
+      "type": "evidence_scope",
+      "description": "Historical GPU loss decreases were synthetic pipeline validation. Stored generated responses do not equal references; no medical answer or image diagnosis quality was established.",
+      "sources": ["docs/training-validation.json:18-48", "docs/validation.md"]
+    }
+  ],
+  "security_conclusion": "No authentication bypass confirmed. Auth protections coherent under code review and 11 store tests; blocked HTTP attempts do not establish HTTP correctness.",
+  "ci_scope": "Ubuntu Python 3.12 backend/Node plus CPU native architecture tests; not GPU medical quality. Latest remote Actions status not inspected by this reviewer.",
+  "handoff_update": "Parent found actual QA/VQA training on a separate MedVLM branch after this main-branch-oriented Forge review. Prefer that native MedVLM research pipeline when appropriate; Forge is optional UI/workbench, not a prerequisite. Findings here apply only to pinned Forge commit."
+}

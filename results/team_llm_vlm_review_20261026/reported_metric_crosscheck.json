@@ -1,0 +1,100 @@
+{
+  "source_repository": "Phjrab/mediflow-medvlm",
+  "commit": "e16f8c6df3244a78cd9c30ba5ce7e43d5b8f45a3",
+  "source_path": "reports/public_summary/paired_metrics.csv",
+  "source_local_sha256": "a2552fe30de982cd31b79dba9b4b9de1128c63d5cfd8b98823e6382d32eb6b32",
+  "evidence_scope": "Reported aggregate counts and fractions only; no raw prediction or model-inference recheck",
+  "csv_rows": 32,
+  "comparisons": [
+    {
+      "model": "Qwen/Qwen3-1.7B",
+      "source_id": "pubmedqa_labeled",
+      "metric": "accuracy",
+      "base": {
+        "count": 209,
+        "scheduled": 500,
+        "fraction": 0.418
+      },
+      "tuned": {
+        "count": 372,
+        "scheduled": 500,
+        "fraction": 0.744
+      }
+    },
+    {
+      "model": "Qwen/Qwen3-4B",
+      "source_id": "pubmedqa_labeled",
+      "metric": "accuracy",
+      "base": {
+        "count": 177,
+        "scheduled": 500,
+        "fraction": 0.354
+      },
+      "tuned": {
+        "count": 384,
+        "scheduled": 500,
+        "fraction": 0.768
+      }
+    },
+    {
+      "model": "Qwen/Qwen3.5-2B",
+      "source_id": "slake",
+      "metric": "lexical_exact_match",
+      "base": {
+        "count": 88,
+        "scheduled": 256,
+        "fraction": 0.34375
+      },
+      "tuned": {
+        "count": 185,
+        "scheduled": 256,
+        "fraction": 0.72265625
+      }
+    },
+    {
+      "model": "google/medgemma-1.5-4b-it",
+      "source_id": "slake",
+      "metric": "lexical_exact_match",
+      "base": {
+        "count": 0,
+        "scheduled": 256,
+        "fraction": 0.0
+      },
+      "tuned": {
+        "count": 179,
+        "scheduled": 256,
+        "fraction": 0.69921875
+      }
+    },
+    {
+      "model": "Qwen/Qwen3.5-2B",
+      "source_id": "vqa_rad",
+      "metric": "lexical_exact_match",
+      "base": {
+        "count": 19,
+        "scheduled": 64,
+        "fraction": 0.296875
+      },
+      "tuned": {
+        "count": 31,
+        "scheduled": 64,
+        "fraction": 0.484375
+      }
+    },
+    {
+      "model": "google/medgemma-1.5-4b-it",
+      "source_id": "vqa_rad",
+      "metric": "lexical_exact_match",
+      "base": {
+        "count": 0,
+        "scheduled": 64,
+        "fraction": 0.0
+      },
+      "tuned": {
+        "count": 30,
+        "scheduled": 64,
+        "fraction": 0.46875
+      }
+    }
+  ]
+}

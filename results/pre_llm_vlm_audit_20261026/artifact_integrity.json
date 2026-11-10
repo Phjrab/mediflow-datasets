@@ -1,0 +1,451 @@
+{
+  "date": "2026-10-26",
+  "scope": "local_workspace_only",
+  "selected_models": [
+    {
+      "domain": "hair",
+      "version": "6class_light_v1",
+      "candidate_id": "public_candidate_6class_light_b0_256_augmented_v1",
+      "model": "results/hair/selected_models/6class_light_v1/hair_model.keras",
+      "model_sha256": "38e91fee1c514b75165d07f5dfbb0c52fdb7ac92313b40d47abb50c71367d432",
+      "package": "results/hair/candidates/public_candidate_6class_light_b0_256_augmented_v1.zip",
+      "package_sha256": "a83be0946a929285f12431d50692e890f2913d4a539dd6142a95396f43505b23",
+      "class_names": [
+        "모낭사이홍반",
+        "미세각질",
+        "비듬",
+        "탈모",
+        "피지과다",
+        "양호"
+      ],
+      "preprocessing": {
+        "input_shape": [
+          256,
+          256,
+          3
+        ],
+        "color_order": "RGB",
+        "input_dtype": "float32",
+        "input_pixel_range": [
+          0,
+          255
+        ],
+        "external_normalization": false,
+        "internal_rescaling": "1/255",
+        "resize": "TensorFlow bilinear, antialias=False",
+        "aspect_ratio": "direct resize, no crop/pad",
+        "exif_transpose": false,
+        "output": "six softmax scores in class_names.json order"
+      },
+      "output_adapter": "direct_softmax",
+      "test_accuracy": 0.7869731800766283,
+      "test_macro_f1": 0.8021613486071133,
+      "presentation_copy_matches": true,
+      "archive_crc_passed": true
+    },
+    {
+      "domain": "hair",
+      "version": "6class_performance_v1",
+      "candidate_id": "public_candidate_6class_v1_b1_384_original_20260928_024655",
+      "model": "results/hair/selected_models/6class_performance_v1/hair_model.keras",
+      "model_sha256": "5ee54f51e65d8656fc81e88de96ad82a6d119991aa74684f921e4cd7e8b7efbb",
+      "package": "results/hair/candidates/public_candidate_6class_v1_b1_384_original_20260928_024655.zip",
+      "package_sha256": "fc138d4615442605c1b6b8333a01cd70e5c07100401fee5d468fa938455b7293",
+      "class_names": [
+        "모낭사이홍반",
+        "미세각질",
+        "비듬",
+        "탈모",
+        "피지과다",
+        "양호"
+      ],
+      "preprocessing": {
+        "input_shape": [
+          384,
+          384,
+          3
+        ],
+        "color_order": "RGB",
+        "input_dtype": "float32",
+        "input_pixel_range": [
+          0,
+          255
+        ],
+        "external_normalization": false,
+        "internal_rescaling": "1/255",
+        "resize": "TensorFlow bilinear, antialias=False",
+        "aspect_ratio": "direct resize, no crop/pad",
+        "exif_transpose": false,
+        "output": "six softmax scores in class_names.json order"
+      },
+      "output_adapter": "direct_softmax",
+      "test_accuracy": 0.7915708812260537,
+      "test_macro_f1": 0.8091500773460419,
+      "presentation_copy_matches": true,
+      "archive_crc_passed": true
+    },
+    {
+      "domain": "hair",
+      "version": "v1",
+      "candidate_id": "public_candidate_v1_b1_256_ls005_20260907_120834",
+      "model": "results/hair/selected_models/v1/hair_model.keras",
+      "model_sha256": "0842822f6b6299ee7a0cb6b6925681d54705e7e26b3682dee0f1c49f8e72057b",
+      "package": "results/hair/candidates/public_candidate_v1_b1_256_ls005_20260907_120834.zip",
+      "package_sha256": "fc135708edbbec209ef940898eada586759c1db56b7a27c5508a9a165972efcd",
+      "class_names": [
+        "모낭사이홍반",
+        "미세각질",
+        "비듬",
+        "탈모",
+        "피지과다"
+      ],
+      "preprocessing": {
+        "input_shape": [
+          256,
+          256,
+          3
+        ],
+        "color_order": "RGB",
+        "input_dtype": "float32",
+        "input_pixel_range": [
+          0,
+          255
+        ],
+        "external_normalization": false,
+        "internal_rescaling": "1/255",
+        "output": "softmax probabilities in class_names.json order"
+      },
+      "output_adapter": "direct_softmax",
+      "test_accuracy": 0.7883386581469649,
+      "test_macro_f1": 0.7885764577048346,
+      "presentation_copy_matches": true,
+      "archive_crc_passed": true
+    },
+    {
+      "domain": "hair",
+      "version": "v2",
+      "candidate_id": "public_candidate_v2_b1_384_ls005_adam_20260921_155906_82311da4",
+      "model": "results/hair/selected_models/v2/hair_model.keras",
+      "model_sha256": "9faa33b8f79f45ef6e7be415473e2ee5225f6195fff04d098828733db23ed3c2",
+      "package": "results/hair/candidates/public_candidate_v2_b1_384_ls005_adam_20260921_155906_82311da4.zip",
+      "package_sha256": "870356a8b079539e8e6963b937964f790653a1b39994ee2b6b7c7bdfed0134d5",
+      "class_names": [
+        "모낭사이홍반",
+        "미세각질",
+        "비듬",
+        "탈모",
+        "피지과다"
+      ],
+      "preprocessing": {
+        "input_shape": [
+          384,
+          384,
+          3
+        ],
+        "color_order": "RGB",
+        "input_dtype": "float32",
+        "input_pixel_range": [
+          0,
+          255
+        ],
+        "external_normalization": false,
+        "internal_rescaling": "1/255",
+        "resize": "TensorFlow bilinear, antialias=False",
+        "aspect_ratio": "resize to 384x384, no crop/pad",
+        "exif_transpose": false,
+        "output": "5 softmax scores in class_names.json order"
+      },
+      "output_adapter": "direct_softmax",
+      "test_accuracy": 0.8003194888178914,
+      "test_macro_f1": 0.8002222282821301,
+      "presentation_copy_matches": true,
+      "archive_crc_passed": true
+    },
+    {
+      "domain": "skin",
+      "version": "v1",
+      "candidate_id": "public_candidate_v1_b0_224_ce_augmented_20260909_075056",
+      "model": "results/skin/selected_models/v1/skin_model.keras",
+      "model_sha256": "0b2a757320a113dbc1b285adab8c7745b2f7edc2cb29cc402d06f7882edc9f7a",
+      "package": "results/skin/candidates/public_candidate_v1_b0_224_ce_augmented_20260909_075056.zip",
+      "package_sha256": "9b3e3893a6cd89d58bd8ae3a4b85f4214f6a32a21586094ea416c552312f1686",
+      "class_names": [
+        "광선각화증",
+        "기저세포암",
+        "보웬병",
+        "사마귀",
+        "지루각화증",
+        "편평세포암",
+        "표피낭종",
+        "피부섬유종",
+        "혈관종",
+        "흑색점"
+      ],
+      "preprocessing": {
+        "input_shape": [
+          224,
+          224,
+          3
+        ],
+        "color": "RGB",
+        "dtype": "float32",
+        "pixel_range": [
+          0,
+          255
+        ],
+        "external_normalization": false,
+        "internal_rescaling": "1/255",
+        "resize": "TensorFlow bilinear; no crop/pad; antialias=False",
+        "exif_transpose": false,
+        "output": "softmax scores in class_names.json order"
+      },
+      "output_adapter": "direct_softmax",
+      "test_accuracy": 0.9871428571428571,
+      "test_macro_f1": 0.9871314132317626,
+      "presentation_copy_matches": true,
+      "archive_crc_passed": true
+    },
+    {
+      "domain": "web_skin",
+      "version": "v1",
+      "candidate_id": "public_candidate_v1_b0_256_ce_20260908_081603_3f1ce76e",
+      "model": "results/web_skin/selected_models/v1/web_skin_model.keras",
+      "model_sha256": "d4c834a7fd47480c1c45ddbdc09257942b38b2408d5b28effc34ee68c4fad97b",
+      "package": "results/web_skin/candidates/public_candidate_v1_b0_256_ce_20260908_081603_3f1ce76e.zip",
+      "package_sha256": "980f92301efdbd0f65971a157620114688ab4368bd4511e112038d8b6dbc1694",
+      "class_names": [
+        "건선",
+        "아토피",
+        "여드름",
+        "정상",
+        "주사"
+      ],
+      "preprocessing": {
+        "input_shape": [
+          256,
+          256,
+          3
+        ],
+        "color_order": "RGB",
+        "input_dtype": "float32",
+        "input_pixel_range": [
+          0,
+          255
+        ],
+        "external_normalization": false,
+        "internal_rescaling": "1/255",
+        "resize": "TensorFlow bilinear, antialias=False",
+        "aspect_ratio": "resize to 256x256, no crop/pad",
+        "exif_transpose": false,
+        "output": "5 softmax scores in class_names.json order; not calibrated correctness"
+      },
+      "output_adapter": "direct_softmax",
+      "test_accuracy": 0.8825,
+      "test_macro_f1": 0.8813822927981046,
+      "presentation_copy_matches": true,
+      "archive_crc_passed": true
+    },
+    {
+      "domain": "web_skin",
+      "version": "v2",
+      "candidate_id": "public_candidate_v2_pmg_b0_256_ce_20260922_235840_093d10de",
+      "model": "results/web_skin/selected_models/v2/web_skin_model.keras",
+      "model_sha256": "83e659dd09a9355135ee0de0197037e81ece962777f59dedae8d9a37b49a3fc4",
+      "package": "results/web_skin/candidates/public_candidate_v2_pmg_b0_256_ce_20260922_235840_093d10de.zip",
+      "package_sha256": "38bd47493ec06bcf2be351a7d12b8f889489fd5d8205e4fcb39557a400471db9",
+      "class_names": [
+        "건선",
+        "아토피",
+        "여드름",
+        "정상",
+        "주사"
+      ],
+      "preprocessing": {
+        "input_shape": [
+          256,
+          256,
+          3
+        ],
+        "color_order": "RGB",
+        "input_dtype": "float32",
+        "input_pixel_range": [
+          0,
+          255
+        ],
+        "external_normalization": false,
+        "internal_rescaling": "1/255",
+        "resize": "TensorFlow bilinear, antialias=False",
+        "aspect_ratio": "resize to 256x256, no crop/pad",
+        "exif_transpose": false,
+        "internal_outputs": "four PMG logits",
+        "public_output": "sum logits then 5-way softmax in class_names.json order"
+      },
+      "output_adapter": "sum_logits_softmax",
+      "test_accuracy": 0.915,
+      "test_macro_f1": 0.9141049081029712,
+      "presentation_copy_matches": true,
+      "archive_crc_passed": true
+    }
+  ],
+  "six_class_saved_predictions": [
+    {
+      "version": "6class_light_v1",
+      "rows": 1305,
+      "accuracy": 0.7869731800766283,
+      "macro_f1": 0.8021613486071133,
+      "confusion_matrix": [
+        [
+          215,
+          9,
+          7,
+          12,
+          5,
+          0
+        ],
+        [
+          15,
+          190,
+          31,
+          7,
+          12,
+          1
+        ],
+        [
+          2,
+          46,
+          166,
+          3,
+          24,
+          0
+        ],
+        [
+          16,
+          5,
+          6,
+          201,
+          15,
+          2
+        ],
+        [
+          14,
+          10,
+          12,
+          17,
+          206,
+          3
+        ],
+        [
+          1,
+          2,
+          0,
+          1,
+          0,
+          49
+        ]
+      ],
+      "matches": true
+    },
+    {
+      "version": "6class_performance_v1",
+      "rows": 1305,
+      "accuracy": 0.7915708812260537,
+      "macro_f1": 0.8091500773460419,
+      "confusion_matrix": [
+        [
+          201,
+          13,
+          7,
+          19,
+          8,
+          0
+        ],
+        [
+          10,
+          203,
+          30,
+          3,
+          9,
+          1
+        ],
+        [
+          1,
+          45,
+          173,
+          2,
+          20,
+          0
+        ],
+        [
+          12,
+          4,
+          5,
+          204,
+          17,
+          3
+        ],
+        [
+          18,
+          9,
+          19,
+          13,
+          203,
+          0
+        ],
+        [
+          1,
+          2,
+          0,
+          1,
+          0,
+          49
+        ]
+      ],
+      "matches": true
+    }
+  ],
+  "benchmark": {
+    "count": 34,
+    "statuses": {
+      "measured": 34
+    },
+    "cohorts": {
+      "skin": 4,
+      "web_skin": 12,
+      "hair5": 14,
+      "hair6": 4
+    }
+  },
+  "notebooks": {
+    "count": 20,
+    "json_structure_passed": true
+  },
+  "presentation": {
+    "actual_pngs": 47,
+    "listed": 47,
+    "missing": [],
+    "unlisted": []
+  },
+  "documentation": {
+    "checked_files": 12,
+    "missing_local_links": []
+  },
+  "git_commit": "ffd71eca68ff1e21c145ed56158f4cfa77f7f037",
+  "limitations": [
+    "No full-Test image inference rerun",
+    "No Drive or remote repository inspection",
+    "Sample inference does not measure classification accuracy"
+  ],
+  "local_inventory": {
+    "keras_files": 18,
+    "unique_keras_sha256": 13,
+    "result_zips": 18,
+    "all_zip_crc_failures": [],
+    "sample_images": 40
+  },
+  "audit_source_sha256": "b7692c7beb4d093a55774bf7c36f977e7eb22af209ded67c5e6c1d3f3500b752",
+  "index_crosscheck": {
+    "public_selections": 5,
+    "existing_candidates": 3,
+    "matched": true
+  }
+}

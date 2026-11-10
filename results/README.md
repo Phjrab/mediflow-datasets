@@ -15,6 +15,11 @@
 [저장 평가 기록 대조](EVALUATION_RECORD_AUDIT_20260927.json)는 기존 예측·모델 해시의 확인이며 새 이미지 추론이 아니다.
 프로젝트 단계와 전체 연구 설명은 [문서 안내](../docs/README.md)를 따른다.
 
+2026-10-26 LLM·VLM 착수 전 재점검의 실제 파일·저장 지표·샘플 추론·테스트 근거는
+[사전 점검 결과](pre_llm_vlm_audit_20261026/README.md)에 추가했다. 기존 평가 원본은 유지한다.
+팀원 LLM·VLM 저장소의 브랜치·코드·공개 집계와 로컬 검사 근거는
+[저장소 검토](team_llm_vlm_review_20261026/README.md)에 있다.
+
 2026-09-28 저장 모델 34개 실행 시간 측정의 원본 ZIP, 수치 CSV/JSON, 발표용 그림 12장은
 [runtime_benchmark_20260928_051423](runtime_benchmark_20260928_051423/README.md)에 정리했다.
 수치 해석과 비교 가능 범위는 [측정 결과 검토](../docs/research/RUNTIME_BENCHMARK_REVIEW_20260928.md)를 따른다.

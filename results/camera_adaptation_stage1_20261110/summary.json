@@ -1,0 +1,12 @@
+{
+  "completed_trials": [
+    "skin/basic",
+    "skin/selected",
+    "web_skin/basic",
+    "web_skin/selected",
+    "hair/basic",
+    "hair/selected"
+  ],
+  "failures": {},
+  "selection_written": true
+}

@@ -1,0 +1,39 @@
+{
+  "checks": {
+    "ruff": "passed",
+    "pytest_passed": 148,
+    "pytest_skipped": 3,
+    "pytest_failed": 0,
+    "notebook_syntax": "passed",
+    "runtime_integrity": "passed",
+    "old_notebook_and_bundle_preserved": true,
+    "old_analysis_and_review_files_preserved": true
+  },
+  "artifacts": {
+    "Adaptation_Preflight_Colab.ipynb": "693f6aa047f975c3ed055a9dd7cffdc945dff73128f0f6d8c9761249dde0b274",
+    "Adaptation_Preflight_Colab.py": "6446e31ca0ba275960b2d7ce9ab852a019edf88217d2a718fc839d9e1e9b5f29",
+    "mediflow_preflight_runtime.zip": "d1c4636411de999630b06e338e9586be575ac9e5f12e5ad8e8af579f023dc49f",
+    "README.md": "88539c75855d4aea151db1326aa3d49a741aeda53c73920d724dafb70262d3d0"
+  },
+  "execution": {
+    "local_web_target_photos_reprocessed": 42,
+    "changed_predictions_due_to_preprocessing": 15,
+    "new_disease_training_executed": false,
+    "colab_preflight_executed": false,
+    "near_candidates_cleared": 0,
+    "target_accuracy": null
+  },
+  "fixed": [
+    "independent augmentation decision RNG",
+    "no artificial geometry padding",
+    "class-balanced valid ROI anchor",
+    "preprocessing contract checks",
+    "equivalent-arm deduplication"
+  ],
+  "pending": [
+    "Drive candidate photo review",
+    "missing face composition review",
+    "full-source Train sample transform QA",
+    "training and final evaluation"
+  ]
+}

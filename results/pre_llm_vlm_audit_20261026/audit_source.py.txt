@@ -1,0 +1,189 @@
+"""Read-only artifact audit plus new evidence output; never extracts model/image copies."""
+from pathlib import Path
+import collections
+import csv
+import hashlib
+import io
+import json
+import platform
+import re
+import subprocess
+import zipfile
+
+import numpy as np
+
+ROOT = Path(__file__).resolve().parents[1]
+OUT = ROOT / 'results/pre_llm_vlm_audit_20261026'
+OUT.mkdir(exist_ok=False)
+
+
+def read(p):
+    return json.loads(p.read_text(encoding='utf-8-sig'))
+
+
+def sha(p):
+    h = hashlib.sha256()
+    with p.open('rb') as f:
+        for block in iter(lambda: f.read(4 * 1024 * 1024), b''):
+            h.update(block)
+    return h.hexdigest()
+
+
+def write(name, value):
+    (OUT / name).write_text(json.dumps(value, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+
+
+def walk_config(obj):
+    if isinstance(obj, dict):
+        yield obj
+        for value in obj.values():
+            yield from walk_config(value)
+    elif isinstance(obj, list):
+        for value in obj:
+            yield from walk_config(value)
+
+
+from mediflow_datasets.reproduction_audit import audit_repository
+
+evaluation = audit_repository(ROOT)
+write('saved_evaluation_recheck.json', evaluation)
+print('stored evaluations: 6 initial reports + 3 current prediction sets passed', flush=True)
+
+selected = []
+for p in sorted((ROOT / 'results').glob('*/selected_models/*/selection.json')):
+    s = read(p)
+    model = p.parent / s['model_file']
+    classes = read(p.parent / 'class_names.json')
+    preprocessing = read(p.parent / 'preprocessing.json')
+    digest = sha(model)
+    assert digest == s['model_sha256'], p
+    assert len(classes) == len(set(classes))
+    with zipfile.ZipFile(model) as z:
+        assert z.testzip() is None
+        config = json.loads(z.read('config.json'))
+    scales = [v.get('config', {}).get('scale') for v in walk_config(config)
+              if v.get('class_name') == 'Rescaling']
+    assert any(np.isclose(v, 1 / 255) for v in scales), p
+    copy = ROOT / 'presentation/models' / {
+        ('skin','v1'): 'skin_10class_v1', ('web_skin','v1'): 'web_skin_5class_v1',
+        ('web_skin','v2'): 'web_skin_5class_v2', ('hair','v1'): 'hair_5class_v1',
+        ('hair','v2'): 'hair_5class_v2', ('hair','6class_performance_v1'): 'hair_6class_performance_v1',
+        ('hair','6class_light_v1'): 'hair_6class_light_v1',
+    }[(s['domain'], s['version'])]
+    assert sha(copy / model.name) == digest
+    assert read(copy / 'class_names.json') == classes
+    assert read(copy / 'preprocessing.json') == preprocessing
+    package = ROOT / 'results' / s['source_candidate_package']
+    package_hash = sha(package)
+    with zipfile.ZipFile(package) as z:
+        assert z.testzip() is None
+        m = [x for x in z.namelist() if x.endswith('.keras')]
+        assert len(m) == 1, package
+        assert hashlib.sha256(z.read(m[0])).hexdigest() == digest
+        cn = [x for x in z.namelist() if x.endswith('/class_names.json')]
+        assert len(cn) == 1 and json.loads(z.read(cn[0])) == classes
+    checksums = list(package.parent.glob(package.name + '.sha256'))
+    assert checksums and package_hash in checksums[0].read_text(encoding='utf-8-sig')
+    selected.append(dict(domain=s['domain'], version=s['version'], candidate_id=s['candidate_id'],
+                         model=model.relative_to(ROOT).as_posix(), model_sha256=digest,
+                         package=package.relative_to(ROOT).as_posix(), package_sha256=package_hash,
+                         class_names=classes, preprocessing=preprocessing,
+                         output_adapter=s.get('output_adapter', 'direct_softmax'),
+                         test_accuracy=s['test_accuracy'], test_macro_f1=s['test_macro_f1'],
+                         presentation_copy_matches=True, archive_crc_passed=True))
+print('7 selected models + packages + presentation copies passed', flush=True)
+
+six_metrics = []
+for s in selected:
+    if not s['version'].startswith('6class_'):
+        continue
+    with zipfile.ZipFile(ROOT / s['package']) as z:
+        csv_name = next(x for x in z.namelist() if x.endswith('test_predictions.csv'))
+        metrics_name = next(x for x in z.namelist() if x.endswith('test_metrics.json'))
+        rows = list(csv.DictReader(io.StringIO(z.read(csv_name).decode('utf-8-sig'))))
+        metrics = json.loads(z.read(metrics_name))
+    cm = np.zeros((6, 6), dtype=np.int64)
+    for row in rows:
+        cm[int(row['true_index']), int(row['pred_index'])] += 1
+    tp = cm.diagonal()
+    denom = cm.sum(axis=0) + cm.sum(axis=1)
+    f1 = np.divide(2 * tp, denom, out=np.zeros(6), where=denom != 0)
+    accuracy = float(tp.sum() / cm.sum())
+    macro = float(f1.mean())
+    assert np.isclose(accuracy, metrics['accuracy'], atol=1e-12, rtol=0)
+    assert np.isclose(macro, metrics['macro_f1'], atol=1e-12, rtol=0)
+    assert metrics['confusion_matrix'] == cm.tolist()
+    assert np.isclose(accuracy, s['test_accuracy'], atol=1e-12, rtol=0)
+    assert np.isclose(macro, s['test_macro_f1'], atol=1e-12, rtol=0)
+    six_metrics.append(dict(version=s['version'], rows=len(rows), accuracy=accuracy,
+                            macro_f1=macro, confusion_matrix=cm.tolist(), matches=True))
+
+bench = list(csv.DictReader((ROOT / 'results/runtime_benchmark_20260928_051423/benchmark.csv').open(encoding='utf-8-sig', newline='')))
+assert len(bench) == 34 and all(x['status'] == 'measured' for x in bench)
+notebooks = list((ROOT / 'notebooks').glob('*.ipynb'))
+for p in notebooks:
+    n = read(p)
+    assert n['nbformat'] == 4 and n['cells']
+assets = list(csv.DictReader((ROOT / 'presentation/시각자료_출처.csv').open(encoding='utf-8-sig', newline='')))
+missing_assets = [r['file'] for r in assets if not (ROOT / r['file']).is_file()]
+actual_assets = list((ROOT / 'presentation').glob('*/시각자료/*.png'))
+listed = {r['file'] for r in assets}
+unlisted = [p.relative_to(ROOT).as_posix() for p in actual_assets if p.relative_to(ROOT).as_posix() not in listed]
+link_files = [ROOT / x for x in ['README.md','docs/README.md','docs/ROADMAP.md',
+    'docs/PROJECT_STATUS_20260928.md','docs/FINAL_DETAILED_REPORT_20260928.md',
+    'docs/MEDIFLOW_4_PHASE_DETAILED_REPORT_20260930.md','docs/research/README.md',
+    'results/README.md','results/MODEL_USAGE.md','results/SELECTED_MODEL_PATHS.md',
+    'results/REPRODUCTION_GUIDE.md','presentation/README.md']]
+bad_links = []
+for p in link_files:
+    for target in re.findall(r'\]\(([^)]+)\)', p.read_text(encoding='utf-8')):
+        if target.startswith(('http:', 'https:', '#')):
+            continue
+        path = target.strip('<>').split('#')[0]
+        if path and not (p.parent / path).exists():
+            bad_links.append(dict(source=p.relative_to(ROOT).as_posix(), target=target))
+integrity = dict(date='2026-10-26', scope='local_workspace_only', selected_models=selected,
+    six_class_saved_predictions=six_metrics,
+    benchmark=dict(count=len(bench), statuses=dict(collections.Counter(x['status'] for x in bench)),
+                   cohorts=dict(collections.Counter(x['cohort'] for x in bench))),
+    notebooks=dict(count=len(notebooks), json_structure_passed=True),
+    presentation=dict(actual_pngs=len(actual_assets), listed=len(assets), missing=missing_assets, unlisted=unlisted),
+    documentation=dict(checked_files=len(link_files), missing_local_links=bad_links),
+    git_commit=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip(),
+    limitations=['No full-Test image inference rerun', 'No Drive or remote repository inspection',
+                 'Sample inference does not measure classification accuracy'])
+write('artifact_integrity.json', integrity)
+print('saved predictions: 2 six-class packages passed; benchmark 34/34; notebook and link scan saved', flush=True)
+
+import tensorflow as tf
+import keras
+from mediflow_datasets.candidate_reproduction import preprocess, prediction_scores, SAMPLES
+
+tf.config.threading.set_intra_op_parallelism_threads(2)
+tf.config.threading.set_inter_op_parallelism_threads(2)
+smoke = dict(purpose='local selected model execution check; not Test accuracy',
+             environment=dict(python=platform.python_version(), tensorflow=tf.__version__,
+                              keras=keras.__version__, numpy=np.__version__,
+                              devices=[str(x) for x in tf.config.list_physical_devices()]), cases=[])
+for s in selected:
+    model = tf.keras.models.load_model(ROOT / s['model'], compile=False)
+    size = s['preprocessing']['input_shape'][0]
+    assert tuple(model.input_shape[1:]) == (size,size,3)
+    for filename in SAMPLES[s['domain']]:
+        image = ROOT / 'data_examples' / s['domain'] / filename
+        inputs = preprocess(image, size)
+        scores = np.asarray(prediction_scores(model, inputs, s['output_adapter']))[0]
+        assert scores.shape == (len(s['class_names']),) and np.isfinite(scores).all()
+        assert (scores >= 0).all() and (scores <= 1).all() and np.isclose(scores.sum(),1,atol=1e-5)
+        smoke['cases'].append(dict(domain=s['domain'], version=s['version'],
+            candidate_id=s['candidate_id'], model_sha256=s['model_sha256'],
+            image=image.relative_to(ROOT).as_posix(), image_sha256=sha(image),
+            class_names=s['class_names'], output_adapter=s['output_adapter'],
+            input_shape=list(inputs.shape), input_min=float(np.min(inputs)), input_max=float(np.max(inputs)),
+            scores=scores.tolist(), predicted_index=int(scores.argmax()),
+            predicted_label=s['class_names'][int(scores.argmax())]))
+    print('sample inference passed: ' + s['domain'] + '/' + s['version'], flush=True)
+    del model
+    keras.backend.clear_session()
+write('selected_model_smoke.json', smoke)
+print('AUDIT COMPLETE', flush=True)

@@ -1,0 +1,1608 @@
+{
+  "skin": {
+    "color_proposals": {
+      "a": {
+        "source_after_lighting_class_balanced_anchor": 15.72265625,
+        "target_equal_group_medians": {
+          "P01/alt": 3.046875,
+          "P01/ref": 2.90625,
+          "P02/ref": 1.5703125,
+          "P02/alt": 2.234375,
+          "P03/alt": 1.828125,
+          "P03/ref": 2.3125,
+          "P04/alt": 1.640625,
+          "P04/ref": 3.359375
+        },
+        "full_direction": -1,
+        "leave_one_person_out_directions": {
+          "P01": -1,
+          "P02": -1,
+          "P03": -1,
+          "P04": -1
+        },
+        "direction_stable": true,
+        "within_person_absolute_q75_limit": 0.9609375,
+        "proposed_range": [
+          -0.9609375,
+          0.0
+        ],
+        "policy": "Zero-inclusive bounded shift; direction stable across four omissions"
+      },
+      "b": {
+        "source_after_lighting_class_balanced_anchor": 11.990234375,
+        "target_equal_group_medians": {
+          "P01/alt": 30.046875,
+          "P01/ref": 31.453125,
+          "P02/ref": 27.828125,
+          "P02/alt": 28.59375,
+          "P03/alt": 31.0,
+          "P03/ref": 30.890625,
+          "P04/alt": 31.78125,
+          "P04/ref": 32.3203125
+        },
+        "full_direction": 1,
+        "leave_one_person_out_directions": {
+          "P01": 1,
+          "P02": 1,
+          "P03": 1,
+          "P04": 1
+        },
+        "direction_stable": true,
+        "within_person_absolute_q75_limit": 0.92578125,
+        "proposed_range": [
+          0.0,
+          0.92578125
+        ],
+        "policy": "Zero-inclusive bounded shift; direction stable across four omissions"
+      }
+    },
+    "color_candidates": {
+      "both": {
+        "accepted": true,
+        "distances": {
+          "per_image_median": {
+            "lab_a": {
+              "before": 14.183792836654677,
+              "after": 13.738697586428227
+            },
+            "lab_b": {
+              "before": 18.477449190443778,
+              "after": 17.99167091259052
+            }
+          },
+          "per_seed": {
+            "42": {
+              "accepted": true,
+              "distances": {
+                "lab_a": {
+                  "before": 14.183792836654677,
+                  "after": 13.724427507925814
+                },
+                "lab_b": {
+                  "before": 18.477449190443778,
+                  "after": 18.008369423686535
+                }
+              }
+            },
+            "707": {
+              "accepted": true,
+              "distances": {
+                "lab_a": {
+                  "before": 14.183792836654677,
+                  "after": 13.735789836201779
+                },
+                "lab_b": {
+                  "before": 18.477449190443778,
+                  "after": 17.99470108695646
+                }
+              }
+            },
+            "1707": {
+              "accepted": true,
+              "distances": {
+                "lab_a": {
+                  "before": 14.183792836654677,
+                  "after": 13.727827549441514
+                },
+                "lab_b": {
+                  "before": 18.477449190443778,
+                  "after": 17.964720618206464
+                }
+              }
+            }
+          }
+        }
+      },
+      "b_only": {
+        "accepted": true,
+        "distances": {
+          "per_image_median": {
+            "lab_a": {
+              "before": 14.183792836654677,
+              "after": 14.180094165157094
+            },
+            "lab_b": {
+              "before": 18.477449190443778,
+              "after": 17.974237384888227
+            }
+          },
+          "per_seed": {
+            "42": {
+              "accepted": true,
+              "distances": {
+                "lab_a": {
+                  "before": 14.183792836654677,
+                  "after": 14.17848755472533
+                },
+                "lab_b": {
+                  "before": 18.477449190443778,
+                  "after": 17.995779551630374
+                }
+              }
+            },
+            "707": {
+              "accepted": true,
+              "distances": {
+                "lab_a": {
+                  "before": 14.183792836654677,
+                  "after": 14.177882038798398
+                },
+                "lab_b": {
+                  "before": 18.477449190443778,
+                  "after": 17.982826653079652
+                }
+              }
+            },
+            "1707": {
+              "accepted": true,
+              "distances": {
+                "lab_a": {
+                  "before": 14.183792836654677,
+                  "after": 14.181091249622673
+                },
+                "lab_b": {
+                  "before": 18.477449190443778,
+                  "after": 17.949610082653933
+                }
+              }
+            }
+          }
+        }
+      },
+      "a_only": {
+        "accepted": false,
+        "distances": {
+          "per_image_median": {
+            "lab_a": {
+              "before": 14.183792836654677,
+              "after": 13.753633095561682
+            },
+            "lab_b": {
+              "before": 18.477449190443778,
+              "after": 18.49624471618352
+            }
+          },
+          "per_seed": {
+            "42": {
+              "accepted": false,
+              "distances": {
+                "lab_a": {
+                  "before": 14.183792836654677,
+                  "after": 13.738964607865425
+                },
+                "lab_b": {
+                  "before": 18.477449190443778,
+                  "after": 18.49571397569438
+                }
+              }
+            },
+            "707": {
+              "accepted": false,
+              "distances": {
+                "lab_a": {
+                  "before": 14.183792836654677,
+                  "after": 13.745518663194535
+                },
+                "lab_b": {
+                  "before": 18.477449190443778,
+                  "after": 18.495842532835084
+                }
+              }
+            },
+            "1707": {
+              "accepted": false,
+              "distances": {
+                "lab_a": {
+                  "before": 14.183792836654677,
+                  "after": 13.737513681310476
+                },
+                "lab_b": {
+                  "before": 18.477449190443778,
+                  "after": 18.49930461201685
+                }
+              }
+            }
+          }
+        }
+      },
+      "none": {
+        "accepted": false,
+        "distances": {
+          "per_image_median": {
+            "lab_a": {
+              "before": 14.183792836654677,
+              "after": 14.183792836654677
+            },
+            "lab_b": {
+              "before": 18.477449190443778,
+              "after": 18.477449190443778
+            }
+          },
+          "per_seed": {
+            "42": {
+              "accepted": false,
+              "distances": {
+                "lab_a": {
+                  "before": 14.183792836654677,
+                  "after": 14.183792836654677
+                },
+                "lab_b": {
+                  "before": 18.477449190443778,
+                  "after": 18.477449190443778
+                }
+              }
+            },
+            "707": {
+              "accepted": false,
+              "distances": {
+                "lab_a": {
+                  "before": 14.183792836654677,
+                  "after": 14.183792836654677
+                },
+                "lab_b": {
+                  "before": 18.477449190443778,
+                  "after": 18.477449190443778
+                }
+              }
+            },
+            "1707": {
+              "accepted": false,
+              "distances": {
+                "lab_a": {
+                  "before": 14.183792836654677,
+                  "after": 14.183792836654677
+                },
+                "lab_b": {
+                  "before": 18.477449190443778,
+                  "after": 18.477449190443778
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "focus_candidates": {
+      "both": {
+        "accepted": false,
+        "distances": {
+          "per_image_median": {
+            "detail": {
+              "before": 2.3426686764987457,
+              "after": 1.4608053975635353
+            },
+            "normalized_detail": {
+              "before": 0.01805824493704202,
+              "after": 0.030290961929089776
+            }
+          },
+          "per_seed": {
+            "42": {
+              "accepted": false,
+              "distances": {
+                "detail": {
+                  "before": 2.34177329389804,
+                  "after": 1.4894915093258665
+                },
+                "normalized_detail": {
+                  "before": 0.018053841559096253,
+                  "after": 0.03043521385731114
+                }
+              }
+            },
+            "707": {
+              "accepted": false,
+              "distances": {
+                "detail": {
+                  "before": 2.3428384184045754,
+                  "after": 1.3647929553968554
+                },
+                "normalized_detail": {
+                  "before": 0.01804987004992282,
+                  "after": 0.03163523738805587
+                }
+              }
+            },
+            "1707": {
+              "accepted": false,
+              "distances": {
+                "detail": {
+                  "before": 2.342182447815313,
+                  "after": 1.4599649619725277
+                },
+                "normalized_detail": {
+                  "before": 0.01809617475334207,
+                  "after": 0.031331137430913286
+                }
+              }
+            }
+          }
+        }
+      },
+      "texture_only": {
+        "accepted": false,
+        "distances": {
+          "per_image_median": {
+            "detail": {
+              "before": 2.3426686764987457,
+              "after": 2.409447114194821
+            },
+            "normalized_detail": {
+              "before": 0.01805824493704202,
+              "after": 0.017705501947792995
+            }
+          },
+          "per_seed": {
+            "42": {
+              "accepted": false,
+              "distances": {
+                "detail": {
+                  "before": 2.34177329389804,
+                  "after": 2.3980522673811278
+                },
+                "normalized_detail": {
+                  "before": 0.018053841559096253,
+                  "after": 0.017747616782117455
+                }
+              }
+            },
+            "707": {
+              "accepted": false,
+              "distances": {
+                "detail": {
+                  "before": 2.3428384184045754,
+                  "after": 2.408054523263605
+                },
+                "normalized_detail": {
+                  "before": 0.01804987004992282,
+                  "after": 0.01766796326759008
+                }
+              }
+            },
+            "1707": {
+              "accepted": false,
+              "distances": {
+                "detail": {
+                  "before": 2.342182447815313,
+                  "after": 2.3760957201754116
+                },
+                "normalized_detail": {
+                  "before": 0.01809617475334207,
+                  "after": 0.01808591808825761
+                }
+              }
+            }
+          }
+        }
+      },
+      "blur_only": {
+        "accepted": false,
+        "distances": {
+          "per_image_median": {
+            "detail": {
+              "before": 2.3426686764987457,
+              "after": 1.443472239501115
+            },
+            "normalized_detail": {
+              "before": 0.01805824493704202,
+              "after": 0.03066673851473346
+            }
+          },
+          "per_seed": {
+            "42": {
+              "accepted": false,
+              "distances": {
+                "detail": {
+                  "before": 2.34177329389804,
+                  "after": 1.4515413323606565
+                },
+                "normalized_detail": {
+                  "before": 0.018053841559096253,
+                  "after": 0.030941684982949687
+                }
+              }
+            },
+            "707": {
+              "accepted": false,
+              "distances": {
+                "detail": {
+                  "before": 2.3428384184045754,
+                  "after": 1.3223248416963045
+                },
+                "normalized_detail": {
+                  "before": 0.01804987004992282,
+                  "after": 0.032271857532799514
+                }
+              }
+            },
+            "1707": {
+              "accepted": false,
+              "distances": {
+                "detail": {
+                  "before": 2.342182447815313,
+                  "after": 1.4391348752206894
+                },
+                "normalized_detail": {
+                  "before": 0.01809617475334207,
+                  "after": 0.03152646444304127
+                }
+              }
+            }
+          }
+        }
+      },
+      "none": {
+        "accepted": false,
+        "distances": {
+          "per_image_median": {
+            "detail": {
+              "before": 2.3426686764987457,
+              "after": 2.3426686764987457
+            },
+            "normalized_detail": {
+              "before": 0.01805824493704202,
+              "after": 0.01805824493704202
+            }
+          },
+          "per_seed": {
+            "42": {
+              "accepted": false,
+              "distances": {
+                "detail": {
+                  "before": 2.34177329389804,
+                  "after": 2.34177329389804
+                },
+                "normalized_detail": {
+                  "before": 0.018053841559096253,
+                  "after": 0.018053841559096253
+                }
+              }
+            },
+            "707": {
+              "accepted": false,
+              "distances": {
+                "detail": {
+                  "before": 2.3428384184045754,
+                  "after": 2.3428384184045754
+                },
+                "normalized_detail": {
+                  "before": 0.01804987004992282,
+                  "after": 0.01804987004992282
+                }
+              }
+            },
+            "1707": {
+              "accepted": false,
+              "distances": {
+                "detail": {
+                  "before": 2.342182447815313,
+                  "after": 2.342182447815313
+                },
+                "normalized_detail": {
+                  "before": 0.01809617475334207,
+                  "after": 0.01809617475334207
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "selected_color": "both",
+    "selected_focus": "none",
+    "unique_profiles_measured": 7,
+    "new_endpoint_max": 0.0
+  },
+  "web_skin": {
+    "color_proposals": {
+      "a": {
+        "source_after_lighting_class_balanced_anchor": 16.5234375,
+        "target_equal_group_medians": {
+          "P01/alt": 15.0234375,
+          "P01/ref": 15.40625,
+          "P02/alt": 16.546875,
+          "P02/ref": 16.80859375,
+          "P03/alt": 15.6796875,
+          "P03/ref": 17.90625,
+          "P04/alt": 13.53125,
+          "P04/ref": 14.421875
+        },
+        "full_direction": 0,
+        "leave_one_person_out_directions": {
+          "P01": 0,
+          "P02": -1,
+          "P03": -1,
+          "P04": 0
+        },
+        "direction_stable": false,
+        "within_person_absolute_q75_limit": 1.2978515625,
+        "proposed_range": [
+          0.0,
+          0.0
+        ],
+        "policy": "Zero-inclusive bounded shift; direction stable across four omissions"
+      },
+      "b": {
+        "source_after_lighting_class_balanced_anchor": 20.734375,
+        "target_equal_group_medians": {
+          "P01/alt": 12.8984375,
+          "P01/ref": 15.53125,
+          "P02/alt": 9.8515625,
+          "P02/ref": 8.171875,
+          "P03/alt": 13.625,
+          "P03/ref": 13.890625,
+          "P04/alt": 18.84375,
+          "P04/ref": 18.484375
+        },
+        "full_direction": -1,
+        "leave_one_person_out_directions": {
+          "P01": -1,
+          "P02": -1,
+          "P03": -1,
+          "P04": -1
+        },
+        "direction_stable": true,
+        "within_person_absolute_q75_limit": 1.9033203125,
+        "proposed_range": [
+          -1.9033203125,
+          0.0
+        ],
+        "policy": "Zero-inclusive bounded shift; direction stable across four omissions"
+      }
+    },
+    "color_candidates": {
+      "both": {
+        "accepted": true,
+        "distances": {
+          "per_image_median": {
+            "lab_a": {
+              "before": 3.1716180572711097,
+              "after": 3.1589067903903456
+            },
+            "lab_b": {
+              "before": 7.005957159914388,
+              "after": 6.280413938982239
+            }
+          },
+          "per_seed": {
+            "42": {
+              "accepted": true,
+              "distances": {
+                "lab_a": {
+                  "before": 3.1767247457592522,
+                  "after": 3.1718041059371176
+                },
+                "lab_b": {
+                  "before": 7.006601511034281,
+                  "after": 6.340327527997392
+                }
+              }
+            },
+            "707": {
+              "accepted": true,
+              "distances": {
+                "lab_a": {
+                  "before": 3.1705143743824404,
+                  "after": 3.1541758018363275
+                },
+                "lab_b": {
+                  "before": 7.007667366600817,
+                  "after": 6.267712965250354
+                }
+              }
+            },
+            "1707": {
+              "accepted": true,
+              "distances": {
+                "lab_a": {
+                  "before": 3.170690129899569,
+                  "after": 3.1616427093626776
+                },
+                "lab_b": {
+                  "before": 7.007031250000026,
+                  "after": 6.207197484354438
+                }
+              }
+            }
+          }
+        }
+      },
+      "b_only": {
+        "accepted": true,
+        "distances": {
+          "per_image_median": {
+            "lab_a": {
+              "before": 3.1716180572711097,
+              "after": 3.1589067903903456
+            },
+            "lab_b": {
+              "before": 7.005957159914388,
+              "after": 6.280413938982239
+            }
+          },
+          "per_seed": {
+            "42": {
+              "accepted": true,
+              "distances": {
+                "lab_a": {
+                  "before": 3.1767247457592522,
+                  "after": 3.1718041059371176
+                },
+                "lab_b": {
+                  "before": 7.006601511034281,
+                  "after": 6.340327527997392
+                }
+              }
+            },
+            "707": {
+              "accepted": true,
+              "distances": {
+                "lab_a": {
+                  "before": 3.1705143743824404,
+                  "after": 3.1541758018363275
+                },
+                "lab_b": {
+                  "before": 7.007667366600817,
+                  "after": 6.267712965250354
+                }
+              }
+            },
+            "1707": {
+              "accepted": true,
+              "distances": {
+                "lab_a": {
+                  "before": 3.170690129899569,
+                  "after": 3.1616427093626776
+                },
+                "lab_b": {
+                  "before": 7.007031250000026,
+                  "after": 6.207197484354438
+                }
+              }
+            }
+          }
+        }
+      },
+      "a_only": {
+        "accepted": false,
+        "distances": {
+          "per_image_median": {
+            "lab_a": {
+              "before": 3.1716180572711097,
+              "after": 3.1716180572711097
+            },
+            "lab_b": {
+              "before": 7.005957159914388,
+              "after": 7.005957159914388
+            }
+          },
+          "per_seed": {
+            "42": {
+              "accepted": false,
+              "distances": {
+                "lab_a": {
+                  "before": 3.1767247457592522,
+                  "after": 3.1767247457592522
+                },
+                "lab_b": {
+                  "before": 7.006601511034281,
+                  "after": 7.006601511034281
+                }
+              }
+            },
+            "707": {
+              "accepted": false,
+              "distances": {
+                "lab_a": {
+                  "before": 3.1705143743824404,
+                  "after": 3.1705143743824404
+                },
+                "lab_b": {
+                  "before": 7.007667366600817,
+                  "after": 7.007667366600817
+                }
+              }
+            },
+            "1707": {
+              "accepted": false,
+              "distances": {
+                "lab_a": {
+                  "before": 3.170690129899569,
+                  "after": 3.170690129899569
+                },
+                "lab_b": {
+                  "before": 7.007031250000026,
+                  "after": 7.007031250000026
+                }
+              }
+            }
+          }
+        }
+      },
+      "none": {
+        "accepted": false,
+        "distances": {
+          "per_image_median": {
+            "lab_a": {
+              "before": 3.1716180572711097,
+              "after": 3.1716180572711097
+            },
+            "lab_b": {
+              "before": 7.005957159914388,
+              "after": 7.005957159914388
+            }
+          },
+          "per_seed": {
+            "42": {
+              "accepted": false,
+              "distances": {
+                "lab_a": {
+                  "before": 3.1767247457592522,
+                  "after": 3.1767247457592522
+                },
+                "lab_b": {
+                  "before": 7.006601511034281,
+                  "after": 7.006601511034281
+                }
+              }
+            },
+            "707": {
+              "accepted": false,
+              "distances": {
+                "lab_a": {
+                  "before": 3.1705143743824404,
+                  "after": 3.1705143743824404
+                },
+                "lab_b": {
+                  "before": 7.007667366600817,
+                  "after": 7.007667366600817
+                }
+              }
+            },
+            "1707": {
+              "accepted": false,
+              "distances": {
+                "lab_a": {
+                  "before": 3.170690129899569,
+                  "after": 3.170690129899569
+                },
+                "lab_b": {
+                  "before": 7.007031250000026,
+                  "after": 7.007031250000026
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "focus_candidates": {
+      "both": {
+        "accepted": true,
+        "distances": {
+          "per_image_median": {
+            "detail": {
+              "before": 0.33171275916291054,
+              "after": 0.20009771130963216
+            },
+            "normalized_detail": {
+              "before": 0.014521436251115162,
+              "after": 0.009809927354870136
+            }
+          },
+          "per_seed": {
+            "42": {
+              "accepted": true,
+              "distances": {
+                "detail": {
+                  "before": 0.33210339487821233,
+                  "after": 0.19239502561061594
+                },
+                "normalized_detail": {
+                  "before": 0.014529471235912687,
+                  "after": 0.009262981666707325
+                }
+              }
+            },
+            "707": {
+              "accepted": true,
+              "distances": {
+                "detail": {
+                  "before": 0.331052433312854,
+                  "after": 0.20279939720610962
+                },
+                "normalized_detail": {
+                  "before": 0.014544722650358098,
+                  "after": 0.009729304240113064
+                }
+              }
+            },
+            "1707": {
+              "accepted": true,
+              "distances": {
+                "detail": {
+                  "before": 0.33596890867069484,
+                  "after": 0.17878942219583524
+                },
+                "normalized_detail": {
+                  "before": 0.014520128483010947,
+                  "after": 0.008665268018555215
+                }
+              }
+            }
+          }
+        }
+      },
+      "texture_only": {
+        "accepted": true,
+        "distances": {
+          "per_image_median": {
+            "detail": {
+              "before": 0.33171275916291054,
+              "after": 0.2825929354992247
+            },
+            "normalized_detail": {
+              "before": 0.014521436251115162,
+              "after": 0.012916660761251933
+            }
+          },
+          "per_seed": {
+            "42": {
+              "accepted": true,
+              "distances": {
+                "detail": {
+                  "before": 0.33210339487821233,
+                  "after": 0.2828013922499532
+                },
+                "normalized_detail": {
+                  "before": 0.014529471235912687,
+                  "after": 0.012872762432004184
+                }
+              }
+            },
+            "707": {
+              "accepted": true,
+              "distances": {
+                "detail": {
+                  "before": 0.331052433312854,
+                  "after": 0.2837838573671515
+                },
+                "normalized_detail": {
+                  "before": 0.014544722650358098,
+                  "after": 0.01296067391023277
+                }
+              }
+            },
+            "1707": {
+              "accepted": true,
+              "distances": {
+                "detail": {
+                  "before": 0.33596890867069484,
+                  "after": 0.2864450545452687
+                },
+                "normalized_detail": {
+                  "before": 0.014520128483010947,
+                  "after": 0.012877047120977928
+                }
+              }
+            }
+          }
+        }
+      },
+      "blur_only": {
+        "accepted": true,
+        "distances": {
+          "per_image_median": {
+            "detail": {
+              "before": 0.33171275916291054,
+              "after": 0.23580834746271317
+            },
+            "normalized_detail": {
+              "before": 0.014521436251115162,
+              "after": 0.011076217509513256
+            }
+          },
+          "per_seed": {
+            "42": {
+              "accepted": true,
+              "distances": {
+                "detail": {
+                  "before": 0.33210339487821233,
+                  "after": 0.22713380591368534
+                },
+                "normalized_detail": {
+                  "before": 0.014529471235912687,
+                  "after": 0.010470871198426386
+                }
+              }
+            },
+            "707": {
+              "accepted": true,
+              "distances": {
+                "detail": {
+                  "before": 0.331052433312854,
+                  "after": 0.23811727865428695
+                },
+                "normalized_detail": {
+                  "before": 0.014544722650358098,
+                  "after": 0.01096305336887189
+                }
+              }
+            },
+            "1707": {
+              "accepted": true,
+              "distances": {
+                "detail": {
+                  "before": 0.33596890867069484,
+                  "after": 0.21184693060457152
+                },
+                "normalized_detail": {
+                  "before": 0.014520128483010947,
+                  "after": 0.009824467053579675
+                }
+              }
+            }
+          }
+        }
+      },
+      "none": {
+        "accepted": false,
+        "distances": {
+          "per_image_median": {
+            "detail": {
+              "before": 0.33171275916291054,
+              "after": 0.33171275916291054
+            },
+            "normalized_detail": {
+              "before": 0.014521436251115162,
+              "after": 0.014521436251115162
+            }
+          },
+          "per_seed": {
+            "42": {
+              "accepted": false,
+              "distances": {
+                "detail": {
+                  "before": 0.33210339487821233,
+                  "after": 0.33210339487821233
+                },
+                "normalized_detail": {
+                  "before": 0.014529471235912687,
+                  "after": 0.014529471235912687
+                }
+              }
+            },
+            "707": {
+              "accepted": false,
+              "distances": {
+                "detail": {
+                  "before": 0.331052433312854,
+                  "after": 0.331052433312854
+                },
+                "normalized_detail": {
+                  "before": 0.014544722650358098,
+                  "after": 0.014544722650358098
+                }
+              }
+            },
+            "1707": {
+              "accepted": false,
+              "distances": {
+                "detail": {
+                  "before": 0.33596890867069484,
+                  "after": 0.33596890867069484
+                },
+                "normalized_detail": {
+                  "before": 0.014520128483010947,
+                  "after": 0.014520128483010947
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "selected_color": "both",
+    "selected_focus": "both",
+    "unique_profiles_measured": 5,
+    "new_endpoint_max": 0.0
+  },
+  "hair": {
+    "color_proposals": {
+      "a": {
+        "source_after_lighting_class_balanced_anchor": -2.96875,
+        "target_equal_group_medians": {
+          "P01/alt": -2.984375,
+          "P01/ref": -1.671875,
+          "P02/alt": -3.625,
+          "P02/ref": -4.25,
+          "P03/alt": -3.640625,
+          "P03/ref": -2.828125,
+          "P04/alt": -3.640625,
+          "P04/ref": -2.46875
+        },
+        "full_direction": 0,
+        "leave_one_person_out_directions": {
+          "P01": -1,
+          "P02": 0,
+          "P03": 0,
+          "P04": 0
+        },
+        "direction_stable": false,
+        "within_person_absolute_q75_limit": 1.171875,
+        "proposed_range": [
+          0.0,
+          0.0
+        ],
+        "policy": "Zero-inclusive bounded shift; direction stable across four omissions"
+      },
+      "b": {
+        "source_after_lighting_class_balanced_anchor": 5.4453125,
+        "target_equal_group_medians": {
+          "P01/alt": 12.46875,
+          "P01/ref": 13.109375,
+          "P02/alt": 10.671875,
+          "P02/ref": 12.875,
+          "P03/alt": 16.328125,
+          "P03/ref": 15.9375,
+          "P04/alt": 14.5625,
+          "P04/ref": 14.9375
+        },
+        "full_direction": 1,
+        "leave_one_person_out_directions": {
+          "P01": 1,
+          "P02": 1,
+          "P03": 1,
+          "P04": 1
+        },
+        "direction_stable": true,
+        "within_person_absolute_q75_limit": 1.03515625,
+        "proposed_range": [
+          0.0,
+          1.03515625
+        ],
+        "policy": "Zero-inclusive bounded shift; direction stable across four omissions"
+      }
+    },
+    "color_candidates": {
+      "both": {
+        "accepted": false,
+        "distances": {
+          "per_image_median": {
+            "lab_a": {
+              "before": 7.449218750000032,
+              "after": 7.476562500000034
+            },
+            "lab_b": {
+              "before": 7.606510416666664,
+              "after": 7.130664062500001
+            }
+          },
+          "per_seed": {
+            "42": {
+              "accepted": false,
+              "distances": {
+                "lab_a": {
+                  "before": 7.446484375000034,
+                  "after": 7.478125000000033
+                },
+                "lab_b": {
+                  "before": 7.59759114583333,
+                  "after": 7.152213541666668
+                }
+              }
+            },
+            "707": {
+              "accepted": false,
+              "distances": {
+                "lab_a": {
+                  "before": 7.455533854166698,
+                  "after": 7.4959635416667
+                },
+                "lab_b": {
+                  "before": 7.608919270833331,
+                  "after": 7.097135416666666
+                }
+              }
+            },
+            "1707": {
+              "accepted": false,
+              "distances": {
+                "lab_a": {
+                  "before": 7.454687500000032,
+                  "after": 7.475000000000033
+                },
+                "lab_b": {
+                  "before": 7.609830729166664,
+                  "after": 7.151171875
+                }
+              }
+            }
+          }
+        }
+      },
+      "b_only": {
+        "accepted": false,
+        "distances": {
+          "per_image_median": {
+            "lab_a": {
+              "before": 7.449218750000032,
+              "after": 7.476562500000034
+            },
+            "lab_b": {
+              "before": 7.606510416666664,
+              "after": 7.130664062500001
+            }
+          },
+          "per_seed": {
+            "42": {
+              "accepted": false,
+              "distances": {
+                "lab_a": {
+                  "before": 7.446484375000034,
+                  "after": 7.478125000000033
+                },
+                "lab_b": {
+                  "before": 7.59759114583333,
+                  "after": 7.152213541666668
+                }
+              }
+            },
+            "707": {
+              "accepted": false,
+              "distances": {
+                "lab_a": {
+                  "before": 7.455533854166698,
+                  "after": 7.4959635416667
+                },
+                "lab_b": {
+                  "before": 7.608919270833331,
+                  "after": 7.097135416666666
+                }
+              }
+            },
+            "1707": {
+              "accepted": false,
+              "distances": {
+                "lab_a": {
+                  "before": 7.454687500000032,
+                  "after": 7.475000000000033
+                },
+                "lab_b": {
+                  "before": 7.609830729166664,
+                  "after": 7.151171875
+                }
+              }
+            }
+          }
+        }
+      },
+      "a_only": {
+        "accepted": false,
+        "distances": {
+          "per_image_median": {
+            "lab_a": {
+              "before": 7.449218750000032,
+              "after": 7.449218750000032
+            },
+            "lab_b": {
+              "before": 7.606510416666664,
+              "after": 7.606510416666664
+            }
+          },
+          "per_seed": {
+            "42": {
+              "accepted": false,
+              "distances": {
+                "lab_a": {
+                  "before": 7.446484375000034,
+                  "after": 7.446484375000034
+                },
+                "lab_b": {
+                  "before": 7.59759114583333,
+                  "after": 7.59759114583333
+                }
+              }
+            },
+            "707": {
+              "accepted": false,
+              "distances": {
+                "lab_a": {
+                  "before": 7.455533854166698,
+                  "after": 7.455533854166698
+                },
+                "lab_b": {
+                  "before": 7.608919270833331,
+                  "after": 7.608919270833331
+                }
+              }
+            },
+            "1707": {
+              "accepted": false,
+              "distances": {
+                "lab_a": {
+                  "before": 7.454687500000032,
+                  "after": 7.454687500000032
+                },
+                "lab_b": {
+                  "before": 7.609830729166664,
+                  "after": 7.609830729166664
+                }
+              }
+            }
+          }
+        }
+      },
+      "none": {
+        "accepted": false,
+        "distances": {
+          "per_image_median": {
+            "lab_a": {
+              "before": 7.449218750000032,
+              "after": 7.449218750000032
+            },
+            "lab_b": {
+              "before": 7.606510416666664,
+              "after": 7.606510416666664
+            }
+          },
+          "per_seed": {
+            "42": {
+              "accepted": false,
+              "distances": {
+                "lab_a": {
+                  "before": 7.446484375000034,
+                  "after": 7.446484375000034
+                },
+                "lab_b": {
+                  "before": 7.59759114583333,
+                  "after": 7.59759114583333
+                }
+              }
+            },
+            "707": {
+              "accepted": false,
+              "distances": {
+                "lab_a": {
+                  "before": 7.455533854166698,
+                  "after": 7.455533854166698
+                },
+                "lab_b": {
+                  "before": 7.608919270833331,
+                  "after": 7.608919270833331
+                }
+              }
+            },
+            "1707": {
+              "accepted": false,
+              "distances": {
+                "lab_a": {
+                  "before": 7.454687500000032,
+                  "after": 7.454687500000032
+                },
+                "lab_b": {
+                  "before": 7.609830729166664,
+                  "after": 7.609830729166664
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "focus_candidates": {
+      "both": {
+        "accepted": false,
+        "distances": {
+          "per_image_median": {
+            "detail": {
+              "before": 2.738410005966802,
+              "after": 5.044040025273936
+            },
+            "normalized_detail": {
+              "before": 0.06624834115643602,
+              "after": 0.03424118483292538
+            },
+            "dark_ridge": {
+              "before": 0.013317418981481213,
+              "after": 0.057886646412036655
+            }
+          },
+          "per_seed": {
+            "42": {
+              "accepted": false,
+              "distances": {
+                "detail": {
+                  "before": 2.7403283576170407,
+                  "after": 5.045552335182802
+                },
+                "normalized_detail": {
+                  "before": 0.06614736376532498,
+                  "after": 0.03409896710846528
+                },
+                "dark_ridge": {
+                  "before": 0.013357883029513618,
+                  "after": 0.057890263310184806
+                }
+              }
+            },
+            "707": {
+              "accepted": false,
+              "distances": {
+                "detail": {
+                  "before": 2.739963495731334,
+                  "after": 5.115079498290992
+                },
+                "normalized_detail": {
+                  "before": 0.06627932909455769,
+                  "after": 0.033550220105531485
+                },
+                "dark_ridge": {
+                  "before": 0.013272659866897879,
+                  "after": 0.05883178710937464
+                }
+              }
+            },
+            "1707": {
+              "accepted": false,
+              "distances": {
+                "detail": {
+                  "before": 2.741720147927582,
+                  "after": 5.07339068651197
+                },
+                "normalized_detail": {
+                  "before": 0.06624971971563459,
+                  "after": 0.03276804949218996
+                },
+                "dark_ridge": {
+                  "before": 0.013281249999999733,
+                  "after": 0.05794383861400425
+                }
+              }
+            }
+          }
+        }
+      },
+      "texture_only": {
+        "accepted": false,
+        "distances": {
+          "per_image_median": {
+            "detail": {
+              "before": 2.738410005966802,
+              "after": 3.4357328792412867
+            },
+            "normalized_detail": {
+              "before": 0.06624834115643602,
+              "after": 0.05736502056965319
+            },
+            "dark_ridge": {
+              "before": 0.013317418981481213,
+              "after": 0.025539595992476523
+            }
+          },
+          "per_seed": {
+            "42": {
+              "accepted": false,
+              "distances": {
+                "detail": {
+                  "before": 2.7403283576170407,
+                  "after": 3.4151800612608385
+                },
+                "normalized_detail": {
+                  "before": 0.06614736376532498,
+                  "after": 0.057760982275276124
+                },
+                "dark_ridge": {
+                  "before": 0.013357883029513618,
+                  "after": 0.025251148365161707
+                }
+              }
+            },
+            "707": {
+              "accepted": false,
+              "distances": {
+                "detail": {
+                  "before": 2.739963495731334,
+                  "after": 3.4332009732723026
+                },
+                "normalized_detail": {
+                  "before": 0.06627932909455769,
+                  "after": 0.0573660029548026
+                },
+                "dark_ridge": {
+                  "before": 0.013272659866897879,
+                  "after": 0.025585033275462635
+                }
+              }
+            },
+            "1707": {
+              "accepted": false,
+              "distances": {
+                "detail": {
+                  "before": 2.741720147927582,
+                  "after": 3.430229761203109
+                },
+                "normalized_detail": {
+                  "before": 0.06624971971563459,
+                  "after": 0.05732239700267429
+                },
+                "dark_ridge": {
+                  "before": 0.013281249999999733,
+                  "after": 0.025345639829282084
+                }
+              }
+            }
+          }
+        }
+      },
+      "blur_only": {
+        "accepted": false,
+        "distances": {
+          "per_image_median": {
+            "detail": {
+              "before": 2.738410005966802,
+              "after": 4.584113765756267
+            },
+            "normalized_detail": {
+              "before": 0.06624834115643602,
+              "after": 0.04053826263901825
+            },
+            "dark_ridge": {
+              "before": 0.013317418981481213,
+              "after": 0.05031602647569408
+            }
+          },
+          "per_seed": {
+            "42": {
+              "accepted": false,
+              "distances": {
+                "detail": {
+                  "before": 2.7403283576170407,
+                  "after": 4.596669380863486
+                },
+                "normalized_detail": {
+                  "before": 0.06614736376532498,
+                  "after": 0.04029502260744926
+                },
+                "dark_ridge": {
+                  "before": 0.013357883029513618,
+                  "after": 0.05042091652199038
+                }
+              }
+            },
+            "707": {
+              "accepted": false,
+              "distances": {
+                "detail": {
+                  "before": 2.739963495731334,
+                  "after": 4.661042394240676
+                },
+                "normalized_detail": {
+                  "before": 0.06627932909455769,
+                  "after": 0.040036396325860674
+                },
+                "dark_ridge": {
+                  "before": 0.013272659866897879,
+                  "after": 0.0511915418836802
+                }
+              }
+            },
+            "1707": {
+              "accepted": false,
+              "distances": {
+                "detail": {
+                  "before": 2.741720147927582,
+                  "after": 4.614553303519863
+                },
+                "normalized_detail": {
+                  "before": 0.06624971971563459,
+                  "after": 0.03906476383882662
+                },
+                "dark_ridge": {
+                  "before": 0.013281249999999733,
+                  "after": 0.05048963758680519
+                }
+              }
+            }
+          }
+        }
+      },
+      "none": {
+        "accepted": false,
+        "distances": {
+          "per_image_median": {
+            "detail": {
+              "before": 2.738410005966802,
+              "after": 2.738410005966802
+            },
+            "normalized_detail": {
+              "before": 0.06624834115643602,
+              "after": 0.06624834115643602
+            },
+            "dark_ridge": {
+              "before": 0.013317418981481213,
+              "after": 0.013317418981481213
+            }
+          },
+          "per_seed": {
+            "42": {
+              "accepted": false,
+              "distances": {
+                "detail": {
+                  "before": 2.7403283576170407,
+                  "after": 2.7403283576170407
+                },
+                "normalized_detail": {
+                  "before": 0.06614736376532498,
+                  "after": 0.06614736376532498
+                },
+                "dark_ridge": {
+                  "before": 0.013357883029513618,
+                  "after": 0.013357883029513618
+                }
+              }
+            },
+            "707": {
+              "accepted": false,
+              "distances": {
+                "detail": {
+                  "before": 2.739963495731334,
+                  "after": 2.739963495731334
+                },
+                "normalized_detail": {
+                  "before": 0.06627932909455769,
+                  "after": 0.06627932909455769
+                },
+                "dark_ridge": {
+                  "before": 0.013272659866897879,
+                  "after": 0.013272659866897879
+                }
+              }
+            },
+            "1707": {
+              "accepted": false,
+              "distances": {
+                "detail": {
+                  "before": 2.741720147927582,
+                  "after": 2.741720147927582
+                },
+                "normalized_detail": {
+                  "before": 0.06624971971563459,
+                  "after": 0.06624971971563459
+                },
+                "dark_ridge": {
+                  "before": 0.013281249999999733,
+                  "after": 0.013281249999999733
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "selected_color": "none",
+    "selected_focus": "none",
+    "unique_profiles_measured": 5,
+    "new_endpoint_max": 0.0
+  }
+}
