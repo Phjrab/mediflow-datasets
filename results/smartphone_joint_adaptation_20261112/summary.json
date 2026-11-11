@@ -1,0 +1,30 @@
+{
+  "status": "completed",
+  "training_trials": 1,
+  "stage": 5,
+  "candidate_id": "f10926b662a4a43c",
+  "validation_selected_model": {
+    "selected_on": "Source Validation only; five common conditions",
+    "model": "stage4",
+    "sha256": "f08958c745811dc34d8e876e742f911abc1f6938babdc64bd82a284d7e052c9e",
+    "conditions": [
+      "clean",
+      "phone_lighting",
+      "phone_expanded",
+      "phone_refit",
+      "phone_joint"
+    ],
+    "target_holdout_used": false,
+    "source_test_evaluated": false,
+    "device_similarity_selection": false,
+    "official_candidate_changed": false
+  },
+  "epochs_completed": 5,
+  "reused_validation_results": 20,
+  "new_validation_results": 10,
+  "total_validation_results": 30,
+  "source_test_evaluated": false,
+  "target_holdout_used": false,
+  "target_accuracy": null,
+  "interpretation": "Exploratory reviewed-camera profile; device equivalence unverified"
+}

@@ -1,0 +1,142 @@
+{
+  "status": "passed",
+  "scope": "Five saved models load in safe mode and infer on synthetic RGB 0-255 input; not a new disease performance evaluation",
+  "environment": {
+    "tensorflow": "2.20.0",
+    "keras": "3.13.2",
+    "numpy": "2.5.2",
+    "device": "Windows CPU"
+  },
+  "checks": [
+    {
+      "trial": "stage1_basic",
+      "model_sha256": "2171e986ade2494f3937bec01b13c2d7e9cb5018e44ba11576d0b1493435b005",
+      "input_shape": [
+        null,
+        224,
+        224,
+        3
+      ],
+      "output_heads": 1,
+      "score_shape": [
+        1,
+        5
+      ],
+      "finite_scores": true,
+      "internal_rescaling": [
+        0.00392156862745098,
+        [
+          2.0896918976428642,
+          2.1128856368212916,
+          2.1081851067789197
+        ]
+      ],
+      "external_division_by_255": false,
+      "validation_accuracy_remeasured": false
+    },
+    {
+      "trial": "stage1_selected",
+      "model_sha256": "39bcb2f3567f3f5bfa570a2fc7ecb5e8a03d1a601011a98063d83add39460cd7",
+      "input_shape": [
+        null,
+        256,
+        256,
+        3
+      ],
+      "output_heads": 4,
+      "score_shape": [
+        1,
+        5
+      ],
+      "finite_scores": true,
+      "internal_rescaling": [
+        0.00392156862745098,
+        [
+          2.0896918976428642,
+          2.1128856368212916,
+          2.1081851067789197
+        ]
+      ],
+      "external_division_by_255": false,
+      "validation_accuracy_remeasured": false
+    },
+    {
+      "trial": "stage2",
+      "model_sha256": "ad2a4799b1c6df2b9c70b75332049109fdd8a7ae45dac8d27a9e028d3a92b1dd",
+      "input_shape": [
+        null,
+        256,
+        256,
+        3
+      ],
+      "output_heads": 4,
+      "score_shape": [
+        1,
+        5
+      ],
+      "finite_scores": true,
+      "internal_rescaling": [
+        0.00392156862745098,
+        [
+          2.0896918976428642,
+          2.1128856368212916,
+          2.1081851067789197
+        ]
+      ],
+      "external_division_by_255": false,
+      "validation_accuracy_remeasured": false
+    },
+    {
+      "trial": "stage3",
+      "model_sha256": "d17252137398da71cf6e4e19122c21eabdc9ce2fa000cf88e345d67245d2eef3",
+      "input_shape": [
+        null,
+        256,
+        256,
+        3
+      ],
+      "output_heads": 4,
+      "score_shape": [
+        1,
+        5
+      ],
+      "finite_scores": true,
+      "internal_rescaling": [
+        0.00392156862745098,
+        [
+          2.0896918976428642,
+          2.1128856368212916,
+          2.1081851067789197
+        ]
+      ],
+      "external_division_by_255": false,
+      "validation_accuracy_remeasured": false
+    },
+    {
+      "trial": "stage4",
+      "model_sha256": "f08958c745811dc34d8e876e742f911abc1f6938babdc64bd82a284d7e052c9e",
+      "input_shape": [
+        null,
+        256,
+        256,
+        3
+      ],
+      "output_heads": 4,
+      "score_shape": [
+        1,
+        5
+      ],
+      "finite_scores": true,
+      "internal_rescaling": [
+        0.00392156862745098,
+        [
+          2.0896918976428642,
+          2.1128856368212916,
+          2.1081851067789197
+        ]
+      ],
+      "external_division_by_255": false,
+      "validation_accuracy_remeasured": false
+    }
+  ]
+}

@@ -1,9 +1,12 @@
 # 촬영 환경 적응 노트북
 
-현재는 **1~4차 학습과 Source Test 비교 완료** 단계다. [4차 추가 Test 분석](../../docs/research/camera_adaptation/ADAPTATION_STAGE4_TEST_RESULT_REVIEW_20261111.md)을 확인한다. 재설정 4차는 사용자 결정으로 실행하지 않고 보관한다.
+현재는 **스마트폰 최종 Source Test·연구용 패키징 완료**다. 휴대폰 총 6회와 기존 장비 15회 학습을 확인했다. 전체 과정은 [최종 정리](../../docs/research/camera_adaptation/ADAPTATION_COMPLETION_20261112.md)를 따른다. 아래 노트북은 완료 실험의 재현용이며 실제 장비 질환 정답 평가는 별도로 남아 있다. 기존 재설정 4차는 사용자 결정으로 실행하지 않고 보관한다.
 
 | 구분 | 파일·폴더 | 상태 |
 | --- | --- | --- |
+| 스마트폰 최종 Test · 실행 완료 | [고정 최종 Test](MediFlow_Smartphone_Final_Test_20261112.ipynb) | 실제 400장·6모델×5조건·예측 검산 완료. [결과](../../results/smartphone_final_test_20261112/README.md), [재현 안내](../../output/smartphone_final_test_20261112/README.md) |
+| 휴대폰 근접 후보 · 실행 완료 | [추가 1회 전용](MediFlow_Smartphone_Joint_Training_20261112.ipynb) | 5 epoch 완료·최적 3 epoch. [결과·모델](../../results/smartphone_joint_adaptation_20261112/README.md), [재현 안내](../../output/smartphone_joint_training_20261112/README.md) |
+| 스마트폰 얼굴 · 실행 완료 | [스마트폰 1~4차](MediFlow_Smartphone_WebSkin_Stages_20261111.ipynb) | 실제 5회 학습 결과 회수 완료. [모델·원본 결과](../../results/smartphone_web_skin_adaptation_20261112/README.md), [재현 ZIP·안내](../../output/smartphone_web_skin_20261111/README.md) |
 | 완료한 Test 재현 | [4차만 추가 Test](completed/MediFlow_Adaptation_Stage4_Test_20261111.ipynb) | 4차 신규 15개·기존 36개 재사용 완료, [결과](../../results/camera_adaptation_stage4_test_20261111/README.md) |
 | 완료한 4차 | [4차 재현 노트북](completed/MediFlow_Adaptation_Stage4_20261111.ipynb) | [모델·회수 결과](../../results/camera_adaptation_stage4_before_refit_20261111/README.md), 설정 492ee01afb45 |
 | 완료 실험 재현 | [completed](completed/README.md) | 1·2·3·4차와 이전 Test |

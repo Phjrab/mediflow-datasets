@@ -1,0 +1,2614 @@
+{
+  "schema": "mediflow_phone_stage2_common_nearer_review_v1",
+  "status": "measured",
+  "policy": {
+    "source": "118 retained stratified original Train previews; 104 measured face ROIs",
+    "target": "P01-P04 unlabeled calibration only; P05 holdout excluded",
+    "changed_variable": "Stage2 additional appearance profile; Stage1 lighting fixed",
+    "interpretation": "Nearest bounded approximation, not a common causal camera correction",
+    "probe_per_class": 4,
+    "probe_seed": 42,
+    "full_replay_seeds": [
+      42,
+      707,
+      1707
+    ],
+    "minimum_improved_people": 3,
+    "minimum_improved_omissions": 3,
+    "max_person_relative_cost_increase": 0.05,
+    "max_guard_relative_wasserstein_increase": 0.02,
+    "spatial_correlation_q05_minimum": 0.95,
+    "color_budget": "median per-person q90-q10, capped by the existing Lab limit",
+    "texture_budget": "half of median within-person relative normalized-detail span, cap 0.15",
+    "blur_grid_roi64": [
+      0.05,
+      0.1,
+      0.2
+    ],
+    "limits_meaning": "Declared engineering search guards, not validated clinical thresholds",
+    "test_or_classifier_score_used_for_profile_selection": false
+  },
+  "profile_source_sha256": "b32f2aa7e0c3b3518976877dbaa348d845c61d7583dc356f095c1a55acb3d04d",
+  "measurement_source_sha256": "61184c3bddb67a9c6ed093c102351522a2ec5eeab6b58125ab15d8247a4410e2",
+  "source_manifest_sha256": "7c8b41878883193e5dd340ab8a4b7f804a3ab7f37c8159093b663937d997a738",
+  "profiles": {
+    "stage1": {
+      "schema": "measured_camera_extended_v1",
+      "domain": "web_skin",
+      "lighting": {
+        "domain": "web_skin",
+        "photometric_operator": "bounded_additive_v3",
+        "brightness_offset": [
+          -9.812064954152099,
+          0.0
+        ],
+        "contrast": [
+          1.0,
+          1.0904393083614523
+        ],
+        "left_light": [
+          -0.21119308471679688,
+          0.0
+        ],
+        "scale_x": [
+          1.0,
+          1.0
+        ],
+        "scale_y": [
+          1.0,
+          1.0
+        ]
+      },
+      "color_a": [
+        0.0,
+        0.0
+      ],
+      "color_b": [
+        0.0,
+        0.0
+      ],
+      "texture_gain": [
+        1.0,
+        1.0
+      ],
+      "blur_sigma_roi64": [
+        0.0,
+        0.0
+      ],
+      "blur_input_scale": 0.41125000000000006
+    },
+    "stage2": {
+      "schema": "measured_camera_extended_v1",
+      "domain": "web_skin",
+      "lighting": {
+        "domain": "web_skin",
+        "photometric_operator": "bounded_additive_v3",
+        "brightness_offset": [
+          -9.812064954152099,
+          0.0
+        ],
+        "contrast": [
+          1.0,
+          1.0904393083614523
+        ],
+        "left_light": [
+          -0.21119308471679688,
+          0.0
+        ],
+        "scale_x": [
+          1.0,
+          1.0
+        ],
+        "scale_y": [
+          1.0,
+          1.0
+        ]
+      },
+      "color_a": [
+        0.0,
+        1.0117187500000009
+      ],
+      "color_b": [
+        0.0,
+        0.0
+      ],
+      "texture_gain": [
+        1.0,
+        1.0
+      ],
+      "blur_sigma_roi64": [
+        0.0,
+        0.0
+      ],
+      "blur_input_scale": 0.41125000000000006
+    },
+    "stage4": {
+      "schema": "measured_camera_extended_v1",
+      "domain": "web_skin",
+      "lighting": {
+        "domain": "web_skin",
+        "photometric_operator": "bounded_additive_v3",
+        "brightness_offset": [
+          -19.624129908304198,
+          0.0
+        ],
+        "contrast": [
+          1.0,
+          1.1808786167229048
+        ],
+        "left_light": [
+          -0.42238616943359375,
+          0.0
+        ],
+        "scale_x": [
+          1.0,
+          1.0
+        ],
+        "scale_y": [
+          1.0,
+          1.0
+        ]
+      },
+      "color_a": [
+        0.0,
+        0.0
+      ],
+      "color_b": [
+        0.0,
+        0.0
+      ],
+      "texture_gain": [
+        1.0,
+        1.0
+      ],
+      "blur_sigma_roi64": [
+        0.0,
+        0.0
+      ],
+      "blur_input_scale": 0.41125000000000006
+    }
+  },
+  "selected_stage2_differs_from_stage1": true,
+  "decisions": [
+    {
+      "variable": "color_a",
+      "budget_evidence": {
+        "measured_within_person_q90_q10_median": 1.0117187500000009
+      },
+      "probe": [
+        {
+          "range": [
+            -0.2529296875000002,
+            0.0
+          ],
+          "assessment": {
+            "accepted": false,
+            "relative_cost": 1.027146909066056,
+            "wasserstein_before": {
+              "lab_a": 4.762858072916668
+            },
+            "wasserstein_after": {
+              "lab_a": 4.8921549479166675
+            },
+            "person_improvements": 0,
+            "per_person": {
+              "P01": {
+                "before": 0.8171410996821921,
+                "after": 0.8298533984895597,
+                "relative_change": 0.01555704248912683
+              },
+              "P02": {
+                "before": 0.8702593719030851,
+                "after": 0.8857601749649723,
+                "relative_change": 0.017811704834605778
+              },
+              "P03": {
+                "before": 0.703933294604107,
+                "after": 0.7166455934114746,
+                "relative_change": 0.018058953745776415
+              },
+              "P04": {
+                "before": 2.741509756347606,
+                "after": 2.768656665413662,
+                "relative_change": 0.009902174888563053
+              }
+            },
+            "omission_improvements": 0,
+            "leave_one_person_out": {
+              "P01": {
+                "before": 1.200396405016574,
+                "after": 1.2275433140826304
+              },
+              "P02": {
+                "before": 1.1390401986581464,
+                "after": 1.1661871077242025
+              },
+              "P03": {
+                "before": 1.2410666484411486,
+                "after": 1.2682135575072047
+              },
+              "P04": {
+                "before": 0.7280912187176065,
+                "after": 0.7408035175249743
+              }
+            },
+            "guard_before": {
+              "y_p50": 15.651561403274552,
+              "contrast": 7.180530548095718,
+              "lab_b": 2.4805338541666675
+            },
+            "guard_after": {
+              "y_p50": 15.481009149551408,
+              "contrast": 7.211834685007744,
+              "lab_b": 2.488346354166667
+            },
+            "guard_passed": true,
+            "spatial_correlation_q05": 0.9997015330973661
+          }
+        },
+        {
+          "range": [
+            -0.5058593750000004,
+            0.0
+          ],
+          "assessment": {
+            "accepted": false,
+            "relative_cost": 1.0424836824659127,
+            "wasserstein_before": {
+              "lab_a": 4.762858072916668
+            },
+            "wasserstein_after": {
+              "lab_a": 4.965201822916669
+            },
+            "person_improvements": 0,
+            "per_person": {
+              "P01": {
+                "before": 0.8171410996821921,
+                "after": 0.8328879472371248,
+                "relative_change": 0.019270659083305303
+              },
+              "P02": {
+                "before": 0.8702593719030851,
+                "after": 0.8887947237125374,
+                "relative_change": 0.021298652341909478
+              },
+              "P03": {
+                "before": 0.703933294604107,
+                "after": 0.7196801421590396,
+                "relative_change": 0.022369800768961574
+              },
+              "P04": {
+                "before": 2.741509756347606,
+                "after": 2.7839934388135186,
+                "relative_change": 0.015496454961557991
+              }
+            },
+            "omission_improvements": 0,
+            "leave_one_person_out": {
+              "P01": {
+                "before": 1.200396405016574,
+                "after": 1.2428800874824866
+              },
+              "P02": {
+                "before": 1.1390401986581464,
+                "after": 1.1815238811240587
+              },
+              "P03": {
+                "before": 1.2410666484411486,
+                "after": 1.2835503309070613
+              },
+              "P04": {
+                "before": 0.7280912187176065,
+                "after": 0.7438380662725395
+              }
+            },
+            "guard_before": {
+              "y_p50": 15.651561403274552,
+              "contrast": 7.180530548095718,
+              "lab_b": 2.4805338541666675
+            },
+            "guard_after": {
+              "y_p50": 15.489035654068008,
+              "contrast": 7.150432046254491,
+              "lab_b": 2.503190104166667
+            },
+            "guard_passed": true,
+            "spatial_correlation_q05": 0.9997005441423608
+          }
+        },
+        {
+          "range": [
+            -1.0117187500000009,
+            0.0
+          ],
+          "assessment": {
+            "accepted": false,
+            "relative_cost": 1.1008782421487888,
+            "wasserstein_before": {
+              "lab_a": 4.762858072916668
+            },
+            "wasserstein_after": {
+              "lab_a": 5.243326822916669
+            },
+            "person_improvements": 0,
+            "per_person": {
+              "P01": {
+                "before": 0.8171410996821921,
+                "after": 0.8632334347127768,
+                "relative_change": 0.05640682502509209
+              },
+              "P02": {
+                "before": 0.8702593719030851,
+                "after": 0.93127840617845,
+                "relative_change": 0.07011591744416193
+              },
+              "P03": {
+                "before": 0.703933294604107,
+                "after": 0.7500256296346917,
+                "relative_change": 0.06547827100081552
+              },
+              "P04": {
+                "before": 2.741509756347606,
+                "after": 2.8423879984963945,
+                "relative_change": 0.036796601549645425
+              }
+            },
+            "omission_improvements": 0,
+            "leave_one_person_out": {
+              "P01": {
+                "before": 1.200396405016574,
+                "after": 1.3012746471653627
+              },
+              "P02": {
+                "before": 1.1390401986581464,
+                "after": 1.239918440806935
+              },
+              "P03": {
+                "before": 1.2410666484411486,
+                "after": 1.3419448905899372
+              },
+              "P04": {
+                "before": 0.7280912187176065,
+                "after": 0.7763706159085985
+              }
+            },
+            "guard_before": {
+              "y_p50": 15.651561403274552,
+              "contrast": 7.180530548095718,
+              "lab_b": 2.4805338541666675
+            },
+            "guard_after": {
+              "y_p50": 15.396761751174942,
+              "contrast": 7.101405938466405,
+              "lab_b": 2.519596354166667
+            },
+            "guard_passed": true,
+            "spatial_correlation_q05": 0.999697023688625
+          }
+        },
+        {
+          "range": [
+            0.0,
+            0.2529296875000002
+          ],
+          "assessment": {
+            "accepted": true,
+            "relative_cost": 0.965717800635615,
+            "wasserstein_before": {
+              "lab_a": 4.762858072916668
+            },
+            "wasserstein_after": {
+              "lab_a": 4.599576822916668
+            },
+            "person_improvements": 4,
+            "per_person": {
+              "P01": {
+                "before": 0.8171410996821921,
+                "after": 0.802542459761473,
+                "relative_change": -0.01786550685848121
+              },
+              "P02": {
+                "before": 0.8702593719030851,
+                "after": 0.8558247616443966,
+                "relative_change": -0.016586561115823312
+              },
+              "P03": {
+                "before": 0.703933294604107,
+                "after": 0.6904828623176018,
+                "relative_change": -0.01910753815682175
+              },
+              "P04": {
+                "before": 2.741509756347606,
+                "after": 2.707227556983221,
+                "relative_change": -0.012504861339635655
+              }
+            },
+            "omission_improvements": 4,
+            "leave_one_person_out": {
+              "P01": {
+                "before": 1.200396405016574,
+                "after": 1.1661142056521892
+              },
+              "P02": {
+                "before": 1.1390401986581464,
+                "after": 1.1047579992937613
+              },
+              "P03": {
+                "before": 1.2410666484411486,
+                "after": 1.2067844490767634
+              },
+              "P04": {
+                "before": 0.7280912187176065,
+                "after": 0.7134925787968877
+              }
+            },
+            "guard_before": {
+              "y_p50": 15.651561403274552,
+              "contrast": 7.180530548095718,
+              "lab_b": 2.4805338541666675
+            },
+            "guard_after": {
+              "y_p50": 15.508012437820451,
+              "contrast": 7.254185835520443,
+              "lab_b": 2.499674479166667
+            },
+            "guard_passed": true,
+            "spatial_correlation_q05": 0.9996965746856713
+          }
+        },
+        {
+          "range": [
+            0.0,
+            0.5058593750000004
+          ],
+          "assessment": {
+            "accepted": true,
+            "relative_cost": 0.9562860950688583,
+            "wasserstein_before": {
+              "lab_a": 4.762858072916668
+            },
+            "wasserstein_after": {
+              "lab_a": 4.554654947916668
+            },
+            "person_improvements": 4,
+            "per_person": {
+              "P01": {
+                "before": 0.8171410996821921,
+                "after": 0.7988517923657856,
+                "relative_change": -0.02238206758113089
+              },
+              "P02": {
+                "before": 0.8702593719030851,
+                "after": 0.8521340942487093,
+                "relative_change": -0.020827443219300672
+              },
+              "P03": {
+                "before": 0.703933294604107,
+                "after": 0.6874483135700367,
+                "relative_change": -0.023418385180007065
+              },
+              "P04": {
+                "before": 2.741509756347606,
+                "after": 2.6977958514164646,
+                "relative_change": -0.015945194004846293
+              }
+            },
+            "omission_improvements": 4,
+            "leave_one_person_out": {
+              "P01": {
+                "before": 1.200396405016574,
+                "after": 1.1566825000854324
+              },
+              "P02": {
+                "before": 1.1390401986581464,
+                "after": 1.0953262937270045
+              },
+              "P03": {
+                "before": 1.2410666484411486,
+                "after": 1.197352743510007
+              },
+              "P04": {
+                "before": 0.7280912187176065,
+                "after": 0.7098019114012002
+              }
+            },
+            "guard_before": {
+              "y_p50": 15.651561403274552,
+              "contrast": 7.180530548095718,
+              "lab_b": 2.4805338541666675
+            },
+            "guard_after": {
+              "y_p50": 15.524361848831191,
+              "contrast": 7.302160040537533,
+              "lab_b": 2.506705729166667
+            },
+            "guard_passed": true,
+            "spatial_correlation_q05": 0.9996906799002083
+          }
+        },
+        {
+          "range": [
+            0.0,
+            1.0117187500000009
+          ],
+          "assessment": {
+            "accepted": true,
+            "relative_cost": 0.8985476540341046,
+            "wasserstein_before": {
+              "lab_a": 4.762858072916668
+            },
+            "wasserstein_after": {
+              "lab_a": 4.279654947916669
+            },
+            "person_improvements": 4,
+            "per_person": {
+              "P01": {
+                "before": 0.8171410996821921,
+                "after": 0.7808905443734404,
+                "relative_change": -0.044362663098026105
+              },
+              "P02": {
+                "before": 0.8702593719030851,
+                "after": 0.8231828589003172,
+                "relative_change": -0.05409480727546882
+              },
+              "P03": {
+                "before": 0.703933294604107,
+                "after": 0.6868742097529297,
+                "relative_change": -0.02423395083304222
+              },
+              "P04": {
+                "before": 2.741509756347606,
+                "after": 2.6257048149540374,
+                "relative_change": -0.04224130194154426
+              }
+            },
+            "omission_improvements": 4,
+            "leave_one_person_out": {
+              "P01": {
+                "before": 1.200396405016574,
+                "after": 1.0845914636230052
+              },
+              "P02": {
+                "before": 1.1390401986581464,
+                "after": 1.0233628358906015
+              },
+              "P03": {
+                "before": 1.2410666484411486,
+                "after": 1.12526170704758
+              },
+              "P04": {
+                "before": 0.7280912187176065,
+                "after": 0.6871020287279722
+              }
+            },
+            "guard_before": {
+              "y_p50": 15.651561403274552,
+              "contrast": 7.180530548095718,
+              "lab_b": 2.4805338541666675
+            },
+            "guard_after": {
+              "y_p50": 15.490862321853655,
+              "contrast": 7.231183465321875,
+              "lab_b": 2.497721354166667
+            },
+            "guard_passed": true,
+            "spatial_correlation_q05": 0.9996783265060694
+          }
+        }
+      ],
+      "full_replays": [
+        {
+          "range": [
+            0.0,
+            1.0117187500000009
+          ],
+          "assessment": {
+            "accepted": true,
+            "relative_cost": 0.8959039941397857,
+            "wasserstein_before": {
+              "lab_a": 4.3032921350049325
+            },
+            "wasserstein_after": {
+              "lab_a": 3.855336611701245
+            },
+            "person_improvements": 4,
+            "per_person": {
+              "P01": {
+                "before": 0.9758734074082444,
+                "after": 0.9507968919934137,
+                "relative_change": -0.02569648401571849
+              },
+              "P02": {
+                "before": 1.0146284407270016,
+                "after": 0.9609997645449613,
+                "relative_change": -0.05285548288358086
+              },
+              "P03": {
+                "before": 0.8735794174916997,
+                "after": 0.8627134437355936,
+                "relative_change": -0.012438449828986887
+              },
+              "P04": {
+                "before": 2.9172994278068707,
+                "after": 2.802387977590664,
+                "relative_change": -0.03938966604555686
+              }
+            },
+            "omission_improvements": 4,
+            "leave_one_person_out": {
+              "P01": {
+                "before": 1.2116043607769276,
+                "after": 1.09669291056072
+              },
+              "P02": {
+                "before": 1.1442867219549995,
+                "after": 1.0525118369106305
+              },
+              "P03": {
+                "before": 1.256617943667692,
+                "after": 1.141706493451485
+              },
+              "P04": {
+                "before": 0.8721286356937453,
+                "after": 0.8458871335653064
+              }
+            },
+            "guard_before": {
+              "y_p50": 16.890772624198068,
+              "contrast": 6.115864500666541,
+              "lab_b": 2.75056354990118
+            },
+            "guard_after": {
+              "y_p50": 16.688078726955776,
+              "contrast": 6.092019106622488,
+              "lab_b": 2.751308001893933
+            },
+            "guard_passed": true,
+            "spatial_correlation_q05": 0.9995042970597972
+          }
+        },
+        {
+          "range": [
+            0.0,
+            0.5058593750000004
+          ],
+          "assessment": {
+            "accepted": true,
+            "relative_cost": 0.9476463988458966,
+            "wasserstein_before": {
+              "lab_a": 4.3032921350049325
+            },
+            "wasserstein_after": {
+              "lab_a": 4.0779992949192945
+            },
+            "person_improvements": 4,
+            "per_person": {
+              "P01": {
+                "before": 0.9758734074082444,
+                "after": 0.9627307403379406,
+                "relative_change": -0.013467594229469243
+              },
+              "P02": {
+                "before": 1.0146284407270016,
+                "after": 0.9890768293548966,
+                "relative_change": -0.025183220129131014
+              },
+              "P03": {
+                "before": 0.8735794174916997,
+                "after": 0.8679445223065683,
+                "relative_change": -0.006450352506370634
+              },
+              "P04": {
+                "before": 2.9172994278068707,
+                "after": 2.8594069672269042,
+                "relative_change": -0.019844538420757202
+              }
+            },
+            "omission_improvements": 4,
+            "leave_one_person_out": {
+              "P01": {
+                "before": 1.2116043607769276,
+                "after": 1.1537119001969602
+              },
+              "P02": {
+                "before": 1.1442867219549995,
+                "after": 1.095134551968915
+              },
+              "P03": {
+                "before": 1.256617943667692,
+                "after": 1.1987254830877254
+              },
+              "P04": {
+                "before": 0.8721286356937453,
+                "after": 0.8581521438244192
+              }
+            },
+            "guard_before": {
+              "y_p50": 16.890772624198068,
+              "contrast": 6.115864500666541,
+              "lab_b": 2.75056354990118
+            },
+            "guard_after": {
+              "y_p50": 16.65819632206045,
+              "contrast": 6.104635148306042,
+              "lab_b": 2.75021281085309
+            },
+            "guard_passed": true,
+            "spatial_correlation_q05": 0.9995143481108971
+          }
+        }
+      ],
+      "accepted_range": [
+        0.0,
+        1.0117187500000009
+      ]
+    },
+    {
+      "variable": "color_b",
+      "budget_evidence": {
+        "measured_within_person_q90_q10_median": 2.4253906250000004
+      },
+      "probe": [
+        {
+          "range": [
+            -0.6063476562500001,
+            0.0
+          ],
+          "assessment": {
+            "accepted": false,
+            "relative_cost": 0.975602762934967,
+            "wasserstein_before": {
+              "lab_b": 2.497721354166667
+            },
+            "wasserstein_after": {
+              "lab_b": 2.4367838541666673
+            },
+            "person_improvements": 2,
+            "per_person": {
+              "P01": {
+                "before": 2.41527433858986,
+                "after": 2.3380164212172545,
+                "relative_change": -0.031987222378105425
+              },
+              "P02": {
+                "before": 1.8177505538902632,
+                "after": 1.8540336243972355,
+                "relative_change": 0.01996042329863194
+              },
+              "P03": {
+                "before": 3.166167079369215,
+                "after": 3.088909161996609,
+                "relative_change": -0.024401086688071318
+              },
+              "P04": {
+                "before": 4.097015508927407,
+                "after": 4.210243711716409,
+                "relative_change": 0.027636752299882047
+              }
+            },
+            "omission_improvements": 2,
+            "leave_one_person_out": {
+              "P01": {
+                "before": 1.072070897953865,
+                "after": 1.1216994656588044
+              },
+              "P02": {
+                "before": 1.6251444458925237,
+                "after": 1.6089838828793608
+              },
+              "P03": {
+                "before": 0.9774707850036931,
+                "after": 1.0477431686867376
+              },
+              "P04": {
+                "before": 1.882566575437681,
+                "after": 1.8053086580650757
+              }
+            },
+            "guard_before": {
+              "y_p50": 15.490862321853655,
+              "contrast": 7.231183465321875,
+              "lab_a": 4.279654947916669
+            },
+            "guard_after": {
+              "y_p50": 15.507636117935197,
+              "contrast": 7.207007058461522,
+              "lab_a": 4.273014322916668
+            },
+            "guard_passed": true,
+            "spatial_correlation_q05": 0.9996805049513524
+          }
+        },
+        {
+          "range": [
+            -1.2126953125000002,
+            0.0
+          ],
+          "assessment": {
+            "accepted": false,
+            "relative_cost": 0.9762283331161216,
+            "wasserstein_before": {
+              "lab_b": 2.497721354166667
+            },
+            "wasserstein_after": {
+              "lab_b": 2.4383463541666672
+            },
+            "person_improvements": 2,
+            "per_person": {
+              "P01": {
+                "before": 2.41527433858986,
+                "after": 2.2377687996872133,
+                "relative_change": -0.07349290971487812
+              },
+              "P02": {
+                "before": 1.8177505538902632,
+                "after": 1.9026717059820137,
+                "relative_change": 0.04671771487567771
+              },
+              "P03": {
+                "before": 3.166167079369215,
+                "after": 2.9886615404665693,
+                "relative_change": -0.056063225487774794
+              },
+              "P04": {
+                "before": 4.097015508927407,
+                "after": 4.35521960119901,
+                "relative_change": 0.06302248349047632
+              }
+            },
+            "omission_improvements": 2,
+            "leave_one_person_out": {
+              "P01": {
+                "before": 1.072070897953865,
+                "after": 1.2079760198097231
+              },
+              "P02": {
+                "before": 1.6251444458925237,
+                "after": 1.595899039923542
+              },
+              "P03": {
+                "before": 0.9774707850036931,
+                "after": 1.1724227811807642
+              },
+              "P04": {
+                "before": 1.882566575437681,
+                "after": 1.7050610365350354
+              }
+            },
+            "guard_before": {
+              "y_p50": 15.490862321853655,
+              "contrast": 7.231183465321875,
+              "lab_a": 4.279654947916669
+            },
+            "guard_after": {
+              "y_p50": 15.56776070594789,
+              "contrast": 7.198610146840428,
+              "lab_a": 4.289029947916668
+            },
+            "guard_passed": true,
+            "spatial_correlation_q05": 0.999680736251492
+          }
+        },
+        {
+          "range": [
+            -2.4253906250000004,
+            0.0
+          ],
+          "assessment": {
+            "accepted": false,
+            "relative_cost": 1.0279942656066732,
+            "wasserstein_before": {
+              "lab_b": 2.497721354166667
+            },
+            "wasserstein_after": {
+              "lab_b": 2.5676432291666678
+            },
+            "person_improvements": 2,
+            "per_person": {
+              "P01": {
+                "before": 2.41527433858986,
+                "after": 2.049315782614361,
+                "relative_change": -0.15151842179102568
+              },
+              "P02": {
+                "before": 1.8177505538902632,
+                "after": 2.038576827837871,
+                "relative_change": 0.1214832659382257
+              },
+              "P03": {
+                "before": 3.166167079369215,
+                "after": 2.800208523393716,
+                "relative_change": -0.11558409483823189
+              },
+              "P04": {
+                "before": 4.097015508927407,
+                "after": 4.623745601459663,
+                "relative_change": 0.1285643394281789
+              }
+            },
+            "omission_improvements": 2,
+            "leave_one_person_out": {
+              "P01": {
+                "before": 1.072070897953865,
+                "after": 1.3686954255180508
+              },
+              "P02": {
+                "before": 1.6251444458925237,
+                "after": 1.5419436117989493
+              },
+              "P03": {
+                "before": 0.9774707850036931,
+                "after": 1.4220079065120121
+              },
+              "P04": {
+                "before": 1.882566575437681,
+                "after": 1.5166080194621825
+              }
+            },
+            "guard_before": {
+              "y_p50": 15.490862321853655,
+              "contrast": 7.231183465321875,
+              "lab_a": 4.279654947916669
+            },
+            "guard_after": {
+              "y_p50": 15.577760744094865,
+              "contrast": 7.222427209218358,
+              "lab_a": 4.273795572916668
+            },
+            "guard_passed": true,
+            "spatial_correlation_q05": 0.999660153147991
+          }
+        },
+        {
+          "range": [
+            0.0,
+            0.6063476562500001
+          ],
+          "assessment": {
+            "accepted": false,
+            "relative_cost": 1.0400364915939007,
+            "wasserstein_before": {
+              "lab_b": 2.497721354166667
+            },
+            "wasserstein_after": {
+              "lab_b": 2.597721354166667
+            },
+            "person_improvements": 1,
+            "per_person": {
+              "P01": {
+                "before": 2.41527433858986,
+                "after": 2.4981623875928567,
+                "relative_change": 0.034318275021043954
+              },
+              "P02": {
+                "before": 1.8177505538902632,
+                "after": 1.8305747426039345,
+                "relative_change": 0.007054977200378559
+              },
+              "P03": {
+                "before": 3.166167079369215,
+                "after": 3.2490551283722127,
+                "relative_change": 0.026179303531736312
+              },
+              "P04": {
+                "before": 4.097015508927407,
+                "after": 4.000364915939007,
+                "relative_change": -0.023590487460396034
+              }
+            },
+            "omission_improvements": 2,
+            "leave_one_person_out": {
+              "P01": {
+                "before": 1.072070897953865,
+                "after": 1.018793170858856
+              },
+              "P02": {
+                "before": 1.6251444458925237,
+                "after": 1.6417220556931238
+              },
+              "P03": {
+                "before": 0.9774707850036931,
+                "after": 0.9091793735609718
+              },
+              "P04": {
+                "before": 1.882566575437681,
+                "after": 1.9654546244406785
+              }
+            },
+            "guard_before": {
+              "y_p50": 15.490862321853655,
+              "contrast": 7.231183465321875,
+              "lab_a": 4.279654947916669
+            },
+            "guard_after": {
+              "y_p50": 15.42678799629213,
+              "contrast": 7.203744920094824,
+              "lab_a": 4.272623697916668
+            },
+            "guard_passed": true,
+            "spatial_correlation_q05": 0.9996746388426662
+          }
+        },
+        {
+          "range": [
+            0.0,
+            1.2126953125000002
+          ],
+          "assessment": {
+            "accepted": false,
+            "relative_cost": 1.0783005343411962,
+            "wasserstein_before": {
+              "lab_b": 2.497721354166667
+            },
+            "wasserstein_after": {
+              "lab_b": 2.6932942708333334
+            },
+            "person_improvements": 1,
+            "per_person": {
+              "P01": {
+                "before": 2.41527433858986,
+                "after": 2.5746383422390187,
+                "relative_change": 0.0659817400876301
+              },
+              "P02": {
+                "before": 1.8177505538902632,
+                "after": 1.8301055649680682,
+                "relative_change": 0.006796868278413342
+              },
+              "P03": {
+                "before": 3.166167079369215,
+                "after": 3.3486771797210984,
+                "relative_change": 0.05764386268214383
+              },
+              "P04": {
+                "before": 4.097015508927407,
+                "after": 3.913567053303793,
+                "relative_change": -0.044776119402984725
+              }
+            },
+            "omission_improvements": 2,
+            "leave_one_person_out": {
+              "P01": {
+                "before": 1.072070897953865,
+                "after": 0.9867326990746778
+              },
+              "P02": {
+                "before": 1.6251444458925237,
+                "after": 1.6605412919761942
+              },
+              "P03": {
+                "before": 0.9774707850036931,
+                "after": 0.8462226856075417
+              },
+              "P04": {
+                "before": 1.882566575437681,
+                "after": 2.054024935922498
+              }
+            },
+            "guard_before": {
+              "y_p50": 15.490862321853655,
+              "contrast": 7.231183465321875,
+              "lab_a": 4.279654947916669
+            },
+            "guard_after": {
+              "y_p50": 15.433762025833147,
+              "contrast": 7.193689187367772,
+              "lab_a": 4.276139322916668
+            },
+            "guard_passed": true,
+            "spatial_correlation_q05": 0.9996704300704362
+          }
+        },
+        {
+          "range": [
+            0.0,
+            2.4253906250000004
+          ],
+          "assessment": {
+            "accepted": false,
+            "relative_cost": 1.1782353707806592,
+            "wasserstein_before": {
+              "lab_b": 2.497721354166667
+            },
+            "wasserstein_after": {
+              "lab_b": 2.9429036458333333
+            },
+            "person_improvements": 1,
+            "per_person": {
+              "P01": {
+                "before": 2.41527433858986,
+                "after": 2.759650723315521,
+                "relative_change": 0.1425827199930931
+              },
+              "P02": {
+                "before": 1.8177505538902632,
+                "after": 1.864668317476866,
+                "relative_change": 0.025810892196507132
+              },
+              "P03": {
+                "before": 3.166167079369215,
+                "after": 3.5336895607975993,
+                "relative_change": 0.11607804396147177
+              },
+              "P04": {
+                "before": 4.097015508927407,
+                "after": 3.7529519092923236,
+                "relative_change": -0.08397908157422586
+              }
+            },
+            "omission_improvements": 2,
+            "leave_one_person_out": {
+              "P01": {
+                "before": 1.072070897953865,
+                "after": 0.9869933533168251
+              },
+              "P02": {
+                "before": 1.6251444458925237,
+                "after": 1.7140796733133496
+              },
+              "P03": {
+                "before": 0.9774707850036931,
+                "after": 0.8153438463877669
+              },
+              "P04": {
+                "before": 1.882566575437681,
+                "after": 2.239037316999
+              }
+            },
+            "guard_before": {
+              "y_p50": 15.490862321853655,
+              "contrast": 7.231183465321875,
+              "lab_a": 4.279654947916669
+            },
+            "guard_after": {
+              "y_p50": 15.39641232490541,
+              "contrast": 7.188450845082616,
+              "lab_a": 4.283561197916669
+            },
+            "guard_passed": true,
+            "spatial_correlation_q05": 0.9996207320147232
+          }
+        }
+      ],
+      "full_replays": [
+        {
+          "range": [
+            -0.6063476562500001,
+            0.0
+          ],
+          "assessment": {
+            "accepted": false,
+            "relative_cost": 0.9786308258766077,
+            "wasserstein_before": {
+              "lab_b": 2.751308001893933
+            },
+            "wasserstein_after": {
+              "lab_b": 2.692514822134379
+            },
+            "person_improvements": 2,
+            "per_person": {
+              "P01": {
+                "before": 2.1950860860418127,
+                "after": 2.127694552546479,
+                "relative_change": -0.030701089093436926
+              },
+              "P02": {
+                "before": 1.804781288993082,
+                "after": 1.8253737933630185,
+                "relative_change": 0.011409972219639606
+              },
+              "P03": {
+                "before": 2.8766863736640227,
+                "after": 2.8092948401686897,
+                "relative_change": -0.023426792059190207
+              },
+              "P04": {
+                "before": 3.873864866384095,
+                "after": 3.974492889552871,
+                "relative_change": 0.02597613149647716
+              }
+            },
+            "omission_improvements": 2,
+            "leave_one_person_out": {
+              "P01": {
+                "before": 1.0953333128191751,
+                "after": 1.1245859094111619
+              },
+              "P02": {
+                "before": 1.533644294294112,
+                "after": 1.516686349969847
+              },
+              "P03": {
+                "before": 1.0133410301954364,
+                "after": 1.085256652534032
+              },
+              "P04": {
+                "before": 1.711450787735873,
+                "after": 1.6440592542405394
+              }
+            },
+            "guard_before": {
+              "y_p50": 16.688078726955776,
+              "contrast": 6.092019106622488,
+              "lab_a": 3.855336611701245
+            },
+            "guard_after": {
+              "y_p50": 16.71827304542307,
+              "contrast": 6.082906173309065,
+              "lab_a": 3.849860656497029
+            },
+            "guard_passed": true,
+            "spatial_correlation_q05": 0.9995017021351748
+          }
+        },
+        {
+          "range": [
+            -1.2126953125000002,
+            0.0
+          ],
+          "assessment": {
+            "accepted": false,
+            "relative_cost": 0.9588142430233688,
+            "wasserstein_before": {
+              "lab_b": 2.751308001893933
+            },
+            "wasserstein_after": {
+              "lab_b": 2.6379932991600685
+            },
+            "person_improvements": 2,
+            "per_person": {
+              "P01": {
+                "before": 2.1950860860418127,
+                "after": 2.044769436922856,
+                "relative_change": -0.06847870344347542
+              },
+              "P02": {
+                "before": 1.804781288993082,
+                "after": 1.8485621181011376,
+                "relative_change": 0.024258246345451387
+              },
+              "P03": {
+                "before": 2.8766863736640227,
+                "after": 2.7263697245450667,
+                "relative_change": -0.05225340186372086
+              },
+              "P04": {
+                "before": 3.873864866384095,
+                "after": 4.083651372925601,
+                "relative_change": 0.05415431714253967
+              }
+            },
+            "omission_improvements": 2,
+            "leave_one_person_out": {
+              "P01": {
+                "before": 1.0953333128191751,
+                "after": 1.1727932136422627
+              },
+              "P02": {
+                "before": 1.533644294294112,
+                "after": 1.4964735757539358
+              },
+              "P03": {
+                "before": 1.0133410301954364,
+                "after": 1.1793939088976217
+              },
+              "P04": {
+                "before": 1.711450787735873,
+                "after": 1.5611341386169162
+              }
+            },
+            "guard_before": {
+              "y_p50": 16.688078726955776,
+              "contrast": 6.092019106622488,
+              "lab_a": 3.855336611701245
+            },
+            "guard_after": {
+              "y_p50": 16.73733730862741,
+              "contrast": 6.0773008099030115,
+              "lab_a": 3.8326201467802967
+            },
+            "guard_passed": true,
+            "spatial_correlation_q05": 0.999494768553101
+          }
+        }
+      ],
+      "accepted_range": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "variable": "texture_gain",
+      "budget_evidence": {
+        "measured_relative_detail_span": 0.6434354990974787,
+        "gain_delta_cap": 0.15
+      },
+      "probe": [
+        {
+          "range": [
+            0.9625,
+            1.0
+          ],
+          "assessment": {
+            "accepted": false,
+            "relative_cost": 1.0251553740789645,
+            "wasserstein_before": {
+              "detail": 0.08908063694834707,
+              "normalized_detail": 0.006501435422581585
+            },
+            "wasserstein_after": {
+              "detail": 0.09452060262362157,
+              "normalized_detail": 0.006431498622550001
+            },
+            "person_improvements": 2,
+            "per_person": {
+              "P01": {
+                "before": 2.9421820381057273,
+                "after": 2.991902505285993,
+                "relative_change": 0.01689918113030064
+              },
+              "P02": {
+                "before": 2.997304567838035,
+                "after": 2.9214757677906644,
+                "relative_change": -0.02529899725941636
+              },
+              "P03": {
+                "before": 3.0065594995789517,
+                "after": 3.0601635415807737,
+                "relative_change": 0.017829030827205942
+              },
+              "P04": {
+                "before": 2.4886039291258903,
+                "after": 2.4286946508660296,
+                "relative_change": -0.024073448393575243
+              }
+            },
+            "omission_improvements": 2,
+            "leave_one_person_out": {
+              "P01": {
+                "before": 1.276547461305988,
+                "after": 1.2456097220607552
+              },
+              "P02": {
+                "before": 1.5087545428640143,
+                "after": 1.557106234928285
+              },
+              "P03": {
+                "before": 1.207608585431501,
+                "after": 1.1863244802327142
+              },
+              "P04": {
+                "before": 1.3432740037682112,
+                "after": 1.385589320315325
+              }
+            },
+            "guard_before": {
+              "y_p50": 15.490862321853655,
+              "contrast": 7.231183465321875,
+              "lab_a": 4.279654947916669,
+              "lab_b": 2.497721354166667
+            },
+            "guard_after": {
+              "y_p50": 15.48893761634828,
+              "contrast": 7.224015458424901,
+              "lab_a": 4.2964518229166675,
+              "lab_b": 2.501627604166667
+            },
+            "guard_passed": true,
+            "spatial_correlation_q05": 0.9996635379986087
+          }
+        },
+        {
+          "range": [
+            1.0,
+            1.0375
+          ],
+          "assessment": {
+            "accepted": false,
+            "relative_cost": 0.9898029591436579,
+            "wasserstein_before": {
+              "detail": 0.08908063694834707,
+              "normalized_detail": 0.006501435422581585
+            },
+            "wasserstein_after": {
+              "detail": 0.08560066881279152,
+              "normalized_detail": 0.006622825604449741
+            },
+            "person_improvements": 2,
+            "per_person": {
+              "P01": {
+                "before": 2.9421820381057273,
+                "after": 2.9231841315474014,
+                "relative_change": -0.006457080599457866
+              },
+              "P02": {
+                "before": 2.997304567838035,
+                "after": 3.0476057173722504,
+                "relative_change": 0.016782128207443982
+              },
+              "P03": {
+                "before": 3.0065594995789517,
+                "after": 2.9780335495510974,
+                "relative_change": -0.009487904706974587
+              },
+              "P04": {
+                "before": 2.4886039291258903,
+                "after": 2.530014660350963,
+                "relative_change": 0.016640145400565107
+              }
+            },
+            "omission_improvements": 2,
+            "leave_one_person_out": {
+              "P01": {
+                "before": 1.276547461305988,
+                "after": 1.282605464964675
+              },
+              "P02": {
+                "before": 1.5087545428640143,
+                "after": 1.4850071230816972
+              },
+              "P03": {
+                "before": 1.207608585431501,
+                "after": 1.2233057706662596
+              },
+              "P04": {
+                "before": 1.3432740037682112,
+                "after": 1.3212458782477585
+              }
+            },
+            "guard_before": {
+              "y_p50": 15.490862321853655,
+              "contrast": 7.231183465321875,
+              "lab_a": 4.279654947916669,
+              "lab_b": 2.497721354166667
+            },
+            "guard_after": {
+              "y_p50": 15.505461931228654,
+              "contrast": 7.239058144887304,
+              "lab_a": 4.282389322916668,
+              "lab_b": 2.505143229166667
+            },
+            "guard_passed": true,
+            "spatial_correlation_q05": 0.9996764364560796
+          }
+        },
+        {
+          "range": [
+            0.9625,
+            1.0375
+          ],
+          "assessment": {
+            "accepted": false,
+            "relative_cost": 1.0138776135883254,
+            "wasserstein_before": {
+              "detail": 0.08908063694834707,
+              "normalized_detail": 0.006501435422581585
+            },
+            "wasserstein_after": {
+              "detail": 0.0912916991859674,
+              "normalized_detail": 0.006520512713352788
+            },
+            "person_improvements": 2,
+            "per_person": {
+              "P01": {
+                "before": 2.9421820381057273,
+                "after": 2.9699737874780068,
+                "relative_change": 0.009445965277584489
+              },
+              "P02": {
+                "before": 2.997304567838035,
+                "after": 2.966496306494924,
+                "relative_change": -0.010278655587320974
+              },
+              "P03": {
+                "before": 3.0065594995789517,
+                "after": 3.0311105204813584,
+                "relative_change": 0.00816581907188096
+              },
+              "P04": {
+                "before": 2.4886039291258903,
+                "after": 2.4644805547271154,
+                "relative_change": -0.009693537053623556
+              }
+            },
+            "omission_improvements": 2,
+            "leave_one_person_out": {
+              "P01": {
+                "before": 1.276547461305988,
+                "after": 1.2504194914638018
+              },
+              "P02": {
+                "before": 1.5087545428640143,
+                "after": 1.5312068257171898
+              },
+              "P03": {
+                "before": 1.207608585431501,
+                "after": 1.1916974604497068
+              },
+              "P04": {
+                "before": 1.3432740037682112,
+                "after": 1.3651615593037842
+              }
+            },
+            "guard_before": {
+              "y_p50": 15.490862321853655,
+              "contrast": 7.231183465321875,
+              "lab_a": 4.279654947916669,
+              "lab_b": 2.497721354166667
+            },
+            "guard_after": {
+              "y_p50": 15.52031178474428,
+              "contrast": 7.254549439748144,
+              "lab_a": 4.2905924479166675,
+              "lab_b": 2.4930338541666672
+            },
+            "guard_passed": true,
+            "spatial_correlation_q05": 0.9996699188542004
+          }
+        },
+        {
+          "range": [
+            0.925,
+            1.0
+          ],
+          "assessment": {
+            "accepted": false,
+            "relative_cost": 1.0508332223149988,
+            "wasserstein_before": {
+              "detail": 0.08908063694834707,
+              "normalized_detail": 0.006501435422581585
+            },
+            "wasserstein_after": {
+              "detail": 0.10046284198760981,
+              "normalized_detail": 0.006331697688989137
+            },
+            "person_improvements": 2,
+            "per_person": {
+              "P01": {
+                "before": 2.9421820381057273,
+                "after": 3.0441730500352824,
+                "relative_change": 0.03466509230517232
+              },
+              "P02": {
+                "before": 2.997304567838035,
+                "after": 2.834734646193196,
+                "relative_change": -0.05423870613259074
+              },
+              "P03": {
+                "before": 3.0065594995789517,
+                "after": 3.115377094805992,
+                "relative_change": 0.03619339488950058
+              },
+              "P04": {
+                "before": 2.4886039291258903,
+                "after": 2.3600407910927346,
+                "relative_change": -0.05166074702707431
+              }
+            },
+            "omission_improvements": 2,
+            "leave_one_person_out": {
+              "P01": {
+                "before": 1.276547461305988,
+                "after": 1.2105571634561862
+              },
+              "P02": {
+                "before": 1.5087545428640143,
+                "after": 1.609737231416506
+              },
+              "P03": {
+                "before": 1.207608585431501,
+                "after": 1.1738808512507932
+              },
+              "P04": {
+                "before": 1.3432740037682112,
+                "after": 1.4285001467804854
+              }
+            },
+            "guard_before": {
+              "y_p50": 15.490862321853655,
+              "contrast": 7.231183465321875,
+              "lab_a": 4.279654947916669,
+              "lab_b": 2.497721354166667
+            },
+            "guard_after": {
+              "y_p50": 15.504812097549456,
+              "contrast": 7.211583169301367,
+              "lab_a": 4.312858072916668,
+              "lab_b": 2.503190104166667
+            },
+            "guard_passed": true,
+            "spatial_correlation_q05": 0.9996044172856371
+          }
+        },
+        {
+          "range": [
+            1.0,
+            1.075
+          ],
+          "assessment": {
+            "accepted": false,
+            "relative_cost": 0.992604414180781,
+            "wasserstein_before": {
+              "detail": 0.08908063694834707,
+              "normalized_detail": 0.006501435422581585
+            },
+            "wasserstein_after": {
+              "detail": 0.08479653503745797,
+              "normalized_detail": 0.0067179412291778085
+            },
+            "person_improvements": 2,
+            "per_person": {
+              "P01": {
+                "before": 2.9421820381057273,
+                "after": 2.90378964212646,
+                "relative_change": -0.013048953287739263
+              },
+              "P02": {
+                "before": 2.997304567838035,
+                "after": 3.111022091556796,
+                "relative_change": 0.037939929408236914
+              },
+              "P03": {
+                "before": 3.0065594995789517,
+                "after": 2.937475625941011,
+                "relative_change": -0.02297771710409037
+              },
+              "P04": {
+                "before": 2.4886039291258903,
+                "after": 2.5832577656732,
+                "relative_change": 0.038034914049402964
+              }
+            },
+            "omission_improvements": 2,
+            "leave_one_person_out": {
+              "P01": {
+                "before": 1.276547461305988,
+                "after": 1.293509402684128
+              },
+              "P02": {
+                "before": 1.5087545428640143,
+                "after": 1.4606734011204767
+              },
+              "P03": {
+                "before": 1.207608585431501,
+                "after": 1.2613367810059928
+              },
+              "P04": {
+                "before": 1.3432740037682112,
+                "after": 1.3052148646881712
+              }
+            },
+            "guard_before": {
+              "y_p50": 15.490862321853655,
+              "contrast": 7.231183465321875,
+              "lab_a": 4.279654947916669,
+              "lab_b": 2.497721354166667
+            },
+            "guard_after": {
+              "y_p50": 15.513062715530413,
+              "contrast": 7.2764170010884754,
+              "lab_a": 4.281608072916668,
+              "lab_b": 2.504361979166667
+            },
+            "guard_passed": true,
+            "spatial_correlation_q05": 0.9996726871051065
+          }
+        },
+        {
+          "range": [
+            0.925,
+            1.075
+          ],
+          "assessment": {
+            "accepted": false,
+            "relative_cost": 1.027826180673666,
+            "wasserstein_before": {
+              "detail": 0.08908063694834707,
+              "normalized_detail": 0.006501435422581585
+            },
+            "wasserstein_after": {
+              "detail": 0.09286883237461248,
+              "normalized_detail": 0.006586779097500865
+            },
+            "person_improvements": 2,
+            "per_person": {
+              "P01": {
+                "before": 2.9421820381057273,
+                "after": 2.998088425172494,
+                "relative_change": 0.01900167506384521
+              },
+              "P02": {
+                "before": 2.997304567838035,
+                "after": 2.9502769268998623,
+                "relative_change": -0.015689977402628077
+              },
+              "P03": {
+                "before": 3.0065594995789517,
+                "after": 3.047630170480465,
+                "relative_change": 0.013660355268959442
+              },
+              "P04": {
+                "before": 2.4886039291258903,
+                "after": 2.4576554769984584,
+                "relative_change": -0.012436069784034458
+              }
+            },
+            "omission_improvements": 2,
+            "leave_one_person_out": {
+              "P01": {
+                "before": 1.276547461305988,
+                "after": 1.2275619597671739
+              },
+              "P02": {
+                "before": 1.5087545428640143,
+                "after": 1.550013853679097
+              },
+              "P03": {
+                "before": 1.207608585431501,
+                "after": 1.2060962647214788
+              },
+              "P04": {
+                "before": 1.3432740037682112,
+                "after": 1.3823506941723784
+              }
+            },
+            "guard_before": {
+              "y_p50": 15.490862321853655,
+              "contrast": 7.231183465321875,
+              "lab_a": 4.279654947916669,
+              "lab_b": 2.497721354166667
+            },
+            "guard_after": {
+              "y_p50": 15.525686120986954,
+              "contrast": 7.264996941884374,
+              "lab_a": 4.302311197916668,
+              "lab_b": 2.492643229166667
+            },
+            "guard_passed": true,
+            "spatial_correlation_q05": 0.999614944320948
+          }
+        },
+        {
+          "range": [
+            0.85,
+            1.0
+          ],
+          "assessment": {
+            "accepted": false,
+            "relative_cost": 1.119545617785,
+            "wasserstein_before": {
+              "detail": 0.08908063694834707,
+              "normalized_detail": 0.006501435422581585
+            },
+            "wasserstein_after": {
+              "detail": 0.1134034530570109,
+              "normalized_detail": 0.006280702280127665
+            },
+            "person_improvements": 2,
+            "per_person": {
+              "P01": {
+                "before": 2.9421820381057273,
+                "after": 3.1738026661961896,
+                "relative_change": 0.07872409833607276
+              },
+              "P02": {
+                "before": 2.997304567838035,
+                "after": 2.6652757397369498,
+                "relative_change": -0.11077580559008011
+              },
+              "P03": {
+                "before": 3.0065594995789517,
+                "after": 3.245006710966899,
+                "relative_change": 0.07930899469022328
+              },
+              "P04": {
+                "before": 2.4886039291258903,
+                "after": 2.2281274908654956,
+                "relative_change": -0.10466769549459236
+              }
+            },
+            "omission_improvements": 2,
+            "leave_one_person_out": {
+              "P01": {
+                "before": 1.276547461305988,
+                "after": 1.1892569245404088
+              },
+              "P02": {
+                "before": 1.5087545428640143,
+                "after": 1.7387579821987433
+              },
+              "P03": {
+                "before": 1.207608585431501,
+                "after": 1.1578428166848256
+              },
+              "P04": {
+                "before": 1.3432740037682112,
+                "after": 1.5391865620270369
+              }
+            },
+            "guard_before": {
+              "y_p50": 15.490862321853655,
+              "contrast": 7.231183465321875,
+              "lab_a": 4.279654947916669,
+              "lab_b": 2.497721354166667
+            },
+            "guard_after": {
+              "y_p50": 15.540035867691056,
+              "contrast": 7.060976759592707,
+              "lab_a": 4.297623697916668,
+              "lab_b": 2.505143229166667
+            },
+            "guard_passed": true,
+            "spatial_correlation_q05": 0.9993094944086817
+          }
+        },
+        {
+          "range": [
+            1.0,
+            1.15
+          ],
+          "assessment": {
+            "accepted": false,
+            "relative_cost": 1.0198323206206235,
+            "wasserstein_before": {
+              "detail": 0.08908063694834707,
+              "normalized_detail": 0.006501435422581585
+            },
+            "wasserstein_after": {
+              "detail": 0.08700557810564843,
+              "normalized_detail": 0.006910758020119611
+            },
+            "person_improvements": 2,
+            "per_person": {
+              "P01": {
+                "before": 2.9421820381057273,
+                "after": 2.8565029499687045,
+                "relative_change": -0.029120933724476765
+              },
+              "P02": {
+                "before": 2.997304567838035,
+                "after": 3.2575705391967977,
+                "relative_change": 0.08683334158012956
+              },
+              "P03": {
+                "before": 3.0065594995789517,
+                "after": 2.8795544686057006,
+                "relative_change": -0.0422426467831544
+              },
+              "P04": {
+                "before": 2.4886039291258903,
+                "after": 2.695125563630166,
+                "relative_change": 0.08298694383915702
+              }
+            },
+            "omission_improvements": 2,
+            "leave_one_person_out": {
+              "P01": {
+                "before": 1.276547461305988,
+                "after": 1.3565091641864913
+              },
+              "P02": {
+                "before": 1.5087545428640143,
+                "after": 1.4185616011841269
+              },
+              "P03": {
+                "before": 1.207608585431501,
+                "after": 1.3647997683268573
+              },
+              "P04": {
+                "before": 1.3432740037682112,
+                "after": 1.292311168945615
+              }
+            },
+            "guard_before": {
+              "y_p50": 15.490862321853655,
+              "contrast": 7.231183465321875,
+              "lab_a": 4.279654947916669,
+              "lab_b": 2.497721354166667
+            },
+            "guard_after": {
+              "y_p50": 15.554337358474749,
+              "contrast": 7.264720376332617,
+              "lab_a": 4.2749674479166675,
+              "lab_b": 2.5129557291666673
+            },
+            "guard_passed": true,
+            "spatial_correlation_q05": 0.9995475426610362
+          }
+        },
+        {
+          "range": [
+            0.85,
+            1.15
+          ],
+          "assessment": {
+            "accepted": false,
+            "relative_cost": 1.0665803128999671,
+            "wasserstein_before": {
+              "detail": 0.08908063694834707,
+              "normalized_detail": 0.006501435422581585
+            },
+            "wasserstein_after": {
+              "detail": 0.09801539865632852,
+              "normalized_detail": 0.006715078569728509
+            },
+            "person_improvements": 2,
+            "per_person": {
+              "P01": {
+                "before": 2.9421820381057273,
+                "after": 3.0618669017403324,
+                "relative_change": 0.040678945790744506
+              },
+              "P02": {
+                "before": 2.997304567838035,
+                "after": 2.914440580693064,
+                "relative_change": -0.027646168505571937
+              },
+              "P03": {
+                "before": 3.0065594995789517,
+                "after": 3.1029060463852023,
+                "relative_change": 0.03204544823401739
+              },
+              "P04": {
+                "before": 2.4886039291258903,
+                "after": 2.4351089013279212,
+                "relative_change": -0.02149599909084728
+              }
+            },
+            "omission_improvements": 1,
+            "leave_one_person_out": {
+              "P01": {
+                "before": 1.276547461305988,
+                "after": 1.1852671603203668
+              },
+              "P02": {
+                "before": 1.5087545428640143,
+                "after": 1.6067122843256594
+              },
+              "P03": {
+                "before": 1.207608585431501,
+                "after": 1.2182588279363997
+              },
+              "P04": {
+                "before": 1.3432740037682112,
+                "after": 1.4365008717675467
+              }
+            },
+            "guard_before": {
+              "y_p50": 15.490862321853655,
+              "contrast": 7.231183465321875,
+              "lab_a": 4.279654947916669,
+              "lab_b": 2.497721354166667
+            },
+            "guard_after": {
+              "y_p50": 15.537210130691545,
+              "contrast": 7.15545600255332,
+              "lab_a": 4.300748697916668,
+              "lab_b": 2.496940104166667
+            },
+            "guard_passed": true,
+            "spatial_correlation_q05": 0.9993471674524814
+          }
+        }
+      ],
+      "full_replays": [
+        {
+          "range": [
+            1.0,
+            1.0375
+          ],
+          "assessment": {
+            "accepted": false,
+            "relative_cost": 0.9995561337852121,
+            "wasserstein_before": {
+              "detail": 0.13800490734925625,
+              "normalized_detail": 0.003576814353242838
+            },
+            "wasserstein_after": {
+              "detail": 0.13403795531494364,
+              "normalized_detail": 0.003676454652937644
+            },
+            "person_improvements": 2,
+            "per_person": {
+              "P01": {
+                "before": 2.6842388869139557,
+                "after": 2.6596507342110267,
+                "relative_change": -0.009160195399448144
+              },
+              "P02": {
+                "before": 2.479838938779354,
+                "after": 2.5439392625356194,
+                "relative_change": 0.0258485834518824
+              },
+              "P03": {
+                "before": 2.6456756044398464,
+                "after": 2.6251074765250895,
+                "relative_change": -0.007774244083530301
+              },
+              "P04": {
+                "before": 1.6707837108706411,
+                "after": 1.7178480579893942,
+                "relative_change": 0.02816902440006909
+              }
+            },
+            "omission_improvements": 2,
+            "leave_one_person_out": {
+              "P01": {
+                "before": 0.9991564210644848,
+                "after": 1.0200774754138895
+              },
+              "P02": {
+                "before": 1.570544639662318,
+                "after": 1.552605119130067
+              },
+              "P03": {
+                "before": 0.9586323382301185,
+                "after": 0.9811909230711884
+              },
+              "P04": {
+                "before": 1.273617395989632,
+                "after": 1.264548647866064
+              }
+            },
+            "guard_before": {
+              "y_p50": 16.688078726955776,
+              "contrast": 6.092019106622488,
+              "lab_a": 3.855336611701245,
+              "lab_b": 2.751308001893933
+            },
+            "guard_after": {
+              "y_p50": 16.678821239484066,
+              "contrast": 6.102576729619988,
+              "lab_a": 3.847706043107701,
+              "lab_b": 2.7516566823122472
+            },
+            "guard_passed": true,
+            "spatial_correlation_q05": 0.9994828474556869
+          }
+        },
+        {
+          "range": [
+            1.0,
+            1.075
+          ],
+          "assessment": {
+            "accepted": false,
+            "relative_cost": 0.9951034705835182,
+            "wasserstein_before": {
+              "detail": 0.13800490734925625,
+              "normalized_detail": 0.003576814353242838
+            },
+            "wasserstein_after": {
+              "detail": 0.12923498219879082,
+              "normalized_detail": 0.003769085520998225
+            },
+            "person_improvements": 2,
+            "per_person": {
+              "P01": {
+                "before": 2.6842388869139557,
+                "after": 2.632927586772053,
+                "relative_change": -0.0191157725909018
+              },
+              "P02": {
+                "before": 2.479838938779354,
+                "after": 2.609979411923538,
+                "relative_change": 0.05247940546019613
+              },
+              "P03": {
+                "before": 2.6456756044398464,
+                "after": 2.607183412948075,
+                "relative_change": -0.014549097186055526
+              },
+              "P04": {
+                "before": 1.6707837108706411,
+                "after": 1.7652074735328023,
+                "relative_change": 0.056514653601067937
+              }
+            },
+            "omission_improvements": 2,
+            "leave_one_person_out": {
+              "P01": {
+                "before": 0.9991564210644848,
+                "after": 1.0392260844856953
+              },
+              "P02": {
+                "before": 1.570544639662318,
+                "after": 1.5360146148542084
+              },
+              "P03": {
+                "before": 0.9586323382301185,
+                "after": 1.0006655966455198
+              },
+              "P04": {
+                "before": 1.273617395989632,
+                "after": 1.2529610040512602
+              }
+            },
+            "guard_before": {
+              "y_p50": 16.688078726955776,
+              "contrast": 6.092019106622488,
+              "lab_a": 3.855336611701245,
+              "lab_b": 2.751308001893933
+            },
+            "guard_after": {
+              "y_p50": 16.68841829607773,
+              "contrast": 6.1067693374845495,
+              "lab_a": 3.8387015964673847,
+              "lab_b": 2.7506029211956458
+            },
+            "guard_passed": true,
+            "spatial_correlation_q05": 0.9994367472935933
+          }
+        }
+      ],
+      "accepted_range": [
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "variable": "blur_sigma_roi64",
+      "budget_evidence": {
+        "range": "Small subgrid of the already examined focus limits; require both detail gaps"
+      },
+      "probe": [
+        {
+          "range": [
+            0.0,
+            0.05
+          ],
+          "assessment": {
+            "accepted": false,
+            "relative_cost": 1.0,
+            "wasserstein_before": {
+              "detail": 0.08908063694834707,
+              "normalized_detail": 0.006501435422581585
+            },
+            "wasserstein_after": {
+              "detail": 0.08908063694834707,
+              "normalized_detail": 0.006501435422581585
+            },
+            "person_improvements": 0,
+            "per_person": {
+              "P01": {
+                "before": 2.9421820381057273,
+                "after": 2.9421820381057273,
+                "relative_change": 0.0
+              },
+              "P02": {
+                "before": 2.997304567838035,
+                "after": 2.997304567838035,
+                "relative_change": 0.0
+              },
+              "P03": {
+                "before": 3.0065594995789517,
+                "after": 3.0065594995789517,
+                "relative_change": 0.0
+              },
+              "P04": {
+                "before": 2.4886039291258903,
+                "after": 2.4886039291258903,
+                "relative_change": 0.0
+              }
+            },
+            "omission_improvements": 0,
+            "leave_one_person_out": {
+              "P01": {
+                "before": 1.276547461305988,
+                "after": 1.276547461305988
+              },
+              "P02": {
+                "before": 1.5087545428640143,
+                "after": 1.5087545428640143
+              },
+              "P03": {
+                "before": 1.207608585431501,
+                "after": 1.207608585431501
+              },
+              "P04": {
+                "before": 1.3432740037682112,
+                "after": 1.3432740037682112
+              }
+            },
+            "guard_before": {
+              "y_p50": 15.490862321853655,
+              "contrast": 7.231183465321875,
+              "lab_a": 4.279654947916669,
+              "lab_b": 2.497721354166667
+            },
+            "guard_after": {
+              "y_p50": 15.490862321853655,
+              "contrast": 7.231183465321875,
+              "lab_a": 4.279654947916669,
+              "lab_b": 2.497721354166667
+            },
+            "guard_passed": true,
+            "spatial_correlation_q05": 0.9996783265060694
+          }
+        },
+        {
+          "range": [
+            0.0,
+            0.1
+          ],
+          "assessment": {
+            "accepted": false,
+            "relative_cost": 1.0,
+            "wasserstein_before": {
+              "detail": 0.08908063694834707,
+              "normalized_detail": 0.006501435422581585
+            },
+            "wasserstein_after": {
+              "detail": 0.08908063694834707,
+              "normalized_detail": 0.006501435422581585
+            },
+            "person_improvements": 0,
+            "per_person": {
+              "P01": {
+                "before": 2.9421820381057273,
+                "after": 2.9421820381057273,
+                "relative_change": 0.0
+              },
+              "P02": {
+                "before": 2.997304567838035,
+                "after": 2.997304567838035,
+                "relative_change": 0.0
+              },
+              "P03": {
+                "before": 3.0065594995789517,
+                "after": 3.0065594995789517,
+                "relative_change": 0.0
+              },
+              "P04": {
+                "before": 2.4886039291258903,
+                "after": 2.4886039291258903,
+                "relative_change": 0.0
+              }
+            },
+            "omission_improvements": 0,
+            "leave_one_person_out": {
+              "P01": {
+                "before": 1.276547461305988,
+                "after": 1.276547461305988
+              },
+              "P02": {
+                "before": 1.5087545428640143,
+                "after": 1.5087545428640143
+              },
+              "P03": {
+                "before": 1.207608585431501,
+                "after": 1.207608585431501
+              },
+              "P04": {
+                "before": 1.3432740037682112,
+                "after": 1.3432740037682112
+              }
+            },
+            "guard_before": {
+              "y_p50": 15.490862321853655,
+              "contrast": 7.231183465321875,
+              "lab_a": 4.279654947916669,
+              "lab_b": 2.497721354166667
+            },
+            "guard_after": {
+              "y_p50": 15.490862321853655,
+              "contrast": 7.231183465321875,
+              "lab_a": 4.279654947916669,
+              "lab_b": 2.497721354166667
+            },
+            "guard_passed": true,
+            "spatial_correlation_q05": 0.9996783265060694
+          }
+        },
+        {
+          "range": [
+            0.0,
+            0.2
+          ],
+          "assessment": {
+            "accepted": false,
+            "relative_cost": 1.0,
+            "wasserstein_before": {
+              "detail": 0.08908063694834707,
+              "normalized_detail": 0.006501435422581585
+            },
+            "wasserstein_after": {
+              "detail": 0.08908063694834707,
+              "normalized_detail": 0.006501435422581585
+            },
+            "person_improvements": 0,
+            "per_person": {
+              "P01": {
+                "before": 2.9421820381057273,
+                "after": 2.9421820381057273,
+                "relative_change": 0.0
+              },
+              "P02": {
+                "before": 2.997304567838035,
+                "after": 2.997304567838035,
+                "relative_change": 0.0
+              },
+              "P03": {
+                "before": 3.0065594995789517,
+                "after": 3.0065594995789517,
+                "relative_change": 0.0
+              },
+              "P04": {
+                "before": 2.4886039291258903,
+                "after": 2.4886039291258903,
+                "relative_change": 0.0
+              }
+            },
+            "omission_improvements": 0,
+            "leave_one_person_out": {
+              "P01": {
+                "before": 1.276547461305988,
+                "after": 1.276547461305988
+              },
+              "P02": {
+                "before": 1.5087545428640143,
+                "after": 1.5087545428640143
+              },
+              "P03": {
+                "before": 1.207608585431501,
+                "after": 1.207608585431501
+              },
+              "P04": {
+                "before": 1.3432740037682112,
+                "after": 1.3432740037682112
+              }
+            },
+            "guard_before": {
+              "y_p50": 15.490862321853655,
+              "contrast": 7.231183465321875,
+              "lab_a": 4.279654947916669,
+              "lab_b": 2.497721354166667
+            },
+            "guard_after": {
+              "y_p50": 15.490862321853655,
+              "contrast": 7.231183465321875,
+              "lab_a": 4.279654947916669,
+              "lab_b": 2.497721354166667
+            },
+            "guard_passed": true,
+            "spatial_correlation_q05": 0.9996783265060694
+          }
+        }
+      ],
+      "full_replays": [
+        {
+          "range": [
+            0.0,
+            0.05
+          ],
+          "assessment": {
+            "accepted": false,
+            "relative_cost": 1.0,
+            "wasserstein_before": {
+              "detail": 0.13800490734925625,
+              "normalized_detail": 0.003576814353242838
+            },
+            "wasserstein_after": {
+              "detail": 0.13800490734925625,
+              "normalized_detail": 0.003576814353242838
+            },
+            "person_improvements": 0,
+            "per_person": {
+              "P01": {
+                "before": 2.6842388869139557,
+                "after": 2.6842388869139557,
+                "relative_change": 0.0
+              },
+              "P02": {
+                "before": 2.479838938779354,
+                "after": 2.479838938779354,
+                "relative_change": 0.0
+              },
+              "P03": {
+                "before": 2.6456756044398464,
+                "after": 2.6456756044398464,
+                "relative_change": 0.0
+              },
+              "P04": {
+                "before": 1.6707837108706411,
+                "after": 1.6707837108706411,
+                "relative_change": 0.0
+              }
+            },
+            "omission_improvements": 0,
+            "leave_one_person_out": {
+              "P01": {
+                "before": 0.9991564210644848,
+                "after": 0.9991564210644848
+              },
+              "P02": {
+                "before": 1.570544639662318,
+                "after": 1.570544639662318
+              },
+              "P03": {
+                "before": 0.9586323382301185,
+                "after": 0.9586323382301185
+              },
+              "P04": {
+                "before": 1.273617395989632,
+                "after": 1.273617395989632
+              }
+            },
+            "guard_before": {
+              "y_p50": 16.688078726955776,
+              "contrast": 6.092019106622488,
+              "lab_a": 3.855336611701245,
+              "lab_b": 2.751308001893933
+            },
+            "guard_after": {
+              "y_p50": 16.688078726955776,
+              "contrast": 6.092019106622488,
+              "lab_a": 3.855336611701245,
+              "lab_b": 2.751308001893933
+            },
+            "guard_passed": true,
+            "spatial_correlation_q05": 0.9995042970597972
+          }
+        },
+        {
+          "range": [
+            0.0,
+            0.1
+          ],
+          "assessment": {
+            "accepted": false,
+            "relative_cost": 1.0,
+            "wasserstein_before": {
+              "detail": 0.13800490734925625,
+              "normalized_detail": 0.003576814353242838
+            },
+            "wasserstein_after": {
+              "detail": 0.13800490734925625,
+              "normalized_detail": 0.003576814353242838
+            },
+            "person_improvements": 0,
+            "per_person": {
+              "P01": {
+                "before": 2.6842388869139557,
+                "after": 2.6842388869139557,
+                "relative_change": 0.0
+              },
+              "P02": {
+                "before": 2.479838938779354,
+                "after": 2.479838938779354,
+                "relative_change": 0.0
+              },
+              "P03": {
+                "before": 2.6456756044398464,
+                "after": 2.6456756044398464,
+                "relative_change": 0.0
+              },
+              "P04": {
+                "before": 1.6707837108706411,
+                "after": 1.6707837108706411,
+                "relative_change": 0.0
+              }
+            },
+            "omission_improvements": 0,
+            "leave_one_person_out": {
+              "P01": {
+                "before": 0.9991564210644848,
+                "after": 0.9991564210644848
+              },
+              "P02": {
+                "before": 1.570544639662318,
+                "after": 1.570544639662318
+              },
+              "P03": {
+                "before": 0.9586323382301185,
+                "after": 0.9586323382301185
+              },
+              "P04": {
+                "before": 1.273617395989632,
+                "after": 1.273617395989632
+              }
+            },
+            "guard_before": {
+              "y_p50": 16.688078726955776,
+              "contrast": 6.092019106622488,
+              "lab_a": 3.855336611701245,
+              "lab_b": 2.751308001893933
+            },
+            "guard_after": {
+              "y_p50": 16.688078726955776,
+              "contrast": 6.092019106622488,
+              "lab_a": 3.855336611701245,
+              "lab_b": 2.751308001893933
+            },
+            "guard_passed": true,
+            "spatial_correlation_q05": 0.9995042970597972
+          }
+        }
+      ],
+      "accepted_range": [
+        0.0,
+        0.0
+      ]
+    }
+  ],
+  "source_test_used": false,
+  "target_holdout_used": false,
+  "target_accuracy": null,
+  "training_executed": false,
+  "summary": {
+    "y_mean": {
+      "stage1_w1": 15.863050434806205,
+      "stage2_w1": 15.674130877393107
+    },
+    "y_p50": {
+      "stage1_w1": 16.890772624198068,
+      "stage2_w1": 16.688078726955776
+    },
+    "contrast": {
+      "stage1_w1": 6.115864500666541,
+      "stage2_w1": 6.092019106622488
+    },
+    "r_p50": {
+      "stage1_w1": 11.431637022397952,
+      "stage2_w1": 11.952140974967122
+    },
+    "g_p50": {
+      "stage1_w1": 19.78041831357057,
+      "stage2_w1": 19.2095026350462
+    },
+    "b_p50": {
+      "stage1_w1": 16.86586791831366,
+      "stage2_w1": 16.710910737813
+    },
+    "lab_a": {
+      "stage1_w1": 4.3032921350049325,
+      "stage2_w1": 3.855336611701245
+    },
+    "lab_b": {
+      "stage1_w1": 2.75056354990118,
+      "stage2_w1": 2.751308001893933
+    },
+    "side_light": {
+      "stage1_w1": 6.166697965152096,
+      "stage2_w1": 6.062482763373412
+    },
+    "lighting_range": {
+      "stage1_w1": 5.0693990801633415,
+      "stage2_w1": 5.10627703924261
+    },
+    "detail": {
+      "stage1_w1": 0.1394647536622609,
+      "stage2_w1": 0.13800490734925625
+    },
+    "normalized_detail": {
+      "stage1_w1": 0.003555817068942281,
+      "stage2_w1": 0.003576814353242838
+    },
+    "face_w": {
+      "stage1_w1": 0.1052998136940057,
+      "stage2_w1": 0.1052998136940057
+    },
+    "face_h": {
+      "stage1_w1": 0.10527009222661436,
+      "stage2_w1": 0.10527009222661436
+    },
+    "face_x": {
+      "stage1_w1": 0.011257681262351465,
+      "stage2_w1": 0.011257681262351465
+    },
+    "face_y": {
+      "stage1_w1": 0.03726055562417632,
+      "stage2_w1": 0.03726055562417632
+    },
+    "very_bright": {
+      "stage1_w1": 0.0,
+      "stage2_w1": 0.0
+    },
+    "very_dark": {
+      "stage1_w1": 0.0,
+      "stage2_w1": 0.0
+    }
+  },
+  "code_sha256": "a384cfbe7ca826aae38bbc98e48d80ed894bceaf4f7fdf2048ce4cc37547e2d1"
+}

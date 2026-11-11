@@ -1,0 +1,36 @@
+{
+  "status": "passed",
+  "scope": "Safe-mode load and synthetic RGB inference only; not a new disease evaluation",
+  "model_sha256": "e0bab7dd2a6d0eb588db5496fb6eee3b9c779f2c4e8d7aabf98a95fd504fc5ef",
+  "input_shape": [
+    null,
+    256,
+    256,
+    3
+  ],
+  "output_heads": 4,
+  "score_shape": [
+    1,
+    5
+  ],
+  "finite_scores": true,
+  "sum_scores_one": true,
+  "internal_rescaling": [
+    0.00392156862745098,
+    [
+      2.0896918976428642,
+      2.1128856368212916,
+      2.1081851067789197
+    ]
+  ],
+  "external_division_by_255": false,
+  "saved_model_unchanged": true,
+  "new_training_executed": false,
+  "source_test_evaluated": false,
+  "environment": {
+    "tensorflow": "2.20.0",
+    "keras": "3.13.2",
+    "numpy": "2.5.2",
+    "device": "Windows CPU"
+  }
+}

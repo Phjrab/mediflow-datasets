@@ -6,6 +6,9 @@
 
 | 구분 | 폴더 | 용도 |
 | --- | --- | --- |
+| 완료한 어댑테이션 최신 전체표 | [adaptation_completion_20261112](adaptation_completion_20261112/README.md) | 실제 완료 21회·17개 프로필, 최신 휴대폰 1~5차 포함·정확한 조절값·모델 기록 JSON/CSV |
+| 휴대폰 공동 유사성 검토 | [smartphone_joint_review_20261112](smartphone_joint_review_20261112) | 196개 후보·12개 전체 표본 재생의 검토 기록, 후속 추가 5차 완료·보호 기준 미통과 유지 |
+| 실험 조절값 전체표 | [adaptation_parameters_20261111](adaptation_parameters_20261111) | 완료 15회·휴대폰 예정 5회, 조명·색·미세 대비·흐림·MMD/CORAL 수치와 학습 설정, Excel·CSV·JSON |
 | 미실행 재설정 분석 | [camera_refit_20261111](camera_refit_20261111) | 원본 재측정·후보·비교 그림·미실행 설정의 검사 근거 |
 | 기존 공개 데이터 연구 | [data_figures_20261026](data_figures_20261026), [validation_comparisons_20261027](validation_comparisons_20261027) | 데이터·초기 학습·Validation 비교 그림과 수치 |
 | 1·2·3차 변환 설명 | [adaptation_examples_20261110](adaptation_examples_20261110) | 적용 방식 예시. 그 자체가 성능 개선의 증거는 아님 |

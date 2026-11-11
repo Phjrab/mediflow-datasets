@@ -1,0 +1,22 @@
+{
+  "input_size": 256,
+  "input_policy": "center_square",
+  "color": "RGB",
+  "dtype": "float32",
+  "pixel_range": [
+    0,
+    255
+  ],
+  "layout": "NHWC",
+  "resize_method": "bilinear",
+  "antialias": false,
+  "exif_rotation_applied": true,
+  "icc_to_srgb": true,
+  "missing_icc_policy": "assume_sRGB",
+  "invalid_icc_policy": "error",
+  "external_division_by_255": false,
+  "internal_rescaling": "Rescaling(1/255) in model",
+  "training_augmentation_applied_during_inference": false,
+  "source_test_input_kind": "source: TensorFlow decoder without EXIF/ICC correction",
+  "smartphone_input_kind": "smartphone: PIL EXIF orientation + ICC to sRGB"
+}

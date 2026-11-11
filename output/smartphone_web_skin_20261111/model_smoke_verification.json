@@ -1,0 +1,34 @@
+{
+  "status": "passed",
+  "models": {
+    "basic": {
+      "score_shape": [
+        4,
+        5
+      ],
+      "feature_shape": [
+        4,
+        1280
+      ],
+      "target_training_count": 42,
+      "model_sha256": "11c5a160ddeb406c4e80802e38a372e90a0222c1dddf208e270676f795f177ae",
+      "loaded_and_forward_passed": true
+    },
+    "selected": {
+      "score_shape": [
+        4,
+        5
+      ],
+      "feature_shape": [
+        4,
+        512
+      ],
+      "target_training_count": 42,
+      "model_sha256": "83e659dd09a9355135ee0de0197037e81ece962777f59dedae8d9a37b49a3fc4",
+      "loaded_and_forward_passed": true
+    }
+  },
+  "source_test_evaluated": false,
+  "full_training_executed": false,
+  "target_accuracy": null
+}

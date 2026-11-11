@@ -1,0 +1,43 @@
+{
+  "status": "passed",
+  "scope": "Synthetic execution parity only; no new clinical evaluation",
+  "cases": [
+    {
+      "synthetic_input": "wide.png",
+      "input_kind": "smartphone",
+      "preprocessing_exactly_equal": true,
+      "max_score_absolute_difference": 1.4392942658422682e-22
+    },
+    {
+      "synthetic_input": "wide.png",
+      "input_kind": "source",
+      "preprocessing_exactly_equal": true,
+      "max_score_absolute_difference": 1.4392942658422682e-22
+    },
+    {
+      "synthetic_input": "rotated.jpg",
+      "input_kind": "smartphone",
+      "preprocessing_exactly_equal": true,
+      "max_score_absolute_difference": 7.2177499532699585e-09
+    },
+    {
+      "synthetic_input": "rotated.jpg",
+      "input_kind": "source",
+      "preprocessing_exactly_equal": true,
+      "max_score_absolute_difference": 1.8775463104248047e-06
+    },
+    {
+      "synthetic_input": "icc.png",
+      "input_kind": "smartphone",
+      "preprocessing_exactly_equal": true,
+      "max_score_absolute_difference": 7.553469558994777e-39
+    },
+    {
+      "synthetic_input": "icc.png",
+      "input_kind": "source",
+      "preprocessing_exactly_equal": true,
+      "max_score_absolute_difference": 7.553469558994777e-39
+    }
+  ],
+  "model_sha256": "f08958c745811dc34d8e876e742f911abc1f6938babdc64bd82a284d7e052c9e"
+}

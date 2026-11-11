@@ -6,6 +6,17 @@
 
 | 문서 | 확인된 역할·상태 |
 | --- | --- |
+| [어댑테이션 전체 완료 정리](research/camera_adaptation/ADAPTATION_COMPLETION_20261112.md) | 촬영·분석·21회 학습·81개 비교 기록·4개 연구용 패키지·한계와 남은 일 |
+| [스마트폰 최종 Test 결과](research/camera_adaptation/SMARTPHONE_FINAL_TEST_RESULT_REVIEW_20261112.md) | 실제 30개 비교·예측 12,000개 검산·4차 고정 유지·패키징 완료 |
+| [스마트폰 고정 최종 Test](research/camera_adaptation/SMARTPHONE_FINAL_TEST_20261112.md) | 완료한 400장·6모델×5조건 실행의 사전 고정 계획, 최신 수치는 위 결과 |
+| [휴대폰 근접 후보 추가 결과](research/camera_adaptation/SMARTPHONE_JOINT_RESULT_REVIEW_20261112.md) | 추가 1회 5 epoch 완료·최적 3 epoch·공통 후보 4차 유지·모델 1개 보관 |
+| [휴대폰 근접 후보 추가 1회](research/camera_adaptation/SMARTPHONE_JOINT_TRAINING_20261112.md) | 완료한 단독 5차의 실행 전 계약·준비 검사 기록, 최신 결과는 위 분석 |
+| [휴대폰 공동 유사성 검토](research/camera_adaptation/SMARTPHONE_JOINT_SIMILARITY_REVIEW_20261112.md) | 7/8 지표 근접·보호 기준 미통과의 검토 기록, 후속 사용자 승인 탐색 학습 결과는 위 분석 |
+| [휴대폰 1~4차 실제 결과](research/camera_adaptation/SMARTPHONE_ADAPTATION_RESULT_REVIEW_20261112.md) | 실제 5회 학습·모델 및 원본 지표 회수·Validation 4차 후보·장비 유사성 한계 |
+| [휴대폰 질감·흐림 강도 추가](research/camera_adaptation/SMARTPHONE_APPEARANCE_STRENGTH_20261112.md) | 완료 5회 실험의 준비 기록: 2·3차 약한 변화·4차 더 강한 변화 |
+| [어댑테이션 실험 조절값 전체 기록](research/camera_adaptation/ADAPTATION_EXPERIMENT_PARAMETER_LEDGER_20261111.md) | 발표·보고서용 실제 설정값 184행·학습 기록 20행·숫자 단위와 한계, 완료와 계획 구분 |
+| [스마트폰 web_skin 적응 준비](research/camera_adaptation/SMARTPHONE_WEB_SKIN_ADAPTATION_20261111.md) | 5명·5기기 분석과 완료 5회 실험의 설계·재현 근거 |
+| [휴대폰 2차 공통·근접 분포 재검토](research/camera_adaptation/SMARTPHONE_STAGE2_COMMON_NEARER_20261111.md) | 약한 Lab a 증가 채택·웹캠과 수치 비교, 1·4차 고정 |
 | [프로젝트 작업 정리와 자료 위치](PROJECT_SUMMARY_20261111.md) | 현재 전체 요약·기본~4차 관계·완료 결과·남은 일 |
 | [적응 후속 후보 패키징](research/camera_adaptation/ADAPTATION_MODEL_PACKAGES_20261111.md) | 사용 ZIP 3개·모델 계약·실행 검증·평가 출처 |
 | [1~4차·Test 완료 후 정리](research/maintenance/PROJECT_WRAPUP_CLEANUP_20261111.md) | 완료 노트북 이동·중복/임시 자료 정리·원본 보존 검사 |

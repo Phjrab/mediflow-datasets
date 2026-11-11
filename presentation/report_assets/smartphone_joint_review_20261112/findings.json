@@ -1,0 +1,351 @@
+{
+  "schema": "mediflow_phone_joint_review_findings_v1",
+  "scope": "Descriptive comparison; original acceptance guards retained",
+  "review_sha256": "6d6a146cc27cfafac7250a4d1e69d34de943d5ea73aa577c569706d89037f0ef",
+  "all_guards_accepted_candidate_count": 0,
+  "most_metrics_nonworsening_candidate": {
+    "id": "f10926b662a4a43c",
+    "label": "joint_color_098c55cdff63cf65",
+    "profile": {
+      "schema": "measured_camera_extended_v1",
+      "domain": "web_skin",
+      "lighting": {
+        "domain": "web_skin",
+        "photometric_operator": "bounded_additive_v3",
+        "brightness_offset": [
+          -19.624129908304198,
+          -10.181201425385177
+        ],
+        "contrast": [
+          1.0,
+          1.1808786167229048
+        ],
+        "left_light": [
+          -0.42238616943359375,
+          0.0
+        ],
+        "scale_x": [
+          1.0,
+          1.0
+        ],
+        "scale_y": [
+          1.0,
+          1.0
+        ]
+      },
+      "color_a": [
+        0.0,
+        1.0117187500000009
+      ],
+      "color_b": [
+        -1.2126953125000002,
+        0.0
+      ],
+      "texture_gain": [
+        1.0,
+        1.0
+      ],
+      "blur_sigma_roi64": [
+        0.0,
+        0.0
+      ],
+      "blur_input_scale": 0.41125000000000006
+    },
+    "assessment": {
+      "accepted": false,
+      "gaps": {
+        "y_p50": 9.5751122147356,
+        "contrast": 6.121784599213804,
+        "lab_a": 3.69880818202404,
+        "lab_b": 2.666033638010531,
+        "detail": 0.1315412272888135,
+        "normalized_detail": 0.0035589463828795916,
+        "side_light": 6.09777283938671,
+        "lighting_range": 5.39645999574218
+      },
+      "relative_gaps": {
+        "y_p50": 0.48874148238247944,
+        "contrast": 0.9951777216084926,
+        "lab_a": 0.8472604931775708,
+        "lab_b": 0.9796151856891196,
+        "detail": 0.885346407344385,
+        "normalized_detail": 0.9952062614349632,
+        "side_light": 0.9940013746130462,
+        "lighting_range": 1.0417194654848736
+      },
+      "mean_relative_gap": 0.9033835489668662,
+      "worst_relative_gap": 1.0417194654848736,
+      "nonworsening_metrics": [
+        "y_p50",
+        "contrast",
+        "lab_a",
+        "lab_b",
+        "detail",
+        "normalized_detail",
+        "side_light"
+      ],
+      "worsening_metrics": [
+        "lighting_range"
+      ],
+      "spatial_correlation_q05": 0.9971081562920024,
+      "new_float_endpoint_max": 0.0,
+      "per_seed_gaps": {
+        "42": {
+          "y_p50": 9.77756772895739,
+          "contrast": 6.017908517488296,
+          "lab_a": 3.7268999866189008,
+          "lab_b": 2.664825994318173,
+          "detail": 0.1309794878898786,
+          "normalized_detail": 0.003559062870984517,
+          "side_light": 6.156141005580215,
+          "lighting_range": 5.28042028462303
+        },
+        "707": {
+          "y_p50": 9.386578779698112,
+          "contrast": 6.183572518244469,
+          "lab_a": 3.7213998425148183,
+          "lab_b": 2.676682672513166,
+          "detail": 0.13533939580857612,
+          "normalized_detail": 0.0035672617615138597,
+          "side_light": 6.124288665384574,
+          "lighting_range": 5.331733876254692
+        },
+        "1707": {
+          "y_p50": 9.651493382171283,
+          "contrast": 6.258290914553191,
+          "lab_a": 3.6558203896986123,
+          "lab_b": 2.6671357769268678,
+          "detail": 0.12923732779328626,
+          "normalized_detail": 0.003542520315243389,
+          "side_light": 6.0994282476202315,
+          "lighting_range": 5.374206626273876
+        }
+      },
+      "each_seed_all_metrics_nonworsening": false,
+      "improved_people": 2,
+      "improved_omissions": 3,
+      "people": {
+        "P01": {
+          "before": 2.263202891686879,
+          "after": 2.0978828250311685,
+          "relative_change": -0.0730469491988362
+        },
+        "P02": {
+          "before": 1.7817467373141183,
+          "after": 1.8683376423794422,
+          "relative_change": 0.04859888515685165
+        },
+        "P03": {
+          "before": 2.399011841844414,
+          "after": 2.2788263275139635,
+          "relative_change": -0.05009792458466946
+        },
+        "P04": {
+          "before": 2.4081965327537063,
+          "after": 2.5273618486234937,
+          "relative_change": 0.04948321876932742
+        }
+      },
+      "leave_one_person_out": {
+        "P01": {
+          "before": 1.1797181191540744,
+          "after": 1.1487873553433743
+        },
+        "P02": {
+          "before": 1.3335939887557724,
+          "after": 1.1995173372968715
+        },
+        "P03": {
+          "before": 1.106667914495946,
+          "after": 1.1121587498725132
+        },
+        "P04": {
+          "before": 1.2261811032774328,
+          "after": 1.0423901648174487
+        }
+      }
+    }
+  },
+  "smallest_worst_worsening_candidate": {
+    "id": "5e37b7d56f041881",
+    "label": "light_0.5_zero_inclusive_interval",
+    "profile": {
+      "schema": "measured_camera_extended_v1",
+      "domain": "web_skin",
+      "lighting": {
+        "domain": "web_skin",
+        "photometric_operator": "bounded_additive_v3",
+        "brightness_offset": [
+          -9.812064954152099,
+          0.0
+        ],
+        "contrast": [
+          1.0,
+          1.0904393083614523
+        ],
+        "left_light": [
+          -0.21119308471679688,
+          0.0
+        ],
+        "scale_x": [
+          1.0,
+          1.0
+        ],
+        "scale_y": [
+          1.0,
+          1.0
+        ]
+      },
+      "color_a": [
+        0.0,
+        0.0
+      ],
+      "color_b": [
+        0.0,
+        0.0
+      ],
+      "texture_gain": [
+        1.0,
+        1.0
+      ],
+      "blur_sigma_roi64": [
+        0.0,
+        0.0
+      ],
+      "blur_input_scale": 0.41125000000000006
+    },
+    "assessment": {
+      "accepted": false,
+      "gaps": {
+        "y_p50": 16.890772624198068,
+        "contrast": 6.115864500666541,
+        "lab_a": 4.3032921350049325,
+        "lab_b": 2.75056354990118,
+        "detail": 0.1394647536622609,
+        "normalized_detail": 0.003555817068942281,
+        "side_light": 6.166697965152096,
+        "lighting_range": 5.0693990801633415
+      },
+      "relative_gaps": {
+        "y_p50": 0.8621539952536127,
+        "contrast": 0.9942153306441456,
+        "lab_a": 0.9857254653839045,
+        "lab_b": 1.0106751033707417,
+        "detail": 0.9386761941558444,
+        "normalized_detail": 0.9943311954774121,
+        "side_light": 1.0052368980673867,
+        "lighting_range": 0.9785844246568864
+      },
+      "mean_relative_gap": 0.9711998258762418,
+      "worst_relative_gap": 1.0106751033707417,
+      "nonworsening_metrics": [
+        "y_p50",
+        "contrast",
+        "lab_a",
+        "detail",
+        "normalized_detail",
+        "lighting_range"
+      ],
+      "worsening_metrics": [
+        "lab_b",
+        "side_light"
+      ],
+      "spatial_correlation_q05": 0.9995307647805073,
+      "new_float_endpoint_max": 0.0,
+      "per_seed_gaps": {
+        "42": {
+          "y_p50": 17.177760241751045,
+          "contrast": 6.019657482805674,
+          "lab_a": 4.30470795763339,
+          "lab_b": 2.7398488965744336,
+          "detail": 0.14079959533706074,
+          "normalized_detail": 0.0035564210680505367,
+          "side_light": 6.097870795686015,
+          "lighting_range": 5.0513790468609825
+        },
+        "707": {
+          "y_p50": 16.598809784485958,
+          "contrast": 6.117676355841977,
+          "lab_a": 4.299886646697949,
+          "lab_b": 2.7538468070652113,
+          "detail": 0.14087042993606924,
+          "normalized_detail": 0.0035513204648469424,
+          "side_light": 6.193053138114801,
+          "lighting_range": 5.107081004030872
+        },
+        "1707": {
+          "y_p50": 16.894281266140915,
+          "contrast": 6.242955119116727,
+          "lab_a": 4.306881356019424,
+          "lab_b": 2.754803555253617,
+          "detail": 0.13681465639022242,
+          "normalized_detail": 0.0035417062053458783,
+          "side_light": 6.185362492813969,
+          "lighting_range": 5.196373041753507
+        }
+      },
+      "each_seed_all_metrics_nonworsening": false,
+      "improved_people": 2,
+      "improved_omissions": 2,
+      "people": {
+        "P01": {
+          "before": 2.263202891686879,
+          "after": 2.2014417714039065,
+          "relative_change": -0.02728925475918731
+        },
+        "P02": {
+          "before": 1.7817467373141183,
+          "after": 1.845095080840609,
+          "relative_change": 0.03555406736536798
+        },
+        "P03": {
+          "before": 2.399011841844414,
+          "after": 2.32865949427466,
+          "relative_change": -0.029325552438984877
+        },
+        "P04": {
+          "before": 2.4081965327537063,
+          "after": 2.4767162858440575,
+          "relative_change": 0.028452724750002337
+        }
+      },
+      "leave_one_person_out": {
+        "P01": {
+          "before": 1.1797181191540744,
+          "after": 1.1804271845007777
+        },
+        "P02": {
+          "before": 1.3335939887557724,
+          "after": 1.2762911298758441
+        },
+        "P03": {
+          "before": 1.106667914495946,
+          "after": 1.1267401538159283
+        },
+        "P04": {
+          "before": 1.2261811032774328,
+          "after": 1.1505408484363375
+        }
+      }
+    }
+  },
+  "compared_to_untransformed_source": true,
+  "strictly_closer_metrics": [
+    "y_p50",
+    "contrast",
+    "lab_a",
+    "lab_b",
+    "detail",
+    "normalized_detail",
+    "side_light"
+  ],
+  "training_profile_modified": false,
+  "source_test_or_validation_used": false,
+  "target_holdout_used": false,
+  "recommendation": "Keep no-added-blur profile as a calibration direction; do not start new training from an unaccepted global profile",
+  "target_capture_guidance": [
+    "One predefined lighting setup, frontal framing and one fixed camera/device setting for a first deployment",
+    "Paired source-like and deployed-device captures of the same person/region/session would isolate capture effects better",
+    "Keep current four people for calibration; fresh future participants for independent confirmation"
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "status": "review_only_not_accepted_not_applied",
+  "profile": {
+    "schema": "measured_camera_extended_v1",
+    "domain": "web_skin",
+    "lighting": {
+      "domain": "web_skin",
+      "photometric_operator": "bounded_additive_v3",
+      "brightness_offset": [
+        -19.624129908304198,
+        -10.181201425385177
+      ],
+      "contrast": [
+        1.0,
+        1.1808786167229048
+      ],
+      "left_light": [
+        -0.42238616943359375,
+        0.0
+      ],
+      "scale_x": [
+        1.0,
+        1.0
+      ],
+      "scale_y": [
+        1.0,
+        1.0
+      ]
+    },
+    "color_a": [
+      0.0,
+      1.0117187500000009
+    ],
+    "color_b": [
+      -1.2126953125000002,
+      0.0
+    ],
+    "texture_gain": [
+      1.0,
+      1.0
+    ],
+    "blur_sigma_roi64": [
+      0.0,
+      0.0
+    ],
+    "blur_input_scale": 0.41125000000000006
+  },
+  "candidate_id": "f10926b662a4a43c",
+  "accepted": false,
+  "source": "findings.json"
+}

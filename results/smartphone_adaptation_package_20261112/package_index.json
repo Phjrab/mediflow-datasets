@@ -1,0 +1,395 @@
+{
+  "schema": "mediflow_smartphone_package_index_v1",
+  "package_id": "web_skin_smartphone_adaptation_stage4_20261112",
+  "model_sha256": "f08958c745811dc34d8e876e742f911abc1f6938babdc64bd82a284d7e052c9e",
+  "package_directory": "package",
+  "archive": "web_skin_smartphone_adaptation_stage4_20261112.zip",
+  "archive_sha256": "0404478a99ff832caa2e1b5e619c6d205ee3ca7d5ca493d69e473c41e7a39c18",
+  "archive_bytes": 32888982,
+  "selected_on": "Source Validation",
+  "stage": 4,
+  "device": "smartphone",
+  "body_region": "face",
+  "source_test_metrics": {
+    "clean": {
+      "status": "measured",
+      "labeled_count": 400,
+      "accuracy": 0.9175,
+      "macro_f1": 0.9172235025222394,
+      "class_f1": [
+        0.8819875776397514,
+        0.8974358974358975,
+        0.8860759493670887,
+        0.9937888198757764,
+        0.9268292682926829
+      ],
+      "precision": [
+        0.8765432098765432,
+        0.9210526315789473,
+        0.8974358974358975,
+        0.9876543209876543,
+        0.9047619047619048
+      ],
+      "recall": [
+        0.8875,
+        0.875,
+        0.875,
+        1.0,
+        0.95
+      ],
+      "support": [
+        80,
+        80,
+        80,
+        80,
+        80
+      ],
+      "confusion_matrix": [
+        [
+          71,
+          4,
+          3,
+          0,
+          2
+        ],
+        [
+          4,
+          70,
+          4,
+          1,
+          1
+        ],
+        [
+          5,
+          0,
+          70,
+          0,
+          5
+        ],
+        [
+          0,
+          0,
+          0,
+          80,
+          0
+        ],
+        [
+          1,
+          2,
+          1,
+          0,
+          76
+        ]
+      ],
+      "count": 400
+    },
+    "phone_lighting": {
+      "status": "measured",
+      "labeled_count": 400,
+      "accuracy": 0.9175,
+      "macro_f1": 0.9172144021213157,
+      "class_f1": [
+        0.875,
+        0.8987341772151898,
+        0.8917197452229298,
+        0.9937888198757764,
+        0.9268292682926829
+      ],
+      "precision": [
+        0.875,
+        0.9102564102564102,
+        0.9090909090909091,
+        0.9876543209876543,
+        0.9047619047619048
+      ],
+      "recall": [
+        0.875,
+        0.8875,
+        0.875,
+        1.0,
+        0.95
+      ],
+      "support": [
+        80,
+        80,
+        80,
+        80,
+        80
+      ],
+      "confusion_matrix": [
+        [
+          70,
+          5,
+          3,
+          0,
+          2
+        ],
+        [
+          4,
+          71,
+          3,
+          1,
+          1
+        ],
+        [
+          5,
+          0,
+          70,
+          0,
+          5
+        ],
+        [
+          0,
+          0,
+          0,
+          80,
+          0
+        ],
+        [
+          1,
+          2,
+          1,
+          0,
+          76
+        ]
+      ],
+      "count": 400
+    },
+    "phone_expanded": {
+      "status": "measured",
+      "labeled_count": 400,
+      "accuracy": 0.9175,
+      "macro_f1": 0.9172211327056615,
+      "class_f1": [
+        0.875,
+        0.8917197452229298,
+        0.8930817610062892,
+        0.9937888198757764,
+        0.9325153374233127
+      ],
+      "precision": [
+        0.875,
+        0.9090909090909091,
+        0.8987341772151899,
+        0.9876543209876543,
+        0.9156626506024096
+      ],
+      "recall": [
+        0.875,
+        0.875,
+        0.8875,
+        1.0,
+        0.95
+      ],
+      "support": [
+        80,
+        80,
+        80,
+        80,
+        80
+      ],
+      "confusion_matrix": [
+        [
+          70,
+          5,
+          3,
+          0,
+          2
+        ],
+        [
+          4,
+          70,
+          4,
+          1,
+          1
+        ],
+        [
+          5,
+          0,
+          71,
+          0,
+          4
+        ],
+        [
+          0,
+          0,
+          0,
+          80,
+          0
+        ],
+        [
+          1,
+          2,
+          1,
+          0,
+          76
+        ]
+      ],
+      "count": 400
+    },
+    "phone_refit": {
+      "status": "measured",
+      "labeled_count": 400,
+      "accuracy": 0.8875,
+      "macro_f1": 0.8869611005630087,
+      "class_f1": [
+        0.8311688311688312,
+        0.8535031847133757,
+        0.8502994011976048,
+        0.9815950920245399,
+        0.9182389937106918
+      ],
+      "precision": [
+        0.8648648648648649,
+        0.8701298701298701,
+        0.8160919540229885,
+        0.963855421686747,
+        0.9240506329113924
+      ],
+      "recall": [
+        0.8,
+        0.8375,
+        0.8875,
+        1.0,
+        0.9125
+      ],
+      "support": [
+        80,
+        80,
+        80,
+        80,
+        80
+      ],
+      "confusion_matrix": [
+        [
+          64,
+          7,
+          7,
+          0,
+          2
+        ],
+        [
+          5,
+          67,
+          5,
+          2,
+          1
+        ],
+        [
+          4,
+          1,
+          71,
+          1,
+          3
+        ],
+        [
+          0,
+          0,
+          0,
+          80,
+          0
+        ],
+        [
+          1,
+          2,
+          4,
+          0,
+          73
+        ]
+      ],
+      "count": 400
+    },
+    "phone_joint": {
+      "status": "measured",
+      "labeled_count": 400,
+      "accuracy": 0.915,
+      "macro_f1": 0.9147589669933156,
+      "class_f1": [
+        0.8553459119496856,
+        0.9,
+        0.8987341772151898,
+        0.9937888198757764,
+        0.925925925925926
+      ],
+      "precision": [
+        0.8607594936708861,
+        0.9,
+        0.9102564102564102,
+        0.9876543209876543,
+        0.9146341463414634
+      ],
+      "recall": [
+        0.85,
+        0.9,
+        0.8875,
+        1.0,
+        0.9375
+      ],
+      "support": [
+        80,
+        80,
+        80,
+        80,
+        80
+      ],
+      "confusion_matrix": [
+        [
+          68,
+          6,
+          4,
+          0,
+          2
+        ],
+        [
+          4,
+          72,
+          2,
+          1,
+          1
+        ],
+        [
+          5,
+          0,
+          71,
+          0,
+          4
+        ],
+        [
+          0,
+          0,
+          0,
+          80,
+          0
+        ],
+        [
+          2,
+          2,
+          1,
+          0,
+          75
+        ]
+      ],
+      "count": 400
+    }
+  },
+  "isolated_cli_passed": true,
+  "example_usage_passed": true,
+  "preserved_source_file_sha256": {
+    "results/CANDIDATE_INDEX.json": "bb45755cfca0d8169932bfc305a6b3d077c9aca82c8eb09b2a62ecee8603f61c",
+    "results/smartphone_web_skin_adaptation_20261112/stage4/best.keras": "f08958c745811dc34d8e876e742f911abc1f6938babdc64bd82a284d7e052c9e",
+    "results/smartphone_web_skin_adaptation_20261112/stage4/complete.json": "8985c2170c0bbd8be351bf1a83dc6764649190adcc67f2ceaf74dd0147d72f02",
+    "results/smartphone_web_skin_adaptation_20261112/stage4/run_configuration.json": "7e2ddad9412525625e83b416522b0120f4abc716e03d906d61cef03b964a6707",
+    "results/smartphone_web_skin_adaptation_20261112/stage4/history.json": "424ac0b7e11e4d452ef2b2dba6fa2595ef7ca37c445f2f1951b66344fe1422f7",
+    "results/smartphone_joint_adaptation_20261112/selection.json": "6399c5ed7183a4e3e5c548e9c505acc21acfad1629e416cd41edf4217f4cb32b",
+    "results/smartphone_final_test_20261112/evaluation_plan.json": "7c7d0288d7eb6f38ffd9b125e105723e67f7098c9b2e169645a069f0216e5869",
+    "results/smartphone_final_test_20261112/test_results.json": "6aba873354bbe445252c60f7b188ae7793258c176ffcd9b4c2728103ceb69732"
+  },
+  "official_candidate_index_changed": false,
+  "new_training_executed": false,
+  "real_device_disease_accuracy_measured": false,
+  "code_head": "f608e110b508a640a01cd72f18e2f0ca390b698c",
+  "code_sha256": {
+    "smartphone_packaging.py": "3bccef99fbafccb5df1bc01c7a65c9b52bad0baa5440b04819ed9829f2559624",
+    "smartphone_package_inference.py": "a4aab990e10333918f8f7e305639ed26ac443c5373d5cfb8852a26bc56da6319"
+  }
+}

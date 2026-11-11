@@ -1,0 +1,79 @@
+{
+  "status": "completed",
+  "previous_targets": [
+    {
+      "relative_path": ".tmp\\smartphone-final-tests-20261111",
+      "checked_absolute_path": "C:\\Users\\sejun\\OneDrive\\Documents\\ChatGPT\\mediflow\\.tmp\\smartphone-final-tests-20261111",
+      "file_count": 1377,
+      "bytes": 146353680.0,
+      "removed": true
+    },
+    {
+      "relative_path": ".tmp\\smartphone-flow-recheck-20261111",
+      "checked_absolute_path": "C:\\Users\\sejun\\OneDrive\\Documents\\ChatGPT\\mediflow\\.tmp\\smartphone-flow-recheck-20261111",
+      "file_count": 120,
+      "bytes": 1194002.0,
+      "removed": true
+    },
+    {
+      "relative_path": ".tmp\\smartphone-full-tests-20261111",
+      "checked_absolute_path": "C:\\Users\\sejun\\OneDrive\\Documents\\ChatGPT\\mediflow\\.tmp\\smartphone-full-tests-20261111",
+      "file_count": 1383,
+      "bytes": 146115065.0,
+      "removed": true
+    },
+    {
+      "relative_path": ".tmp\\smartphone-notebook-final-tests-20261111",
+      "checked_absolute_path": "C:\\Users\\sejun\\OneDrive\\Documents\\ChatGPT\\mediflow\\.tmp\\smartphone-notebook-final-tests-20261111",
+      "file_count": 109,
+      "bytes": 1089977.0,
+      "removed": true
+    },
+    {
+      "relative_path": ".tmp\\smartphone-preparation-20261111",
+      "checked_absolute_path": "C:\\Users\\sejun\\OneDrive\\Documents\\ChatGPT\\mediflow\\.tmp\\smartphone-preparation-20261111",
+      "file_count": 10,
+      "bytes": 50643702.0,
+      "removed": true
+    },
+    {
+      "relative_path": ".tmp\\smartphone-unit-tests-20261111",
+      "checked_absolute_path": "C:\\Users\\sejun\\OneDrive\\Documents\\ChatGPT\\mediflow\\.tmp\\smartphone-unit-tests-20261111",
+      "file_count": 42,
+      "bytes": 299788.0,
+      "removed": true
+    },
+    {
+      "relative_path": ".tmp\\smartphone-continuation-tests-20261111",
+      "checked_absolute_path": "C:\\Users\\sejun\\OneDrive\\Documents\\ChatGPT\\mediflow\\.tmp\\smartphone-continuation-tests-20261111",
+      "file_count": 1375,
+      "bytes": 147609254.0,
+      "removed": true
+    }
+  ],
+  "final_targets": [
+    {
+      "relative_path": ".tmp\\phqa",
+      "checked_absolute_path": "C:\\Users\\sejun\\OneDrive\\Documents\\ChatGPT\\mediflow\\.tmp\\phqa",
+      "file_count": 1378,
+      "removed": true
+    },
+    {
+      "relative_path": ".tmp\\smartphone-preparation-20261111",
+      "checked_absolute_path": "C:\\Users\\sejun\\OneDrive\\Documents\\ChatGPT\\mediflow\\.tmp\\smartphone-preparation-20261111",
+      "file_count": 0,
+      "removed": true
+    },
+    {
+      "relative_path": ".pytest_cache",
+      "checked_absolute_path": "C:\\Users\\sejun\\OneDrive\\Documents\\ChatGPT\\mediflow\\.pytest_cache",
+      "file_count": 5,
+      "removed": true
+    }
+  ],
+  "preserved": [
+    ".tmp\\final-test-report-libraries",
+    ".tmp\\strength-native-temp"
+  ],
+  "originals_unchanged": true
+}

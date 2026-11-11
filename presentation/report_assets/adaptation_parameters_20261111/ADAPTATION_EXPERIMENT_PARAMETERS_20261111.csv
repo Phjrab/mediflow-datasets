@@ -1,0 +1,185 @@
+﻿profile_id,domain,stage,status,parameter,unit,lower,upper,source_id
+skin_s1,현미경 피부,1,completed,brightness_offset,Nominal RGB additive proposal before boundary protection; not percent,-1.3492517471313477,-0.7292451858520508,S008
+skin_s1,현미경 피부,1,completed,contrast,Grayscale deviation from median gain; 1=identity,0.9399699904076788,0.957350048293398,S008
+skin_s1,현미경 피부,1,completed,left_light,Full-width ramp; left=+value/2 and right=-value/2 before protection,0.0,0.0,S008
+skin_s1,현미경 피부,1,completed,scale_x,Geometry gain; 1=identity,1.0,1.0,S008
+skin_s1,현미경 피부,1,completed,scale_y,Geometry gain; 1=identity,1.0,1.0,S008
+skin_s1,현미경 피부,1,completed,color_a,CIE Lab a additive offset; positive toward red,0.0,0.0,S008
+skin_s1,현미경 피부,1,completed,color_b,CIE Lab b additive offset; positive toward yellow,0.0,0.0,S008
+skin_s1,현미경 피부,1,completed,texture_gain,High-pass grayscale residual gain; 1=identity,1.0,1.0,S008
+skin_s1,현미경 피부,1,completed,blur_sigma_roi64,Gaussian sigma on ROI64 reference,0.0,0.0,S008
+skin_s1,현미경 피부,1,completed,blur_input_scale,Input-pixel sigma / ROI64 sigma,1.0,1.0,S008
+skin_s1,현미경 피부,1,completed,blur_sigma_input_px,Gaussian sigma in input pixels at reference size,0.0,0.0,S008
+skin_s2,현미경 피부,2,completed,brightness_offset,Nominal RGB additive proposal before boundary protection; not percent,-1.3492517471313477,-0.7292451858520508,S013
+skin_s2,현미경 피부,2,completed,contrast,Grayscale deviation from median gain; 1=identity,0.9399699904076788,0.957350048293398,S013
+skin_s2,현미경 피부,2,completed,left_light,Full-width ramp; left=+value/2 and right=-value/2 before protection,0.0,0.0,S013
+skin_s2,현미경 피부,2,completed,scale_x,Geometry gain; 1=identity,1.0,1.0,S013
+skin_s2,현미경 피부,2,completed,scale_y,Geometry gain; 1=identity,1.0,1.0,S013
+skin_s2,현미경 피부,2,completed,color_a,CIE Lab a additive offset; positive toward red,-0.416015625,0.14453125,S013
+skin_s2,현미경 피부,2,completed,color_b,CIE Lab b additive offset; positive toward yellow,-0.375,0.12890625,S013
+skin_s2,현미경 피부,2,completed,texture_gain,High-pass grayscale residual gain; 1=identity,0.9619150069643927,1.0479433104559668,S013
+skin_s2,현미경 피부,2,completed,blur_sigma_roi64,Gaussian sigma on ROI64 reference,0.0,0.30000000000000004,S013
+skin_s2,현미경 피부,2,completed,blur_input_scale,Input-pixel sigma / ROI64 sigma,1.75,1.75,S013
+skin_s2,현미경 피부,2,completed,blur_sigma_input_px,Gaussian sigma in input pixels at reference size,0.0,0.5250000000000001,S013
+skin_s3,현미경 피부,3,completed,brightness_offset,Nominal RGB additive proposal before boundary protection; not percent,-1.3492517471313477,-0.7292451858520508,S016
+skin_s3,현미경 피부,3,completed,contrast,Grayscale deviation from median gain; 1=identity,0.9399699904076788,0.957350048293398,S016
+skin_s3,현미경 피부,3,completed,left_light,Full-width ramp; left=+value/2 and right=-value/2 before protection,0.0,0.0,S016
+skin_s3,현미경 피부,3,completed,scale_x,Geometry gain; 1=identity,1.0,1.0,S016
+skin_s3,현미경 피부,3,completed,scale_y,Geometry gain; 1=identity,1.0,1.0,S016
+skin_s3,현미경 피부,3,completed,color_a,CIE Lab a additive offset; positive toward red,-0.416015625,0.14453125,S016
+skin_s3,현미경 피부,3,completed,color_b,CIE Lab b additive offset; positive toward yellow,-0.375,0.12890625,S016
+skin_s3,현미경 피부,3,completed,texture_gain,High-pass grayscale residual gain; 1=identity,0.9619150069643927,1.0479433104559668,S016
+skin_s3,현미경 피부,3,completed,blur_sigma_roi64,Gaussian sigma on ROI64 reference,0.0,0.30000000000000004,S016
+skin_s3,현미경 피부,3,completed,blur_input_scale,Input-pixel sigma / ROI64 sigma,1.75,1.75,S016
+skin_s3,현미경 피부,3,completed,blur_sigma_input_px,Gaussian sigma in input pixels at reference size,0.0,0.5250000000000001,S016
+skin_s4,현미경 피부,4,completed,brightness_offset,Nominal RGB additive proposal before boundary protection; not percent,32.0,32.0,S020
+skin_s4,현미경 피부,4,completed,contrast,Grayscale deviation from median gain; 1=identity,0.8,0.8,S020
+skin_s4,현미경 피부,4,completed,left_light,Full-width ramp; left=+value/2 and right=-value/2 before protection,0.0,0.0,S020
+skin_s4,현미경 피부,4,completed,scale_x,Geometry gain; 1=identity,1.0,1.0,S020
+skin_s4,현미경 피부,4,completed,scale_y,Geometry gain; 1=identity,1.0,1.0,S020
+skin_s4,현미경 피부,4,completed,color_a,CIE Lab a additive offset; positive toward red,-0.9609375,0.0,S020
+skin_s4,현미경 피부,4,completed,color_b,CIE Lab b additive offset; positive toward yellow,0.0,0.92578125,S020
+skin_s4,현미경 피부,4,completed,texture_gain,High-pass grayscale residual gain; 1=identity,1.0,1.0,S020
+skin_s4,현미경 피부,4,completed,blur_sigma_roi64,Gaussian sigma on ROI64 reference,0.0,0.0,S020
+skin_s4,현미경 피부,4,completed,blur_input_scale,Input-pixel sigma / ROI64 sigma,1.75,1.75,S020
+skin_s4,현미경 피부,4,completed,blur_sigma_input_px,Gaussian sigma in input pixels at reference size,0.0,0.0,S020
+web_skin_s1,웹캠 얼굴,1,completed,brightness_offset,Nominal RGB additive proposal before boundary protection; not percent,13.485409498214722,17.61036491394043,S024
+web_skin_s1,웹캠 얼굴,1,completed,contrast,Grayscale deviation from median gain; 1=identity,1.15,1.15,S024
+web_skin_s1,웹캠 얼굴,1,completed,left_light,Full-width ramp; left=+value/2 and right=-value/2 before protection,13.776813507080078,15.418357372283936,S024
+web_skin_s1,웹캠 얼굴,1,completed,scale_x,Geometry gain; 1=identity,1.0,1.0,S024
+web_skin_s1,웹캠 얼굴,1,completed,scale_y,Geometry gain; 1=identity,1.0,1.0,S024
+web_skin_s1,웹캠 얼굴,1,completed,color_a,CIE Lab a additive offset; positive toward red,0.0,0.0,S024
+web_skin_s1,웹캠 얼굴,1,completed,color_b,CIE Lab b additive offset; positive toward yellow,0.0,0.0,S024
+web_skin_s1,웹캠 얼굴,1,completed,texture_gain,High-pass grayscale residual gain; 1=identity,1.0,1.0,S024
+web_skin_s1,웹캠 얼굴,1,completed,blur_sigma_roi64,Gaussian sigma on ROI64 reference,0.0,0.0,S024
+web_skin_s1,웹캠 얼굴,1,completed,blur_input_scale,Input-pixel sigma / ROI64 sigma,1.0,1.0,S024
+web_skin_s1,웹캠 얼굴,1,completed,blur_sigma_input_px,Gaussian sigma in input pixels at reference size,0.0,0.0,S024
+web_skin_s2,웹캠 얼굴,2,completed,brightness_offset,Nominal RGB additive proposal before boundary protection; not percent,13.485409498214722,17.61036491394043,S029
+web_skin_s2,웹캠 얼굴,2,completed,contrast,Grayscale deviation from median gain; 1=identity,1.15,1.15,S029
+web_skin_s2,웹캠 얼굴,2,completed,left_light,Full-width ramp; left=+value/2 and right=-value/2 before protection,13.776813507080078,15.418357372283936,S029
+web_skin_s2,웹캠 얼굴,2,completed,scale_x,Geometry gain; 1=identity,1.0,1.0,S029
+web_skin_s2,웹캠 얼굴,2,completed,scale_y,Geometry gain; 1=identity,1.0,1.0,S029
+web_skin_s2,웹캠 얼굴,2,completed,color_a,CIE Lab a additive offset; positive toward red,-0.64892578125,-0.2197265625,S029
+web_skin_s2,웹캠 얼굴,2,completed,color_b,CIE Lab b additive offset; positive toward yellow,-0.4375,0.326171875,S029
+web_skin_s2,웹캠 얼굴,2,completed,texture_gain,High-pass grayscale residual gain; 1=identity,0.9215063159901182,0.9572907949919682,S029
+web_skin_s2,웹캠 얼굴,2,completed,blur_sigma_roi64,Gaussian sigma on ROI64 reference,0.0,0.2,S029
+web_skin_s2,웹캠 얼굴,2,completed,blur_input_scale,Input-pixel sigma / ROI64 sigma,1.9375,1.9375,S029
+web_skin_s2,웹캠 얼굴,2,completed,blur_sigma_input_px,Gaussian sigma in input pixels at reference size,0.0,0.3875,S029
+web_skin_s3,웹캠 얼굴,3,completed,brightness_offset,Nominal RGB additive proposal before boundary protection; not percent,13.485409498214722,17.61036491394043,S032
+web_skin_s3,웹캠 얼굴,3,completed,contrast,Grayscale deviation from median gain; 1=identity,1.15,1.15,S032
+web_skin_s3,웹캠 얼굴,3,completed,left_light,Full-width ramp; left=+value/2 and right=-value/2 before protection,13.776813507080078,15.418357372283936,S032
+web_skin_s3,웹캠 얼굴,3,completed,scale_x,Geometry gain; 1=identity,1.0,1.0,S032
+web_skin_s3,웹캠 얼굴,3,completed,scale_y,Geometry gain; 1=identity,1.0,1.0,S032
+web_skin_s3,웹캠 얼굴,3,completed,color_a,CIE Lab a additive offset; positive toward red,-0.64892578125,-0.2197265625,S032
+web_skin_s3,웹캠 얼굴,3,completed,color_b,CIE Lab b additive offset; positive toward yellow,-0.4375,0.326171875,S032
+web_skin_s3,웹캠 얼굴,3,completed,texture_gain,High-pass grayscale residual gain; 1=identity,0.9215063159901182,0.9572907949919682,S032
+web_skin_s3,웹캠 얼굴,3,completed,blur_sigma_roi64,Gaussian sigma on ROI64 reference,0.0,0.2,S032
+web_skin_s3,웹캠 얼굴,3,completed,blur_input_scale,Input-pixel sigma / ROI64 sigma,1.9375,1.9375,S032
+web_skin_s3,웹캠 얼굴,3,completed,blur_sigma_input_px,Gaussian sigma in input pixels at reference size,0.0,0.3875,S032
+web_skin_s4,웹캠 얼굴,4,completed,brightness_offset,Nominal RGB additive proposal before boundary protection; not percent,-32.0,-32.0,S036
+web_skin_s4,웹캠 얼굴,4,completed,contrast,Grayscale deviation from median gain; 1=identity,0.8,1.0152967817078993,S036
+web_skin_s4,웹캠 얼굴,4,completed,left_light,Full-width ramp; left=+value/2 and right=-value/2 before protection,24.0,24.0,S036
+web_skin_s4,웹캠 얼굴,4,completed,scale_x,Geometry gain; 1=identity,1.0,1.0,S036
+web_skin_s4,웹캠 얼굴,4,completed,scale_y,Geometry gain; 1=identity,1.0,1.0,S036
+web_skin_s4,웹캠 얼굴,4,completed,color_a,CIE Lab a additive offset; positive toward red,0.0,0.0,S036
+web_skin_s4,웹캠 얼굴,4,completed,color_b,CIE Lab b additive offset; positive toward yellow,-1.9033203125,0.0,S036
+web_skin_s4,웹캠 얼굴,4,completed,texture_gain,High-pass grayscale residual gain; 1=identity,0.85,0.9145815899839365,S036
+web_skin_s4,웹캠 얼굴,4,completed,blur_sigma_roi64,Gaussian sigma on ROI64 reference,0.0,0.4,S036
+web_skin_s4,웹캠 얼굴,4,completed,blur_input_scale,Input-pixel sigma / ROI64 sigma,1.9375,1.9375,S036
+web_skin_s4,웹캠 얼굴,4,completed,blur_sigma_input_px,Gaussian sigma in input pixels at reference size,0.0,0.775,S036
+hair_s1,현미경 두피,1,completed,brightness_offset,Nominal RGB additive proposal before boundary protection; not percent,-0.6363735198974609,12.4506196975708,S040
+hair_s1,현미경 두피,1,completed,contrast,Grayscale deviation from median gain; 1=identity,1.0,1.0,S040
+hair_s1,현미경 두피,1,completed,left_light,Full-width ramp; left=+value/2 and right=-value/2 before protection,0.0,0.0,S040
+hair_s1,현미경 두피,1,completed,scale_x,Geometry gain; 1=identity,1.0,1.0,S040
+hair_s1,현미경 두피,1,completed,scale_y,Geometry gain; 1=identity,1.0,1.0,S040
+hair_s1,현미경 두피,1,completed,color_a,CIE Lab a additive offset; positive toward red,0.0,0.0,S040
+hair_s1,현미경 두피,1,completed,color_b,CIE Lab b additive offset; positive toward yellow,0.0,0.0,S040
+hair_s1,현미경 두피,1,completed,texture_gain,High-pass grayscale residual gain; 1=identity,1.0,1.0,S040
+hair_s1,현미경 두피,1,completed,blur_sigma_roi64,Gaussian sigma on ROI64 reference,0.0,0.0,S040
+hair_s1,현미경 두피,1,completed,blur_input_scale,Input-pixel sigma / ROI64 sigma,1.0,1.0,S040
+hair_s1,현미경 두피,1,completed,blur_sigma_input_px,Gaussian sigma in input pixels at reference size,0.0,0.0,S040
+hair_s2,현미경 두피,2,completed,brightness_offset,Nominal RGB additive proposal before boundary protection; not percent,-0.6363735198974609,12.4506196975708,S045
+hair_s2,현미경 두피,2,completed,contrast,Grayscale deviation from median gain; 1=identity,1.0,1.0,S045
+hair_s2,현미경 두피,2,completed,left_light,Full-width ramp; left=+value/2 and right=-value/2 before protection,0.0,0.0,S045
+hair_s2,현미경 두피,2,completed,scale_x,Geometry gain; 1=identity,1.0,1.0,S045
+hair_s2,현미경 두피,2,completed,scale_y,Geometry gain; 1=identity,1.0,1.0,S045
+hair_s2,현미경 두피,2,completed,color_a,CIE Lab a additive offset; positive toward red,-0.5859375,-0.23046875,S045
+hair_s2,현미경 두피,2,completed,color_b,CIE Lab b additive offset; positive toward yellow,-0.517578125,-0.0859375,S045
+hair_s2,현미경 두피,2,completed,texture_gain,High-pass grayscale residual gain; 1=identity,0.9061414267639694,0.9644937194736967,S045
+hair_s2,현미경 두피,2,completed,blur_sigma_roi64,Gaussian sigma on ROI64 reference,0.0,0.35625,S045
+hair_s2,현미경 두피,2,completed,blur_input_scale,Input-pixel sigma / ROI64 sigma,3.0,3.0,S045
+hair_s2,현미경 두피,2,completed,blur_sigma_input_px,Gaussian sigma in input pixels at reference size,0.0,1.06875,S045
+hair_s3,현미경 두피,3,completed,brightness_offset,Nominal RGB additive proposal before boundary protection; not percent,-0.6363735198974609,12.4506196975708,S048
+hair_s3,현미경 두피,3,completed,contrast,Grayscale deviation from median gain; 1=identity,1.0,1.0,S048
+hair_s3,현미경 두피,3,completed,left_light,Full-width ramp; left=+value/2 and right=-value/2 before protection,0.0,0.0,S048
+hair_s3,현미경 두피,3,completed,scale_x,Geometry gain; 1=identity,1.0,1.0,S048
+hair_s3,현미경 두피,3,completed,scale_y,Geometry gain; 1=identity,1.0,1.0,S048
+hair_s3,현미경 두피,3,completed,color_a,CIE Lab a additive offset; positive toward red,-0.5859375,-0.23046875,S048
+hair_s3,현미경 두피,3,completed,color_b,CIE Lab b additive offset; positive toward yellow,-0.517578125,-0.0859375,S048
+hair_s3,현미경 두피,3,completed,texture_gain,High-pass grayscale residual gain; 1=identity,0.9061414267639694,0.9644937194736967,S048
+hair_s3,현미경 두피,3,completed,blur_sigma_roi64,Gaussian sigma on ROI64 reference,0.0,0.35625,S048
+hair_s3,현미경 두피,3,completed,blur_input_scale,Input-pixel sigma / ROI64 sigma,3.0,3.0,S048
+hair_s3,현미경 두피,3,completed,blur_sigma_input_px,Gaussian sigma in input pixels at reference size,0.0,1.06875,S048
+hair_s4,현미경 두피,4,completed,brightness_offset,Nominal RGB additive proposal before boundary protection; not percent,15.043113708496094,26.26080894470215,S052
+hair_s4,현미경 두피,4,completed,contrast,Grayscale deviation from median gain; 1=identity,1.0,1.0,S052
+hair_s4,현미경 두피,4,completed,left_light,Full-width ramp; left=+value/2 and right=-value/2 before protection,0.0,0.0,S052
+hair_s4,현미경 두피,4,completed,scale_x,Geometry gain; 1=identity,1.0,1.0,S052
+hair_s4,현미경 두피,4,completed,scale_y,Geometry gain; 1=identity,1.0,1.0,S052
+hair_s4,현미경 두피,4,completed,color_a,CIE Lab a additive offset; positive toward red,0.0,0.0,S052
+hair_s4,현미경 두피,4,completed,color_b,CIE Lab b additive offset; positive toward yellow,0.0,0.0,S052
+hair_s4,현미경 두피,4,completed,texture_gain,High-pass grayscale residual gain; 1=identity,1.0,1.0,S052
+hair_s4,현미경 두피,4,completed,blur_sigma_roi64,Gaussian sigma on ROI64 reference,0.0,0.0,S052
+hair_s4,현미경 두피,4,completed,blur_input_scale,Input-pixel sigma / ROI64 sigma,3.0,3.0,S052
+hair_s4,현미경 두피,4,completed,blur_sigma_input_px,Gaussian sigma in input pixels at reference size,0.0,0.0,S052
+phone_s1,휴대폰 얼굴,1,planned_not_run,brightness_offset,Nominal RGB additive proposal before boundary protection; not percent,-9.812064954152099,0.0,S055
+phone_s1,휴대폰 얼굴,1,planned_not_run,contrast,Grayscale deviation from median gain; 1=identity,1.0,1.0904393083614523,S055
+phone_s1,휴대폰 얼굴,1,planned_not_run,left_light,Full-width ramp; left=+value/2 and right=-value/2 before protection,-0.21119308471679688,0.0,S055
+phone_s1,휴대폰 얼굴,1,planned_not_run,scale_x,Geometry gain; 1=identity,1.0,1.0,S055
+phone_s1,휴대폰 얼굴,1,planned_not_run,scale_y,Geometry gain; 1=identity,1.0,1.0,S055
+phone_s1,휴대폰 얼굴,1,planned_not_run,color_a,CIE Lab a additive offset; positive toward red,0.0,0.0,S055
+phone_s1,휴대폰 얼굴,1,planned_not_run,color_b,CIE Lab b additive offset; positive toward yellow,0.0,0.0,S055
+phone_s1,휴대폰 얼굴,1,planned_not_run,texture_gain,High-pass grayscale residual gain; 1=identity,1.0,1.0,S055
+phone_s1,휴대폰 얼굴,1,planned_not_run,blur_sigma_roi64,Gaussian sigma on ROI64 reference,0.0,0.0,S055
+phone_s1,휴대폰 얼굴,1,planned_not_run,blur_input_scale,Input-pixel sigma / ROI64 sigma,0.41125000000000006,0.41125000000000006,S055
+phone_s1,휴대폰 얼굴,1,planned_not_run,blur_sigma_input_px,Gaussian sigma in input pixels at reference size,0.0,0.0,S055
+phone_s2,휴대폰 얼굴,2,planned_not_run,brightness_offset,Nominal RGB additive proposal before boundary protection; not percent,-9.812064954152099,0.0,S055
+phone_s2,휴대폰 얼굴,2,planned_not_run,contrast,Grayscale deviation from median gain; 1=identity,1.0,1.0904393083614523,S055
+phone_s2,휴대폰 얼굴,2,planned_not_run,left_light,Full-width ramp; left=+value/2 and right=-value/2 before protection,-0.21119308471679688,0.0,S055
+phone_s2,휴대폰 얼굴,2,planned_not_run,scale_x,Geometry gain; 1=identity,1.0,1.0,S055
+phone_s2,휴대폰 얼굴,2,planned_not_run,scale_y,Geometry gain; 1=identity,1.0,1.0,S055
+phone_s2,휴대폰 얼굴,2,planned_not_run,color_a,CIE Lab a additive offset; positive toward red,0.0,1.0117187500000009,S055
+phone_s2,휴대폰 얼굴,2,planned_not_run,color_b,CIE Lab b additive offset; positive toward yellow,0.0,0.0,S055
+phone_s2,휴대폰 얼굴,2,planned_not_run,texture_gain,High-pass grayscale residual gain; 1=identity,1.0,1.0,S055
+phone_s2,휴대폰 얼굴,2,planned_not_run,blur_sigma_roi64,Gaussian sigma on ROI64 reference,0.0,0.0,S055
+phone_s2,휴대폰 얼굴,2,planned_not_run,blur_input_scale,Input-pixel sigma / ROI64 sigma,0.41125000000000006,0.41125000000000006,S055
+phone_s2,휴대폰 얼굴,2,planned_not_run,blur_sigma_input_px,Gaussian sigma in input pixels at reference size,0.0,0.0,S055
+phone_s3,휴대폰 얼굴,3,planned_not_run,brightness_offset,Nominal RGB additive proposal before boundary protection; not percent,-9.812064954152099,0.0,S055
+phone_s3,휴대폰 얼굴,3,planned_not_run,contrast,Grayscale deviation from median gain; 1=identity,1.0,1.0904393083614523,S055
+phone_s3,휴대폰 얼굴,3,planned_not_run,left_light,Full-width ramp; left=+value/2 and right=-value/2 before protection,-0.21119308471679688,0.0,S055
+phone_s3,휴대폰 얼굴,3,planned_not_run,scale_x,Geometry gain; 1=identity,1.0,1.0,S055
+phone_s3,휴대폰 얼굴,3,planned_not_run,scale_y,Geometry gain; 1=identity,1.0,1.0,S055
+phone_s3,휴대폰 얼굴,3,planned_not_run,color_a,CIE Lab a additive offset; positive toward red,0.0,1.0117187500000009,S055
+phone_s3,휴대폰 얼굴,3,planned_not_run,color_b,CIE Lab b additive offset; positive toward yellow,0.0,0.0,S055
+phone_s3,휴대폰 얼굴,3,planned_not_run,texture_gain,High-pass grayscale residual gain; 1=identity,1.0,1.0,S055
+phone_s3,휴대폰 얼굴,3,planned_not_run,blur_sigma_roi64,Gaussian sigma on ROI64 reference,0.0,0.0,S055
+phone_s3,휴대폰 얼굴,3,planned_not_run,blur_input_scale,Input-pixel sigma / ROI64 sigma,0.41125000000000006,0.41125000000000006,S055
+phone_s3,휴대폰 얼굴,3,planned_not_run,blur_sigma_input_px,Gaussian sigma in input pixels at reference size,0.0,0.0,S055
+phone_s4,휴대폰 얼굴,4,planned_not_run,brightness_offset,Nominal RGB additive proposal before boundary protection; not percent,-19.624129908304198,0.0,S055
+phone_s4,휴대폰 얼굴,4,planned_not_run,contrast,Grayscale deviation from median gain; 1=identity,1.0,1.1808786167229048,S055
+phone_s4,휴대폰 얼굴,4,planned_not_run,left_light,Full-width ramp; left=+value/2 and right=-value/2 before protection,-0.42238616943359375,0.0,S055
+phone_s4,휴대폰 얼굴,4,planned_not_run,scale_x,Geometry gain; 1=identity,1.0,1.0,S055
+phone_s4,휴대폰 얼굴,4,planned_not_run,scale_y,Geometry gain; 1=identity,1.0,1.0,S055
+phone_s4,휴대폰 얼굴,4,planned_not_run,color_a,CIE Lab a additive offset; positive toward red,0.0,0.0,S055
+phone_s4,휴대폰 얼굴,4,planned_not_run,color_b,CIE Lab b additive offset; positive toward yellow,0.0,0.0,S055
+phone_s4,휴대폰 얼굴,4,planned_not_run,texture_gain,High-pass grayscale residual gain; 1=identity,1.0,1.0,S055
+phone_s4,휴대폰 얼굴,4,planned_not_run,blur_sigma_roi64,Gaussian sigma on ROI64 reference,0.0,0.0,S055
+phone_s4,휴대폰 얼굴,4,planned_not_run,blur_input_scale,Input-pixel sigma / ROI64 sigma,0.41125000000000006,0.41125000000000006,S055
+phone_s4,휴대폰 얼굴,4,planned_not_run,blur_sigma_input_px,Gaussian sigma in input pixels at reference size,0.0,0.0,S055
+skin_s3,현미경 피부,3,completed,lambda_mmd,Fixed loss coefficient; missing before training,0.009276486496767843,0.009276486496767843,S019
+skin_s3,현미경 피부,3,completed,lambda_coral,Fixed loss coefficient; missing before training,0.00921319341745932,0.00921319341745932,S019
+web_skin_s3,웹캠 얼굴,3,completed,lambda_mmd,Fixed loss coefficient; missing before training,0.01068621196402111,0.01068621196402111,S035
+web_skin_s3,웹캠 얼굴,3,completed,lambda_coral,Fixed loss coefficient; missing before training,0.044213753365170944,0.044213753365170944,S035
+hair_s3,현미경 두피,3,completed,lambda_mmd,Fixed loss coefficient; missing before training,0.10659643952049762,0.10659643952049762,S051
+hair_s3,현미경 두피,3,completed,lambda_coral,Fixed loss coefficient; missing before training,0.16272447754974867,0.16272447754974867,S051
+phone_s3,휴대폰 얼굴,3,planned_not_run,lambda_mmd,Fixed loss coefficient; missing before training,,,S055
+phone_s3,휴대폰 얼굴,3,planned_not_run,lambda_coral,Fixed loss coefficient; missing before training,,,S055

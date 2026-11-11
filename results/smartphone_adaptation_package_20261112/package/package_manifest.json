@@ -1,0 +1,22 @@
+{
+  "schema": "mediflow_adaptation_package_manifest_v1",
+  "package_id": "web_skin_smartphone_adaptation_stage4_20261112",
+  "files": {
+    "class_names.json": "185f5ff7a54f2c435986ee1024a7e87e8176bcd8245adeb68c0096813d233dfc",
+    "contract_verification.json": "603992eba3021537dc794bb849b154ab11e3e955f987c0d877332903dd3cbe20",
+    "example_usage.py": "7aa3ddd9db6619361fca106fbe97d3f3aa80f3de420e67d4f191f02c1610931b",
+    "inference.py": "a4aab990e10333918f8f7e305639ed26ac443c5373d5cfb8852a26bc56da6319",
+    "model.keras": "f08958c745811dc34d8e876e742f911abc1f6938babdc64bd82a284d7e052c9e",
+    "model_card.json": "10c14306b122a1bd8885c3363826059605c9d1d44b1dede7fd43de7381f70fbe",
+    "preprocessing.json": "12a5b03f7ee5091740f408c9f79744a55ea712f5d4fa6c79d127d83fecd06a2b",
+    "README.md": "9aa6d1a4f786284dc973becf5f3b82ef37e6e336ccb069615bf7fb3983308b43",
+    "reports/source_files.json": "e15140cd108126d1e209388582b23a7bcd8f55c96ed90683a39086e440223a20",
+    "reports/source_test_evaluation_plan.json": "7c7d0288d7eb6f38ffd9b125e105723e67f7098c9b2e169645a069f0216e5869",
+    "reports/source_test_results.json": "6aba873354bbe445252c60f7b188ae7793258c176ffcd9b4c2728103ceb69732",
+    "reports/training_complete.json": "8985c2170c0bbd8be351bf1a83dc6764649190adcc67f2ceaf74dd0147d72f02",
+    "reports/training_history.json": "424ac0b7e11e4d452ef2b2dba6fa2595ef7ca37c445f2f1951b66344fe1422f7",
+    "reports/training_run_configuration.json": "7e2ddad9412525625e83b416522b0120f4abc716e03d906d61cef03b964a6707",
+    "reports/validation_selection.json": "6399c5ed7183a4e3e5c548e9c505acc21acfad1629e416cd41edf4217f4cb32b",
+    "requirements.txt": "47747e6119280a78c3df801c41027c470896b3df0afbf95d8394313c69a7a320"
+  }
+}

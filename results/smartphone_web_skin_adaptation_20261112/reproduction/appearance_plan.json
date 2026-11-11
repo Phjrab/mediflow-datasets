@@ -1,0 +1,193 @@
+{
+  "schema": "mediflow_phone_user_appearance_strength_v1",
+  "status": "planned_user_requested_exploration",
+  "source_study_sha256": "9728008f463137a5103c27a6e474bec5ef8b7b395ec0d510ac11e0ff25788bf1",
+  "source_manifest_sha256": "7c8b41878883193e5dd340ab8a4b7f804a3ab7f37c8159093b663937d997a738",
+  "source_test_used": false,
+  "target_holdout_used": false,
+  "training_executed": false,
+  "distribution_improvement_established": false,
+  "authorization": "User requested weak Stage2 and stronger Stage4 texture and blur",
+  "hypothesis": "Added weak/strong appearance variation may improve Source robustness",
+  "changed_variable": "Appearance variation bundle: microcontrast and Gaussian blur",
+  "fixed": [
+    "All Stage1 settings; all stages' lighting, color, geometry and input conversion",
+    "Source split and class order; P01-P04 calibration and P05 holdout",
+    "Original starting checkpoints; epochs, learning rate, seed and probability",
+    "Stage3 uses Stage2 image profile and adds MMD/CORAL, independently initialized"
+  ],
+  "reference_input_size": 256,
+  "settings": {
+    "stage2": {
+      "texture_gain": [
+        0.95,
+        1.05
+      ],
+      "blur_input_sigma_max": 0.5
+    },
+    "stage4": {
+      "texture_gain": [
+        0.85,
+        1.15
+      ],
+      "blur_input_sigma_max": 1.0
+    }
+  },
+  "profiles": {
+    "stage1": {
+      "schema": "measured_camera_extended_v1",
+      "domain": "web_skin",
+      "lighting": {
+        "domain": "web_skin",
+        "photometric_operator": "bounded_additive_v3",
+        "brightness_offset": [
+          -9.812064954152099,
+          0.0
+        ],
+        "contrast": [
+          1.0,
+          1.0904393083614523
+        ],
+        "left_light": [
+          -0.21119308471679688,
+          0.0
+        ],
+        "scale_x": [
+          1.0,
+          1.0
+        ],
+        "scale_y": [
+          1.0,
+          1.0
+        ]
+      },
+      "color_a": [
+        0.0,
+        0.0
+      ],
+      "color_b": [
+        0.0,
+        0.0
+      ],
+      "texture_gain": [
+        1.0,
+        1.0
+      ],
+      "blur_sigma_roi64": [
+        0.0,
+        0.0
+      ],
+      "blur_input_scale": 0.41125000000000006
+    },
+    "stage2": {
+      "schema": "measured_camera_extended_v1",
+      "domain": "web_skin",
+      "lighting": {
+        "domain": "web_skin",
+        "photometric_operator": "bounded_additive_v3",
+        "brightness_offset": [
+          -9.812064954152099,
+          0.0
+        ],
+        "contrast": [
+          1.0,
+          1.0904393083614523
+        ],
+        "left_light": [
+          -0.21119308471679688,
+          0.0
+        ],
+        "scale_x": [
+          1.0,
+          1.0
+        ],
+        "scale_y": [
+          1.0,
+          1.0
+        ]
+      },
+      "color_a": [
+        0.0,
+        1.0117187500000009
+      ],
+      "color_b": [
+        0.0,
+        0.0
+      ],
+      "texture_gain": [
+        0.95,
+        1.05
+      ],
+      "blur_sigma_roi64": [
+        0.0,
+        1.2158054711246198
+      ],
+      "blur_input_scale": 0.41125000000000006
+    },
+    "stage4": {
+      "schema": "measured_camera_extended_v1",
+      "domain": "web_skin",
+      "lighting": {
+        "domain": "web_skin",
+        "photometric_operator": "bounded_additive_v3",
+        "brightness_offset": [
+          -19.624129908304198,
+          0.0
+        ],
+        "contrast": [
+          1.0,
+          1.1808786167229048
+        ],
+        "left_light": [
+          -0.42238616943359375,
+          0.0
+        ],
+        "scale_x": [
+          1.0,
+          1.0
+        ],
+        "scale_y": [
+          1.0,
+          1.0
+        ]
+      },
+      "color_a": [
+        0.0,
+        0.0
+      ],
+      "color_b": [
+        0.0,
+        0.0
+      ],
+      "texture_gain": [
+        0.85,
+        1.15
+      ],
+      "blur_sigma_roi64": [
+        0.0,
+        2.4316109422492396
+      ],
+      "blur_input_scale": 0.41125000000000006
+    }
+  },
+  "blur_sigma_roi64_exploratory_cap": 2.4316109422492396,
+  "range_rationale": {
+    "texture": "Symmetric +/-5% and +/-15% engineering residual gain, not camera estimates",
+    "blur": "0-0.5px and 0-1px at 256px; scale linearly to selected input size",
+    "prior_measured_texture_budget": "Previous review examined gain changes up to 0.15",
+    "limits": "ROI blur search cap expanded only for this requested exploration"
+  },
+  "limitations": [
+    "Prior distribution-only review did not select texture or blur",
+    "Added ranges are requested experimental settings, not measured optical focus",
+    "Stage4 retains different lighting/color from Stage2, not an isolated strength test",
+    "Texture and blur changed together; separate effects cannot be attributed",
+    "No Target disease labels; no Target accuracy or clinical improvement claim"
+  ],
+  "prepared_at": "2026-11-12T00:00:54.132385+09:00",
+  "prior_distribution_review": {
+    "file": "output/smartphone_web_skin_20261111/stage2_review.json",
+    "sha256": "c9e621326f0051e6afdbb68a2766eeee738c821be7a008dc5e3ae274dd59c2f3",
+    "status": "preserved; texture/blur were not selected by proximity criteria"
+  }
+}

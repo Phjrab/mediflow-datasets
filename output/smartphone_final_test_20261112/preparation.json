@@ -1,0 +1,34 @@
+{
+  "status": "prepared_not_run",
+  "source_test_evaluated": false,
+  "new_training_executed": false,
+  "models": [
+    "initial",
+    "stage1",
+    "stage2",
+    "stage3",
+    "stage4",
+    "stage5"
+  ],
+  "conditions": [
+    "clean",
+    "phone_lighting",
+    "phone_expanded",
+    "phone_refit",
+    "phone_joint"
+  ],
+  "comparisons": 30,
+  "test_images": 400,
+  "selected_before_test": "stage4",
+  "notebook": "notebooks/camera_adaptation/MediFlow_Smartphone_Final_Test_20261112.ipynb",
+  "notebook_sha256": "1ce744a0a0e67b77ab55dcdb42a1ae1453b4dff63c33081b18aaef004dddc39f",
+  "plan_sha256": "81302d9d466bd4631f18f9b859fd18696a05cd30998acd797a9ca45d4d2a15d6",
+  "runtime_manifest_sha256": "ad2338eaa932fea3c209552f0c5e08b2cb31de7d542fbaa3e541ecfd74871c9f",
+  "run_id": "test_ad2338eaa932",
+  "old_run_id": "edc193fee3c2",
+  "joint_run_id": "joint_a3d4036b9f90",
+  "new_zip_upload_required": false,
+  "decryption_key_required": false,
+  "target_payload_included": false,
+  "runtime_members": 77
+}

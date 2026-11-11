@@ -1,0 +1,422 @@
+{
+  "identity": {
+    "study_sha256": "42609e1a8cbfb0b7dd807036ca4c3ab6b8bb22c893397fc60d8561f96f549439",
+    "stage": 5,
+    "model": {
+      "architecture": "pmg",
+      "size": 256,
+      "label_smoothing": 0.0,
+      "reference_candidate_id": "public_candidate_v2_pmg_b0_256_ce_20260922_235840_093d10de",
+      "initialization": "saved selected checkpoint",
+      "model": "results/web_skin/selected_models/v2/web_skin_model.keras",
+      "model_sha256": "83e659dd09a9355135ee0de0197037e81ece962777f59dedae8d9a37b49a3fc4",
+      "role": "selected"
+    },
+    "code_sha256": "6425725aa70aac697c166e00bec7ee8a3a2b2be1bb87d26dc007c05316a653e2",
+    "training_core_sha256": "6b5aae35bcbe1af85fe19b6a47ebce6ed57bfca780129a82e95dd9dd0c9d4c8a"
+  },
+  "study": {
+    "schema": "mediflow_smartphone_web_skin_stages_v1",
+    "domain": "web_skin",
+    "seed": 42,
+    "epochs": 5,
+    "learning_rate": 1e-05,
+    "augmentation_probability": 0.5,
+    "validation_scope": "exploratory_historical_checkpoint_exposure_unverified",
+    "task": {
+      "domain": "web_skin",
+      "classes": [
+        "건선",
+        "아토피",
+        "여드름",
+        "정상",
+        "주사"
+      ],
+      "source_name": "web_skin_datasets",
+      "source_sha256": "f8908af3d54e521ad14c37a44b569d33fe92be3b8b9b66a8d80faf4ba964072d",
+      "input_policy": "center_square",
+      "batch_size": 8,
+      "models": {
+        "selected": {
+          "architecture": "pmg",
+          "size": 256,
+          "label_smoothing": 0.0,
+          "reference_candidate_id": "public_candidate_v2_pmg_b0_256_ce_20260922_235840_093d10de",
+          "initialization": "saved selected checkpoint",
+          "model": "results/web_skin/selected_models/v2/web_skin_model.keras",
+          "model_sha256": "83e659dd09a9355135ee0de0197037e81ece962777f59dedae8d9a37b49a3fc4"
+        }
+      }
+    },
+    "profiles": {
+      "stage1": {
+        "schema": "measured_camera_extended_v1",
+        "domain": "web_skin",
+        "lighting": {
+          "domain": "web_skin",
+          "photometric_operator": "bounded_additive_v3",
+          "brightness_offset": [
+            -9.812064954152099,
+            0.0
+          ],
+          "contrast": [
+            1.0,
+            1.0904393083614523
+          ],
+          "left_light": [
+            -0.21119308471679688,
+            0.0
+          ],
+          "scale_x": [
+            1.0,
+            1.0
+          ],
+          "scale_y": [
+            1.0,
+            1.0
+          ]
+        },
+        "color_a": [
+          0.0,
+          0.0
+        ],
+        "color_b": [
+          0.0,
+          0.0
+        ],
+        "texture_gain": [
+          1.0,
+          1.0
+        ],
+        "blur_sigma_roi64": [
+          0.0,
+          0.0
+        ],
+        "blur_input_scale": 0.41125000000000006
+      },
+      "stage2": {
+        "schema": "measured_camera_extended_v1",
+        "domain": "web_skin",
+        "lighting": {
+          "domain": "web_skin",
+          "photometric_operator": "bounded_additive_v3",
+          "brightness_offset": [
+            -9.812064954152099,
+            0.0
+          ],
+          "contrast": [
+            1.0,
+            1.0904393083614523
+          ],
+          "left_light": [
+            -0.21119308471679688,
+            0.0
+          ],
+          "scale_x": [
+            1.0,
+            1.0
+          ],
+          "scale_y": [
+            1.0,
+            1.0
+          ]
+        },
+        "color_a": [
+          0.0,
+          1.0117187500000009
+        ],
+        "color_b": [
+          0.0,
+          0.0
+        ],
+        "texture_gain": [
+          0.95,
+          1.05
+        ],
+        "blur_sigma_roi64": [
+          0.0,
+          1.2158054711246198
+        ],
+        "blur_input_scale": 0.41125000000000006
+      },
+      "stage4": {
+        "schema": "measured_camera_extended_v1",
+        "domain": "web_skin",
+        "lighting": {
+          "domain": "web_skin",
+          "photometric_operator": "bounded_additive_v3",
+          "brightness_offset": [
+            -19.624129908304198,
+            0.0
+          ],
+          "contrast": [
+            1.0,
+            1.1808786167229048
+          ],
+          "left_light": [
+            -0.42238616943359375,
+            0.0
+          ],
+          "scale_x": [
+            1.0,
+            1.0
+          ],
+          "scale_y": [
+            1.0,
+            1.0
+          ]
+        },
+        "color_a": [
+          0.0,
+          0.0
+        ],
+        "color_b": [
+          0.0,
+          0.0
+        ],
+        "texture_gain": [
+          0.85,
+          1.15
+        ],
+        "blur_sigma_roi64": [
+          0.0,
+          2.4316109422492396
+        ],
+        "blur_input_scale": 0.41125000000000006
+      }
+    },
+    "source_manifest_sha256": "7c8b41878883193e5dd340ab8a4b7f804a3ab7f37c8159093b663937d997a738",
+    "starting_weights": "each treatment starts independently from its original checkpoint",
+    "stage1_selection": "Prior selected role frozen; Stage1 not repeated",
+    "final_selection": "max worst(all five common conditions) F1; clean F1; earlier model",
+    "target_training_people": [
+      "P01",
+      "P02",
+      "P03",
+      "P04"
+    ],
+    "target_reserved_people": [
+      "P05"
+    ],
+    "target_labels_available": false,
+    "source_test_in_training": false,
+    "calibration_report_sha256": "25d03399d19206df693948dbf1ed0e58fc1d8f606ba1fd4daf227d91d36dd646",
+    "repository_head": "f608e110b508a640a01cd72f18e2f0ca390b698c",
+    "uncommitted_runtime_sha256": {
+      "smartphone_appearance.py": "27645bf4aa9d2feb1df2260df7353a15c1f4ec143cc4199b179485729f9744d6",
+      "smartphone_notebook.py": "12f7b1d8be1389157682a4d6a1e3aa6fad1992655210dd5f32b2796c27bdb76e",
+      "smartphone_prepare.py": "ef14986ab164b1406b1a41c10561408f9b811b90ea96fb28d3f91755eb4ff104",
+      "smartphone_profile.py": "8591edb1d09b1c6a73b7bc2cd93dc2b234aa2c245b6c4d6d8ab54a7ffba27ac5",
+      "smartphone_stage2_review.py": "a384cfbe7ca826aae38bbc98e48d80ed894bceaf4f7fdf2048ce4cc37547e2d1",
+      "smartphone_training.py": "58a8d6a856d2f02a6e259c51c718420887f99e6b5a6e614634f8313cc577ac61"
+    },
+    "limits": {
+      "brightness_offset": [
+        -96.0,
+        96.0
+      ],
+      "contrast": [
+        0.5,
+        1.5
+      ],
+      "side_light": [
+        -24.0,
+        24.0
+      ],
+      "lab_offset": 3.0,
+      "texture_gain": [
+        0.7,
+        1.3
+      ],
+      "blur_sigma_roi64_max": 2.4316109422492396,
+      "spatial_correlation_q05_minimum": 0.95,
+      "meaning": "Engineering search caps; blur expanded for requested exploration, not device limits"
+    },
+    "prior_checkpoint_source_test_exposure_unverified": true,
+    "reuse_identical_stage2": false,
+    "expected_training_trials": 1,
+    "validation_condition_aliases": {},
+    "profile_review": {
+      "file": "camera_capture/_review/smartphone_web_skin_20261111/stage2_common_nearer_20261111/review.json",
+      "sha256": "c9e621326f0051e6afdbb68a2766eeee738c821be7a008dc5e3ae274dd59c2f3",
+      "changed": "Stage2 and Stage3 appearance only",
+      "stage1_and_stage4_unchanged": true
+    },
+    "appearance_plan": {
+      "file": "output/smartphone_web_skin_20261111/appearance_strength_plan_20261112.json",
+      "sha256": "d5220f4e163a40ffe7c2307b5911accdc90f6ffbc9b16356b0c3001f2836afee",
+      "kind": "planned_user_requested_exploration",
+      "reference_input_size": 256
+    },
+    "joint_profile": {
+      "schema": "measured_camera_extended_v1",
+      "domain": "web_skin",
+      "lighting": {
+        "domain": "web_skin",
+        "photometric_operator": "bounded_additive_v3",
+        "brightness_offset": [
+          -19.624129908304198,
+          -10.181201425385177
+        ],
+        "contrast": [
+          1.0,
+          1.1808786167229048
+        ],
+        "left_light": [
+          -0.42238616943359375,
+          0.0
+        ],
+        "scale_x": [
+          1.0,
+          1.0
+        ],
+        "scale_y": [
+          1.0,
+          1.0
+        ]
+      },
+      "color_a": [
+        0.0,
+        1.0117187500000009
+      ],
+      "color_b": [
+        -1.2126953125000002,
+        0.0
+      ],
+      "texture_gain": [
+        1.0,
+        1.0
+      ],
+      "blur_sigma_roi64": [
+        0.0,
+        0.0
+      ],
+      "blur_input_scale": 0.41125000000000006
+    },
+    "joint_experiment": {
+      "schema": "mediflow_phone_joint_single_trial_v1",
+      "candidate_id": "f10926b662a4a43c",
+      "authorization": "User approved exploratory training of reviewed candidate",
+      "candidate_all_similarity_guards_passed": false,
+      "candidate_artifact_sha256": "cef0eeb96b5b29da1e16f91baafeca0ffdcb0329c3a82607a1417d0e0f12aade",
+      "hypothesis": "Reviewed joint photometric bundle improves robustness with less synthetic blur",
+      "changed_variable": "Training image transformation bundle only",
+      "training_trials": 1,
+      "alignment_loss": false,
+      "source_test_used": false,
+      "target_holdout_used": false,
+      "validation_conditions": [
+        "clean",
+        "phone_lighting",
+        "phone_expanded",
+        "phone_refit",
+        "phone_joint"
+      ],
+      "checkpoint_selection": "max worst(clean,phone_joint) F1; clean F1; earlier epoch",
+      "comparison_selection": "max worst(all five common conditions) F1; clean F1; earlier model",
+      "previous_models": {
+        "stage1": {
+          "file": "stage1_selected/best.keras",
+          "sha256": "39bcb2f3567f3f5bfa570a2fc7ecb5e8a03d1a601011a98063d83add39460cd7"
+        },
+        "stage2": {
+          "file": "stage2/best.keras",
+          "sha256": "ad2a4799b1c6df2b9c70b75332049109fdd8a7ae45dac8d27a9e028d3a92b1dd"
+        },
+        "stage3": {
+          "file": "stage3/best.keras",
+          "sha256": "d17252137398da71cf6e4e19122c21eabdc9ce2fa000cf88e345d67245d2eef3"
+        },
+        "stage4": {
+          "file": "stage4/best.keras",
+          "sha256": "f08958c745811dc34d8e876e742f911abc1f6938babdc64bd82a284d7e052c9e"
+        }
+      },
+      "previous_result_files": {
+        "runtime_identity.json": "d6211da9dced32a508ffa7de286fb5a9654232f5be7aa4db3d4cd99e1b988a71",
+        "summary.json": "9e280a9f136ad05a8f40c1fbc8b0694eaa752186c7f4b1aa5323c08694694ef8",
+        "validation_comparison.json": "c289e65e309e98f6b54b5052b343be2414535d503c421197d46f69835840820f",
+        "source_manifest.json": "7c8b41878883193e5dd340ab8a4b7f804a3ab7f37c8159093b663937d997a738",
+        "stage1_selected/complete.json": "9a2eedf8e87e6b1a7eabb197b536821301d14b931e734425c2afa9090f72c4ff",
+        "stage2/complete.json": "038bae36566e622b72393645dc8dd21b6df5f1e333114af9a0f27fd570f4088b",
+        "stage3/complete.json": "5f0669c202f4a7324fd71231d2d92e22851c4253fd744df0922a96bb90243f20",
+        "stage4/complete.json": "8985c2170c0bbd8be351bf1a83dc6764649190adcc67f2ceaf74dd0147d72f02"
+      },
+      "previous_runtime_identity": {
+        "runtime_manifest_sha256": "1ca4dd1cc3ff3fb324017663fb2b1dc340487b9c6bf6ec402180fc303a43c906",
+        "study_sha256": "639593f6cf8d3efcdea42c3f05f7d20a6775aeb1d4f7ec4504abc042b2437e80"
+      },
+      "previous_runtime_zip_sha256": "edc193fee3c25254ce947b1a9613ad8ec2cc4d0f90f3c4f283eff5d415ea3ad9",
+      "fixed": {
+        "epochs": 5,
+        "seed": 42,
+        "learning_rate": 1e-05,
+        "augmentation_probability": 0.5,
+        "batch_size": 8,
+        "initialization": "original pre-adaptation selected PMG B0 256"
+      },
+      "prior_p05_already_inspected": true,
+      "p05_reopened_in_this_run": false
+    }
+  },
+  "applied_profile": {
+    "schema": "measured_camera_extended_v1",
+    "domain": "web_skin",
+    "lighting": {
+      "domain": "web_skin",
+      "photometric_operator": "bounded_additive_v3",
+      "brightness_offset": [
+        -19.624129908304198,
+        -10.181201425385177
+      ],
+      "contrast": [
+        1.0,
+        1.1808786167229048
+      ],
+      "left_light": [
+        -0.42238616943359375,
+        0.0
+      ],
+      "scale_x": [
+        1.0,
+        1.0
+      ],
+      "scale_y": [
+        1.0,
+        1.0
+      ]
+    },
+    "color_a": [
+      0.0,
+      1.0117187500000009
+    ],
+    "color_b": [
+      -1.2126953125000002,
+      0.0
+    ],
+    "texture_gain": [
+      1.0,
+      1.0
+    ],
+    "blur_sigma_roi64": [
+      0.0,
+      0.0
+    ],
+    "blur_input_scale": 0.41125000000000006
+  },
+  "alignment": false,
+  "tensorflow": "2.20.0",
+  "keras": "3.13.2",
+  "numpy": "2.5.4",
+  "gpu": [
+    {
+      "compute_capability": [
+        8,
+        9
+      ],
+      "device_name": "NVIDIA L4"
+    }
+  ],
+  "source_test_evaluated": false,
+  "target_labels_used": false
+}

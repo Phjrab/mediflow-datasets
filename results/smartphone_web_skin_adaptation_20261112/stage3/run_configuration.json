@@ -1,0 +1,320 @@
+{
+  "identity": {
+    "study_sha256": "639593f6cf8d3efcdea42c3f05f7d20a6775aeb1d4f7ec4504abc042b2437e80",
+    "stage": 3,
+    "model": {
+      "architecture": "pmg",
+      "size": 256,
+      "label_smoothing": 0.0,
+      "reference_candidate_id": "public_candidate_v2_pmg_b0_256_ce_20260922_235840_093d10de",
+      "initialization": "saved selected checkpoint",
+      "model": "results/web_skin/selected_models/v2/web_skin_model.keras",
+      "model_sha256": "83e659dd09a9355135ee0de0197037e81ece962777f59dedae8d9a37b49a3fc4",
+      "role": "selected"
+    },
+    "code_sha256": "58a8d6a856d2f02a6e259c51c718420887f99e6b5a6e614634f8313cc577ac61",
+    "training_core_sha256": "6b5aae35bcbe1af85fe19b6a47ebce6ed57bfca780129a82e95dd9dd0c9d4c8a"
+  },
+  "study": {
+    "schema": "mediflow_smartphone_web_skin_stages_v1",
+    "domain": "web_skin",
+    "seed": 42,
+    "epochs": 5,
+    "learning_rate": 1e-05,
+    "augmentation_probability": 0.5,
+    "validation_scope": "exploratory_historical_checkpoint_exposure_unverified",
+    "task": {
+      "domain": "web_skin",
+      "classes": [
+        "건선",
+        "아토피",
+        "여드름",
+        "정상",
+        "주사"
+      ],
+      "source_name": "web_skin_datasets",
+      "source_sha256": "f8908af3d54e521ad14c37a44b569d33fe92be3b8b9b66a8d80faf4ba964072d",
+      "input_policy": "center_square",
+      "batch_size": 8,
+      "models": {
+        "basic": {
+          "architecture": "b0",
+          "size": 224,
+          "label_smoothing": 0.0,
+          "initialization": "saved original-only early checkpoint",
+          "model": "results/web_skin/1_training/original/best_model.keras",
+          "model_sha256": "11c5a160ddeb406c4e80802e38a372e90a0222c1dddf208e270676f795f177ae"
+        },
+        "selected": {
+          "architecture": "pmg",
+          "size": 256,
+          "label_smoothing": 0.0,
+          "reference_candidate_id": "public_candidate_v2_pmg_b0_256_ce_20260922_235840_093d10de",
+          "initialization": "saved selected checkpoint",
+          "model": "results/web_skin/selected_models/v2/web_skin_model.keras",
+          "model_sha256": "83e659dd09a9355135ee0de0197037e81ece962777f59dedae8d9a37b49a3fc4"
+        }
+      }
+    },
+    "profiles": {
+      "stage1": {
+        "schema": "measured_camera_extended_v1",
+        "domain": "web_skin",
+        "lighting": {
+          "domain": "web_skin",
+          "photometric_operator": "bounded_additive_v3",
+          "brightness_offset": [
+            -9.812064954152099,
+            0.0
+          ],
+          "contrast": [
+            1.0,
+            1.0904393083614523
+          ],
+          "left_light": [
+            -0.21119308471679688,
+            0.0
+          ],
+          "scale_x": [
+            1.0,
+            1.0
+          ],
+          "scale_y": [
+            1.0,
+            1.0
+          ]
+        },
+        "color_a": [
+          0.0,
+          0.0
+        ],
+        "color_b": [
+          0.0,
+          0.0
+        ],
+        "texture_gain": [
+          1.0,
+          1.0
+        ],
+        "blur_sigma_roi64": [
+          0.0,
+          0.0
+        ],
+        "blur_input_scale": 0.41125000000000006
+      },
+      "stage2": {
+        "schema": "measured_camera_extended_v1",
+        "domain": "web_skin",
+        "lighting": {
+          "domain": "web_skin",
+          "photometric_operator": "bounded_additive_v3",
+          "brightness_offset": [
+            -9.812064954152099,
+            0.0
+          ],
+          "contrast": [
+            1.0,
+            1.0904393083614523
+          ],
+          "left_light": [
+            -0.21119308471679688,
+            0.0
+          ],
+          "scale_x": [
+            1.0,
+            1.0
+          ],
+          "scale_y": [
+            1.0,
+            1.0
+          ]
+        },
+        "color_a": [
+          0.0,
+          1.0117187500000009
+        ],
+        "color_b": [
+          0.0,
+          0.0
+        ],
+        "texture_gain": [
+          0.95,
+          1.05
+        ],
+        "blur_sigma_roi64": [
+          0.0,
+          1.2158054711246198
+        ],
+        "blur_input_scale": 0.41125000000000006
+      },
+      "stage4": {
+        "schema": "measured_camera_extended_v1",
+        "domain": "web_skin",
+        "lighting": {
+          "domain": "web_skin",
+          "photometric_operator": "bounded_additive_v3",
+          "brightness_offset": [
+            -19.624129908304198,
+            0.0
+          ],
+          "contrast": [
+            1.0,
+            1.1808786167229048
+          ],
+          "left_light": [
+            -0.42238616943359375,
+            0.0
+          ],
+          "scale_x": [
+            1.0,
+            1.0
+          ],
+          "scale_y": [
+            1.0,
+            1.0
+          ]
+        },
+        "color_a": [
+          0.0,
+          0.0
+        ],
+        "color_b": [
+          0.0,
+          0.0
+        ],
+        "texture_gain": [
+          0.85,
+          1.15
+        ],
+        "blur_sigma_roi64": [
+          0.0,
+          2.4316109422492396
+        ],
+        "blur_input_scale": 0.41125000000000006
+      }
+    },
+    "source_manifest_sha256": "7c8b41878883193e5dd340ab8a4b7f804a3ab7f37c8159093b663937d997a738",
+    "starting_weights": "each treatment starts independently from its original checkpoint",
+    "stage1_selection": "max worst(clean, phone_lighting) F1, then clean F1, then basic",
+    "final_selection": "max worst(clean, phone_lighting, phone_expanded, phone_refit) F1; clean; earlier arm",
+    "target_training_people": [
+      "P01",
+      "P02",
+      "P03",
+      "P04"
+    ],
+    "target_reserved_people": [
+      "P05"
+    ],
+    "target_labels_available": false,
+    "source_test_in_training": false,
+    "calibration_report_sha256": "25d03399d19206df693948dbf1ed0e58fc1d8f606ba1fd4daf227d91d36dd646",
+    "repository_head": "f608e110b508a640a01cd72f18e2f0ca390b698c",
+    "uncommitted_runtime_sha256": {
+      "smartphone_appearance.py": "27645bf4aa9d2feb1df2260df7353a15c1f4ec143cc4199b179485729f9744d6",
+      "smartphone_notebook.py": "12f7b1d8be1389157682a4d6a1e3aa6fad1992655210dd5f32b2796c27bdb76e",
+      "smartphone_prepare.py": "ef14986ab164b1406b1a41c10561408f9b811b90ea96fb28d3f91755eb4ff104",
+      "smartphone_profile.py": "8591edb1d09b1c6a73b7bc2cd93dc2b234aa2c245b6c4d6d8ab54a7ffba27ac5",
+      "smartphone_stage2_review.py": "a384cfbe7ca826aae38bbc98e48d80ed894bceaf4f7fdf2048ce4cc37547e2d1",
+      "smartphone_training.py": "58a8d6a856d2f02a6e259c51c718420887f99e6b5a6e614634f8313cc577ac61"
+    },
+    "limits": {
+      "brightness_offset": [
+        -96.0,
+        96.0
+      ],
+      "contrast": [
+        0.5,
+        1.5
+      ],
+      "side_light": [
+        -24.0,
+        24.0
+      ],
+      "lab_offset": 3.0,
+      "texture_gain": [
+        0.7,
+        1.3
+      ],
+      "blur_sigma_roi64_max": 2.4316109422492396,
+      "spatial_correlation_q05_minimum": 0.95,
+      "meaning": "Engineering search caps; blur expanded for requested exploration, not device limits"
+    },
+    "prior_checkpoint_source_test_exposure_unverified": true,
+    "reuse_identical_stage2": false,
+    "expected_training_trials": 5,
+    "validation_condition_aliases": {},
+    "profile_review": {
+      "file": "camera_capture/_review/smartphone_web_skin_20261111/stage2_common_nearer_20261111/review.json",
+      "sha256": "c9e621326f0051e6afdbb68a2766eeee738c821be7a008dc5e3ae274dd59c2f3",
+      "changed": "Stage2 and Stage3 appearance only",
+      "stage1_and_stage4_unchanged": true
+    },
+    "appearance_plan": {
+      "file": "output/smartphone_web_skin_20261111/appearance_strength_plan_20261112.json",
+      "sha256": "d5220f4e163a40ffe7c2307b5911accdc90f6ffbc9b16356b0c3001f2836afee",
+      "kind": "planned_user_requested_exploration",
+      "reference_input_size": 256
+    }
+  },
+  "applied_profile": {
+    "schema": "measured_camera_extended_v1",
+    "domain": "web_skin",
+    "lighting": {
+      "domain": "web_skin",
+      "photometric_operator": "bounded_additive_v3",
+      "brightness_offset": [
+        -9.812064954152099,
+        0.0
+      ],
+      "contrast": [
+        1.0,
+        1.0904393083614523
+      ],
+      "left_light": [
+        -0.21119308471679688,
+        0.0
+      ],
+      "scale_x": [
+        1.0,
+        1.0
+      ],
+      "scale_y": [
+        1.0,
+        1.0
+      ]
+    },
+    "color_a": [
+      0.0,
+      1.0117187500000009
+    ],
+    "color_b": [
+      0.0,
+      0.0
+    ],
+    "texture_gain": [
+      0.95,
+      1.05
+    ],
+    "blur_sigma_roi64": [
+      0.0,
+      1.2158054711246198
+    ],
+    "blur_input_scale": 0.41125000000000006
+  },
+  "alignment": true,
+  "tensorflow": "2.20.0",
+  "keras": "3.13.2",
+  "numpy": "2.5.4",
+  "gpu": [
+    {
+      "compute_capability": [
+        8,
+        9
+      ],
+      "device_name": "NVIDIA L4"
+    }
+  ],
+  "source_test_evaluated": false,
+  "target_labels_used": false
+}

@@ -1,0 +1,12 @@
+{
+  "status": "passed",
+  "starting_pmg_loaded": true,
+  "synthetic_training_update": true,
+  "original_model_unchanged": true,
+  "prior_models_verified": 4,
+  "new_formal_training_executed": false,
+  "scope": "Synthetic batch only; not 5 epoch Colab training or a disease evaluation",
+  "tensorflow": "2.20.0",
+  "keras": "3.13.2",
+  "loss_finite": true
+}

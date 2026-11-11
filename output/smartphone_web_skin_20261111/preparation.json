@@ -1,0 +1,23 @@
+{
+  "schema": "mediflow_smartphone_web_skin_stages_v1",
+  "runtime_sha256": "edc193fee3c25254ce947b1a9613ad8ec2cc4d0f90f3c4f283eff5d415ea3ad9",
+  "runtime_bytes": 98477866,
+  "notebook": "notebooks/camera_adaptation/MediFlow_Smartphone_WebSkin_Stages_20261111.ipynb",
+  "counts": {
+    "P01": 12,
+    "P02": 10,
+    "P03": 10,
+    "P04": 10,
+    "P05": 10
+  },
+  "source_test_used": false,
+  "training_executed": false,
+  "expected_training_trials": 5,
+  "stage2_reused": false,
+  "appearance_plan": {
+    "file": "output/smartphone_web_skin_20261111/appearance_strength_plan_20261112.json",
+    "sha256": "d5220f4e163a40ffe7c2307b5911accdc90f6ffbc9b16356b0c3001f2836afee",
+    "kind": "planned_user_requested_exploration",
+    "reference_input_size": 256
+  }
+}

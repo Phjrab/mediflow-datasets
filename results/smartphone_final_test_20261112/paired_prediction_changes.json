@@ -1,0 +1,187 @@
+{
+  "stage1": {
+    "clean": {
+      "prediction_changes": 15,
+      "wrong_to_correct": 4,
+      "correct_to_wrong": 7,
+      "both_correct": 359,
+      "both_wrong": 30
+    },
+    "phone_lighting": {
+      "prediction_changes": 11,
+      "wrong_to_correct": 4,
+      "correct_to_wrong": 6,
+      "both_correct": 359,
+      "both_wrong": 31
+    },
+    "phone_expanded": {
+      "prediction_changes": 15,
+      "wrong_to_correct": 7,
+      "correct_to_wrong": 7,
+      "both_correct": 349,
+      "both_wrong": 37
+    },
+    "phone_refit": {
+      "prediction_changes": 7,
+      "wrong_to_correct": 3,
+      "correct_to_wrong": 3,
+      "both_correct": 324,
+      "both_wrong": 70
+    },
+    "phone_joint": {
+      "prediction_changes": 10,
+      "wrong_to_correct": 3,
+      "correct_to_wrong": 6,
+      "both_correct": 359,
+      "both_wrong": 32
+    }
+  },
+  "stage2": {
+    "clean": {
+      "prediction_changes": 17,
+      "wrong_to_correct": 6,
+      "correct_to_wrong": 7,
+      "both_correct": 359,
+      "both_wrong": 28
+    },
+    "phone_lighting": {
+      "prediction_changes": 13,
+      "wrong_to_correct": 6,
+      "correct_to_wrong": 3,
+      "both_correct": 362,
+      "both_wrong": 29
+    },
+    "phone_expanded": {
+      "prediction_changes": 18,
+      "wrong_to_correct": 9,
+      "correct_to_wrong": 4,
+      "both_correct": 352,
+      "both_wrong": 35
+    },
+    "phone_refit": {
+      "prediction_changes": 16,
+      "wrong_to_correct": 10,
+      "correct_to_wrong": 5,
+      "both_correct": 322,
+      "both_wrong": 63
+    },
+    "phone_joint": {
+      "prediction_changes": 16,
+      "wrong_to_correct": 8,
+      "correct_to_wrong": 4,
+      "both_correct": 361,
+      "both_wrong": 27
+    }
+  },
+  "stage3": {
+    "clean": {
+      "prediction_changes": 15,
+      "wrong_to_correct": 3,
+      "correct_to_wrong": 7,
+      "both_correct": 359,
+      "both_wrong": 31
+    },
+    "phone_lighting": {
+      "prediction_changes": 15,
+      "wrong_to_correct": 4,
+      "correct_to_wrong": 7,
+      "both_correct": 358,
+      "both_wrong": 31
+    },
+    "phone_expanded": {
+      "prediction_changes": 18,
+      "wrong_to_correct": 6,
+      "correct_to_wrong": 7,
+      "both_correct": 349,
+      "both_wrong": 38
+    },
+    "phone_refit": {
+      "prediction_changes": 12,
+      "wrong_to_correct": 7,
+      "correct_to_wrong": 4,
+      "both_correct": 323,
+      "both_wrong": 66
+    },
+    "phone_joint": {
+      "prediction_changes": 14,
+      "wrong_to_correct": 4,
+      "correct_to_wrong": 6,
+      "both_correct": 359,
+      "both_wrong": 31
+    }
+  },
+  "stage4": {
+    "clean": {
+      "prediction_changes": 16,
+      "wrong_to_correct": 7,
+      "correct_to_wrong": 6,
+      "both_correct": 360,
+      "both_wrong": 27
+    },
+    "phone_lighting": {
+      "prediction_changes": 15,
+      "wrong_to_correct": 7,
+      "correct_to_wrong": 5,
+      "both_correct": 360,
+      "both_wrong": 28
+    },
+    "phone_expanded": {
+      "prediction_changes": 23,
+      "wrong_to_correct": 15,
+      "correct_to_wrong": 4,
+      "both_correct": 352,
+      "both_wrong": 29
+    },
+    "phone_refit": {
+      "prediction_changes": 46,
+      "wrong_to_correct": 34,
+      "correct_to_wrong": 6,
+      "both_correct": 321,
+      "both_wrong": 39
+    },
+    "phone_joint": {
+      "prediction_changes": 16,
+      "wrong_to_correct": 7,
+      "correct_to_wrong": 6,
+      "both_correct": 359,
+      "both_wrong": 28
+    }
+  },
+  "stage5": {
+    "clean": {
+      "prediction_changes": 12,
+      "wrong_to_correct": 3,
+      "correct_to_wrong": 7,
+      "both_correct": 359,
+      "both_wrong": 31
+    },
+    "phone_lighting": {
+      "prediction_changes": 11,
+      "wrong_to_correct": 4,
+      "correct_to_wrong": 6,
+      "both_correct": 359,
+      "both_wrong": 31
+    },
+    "phone_expanded": {
+      "prediction_changes": 16,
+      "wrong_to_correct": 7,
+      "correct_to_wrong": 7,
+      "both_correct": 349,
+      "both_wrong": 37
+    },
+    "phone_refit": {
+      "prediction_changes": 8,
+      "wrong_to_correct": 4,
+      "correct_to_wrong": 3,
+      "both_correct": 324,
+      "both_wrong": 69
+    },
+    "phone_joint": {
+      "prediction_changes": 11,
+      "wrong_to_correct": 3,
+      "correct_to_wrong": 7,
+      "both_correct": 358,
+      "both_wrong": 32
+    }
+  }
+}

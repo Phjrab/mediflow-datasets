@@ -12,6 +12,17 @@
 
 | 문서 | 확인된 역할·상태 |
 | --- | --- |
+| [어댑테이션 전체 완료 정리](ADAPTATION_COMPLETION_20261112.md) | 촬영 수집부터 21회 학습·81개 Source 비교·4개 패키지까지의 최신 종합 |
+| [스마트폰 최종 Test 결과](SMARTPHONE_FINAL_TEST_RESULT_REVIEW_20261112.md) | 30개 비교·12,000개 예측 검산·4차 유지·스마트폰 패키징 완료 |
+| [스마트폰 고정 최종 Test](SMARTPHONE_FINAL_TEST_20261112.md) | 완료한 6모델×5조건·원본 Test 400장의 사전 계획·실행 계약 |
+| [휴대폰 근접 후보 추가 결과](SMARTPHONE_JOINT_RESULT_REVIEW_20261112.md) | 5차 5 epoch 완료·최적 3 epoch·공통 후보 4차 유지·Test 미실행 |
+| [휴대폰 근접 후보 추가 학습](SMARTPHONE_JOINT_TRAINING_20261112.md) | 완료한 추가 1회의 실행 전 계약·노트북 준비·검사 기록 |
+| [휴대폰 공동 유사성 검토](SMARTPHONE_JOINT_SIMILARITY_REVIEW_20261112.md) | 196개 후보·12개 전체 재생·7항목 근접, 보호 기준 미통과 유지·후속 승인 탐색 학습 결과는 위 분석 |
+| [휴대폰 1~4차 실제 학습 결과](SMARTPHONE_ADAPTATION_RESULT_REVIEW_20261112.md) | 실제 5회×5 epoch 완료·5모델 회수·Validation 4차 후보·실제 촬영 특징 진단·Test 미실행 |
+| [휴대폰 질감·흐림 강도 추가](SMARTPHONE_APPEARANCE_STRENGTH_20261112.md) | 완료 실험의 준비 기록: 2·3차 약하게·4차 더 강하게, 사용자 요청 탐색 설정 |
+| [어댑테이션 실험 조절값 전체 기록](ADAPTATION_EXPERIMENT_PARAMETER_LEDGER_20261111.md) | 11월 11일 시점의 완료 15회·휴대폰 계획 설정 기록, Excel·CSV·전체 정밀도 JSON. 최신 휴대폰 실제 값은 위 결과 분석 |
+| [휴대폰 2차 공통·근접 분포 재검토](SMARTPHONE_STAGE2_COMMON_NEARER_20261111.md) | 약한 색 이동 채택·1/4차 고정·실제 5회 준비, 웹캠과 수치 비교 |
+| [스마트폰 얼굴 적응](SMARTPHONE_WEB_SKIN_ADAPTATION_20261111.md) | 52장 분석·web_skin 전용 설계·완료 5회 실험의 근거, 실제 결과는 위 결과 분석 |
 | [독립 사용 패키징](ADAPTATION_MODEL_PACKAGES_20261111.md) | 피부 4차·얼굴 4차·두피 2차 ZIP·단독 실행 확인 완료 |
 | [실제 장비 사진과 후속 변환의 유사성 재점검 · 2026-11-10](ACTUAL_CAMERA_SIMILARITY_RECHECK_20261110.md) | 분석·검토 또는 과정 기록, 후속 학습 상태는 최신 로드맵 참조 |
 | [카메라 적응 모델의 기존 데이터 최종 Test](ADAPTATION_FINAL_TEST_20261110.md) | 최종 Source Test 실행·결과 확인 완료 |

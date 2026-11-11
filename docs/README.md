@@ -4,6 +4,10 @@
 
 | 찾을 내용 | 안내 |
 | --- | --- |
+| 전체 어댑테이션 최종 정리 | [촬영부터 21회 학습·Test·4개 패키지까지](research/camera_adaptation/ADAPTATION_COMPLETION_20261112.md), [정확한 조절값](../presentation/report_assets/adaptation_completion_20261112/README.md) |
+| 스마트폰 최종 Test·패키징 완료 | [Test 결과 분석](research/camera_adaptation/SMARTPHONE_FINAL_TEST_RESULT_REVIEW_20261112.md), [사용 패키지](../results/smartphone_adaptation_package_20261112/README.md) |
+| 휴대폰 근접 후보 · 추가 1회 완료 | [5차 결과·기존 모델 비교](research/camera_adaptation/SMARTPHONE_JOINT_RESULT_REVIEW_20261112.md), [모델·원본 결과](../results/smartphone_joint_adaptation_20261112/README.md) |
+| 스마트폰 얼굴 적응 · 실제 5회 완료 | [결과 분석](research/camera_adaptation/SMARTPHONE_ADAPTATION_RESULT_REVIEW_20261112.md), [모델·원본 결과](../results/smartphone_web_skin_adaptation_20261112/README.md) |
 | 지금까지 한 작업과 자료 위치 | [프로젝트 정리](PROJECT_SUMMARY_20261111.md) |
 | 적응 후보 사용 ZIP·실행 안내 | [피부 4차·얼굴 4차·두피 2차 패키지](../results/camera_adaptation_packages_20261111/README.md) |
 | 최신 기본~4차 Test 결과 | [4차 추가 Test 분석](research/camera_adaptation/ADAPTATION_STAGE4_TEST_RESULT_REVIEW_20261111.md) |

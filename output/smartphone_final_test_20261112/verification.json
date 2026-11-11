@@ -1,0 +1,31 @@
+{
+  "status": "passed",
+  "checked_at": "2026-11-12T03:16:11.831183+09:00",
+  "ruff_check_src_tests": "passed",
+  "pytest": {
+    "passed": 262,
+    "skipped": 3,
+    "errors": 0,
+    "failures": 0,
+    "skip_reason": "Existing optional pandas dependency absent"
+  },
+  "new_functional_tests_passed": 8,
+  "actual_notebook_runtime_assembled": true,
+  "runtime_members": 77,
+  "real_models_loaded": 6,
+  "synthetic_views_per_model": 5,
+  "synthetic_forward_passes": 30,
+  "source_test_evaluated": false,
+  "new_training_executed": false,
+  "target_photos_opened": false,
+  "new_zip_upload_required": false,
+  "decryption_key_required": false,
+  "original_protected_files_unchanged": 573,
+  "new_joint_original_files_unchanged": 28,
+  "official_candidate_changed": false,
+  "notebook_sha256": "1ce744a0a0e67b77ab55dcdb42a1ae1453b4dff63c33081b18aaef004dddc39f",
+  "plan_sha256": "81302d9d466bd4631f18f9b859fd18696a05cd30998acd797a9ca45d4d2a15d6",
+  "runtime_manifest_sha256": "ad2338eaa932fea3c209552f0c5e08b2cb31de7d542fbaa3e541ecfd74871c9f",
+  "visual_check": "Synthetic comparison graph readable; not a disease performance result",
+  "new_document_links_verified": 11
+}

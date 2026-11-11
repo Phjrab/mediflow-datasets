@@ -1,0 +1,216 @@
+...........................................................sss.......... [ 31%]
+........................................................................ [ 63%]
+......................................................F................. [ 95%]
+...........                                                              [100%]
+================================== FAILURES ===================================
+________ test_all_five_trials_and_frozen_holdout_reporting_in_one_call ________
+
+tmp_path = WindowsPath('C:/Users/sejun/OneDrive/Documents/ChatGPT/mediflow/.tmp/smartphone-full-tests-20261111/test_all_five_trials_and_froze0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x00000287152508F0>
+
+    def test_all_five_trials_and_frozen_holdout_reporting_in_one_call(tmp_path, monkeypatch):
+        import zipfile
+    
+        context = list(tiny_context(tmp_path))
+        runtime, destination, _, study, spec, rows, val, cache, views, target = context
+        study["epochs"] = 1
+        study["task"]["models"] = {"basic": spec, "selected": {**spec, "role": "selected"}}
+        source = tmp_path / "source.zip"
+        source.write_bytes(b"unit-source-archive")
+        study["task"]["source_sha256"] = data.sha256(source)
+        frozen = {"original": {"train": [], "val": [], "test": []}}
+        training.write_progress(runtime / "source_manifest.json", frozen)
+        study["source_manifest_sha256"] = data.sha256(runtime / "source_manifest.json")
+        training.write_progress(runtime / "runtime_manifest.json", {"unit_test": True})
+        training.write_progress(runtime / "reference.json", {})
+    
+        def prepare(domain, archive, task, reference, out):
+            assert domain == "web_skin"
+            training.write_progress(out / "source_manifest.json", frozen)
+            return rows, val, {}
+    
+        def targets(root, role, size, key):
+            if role == "holdout":
+                assert (destination / "selection.json").exists()
+                return {
+                    **target,
+                    "rows": [{"id": "P05_01", "person": "P05", "split": "holdout", "label": None}],
+                    "images": target["images"][:1],
+                }
+            return target
+    
+        monkeypatch.setattr(training, "verify_runtime", lambda p: study)
+        monkeypatch.setattr(training.train, "prepare_source", prepare)
+        monkeypatch.setattr(training, "input_cache", lambda *args: (cache, views))
+        monkeypatch.setattr(training, "decrypt_target", targets)
+        monkeypatch.setattr(training, "curves", lambda *args: None)
+>       archive = training.run(
+            runtime, source, destination, tmp_path / "local", "test", require_gpu=False
+        )
+
+tests\test_smartphone_adaptation.py:257: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\mediflow_datasets\smartphone_training.py:610: in run
+    final_reports(runtime, destination, local, study, spec, rows, val, cache, views, key)
+src\mediflow_datasets\smartphone_training.py:434: in final_reports
+    mmd, coral = map(float, domain_alignment.losses(source_features, features, reference))
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\mediflow_datasets\domain_alignment.py:16: in losses
+    tf.debugging.assert_greater_equal(tf.shape(target)[0], 2)
+.venv\Lib\site-packages\tensorflow\python\util\traceback_utils.py:153: in error_handler
+    raise e.with_traceback(filtered_tb) from None
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+sym = '>=', opname = 'assert_greater_equal'
+op_func = <function greater_equal at 0x0000028758783E20>
+static_func = <ufunc 'greater_equal'>
+x = <tf.Tensor: shape=(), dtype=int32, numpy=1>
+y = <tf.Tensor: shape=(), dtype=int32, numpy=2>
+data = ['Condition x >= y did not hold.', 'First 1 elements of x:', array([1], dtype=int32), 'First 1 elements of y:', array([2], dtype=int32)]
+summarize = 3, message = None, name = None
+
+    def _binary_assert(sym, opname, op_func, static_func, x, y, data, summarize,
+                       message, name):
+      """Generic binary elementwise assertion.
+    
+      Implements the behavior described in _binary_assert_doc() above.
+      Args:
+        sym: Mathematical symbol for the test to apply to pairs of tensor elements,
+          i.e. "=="
+        opname: Name of the assert op in the public API, i.e. "assert_equal"
+        op_func: Function that, if passed the two Tensor inputs to the assertion (x
+          and y), will return the test to be passed to reduce_all() i.e.
+        static_func: Function that, if passed numpy ndarray versions of the two
+          inputs to the assertion, will return a Boolean ndarray with containing
+          True in all positions where the assertion PASSES.
+          i.e. np.equal for assert_equal()
+        x:  Numeric `Tensor`.
+        y:  Numeric `Tensor`, same dtype as and broadcastable to `x`.
+        data:  The tensors to print out if the condition is False.  Defaults to
+          error message and first few entries of `x`, `y`.
+        summarize: Print this many entries of each tensor.
+        message: A string to prefix to the default message.
+        name: A name for this operation (optional).  Defaults to the value of
+          `opname`.
+    
+      Returns:
+        See docstring template in _binary_assert_doc().
+      """
+      with ops.name_scope(name, opname, [x, y, data]):
+        x = ops.convert_to_tensor(x, name='x')
+        y = ops.convert_to_tensor(y, name='y')
+    
+        if context.executing_eagerly():
+          test_op = op_func(x, y)
+          condition = math_ops.reduce_all(test_op)
+          if condition:
+            return
+    
+          # If we get here, the assertion has failed.
+          # Default to printing 3 elements like control_flow_ops.Assert (used
+          # by graph mode) does. Also treat negative values as "print
+          # everything" for consistency with Tensor::SummarizeValue().
+          if summarize is None:
+            summarize = 3
+          elif summarize < 0:
+            summarize = 1e9  # Code below will find exact size of x and y.
+    
+          if data is None:
+            data = _make_assert_msg_data(sym, x, y, summarize, test_op)
+    
+          if message is not None:
+            data = [message] + list(data)
+    
+>         raise errors.InvalidArgumentError(
+              node_def=None,
+              op=None,
+              message=('\n'.join(_pretty_print(d, summarize) for d in data)))
+E         tensorflow.python.framework.errors_impl.InvalidArgumentError: Condition x >= y did not hold.
+E         First 1 elements of x:
+E         [1]
+E         First 1 elements of y:
+E         [2]
+
+.venv\Lib\site-packages\tensorflow\python\ops\check_ops.py:488: InvalidArgumentError
+---------------------------- Captured stdout call -----------------------------
+Drive Source ZIP → Colab 로컬 SSD 복사
+
+[stage1_basic] Epoch 1/1 · 8장 · 2배치 · 첫 배치 그래프 준비
+[stage1_basic] Epoch 1/1 | 1/2 (50.0%) loss=0.69925 · 남은 학습 약 0초
+[stage1_basic] Epoch 1/1 | 2/2 (100.0%) loss=0.69996 · 남은 학습 약 0초
+[stage1_basic] Validation clean · 4장
+[stage1_basic] Validation phone_lighting · 4장
+[stage1_basic] Epoch 1 저장 완료 · 원본 Val F1=0.33333 · 변환 Val F1=0.33333
+
+[stage1_selected] Epoch 1/1 · 8장 · 2배치 · 첫 배치 그래프 준비
+[stage1_selected] Epoch 1/1 | 1/2 (50.0%) loss=0.69925 · 남은 학습 약 0초
+[stage1_selected] Epoch 1/1 | 2/2 (100.0%) loss=0.69996 · 남은 학습 약 0초
+[stage1_selected] Validation clean · 4장
+[stage1_selected] Validation phone_lighting · 4장
+[stage1_selected] Epoch 1 저장 완료 · 원본 Val F1=0.33333 · 변환 Val F1=0.33333
+
+[stage2] Epoch 1/1 · 8장 · 2배치 · 첫 배치 그래프 준비
+[stage2] Epoch 1/1 | 1/2 (50.0%) loss=0.69925 · 남은 학습 약 0초
+[stage2] Epoch 1/1 | 2/2 (100.0%) loss=0.69996 · 남은 학습 약 0초
+[stage2] Validation clean · 4장
+[stage2] Validation phone_expanded · 4장
+[stage2] Epoch 1 저장 완료 · 원본 Val F1=0.33333 · 변환 Val F1=0.33333
+
+[stage3] Epoch 1/1 · 8장 · 2배치 · 첫 배치 그래프 준비
+[stage3] Epoch 1/1 | 1/2 (50.0%) loss=0.76400 · 남은 학습 약 1초
+[stage3] Epoch 1/1 | 2/2 (100.0%) loss=0.73233 · 남은 학습 약 0초
+[stage3] Validation clean · 4장
+[stage3] Validation phone_expanded · 4장
+[stage3] Epoch 1 저장 완료 · 원본 Val F1=0.33333 · 변환 Val F1=0.33333
+
+[stage4] Epoch 1/1 · 8장 · 2배치 · 첫 배치 그래프 준비
+[stage4] Epoch 1/1 | 1/2 (50.0%) loss=0.69925 · 남은 학습 약 0초
+[stage4] Epoch 1/1 | 2/2 (100.0%) loss=0.69996 · 남은 학습 약 0초
+[stage4] Validation clean · 4장
+[stage4] Validation phone_refit · 4장
+[stage4] Epoch 1 저장 완료 · 원본 Val F1=0.33333 · 변환 Val F1=0.33333
+[최종 비교 · initial] Validation clean · 4장
+[최종 비교 · initial] Validation phone_lighting · 4장
+[최종 비교 · initial] Validation phone_expanded · 4장
+[최종 비교 · initial] Validation phone_refit · 4장
+[최종 비교 · stage1] Validation clean · 4장
+[최종 비교 · stage1] Validation phone_lighting · 4장
+[최종 비교 · stage1] Validation phone_expanded · 4장
+[최종 비교 · stage1] Validation phone_refit · 4장
+[최종 비교 · stage2] Validation clean · 4장
+[최종 비교 · stage2] Validation phone_lighting · 4장
+[최종 비교 · stage2] Validation phone_expanded · 4장
+[최종 비교 · stage2] Validation phone_refit · 4장
+[최종 비교 · stage3] Validation clean · 4장
+[최종 비교 · stage3] Validation phone_lighting · 4장
+[최종 비교 · stage3] Validation phone_expanded · 4장
+[최종 비교 · stage3] Validation phone_refit · 4장
+[최종 비교 · stage4] Validation clean · 4장
+[최종 비교 · stage4] Validation phone_lighting · 4장
+[최종 비교 · stage4] Validation phone_expanded · 4장
+[최종 비교 · stage4] Validation phone_refit · 4장
+---------------------------- Captured stderr call -----------------------------
+W0000 00:00:1794400627.157699   19188 loop_optimizer.cc:934] Skipping loop optimization for Merge node with control input: assert_positive_1/assert_less/Assert/AssertGuard/branch_executed/_17
+============================== warnings summary ===============================
+tests/test_adaptation_packaging.py: 12 warnings
+tests/test_adaptation_stage1.py: 10 warnings
+tests/test_adaptation_strength.py: 12 warnings
+tests/test_candidate_packaging.py: 316 warnings
+tests/test_common_notebooks.py: 88 warnings
+tests/test_domain_adaptation.py: 12 warnings
+tests/test_domain_adaptation_preflight.py: 2 warnings
+tests/test_domain_adaptation_resolution.py: 20 warnings
+tests/test_domain_nine.py: 96 warnings
+tests/test_experiment_suite.py: 66 warnings
+tests/test_smartphone_adaptation.py: 40 warnings
+tests/test_web_skin_training_contract.py: 20 warnings
+tests/test_web_skin_wsdan.py: 970 warnings
+  C:\Users\sejun\OneDrive\Documents\ChatGPT\mediflow\.venv\Lib\site-packages\keras\src\backend\tensorflow\core.py:171: DeprecationWarning: __array__ implementation doesn't accept a copy keyword, so passing copy=False failed. __array__ must implement 'dtype' and 'copy' keyword arguments. To learn more, see the migration guide https://numpy.org/devdocs/numpy_2_0_migration_guide.html#adapting-to-changes-in-the-copy-keyword
+    return np.array(x)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ===========================
+SKIPPED [2] tests\test_common_notebooks.py:55: could not import 'pandas': No module named 'pandas'
+SKIPPED [1] tests\test_common_notebooks.py:130: could not import 'pandas': No module named 'pandas'
+FAILED tests/test_smartphone_adaptation.py::test_all_five_trials_and_frozen_holdout_reporting_in_one_call
+1 failed, 223 passed, 3 skipped, 1664 warnings in 88.15s (0:01:28)

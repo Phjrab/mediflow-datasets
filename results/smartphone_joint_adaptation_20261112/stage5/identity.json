@@ -1,0 +1,16 @@
+{
+  "study_sha256": "42609e1a8cbfb0b7dd807036ca4c3ab6b8bb22c893397fc60d8561f96f549439",
+  "stage": 5,
+  "model": {
+    "architecture": "pmg",
+    "size": 256,
+    "label_smoothing": 0.0,
+    "reference_candidate_id": "public_candidate_v2_pmg_b0_256_ce_20260922_235840_093d10de",
+    "initialization": "saved selected checkpoint",
+    "model": "results/web_skin/selected_models/v2/web_skin_model.keras",
+    "model_sha256": "83e659dd09a9355135ee0de0197037e81ece962777f59dedae8d9a37b49a3fc4",
+    "role": "selected"
+  },
+  "code_sha256": "6425725aa70aac697c166e00bec7ee8a3a2b2be1bb87d26dc007c05316a653e2",
+  "training_core_sha256": "6b5aae35bcbe1af85fe19b6a47ebce6ed57bfca780129a82e95dd9dd0c9d4c8a"
+}

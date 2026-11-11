@@ -4,6 +4,7 @@
 
 | 파일 | 역할·상태 |
 | --- | --- |
+| [smartphone_web_skin_20261111.json](smartphone_web_skin_20261111.json) | 휴대폰 얼굴 실제 5회 완료 설정. 2·3차 약한 질감·흐림 / 4차 강한 변화 / P05 분리. [결과](../results/smartphone_web_skin_adaptation_20261112/README.md) |
 | [domain_adaptation.json](domain_adaptation.json) | 초기 Source/Target 분석 도구 설정, 결과·당시 코드와 함께 확인 |
 | [nine_experiments.json](nine_experiments.json) | 이전 9개 통합 실행안. 일부 실행 후 중단한 이력이며 현재 학습 지시 아님 |
 | [camera_strength_20261110.json](camera_strength_20261110.json) | 이전 확대 후보의 분석·생성 기준. 완료한 4차 설정과 구분 |

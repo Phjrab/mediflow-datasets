@@ -1,0 +1,167 @@
+{
+  "stage": 1,
+  "model_spec": {
+    "architecture": "b0",
+    "size": 224,
+    "label_smoothing": 0.0,
+    "initialization": "saved original-only early checkpoint",
+    "model": "results/web_skin/1_training/original/best_model.keras",
+    "model_sha256": "11c5a160ddeb406c4e80802e38a372e90a0222c1dddf208e270676f795f177ae",
+    "role": "basic"
+  },
+  "best_epoch": 4,
+  "best_model": {
+    "file": "best.keras",
+    "sha256": "2171e986ade2494f3937bec01b13c2d7e9cb5018e44ba11576d0b1493435b005"
+  },
+  "selection_condition": "phone_lighting",
+  "validation": {
+    "clean": {
+      "status": "measured",
+      "labeled_count": 499,
+      "accuracy": 0.7214428857715431,
+      "macro_f1": 0.7146770758075857,
+      "class_f1": [
+        0.7063829787234042,
+        0.5730337078651685,
+        0.5856353591160222,
+        0.8749999999999999,
+        0.8333333333333334
+      ],
+      "precision": [
+        0.6148148148148148,
+        0.6538461538461539,
+        0.654320987654321,
+        0.7903225806451613,
+        0.9259259259259259
+      ],
+      "recall": [
+        0.83,
+        0.51,
+        0.53,
+        0.98,
+        0.7575757575757576
+      ],
+      "support": [
+        100,
+        100,
+        100,
+        100,
+        99
+      ],
+      "confusion_matrix": [
+        [
+          83,
+          5,
+          5,
+          4,
+          3
+        ],
+        [
+          17,
+          51,
+          11,
+          18,
+          3
+        ],
+        [
+          25,
+          19,
+          53,
+          3,
+          0
+        ],
+        [
+          0,
+          2,
+          0,
+          98,
+          0
+        ],
+        [
+          10,
+          1,
+          12,
+          1,
+          75
+        ]
+      ],
+      "count": 499
+    },
+    "phone_lighting": {
+      "status": "measured",
+      "labeled_count": 499,
+      "accuracy": 0.7234468937875751,
+      "macro_f1": 0.7171483199729443,
+      "class_f1": [
+        0.7094017094017094,
+        0.5856353591160222,
+        0.588888888888889,
+        0.8749999999999999,
+        0.8268156424581006
+      ],
+      "precision": [
+        0.6194029850746269,
+        0.654320987654321,
+        0.6625,
+        0.7903225806451613,
+        0.925
+      ],
+      "recall": [
+        0.83,
+        0.53,
+        0.53,
+        0.98,
+        0.7474747474747475
+      ],
+      "support": [
+        100,
+        100,
+        100,
+        100,
+        99
+      ],
+      "confusion_matrix": [
+        [
+          83,
+          5,
+          5,
+          4,
+          3
+        ],
+        [
+          16,
+          53,
+          10,
+          18,
+          3
+        ],
+        [
+          25,
+          19,
+          53,
+          3,
+          0
+        ],
+        [
+          0,
+          2,
+          0,
+          98,
+          0
+        ],
+        [
+          10,
+          2,
+          12,
+          1,
+          74
+        ]
+      ],
+      "count": 499
+    }
+  },
+  "epochs_completed": 5,
+  "source_test_evaluated": false,
+  "target_accuracy": null
+}

@@ -1,0 +1,157 @@
+..................................................F........sss.......... [ 31%]
+........................................................................ [ 63%]
+........................................................................ [ 94%]
+............                                                             [100%]
+================================== FAILURES ===================================
+________ test_package_model_and_reports_round_trip_with_random_weights ________
+
+tmp_path = WindowsPath('C:/Users/sejun/OneDrive/Documents/ChatGPT/mediflow/.tmp/smartphone-continuation-tests-20261111/test_package_model_and_reports0')
+
+    def test_package_model_and_reports_round_trip_with_random_weights(tmp_path):
+        source = tmp_path / "source"
+        source.mkdir()
+        original = ROOT / "results/web_skin/experiments/suite_20260908_014452_72768a42"
+        policy = notebook_policy()
+        for relative in policy["report_hashes"]:
+            target = source / relative
+            target.parent.mkdir(parents=True, exist_ok=True)
+            shutil.copyfile(original / relative, target)
+        # Use the exact real topology with offline random weights for IO/forward verification.
+        keras.backend.clear_session()
+        base = keras.applications.EfficientNetB0(
+            weights=None, include_top=False, input_shape=(256, 256, 3)
+        )
+        inputs = keras.Input((256, 256, 3))
+        features = keras.layers.GlobalAveragePooling2D()(base(inputs, training=False))
+        outputs = keras.layers.Dense(5, activation="softmax")(keras.layers.Dropout(0.3)(features))
+        model = keras.Model(inputs, outputs)
+        target_model = source / policy["model_relative_path"]
+        model.save(target_model)
+        policy["model_sha256"] = packaging.sha256_file(target_model)
+        for name in ("model_card.json", "selection_before_test.json"):
+            path = source / name
+            value = packaging.read_json(path)
+            value["model_sha256"] = policy["model_sha256"]
+            path.write_text(json.dumps(value, ensure_ascii=False), "utf-8")
+        policy["report_hashes"] = {
+            relative: packaging.sha256_file(source / relative) for relative in policy["report_hashes"]
+        }
+        package, archive = packaging.build_package(source, tmp_path / "out", policy)
+        manifest = packaging.read_json(package / "package_manifest.json")
+        assert not manifest["new_training_or_test_evaluation"]
+        assert manifest["normal_class_included"]
+        assert packaging.sha256_file(package / "web_skin_model.keras") == policy["model_sha256"]
+        for relative, digest in manifest["artifact_hashes"].items():
+            assert packaging.sha256_file(package / relative) == digest
+        with zipfile.ZipFile(archive) as z:
+            assert z.testzip() is None
+            assert len([n for n in z.namelist() if n.endswith(".keras")]) == 1
+        drive = tmp_path / "drive"
+>       copied, zipped, digest = packaging.publish_package(package, archive, drive)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_candidate_packaging.py:81: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\mediflow_datasets\candidate_packaging.py:243: in publish_package
+    shutil.copytree(package, target)
+..\..\..\..\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\shutil.py:600: in copytree
+    return _copytree(entries=entries, src=src, dst=dst, symlinks=symlinks,
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+entries = [<DirEntry 'class_names.json'>, <DirEntry 'MODEL_CARD.md'>, <DirEntry 'model_contract_check.json'>, <DirEntry 'package_manifest.json'>, <DirEntry 'packaging_policy.json'>, <DirEntry 'preprocessing.json'>, ...]
+src = WindowsPath('C:/Users/sejun/OneDrive/Documents/ChatGPT/mediflow/.tmp/smartphone-continuation-tests-20261111/test_package_model_and_reports0/out/public_candidate_v1_b0_256_ce_20261111_131656_c3bcf827')
+dst = WindowsPath('C:/Users/sejun/OneDrive/Documents/ChatGPT/mediflow/.tmp/smartphone-continuation-tests-20261111/test_package_model_and_reports0/drive/public_candidate_v1_b0_256_ce_20261111_131656_c3bcf827')
+symlinks = False, ignore = None
+copy_function = <function copy2 at 0x0000011164B09760>
+ignore_dangling_symlinks = False, dirs_exist_ok = False
+
+    def _copytree(entries, src, dst, symlinks, ignore, copy_function,
+                  ignore_dangling_symlinks, dirs_exist_ok=False):
+        if ignore is not None:
+            ignored_names = ignore(os.fspath(src), [x.name for x in entries])
+        else:
+            ignored_names = ()
+    
+        os.makedirs(dst, exist_ok=dirs_exist_ok)
+        errors = []
+        use_srcentry = copy_function is copy2 or copy_function is copy
+    
+        for srcentry in entries:
+            if srcentry.name in ignored_names:
+                continue
+            srcname = os.path.join(src, srcentry.name)
+            dstname = os.path.join(dst, srcentry.name)
+            srcobj = srcentry if use_srcentry else srcname
+            try:
+                is_symlink = srcentry.is_symlink()
+                if is_symlink and os.name == 'nt':
+                    # Special check for directory junctions, which appear as
+                    # symlinks but we want to recurse.
+                    lstat = srcentry.stat(follow_symlinks=False)
+                    if lstat.st_reparse_tag == stat.IO_REPARSE_TAG_MOUNT_POINT:
+                        is_symlink = False
+                if is_symlink:
+                    linkto = os.readlink(srcname)
+                    if symlinks:
+                        # We can't just leave it to `copy_function` because legacy
+                        # code with a custom `copy_function` may rely on copytree
+                        # doing the right thing.
+                        os.symlink(linkto, dstname)
+                        copystat(srcobj, dstname, follow_symlinks=not symlinks)
+                    else:
+                        # ignore dangling symlink if the flag is on
+                        if not os.path.exists(linkto) and ignore_dangling_symlinks:
+                            continue
+                        # otherwise let the copy occur. copy2 will raise an error
+                        if srcentry.is_dir():
+                            copytree(srcobj, dstname, symlinks, ignore,
+                                     copy_function, ignore_dangling_symlinks,
+                                     dirs_exist_ok)
+                        else:
+                            copy_function(srcobj, dstname)
+                elif srcentry.is_dir():
+                    copytree(srcobj, dstname, symlinks, ignore, copy_function,
+                             ignore_dangling_symlinks, dirs_exist_ok)
+                else:
+                    # Will raise a SpecialFileError for unsupported file types
+                    copy_function(srcobj, dstname)
+            # catch the Error from the recursive copytree so that we can
+            # continue with other files
+            except Error as err:
+                errors.extend(err.args[0])
+            except OSError as why:
+                errors.append((srcname, dstname, str(why)))
+        try:
+            copystat(src, dst)
+        except OSError as why:
+            # Copying file access times may fail on Windows
+            if getattr(why, 'winerror', None) is None:
+                errors.append((src, dst, str(why)))
+        if errors:
+>           raise Error(errors)
+E           shutil.Error: [('C:\\Users\\sejun\\OneDrive\\Documents\\ChatGPT\\mediflow\\.tmp\\smartphone-continuation-tests-20261111\\test_package_model_and_reports0\\out\\public_candidate_v1_b0_256_ce_20261111_131656_c3bcf827\\source_reports\\b0_256_ce\\attempt_8977c45d04bc\\validation_predictions.csv', 'C:\\Users\\sejun\\OneDrive\\Documents\\ChatGPT\\mediflow\\.tmp\\smartphone-continuation-tests-20261111\\test_package_model_and_reports0\\drive\\public_candidate_v1_b0_256_ce_20261111_131656_c3bcf827\\source_reports\\b0_256_ce\\attempt_8977c45d04bc\\validation_predictions.csv', '[WinError 3] 지정된 경로를 찾을 수 없습니다')]
+
+..\..\..\..\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\shutil.py:554: Error
+============================== warnings summary ===============================
+tests/test_adaptation_packaging.py: 12 warnings
+tests/test_adaptation_stage1.py: 10 warnings
+tests/test_adaptation_strength.py: 12 warnings
+tests/test_candidate_packaging.py: 316 warnings
+tests/test_common_notebooks.py: 88 warnings
+tests/test_domain_adaptation.py: 12 warnings
+tests/test_domain_adaptation_preflight.py: 2 warnings
+tests/test_domain_adaptation_resolution.py: 20 warnings
+tests/test_domain_nine.py: 96 warnings
+tests/test_experiment_suite.py: 66 warnings
+tests/test_smartphone_adaptation.py: 36 warnings
+tests/test_web_skin_training_contract.py: 20 warnings
+tests/test_web_skin_wsdan.py: 970 warnings
+  C:\Users\sejun\OneDrive\Documents\ChatGPT\mediflow\.venv\Lib\site-packages\keras\src\backend\tensorflow\core.py:171: DeprecationWarning: __array__ implementation doesn't accept a copy keyword, so passing copy=False failed. __array__ must implement 'dtype' and 'copy' keyword arguments. To learn more, see the migration guide https://numpy.org/devdocs/numpy_2_0_migration_guide.html#adapting-to-changes-in-the-copy-keyword
+    return np.array(x)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ===========================
+SKIPPED [2] tests\test_common_notebooks.py:55: could not import 'pandas': No module named 'pandas'
+SKIPPED [1] tests\test_common_notebooks.py:130: could not import 'pandas': No module named 'pandas'
+FAILED tests/test_candidate_packaging.py::test_package_model_and_reports_round_trip_with_random_weights
+1 failed, 224 passed, 3 skipped, 1660 warnings in 155.87s (0:02:35)

@@ -1,0 +1,282 @@
+{
+  "status": "passed",
+  "scope": "Six real saved models, five synthetic input views; not Source Test or disease accuracy",
+  "checks": [
+    {
+      "model": "initial",
+      "condition": "clean",
+      "finite_scores": true,
+      "shape": [
+        1,
+        5
+      ]
+    },
+    {
+      "model": "initial",
+      "condition": "phone_lighting",
+      "finite_scores": true,
+      "shape": [
+        1,
+        5
+      ]
+    },
+    {
+      "model": "initial",
+      "condition": "phone_expanded",
+      "finite_scores": true,
+      "shape": [
+        1,
+        5
+      ]
+    },
+    {
+      "model": "initial",
+      "condition": "phone_refit",
+      "finite_scores": true,
+      "shape": [
+        1,
+        5
+      ]
+    },
+    {
+      "model": "initial",
+      "condition": "phone_joint",
+      "finite_scores": true,
+      "shape": [
+        1,
+        5
+      ]
+    },
+    {
+      "model": "stage1",
+      "condition": "clean",
+      "finite_scores": true,
+      "shape": [
+        1,
+        5
+      ]
+    },
+    {
+      "model": "stage1",
+      "condition": "phone_lighting",
+      "finite_scores": true,
+      "shape": [
+        1,
+        5
+      ]
+    },
+    {
+      "model": "stage1",
+      "condition": "phone_expanded",
+      "finite_scores": true,
+      "shape": [
+        1,
+        5
+      ]
+    },
+    {
+      "model": "stage1",
+      "condition": "phone_refit",
+      "finite_scores": true,
+      "shape": [
+        1,
+        5
+      ]
+    },
+    {
+      "model": "stage1",
+      "condition": "phone_joint",
+      "finite_scores": true,
+      "shape": [
+        1,
+        5
+      ]
+    },
+    {
+      "model": "stage2",
+      "condition": "clean",
+      "finite_scores": true,
+      "shape": [
+        1,
+        5
+      ]
+    },
+    {
+      "model": "stage2",
+      "condition": "phone_lighting",
+      "finite_scores": true,
+      "shape": [
+        1,
+        5
+      ]
+    },
+    {
+      "model": "stage2",
+      "condition": "phone_expanded",
+      "finite_scores": true,
+      "shape": [
+        1,
+        5
+      ]
+    },
+    {
+      "model": "stage2",
+      "condition": "phone_refit",
+      "finite_scores": true,
+      "shape": [
+        1,
+        5
+      ]
+    },
+    {
+      "model": "stage2",
+      "condition": "phone_joint",
+      "finite_scores": true,
+      "shape": [
+        1,
+        5
+      ]
+    },
+    {
+      "model": "stage3",
+      "condition": "clean",
+      "finite_scores": true,
+      "shape": [
+        1,
+        5
+      ]
+    },
+    {
+      "model": "stage3",
+      "condition": "phone_lighting",
+      "finite_scores": true,
+      "shape": [
+        1,
+        5
+      ]
+    },
+    {
+      "model": "stage3",
+      "condition": "phone_expanded",
+      "finite_scores": true,
+      "shape": [
+        1,
+        5
+      ]
+    },
+    {
+      "model": "stage3",
+      "condition": "phone_refit",
+      "finite_scores": true,
+      "shape": [
+        1,
+        5
+      ]
+    },
+    {
+      "model": "stage3",
+      "condition": "phone_joint",
+      "finite_scores": true,
+      "shape": [
+        1,
+        5
+      ]
+    },
+    {
+      "model": "stage4",
+      "condition": "clean",
+      "finite_scores": true,
+      "shape": [
+        1,
+        5
+      ]
+    },
+    {
+      "model": "stage4",
+      "condition": "phone_lighting",
+      "finite_scores": true,
+      "shape": [
+        1,
+        5
+      ]
+    },
+    {
+      "model": "stage4",
+      "condition": "phone_expanded",
+      "finite_scores": true,
+      "shape": [
+        1,
+        5
+      ]
+    },
+    {
+      "model": "stage4",
+      "condition": "phone_refit",
+      "finite_scores": true,
+      "shape": [
+        1,
+        5
+      ]
+    },
+    {
+      "model": "stage4",
+      "condition": "phone_joint",
+      "finite_scores": true,
+      "shape": [
+        1,
+        5
+      ]
+    },
+    {
+      "model": "stage5",
+      "condition": "clean",
+      "finite_scores": true,
+      "shape": [
+        1,
+        5
+      ]
+    },
+    {
+      "model": "stage5",
+      "condition": "phone_lighting",
+      "finite_scores": true,
+      "shape": [
+        1,
+        5
+      ]
+    },
+    {
+      "model": "stage5",
+      "condition": "phone_expanded",
+      "finite_scores": true,
+      "shape": [
+        1,
+        5
+      ]
+    },
+    {
+      "model": "stage5",
+      "condition": "phone_refit",
+      "finite_scores": true,
+      "shape": [
+        1,
+        5
+      ]
+    },
+    {
+      "model": "stage5",
+      "condition": "phone_joint",
+      "finite_scores": true,
+      "shape": [
+        1,
+        5
+      ]
+    }
+  ],
+  "real_models": 6,
+  "synthetic_forward_passes": 30,
+  "source_test_evaluated": false,
+  "target_photos_opened": false,
+  "new_training_executed": false,
+  "runtime_members": 77
+}

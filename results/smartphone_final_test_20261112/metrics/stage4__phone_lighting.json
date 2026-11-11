@@ -1,0 +1,82 @@
+{
+  "identity": {
+    "plan_sha256": "81302d9d466bd4631f18f9b859fd18696a05cd30998acd797a9ca45d4d2a15d6",
+    "model_sha256": "f08958c745811dc34d8e876e742f911abc1f6938babdc64bd82a284d7e052c9e",
+    "condition": "phone_lighting",
+    "batch_size": 8,
+    "runtime_manifest_sha256": "ad2338eaa932fea3c209552f0c5e08b2cb31de7d542fbaa3e541ecfd74871c9f"
+  },
+  "scores_sha256": "bb0c7f6b2dbcc1a6b34a2b5b72b2028bba837fa26c6ab8bb3a4b9bcdfd6440dc",
+  "metrics": {
+    "status": "measured",
+    "labeled_count": 400,
+    "accuracy": 0.9175,
+    "macro_f1": 0.9172144021213157,
+    "class_f1": [
+      0.875,
+      0.8987341772151898,
+      0.8917197452229298,
+      0.9937888198757764,
+      0.9268292682926829
+    ],
+    "precision": [
+      0.875,
+      0.9102564102564102,
+      0.9090909090909091,
+      0.9876543209876543,
+      0.9047619047619048
+    ],
+    "recall": [
+      0.875,
+      0.8875,
+      0.875,
+      1.0,
+      0.95
+    ],
+    "support": [
+      80,
+      80,
+      80,
+      80,
+      80
+    ],
+    "confusion_matrix": [
+      [
+        70,
+        5,
+        3,
+        0,
+        2
+      ],
+      [
+        4,
+        71,
+        3,
+        1,
+        1
+      ],
+      [
+        5,
+        0,
+        70,
+        0,
+        5
+      ],
+      [
+        0,
+        0,
+        0,
+        80,
+        0
+      ],
+      [
+        1,
+        2,
+        1,
+        0,
+        76
+      ]
+    ],
+    "count": 400
+  }
+}

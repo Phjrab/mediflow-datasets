@@ -1,0 +1,21 @@
+{
+  "status": "passed",
+  "all_imported_original_files_byte_identical_to_zip": 28,
+  "source_zip_unchanged": true,
+  "prior_protected_files_unchanged": 573,
+  "new_result_markdown_links_checked": 54,
+  "original_plots_visually_reviewed": [
+    "stage5/learning_curves.png",
+    "validation_comparison.png",
+    "stage5_confusion_matrices.png"
+  ],
+  "plot_annotation": "Empty Alignment losses (Stage3) panel is inherited; stage5 has no alignment loss",
+  "model_load_verification": "passed",
+  "report_sha256": "c1ec68d0ac82aaff706314cb18dfe3284e77aba793ad762d40c2633a2dd46233",
+  "production_python_changed_in_this_receipt": false,
+  "new_training_executed": false,
+  "source_test_executed": false,
+  "target_holdout_reopened": false,
+  "official_candidate_changed": false,
+  "source_zip_deleted": false
+}

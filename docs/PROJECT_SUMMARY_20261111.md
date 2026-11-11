@@ -2,11 +2,38 @@
 
 ## 현재 완료한 범위
 
+**2026-11-12 최신:** 스마트폰 최종 Test·패키징도 완료했다. [전체 적응 최종 정리](research/camera_adaptation/ADAPTATION_COMPLETION_20261112.md)에
+촬영부터 완료 21회·Source 비교 기록 81개·연구용 패키지 4개와 한계를 모았다.
+
 기존 공개 데이터 분류 모델의 실험·선정과 실제 촬영 환경 적응 **1~4차 학습**, 기존 데이터 **Source Test 비교**를 완료했다. 실제 장비 질환 정답이 있는 독립 평가, 배포 장비 성능 측정과 전체 시스템 통합은 별도 과제다. 재설정 4차는 사용자가 실행하지 않기로 결정했고 미실행 보관한다. LLM·VLM은 촬영 적응 이후 작업으로 남겨 뒀다.
 
 이 문서는 현재 상태와 파일을 찾는 시작점이다. 자세한 연구 배경은 [PROJECT_BACKGROUND](research/PROJECT_BACKGROUND.md), 단계별 실행 순서는 [ROADMAP](ROADMAP.md), 기존 문서의 작성 시점·역할은 [DOCUMENT_INDEX](DOCUMENT_INDEX.md)를 확인한다. 과거 문서의 ‘다음 실행’은 당시 계획이며 현재 완료 여부는 이 문서와 최신 로드맵을 따른다.
 
 ## 세 분야의 구분
+
+추가 요청으로 **스마트폰 얼굴 52장 기반 web_skin 실제 5회 학습과 결과 회수**도 완료했다.
+기존 웹캠 적응 결과를 보존하며, 1차 두 모델 비교·2차 색과 약한 질감·흐림·3차 특징 정렬·4차 더 강한 질감·흐림의 실제 학습 5회다.
+2026-11-12 사용자 요청 [강도 추가](research/camera_adaptation/SMARTPHONE_APPEARANCE_STRENGTH_20261112.md)를 반영했다.
+Lab a는 기존 근접 분포 검토에서 채택했고 질감·흐림은 별도의 탐색 설정이다.
+[실제 결과](research/camera_adaptation/SMARTPHONE_ADAPTATION_RESULT_REVIEW_20261112.md)의 Validation 기준 후보는 4차다.
+실제 휴대폰과 가장 가깝다는 뜻은 아니다. 후속 Source Test는 아래 최신 결과로 확인한다.
+[실행 안내·전용 ZIP](../output/smartphone_web_skin_20261111/README.md)과
+[실측 분석·설계](research/camera_adaptation/SMARTPHONE_WEB_SKIN_ADAPTATION_20261111.md)를 따른다.
+
+후속 [공동 유사성 검토](research/camera_adaptation/SMARTPHONE_JOINT_SIMILARITY_REVIEW_20261112.md)에서
+조명·색·질감 8개 중 7개 지표를 함께 가깝게 한 후보를 확인했다. 조명 불균일과 개인차가 남아
+채택 기준을 통과하지 못했으며 기존 학습 결과·설정·실행 ZIP은 유지했다.
+
+이후 사용자가 해당 후보의 탐색 학습을 직접 실행했고 [추가 5차 결과](research/camera_adaptation/SMARTPHONE_JOINT_RESULT_REVIEW_20261112.md)를 회수했다.
+적응 전 PMG에서 독립 5 epoch 완료·최적 3 epoch이며 휴대폰 실제 학습은 총 6회다.
+새 변환에서 적응 전 424/499·4차 418/499·추가 5차 421/499, 원본에서는 각각 424/499·419/499·418/499였다.
+공통 Validation 후보는 여전히 4차이며 실제 촬영 특징 거리도 줄지 않았다. 공식 후보·패키지는 유지했다.
+[새 모델·원본 기록](../results/smartphone_joint_adaptation_20261112/README.md)을 보관했다. 추가 5차 실행에서는 Test·P05를 평가하지 않았다.
+
+이후 사용자가 [스마트폰 최종 Source Test](research/camera_adaptation/SMARTPHONE_FINAL_TEST_RESULT_REVIEW_20261112.md)를 완료했다.
+기존 400장·6모델·5조건의 30개 지표와 12,000개 예측을 검산했다. Validation 선정 4차를 유지했다.
+4차 원본 367/400·강한 변환 355/400이며 [스마트폰 사용 패키지](../results/smartphone_adaptation_package_20261112/README.md)를 만들었다.
+실제 휴대폰 질환 성능은 정답 자료가 없어 미측정이다.
 
 | 분야 | 입력과 역할 | 현재 적응 실험의 클래스 |
 | --- | --- | --- |

@@ -1,0 +1,26 @@
+{
+  "training_complete.json": {
+    "path": "results/smartphone_web_skin_adaptation_20261112/stage4/complete.json",
+    "sha256": "8985c2170c0bbd8be351bf1a83dc6764649190adcc67f2ceaf74dd0147d72f02"
+  },
+  "training_run_configuration.json": {
+    "path": "results/smartphone_web_skin_adaptation_20261112/stage4/run_configuration.json",
+    "sha256": "7e2ddad9412525625e83b416522b0120f4abc716e03d906d61cef03b964a6707"
+  },
+  "training_history.json": {
+    "path": "results/smartphone_web_skin_adaptation_20261112/stage4/history.json",
+    "sha256": "424ac0b7e11e4d452ef2b2dba6fa2595ef7ca37c445f2f1951b66344fe1422f7"
+  },
+  "validation_selection.json": {
+    "path": "results/smartphone_joint_adaptation_20261112/selection.json",
+    "sha256": "6399c5ed7183a4e3e5c548e9c505acc21acfad1629e416cd41edf4217f4cb32b"
+  },
+  "source_test_results.json": {
+    "path": "results/smartphone_final_test_20261112/test_results.json",
+    "sha256": "6aba873354bbe445252c60f7b188ae7793258c176ffcd9b4c2728103ceb69732"
+  },
+  "source_test_evaluation_plan.json": {
+    "path": "results/smartphone_final_test_20261112/evaluation_plan.json",
+    "sha256": "7c7d0288d7eb6f38ffd9b125e105723e67f7098c9b2e169645a069f0216e5869"
+  }
+}

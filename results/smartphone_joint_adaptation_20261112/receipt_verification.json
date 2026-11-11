@@ -1,0 +1,171 @@
+{
+  "schema": "mediflow_phone_joint_result_receipt_v1",
+  "status": "passed",
+  "checked_at": "2026-11-12T02:53:04.453536+09:00",
+  "source_zip": "C:\\Users\\sejun\\Downloads\\MediFlow_Smartphone_Joint_Results_20261112.zip",
+  "source_zip_sha256": "0dee0f4a286fbd5220370d3bc70858dd379ec53dfb90e3502b379fe228c351bc",
+  "source_zip_bytes": 33198410,
+  "saved_original_files": 28,
+  "saved_model_count": 1,
+  "saved_plots": 3,
+  "training_trials": 1,
+  "epochs_completed": 5,
+  "best_epoch": 3,
+  "study_sha256": "42609e1a8cbfb0b7dd807036ca4c3ab6b8bb22c893397fc60d8561f96f549439",
+  "runtime_manifest_sha256": "a3d4036b9f904f4821a0f7cbd0eec111d7a8063617ec0f17493364e403aed984",
+  "metric_records_checked": 40,
+  "validation_results_reused_unchanged": 20,
+  "new_validation_results": 10,
+  "selected_on_common_validation": "stage4",
+  "joint_model_sha256": "e0bab7dd2a6d0eb588db5496fb6eee3b9c779f2c4e8d7aabf98a95fd504fc5ef",
+  "class_names": [
+    "건선",
+    "아토피",
+    "여드름",
+    "정상",
+    "주사"
+  ],
+  "source_test_evaluated": false,
+  "target_holdout_used": false,
+  "target_accuracy": null,
+  "protected_existing_files_unchanged": 654,
+  "official_candidate_index_unchanged": true,
+  "source_zip_copied": false,
+  "raw_photos_or_key_copied": false,
+  "existing_models_duplicated": false,
+  "new_training_executed_locally": false,
+  "model_load_verification": "passed",
+  "original_files": {
+    "calibration_diagnostics.json": {
+      "sha256": "acc8aab64e8dba8d9c6027197d5a30df8cdb691026e203001e26936809b09e72",
+      "bytes": 56855
+    },
+    "data_audit.json": {
+      "sha256": "1690af93c476b823713930803e7cf691435faa47d0f8c4e1d6dcbadeafefedb3",
+      "bytes": 782
+    },
+    "reproduction/adaptation_stage1.py": {
+      "sha256": "6b5aae35bcbe1af85fe19b6a47ebce6ed57bfca780129a82e95dd9dd0c9d4c8a",
+      "bytes": 31255
+    },
+    "reproduction/camera_extended.py": {
+      "sha256": "7a1cd1e25c025398cb06baab4b6675f0d7d6a11bd3d9f56d35424a23a6e49da1",
+      "bytes": 7940
+    },
+    "reproduction/domain_adaptation_experiment.py": {
+      "sha256": "216d01c860cf977d7a8f9093605a90a5f4cda495c4d4f363b5862e8b69d63d2b",
+      "bytes": 16108
+    },
+    "reproduction/joint_candidate.json": {
+      "sha256": "cef0eeb96b5b29da1e16f91baafeca0ffdcb0329c3a82607a1417d0e0f12aade",
+      "bytes": 951
+    },
+    "reproduction/runtime_manifest.json": {
+      "sha256": "a3d4036b9f904f4821a0f7cbd0eec111d7a8063617ec0f17493364e403aed984",
+      "bytes": 10164
+    },
+    "reproduction/smartphone_joint_training.py": {
+      "sha256": "7994c7da10fd41f49dfb06a501a5002c1a4c857dfb47f2fdef438526c31687ee",
+      "bytes": 15551
+    },
+    "reproduction/smartphone_training.py": {
+      "sha256": "6425725aa70aac697c166e00bec7ee8a3a2b2be1bb87d26dc007c05316a653e2",
+      "bytes": 29286
+    },
+    "reproduction/study.json": {
+      "sha256": "42609e1a8cbfb0b7dd807036ca4c3ab6b8bb22c893397fc60d8561f96f549439",
+      "bytes": 10085
+    },
+    "runtime_identity.json": {
+      "sha256": "d7b735255b3732b4cc6c21921525871c1b7f786007ba98ec7af302275ec353ad",
+      "bytes": 185
+    },
+    "selection.json": {
+      "sha256": "6399c5ed7183a4e3e5c548e9c505acc21acfad1629e416cd41edf4217f4cb32b",
+      "bytes": 432
+    },
+    "source_manifest.json": {
+      "sha256": "7c8b41878883193e5dd340ab8a4b7f804a3ab7f37c8159093b663937d997a738",
+      "bytes": 1688646
+    },
+    "stage5/best.keras": {
+      "sha256": "e0bab7dd2a6d0eb588db5496fb6eee3b9c779f2c4e8d7aabf98a95fd504fc5ef",
+      "bytes": 36377179
+    },
+    "stage5/complete.json": {
+      "sha256": "a2a8eea36959cd42722804d933af64ba43fc8d3ef350d0a461c1bca8dd568031",
+      "bytes": 3053
+    },
+    "stage5/epoch_001.json": {
+      "sha256": "1501c51672cb880350c972227ce160791c0b57ac3d28aafa3f6d2db5b6cb5758",
+      "bytes": 2680
+    },
+    "stage5/epoch_002.json": {
+      "sha256": "ae6e60976b873110ce8fd3abb8a0dca7dbb4acfcef13ab1ea87e31e3182a4197",
+      "bytes": 2679
+    },
+    "stage5/epoch_003.json": {
+      "sha256": "8c8cc5e5f25a2a1ed744af76b7a56bf1e9a561f8428a2897dab5c3d7a8cb26b6",
+      "bytes": 2648
+    },
+    "stage5/epoch_004.json": {
+      "sha256": "658fd6a21421f983265c7f28cde953224ad5be7daab87461cd2770f640bef75b",
+      "bytes": 2679
+    },
+    "stage5/epoch_005.json": {
+      "sha256": "ab5aa6636eeaaa2be76c0b546ee0410213955057a2ffcebde395d81a30b6ce92",
+      "bytes": 2691
+    },
+    "stage5/history.json": {
+      "sha256": "33f7c21945b7e90d5dad35646654d16fa9bcc9ba4aaa89d2ecd62ac89712264e",
+      "bytes": 15009
+    },
+    "stage5/identity.json": {
+      "sha256": "00149bc1fb7f7f2486dd4efc8bc7491892b96ec6c62c5313d92ac6c8e9c5e453",
+      "bytes": 698
+    },
+    "stage5/learning_curves.png": {
+      "sha256": "c957ecdec8969588785f9c2d0a0516f7b12fa2338e46100c436ed216ab150605",
+      "bytes": 107012
+    },
+    "stage5/run_configuration.json": {
+      "sha256": "c0073088a1426b398317803f22a22de9442d46c5ca266ab872d06e0577a0aade",
+      "bytes": 12620
+    },
+    "stage5_confusion_matrices.png": {
+      "sha256": "5418cae4f6c7b69cb720ad254aec890d407fa1949f33eca68e2a7e83f0f7216d",
+      "bytes": 72842
+    },
+    "summary.json": {
+      "sha256": "246c7abbbf32d0aada18e8057c73fae534f563ac575a22ea00d57656b51bb297",
+      "bytes": 907
+    },
+    "validation_comparison.json": {
+      "sha256": "5586199b578370c62e0a2fa188c2b6b0d26189c6408ee159c8384d543d05381b",
+      "bytes": 35438
+    },
+    "validation_comparison.png": {
+      "sha256": "080d0d8489c3082941cb0e13480ced1fcf03d54fd927761208916527edf2693f",
+      "bytes": 83454
+    }
+  },
+  "training_environment": {
+    "tensorflow": "2.20.0",
+    "keras": "3.13.2",
+    "numpy": "2.5.4",
+    "gpu": [
+      {
+        "compute_capability": [
+          8,
+          9
+        ],
+        "device_name": "NVIDIA L4"
+      }
+    ]
+  },
+  "known_limits": [
+    "Source person/lesion/session identity unavailable",
+    "Prior checkpoint evaluation exposure unverified",
+    "No actual phone disease labels; P05 not reopened"
+  ]
+}

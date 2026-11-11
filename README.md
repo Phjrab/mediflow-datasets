@@ -4,7 +4,25 @@
 데이터셋 전처리를 실행하기 위한 Python 프로젝트입니다. 이 결과는 의료 진단이 아닌 연구 및
 스크리닝 보조 목적으로 사용해야 합니다.
 
-## 현재 작업 상태 · 2026-11-11
+## 현재 작업 상태 · 2026-11-12
+
+**실제 촬영 환경 적응의 계획한 학습·Source Test·패키징을 완료했습니다.**
+[촬영부터 최종 결과까지 전체 정리](docs/research/camera_adaptation/ADAPTATION_COMPLETION_20261112.md)를 먼저 확인하세요.
+기존 장비 15회·스마트폰 6회, 총 21회 학습과 81개 비교 기록을 보관했습니다.
+[완료 실험의 정확한 조절값](presentation/report_assets/adaptation_completion_20261112/README.md)은 17개 프로필·21회 기록입니다.
+
+스마트폰 얼굴 52장 기반 web_skin 적응 **실제 5회 학습·결과 회수**를 완료했습니다.
+[결과 분석](docs/research/camera_adaptation/SMARTPHONE_ADAPTATION_RESULT_REVIEW_20261112.md)과
+[모델·원본 결과](results/smartphone_web_skin_adaptation_20261112/README.md)를 보관했습니다.
+Validation 기준은 4차를 선택했지만 장비 유사성 최적을 입증한 결과는 아닙니다. 새 Source Test는 미실행입니다.
+
+후속 [휴대폰 근접 후보 추가 1회 결과](docs/research/camera_adaptation/SMARTPHONE_JOINT_RESULT_REVIEW_20261112.md)도 회수했습니다.
+5 epoch 완료·최적 3 epoch이며, 기존 실험을 합쳐 휴대폰 실제 학습은 총 6회입니다.
+새 변환에서 추가 5차는 421/499, 적응 전은 424/499였고 공통 Validation 후보는 여전히 4차입니다.
+[추가 모델·원본 기록](results/smartphone_joint_adaptation_20261112/README.md)을 보관했습니다.
+이후 [스마트폰 최종 Test 30개 비교](docs/research/camera_adaptation/SMARTPHONE_FINAL_TEST_RESULT_REVIEW_20261112.md)를 완료했고
+Validation에서 미리 선정한 [스마트폰 4차 사용 패키지](results/smartphone_adaptation_package_20261112/README.md)를 만들었습니다.
+4차 원본은 367/400, 강한 변환은 355/400이며 실제 휴대폰 질환 성능은 정답 자료가 없어 미측정입니다.
 
 처음에는 [지금까지 한 작업·결과·자료 위치](docs/PROJECT_SUMMARY_20261111.md)를 확인하세요.
 

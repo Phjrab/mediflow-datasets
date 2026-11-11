@@ -1,0 +1,34 @@
+{
+  "status": "completed",
+  "targets": [
+    {
+      "relative_path": ".tmp\\ps2",
+      "checked_absolute_path": "C:\\Users\\sejun\\OneDrive\\Documents\\ChatGPT\\mediflow\\.tmp\\ps2",
+      "files": 1,
+      "removed": true
+    },
+    {
+      "relative_path": ".tmp\\p2t",
+      "checked_absolute_path": "C:\\Users\\sejun\\OneDrive\\Documents\\ChatGPT\\mediflow\\.tmp\\p2t",
+      "files": 188,
+      "removed": true
+    },
+    {
+      "relative_path": ".tmp\\p2qa",
+      "checked_absolute_path": "C:\\Users\\sejun\\OneDrive\\Documents\\ChatGPT\\mediflow\\.tmp\\p2qa",
+      "files": 1459,
+      "removed": true
+    },
+    {
+      "relative_path": ".pytest_cache",
+      "checked_absolute_path": "C:\\Users\\sejun\\OneDrive\\Documents\\ChatGPT\\mediflow\\.pytest_cache",
+      "files": 4,
+      "removed": true
+    }
+  ],
+  "preserved": [
+    ".tmp\\final-test-report-libraries",
+    ".tmp\\strength-native-temp"
+  ],
+  "original_images_models_results_changed": false
+}

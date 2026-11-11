@@ -1,0 +1,28 @@
+{
+  "status": "completed",
+  "comparisons": 30,
+  "test_images": 400,
+  "selected_before_test": "stage4",
+  "plan_sha256": "81302d9d466bd4631f18f9b859fd18696a05cd30998acd797a9ca45d4d2a15d6",
+  "source_test_evaluated": true,
+  "training_executed": false,
+  "target_photos_used": false,
+  "target_accuracy": null,
+  "test_used_for_selection": false,
+  "official_candidate_changed": false,
+  "environment": {
+    "tensorflow": "2.20.0",
+    "keras": "3.13.2",
+    "numpy": "2.5.4",
+    "python": "3.13.16",
+    "gpu": [
+      {
+        "compute_capability": [
+          8,
+          9
+        ],
+        "device_name": "NVIDIA L4"
+      }
+    ]
+  }
+}

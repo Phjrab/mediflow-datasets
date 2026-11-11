@@ -1,0 +1,23 @@
+{
+  "status": "completed",
+  "training_trials": 5,
+  "aliases": {},
+  "validation_condition_aliases": {},
+  "chosen_starting_role": "selected",
+  "selected_model": {
+    "selected_on": "Source Validation only",
+    "model": "stage4",
+    "path": "stage4/best.keras",
+    "sha256": "f08958c745811dc34d8e876e742f911abc1f6938babdc64bd82a284d7e052c9e",
+    "conditions": [
+      "clean",
+      "phone_lighting",
+      "phone_expanded",
+      "phone_refit"
+    ],
+    "target_holdout_used": false,
+    "source_test_evaluated": false
+  },
+  "source_test_evaluated": false,
+  "target_accuracy": null
+}

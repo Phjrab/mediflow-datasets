@@ -6,6 +6,20 @@
 
 ## 11월 실제 촬영 환경 적응 결과
 
+[전체 완료 정리](../docs/research/camera_adaptation/ADAPTATION_COMPLETION_20261112.md): 기존 장비 15회·스마트폰 6회 학습,
+81개 Source 비교 기록과 연구용 패키지 4개를 확인했다.
+[스마트폰 최종 Test 30개 비교](smartphone_final_test_20261112/README.md)와
+[스마트폰 4차 사용 패키지](smartphone_adaptation_package_20261112/README.md)를 추가했다.
+원본 367/400·강한 변환 355/400이며 실제 휴대폰 질환 정확도는 미측정이다.
+
+[휴대폰 공동 근접 후보 추가 결과](smartphone_joint_adaptation_20261112/README.md): 독립 추가 1회(5차),
+5 epoch 완료·최적 3 epoch, 새 모델 1개·원본 28개를 보관했다. 새 변환 정답 수는 적응 전 424/499·5차 421/499다.
+공통 Validation 후보는 4차를 유지했다. 이후 스마트폰 Source Test·패키징은 위 최신 결과에서 완료했고 공식 후보 교체는 없다.
+
+[휴대폰 얼굴 전용 결과](smartphone_web_skin_adaptation_20261112/README.md): 1차 두 모델과 2·3·4차의 실제 5회 학습을 회수했다.
+5개 모델·학습곡선·원본 지표·실행 설정·코드를 보관했다. Validation 기준 후보는 4차이며
+장비 유사성 최적·실제 질환 성능 개선을 입증한 것은 아니다. 후속 Source Test는 위 최신 결과에서 확인한다.
+
 [피부 4차·얼굴 4차·두피 2차 사용 ZIP](camera_adaptation_packages_20261111/README.md)을 패키징하고
 실제 로드·원본 예측 일치·압축 해제본의 단독 실행을 확인했다. 각 ZIP에 클래스·전처리·사용 예시·
 원본 학습 및 평가 기록이 있다. 기존 공식 후보 색인과 공통 추론 경로는 유지했다.

@@ -1,0 +1,357 @@
+{
+  "plan_sha256": "81302d9d466bd4631f18f9b859fd18696a05cd30998acd797a9ca45d4d2a15d6",
+  "plan": {
+    "schema": "mediflow_phone_final_test_v1",
+    "task": {
+      "domain": "web_skin",
+      "classes": [
+        "건선",
+        "아토피",
+        "여드름",
+        "정상",
+        "주사"
+      ],
+      "source_name": "web_skin_datasets",
+      "source_sha256": "f8908af3d54e521ad14c37a44b569d33fe92be3b8b9b66a8d80faf4ba964072d",
+      "input_policy": "center_square",
+      "batch_size": 8,
+      "models": {
+        "selected": {
+          "architecture": "pmg",
+          "size": 256,
+          "label_smoothing": 0.0,
+          "reference_candidate_id": "public_candidate_v2_pmg_b0_256_ce_20260922_235840_093d10de",
+          "initialization": "saved selected checkpoint",
+          "model": "results/web_skin/selected_models/v2/web_skin_model.keras",
+          "model_sha256": "83e659dd09a9355135ee0de0197037e81ece962777f59dedae8d9a37b49a3fc4"
+        }
+      }
+    },
+    "model_spec": {
+      "architecture": "pmg",
+      "size": 256,
+      "label_smoothing": 0.0,
+      "reference_candidate_id": "public_candidate_v2_pmg_b0_256_ce_20260922_235840_093d10de",
+      "initialization": "saved selected checkpoint",
+      "model": "results/web_skin/selected_models/v2/web_skin_model.keras",
+      "model_sha256": "83e659dd09a9355135ee0de0197037e81ece962777f59dedae8d9a37b49a3fc4"
+    },
+    "models": {
+      "initial": {
+        "root": "runtime",
+        "file": "results/web_skin/selected_models/v2/web_skin_model.keras",
+        "sha256": "83e659dd09a9355135ee0de0197037e81ece962777f59dedae8d9a37b49a3fc4"
+      },
+      "stage1": {
+        "root": "prior",
+        "file": "stage1_selected/best.keras",
+        "sha256": "39bcb2f3567f3f5bfa570a2fc7ecb5e8a03d1a601011a98063d83add39460cd7"
+      },
+      "stage2": {
+        "root": "prior",
+        "file": "stage2/best.keras",
+        "sha256": "ad2a4799b1c6df2b9c70b75332049109fdd8a7ae45dac8d27a9e028d3a92b1dd"
+      },
+      "stage3": {
+        "root": "prior",
+        "file": "stage3/best.keras",
+        "sha256": "d17252137398da71cf6e4e19122c21eabdc9ce2fa000cf88e345d67245d2eef3"
+      },
+      "stage4": {
+        "root": "prior",
+        "file": "stage4/best.keras",
+        "sha256": "f08958c745811dc34d8e876e742f911abc1f6938babdc64bd82a284d7e052c9e"
+      },
+      "stage5": {
+        "root": "joint",
+        "file": "stage5/best.keras",
+        "sha256": "e0bab7dd2a6d0eb588db5496fb6eee3b9c779f2c4e8d7aabf98a95fd504fc5ef"
+      }
+    },
+    "conditions": [
+      "clean",
+      "phone_lighting",
+      "phone_expanded",
+      "phone_refit",
+      "phone_joint"
+    ],
+    "profiles": {
+      "phone_lighting": {
+        "schema": "measured_camera_extended_v1",
+        "domain": "web_skin",
+        "lighting": {
+          "domain": "web_skin",
+          "photometric_operator": "bounded_additive_v3",
+          "brightness_offset": [
+            -9.812064954152099,
+            0.0
+          ],
+          "contrast": [
+            1.0,
+            1.0904393083614523
+          ],
+          "left_light": [
+            -0.21119308471679688,
+            0.0
+          ],
+          "scale_x": [
+            1.0,
+            1.0
+          ],
+          "scale_y": [
+            1.0,
+            1.0
+          ]
+        },
+        "color_a": [
+          0.0,
+          0.0
+        ],
+        "color_b": [
+          0.0,
+          0.0
+        ],
+        "texture_gain": [
+          1.0,
+          1.0
+        ],
+        "blur_sigma_roi64": [
+          0.0,
+          0.0
+        ],
+        "blur_input_scale": 0.41125000000000006
+      },
+      "phone_expanded": {
+        "schema": "measured_camera_extended_v1",
+        "domain": "web_skin",
+        "lighting": {
+          "domain": "web_skin",
+          "photometric_operator": "bounded_additive_v3",
+          "brightness_offset": [
+            -9.812064954152099,
+            0.0
+          ],
+          "contrast": [
+            1.0,
+            1.0904393083614523
+          ],
+          "left_light": [
+            -0.21119308471679688,
+            0.0
+          ],
+          "scale_x": [
+            1.0,
+            1.0
+          ],
+          "scale_y": [
+            1.0,
+            1.0
+          ]
+        },
+        "color_a": [
+          0.0,
+          1.0117187500000009
+        ],
+        "color_b": [
+          0.0,
+          0.0
+        ],
+        "texture_gain": [
+          0.95,
+          1.05
+        ],
+        "blur_sigma_roi64": [
+          0.0,
+          1.2158054711246198
+        ],
+        "blur_input_scale": 0.41125000000000006
+      },
+      "phone_refit": {
+        "schema": "measured_camera_extended_v1",
+        "domain": "web_skin",
+        "lighting": {
+          "domain": "web_skin",
+          "photometric_operator": "bounded_additive_v3",
+          "brightness_offset": [
+            -19.624129908304198,
+            0.0
+          ],
+          "contrast": [
+            1.0,
+            1.1808786167229048
+          ],
+          "left_light": [
+            -0.42238616943359375,
+            0.0
+          ],
+          "scale_x": [
+            1.0,
+            1.0
+          ],
+          "scale_y": [
+            1.0,
+            1.0
+          ]
+        },
+        "color_a": [
+          0.0,
+          0.0
+        ],
+        "color_b": [
+          0.0,
+          0.0
+        ],
+        "texture_gain": [
+          0.85,
+          1.15
+        ],
+        "blur_sigma_roi64": [
+          0.0,
+          2.4316109422492396
+        ],
+        "blur_input_scale": 0.41125000000000006
+      },
+      "phone_joint": {
+        "schema": "measured_camera_extended_v1",
+        "domain": "web_skin",
+        "lighting": {
+          "domain": "web_skin",
+          "photometric_operator": "bounded_additive_v3",
+          "brightness_offset": [
+            -19.624129908304198,
+            -10.181201425385177
+          ],
+          "contrast": [
+            1.0,
+            1.1808786167229048
+          ],
+          "left_light": [
+            -0.42238616943359375,
+            0.0
+          ],
+          "scale_x": [
+            1.0,
+            1.0
+          ],
+          "scale_y": [
+            1.0,
+            1.0
+          ]
+        },
+        "color_a": [
+          0.0,
+          1.0117187500000009
+        ],
+        "color_b": [
+          -1.2126953125000002,
+          0.0
+        ],
+        "texture_gain": [
+          1.0,
+          1.0
+        ],
+        "blur_sigma_roi64": [
+          0.0,
+          0.0
+        ],
+        "blur_input_scale": 0.41125000000000006
+      }
+    },
+    "manifest_sha256": "7c8b41878883193e5dd340ab8a4b7f804a3ab7f37c8159093b663937d997a738",
+    "test_count": 400,
+    "test_support": [
+      80,
+      80,
+      80,
+      80,
+      80
+    ],
+    "transform_seed": 1707,
+    "evaluation_transform_probability": 1.0,
+    "selected_on_validation": "stage4",
+    "test_used_for_selection": false,
+    "target_photos_used": false,
+    "input_records": [
+      {
+        "root": "prior",
+        "file": "summary.json",
+        "sha256": "9e280a9f136ad05a8f40c1fbc8b0694eaa752186c7f4b1aa5323c08694694ef8"
+      },
+      {
+        "root": "prior",
+        "file": "runtime_identity.json",
+        "sha256": "d6211da9dced32a508ffa7de286fb5a9654232f5be7aa4db3d4cd99e1b988a71"
+      },
+      {
+        "root": "prior",
+        "file": "source_manifest.json",
+        "sha256": "7c8b41878883193e5dd340ab8a4b7f804a3ab7f37c8159093b663937d997a738"
+      },
+      {
+        "root": "prior",
+        "file": "validation_comparison.json",
+        "sha256": "c289e65e309e98f6b54b5052b343be2414535d503c421197d46f69835840820f"
+      },
+      {
+        "root": "prior",
+        "file": "stage1_selected/complete.json",
+        "sha256": "9a2eedf8e87e6b1a7eabb197b536821301d14b931e734425c2afa9090f72c4ff"
+      },
+      {
+        "root": "prior",
+        "file": "stage2/complete.json",
+        "sha256": "038bae36566e622b72393645dc8dd21b6df5f1e333114af9a0f27fd570f4088b"
+      },
+      {
+        "root": "prior",
+        "file": "stage3/complete.json",
+        "sha256": "5f0669c202f4a7324fd71231d2d92e22851c4253fd744df0922a96bb90243f20"
+      },
+      {
+        "root": "prior",
+        "file": "stage4/complete.json",
+        "sha256": "8985c2170c0bbd8be351bf1a83dc6764649190adcc67f2ceaf74dd0147d72f02"
+      },
+      {
+        "root": "joint",
+        "file": "summary.json",
+        "sha256": "246c7abbbf32d0aada18e8057c73fae534f563ac575a22ea00d57656b51bb297"
+      },
+      {
+        "root": "joint",
+        "file": "runtime_identity.json",
+        "sha256": "d7b735255b3732b4cc6c21921525871c1b7f786007ba98ec7af302275ec353ad"
+      },
+      {
+        "root": "joint",
+        "file": "source_manifest.json",
+        "sha256": "7c8b41878883193e5dd340ab8a4b7f804a3ab7f37c8159093b663937d997a738"
+      },
+      {
+        "root": "joint",
+        "file": "validation_comparison.json",
+        "sha256": "5586199b578370c62e0a2fa188c2b6b0d26189c6408ee159c8384d543d05381b"
+      },
+      {
+        "root": "joint",
+        "file": "selection.json",
+        "sha256": "6399c5ed7183a4e3e5c548e9c505acc21acfad1629e416cd41edf4217f4cb32b"
+      },
+      {
+        "root": "joint",
+        "file": "stage5/complete.json",
+        "sha256": "a2a8eea36959cd42722804d933af64ba43fc8d3ef350d0a461c1bca8dd568031"
+      },
+      {
+        "root": "joint",
+        "file": "reproduction/study.json",
+        "sha256": "42609e1a8cbfb0b7dd807036ca4c3ab6b8bb22c893397fc60d8561f96f549439"
+      }
+    ],
+    "scope": "Source Test only; historical checkpoint exposure and person independence unverified",
+    "primary_question": "Evaluate fixed Validation candidate stage4 against original PMG; describe stages1-5 without reselection",
+    "repository_head": "f608e110b508a640a01cd72f18e2f0ca390b698c",
+    "uncommitted_evaluator_sha256": "84ad92493e39c03ce2104836212fc17f2606590561f33e684ddd46c575d32013",
+    "prior_validation_sha256": "5586199b578370c62e0a2fa188c2b6b0d26189c6408ee159c8384d543d05381b"
+  }
+}

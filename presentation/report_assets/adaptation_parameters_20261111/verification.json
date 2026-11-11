@@ -1,0 +1,57 @@
+{
+  "status": "passed",
+  "as_of": "2026-11-11",
+  "completed_training_trials": 15,
+  "planned_smartphone_trials": 5,
+  "profile_count": 16,
+  "parameter_rows": 184,
+  "training_rows": 20,
+  "original_source_files_sha256_rechecked": 58,
+  "raw_configuration_equality": true,
+  "csv_numeric_round_trip": true,
+  "history_epochs_per_completed_trial": 5,
+  "branches_use_original_pre_stage1_checkpoint": true,
+  "excel_sheets": 3,
+  "excel_raw_numeric_cells_checked": 364,
+  "excel_formulas": 112,
+  "excel_formula_errors": 0,
+  "excel_lighting_formula_caches_checked": 48,
+  "excel_blur_formula_caches_checked": 16,
+  "local_links_checked": 26,
+  "rendered_previews_visually_reviewed": 7,
+  "models_images_existing_results_modified": false,
+  "new_training_or_evaluation_executed": false,
+  "ruff_check_src_tests": "passed",
+  "pytest": {
+    "status": "passed",
+    "tests": 235,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 3,
+    "passed": 232,
+    "skipped_reason": "optional pandas dependency unavailable"
+  },
+  "files": {
+    "ADAPTATION_EXPERIMENT_PARAMETERS_20261111.csv": {
+      "bytes": 21994,
+      "sha256": "6c54c2276899a7fea268a72cbad4f74245860629345a71988e834efda9b9ce40"
+    },
+    "ADAPTATION_EXPERIMENT_PARAMETERS_20261111.json": {
+      "bytes": 404669,
+      "sha256": "fae84bd17108dbb9be7c3b4b61269951a2fe1fb9dc87e594443d893cf3b4100b"
+    },
+    "ADAPTATION_TRAINING_RUNS_20261111.csv": {
+      "bytes": 5532,
+      "sha256": "c57333167dee00580e950a513c534a1ddcaea900e671c8e38e9e1895f24bea25"
+    },
+    "MediFlow_Adaptation_Parameters_20261111.xlsx": {
+      "bytes": 23522,
+      "sha256": "7185df21ed5fb52de2774b8d10c6949bb44a4d89401f95391d370108b2981cd3"
+    },
+    "README.md": {
+      "bytes": 1143,
+      "sha256": "a8e9bc7147875f0722c66186c5c07508b1fc382adeb36c9a287a6936b77db578"
+    }
+  },
+  "report_sha256": "f25b0fd53b1a66c8377e2d9350f37fd386a20cd4af3d95a1f8b51a736a38a85e"
+}

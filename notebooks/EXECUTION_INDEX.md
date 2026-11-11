@@ -6,6 +6,9 @@
 
 | 노트북 | 확인 상태 | 근거 |
 | --- | --- | --- |
+| [스마트폰 고정 최종 Test](camera_adaptation/MediFlow_Smartphone_Final_Test_20261112.ipynb) | 사용자 Colab 실행·400장·30개 비교·12,000개 예측 검산 완료 | [결과](../results/smartphone_final_test_20261112/README.md), [사전 설계](../docs/research/camera_adaptation/SMARTPHONE_FINAL_TEST_20261112.md) |
+| [휴대폰 근접 후보 추가 1회](camera_adaptation/MediFlow_Smartphone_Joint_Training_20261112.ipynb) | 사용자 실행·5 epoch 완료·최적 3 epoch·결과 회수 확인 | [결과·모델](../results/smartphone_joint_adaptation_20261112/README.md), [실험 계약](../docs/research/camera_adaptation/SMARTPHONE_JOINT_TRAINING_20261112.md) |
+| [스마트폰 얼굴 1~4차](camera_adaptation/MediFlow_Smartphone_WebSkin_Stages_20261111.ipynb) | 최신 강도 설정으로 실제 5회×5 epoch 완료·결과 회수. 새 Source Test 미실행 | [결과 분석](../docs/research/camera_adaptation/SMARTPHONE_ADAPTATION_RESULT_REVIEW_20261112.md), [모델·기록](../results/smartphone_web_skin_adaptation_20261112/README.md) |
 | [4차 추가 Test](camera_adaptation/completed/MediFlow_Adaptation_Stage4_Test_20261111.ipynb) | 실제 4차 15개 평가·기존 36개 재사용·결과 회수 완료 | [결과 분석](../docs/research/camera_adaptation/ADAPTATION_STAGE4_TEST_RESULT_REVIEW_20261111.md) |
 | [완료한 4차](camera_adaptation/completed/MediFlow_Adaptation_Stage4_20261111.ipynb) | 세 분야 학습 완료, 설정 492ee01afb45 | [결과](../results/camera_adaptation_stage4_before_refit_20261111/README.md) |
 | [01_common_dataset_audit_colab.ipynb](01_common_dataset_audit_colab.ipynb) | 공개 데이터 감사 기록 있음; 사람·세션 누수 전부 검증 아님 | [근거](../docs/research/public_data/skin/SKIN_DATA_AUDIT_20260909.md) |
