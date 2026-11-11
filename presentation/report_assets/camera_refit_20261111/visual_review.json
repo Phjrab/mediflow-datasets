@@ -1,0 +1,104 @@
+{
+  "status": "reviewed",
+  "reviewer": "Codex descriptive visual inspection",
+  "clinical_validation": false,
+  "full_461_source_visual_review": false,
+  "source_examples_inspected": 40,
+  "pages_reviewed": [
+    {
+      "file": "train_review_skin_01.png",
+      "paths": [
+        "skin_clean_v1_20260909_063802_6cd88688/original/train/광선각화증/C00_5ed7a18d9ba7dffd28fc.png",
+        "skin_clean_v1_20260909_063802_6cd88688/original/train/광선각화증/C00_d84490bfd2d5227080a8.png",
+        "skin_clean_v1_20260909_063802_6cd88688/original/train/기저세포암/C01_742a3c86063f8dc9a6ce.png",
+        "skin_clean_v1_20260909_063802_6cd88688/original/train/기저세포암/C01_130332b1ae382c5df655.png",
+        "skin_clean_v1_20260909_063802_6cd88688/original/train/보웬병/C02_6533e6a06957b438b3a4.png",
+        "skin_clean_v1_20260909_063802_6cd88688/original/train/보웬병/C02_cb2c561563f308e4b649.png"
+      ],
+      "sha256": "17fa7c05fa6461849796b37c80a7fed44b5d402f9ce957118a1693c82bf1a9d8"
+    },
+    {
+      "file": "train_review_skin_02.png",
+      "paths": [
+        "skin_clean_v1_20260909_063802_6cd88688/original/train/사마귀/C03_96689f8707de6c2c55d0.png",
+        "skin_clean_v1_20260909_063802_6cd88688/original/train/사마귀/C03_b74869566c2133969189.png",
+        "skin_clean_v1_20260909_063802_6cd88688/original/train/지루각화증/C04_0d1d4dd627d01373f9e8.png",
+        "skin_clean_v1_20260909_063802_6cd88688/original/train/지루각화증/C04_2c895592c05aa63e6122.png",
+        "skin_clean_v1_20260909_063802_6cd88688/original/train/편평세포암/C05_31794ad777dd450ba1be.png",
+        "skin_clean_v1_20260909_063802_6cd88688/original/train/편평세포암/C05_e21f0fe4f91693165317.png"
+      ],
+      "sha256": "e49bdbdd20f9d087174051deaaf1d06add58ec8b90c54b04d0fe35fc67413ed7"
+    },
+    {
+      "file": "train_review_skin_03.png",
+      "paths": [
+        "skin_clean_v1_20260909_063802_6cd88688/original/train/표피낭종/C06_a47b6b7264064e667f7f.png",
+        "skin_clean_v1_20260909_063802_6cd88688/original/train/표피낭종/C06_8ef4c4fa83f489dfd26c.png",
+        "skin_clean_v1_20260909_063802_6cd88688/original/train/피부섬유종/C07_370224a86c665acecbbe.png",
+        "skin_clean_v1_20260909_063802_6cd88688/original/train/피부섬유종/C07_97adbe675ac46519f6a9.png",
+        "skin_clean_v1_20260909_063802_6cd88688/original/train/혈관종/C08_2de79d12d9011f671ffb.png",
+        "skin_clean_v1_20260909_063802_6cd88688/original/train/혈관종/C08_cdf6e8de6cde634a3a5e.png"
+      ],
+      "sha256": "72904f1febdc8b93384c8ede0161d905dcaf9c21dab3d7f25fcd71b27a1cfbac"
+    },
+    {
+      "file": "train_review_skin_04.png",
+      "paths": [
+        "skin_clean_v1_20260909_063802_6cd88688/original/train/흑색점/C09_118f81081862d01ee4e3.png",
+        "skin_clean_v1_20260909_063802_6cd88688/original/train/흑색점/C09_59b348ec64f54a4074ed.png"
+      ],
+      "sha256": "93a071765344292d66ae3125fab1d9b23d32b64452e53d3101c4147e4f0e1db4"
+    },
+    {
+      "file": "train_review_web_skin_01.png",
+      "paths": [
+        "web_skin_processed/original/train/건선/건선_000335.png",
+        "web_skin_processed/original/train/건선/건선_000183.png",
+        "web_skin_processed/original/train/아토피/아토피_000444.png",
+        "web_skin_processed/original/train/아토피/아토피_000642.png",
+        "web_skin_processed/original/train/여드름/여드름_000505.png",
+        "web_skin_processed/original/train/여드름/여드름_000288.png"
+      ],
+      "sha256": "f030cb7a6b0bea151828766f83e5485bf5df62010e3f312cf4efd9b5eb461b8b"
+    },
+    {
+      "file": "train_review_web_skin_02.png",
+      "paths": [
+        "web_skin_processed/original/train/정상/정상_000496.png",
+        "web_skin_processed/original/train/정상/정상_000099.png",
+        "web_skin_processed/original/train/주사/주사_000496.png",
+        "web_skin_processed/original/train/주사/주사_000012.png"
+      ],
+      "sha256": "143723dc0ce49b7d062bc07d1c91a871487de5b8c6ce80d908e306987f0996da"
+    },
+    {
+      "file": "train_review_hair_01.png",
+      "paths": [
+        "hair_clean_v1_20260907_053616/original/train/모낭사이홍반/모낭사이홍반_00100.jpg",
+        "hair_clean_v1_20260907_053616/original/train/모낭사이홍반/모낭사이홍반_01697.jpg",
+        "hair_clean_v1_20260907_053616/original/train/미세각질/미세각질_01154.jpg",
+        "hair_clean_v1_20260907_053616/original/train/미세각질/미세각질_01169.jpg",
+        "hair_clean_v1_20260907_053616/original/train/비듬/비듬_00385.jpg",
+        "hair_clean_v1_20260907_053616/original/train/비듬/비듬_00395.jpg"
+      ],
+      "sha256": "bdbfc9ead29438892b58bd29719a3383f279aa370dee792501ca1d3b5d42f0bc"
+    },
+    {
+      "file": "train_review_hair_02.png",
+      "paths": [
+        "hair_clean_v1_20260907_053616/original/train/탈모/탈모_01229.jpg",
+        "hair_clean_v1_20260907_053616/original/train/탈모/탈모_00458.jpg",
+        "hair_clean_v1_20260907_053616/original/train/피지과다/피지과다_00231.jpg",
+        "hair_clean_v1_20260907_053616/original/train/피지과다/피지과다_00826.jpg"
+      ],
+      "sha256": "435d83b242bda300192ccd60b0cf0a5740c6335837e465f138c58199ab228419"
+    }
+  ],
+  "actual_target_examples_inspected": 6,
+  "observations": {
+    "skin": "Brighter, lower contrast; same structures remain at the same positions in inspected images; bright examples show attenuated lesion colour and edge contrast. Clinical preservation is not established.",
+    "web_skin": "Stronger darkness and lateral shading; geometry unchanged. Some subtle facial detail is less visible; disease feature preservation requires evaluation.",
+    "hair": "Previous and fitted settings are identical. Colour, hair coverage and global contrast mismatch remain; no extra blur or sharpening added."
+  },
+  "scope": "Accept as an exploratory photometric-training candidate; compare original and shifted Validation, including class recall; not a declaration of camera equivalence or better disease classification."
+}

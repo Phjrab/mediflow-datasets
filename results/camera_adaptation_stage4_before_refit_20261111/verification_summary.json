@@ -1,0 +1,24 @@
+{
+  "stage_label": "stage4_before_refit",
+  "preserved_original_files_rehashed": 27,
+  "existing_identical_manifests_rehashed": 3,
+  "source_zip_unchanged": true,
+  "model_load_passed": [
+    "skin",
+    "web_skin",
+    "hair"
+  ],
+  "metric_vectors_recomputed": 96,
+  "comparison_rows_verified": 36,
+  "ruff": "passed",
+  "pytest": {
+    "passed": 195,
+    "skipped": 3,
+    "skip_reason": "matplotlib unavailable"
+  },
+  "local_markdown_links_checked": 313,
+  "missing_links": [],
+  "refitted_config_sha256_unchanged": "e6bc85bc0a7dc9a0d34d1affef912e3b2ef85a2f0106d5092c8e20680abadfa8",
+  "new_training_executed": false,
+  "new_source_test_executed": false
+}

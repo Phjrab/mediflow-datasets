@@ -1,0 +1,58 @@
+{
+  "skin": {
+    "starting_model_sha256": "1b146a6a53742226ec677865aa71bd842a28c9db9c3174b352dd8bc87270770b",
+    "previous_model_sha256": "9687fa503d8287b880e58e5014cae0a0efd47e750f5ececcc11d813367e7ce6b",
+    "source_manifest_sha256": "36f79b61a42e9ed634ffa7d4c490efefe5e5031a8bbdce1daf630b1e01e7e27d",
+    "classes": [
+      "광선각화증",
+      "기저세포암",
+      "보웬병",
+      "사마귀",
+      "지루각화증",
+      "편평세포암",
+      "표피낭종",
+      "피부섬유종",
+      "혈관종",
+      "흑색점"
+    ],
+    "input_size": 224,
+    "batch_size": 16,
+    "input_cache_bytes": 6233665536,
+    "source_zip": "/content/drive/MyDrive/mediflow_Project/datasets/skin_datasets.zip",
+    "completed_result_available": false
+  },
+  "web_skin": {
+    "starting_model_sha256": "83e659dd09a9355135ee0de0197037e81ece962777f59dedae8d9a37b49a3fc4",
+    "previous_model_sha256": "5e181c1ff064eb1d501c57ccecba91703cfe59b14d02b258152b3ca737c46981",
+    "source_manifest_sha256": "7c8b41878883193e5dd340ab8a4b7f804a3ab7f37c8159093b663937d997a738",
+    "classes": [
+      "건선",
+      "아토피",
+      "여드름",
+      "정상",
+      "주사"
+    ],
+    "input_size": 256,
+    "batch_size": 8,
+    "input_cache_bytes": 4349755392,
+    "source_zip": "/content/drive/MyDrive/mediflow_Project/datasets/web_skin_datasets.zip",
+    "completed_result_available": false
+  },
+  "hair": {
+    "starting_model_sha256": "9faa33b8f79f45ef6e7be415473e2ee5225f6195fff04d098828733db23ed3c2",
+    "previous_model_sha256": "fa2c59ae6a0b1342b8c693014d0a951c59064a4c8439a313f2520e1ce8c224fd",
+    "source_manifest_sha256": "c6320fa7d2ef25332d508b3da868d2731d61ce7c8cd3ed2ebc505e6cd0b54717",
+    "classes": [
+      "모낭사이홍반",
+      "미세각질",
+      "비듬",
+      "탈모",
+      "피지과다"
+    ],
+    "input_size": 384,
+    "batch_size": 8,
+    "input_cache_bytes": 26612858880,
+    "source_zip": "/content/drive/MyDrive/mediflow_Project/datasets/hair_datasets.zip",
+    "completed_result_available": false
+  }
+}

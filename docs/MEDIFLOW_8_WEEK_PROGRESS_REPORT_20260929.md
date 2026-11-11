@@ -6,7 +6,7 @@
 
 > **주차 표기 안내:** 아래 1~8주차는 완료한 작업을 학교 주간 보고서에 맞게 나눈 **내용별 구성**이다. 특히 1~3주차에 해당하는 초기 데이터 수집·첫 학습의 정확한 시작일과 매주 작업일은 원본 기록으로 확정하지 못했다. 따라서 이 문서의 주차가 실제로 연속한 8개 달력 주였다고 주장하지 않는다. 제출 양식에 날짜가 필요하면 본인의 작업 기록으로 각 주차 기간을 먼저 확인해야 한다. 9월 7~29일의 후속 실험은 날짜가 남아 있지만 이 표의 4~8주차와 하루 단위로 일치시키지 않았다.
 
-이 문서는 [최종 상세 보고서](FINAL_DETAILED_REPORT_20260928.md), [전체 실험 대장](research/ALL_EXPERIMENTS_RATIONALE_AND_RESULTS_20260924.md), [발표 자료실](../presentation/README.md), `results/`의 선정·평가 기록을 주간 흐름으로 재구성했다. 새로운 학습이나 평가를 수행한 기록이 아니다. `skin`은 현미경 피부, `web_skin`은 얼굴 사진, `hair`는 현미경 두피다. Hair의 5클래스와 6클래스도 서로 다른 분류 과제다. **Validation으로 실험·후보를 고르고 Test는 고정한 후보를 평가**한다는 원칙을 기준으로 결과를 읽는다.
+이 문서는 [최종 상세 보고서](FINAL_DETAILED_REPORT_20260928.md), [전체 실험 대장](research/public_data/ALL_EXPERIMENTS_RATIONALE_AND_RESULTS_20260924.md), [발표 자료실](../presentation/README.md), `results/`의 선정·평가 기록을 주간 흐름으로 재구성했다. 새로운 학습이나 평가를 수행한 기록이 아니다. `skin`은 현미경 피부, `web_skin`은 얼굴 사진, `hair`는 현미경 두피다. Hair의 5클래스와 6클래스도 서로 다른 분류 과제다. **Validation으로 실험·후보를 고르고 Test는 고정한 후보를 평가**한다는 원칙을 기준으로 결과를 읽는다.
 
 ## 전체 흐름
 
@@ -41,7 +41,7 @@ Skin의 선택 클래스는 기저세포암·편평세포암·보웬병·광선�
 
 촬영 방식이 다른 세 문제의 데이터 범위와 클래스 목록을 확정했다. 다만 원천 전체 ZIP은 현재 로컬에 없어 AI Hub의 원천 규모와 당시 선택 수량은 **기록된 값**이다. Skin의 각 클래스에서 쓰지 않은 약 100장에 대한 사진별 제외 사유도 남아 있지 않다. Hair 원천의 101,027건을 다섯 클래스에 단순 분배하거나 여러 증상 라벨을 합산해 고유 인물 수로 해석하지 않는다.
 
-**근거:** [초기 선정 설명](../presentation/1차/내용.md), [원천 클래스표](presentations/DATA_SOURCE_CLASS_TABLE.md), [연구 배경](research/PROJECT_BACKGROUND.md). 발표에는 [초기 데이터 선정 그림](../presentation/1차/시각자료/)을 사용한다.
+**근거:** [초기 선정 설명](../presentation/1차/내용.md), [원천 클래스표](presentations/DATA_SOURCE_CLASS_TABLE.md), [연구 배경](research/PROJECT_BACKGROUND.md). 발표에는 [초기 데이터 선정 그림](../presentation/1차/시각자료)을 사용한다.
 
 ## 2주차 · 분할·증강 설계와 Skin 첫 모델
 
@@ -65,7 +65,7 @@ Skin은 ImageNet B0·224에서 backbone을 고정하고 15 epoch 동안 분류�
 
 한때 YOLO로 병변을 찾고 잘라 Skin 분류기에 넣는 방안을 검토했지만, 병변의 범위가 불분명하거나 얼굴 전체에 증상이 퍼진 경우를 작은 crop 하나로 설명하기 어렵고 라벨링도 실패·중단됐다. 따라서 **현미경 피부 Skin과 얼굴 전체 Web Skin을 별도 과제**로 유지했다. YOLO 검출 성능을 수치 실험으로 입증한 것은 아니다.
 
-**근거:** [초기 학습·전처리 원고](../presentation/1차/내용.md), [초기 모델 결과](../results/skin/1_training/), [4곡선 통합 그림](../presentation/1차/시각자료/skin__initial_four_training_curves.png).
+**근거:** [초기 학습·전처리 원고](../presentation/1차/내용.md), [초기 모델 결과](../results/skin/1_training), [4곡선 통합 그림](../presentation/1차/시각자료/skin__initial_four_training_curves.png).
 
 ## 3주차 · Web Skin·Hair 첫 학습과 문제 정의
 
@@ -86,7 +86,7 @@ Hair의 비듬·미세각질·피지과다 등은 가까운 질감으로 보였�
 
 첫 모델의 점수를 단순히 더 올리기 전에 **같은 사진이 학습과 평가에 함께 들어 있지는 않은지** 확인해야 했다. 동일·파생 사진이 분할을 넘나들면 점수가 높아도 처음 보는 사진에서 잘한다는 근거가 약해진다. 이 문제 제기가 다음 데이터 감사와 Clean 분할의 출발점이었다.
 
-**근거:** [초기 보고서](../presentation/1차/내용.md), [Web Skin 초기 결과](../results/web_skin/1_training/), [Hair 초기 결과](../results/hair/1_training/), [초기 학습곡선](../presentation/1차/시각자료/).
+**근거:** [초기 보고서](../presentation/1차/내용.md), [Web Skin 초기 결과](../results/web_skin/1_training), [Hair 초기 결과](../results/hair/1_training), [초기 학습곡선](../presentation/1차/시각자료).
 
 ## 4주차 · GitHub 기반 재현 정리와 데이터 중복 감사
 
@@ -108,9 +108,9 @@ Hair의 비듬·미세각질·피지과다 등은 가까운 질감으로 보였�
 
 ### 이 주차의 산출물
 
-Clean 데이터 버전과 감사 보고서, 샘플 모델 입력·출력 계약, 도메인별 재현 기준을 확보했다. 선정 모델의 클래스 배열과 RGB `float32` 0–255 입력, TensorFlow bilinear resize, 외부 정규화 금지 규칙은 [모델 사용법](../results/MODEL_USAGE.md)에 기록했다. [평가 재현 점검](research/EVALUATION_REPRODUCTION_AUDIT_20260927.md)은 검증된 것과 원본 미보관으로 할 수 없는 것을 나눈다.
+Clean 데이터 버전과 감사 보고서, 샘플 모델 입력·출력 계약, 도메인별 재현 기준을 확보했다. 선정 모델의 클래스 배열과 RGB `float32` 0–255 입력, TensorFlow bilinear resize, 외부 정규화 금지 규칙은 [모델 사용법](../results/MODEL_USAGE.md)에 기록했다. [평가 재현 점검](research/public_data/EVALUATION_REPRODUCTION_AUDIT_20260927.md)은 검증된 것과 원본 미보관으로 할 수 없는 것을 나눈다.
 
-**근거:** [2차 상세 원고](../presentation/2차/내용.md), [Skin 감사](research/SKIN_DATA_AUDIT_20260909.md), [Hair 정제 분석](research/HAIR_EXPERIMENT_SUMMARY_20260907.md), [발표용 감사 시각자료](../presentation/2차/시각자료/).
+**근거:** [2차 상세 원고](../presentation/2차/내용.md), [Skin 감사](research/public_data/skin/SKIN_DATA_AUDIT_20260909.md), [Hair 정제 분석](research/public_data/hair/HAIR_EXPERIMENT_SUMMARY_20260907.md), [발표용 감사 시각자료](../presentation/2차/시각자료).
 
 ## 5주차 · 2단계 전이학습과 v1 후보 선정
 
@@ -140,7 +140,7 @@ Web Skin B0·256에서 Stage 1 최고 Val Accuracy `0.7039999961853027`, Stage 2
 
 Skin은 Clean 원본과 증강 Train만 비교했고, 같은 Val에서 Accuracy `0.973→0.982`, Macro F1 `0.9730455448862949→0.9820008885656606`이라 증강 v1을 택했다. Web Skin은 B0·256·CE와 B1·256·LS의 Accuracy가 `0.796` 동률이었지만 **당시 Accuracy 우선·동률이면 앞선 실험 유지** 규칙을 적용해 B0를 유지했다. Hair는 Validation 선두의 B1 연장 조건을 택했다. 이 셋은 **논문 기반 후속 실험 전 정식 선정본**이지 임의의 미완성 ‘기본 모델’이 아니다.
 
-**근거:** [2차 결과와 방법](../presentation/2차/내용.md), [전체 실험 대장](research/ALL_EXPERIMENTS_RATIONALE_AND_RESULTS_20260924.md), [v1 모델 폴더 안내](../results/SELECTED_MODEL_PATHS.md), [2차 학습곡선·성능 그림](../presentation/2차/시각자료/).
+**근거:** [2차 결과와 방법](../presentation/2차/내용.md), [전체 실험 대장](research/public_data/ALL_EXPERIMENTS_RATIONALE_AND_RESULTS_20260924.md), [v1 모델 폴더 안내](../results/SELECTED_MODEL_PATHS.md), [2차 학습곡선·성능 그림](../presentation/2차/시각자료).
 
 ## 6주차 · 두피·얼굴에 맞춘 논문 방법과 v2
 
@@ -176,7 +176,7 @@ PMG B0·256 v2의 고정 Test 400장 결과는 Accuracy `0.915`, Macro F1 `0.914
 
 [MedSigLIP-448 모델 카드](https://developers.google.com/health-ai-developer-foundations/medsiglip/model-card)를 참고해 의료 이미지 인코더가 ImageNet CNN보다 나은 특징을 제공하는지 확인했다. 본체는 고정하고 embedding 위에 Linear 분류층만 학습했다. Web Skin Val Accuracy/Macro F1은 `0.824`/`0.8195774288599683`, Hair 5종은 `0.7699680511182109`/`0.7687534259685547`이었다. 두 과제 모두 각 v2보다 낮아 Test 평가·최종 후보 패키징은 하지 않았다. 저장된 작은 분류층만으로 독립 추론할 수 없고 외부 인코더가 필요하다. **이 실험은 의료 영상 분류 표현 실험이지 대화형 VLM 구현이 아니다.** Skin v1은 이 단계에서 다시 학습하지 않았다.
 
-**근거:** [3차 실험표·그림](../presentation/3차/내용.md), [Hair 최종 분석](research/PAPER_EXPERIMENTS_FINAL_ANALYSIS_20260922.md), [Web Skin 실험](research/WEB_SKIN_PAPER_METHOD_RESULT_20260922.md), [MedSigLIP 결과](research/ALL_EXPERIMENTS_RATIONALE_AND_RESULTS_20260924.md).
+**근거:** [3차 실험표·그림](../presentation/3차/내용.md), [Hair 최종 분석](research/public_data/PAPER_EXPERIMENTS_FINAL_ANALYSIS_20260922.md), [Web Skin 실험](research/public_data/web_skin/WEB_SKIN_PAPER_METHOD_RESULT_20260922.md), [MedSigLIP 결과](research/public_data/ALL_EXPERIMENTS_RATIONALE_AND_RESULTS_20260924.md).
 
 ## 7주차 · Hair `양호` 추가와 독립된 6클래스 실험
 
@@ -206,7 +206,7 @@ B0 안에서는 증강이 Val Macro F1을 높였고 B1 안에서는 원본이 �
 
 두 모델은 `양호` Test 53장 중 각각 49장을 맞혔다. 하지만 기존 5종 Test 1,252장과 새 6종 Test 1,305장, 출력 5개와 6개는 다른 평가 과제다. **5종 대비 Macro F1 숫자 차이를 클래스 추가의 개선 효과로 말하지 않는다.** 향후에는 양호 원천 라벨과 사람/세션 단위 독립성, 유사 이미지 겹침을 추가로 검증해야 한다.
 
-**근거:** [Hair 5종·6종 분석](research/HAIR_5CLASS_6CLASS_EXPERIMENT_ANALYSIS_20260928.md), [6종 네 조건 결과](research/HAIR_SIX_CLASS_FOUR_RESULTS_20260928.md), [4차 학습곡선·성능 그림](../presentation/4차/시각자료/), [두 6종 모델](../results/SELECTED_MODEL_PATHS.md).
+**근거:** [Hair 5종·6종 분석](research/public_data/hair/HAIR_5CLASS_6CLASS_EXPERIMENT_ANALYSIS_20260928.md), [6종 네 조건 결과](research/public_data/hair/HAIR_SIX_CLASS_FOUR_RESULTS_20260928.md), [4차 학습곡선·성능 그림](../presentation/4차/시각자료), [두 6종 모델](../results/SELECTED_MODEL_PATHS.md).
 
 ## 8주차 · 34개 모델 실행 비용, 최종 후보와 전달 준비
 
@@ -234,7 +234,7 @@ B0 안에서는 증강이 Val Macro F1을 높였고 B1 안에서는 원본이 �
 
 발표용 1~4차 시각자료와 해설은 [presentation](../presentation/README.md)에 모았고, 숫자의 원본은 각 `results/` JSON·CSV·선정 패키지다. 현재 폴더를 팀원이 Git에서 받으면 모델·문서로 장비 측정과 LLM 연결 작업을 **시작할 수 있지만**, 업로드만으로 키오스크 연결이나 실제 장비 검증이 완료되지는 않는다.
 
-**근거:** [34개 원시 측정](../results/runtime_benchmark_20260928_051423/benchmark.csv), [측정 해석](research/RUNTIME_BENCHMARK_REVIEW_20260928.md), [최종 모델 선정](../results/FINAL_MODEL_SELECTION_20260928.md), [키오스크 코드 분석](research/KIOSK_CORE_REVIEW_20260913.md), [4차 시각자료 안내](../presentation/4차/시각자료_사용안내.md).
+**근거:** [34개 원시 측정](../results/runtime_benchmark_20260928_051423/benchmark.csv), [측정 해석](research/public_data/RUNTIME_BENCHMARK_REVIEW_20260928.md), [최종 모델 선정](../results/FINAL_MODEL_SELECTION_20260928.md), [키오스크 코드 분석](research/integration/KIOSK_CORE_REVIEW_20260913.md), [4차 시각자료 안내](../presentation/4차/시각자료_사용안내.md).
 
 ## 주차별 상세 수행·분석 기록
 
@@ -346,7 +346,7 @@ Skin에서는 초기 9,000장 중 완전 동일 사진 51장을 정리해 Clean 
 
 선정 EfficientNet은 입력 RGB `float32` 0–255를 받고 모델 내부에서 `/255`를 수행한다. 저장 모델 밖에서 다시 나누면 입력이 0–1이 되어 모델 내부에서 0–0.0039로 줄어들기 때문에 학습 당시와 다른 결과가 나온다. 재현용 이미지는 TensorFlow에서 RGB로 읽고 bilinear로 목표 크기로 맞추며 자동 EXIF 회전·crop/padding을 하지 않는다고 정리했다. 클래스 배열은 각 저장 폴더의 `class_names.json` 순서가 모델 출력의 인덱스다. 팀원이 결과에 다른 순서의 질환명을 붙이면 점수가 맞아도 결과 이름이 틀릴 수 있다. 모델 파일 해시와 입력 크기·출력 차원·점수 배열도 함께 확인하도록 했다.
 
-초기 여섯 모델의 저장 보고서에 적힌 수치와 현재 보유 가중치의 메타데이터·클래스 계약을 검토한 것은 가능했다. 그러나 **정제 전 당시 Test 이미지가 없어서 동일 사진으로 초기 예측을 다시 생성하지 못했다.** 이 제한은 [평가 재현 감사](research/EVALUATION_REPRODUCTION_AUDIT_20260927.md)에 따로 남겼다. 새 Clean Test로 바꾸어 실행하면 다른 평가이므로 ‘초기 평가 완전 재현’이라고 쓰지 않는다.
+초기 여섯 모델의 저장 보고서에 적힌 수치와 현재 보유 가중치의 메타데이터·클래스 계약을 검토한 것은 가능했다. 그러나 **정제 전 당시 Test 이미지가 없어서 동일 사진으로 초기 예측을 다시 생성하지 못했다.** 이 제한은 [평가 재현 감사](research/public_data/EVALUATION_REPRODUCTION_AUDIT_20260927.md)에 따로 남겼다. 새 Clean Test로 바꾸어 실행하면 다른 평가이므로 ‘초기 평가 완전 재현’이라고 쓰지 않는다.
 
 ### 5주차 상세 · v1을 고르기까지의 학습법 비교
 
@@ -436,7 +436,7 @@ PMG가 세 방법의 선두였기 때문에 B1·384로 규모를 키우면 얼�
 
 #### 7. 논문 실험의 결론을 과장하지 않는 방법
 
-Hair에서는 SupCon이 동시 기준선보다 좋았고 최종은 B1·384 Adam이 더 높았다. Web Skin에서는 PMG가 이전 B0 기준을 뚜렷이 앞섰고 큰 PMG가 Validation 최고였지만 실행 비용을 함께 고려해 B0를 택했다. DINOv2·EfficientNetV2·WS-DAN·SAM·MedSigLIP은 **이번 구현과 데이터 조건에서** 선정 기준을 넘지 못했다. 성공과 실패 모두 연구 결과이며, 논문의 다른 구현 전체가 효과 없다는 결론은 아니다. 보존된 [논문 실험 곡선·성능 그림](../presentation/3차/시각자료/)은 방법별 Validation과 클래스별 F1을 비교하고 선택한 후보의 Test만 표시하도록 정리했다.
+Hair에서는 SupCon이 동시 기준선보다 좋았고 최종은 B1·384 Adam이 더 높았다. Web Skin에서는 PMG가 이전 B0 기준을 뚜렷이 앞섰고 큰 PMG가 Validation 최고였지만 실행 비용을 함께 고려해 B0를 택했다. DINOv2·EfficientNetV2·WS-DAN·SAM·MedSigLIP은 **이번 구현과 데이터 조건에서** 선정 기준을 넘지 못했다. 성공과 실패 모두 연구 결과이며, 논문의 다른 구현 전체가 효과 없다는 결론은 아니다. 보존된 [논문 실험 곡선·성능 그림](../presentation/3차/시각자료)은 방법별 Validation과 클래스별 F1을 비교하고 선택한 후보의 Test만 표시하도록 정리했다.
 
 ### 7주차 상세 · Hair 6종 데이터와 동일 Test 오분류 분석
 
@@ -475,7 +475,7 @@ Hair에서는 SupCon이 동시 기준선보다 좋았고 최종은 B1·384 Adam�
 | 6종 B1 성능 우선 | `984` | `0.7859424920127795` | `0.78732934553366` | `4` |
 | 6종 B0 경량 | `978` | `0.7811501597444089` | `0.7823519039568939` | `6` |
 
-이 동일 부분에서는 5종 v2가 더 많은 기존 질환 사진을 맞혔다. 그러나 6종 B1은 양호 추가뿐 아니라 원본만 사용한 Train과 새 출력층·새 학습 실행이 다르며 B0는 본체·해상도·Loss도 다르다. 원인을 `양호` 추가 하나로 확정할 수 없다. 이 표는 **이미 고정된 Test 결과의 사후 설명**이고, Test를 반복해서 보며 다음 모델을 고르는 규칙으로 사용하면 안 된다. 각 버전의 Test 클래스별 F1과 혼동행렬은 [5종·6종 종합 분석](research/HAIR_5CLASS_6CLASS_EXPERIMENT_ANALYSIS_20260928.md)에 보존했다.
+이 동일 부분에서는 5종 v2가 더 많은 기존 질환 사진을 맞혔다. 그러나 6종 B1은 양호 추가뿐 아니라 원본만 사용한 Train과 새 출력층·새 학습 실행이 다르며 B0는 본체·해상도·Loss도 다르다. 원인을 `양호` 추가 하나로 확정할 수 없다. 이 표는 **이미 고정된 Test 결과의 사후 설명**이고, Test를 반복해서 보며 다음 모델을 고르는 규칙으로 사용하면 안 된다. 각 버전의 Test 클래스별 F1과 혼동행렬은 [5종·6종 종합 분석](research/public_data/hair/HAIR_5CLASS_6CLASS_EXPERIMENT_ANALYSIS_20260928.md)에 보존했다.
 
 #### 6. 재현할 때의 원본과 해시
 
@@ -509,7 +509,7 @@ Hair에서는 SupCon이 동시 기준선보다 좋았고 최종은 B1·384 Adam�
 
 [실행 비용 지표 설명 그림](../presentation/4차/시각자료/04_runtime_metrics_explained.png)은 측정 범위와 빠진 카메라·Jetson 부분을 먼저 알려준다. [선정 후보 비교](../presentation/4차/시각자료/04_selected_models_runtime_cost.png)에서는 같은 과제 안에서 빠르고 정확한 후보의 교환 관계를 설명한다. [정확도–지연시간 산점도](../presentation/4차/시각자료/04_accuracy_latency_tradeoff.png)는 왼쪽일수록 이번 Colab 코드에서 빠르고 위쪽일수록 **과거 Validation 성능이 높다**. 서로 다른 Skin/Web Skin/Hair의 점수를 같은 순위표로 읽지 않는다. 34개 전체 지연시간 그림에는 초기 데이터 모델도 있지만 정확도–지연시간 비교 그림은 비교 가능한 정제 후 조건으로 좁혔다.
 
-`metrics_overview`의 색 지도는 **열마다 따로 최솟값·최댓값으로 색을 정규화**했다. 진한 색이 모든 열에서 ‘좋다’는 뜻이 아니다. Accuracy가 높으면 좋은 반면 지연 시간과 과거 학습 시간은 낮을수록 적은 비용이다. 옆 상자그림은 **한 모델의 30회 분포가 아니라 한 과제 안 여러 모델들의 지연 시간 분포**다. 그래프에 있는 과거 학습 시간 막대는 같은 GPU에서 34개를 재훈련한 값이 아니다. 이 해석은 [런타임 상세 분석](research/RUNTIME_BENCHMARK_REVIEW_20260928.md)에 기록했다.
+`metrics_overview`의 색 지도는 **열마다 따로 최솟값·최댓값으로 색을 정규화**했다. 진한 색이 모든 열에서 ‘좋다’는 뜻이 아니다. Accuracy가 높으면 좋은 반면 지연 시간과 과거 학습 시간은 낮을수록 적은 비용이다. 옆 상자그림은 **한 모델의 30회 분포가 아니라 한 과제 안 여러 모델들의 지연 시간 분포**다. 그래프에 있는 과거 학습 시간 막대는 같은 GPU에서 34개를 재훈련한 값이 아니다. 이 해석은 [런타임 상세 분석](research/public_data/RUNTIME_BENCHMARK_REVIEW_20260928.md)에 기록했다.
 
 #### 5. 최종 선정 모델을 팀원에게 어떻게 전할 것인가
 
@@ -529,7 +529,7 @@ Hair에서는 SupCon이 동시 기준선보다 좋았고 최종은 B1·384 Adam�
 
 ### 자료 찾기
 
-- 전체 순서와 논문 방법의 상세 해설: [최종 상세 보고서](FINAL_DETAILED_REPORT_20260928.md), [전체 실험 대장](research/ALL_EXPERIMENTS_RATIONALE_AND_RESULTS_20260924.md)
+- 전체 순서와 논문 방법의 상세 해설: [최종 상세 보고서](FINAL_DETAILED_REPORT_20260928.md), [전체 실험 대장](research/public_data/ALL_EXPERIMENTS_RATIONALE_AND_RESULTS_20260924.md)
 - 차수별 그림·발표 문장: [발표 자료실](../presentation/README.md), [그림 누락 검증](../presentation/시각자료_검증_20260928.md)
 - 평가 수치·모델: [최종 모델 선정](../results/FINAL_MODEL_SELECTION_20260928.md), [일곱 모델 경로](../results/SELECTED_MODEL_PATHS.md)
 - 이후 일정과 완료 기준: [로드맵](ROADMAP.md)

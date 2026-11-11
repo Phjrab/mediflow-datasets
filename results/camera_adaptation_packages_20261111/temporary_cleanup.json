@@ -1,0 +1,37 @@
+{
+  "status": "completed",
+  "targets": [
+    {
+      "relative_path": ".tmp\\camera-adaptation-packaging-20261111",
+      "checked_absolute_path": "C:\\Users\\sejun\\OneDrive\\Documents\\ChatGPT\\mediflow\\.tmp\\camera-adaptation-packaging-20261111",
+      "files": 106,
+      "logical_bytes": 164195554.0,
+      "removed": true
+    },
+    {
+      "relative_path": ".tmp\\packaging-focused-tests-20261111",
+      "checked_absolute_path": "C:\\Users\\sejun\\OneDrive\\Documents\\ChatGPT\\mediflow\\.tmp\\packaging-focused-tests-20261111",
+      "files": 29,
+      "logical_bytes": 58695.0,
+      "removed": true
+    },
+    {
+      "relative_path": ".tmp\\packaging-full-tests-20261111",
+      "checked_absolute_path": "C:\\Users\\sejun\\OneDrive\\Documents\\ChatGPT\\mediflow\\.tmp\\packaging-full-tests-20261111",
+      "files": 1268,
+      "logical_bytes": 145319445.0,
+      "removed": true
+    },
+    {
+      "relative_path": ".pytest_cache",
+      "checked_absolute_path": "C:\\Users\\sejun\\OneDrive\\Documents\\ChatGPT\\mediflow\\.pytest_cache",
+      "files": 4,
+      "logical_bytes": 21852.0,
+      "removed": true
+    }
+  ],
+  "preserved_paths": [
+    ".tmp\\final-test-report-libraries",
+    ".tmp\\strength-native-temp"
+  ]
+}

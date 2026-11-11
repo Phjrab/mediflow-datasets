@@ -233,7 +233,7 @@ if __name__ == "__main__":
     parser.add_argument(
         "--measurements",
         type=Path,
-        default=ROOT / "camera_capture/_review/domain_adaptation_run_20261108",
+        default=ROOT / "camera_capture/_review/analysis/initial_model",
     )
     args = parser.parse_args()
     build(args.output, args.measurements)

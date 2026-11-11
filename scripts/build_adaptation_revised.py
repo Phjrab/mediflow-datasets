@@ -4,6 +4,7 @@ import argparse
 import hashlib
 import json
 import subprocess
+from copy import deepcopy
 from pathlib import Path
 
 import build_adaptation_strength as core
@@ -11,14 +12,14 @@ import build_adaptation_strength as core
 from mediflow_datasets import domain_adaptation_batch as batch
 
 ROOT = Path(__file__).resolve().parents[1]
-AUDIT = ROOT / "presentation/report_assets/camera_profile_revision_20261110"
+AUDIT = ROOT / "presentation/report_assets/camera_refit_20261111"
 
 
 def notebook(study_json):
     book = core.notebook(study_json)
     study = json.loads(study_json)
     study_sha = hashlib.sha256(study_json.encode()).hexdigest()
-    guide = """# MediFlow 세 분야 촬영 변환 재검토 수정본
+    guide = """# MediFlow 4차 · 실제 촬영 재대조와 조명 강도 재설정
 
 **GPU 선택 → 모두 실행 → Google Drive 연결**로 실행합니다.
 기존 공통 ZIP v3·원본 데이터 ZIP·1차와 2차 결과를 재사용합니다.
@@ -27,26 +28,30 @@ def notebook(study_json):
 피부 초기 B0·224, 얼굴 선정 PMG·B0·256, 두피 선정 B1·384의 1차 학습 전 상태에서
 각 5 epoch, 총 세 분야를 순서대로 학습합니다. 이전 확대 후보는 학습하지 않았습니다.
 
-이번 수정본은 세 분야 모두 조명 적용 후 남은 색 차이를 다시 점검했고,
-흐림·미세 대비가 절대 경계와 대비로 보정한 경계 지표를 모두 악화시키지 않는 경우만 유지합니다.
+실제 원본 124장과 유지된 Train 표본 461장을 다시 측정해 밝기·대비·방향성 조명을 맞췄습니다.
+조명 조정 후 색·흐림·미세 대비를 다시 점검했습니다. 네 사람의 촬영 특성 조사 결과이며
+임상적인 병변 보존이나 실제 환자 분류 성능을 검증한 설정은 아닙니다.
 아래는 실행에 쓰는 실제 설정입니다.
 시작할 때 세 분야의 출발 모델·기존 결과·분할과 전체 입력 캐시 공간을 먼저 확인합니다.
 
-| 분야 | Lab a 이동 | Lab b 이동 | 미세 대비 배율 | 흐림 sigma · ROI 64 기준 |
-| --- | --- | --- | --- | --- |
+| 분야 | 밝기 이동 | 대비 | 좌우 조명 | Lab a | Lab b | 미세 대비 | 흐림 sigma · ROI 64 |
+| --- | --- | --- | --- | --- | --- | --- | --- |
 """
     for domain, value in study["domains"].items():
         p = value["profile"]
         guide += (
-            f"| {domain} | `{p['color_a']}` | `{p['color_b']}` | "
+            f"| {domain} | `{p['lighting']['brightness_offset']}` | "
+            f"`{p['lighting']['contrast']}` | `{p['lighting']['left_light']}` | "
+            f"`{p['color_a']}` | `{p['color_b']}` | "
             f"`{p['texture_gain']}` | `{p['blur_sigma_roi64']}` |\n"
         )
     guide += f"""
-밝기·대비·좌우 조명, 데이터 분할·출발 모델·학습량·시드·학습률·변환 확률은 고정했습니다.
+이번 변경은 촬영 변환 설정입니다.
+데이터 분할·출발 모델·학습량·시드·학습률·변환 확률은 기존 비교와 같습니다.
 실제 사진과의 동일함이나 질환 분류 성능 향상은 검증되지 않았습니다.
 이미 확인한 Source Test는 이 노트북에서 다시 추론하지 않습니다.
 결과는 학습 전·기존 2차·이번 수정본을 같은 원본·기존 변환·수정 변환 Validation으로 비교합니다.
-두피는 추가 색·흐림·미세 대비가 없어 수정 조명과 수정 확장 조건이 같습니다.
+두피의 대비를 전체 촬영 외형에 강제로 맞추지 않았습니다. 모발 가림·굵기·부위가 섞여 있습니다.
 
 Drive 결과 폴더
 `MediFlow_adaptation_runs/{study["bundle_sha256"][:16]}/measured_strength_{study_sha[:12]}`
@@ -76,17 +81,60 @@ Drive 결과 폴더
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--overwrite", action="store_true")
+    parser.add_argument("--audit", type=Path, default=AUDIT)
     args = parser.parse_args()
-    study = core.read(AUDIT / "study.json")
+    audit = args.audit.resolve()
+    study = core.read(audit / "study.json")
+    refit = "refit_schema" in study
+    profile_builder = "camera_refit.py" if refit else "camera_revision.py"
     if (
         batch.digest(core.BUNDLE) != study["bundle_sha256"]
         or batch.digest(ROOT / "configs/camera_strength_20261110.json")
         != study["parent_study_sha256"]
-        or batch.digest(ROOT / "src/mediflow_datasets/camera_revision.py")
+        or batch.digest(ROOT / "src/mediflow_datasets" / profile_builder)
         != study["profile_builder_sha256"]
-        or core.read(AUDIT / "summary.json")["training_executed"]
+        or core.read(audit / "summary.json")["training_executed"]
     ):
         raise ValueError("Completed frozen calibration audit differs from its inputs")
+    if refit:
+        original = ROOT / (
+            "presentation/report_assets/revised_pretraining_check_20261111/"
+            "checked_inputs/camera_revised_20261111.json"
+        )
+        if batch.digest(original) != study["refit_parent_study_sha256"]:
+            raise ValueError("Pre-refit starting configuration changed")
+        review_path = audit / "visual_review.json"
+        review = core.read(review_path)
+        if review.get("status") != "reviewed" or review.get("clinical_validation") is not False:
+            raise ValueError("Train contact sheets require an explicit descriptive review")
+        parent = core.read(original)
+        decision = core.read(audit / "decisions.json")
+        study["refit_visual_review_sha256"] = batch.digest(review_path)
+        for domain, entry in study["domains"].items():
+            profile = entry["profile"]
+            profile["pre_refit_engineering_bounds"] = deepcopy(
+                parent["domains"][domain]["profile"]["engineering_bounds"]
+            )
+            profile["engineering_bounds"].update(
+                lighting=deepcopy(profile["lighting"]["bounds"]),
+                texture_gain_limits=profile["texture_gain"],
+                blur_max_roi64=profile["blur_sigma_roi64"][1],
+            )
+            profile["parent_calibration_evidence"] = profile["calibration_evidence"]
+            profile["calibration_evidence"] = {
+                "method": "Retained Train pixel replay against unlabeled pilot captures",
+                "proposal": decision[domain]["proposal"],
+                "decision_file_sha256": batch.digest(audit / "decisions.json"),
+                "target_accuracy": None,
+                "full_training_executed": False,
+            }
+            profile["lighting"]["train_visual_review"] = "class_brightness_extremes_reviewed"
+            profile["lighting"]["review_note"] = (
+                "Class brightness extremes inspected on before/previous/fitted contact sheets; "
+                "all retained Train previews measured; no clinical preservation validation."
+            )
+        study["parent_revision_schema"] = study["revision_schema"]
+        study["revision_schema"] = study["refit_schema"]
     parent_runtime = dict(study["uncommitted_runtime_sha256"])
     for name, sha in parent_runtime.items():
         current = batch.digest(ROOT / "src/mediflow_datasets" / name)
@@ -95,8 +143,8 @@ def main():
         study["uncommitted_runtime_sha256"][name] = current
     study["parent_runtime_sha256"] = parent_runtime
     study["pretraining_check_revision"] = "early_required_inputs_and_full_cache_space_v1"
-    study["revision_decision_file_sha256"] = batch.digest(AUDIT / "decisions.json")
-    study["revision_summary_file_sha256"] = batch.digest(AUDIT / "summary.json")
+    study["revision_decision_file_sha256"] = batch.digest(audit / "decisions.json")
+    study["revision_summary_file_sha256"] = batch.digest(audit / "summary.json")
     study["notebook_builder_sha256"] = batch.digest(Path(__file__))
     study["git_commit"] = subprocess.check_output(
         ["git", "rev-parse", "HEAD"], cwd=ROOT, text=True

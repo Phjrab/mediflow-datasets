@@ -1,0 +1,173 @@
+{
+  "source_zip": "C:\\Users\\sejun\\Downloads\\MediFlow_Revised_Camera_Results_20261111.zip",
+  "source_zip_sha256": "d54ed4a00ac6819ed5be3e5bb60d8713e2f829303041736ec0fa9f0c52e7b8b9",
+  "source_zip_bytes": 73195717,
+  "source_zip_members": 30,
+  "zip_crc_passed": true,
+  "study_sha256": "492ee01afb4579b6402fca29459c59d56618243589642fc022db18bbbe45a165",
+  "stage_label": "stage4_before_refit",
+  "imported_files": [
+    {
+      "path": "study.json",
+      "bytes": 126813,
+      "sha256": "de429b5a85d902645ac83b79f865591eaf2d8147d41f69b9937d98856e593767"
+    },
+    {
+      "path": "summary.json",
+      "bytes": 123,
+      "sha256": "bd6b02a8d1dbd7d54af91f9eff52f6fedebe7c9dcbc95de6dd40303f775cac74"
+    },
+    {
+      "path": "selection.json",
+      "bytes": 307,
+      "sha256": "bb38d00addb783ce4eab29a8fbf3fc10319129646c32949f364b34b942790c01"
+    },
+    {
+      "path": "validation_comparison.csv",
+      "bytes": 2457,
+      "sha256": "ca31b28706d7590b28accd2ee28c57bc317095a4db2415555931c4a01b25c5c9"
+    },
+    {
+      "path": "plots/learning_curves.png",
+      "bytes": 380749,
+      "sha256": "a13343c1411c59bad8da8fdf0f646189f0d169abe3ac567e98cec4f97fe2c35d"
+    },
+    {
+      "path": "startup_preflight.json",
+      "bytes": 2048,
+      "sha256": "c4b48e8f5671ae7730f77e103c49ba80c3af9ad647bc5e26ce5e703f23eabbd9"
+    },
+    {
+      "path": "code/adaptation_strength.py",
+      "bytes": 17716,
+      "sha256": "4f52fc89b9e56dab6842bd44de97d9b760a2e5b8335e7efd434db474f4f4ba15"
+    },
+    {
+      "path": "code/adaptation_stage1.py",
+      "bytes": 31255,
+      "sha256": "6b5aae35bcbe1af85fe19b6a47ebce6ed57bfca780129a82e95dd9dd0c9d4c8a"
+    },
+    {
+      "path": "code/camera_extended.py",
+      "bytes": 7940,
+      "sha256": "7a1cd1e25c025398cb06baab4b6675f0d7d6a11bd3d9f56d35424a23a6e49da1"
+    },
+    {
+      "path": "skin/best.keras",
+      "bytes": 17082422,
+      "sha256": "c62a76580a0d6658c934b993629a33605961b153d28ac1c6abc3205382815be2"
+    },
+    {
+      "path": "skin/complete.json",
+      "bytes": 34445,
+      "sha256": "446779d677cdff03f26d70d799618a01aacd7c9a5586749173925913460dffc5"
+    },
+    {
+      "path": "skin/run_configuration.json",
+      "bytes": 192287,
+      "sha256": "7e3b53dbc738dc25ad1404082d2a3b16ae812bf790fe627cd764281ac4fb39b2"
+    },
+    {
+      "path": "skin/data_audit.json",
+      "bytes": 782,
+      "sha256": "5280ec74a8f63613e715d37640cb5a00e63cb0440e39c994abd5ebae12ed8605"
+    },
+    {
+      "path": "skin/identity.json",
+      "bytes": 457,
+      "sha256": "0ef65c5b633722858fe33bdd73dbb1d7ecf6f7bffd248c3180e95f0ea286726a"
+    },
+    {
+      "path": "skin/expanded/history.json",
+      "bytes": 51749,
+      "sha256": "6e1dd5efa4eda8503e6206fec3b821137220cc369b9cafe728cfda80dd07e3d4"
+    },
+    {
+      "path": "web_skin/best.keras",
+      "bytes": 36377179,
+      "sha256": "bbdfade5173c12d4076ab414c907821e21ee57fee2366f79d57adde4a8f74dc9"
+    },
+    {
+      "path": "web_skin/complete.json",
+      "bytes": 16680,
+      "sha256": "9b37f24de479709e9c53f832fd9995c27433ea90da74f52c8b1857812dd9f400"
+    },
+    {
+      "path": "web_skin/run_configuration.json",
+      "bytes": 194154,
+      "sha256": "3e0d4f8903f71d0930bfc507d91b0602b2f58099a226a44da640ff0b6434bc82"
+    },
+    {
+      "path": "web_skin/data_audit.json",
+      "bytes": 782,
+      "sha256": "1690af93c476b823713930803e7cf691435faa47d0f8c4e1d6dcbadeafefedb3"
+    },
+    {
+      "path": "web_skin/identity.json",
+      "bytes": 457,
+      "sha256": "2bf7330f0ca178587a8eea7558371599915668165d6ff488f9235b1e2c540bac"
+    },
+    {
+      "path": "web_skin/expanded/history.json",
+      "bytes": 25962,
+      "sha256": "7c0a590c8bd9820760815276fcbf1ba80e461e37a2d72a42731cc5ddf1882cbc"
+    },
+    {
+      "path": "hair/best.keras",
+      "bytes": 27507790,
+      "sha256": "ddb123669956f4fbabea791d7815da7aa16101a3ed331ef4cbc7503848f5ed00"
+    },
+    {
+      "path": "hair/complete.json",
+      "bytes": 17618,
+      "sha256": "e35ff6d066d37e2b4bd789eecf4591a5e50fd3a3b1635f1cf611f70aeab676e4"
+    },
+    {
+      "path": "hair/run_configuration.json",
+      "bytes": 189310,
+      "sha256": "9a752ae61469663f89fe3dc54d5a5643bcfbe652b644ca281f4f9caa85a41e25"
+    },
+    {
+      "path": "hair/data_audit.json",
+      "bytes": 887,
+      "sha256": "63dd04a5aa8782de026a120b3ad19a0fb67eedd8dcd0a050b69bb697a62d3038"
+    },
+    {
+      "path": "hair/identity.json",
+      "bytes": 457,
+      "sha256": "19a1f3d6087e89475eaf115f858739962dea033e1dbd19dfbcc24c1ba3e74408"
+    },
+    {
+      "path": "hair/expanded/history.json",
+      "bytes": 27234,
+      "sha256": "73d34042dc004de2a9222dc6383bb28f79590cdac974dcf44f9bf5bbc7aee9c5"
+    }
+  ],
+  "reused_identical_source_manifests": [
+    {
+      "zip_member": "skin/source_manifest.json",
+      "local_reference": "results/camera_adaptation_stage1_20261110/skin/source_manifest.json",
+      "bytes": 3765097,
+      "sha256": "36f79b61a42e9ed634ffa7d4c490efefe5e5031a8bbdce1daf630b1e01e7e27d"
+    },
+    {
+      "zip_member": "web_skin/source_manifest.json",
+      "local_reference": "results/camera_adaptation_stage1_20261110/web_skin/source_manifest.json",
+      "bytes": 1688646,
+      "sha256": "7c8b41878883193e5dd340ab8a4b7f804a3ab7f37c8159093b663937d997a738"
+    },
+    {
+      "zip_member": "hair/source_manifest.json",
+      "local_reference": "results/camera_adaptation_stage1_20261110/hair/source_manifest.json",
+      "bytes": 5209382,
+      "sha256": "c6320fa7d2ef25332d508b3da868d2731d61ce7c8cd3ed2ebc505e6cd0b54717"
+    }
+  ],
+  "metric_vectors_recomputed": 96,
+  "comparison_rows_verified": 36,
+  "reported_selection_verified": true,
+  "full_training_rerun": false,
+  "source_test_evaluated": false,
+  "target_accuracy": null,
+  "official_candidate_index_changed": false
+}

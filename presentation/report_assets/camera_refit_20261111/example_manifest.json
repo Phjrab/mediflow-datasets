@@ -1,0 +1,26 @@
+{
+  "skin": {
+    "source": "skin_clean_v1_20260909_063802_6cd88688/original/train/광선각화증/C00_1c27ed4e89760453beb5.png",
+    "target": [
+      "skin/P01/S01/P01_S01_skin_ref_20261108T152726981437.png",
+      "skin/P01/S01/P01_S01_skin_alt_20261108T152804327485.png"
+    ],
+    "seed": 14395931269141002426
+  },
+  "web_skin": {
+    "source": "web_skin_processed/original/train/건선/건선_000120.png",
+    "target": [
+      "web_skin/P01/S01/P01_S01_web_skin_ref_20261108T150117359310.png",
+      "web_skin/P01/S01/P01_S01_web_skin_alt_20261108T150144645501.png"
+    ],
+    "seed": 12550367542775149625
+  },
+  "hair": {
+    "source": "hair_clean_v1_20260907_053616/original/train/모낭사이홍반/모낭사이홍반_01312.jpg",
+    "target": [
+      "hair/P01/S01/P01_S01_hair_ref_20261108T153039558627.png",
+      "hair/P01/S01/P01_S01_hair_alt_20261108T153239675963.png"
+    ],
+    "seed": 12442349979035966234
+  }
+}

@@ -1,0 +1,171 @@
+{
+  "source_zip": "C:\\Users\\sejun\\Downloads\\MediFlow_Stage4_Test_Results_20261111.zip",
+  "source_zip_sha256": "33455c71f4720a6a7e368ca18e134879081115a8426f3d7e856274845200d46b",
+  "source_zip_bytes": 968912,
+  "source_zip_members": 34,
+  "zip_crc_passed": true,
+  "plan_sha256": "dda96d8dc71672595b3d3ca1ace43fc8923ba58d087f870612014f7f4450431c",
+  "original_files_preserved": [
+    {
+      "path": "evaluation_plan.json",
+      "bytes": 128107,
+      "sha256": "979ba30931cd322fd24f20532f5bcbd90d1dc20a6781044abbc58b3d694ad499"
+    },
+    {
+      "path": "skin_predictions.npz",
+      "bytes": 133235,
+      "sha256": "3fd46361a317b71a11dd6ba9fb337b4ee661d436a23d678c2e00007e2a4c7b79"
+    },
+    {
+      "path": "skin_test_rows.json",
+      "bytes": 94012,
+      "sha256": "b1e62f13d2bae926f1b56e18fdd93e5b9eb04ef976714dee5b7115558002165d"
+    },
+    {
+      "path": "skin.json",
+      "bytes": 15825,
+      "sha256": "921e578541510e100b0646d93dd504764d56dfab54494b0e3a173e7e91ffe849"
+    },
+    {
+      "path": "web_skin_predictions.npz",
+      "bytes": 31843,
+      "sha256": "3554dad23dc557445e3fcf2bd8d3ac8a642e5fa5820c79ed14da196ccee99c61"
+    },
+    {
+      "path": "web_skin_test_rows.json",
+      "bytes": 39762,
+      "sha256": "93adbbff585f577eac972f5f6e262e308fbad86036b4acb98f8994ca4fd50639"
+    },
+    {
+      "path": "web_skin.json",
+      "bytes": 8387,
+      "sha256": "7a4e941028012352600d003db1f7e35a9b49d7775efff1623f078065685a212f"
+    },
+    {
+      "path": "hair_predictions.npz",
+      "bytes": 117746,
+      "sha256": "36f60c9b22ba7f4f949ca94cf2eb90b6af620bca9102692722fe3bf953fcd25c"
+    },
+    {
+      "path": "hair_test_rows.json",
+      "bytes": 146134,
+      "sha256": "9e4cbfd4e67b5caec614604157e33e37de584cc6776458cc02f1f625b5963c97"
+    },
+    {
+      "path": "hair.json",
+      "bytes": 8887,
+      "sha256": "bd08bd965b79a2f4f0649760f0bcb3c34ee483fe22d72da9007e7ef05a46ce63"
+    },
+    {
+      "path": "test_comparison.csv",
+      "bytes": 6203,
+      "sha256": "06722a03b08bef6156a39df87d559145afe2f8acd21990dd1b76dbfedea04b18"
+    },
+    {
+      "path": "class_metrics.csv",
+      "bytes": 27277,
+      "sha256": "b23f32185de5b2f6576004a9d2b6059b939bbebe44b16e8c3403ff5f4528eed8"
+    },
+    {
+      "path": "summary.json",
+      "bytes": 553,
+      "sha256": "3b4c6eb7c3496d89c420d4cd8ed809d684a787d7dab16fad12b88de519821f0c"
+    },
+    {
+      "path": "logs/run_eeb631bcb7c5.log",
+      "bytes": 27896,
+      "sha256": "72f4ea5151527127643416407f823c07ace81d01e682c2ed8eff8add9347aefd"
+    },
+    {
+      "path": "logs/eeb631bcb7c5_environment_tools.log",
+      "bytes": 1398,
+      "sha256": "1526d1a1c87ef8243838a6498ee84c4f8334ace541909f11aa0145de2fddd7a2"
+    },
+    {
+      "path": "logs/eeb631bcb7c5_test.log",
+      "bytes": 4645,
+      "sha256": "1faa06880a45080f7de1d93e052a584e84589337e038eda4bdd816bbe97ce3c8"
+    },
+    {
+      "path": "logs/eeb631bcb7c5_environment_install.log",
+      "bytes": 17976,
+      "sha256": "c20a0ee4258541f42044dc83e7baac7e3b7b31d8e97777f4f27eef3d1817f32e"
+    },
+    {
+      "path": "logs/eeb631bcb7c5_environment_create.log",
+      "bytes": 484,
+      "sha256": "7ca2813a0a4549a587fbd645b350cae329032933c7ab3dd3ea5b13efa16568f9"
+    },
+    {
+      "path": "code/adaptation_stage4_test.py",
+      "bytes": 18040,
+      "sha256": "5d0d3874df6235ee07358f8d20566d2ad3029da675b4b8f1eb83ae3d160b17c4"
+    },
+    {
+      "path": "code/adaptation_final_test.py",
+      "bytes": 14541,
+      "sha256": "e8b943f8a9a81fe1178caa04f493b4ff6a1d04ccfe9a8d3e31970d52d3dee1b6"
+    },
+    {
+      "path": "code/adaptation_stage1.py",
+      "bytes": 31255,
+      "sha256": "6b5aae35bcbe1af85fe19b6a47ebce6ed57bfca780129a82e95dd9dd0c9d4c8a"
+    },
+    {
+      "path": "code/camera_extended.py",
+      "bytes": 7940,
+      "sha256": "7a1cd1e25c025398cb06baab4b6675f0d7d6a11bd3d9f56d35424a23a6e49da1"
+    },
+    {
+      "path": "code/domain_adaptation_experiment.py",
+      "bytes": 16108,
+      "sha256": "216d01c860cf977d7a8f9093605a90a5f4cda495c4d4f363b5862e8b69d63d2b"
+    },
+    {
+      "path": "plots/test_comparison.png",
+      "bytes": 262611,
+      "sha256": "8d2287e262b20b14f233b7abfb5eb1b05ee57783266a0663857197f91968ea60"
+    },
+    {
+      "path": "plots/stage4_confusion_matrices.png",
+      "bytes": 446939,
+      "sha256": "35c50f19f0b8ce495f6cf5167aae1e423ff8bc467a4b500972e31e6f26d5af82"
+    }
+  ],
+  "reused_identical_previous_test_files": [
+    {
+      "zip_member": "previous_test/evaluation_plan.json",
+      "local_reference": "results/camera_adaptation_final_test_20261110/evaluation_plan.json",
+      "sha256": "64942a94580c4ff954c434197a50519c471031349f5f83677a301642ff1c6707"
+    },
+    {
+      "zip_member": "previous_test/summary.json",
+      "local_reference": "results/camera_adaptation_final_test_20261110/summary.json",
+      "sha256": "c80430f58b85a17a626d3ed856825b66e221f7b63b54c6fd6aa2a009dfced29f"
+    },
+    {
+      "zip_member": "previous_test/skin.json",
+      "local_reference": "results/camera_adaptation_final_test_20261110/skin.json",
+      "sha256": "969c75a24b5879ef0ad3246cb00fffcbe13918e58513f79a0baaca8ce6090e92"
+    },
+    {
+      "zip_member": "previous_test/web_skin.json",
+      "local_reference": "results/camera_adaptation_final_test_20261110/web_skin.json",
+      "sha256": "8fc4eb46116c4a9c9c4722505e894bfaec9975051ace1b99f890f5254c1a11d1"
+    },
+    {
+      "zip_member": "previous_test/hair.json",
+      "local_reference": "results/camera_adaptation_final_test_20261110/hair.json",
+      "sha256": "1adbcdb98d2e3f3fab33512b8cb098915e0242ea80dd4ccfd2fa7923d7ef8f0f"
+    }
+  ],
+  "new_prediction_arrays_verified": 15,
+  "all_metric_vectors_recomputed": 51,
+  "comparison_csv_rows_verified": 51,
+  "class_csv_rows_verified": 340,
+  "original_test_rows_and_labels_verified": true,
+  "source_images_inference_rerun_locally": false,
+  "training_executed_locally": false,
+  "official_candidate_index_changed": false,
+  "real_device_accuracy": null
+}

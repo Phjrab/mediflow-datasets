@@ -6,24 +6,36 @@
 
 ## 현재 작업 상태 · 2026-11-11
 
+처음에는 [지금까지 한 작업·결과·자료 위치](docs/PROJECT_SUMMARY_20261111.md)를 확인하세요.
+
+[피부 4차·얼굴 4차·두피 2차 사용 ZIP](results/camera_adaptation_packages_20261111/README.md)을
+독립 패키징하고 실제 로드·원본 예측 일치·압축 해제본 단독 실행을 확인했습니다.
+
 실제 카메라 환경 적응을 먼저 진행하고 LLM·VLM 작업은 이후로 미뤘습니다.
 1차 조명 적응 6회, 2차 색·미세 대비·흐림 확장 3회, 3차 MMD·CORAL 정렬 3회와
-[최종 Source Test 분석](docs/research/ADAPTATION_FINAL_TEST_RESULT_REVIEW_20261110.md)을 완료했습니다.
+[최종 Source Test 분석](docs/research/camera_adaptation/ADAPTATION_FINAL_TEST_RESULT_REVIEW_20261110.md)을 완료했습니다.
 실제 촬영 4명·124장은 질환 정답이 없는 촬영 특성 조사 자료이며 독립 Target Test가 아닙니다.
 
-4차는 분야별 촬영 변환을 재검토한 [수정본 노트북](notebooks/camera_adaptation/MediFlow_Camera_Revised_Adaptation_20261111.ipynb)을
-준비하고 [학습 직전 검사](docs/research/REVISED_ADAPTATION_PRETRAINING_CHECK_20261111.md)를 마쳤습니다.
-**4차 정식 학습은 아직 실행하지 않았습니다.** 현재 단계와 남은 일은 [로드맵](docs/ROADMAP.md)을 따릅니다.
+**조정 전 4차 학습을 완료했고 재설정 4차는 실행하지 않기로 했습니다.**
+[4차 결과](docs/research/camera_adaptation/ADAPTATION_STAGE4_BEFORE_REFIT_RESULT_REVIEW_20261111.md)를 유지하고,
+4차 추가 Test 15개와 기본~3차 결과 재사용 36개를 포함한 [51개 비교 결과](docs/research/camera_adaptation/ADAPTATION_STAGE4_TEST_RESULT_REVIEW_20261111.md)를 확인했습니다.
+[Test 노트북](notebooks/camera_adaptation/completed/MediFlow_Adaptation_Stage4_Test_20261111.ipynb)은 완료 실험의 재현용입니다.
+[평가 계획·파일 위치](docs/research/camera_adaptation/ADAPTATION_STAGE4_FINAL_TEST_20261111.md)와 [로드맵](docs/ROADMAP.md)을 따릅니다.
 
 코드·설정·노트북·보고서·수치 결과·학습 완료 모델을 Git에 보관합니다.
 `camera_capture/`, 복호화 키, 실행 ZIP, 실제 참여자 사진이 들어간 비교 그림은 로컬 전용입니다.
 해당 자료를 가리키는 문서 링크는 로컬 작업 공간에서만 열립니다.
 카메라 노트북 실행에는 기존 Drive의 공통 ZIP·원본 데이터 ZIP·이전 단계 결과가 필요합니다.
 
+정리된 [카메라 노트북 안내](notebooks/camera_adaptation/README.md)에서 현재 4차·완료 실험·보관용 파일을 구분합니다.
+보고서용 그림은 [자료 안내](presentation/report_assets/README.md), 이번 정리 내역은 [완료 후 폴더 정리 기록](docs/research/maintenance/PROJECT_WRAPUP_CLEANUP_20261111.md)에 있습니다.
+
+[전체 문서 대조표](docs/DOCUMENT_INDEX.md) · [실제 사용 코드·미실행 준비 대조표](notebooks/EXECUTION_INDEX.md) · [촬영 분석 폴더 안내](camera_capture/_review/README.md).
+
 ## 기존 연구 안내
 
 처음 보는 팀원은 [최종 상세 보고서](docs/FINAL_DETAILED_REPORT_20260928.md)부터 읽으면 됩니다.
-최신 점검과 다음 작업은 [LLM·VLM 착수 전 종합 점검](docs/research/PRE_LLM_VLM_PROJECT_AUDIT_20261026.md),
+2026-10-26 당시 점검은 [LLM·VLM 착수 전 종합 점검](docs/research/integration/PRE_LLM_VLM_PROJECT_AUDIT_20261026.md),
 9월 연구 마감 당시의 현황은 [2026-09-28 상태](docs/PROJECT_STATUS_20260928.md), 선정 결과는
 [2026-09-28 모델 선정](results/FINAL_MODEL_SELECTION_20260928.md)에 있습니다.
 실제 선정 모델 7개의 경로와 사용 상태는 [모델 경로 안내](results/SELECTED_MODEL_PATHS.md)에 모았습니다.
@@ -32,7 +44,7 @@
 클래스·전처리를 대조하고 실제 샘플 추론을 확인했습니다. 먼저 최신 후보용 공통 추론과
 결과 형식을 준비하며, 기존 초기 모델용 CLI와 구분합니다. LLM·VLM 런타임은 아직 구현 전입니다.
 팀원의 별도 MedVLM 저장소에는 최신 개발 브랜치의 의료 QA/VQA 학습·평가가 있으므로,
-[두 저장소 분석과 연결 방향](docs/research/TEAM_LLM_VLM_REPOSITORY_REVIEW_20261026.md)을 참고합니다.
+[두 저장소 분석과 연결 방향](docs/research/integration/TEAM_LLM_VLM_REPOSITORY_REVIEW_20261026.md)을 참고합니다.
 
 ## 모델
 
@@ -47,8 +59,8 @@ Hair 6클래스는 별도의 성능 우선·경량 후보가 있으며, 기존 5
 않았습니다. 다섯 선정본의 경로·해시·지표는
 [PUBLIC_MODEL_SELECTION_20260928.json](results/PUBLIC_MODEL_SELECTION_20260928.json)에 있습니다.
 
-기존 자료는 용도에 따라 정리되어 있습니다. 샘플 이미지는 [`data_examples/`](data_examples/),
-저장 모델과 평가 결과는 [`results/`](results/), 학습 노트북은 [`notebooks/`](notebooks/)에
+기존 자료는 용도에 따라 정리되어 있습니다. 샘플 이미지는 [`data_examples/`](data_examples),
+저장 모델과 평가 결과는 [`results/`](results), 학습 노트북은 [`notebooks/`](notebooks)에
 보존되어 있습니다. 세부 연구 배경은
 [`docs/research/PROJECT_BACKGROUND.md`](docs/research/PROJECT_BACKGROUND.md)를 참고하세요.
 
@@ -131,7 +143,7 @@ pytest
 정제 전 원래 Test 데이터셋의 클래스 폴더가 있을 때에만 original/augmented 모델의 지표를
 다시 계산할 수 있습니다. 현재 보관 자료에는 이 사진이 없어 원래 평가의 추론 재실행은
 완료하지 못했습니다. 가능한 범위와 이미 확인한 결과는
-[`평가 재현 점검`](docs/research/EVALUATION_REPRODUCTION_AUDIT_20260927.md)에 기록했습니다.
+[`평가 재현 점검`](docs/research/public_data/EVALUATION_REPRODUCTION_AUDIT_20260927.md)에 기록했습니다.
 
 ```bash
 mediflow-evaluate hair <hair-test-폴더> --variant original --output reports/hair-original.json
@@ -143,7 +155,7 @@ mediflow-evaluate hair <hair-test-폴더> --variant augmented --output reports/h
 
 전체 연구 진행 순서와 단계별 완료 기준은 [`docs/ROADMAP.md`](docs/ROADMAP.md)를
 참고하세요. 34개 저장 모델의 Colab 실행 시간 측정과 그 한계는
-[측정 해석](docs/research/RUNTIME_BENCHMARK_REVIEW_20260928.md)에 있습니다.
+[측정 해석](docs/research/public_data/RUNTIME_BENCHMARK_REVIEW_20260928.md)에 있습니다.
 
 1차 프로젝트 정리와 발표용 요약은
 [`docs/presentations/1차.md`](docs/presentations/1차.md)에 기록되어 있습니다.
@@ -155,11 +167,16 @@ mediflow-evaluate hair <hair-test-폴더> --variant augmented --output reports/h
 
 ```text
 .
-├── src/mediflow_datasets/   # 추론 패키지와 CLI
+├── src/mediflow_datasets/   # 추론·분석·적응 학습 코드
 ├── tests/                   # 메타데이터·전처리·모델 로드 테스트
 ├── data_examples/           # 모델별 샘플 이미지
 ├── results/                 # 기존 모델과 평가 결과
 ├── notebooks/               # 기존 학습 노트북
+│   └── camera_adaptation/   # completed / archive / 안내
+├── configs/                 # 고정된 실험 설정
+├── camera_capture/          # 실제 촬영 원본·분석 입력 (로컬 전용)
+├── output/                  # 실행한 분석 3폴더와 pdf
+├── presentation/            # 발표 자료·보고서 그림
 ├── scripts/                 # 카메라·데이터 전처리 스크립트
 ├── docs/                    # 연구 배경·로드맵·발표 자료
 ├── .github/workflows/ci.yml

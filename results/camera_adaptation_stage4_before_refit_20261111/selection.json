@@ -1,0 +1,10 @@
+{
+  "selected_on_validation": {
+    "skin": "stronger_expanded",
+    "web_skin": "stronger_expanded",
+    "hair": "previous_expanded"
+  },
+  "criteria": "max worst(clean, previous expanded, stronger expanded) F1; clean; earlier arm",
+  "source_test_evaluated": false,
+  "prior_source_test_inspected": true
+}

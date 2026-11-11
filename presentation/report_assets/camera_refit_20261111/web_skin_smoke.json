@@ -1,0 +1,32 @@
+{
+  "domain": "web_skin",
+  "study_sha256": "e6bc85bc0a7dc9a0d34d1affef912e3b2ef85a2f0106d5092c8e20680abadfa8",
+  "smoke_code_sha256": "bd140e6222bd100be08ced9be4f1e0b0d3f40b8009622dde82c947ad27e91a63",
+  "status": "passed",
+  "full_training_executed": false,
+  "disposable_batch_size": 8,
+  "optimizer_updates_per_batch": 4,
+  "additional_updates_before_restore": 4,
+  "input_size": 256,
+  "classes": [
+    "건선",
+    "아토피",
+    "여드름",
+    "정상",
+    "주사"
+  ],
+  "model_sha256": "83e659dd09a9355135ee0de0197037e81ece962777f59dedae8d9a37b49a3fc4",
+  "transformed_images_in_batch": 2,
+  "input_range": [
+    0.0,
+    255.0
+  ],
+  "checkpoint_restored": true,
+  "keras_save_reload_verified": true,
+  "original_model_unchanged": true,
+  "source_test_used": false,
+  "target_accuracy": null,
+  "tensorflow": "2.20.0",
+  "keras": "3.13.2",
+  "gpu": []
+}

@@ -1,0 +1,225 @@
+{
+  "schema": "mediflow_adaptation_package_index_v1",
+  "status": "research_followup_packages",
+  "selection": "skin Stage4, web_skin Stage4, hair Stage2; fixed using Validation",
+  "official_public_index_replaced": false,
+  "packaging_code": {
+    "repository_head": "08cb827aa3c6858e61c71faf7f6481f3a139530b",
+    "uncommitted_code_status": [
+      "?? src/mediflow_datasets/adaptation_package_inference.py",
+      "?? src/mediflow_datasets/adaptation_packaging.py"
+    ],
+    "file_sha256": {
+      "src/mediflow_datasets/adaptation_packaging.py": "53568d1525213cf8a064e8a77b71baa32c56ae8d4e4f6f925d6e6710421e811c",
+      "src/mediflow_datasets/adaptation_package_inference.py": "e67749251492febe0bcccf48243da5b182cbc0289b68c612a15a1c4208cfc3d6"
+    }
+  },
+  "packages": {
+    "skin": {
+      "package_id": "skin_camera_adaptation_stage4_20261111",
+      "archive": "skin_camera_adaptation_stage4_20261111.zip",
+      "archive_sha256": "04545f9db9a2abbb481c92742380fde6ee6efe397e8614c722c2c42701135dc0",
+      "archive_bytes": 15203548,
+      "model_sha256": "c62a76580a0d6658c934b993629a33605961b153d28ac1c6abc3205382815be2",
+      "adaptation_stage": 4,
+      "class_names": [
+        "광선각화증",
+        "기저세포암",
+        "보웬병",
+        "사마귀",
+        "지루각화증",
+        "편평세포암",
+        "표피낭종",
+        "피부섬유종",
+        "혈관종",
+        "흑색점"
+      ],
+      "normal_class_included": false,
+      "preprocessing": {
+        "input_size": 224,
+        "input_policy": "legacy_resize",
+        "color": "RGB",
+        "dtype": "float32",
+        "pixel_range": [
+          0,
+          255
+        ],
+        "layout": "NHWC",
+        "resize_method": "bilinear",
+        "antialias": false,
+        "exif_rotation_applied": false,
+        "external_division_by_255": false,
+        "internal_rescaling": "saved model includes Rescaling(1/255)",
+        "training_augmentation_applied_during_inference": false
+      },
+      "verification": {
+        "status": "passed",
+        "purpose": "execution parity only; synthetic inputs are not clinical ground truth",
+        "model_sha256": "c62a76580a0d6658c934b993629a33605961b153d28ac1c6abc3205382815be2",
+        "cases": [
+          {
+            "input": "synthetic_wide.png",
+            "image_sha256": "8a3011c24462c300db2de0e4a8ce7b5c5d3e04402c064f166118753545a03947",
+            "preprocessing_exactly_equal": true,
+            "max_score_absolute_difference": 9.834766387939453e-07,
+            "predicted_index": 9
+          },
+          {
+            "input": "synthetic_portrait.jpg",
+            "image_sha256": "a567d9c87c4758a4d18d39b45e484dae989e86864190a7029dd9dec4e890a822",
+            "preprocessing_exactly_equal": true,
+            "max_score_absolute_difference": 4.172325134277344e-07,
+            "predicted_index": 9
+          }
+        ],
+        "score_atol": 1e-06,
+        "score_rtol": 1e-05,
+        "source_test_recomputed": false,
+        "new_training_executed": false,
+        "environment": {
+          "python": "3.12.14",
+          "tensorflow": "2.20.0",
+          "keras": "3.13.2",
+          "numpy": "2.5.2"
+        }
+      },
+      "zip_file_verification_passed": true,
+      "isolated_cli_passed": true,
+      "example_usage_passed": true
+    },
+    "web_skin": {
+      "package_id": "web_skin_camera_adaptation_stage4_20261111",
+      "archive": "web_skin_camera_adaptation_stage4_20261111.zip",
+      "archive_sha256": "bd484b020155f336fcb54b4172489af98451868373791415b8576546d4bc56e3",
+      "archive_bytes": 32963360,
+      "model_sha256": "bbdfade5173c12d4076ab414c907821e21ee57fee2366f79d57adde4a8f74dc9",
+      "adaptation_stage": 4,
+      "class_names": [
+        "건선",
+        "아토피",
+        "여드름",
+        "정상",
+        "주사"
+      ],
+      "normal_class_included": true,
+      "preprocessing": {
+        "input_size": 256,
+        "input_policy": "center_square",
+        "color": "RGB",
+        "dtype": "float32",
+        "pixel_range": [
+          0,
+          255
+        ],
+        "layout": "NHWC",
+        "resize_method": "bilinear",
+        "antialias": false,
+        "exif_rotation_applied": false,
+        "external_division_by_255": false,
+        "internal_rescaling": "saved model includes Rescaling(1/255)",
+        "training_augmentation_applied_during_inference": false
+      },
+      "verification": {
+        "status": "passed",
+        "purpose": "execution parity only; synthetic inputs are not clinical ground truth",
+        "model_sha256": "bbdfade5173c12d4076ab414c907821e21ee57fee2366f79d57adde4a8f74dc9",
+        "cases": [
+          {
+            "input": "synthetic_wide.png",
+            "image_sha256": "8a3011c24462c300db2de0e4a8ce7b5c5d3e04402c064f166118753545a03947",
+            "preprocessing_exactly_equal": true,
+            "max_score_absolute_difference": 2.274746684520826e-23,
+            "predicted_index": 1
+          },
+          {
+            "input": "synthetic_portrait.jpg",
+            "image_sha256": "a567d9c87c4758a4d18d39b45e484dae989e86864190a7029dd9dec4e890a822",
+            "preprocessing_exactly_equal": true,
+            "max_score_absolute_difference": 2.4586915969848633e-07,
+            "predicted_index": 1
+          }
+        ],
+        "score_atol": 1e-06,
+        "score_rtol": 1e-05,
+        "source_test_recomputed": false,
+        "new_training_executed": false,
+        "environment": {
+          "python": "3.12.14",
+          "tensorflow": "2.20.0",
+          "keras": "3.13.2",
+          "numpy": "2.5.2"
+        }
+      },
+      "zip_file_verification_passed": true,
+      "isolated_cli_passed": true,
+      "example_usage_passed": true
+    },
+    "hair": {
+      "package_id": "hair_camera_adaptation_stage2_20261111_5class",
+      "archive": "hair_camera_adaptation_stage2_20261111_5class.zip",
+      "archive_sha256": "9ef4ec14c5cb1a8dbde394e543b0c1532663c1a4e4d7daed0585fd6dcf8bf934",
+      "archive_bytes": 24480461,
+      "model_sha256": "fa2c59ae6a0b1342b8c693014d0a951c59064a4c8439a313f2520e1ce8c224fd",
+      "adaptation_stage": 2,
+      "class_names": [
+        "모낭사이홍반",
+        "미세각질",
+        "비듬",
+        "탈모",
+        "피지과다"
+      ],
+      "normal_class_included": false,
+      "preprocessing": {
+        "input_size": 384,
+        "input_policy": "legacy_resize",
+        "color": "RGB",
+        "dtype": "float32",
+        "pixel_range": [
+          0,
+          255
+        ],
+        "layout": "NHWC",
+        "resize_method": "bilinear",
+        "antialias": false,
+        "exif_rotation_applied": false,
+        "external_division_by_255": false,
+        "internal_rescaling": "saved model includes Rescaling(1/255)",
+        "training_augmentation_applied_during_inference": false
+      },
+      "verification": {
+        "status": "passed",
+        "purpose": "execution parity only; synthetic inputs are not clinical ground truth",
+        "model_sha256": "fa2c59ae6a0b1342b8c693014d0a951c59064a4c8439a313f2520e1ce8c224fd",
+        "cases": [
+          {
+            "input": "synthetic_wide.png",
+            "image_sha256": "8a3011c24462c300db2de0e4a8ce7b5c5d3e04402c064f166118753545a03947",
+            "preprocessing_exactly_equal": true,
+            "max_score_absolute_difference": 1.1920928955078125e-07,
+            "predicted_index": 3
+          },
+          {
+            "input": "synthetic_portrait.jpg",
+            "image_sha256": "a567d9c87c4758a4d18d39b45e484dae989e86864190a7029dd9dec4e890a822",
+            "preprocessing_exactly_equal": true,
+            "max_score_absolute_difference": 1.1920928955078125e-07,
+            "predicted_index": 3
+          }
+        ],
+        "score_atol": 1e-06,
+        "score_rtol": 1e-05,
+        "source_test_recomputed": false,
+        "new_training_executed": false,
+        "environment": {
+          "python": "3.12.14",
+          "tensorflow": "2.20.0",
+          "keras": "3.13.2",
+          "numpy": "2.5.2"
+        }
+      },
+      "zip_file_verification_passed": true,
+      "isolated_cli_passed": true,
+      "example_usage_passed": true
+    }
+  }
+}

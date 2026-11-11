@@ -14,9 +14,83 @@
 `docs/FINAL_DETAILED_REPORT_20260928.md`를 기준으로 한다. 실제 장비 사진을
 이용한 2·3단계와 시스템 통합 10단계는 별도 범위로 남겨둔다.
 
+## 2026-11-11 적응 후보 독립 패키징 완료
+
+사용자 요청으로 피부 4차·얼굴 4차·두피 2차를 각각 독립 실행하는
+[ZIP 3개](../results/camera_adaptation_packages_20261111/README.md)로 묶었다.
+모델·클래스 순서·전처리·실행 예시·환경·원본 학습 및 평가 기록을 포함한다.
+실제 모델 로드, 기존 평가 코드와의 전처리·예측 일치, 압축 해제본의 단독 실행을 확인했다.
+기존 공식 후보 색인과 원본을 유지했으며 새 학습·Test 정확도 재측정은 하지 않았다.
+[패키징 기록](research/camera_adaptation/ADAPTATION_MODEL_PACKAGES_20261111.md)을 따른다.
+사용자가 정한 이번 범위는 패키징까지다. 공통 라우팅·API·장비 통합·LLM·VLM은 별도 후속 작업이다.
+
+## 2026-11-11 작업 종합과 완료 자료 정리
+
+[촬영부터 기본~4차·Test까지의 작업 요약](PROJECT_SUMMARY_20261111.md)을 만들고 완료 노트북 7개를
+completed에 모았다. 설정·분석·보고서 그림의 안내와 과거 실행 지시도 현재 상태에 맞췄다.
+원본과 같은 복사본·검사 캐시는 정리하고 고유한 과거 보조 자료는 압축 보존했다.
+파일 크기 기준 순 정리량은 604,293,068 bytes이며 [정리 기록](research/maintenance/PROJECT_WRAPUP_CLEANUP_20261111.md)을 따른다.
+원본 모델·이미지·수치 결과·클래스 순서와 기존 고정 설정은 유지한다.
+
+## 2026-11-11 4차 추가 Source Test 완료·결과 회수
+
+코드 사본 수정본 `dda96d8dc716`의 실제 Colab Test ZIP을 확인했다. 신규 4차 15개 평가와
+기본~3차 재사용 36개의 총 51개 비교, 클래스 지표 340행을 검증해
+[결과 분석](research/camera_adaptation/ADAPTATION_STAGE4_TEST_RESULT_REVIEW_20261111.md)과
+[원본 결과](../results/camera_adaptation_stage4_test_20261111/README.md)를 보관했다.
+피부는 기존 조건에서 모두 699/700으로 같았다. 얼굴 4차는 기본보다 원본 +2장·기존 조명 +4장·
+기존 확장 +3장이었고, 두피는 각각 7장·1장·9장 낮았다. 새 4차 변환의 이전 모델 점수는 미측정이다.
+Validation의 후속 후보 피부 4차·얼굴 4차·두피 2차와 공식 후보 색인을 유지한다.
+결과 종합·독립 사용 패키징은 위 기록처럼 완료했다. 정답 확인 실제 장비 질환 평가는 별도 과제다.
+아래 준비·오류 수정은 완료 이전의 과정 기록이다. 재설정 4차는 계속 미실행 보관한다.
+
+## 2026-11-11 완료한 4차 채택·재설정본 미실행 보관·공통 Test 준비
+
+사용자는 조정 전 4차 `492ee01afb45`만 진행하고 재설정 4차는 학습하지 않기로 했다.
+재설정 노트북·설정은 archive에 바이트 그대로 보관하고 완료한 4차 노트북을 completed에 연결했다.
+4차 모델만 원본·기존 조명·기존 확장·4차 조명·4차 확장 Test에서 새로 평가하고,
+기본~3차의 기존 36개 결과를 재사용하는 [15개 추가 평가 계획](research/camera_adaptation/ADAPTATION_STAGE4_FINAL_TEST_20261111.md)을 준비했다.
+앞서 준비한 미실행 75개 비교안은 대체했다. 새 4차 변환 두 조건은 이전 모델 점수가 없어 변화량을 비워 둔다.
+이번 전체 Source Test 결과는 아직 없고 기존 Test·모델·공식 후보 색인은 유지한다.
+아래 과거의 ‘재설정 학습 다음 단계’ 안내는 이 사용자 결정으로 대체한다.
+
+사용자의 실제 Colab 실행은 환경 설치·GPU 인식 후 코드 사본 해시 불일치로 Test 전에 중단됐다.
+생성기의 그림 파일명 치환 범위를 수정하고 코드 5개의 준비 단계 검사를 추가했다.
+수정 전 오류 재현·수정 후 통과와 실제 공통 ZIP 준비 검사를 확인했으며 실제 Test는 재실행 전이다.
+[수정 상세](research/camera_adaptation/ADAPTATION_STAGE4_FINAL_TEST_20261111.md)를 따른다.
+
+## 2026-11-11 조정 전 4차 학습 결과 회수 완료
+
+설정 `492ee01afb45`의 피부·얼굴·두피 각 5 epoch 결과를 확인했다. 공통 Validation 기준에서
+피부·얼굴은 이번 4차, 두피는 기존 2차가 선택됐다. 원본·변환 성능과 클래스별 교환을
+[결과 분석](research/camera_adaptation/ADAPTATION_STAGE4_BEFORE_REFIT_RESULT_REVIEW_20261111.md)에 기록했다.
+재설정본 `e6bc85bc0a7d`는 아직 미실행이며 공식 후보 색인은 유지했다.
+
+## 2026-11-11 실제 촬영 재대조와 4차 강도 재설정 완료
+
+원본 촬영 124장과 원본 Train 표본 461장을 다시 읽어 조명 후보를 픽셀에서 비교했다.
+피부·얼굴의 밝기 범위를 넓히고 새 조명에서 색·초점·미세 대비를 재검토했다.
+[새 설정과 비교](research/camera_adaptation/CAMERA_REFIT_20261111.md)를 현재 노트북에 반영했다.
+출발 모델·분할·학습량·런타임은 유지하며 정식 학습은 아직 미실행이다.
+
+## 2026-11-11 전체 문서·실행 이력 대조와 불필요 자료 정리
+
+기존 문서 85개·Word 2개·과거 ZIP 문서 13개를 목록화하고 연구 문서를 주제별로 나눴다.
+실제 사용 코드와 결과·부분 실행·미실행 준비를 구분했다. 현재 입력 5곳과 완료 결과를 유지하고
+구버전·중복 ZIP, 대체된 후보 미리보기, 미사용 노트북을 정리했다.
+[정리 기록](research/maintenance/PROJECT_ORGANIZATION_20261111.md), [문서 대조표](DOCUMENT_INDEX.md),
+[실행 코드 대조표](../notebooks/EXECUTION_INDEX.md)를 따른다. 4차 학습은 아직 미실행이다.
+
+## 2026-11-11 4차 학습 전 폴더 정리
+
+과거 검사 임시폴더 62개와 캐시 5곳을 정리하고, 카메라 노트북은 현재 4차·완료 실험·보관용으로
+구분했다. 이전 공통 ZIP v1·v2는 보관 폴더 안으로 이동했으며 현재 v3·촬영 원본·모델·수치 결과·
+4차 설정은 보존했다. [폴더 정리 기록](research/maintenance/PROJECT_CLEANUP_20261111.md)과
+[노트북 안내](../notebooks/camera_adaptation/README.md)를 따른다. 4차 정식 학습은 아직 미실행이다.
+
 ## 2026-11-11 수정본 학습 직전 점검 완료
 
-[학습 직전 점검](research/REVISED_ADAPTATION_PRETRAINING_CHECK_20261111.md)에서 실제 저장 모델
+[학습 직전 점검](research/camera_adaptation/REVISED_ADAPTATION_PRETRAINING_CHECK_20261111.md)에서 실제 저장 모델
 세 개의 설정 배치 크기 갱신·체크포인트 복원·저장/재로드를 임시 모델로 확인했다.
 입력 공간 계산에 빠졌던 기존 변환 Validation 캐시를 포함하고 필요한 1·2차 결과·모델·분할을
 환경 준비 전에 확인하도록 보완했다. 새 강도·모델·분할·학습량은 변경하지 않았다.
@@ -27,7 +101,7 @@
 ## 2026-11-11 세 분야 색·미세 대비·흐림 재검토 완료
 
 사용자 요청으로 피부·얼굴·두피 모두 유지된 Train 표본 461장과 실제 촬영 124장에서
-[촬영 변환을 재검토](research/CAMERA_PROFILE_REVISION_20261111.md)했다. 조명 설정은 고정하고
+[촬영 변환을 재검토](research/camera_adaptation/CAMERA_PROFILE_REVISION_20261111.md)했다. 조명 설정은 고정하고
 조명 적용 후 남는 색 차이의 방향·관찰된 변화 폭과 두 종류의 경계 지표를 비교했다.
 피부는 작은 a 감소·b 증가 후보를 남기고 추가 흐림·미세 대비 변화를 제외했다.
 얼굴은 a를 유지하고 작은 b 감소·미세 대비 감소·흐림 후보를 남겼다.
@@ -35,7 +109,7 @@
 만족하지 못해 추가 항목을 제외했다. 모든 지표의 개선이나 실제 장비와의 동일함은 미검증이다.
 
 [새 설정](../configs/camera_revised_20261111.json)과
-[새 Colab 노트북](../notebooks/camera_adaptation/MediFlow_Camera_Revised_Adaptation_20261111.ipynb)을
+[새 Colab 노트북](../notebooks/camera_adaptation/completed/MediFlow_Adaptation_Stage4_20261111.ipynb)을
 준비했다. 기존 공통 ZIP v3와 세 출발 모델·데이터 분할·학습량을 유지해 각 5 epoch 비교한다.
 이전 확대 설정과 노트북은 기록으로 보존하고 새 실행은 20261111 수정본을 사용한다.
 로컬 검사는 190개 통과·3개 건너뜀이며 새 학습과 Validation 성능 비교는 아직 남아 있다.
@@ -43,8 +117,8 @@
 ## 2026-11-10 실측 기반 변환 확대 후속 학습 준비
 
 최종 Source Test와 기존 학습 결과를 보존하고, 실제 촬영 차이를 더 반영하는
-[후속 실험 안내](research/MEASURED_STRONGER_ADAPTATION_20261110.md)와
-[Colab 노트북](../notebooks/camera_adaptation/MediFlow_Measured_Stronger_Adaptation_20261110.ipynb)을 준비했다.
+[후속 실험 안내](research/camera_adaptation/archive/MEASURED_STRONGER_ADAPTATION_20261110.md)와
+Colab 노트북 (삭제한 이전 준비 자료)을 준비했다.
 기존에 선택한 세 출발 모델에서 각각 5 epoch 학습하며 기존 2차와 같은 원본·기존 변환·새 변환
 Validation에서 비교한다. 기존 공통 ZIP v3를 재사용하고 별도 새 결과 폴더에 저장한다.
 밝기·대비의 방향·보정 기준과 색·미세 대비·초점의 반영 강도를 함께 바꾸는 후속 실험이다.
@@ -52,7 +126,7 @@ Validation에서 비교한다. 기존 공통 ZIP v3를 재사용하고 별도 �
 코드·설정·예시·로컬 검사를 준비한 상태로, 실제 Colab 학습·새 성능 측정은 아직 남아 있다.
 
 사용자의 실제 유사성 재확인 요청으로 유지된 Train 검토용 PNG 461장과 실제 촬영 124장을
-[다시 대조](research/ACTUAL_CAMERA_SIMILARITY_RECHECK_20261110.md)했다. 밝기 차이는 줄었으나
+[다시 대조](research/camera_adaptation/ACTUAL_CAMERA_SIMILARITY_RECHECK_20261110.md)했다. 밝기 차이는 줄었으나
 두피의 미세 경계와 세 분야의 Lab b 색상 분포 차이는 새 설정에서 증가했다.
 현재 확대 설정은 실제 촬영과 거의 동일하다고 볼 수 없으며, 학습 전에 두피 흐림·미세 대비와
 색 변화의 목적·방향을 재검토한다. 재점검에서는 기존 변환 설정·노트북·모델을 변경하지 않았다.
@@ -60,7 +134,7 @@ Validation에서 비교한다. 기존 공통 ZIP v3를 재사용하고 별도 �
 ## 2026-11-10 카메라 적응 최종 Source Test 완료
 
 피부 700장, 얼굴 400장, 두피 1,252장으로 학습 전·1차·2차·3차 모델을 원본·조명·확장
-조건에서 평가해 36개 비교를 완료했다. [결과 분석](research/ADAPTATION_FINAL_TEST_RESULT_REVIEW_20261110.md)과
+조건에서 평가해 36개 비교를 완료했다. [결과 분석](research/camera_adaptation/ADAPTATION_FINAL_TEST_RESULT_REVIEW_20261110.md)과
 [원본 결과](../results/camera_adaptation_final_test_20261110/test_comparison.csv)를 보관했다.
 피부는 모든 조건이 699/700장으로 같았다. 얼굴 3차는 학습 전 대비 확장에서 4장 더 맞혔고
 원본에서 2장 덜 맞혔다. 두피 3차는 확장에서 학습 전보다 1장, 원본에서 7장 덜 맞혔다.
@@ -79,11 +153,11 @@ Validation에서 분야별 후속 후보 하나를 고른다. 사용자의 결�
 가능성은 탐색 비교의 한계로 기록한다. 2차는 선택 방식의 1차 시작 상태에서 색·미세 질감·초점을 추가하며,
 3차는 그 상태에서 같은 확장 변환과 MMD·CORAL 결합 손실을 사용한다.
 공통 ZIP 하나를 Drive에 두고 단계별 노트북이 읽는다.
-1차 실행과 epoch 수는 [1차 저장 모델 재사용 안내](research/ADAPTATION_STAGE1_SAVED_CHECKPOINTS_20261110.md)를 따른다.
+1차 실행과 epoch 수는 [1차 저장 모델 재사용 안내](research/camera_adaptation/ADAPTATION_STAGE1_SAVED_CHECKPOINTS_20261110.md)를 따른다.
 1차 6개 실험이 완료되어 피부 기본, 얼굴 선정, 두피 선정 모델이 후속 후보로 선택됐다.
-같은 공통 ZIP으로 이 세 모델을 각각 5 epoch 학습하는 [2차 실행 안내](research/ADAPTATION_STAGE2_EXPANDED_20261110.md)를 준비했다.
+같은 공통 ZIP으로 이 세 모델을 각각 5 epoch 학습하는 [2차 실행 안내](research/camera_adaptation/ADAPTATION_STAGE2_EXPANDED_20261110.md)를 준비했다.
 2차 세 분야의 학습·공통 검증을 완료했다. 3차는 같은 세 출발 모델과 2차 변환에 MMD·CORAL을
-함께 추가하는 [3차 실행 안내](research/ADAPTATION_STAGE3_ALIGNED_20261110.md)를 따른다.
+함께 추가하는 [3차 실행 안내](research/camera_adaptation/ADAPTATION_STAGE3_ALIGNED_20261110.md)를 따른다.
 
 ## 2026-11-10 결정: 학습 구성 재설계와 실행 자료 정리
 
@@ -94,7 +168,7 @@ Validation에서 분야별 후속 후보 하나를 고른다. 사용자의 결�
 `output`은 실제 분석 실행본 세 폴더와 `pdf`로 정리한다. 발표·Validation 자료는
 `presentation/report_assets/`에 보존하고, 사용하지 않을 학습 준비본의 코드·설정 이력과
 참고 입력은 `camera_capture/_review/`에 보존한다.
-실제 구조·검증은 [정리 기록](research/OUTPUT_REORGANIZATION_20261110.md)을 따른다.
+실제 구조·검증은 [정리 기록](research/maintenance/OUTPUT_REORGANIZATION_20261110.md)을 따른다.
 이 작업은 학습 속도 최적화나 재학습 완료를 뜻하지 않는다. LLM·VLM은 적응 작업 이후로 유지한다.
 
 ## 2026-11-09 후속 결정: 특징 정렬 학습 추가
@@ -104,7 +178,7 @@ Validation에서 분야별 후속 후보 하나를 고른다. 사용자의 결�
 **MMD·CORAL을 학습 손실로 사용하는 특징 정렬 파일럿**을 추가한다. 현재 실행 ZIP과
 노트북의 학습 조건에는 넣지 않는다. MMD-only와 CORAL-only를 추가 학습량이 같은
 정렬 없는 대조군과 각각 비교하며, 자세한 순서와 고정 조건은
-[특징 정렬 후속 실험 기록](research/FEATURE_ALIGNMENT_FOLLOWUP_20261109.md)을 따른다.
+[특징 정렬 후속 실험 기록](research/camera_adaptation/archive/FEATURE_ALIGNMENT_FOLLOWUP_20261109.md)을 따른다.
 이 결정은 후속 실험 계획이며 구현·실행·성능 향상 완료를 뜻하지 않는다.
 LLM·VLM은 촬영 환경 적응 작업 이후로 유지한다.
 
@@ -118,7 +192,7 @@ LLM·VLM은 촬영 환경 적응 작업 이후로 유지한다.
 전체 ZIP 해시·누수를 검사하고 Source-only·Brightness-only·Target-guided Augmentation을
 비교하는 코드를 준비했다. MMD·CORAL은 특징 거리 측정에 사용하고, 특징 정렬 학습은
 Target의 작은 인원과 미확인 클래스 구성 때문에 보류한다. 실행과 근거는
-[도메인 적응 구현 보고서](research/DOMAIN_ADAPTATION_IMPLEMENTATION_20261108.md)를 따른다.
+[도메인 적응 구현 보고서](research/camera_adaptation/DOMAIN_ADAPTATION_IMPLEMENTATION_20261108.md)를 따른다.
 
 ## 2026-11-03 우선 방향: 실제 카메라 환경 대응
 
@@ -140,18 +214,18 @@ Target의 작은 인원과 미확인 클래스 구성 때문에 보류한다. �
 ## 2026-10-26 당시 우선 방향
 
 선정 모델 7개와 저장 평가 기록을 재점검한 뒤 LLM·VLM 연구로 진행한다.
-[사전 점검 보고서](research/PRE_LLM_VLM_PROJECT_AUDIT_20261026.md)에서 파일·평가·추론의
+[사전 점검 보고서](research/integration/PRE_LLM_VLM_PROJECT_AUDIT_20261026.md)에서 파일·평가·추론의
 확인 범위와 남은 연결 작업을 구분한다. 첫 LLM 실험은 저장된 실제 분류 결과와 문진을
 텍스트로 전달해 바로 시작할 수 있다. 최신 후보의 공통 추론 어댑터·구조화 결과 형식은
 실제 연결을 위해 함께 준비한다. VLM은 사진에서 질환 후보를 독립 분류하고 시각 근거를
 평가한다. 기존 CLI는 초기 모델용이며 최신 선정 후보용으로 바뀐 것이 아니다.
 Hair 5클래스와 6클래스는 명시적으로 선택하고 현재 색인을 자동 변경하지 않는다.
 
-팀원 [두 저장소 분석](research/TEAM_LLM_VLM_REPOSITORY_REVIEW_20261026.md) 결과,
+팀원 [두 저장소 분석](research/integration/TEAM_LLM_VLM_REPOSITORY_REVIEW_20261026.md) 결과,
 실제 의료 학습은 MedVLM의 `codex/medical-finetune-v1-20261023` 브랜치에 있다.
 해당 native 학습·평가 코드를 재사용하고 Forge는 선택적 학습 관리 도구로 둔다.
 구체적인 입력·평가·추가 SFT·GitHub 작업 순서는
-[연결 가이드](research/LLM_VLM_PROJECT_INTEGRATION_GUIDE_20261026.md)를 따른다.
+[연결 가이드](research/integration/LLM_VLM_PROJECT_INTEGRATION_GUIDE_20261026.md)를 따른다.
 
 ## 2026-09-14 이후 당시 우선 방향
 
@@ -159,7 +233,7 @@ Hair 5클래스와 6클래스는 명시적으로 선택하고 현재 색인을 �
 후보 모델은 그대로 보존한다. Hair 정상 데이터의 출처·촬영 방식·라벨을 검증한 뒤 별도의 6-class
 데이터 버전을 만들고, 세 도메인에서 각각 모델 구조를 비교한다. 마지막으로 선정 후보의 실행 비용을
 같은 측정 환경에서 비교한다. 앞서 완료한 논문 기반 학습법 실험의 설계 기록은
-[`PAPER_BASED_MODEL_ENHANCEMENT_PLAN.md`](research/PAPER_BASED_MODEL_ENHANCEMENT_PLAN.md)에 보존한다.
+[`PAPER_BASED_MODEL_ENHANCEMENT_PLAN.md`](research/public_data/PAPER_BASED_MODEL_ENHANCEMENT_PLAN.md)에 보존한다.
 
 ## 1. 현재 모델·평가 재현
 
@@ -171,7 +245,7 @@ Hair 5클래스와 6클래스는 명시적으로 선택하고 현재 색인을 �
 - [x] 현재 선정 후보 3개의 저장 예측에서 Accuracy·Macro F1·혼동행렬 재계산 및 모델 해시 확인
 - [ ] 정제 전 원래 Test 사진으로 초기 모델 6개 추론 재실행 — 원본 데이터셋 미보관으로 수행 불가
 
-2026-09-27 점검 기록: [저장 모델·평가 기록 재현 점검](research/EVALUATION_REPRODUCTION_AUDIT_20260927.md).
+2026-09-27 점검 기록: [저장 모델·평가 기록 재현 점검](research/public_data/EVALUATION_REPRODUCTION_AUDIT_20260927.md).
 초기 평가의 수치와 저장 결과는 대조했지만, Test 사진 자체가 없어 원래 추론 결과를
 새로 생성하지 못했다. 정제 후 Test로 대체하면 같은 평가가 아니므로 재현 완료로 표시하지 않는다.
 
@@ -179,6 +253,8 @@ Hair 5클래스와 6클래스는 명시적으로 선택하고 현재 색인을 �
 재계산하고 기존 결과와 차이가 있으면 원인을 설명한다.
 
 ## 2. 실제 장비 소규모 검증 데이터 확보
+
+현재 상태: 4명·124장의 질환 정답 없는 촬영 특성 조사 자료는 확보했다. 아래 완료 기준의 정답 확인 실제 질환 검증 세트와는 구분하며, 그 자료는 아직 확보하지 못했다.
 
 - 사람, 부위, 촬영 세션 단위의 익명 표본 ID 부여
 - 웹캠 얼굴, 현미경 피부, 현미경 두피를 별도 프로토콜로 촬영
@@ -189,6 +265,8 @@ Hair 5클래스와 6클래스는 명시적으로 선택하고 현재 색인을 �
 
 ## 3. Domain Gap 분석
 
+현재 상태: Source Train과 촬영 자료의 픽셀·특징 분포 분석 및 1~4차 설계는 완료했다. 실제 장비 질환 정답이 없어 아래 Target Accuracy·Recall 비교는 미완료다.
+
 - 공개 Test와 실제 장비 데이터의 Accuracy, Macro F1, 클래스별 Recall 비교
 - Confusion Matrix와 낮은 신뢰도 및 오분류 사례 검토
 - 조명, 색감, 초점, 배율, 배경별 성능 분해
@@ -196,6 +274,8 @@ Hair 5클래스와 6클래스는 명시적으로 선택하고 현재 색인을 �
 완료 기준: 모델별 주요 실패 유형과 다음 실험의 우선 가설을 문서화한다.
 
 ## 4. Partial Fine-tuning
+
+현재 상태: 기존 저장본에서 출발한 촬영 적응 실험 15개와 Source Test 비교를 완료했다. 실험 조건·결과는 [최신 요약](PROJECT_SUMMARY_20261111.md)을 따른다. 실제 장비의 정답 확인 검증 세트에 대한 비교는 별도 과제다.
 
 - 기존 baseline을 변경하지 않고 새 실험으로 수행
 - Head-only baseline 후 EfficientNet 후반부 일부만 해제
@@ -221,6 +301,8 @@ Hair 5클래스와 6클래스는 명시적으로 선택하고 현재 색인을 �
 완료 기준: 변경 이유와 효과가 baseline 대비 표로 비교 가능하다.
 
 ## 7. 최종 모델 선정
+
+현재 상태: Validation에서 촬영 적응 후속 검토 후보를 피부 4차·얼굴 4차·두피 2차로 정했고 Source Test 비교까지 완료했다. 기존 공식 후보 색인은 유지한다. 아래 실제 장비 정답·추론 비용까지 포함한 최종 확정은 미완료다.
 
 - 공개 Test와 실제 장비 검증 결과를 모두 비교
 - Macro F1, 클래스별 Recall, 안정성, 추론 비용을 함께 평가
@@ -290,15 +372,15 @@ Hair 5클래스와 6클래스는 명시적으로 선택하고 현재 색인을 �
 6클래스 데이터 ZIP을 별도로 만들었다. B0·256/B1·384의 원본·증강 네 조건을 비교해
 B1·384·원본을 Validation 기준 성능 우선 후보로 선정·Test 평가·패키징했다.
 B0·256·증강도 경량 비교 후보로 고정해 별도 Test 평가·패키징했다.
-[5클래스·6클래스 종합 분석](research/HAIR_5CLASS_6CLASS_EXPERIMENT_ANALYSIS_20260928.md)에
+[5클래스·6클래스 종합 분석](research/public_data/hair/HAIR_5CLASS_6CLASS_EXPERIMENT_ANALYSIS_20260928.md)에
 데이터·학습 조건·동일 Test 비교와 남은 한계를 기록했다. 아래 체크되지 않은 항목은
 후속 검증 과제이며, 이번 공개 데이터 성능으로 실제 장비 성능을 주장하지 않는다.
 
-세부 기준: [Hair ‘양호’ 후보 검증·v2 구성 계획](research/HAIR_NORMAL_V2_DATA_PLAN_20260928.md).
+세부 기준: [Hair ‘양호’ 후보 검증·v2 구성 계획](research/public_data/hair/HAIR_NORMAL_V2_DATA_PLAN_20260928.md).
 사용자가 확인한 후보 사진의 여섯 증상값은 모두 `0`이다. 처음 약 2,400장에서 파일명이
 겹친 항목의 사진도 직접 확인해 약 530장을 남겼다. 정리 전 원본은 백업으로 보관 중이다.
 업로드된 ZIP의 1차 점검에서 JPG 534장·파일명 기준 비식별 ID 105개·파일/픽셀 완전 중복
-0건을 확인했다. [점검 보고서](research/HAIR_GOOD_UPLOAD_AUDIT_20260928.md)를 참고한다.
+0건을 확인했다. [점검 보고서](research/public_data/hair/HAIR_GOOD_UPLOAD_AUDIT_20260928.md)를 참고한다.
 기존 5종 ZIP과 신규 ZIP의 완전 동일 파일·RGB 픽셀 교차 중복은 0건으로 기록됐고,
 실험용 6종 분할과 데이터 계약은 생성됐다. 새 양호 사진은 파일명에서 식별한 ID별로
 분리했지만, 기존 5종을 포함한 사람·촬영 세션 독립성과 파일별 원천 라벨 재확인은 남아 있다.
@@ -343,7 +425,7 @@ B0·256·증강도 경량 비교 후보로 고정해 별도 Test 평가·패키�
 
 2026-09-28 결과: 저장 모델 34개(Skin 4, Web Skin 12, Hair 5-class 14, Hair 6-class 4)의
 실행 시간을 동일 Colab 런타임에서 측정했다. [원시 기록·그림](../results/runtime_benchmark_20260928_051423/README.md),
-[측정 해석](research/RUNTIME_BENCHMARK_REVIEW_20260928.md),
+[측정 해석](research/public_data/RUNTIME_BENCHMARK_REVIEW_20260928.md),
 [공개 데이터 모델 종합 선정](../results/FINAL_MODEL_SELECTION_20260928.md)을 보존한다.
 
 - [ ] 측정할 장비와 소프트웨어 버전, 전력/실행 모드, 입력 크기 및 추론 경로 기록

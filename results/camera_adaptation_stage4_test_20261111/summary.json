@@ -1,0 +1,20 @@
+{
+  "plan_sha256": "dda96d8dc71672595b3d3ca1ace43fc8923ba58d087f870612014f7f4450431c",
+  "evaluator_sha256": "5d0d3874df6235ee07358f8d20566d2ad3029da675b4b8f1eb83ae3d160b17c4",
+  "completed_domains": [
+    "skin",
+    "web_skin",
+    "hair"
+  ],
+  "comparisons": 15,
+  "new_inference_arms": [
+    "stage4_revised"
+  ],
+  "reused_comparisons": 36,
+  "combined_comparisons": 51,
+  "source_test_evaluated": true,
+  "real_device_accuracy": null,
+  "prior_source_test_inspected": true,
+  "training_executed": false,
+  "test_used_for_model_selection": false
+}

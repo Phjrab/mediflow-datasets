@@ -1,0 +1,289 @@
+{
+  "skin": {
+    "classes": [
+      "광선각화증",
+      "기저세포암",
+      "보웬병",
+      "사마귀",
+      "지루각화증",
+      "편평세포암",
+      "표피낭종",
+      "피부섬유종",
+      "혈관종",
+      "흑색점"
+    ],
+    "test_count": 700,
+    "correct_counts": {
+      "initial": {
+        "clean": 699,
+        "lighting": 699,
+        "expanded": 699
+      },
+      "stage1_lighting": {
+        "clean": 699,
+        "lighting": 699,
+        "expanded": 699
+      },
+      "stage2_expanded": {
+        "clean": 699,
+        "lighting": 699,
+        "expanded": 699
+      },
+      "stage3_aligned": {
+        "clean": 699,
+        "lighting": 699,
+        "expanded": 699
+      },
+      "stage4_revised": {
+        "clean": 699,
+        "lighting": 699,
+        "expanded": 699,
+        "stage4_lighting": 699,
+        "stage4_expanded": 699
+      }
+    },
+    "paired_stage4_prediction_changes": {
+      "lighting": {
+        "prediction_changed": 0,
+        "wrong_to_correct": 0,
+        "correct_to_wrong": 0,
+        "correct_count_before": 699,
+        "correct_count_after": 699
+      },
+      "expanded": {
+        "prediction_changed": 0,
+        "wrong_to_correct": 0,
+        "correct_to_wrong": 0,
+        "correct_count_before": 699,
+        "correct_count_after": 699
+      },
+      "stage4_lighting": {
+        "prediction_changed": 2,
+        "wrong_to_correct": 1,
+        "correct_to_wrong": 1,
+        "correct_count_before": 699,
+        "correct_count_after": 699
+      },
+      "stage4_expanded": {
+        "prediction_changed": 2,
+        "wrong_to_correct": 1,
+        "correct_to_wrong": 1,
+        "correct_count_before": 699,
+        "correct_count_after": 699
+      },
+      "stage4_lighting_to_expanded": {
+        "prediction_changed": 0,
+        "wrong_to_correct": 0,
+        "correct_to_wrong": 0,
+        "correct_count_before": 699,
+        "correct_count_after": 699
+      }
+    },
+    "stage4_environment": {
+      "python": "3.13.16",
+      "tensorflow": "2.20.0",
+      "keras": "3.13.2",
+      "numpy": "2.5.4",
+      "opencv": "4.14.0",
+      "matplotlib": "3.11.2",
+      "gpu": [
+        {
+          "compute_capability": [
+            8,
+            9
+          ],
+          "device_name": "NVIDIA L4"
+        }
+      ]
+    },
+    "selected_on_validation_unchanged": "stage4_revised"
+  },
+  "web_skin": {
+    "classes": [
+      "건선",
+      "아토피",
+      "여드름",
+      "정상",
+      "주사"
+    ],
+    "test_count": 400,
+    "correct_counts": {
+      "initial": {
+        "clean": 366,
+        "lighting": 359,
+        "expanded": 359
+      },
+      "stage1_lighting": {
+        "clean": 361,
+        "lighting": 360,
+        "expanded": 358
+      },
+      "stage2_expanded": {
+        "clean": 363,
+        "lighting": 359,
+        "expanded": 358
+      },
+      "stage3_aligned": {
+        "clean": 364,
+        "lighting": 361,
+        "expanded": 363
+      },
+      "stage4_revised": {
+        "clean": 368,
+        "lighting": 363,
+        "expanded": 362,
+        "stage4_lighting": 367,
+        "stage4_expanded": 354
+      }
+    },
+    "paired_stage4_prediction_changes": {
+      "lighting": {
+        "prediction_changed": 13,
+        "wrong_to_correct": 3,
+        "correct_to_wrong": 8,
+        "correct_count_before": 368,
+        "correct_count_after": 363
+      },
+      "expanded": {
+        "prediction_changed": 14,
+        "wrong_to_correct": 3,
+        "correct_to_wrong": 9,
+        "correct_count_before": 368,
+        "correct_count_after": 362
+      },
+      "stage4_lighting": {
+        "prediction_changed": 7,
+        "wrong_to_correct": 3,
+        "correct_to_wrong": 4,
+        "correct_count_before": 368,
+        "correct_count_after": 367
+      },
+      "stage4_expanded": {
+        "prediction_changed": 16,
+        "wrong_to_correct": 0,
+        "correct_to_wrong": 14,
+        "correct_count_before": 368,
+        "correct_count_after": 354
+      },
+      "stage4_lighting_to_expanded": {
+        "prediction_changed": 15,
+        "wrong_to_correct": 0,
+        "correct_to_wrong": 13,
+        "correct_count_before": 367,
+        "correct_count_after": 354
+      }
+    },
+    "stage4_environment": {
+      "python": "3.13.16",
+      "tensorflow": "2.20.0",
+      "keras": "3.13.2",
+      "numpy": "2.5.4",
+      "opencv": "4.14.0",
+      "matplotlib": "3.11.2",
+      "gpu": [
+        {
+          "compute_capability": [
+            8,
+            9
+          ],
+          "device_name": "NVIDIA L4"
+        }
+      ]
+    },
+    "selected_on_validation_unchanged": "stage4_revised"
+  },
+  "hair": {
+    "classes": [
+      "모낭사이홍반",
+      "미세각질",
+      "비듬",
+      "탈모",
+      "피지과다"
+    ],
+    "test_count": 1252,
+    "correct_counts": {
+      "initial": {
+        "clean": 1002,
+        "lighting": 997,
+        "expanded": 994
+      },
+      "stage1_lighting": {
+        "clean": 998,
+        "lighting": 997,
+        "expanded": 991
+      },
+      "stage2_expanded": {
+        "clean": 995,
+        "lighting": 995,
+        "expanded": 992
+      },
+      "stage3_aligned": {
+        "clean": 995,
+        "lighting": 995,
+        "expanded": 993
+      },
+      "stage4_revised": {
+        "clean": 995,
+        "lighting": 996,
+        "expanded": 985,
+        "stage4_lighting": 990,
+        "stage4_expanded": 990
+      }
+    },
+    "paired_stage4_prediction_changes": {
+      "lighting": {
+        "prediction_changed": 16,
+        "wrong_to_correct": 7,
+        "correct_to_wrong": 6,
+        "correct_count_before": 995,
+        "correct_count_after": 996
+      },
+      "expanded": {
+        "prediction_changed": 75,
+        "wrong_to_correct": 27,
+        "correct_to_wrong": 37,
+        "correct_count_before": 995,
+        "correct_count_after": 985
+      },
+      "stage4_lighting": {
+        "prediction_changed": 60,
+        "wrong_to_correct": 26,
+        "correct_to_wrong": 31,
+        "correct_count_before": 995,
+        "correct_count_after": 990
+      },
+      "stage4_expanded": {
+        "prediction_changed": 60,
+        "wrong_to_correct": 26,
+        "correct_to_wrong": 31,
+        "correct_count_before": 995,
+        "correct_count_after": 990
+      },
+      "stage4_lighting_to_expanded": {
+        "prediction_changed": 0,
+        "wrong_to_correct": 0,
+        "correct_to_wrong": 0,
+        "correct_count_before": 990,
+        "correct_count_after": 990
+      }
+    },
+    "stage4_environment": {
+      "python": "3.13.16",
+      "tensorflow": "2.20.0",
+      "keras": "3.13.2",
+      "numpy": "2.5.4",
+      "opencv": "4.14.0",
+      "matplotlib": "3.11.2",
+      "gpu": [
+        {
+          "compute_capability": [
+            8,
+            9
+          ],
+          "device_name": "NVIDIA L4"
+        }
+      ]
+    },
+    "selected_on_validation_unchanged": "stage2_expanded"
+  }
+}

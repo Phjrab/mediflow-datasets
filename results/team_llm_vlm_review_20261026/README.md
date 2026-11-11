@@ -1,8 +1,8 @@
 # 팀원 LLM VLM 저장소 검토 근거
 
 2026-10-26 공개 GitHub의 고정 커밋과 로컬 CPU 검사에 대한 기록이다.
-분석은 [저장소 검토 보고서](../../docs/research/TEAM_LLM_VLM_REPOSITORY_REVIEW_20261026.md),
-후속 작업은 [실행 가이드](../../docs/research/LLM_VLM_PROJECT_INTEGRATION_GUIDE_20261026.md)를 따른다.
+분석은 [저장소 검토 보고서](../../docs/research/integration/TEAM_LLM_VLM_REPOSITORY_REVIEW_20261026.md),
+후속 작업은 [실행 가이드](../../docs/research/integration/LLM_VLM_PROJECT_INTEGRATION_GUIDE_20261026.md)를 따른다.
 
 - `repository_provenance.json`: 기본·개발 브랜치 SHA, 브랜치 차이와 고정 커밋의 원격 CI 조회.
 - `source_inventory.json`: 검토한 텍스트 코드 snapshot의 경로·내용 해시. 원격 Git blob 해시와 로컬 파일 해시는 다른 종류다.

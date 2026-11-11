@@ -9,4 +9,4 @@
 | `environment.json` | 기록된 측정 환경과 반복 횟수. GPU 제품명은 포함되지 않음 |
 | `skin_*`, `web_skin_*`, `hair5_*`, `hair6_*` PNG | 과제별 dashboard, accuracy–latency trade-off, 지표 개요. 총 12장 |
 
-발표·보고서용 해석과 비교 시 주의점은 [검토 문서](../../docs/research/RUNTIME_BENCHMARK_REVIEW_20260928.md)를 본다. 특히 초기 모델과 정제 후 모델, Hair 5-class와 6-class의 Validation Accuracy를 같은 과제로 취급하면 안 된다. 지연 시간은 Colab 환경에서 측정됐으며 실제 장비 속도가 아니다.
+발표·보고서용 해석과 비교 시 주의점은 [검토 문서](../../docs/research/public_data/RUNTIME_BENCHMARK_REVIEW_20260928.md)를 본다. 특히 초기 모델과 정제 후 모델, Hair 5-class와 6-class의 Validation Accuracy를 같은 과제로 취급하면 안 된다. 지연 시간은 Colab 환경에서 측정됐으며 실제 장비 속도가 아니다.

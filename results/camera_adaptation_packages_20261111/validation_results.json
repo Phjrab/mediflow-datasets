@@ -1,0 +1,59 @@
+{
+  "schema": "mediflow_packaging_validation_v1",
+  "status": "passed",
+  "checked_at": "2026-11-11T20:51:00.552419+09:00",
+  "checks": {
+    "ruff_check_src_tests": "passed",
+    "pytest": {
+      "passed": 216,
+      "skipped": 3,
+      "failed": 0,
+      "skipped_reason": "Existing optional matplotlib tests; library absent in base environment",
+      "warnings": 1624,
+      "warnings_note": "Keras/NumPy deprecation warnings"
+    },
+    "packaging_specific_tests": 16,
+    "original_source_files_unchanged": 23,
+    "updated_document_links_checked": 287
+  },
+  "packages": {
+    "skin": {
+      "archive_sha256": "04545f9db9a2abbb481c92742380fde6ee6efe397e8614c722c2c42701135dc0",
+      "files": 17,
+      "all_file_hashes_and_crc_passed": true,
+      "model_bytes_and_reports_equal_to_original": true,
+      "metrics_match_packaged_checkpoint": true,
+      "participant_images_or_decryption_keys_included": false
+    },
+    "web_skin": {
+      "archive_sha256": "bd484b020155f336fcb54b4172489af98451868373791415b8576546d4bc56e3",
+      "files": 17,
+      "all_file_hashes_and_crc_passed": true,
+      "model_bytes_and_reports_equal_to_original": true,
+      "metrics_match_packaged_checkpoint": true,
+      "participant_images_or_decryption_keys_included": false
+    },
+    "hair": {
+      "archive_sha256": "9ef4ec14c5cb1a8dbde394e543b0c1532663c1a4e4d7daed0585fd6dcf8bf934",
+      "files": 18,
+      "all_file_hashes_and_crc_passed": true,
+      "model_bytes_and_reports_equal_to_original": true,
+      "metrics_match_packaged_checkpoint": true,
+      "participant_images_or_decryption_keys_included": false
+    }
+  },
+  "code_sha256": {
+    "src/mediflow_datasets/adaptation_packaging.py": "53568d1525213cf8a064e8a77b71baa32c56ae8d4e4f6f925d6e6710421e811c",
+    "src/mediflow_datasets/adaptation_package_inference.py": "e67749251492febe0bcccf48243da5b182cbc0289b68c612a15a1c4208cfc3d6",
+    "tests/test_adaptation_packaging.py": "1498b6e26d09eb280d7889e8f78fcdb024fe902caa4fbd96280ead79427f6e7d"
+  },
+  "log_sha256": {
+    "pytest.txt": "e011783e959e89263ac99a8c12ec6cc19d2d07b5a6d3ab52a11dd9d419bdd788",
+    "ruff.txt": "a4443afdcfb6d7363adb285762515ccf7cf50473b1a05c20c1a50f6bed4d26b0"
+  },
+  "original_candidate_index_sha256": "bb45755cfca0d8169932bfc305a6b3d077c9aca82c8eb09b2a62ecee8603f61c",
+  "new_training_or_accuracy_evaluation": false,
+  "git_commit_push_or_cloud_upload_performed": false,
+  "temporary_build_copies_removed": true,
+  "cleanup_record": "temporary_cleanup.json"
+}

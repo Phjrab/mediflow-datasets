@@ -313,7 +313,7 @@ Test는 선정 모델만 평가합니다. 두 원본/증강 모델의 비교도 
     with zipfile.ZipFile(bundle, 'w', compression=zipfile.ZIP_DEFLATED) as archive:
         for path in sorted((ROOT / 'notebooks').glob('0*_common_*.ipynb')):
             archive.write(path, path.name)
-        guide = ROOT / 'docs/research/COMMON_COLAB_NOTEBOOKS_GUIDE.md'
+        guide = ROOT / 'docs/research/public_data/COMMON_COLAB_NOTEBOOKS_GUIDE.md'
         if guide.exists():
             archive.write(guide, '사용안내.md')
     with zipfile.ZipFile(bundle) as archive:

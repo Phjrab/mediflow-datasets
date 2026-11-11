@@ -1,0 +1,50 @@
+{
+  "status": "passed",
+  "completed_domains": [
+    "skin",
+    "web_skin",
+    "hair"
+  ],
+  "source_models_unchanged": true,
+  "preserved_source_file_sha256": {
+    "configs/adaptation_stage4_test_20261111.json": "dda96d8dc71672595b3d3ca1ace43fc8923ba58d087f870612014f7f4450431c",
+    "results/camera_adaptation_final_test_20261110/evaluation_plan.json": "64942a94580c4ff954c434197a50519c471031349f5f83677a301642ff1c6707",
+    "results/camera_adaptation_final_test_20261110/hair.json": "1adbcdb98d2e3f3fab33512b8cb098915e0242ea80dd4ccfd2fa7923d7ef8f0f",
+    "results/camera_adaptation_stage1_20261110/hair/source_manifest.json": "c6320fa7d2ef25332d508b3da868d2731d61ce7c8cd3ed2ebc505e6cd0b54717",
+    "results/camera_adaptation_stage1_20261110/skin/source_manifest.json": "36f79b61a42e9ed634ffa7d4c490efefe5e5031a8bbdce1daf630b1e01e7e27d",
+    "results/camera_adaptation_stage1_20261110/web_skin/source_manifest.json": "7c8b41878883193e5dd340ab8a4b7f804a3ab7f37c8159093b663937d997a738",
+    "results/camera_adaptation_stage2_20261110/hair/best.keras": "fa2c59ae6a0b1342b8c693014d0a951c59064a4c8439a313f2520e1ce8c224fd",
+    "results/camera_adaptation_stage2_20261110/hair/complete.json": "3cd10ebda9c6d1ce9b6a4a69320bc9fee33af1978f829ff363844259bccb6e62",
+    "results/camera_adaptation_stage2_20261110/hair/expanded/history.json": "f5fd321e165e07330c11d82e9543aa765af70c3e0b3d2ac408957c3950f948f8",
+    "results/camera_adaptation_stage2_20261110/hair/run_configuration.json": "fd01d71b72390e85ddfe73943e9467caf2bf8ebea7a331dba29d4e4c524a2aaa",
+    "results/camera_adaptation_stage4_before_refit_20261111/hair/complete.json": "e35ff6d066d37e2b4bd789eecf4591a5e50fd3a3b1635f1cf611f70aeab676e4",
+    "results/camera_adaptation_stage4_before_refit_20261111/selection.json": "bb38d00addb783ce4eab29a8fbf3fc10319129646c32949f364b34b942790c01",
+    "results/camera_adaptation_stage4_before_refit_20261111/skin/best.keras": "c62a76580a0d6658c934b993629a33605961b153d28ac1c6abc3205382815be2",
+    "results/camera_adaptation_stage4_before_refit_20261111/skin/complete.json": "446779d677cdff03f26d70d799618a01aacd7c9a5586749173925913460dffc5",
+    "results/camera_adaptation_stage4_before_refit_20261111/skin/expanded/history.json": "6e1dd5efa4eda8503e6206fec3b821137220cc369b9cafe728cfda80dd07e3d4",
+    "results/camera_adaptation_stage4_before_refit_20261111/skin/run_configuration.json": "7e3b53dbc738dc25ad1404082d2a3b16ae812bf790fe627cd764281ac4fb39b2",
+    "results/camera_adaptation_stage4_before_refit_20261111/web_skin/best.keras": "bbdfade5173c12d4076ab414c907821e21ee57fee2366f79d57adde4a8f74dc9",
+    "results/camera_adaptation_stage4_before_refit_20261111/web_skin/complete.json": "9b37f24de479709e9c53f832fd9995c27433ea90da74f52c8b1857812dd9f400",
+    "results/camera_adaptation_stage4_before_refit_20261111/web_skin/expanded/history.json": "7c0a590c8bd9820760815276fcbf1ba80e461e37a2d72a42731cc5ddf1882cbc",
+    "results/camera_adaptation_stage4_before_refit_20261111/web_skin/run_configuration.json": "3e0d4f8903f71d0930bfc507d91b0602b2f58099a226a44da640ff0b6434bc82",
+    "results/camera_adaptation_stage4_test_20261111/evaluation_plan.json": "979ba30931cd322fd24f20532f5bcbd90d1dc20a6781044abbc58b3d694ad499",
+    "results/camera_adaptation_stage4_test_20261111/skin.json": "921e578541510e100b0646d93dd504764d56dfab54494b0e3a173e7e91ffe849",
+    "results/camera_adaptation_stage4_test_20261111/web_skin.json": "7a4e941028012352600d003db1f7e35a9b49d7775efff1623f078065685a212f"
+  },
+  "packaging_code": {
+    "repository_head": "08cb827aa3c6858e61c71faf7f6481f3a139530b",
+    "uncommitted_code_status": [
+      "?? src/mediflow_datasets/adaptation_package_inference.py",
+      "?? src/mediflow_datasets/adaptation_packaging.py"
+    ],
+    "file_sha256": {
+      "src/mediflow_datasets/adaptation_packaging.py": "53568d1525213cf8a064e8a77b71baa32c56ae8d4e4f6f925d6e6710421e811c",
+      "src/mediflow_datasets/adaptation_package_inference.py": "e67749251492febe0bcccf48243da5b182cbc0289b68c612a15a1c4208cfc3d6"
+    }
+  },
+  "official_candidate_index_unchanged": true,
+  "new_training_executed": false,
+  "new_source_test_accuracy_measured": false,
+  "real_device_accuracy_measured": false,
+  "service_integration_implemented": false
+}

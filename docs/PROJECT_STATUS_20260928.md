@@ -1,16 +1,16 @@
 # MediFlow 현재 상태와 자료 찾기
 
 2026-10-26 안내: 이 문서는 9월 28일 당시 상태 기록이다. LLM·VLM 착수 전 실제 파일·평가·추론의
-새 점검과 갱신된 다음 작업은 [종합 점검 보고서](research/PRE_LLM_VLM_PROJECT_AUDIT_20261026.md)를 따른다.
+새 점검과 갱신된 다음 작업은 [종합 점검 보고서](research/integration/PRE_LLM_VLM_PROJECT_AUDIT_20261026.md)를 따른다.
 
 기준일: 2026-09-28. 이 문서는 팀원 GitHub 검토 이후 로컬 연구 결과까지 이어지는 **현재 상태의 입구**다. 당시 판단과 수치는 작성 시점별 원본 문서·결과 파일에 보존하며, 이 페이지에서 과거 실험을 새로 수행했다고 뜻하지 않는다.
 
 ## 지금 무엇이 완료됐나
 
-1. [팀원 키오스크 저장소 분석](research/KIOSK_CORE_REVIEW_20260913.md): 당시 고정 커밋에서 웹·안구·LLM 코드와 세 피부·두피 분류기의 연결 지점을 검토했다. **분석·연결 계획**이며 키오스크 통합 완료 기록은 아니다.
-2. [데이터·초기 학습부터 논문 실험까지의 이유와 결과](research/ALL_EXPERIMENTS_RATIONALE_AND_RESULTS_20260924.md): 정제, 증강, 미세조정, 해상도, Loss, Backbone, SupCon·PMG·SAM·MedSigLIP 등의 가설과 채택 여부를 기록했다.
-3. [Hair 6클래스 실험](research/HAIR_5CLASS_6CLASS_EXPERIMENT_ANALYSIS_20260928.md): 기존 5클래스를 보존하고 `양호`를 추가한 별도 과제의 네 학습 조건, 두 패키지와 남은 데이터 검증을 기록했다.
-4. [저장 모델 34개 실행 시간 측정](research/RUNTIME_BENCHMARK_REVIEW_20260928.md): Skin 4, Web Skin 12, Hair 5클래스 14, Hair 6클래스 4개를 Colab에서 측정했다. 실제 장비의 지연 시간 측정은 아직 아니다.
+1. [팀원 키오스크 저장소 분석](research/integration/KIOSK_CORE_REVIEW_20260913.md): 당시 고정 커밋에서 웹·안구·LLM 코드와 세 피부·두피 분류기의 연결 지점을 검토했다. **분석·연결 계획**이며 키오스크 통합 완료 기록은 아니다.
+2. [데이터·초기 학습부터 논문 실험까지의 이유와 결과](research/public_data/ALL_EXPERIMENTS_RATIONALE_AND_RESULTS_20260924.md): 정제, 증강, 미세조정, 해상도, Loss, Backbone, SupCon·PMG·SAM·MedSigLIP 등의 가설과 채택 여부를 기록했다.
+3. [Hair 6클래스 실험](research/public_data/hair/HAIR_5CLASS_6CLASS_EXPERIMENT_ANALYSIS_20260928.md): 기존 5클래스를 보존하고 `양호`를 추가한 별도 과제의 네 학습 조건, 두 패키지와 남은 데이터 검증을 기록했다.
+4. [저장 모델 34개 실행 시간 측정](research/public_data/RUNTIME_BENCHMARK_REVIEW_20260928.md): Skin 4, Web Skin 12, Hair 5클래스 14, Hair 6클래스 4개를 Colab에서 측정했다. 실제 장비의 지연 시간 측정은 아직 아니다.
 5. [공개 데이터 후보 종합 선정](../results/FINAL_MODEL_SELECTION_20260928.md): 분류 성능과 같은 환경의 실행 비용을 함께 해석했다. 선정 모델 파일·클래스 순서·원본 ZIP은 [모델 색인](../results/PUBLIC_MODEL_SELECTION_20260928.json)에서 찾는다.
 
 ## 현재 보존한 선정 모델

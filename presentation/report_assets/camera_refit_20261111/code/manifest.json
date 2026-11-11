@@ -1,0 +1,13 @@
+{
+  "src/mediflow_datasets/camera_refit.py": "a089bf6a043f3cd96faeef9d5ca7ef70bb39f1db8522ee87a1e77a737f172573",
+  "src/mediflow_datasets/camera_refit_figures.py": "e81770647177020c2ad84502b6799edf48e1838c1d14411bdc60d0fc1edcf4aa",
+  "src/mediflow_datasets/camera_revision.py": "9f1a5e65dc5f29e5efca9b684a8edc6cf8ee6ae7bfe1d9f2b93811ecbb5776c5",
+  "src/mediflow_datasets/camera_similarity.py": "86aac6f4e497e295636706e070c171660a0b6887597dcd43c6e64884263cbfed",
+  "src/mediflow_datasets/camera_extended.py": "7a1cd1e25c025398cb06baab4b6675f0d7d6a11bd3d9f56d35424a23a6e49da1",
+  "src/mediflow_datasets/domain_adaptation_analysis.py": "a31f15750be6b06a1434220fa54378250874ef72e61d3fa183baa59677b9166e",
+  "src/mediflow_datasets/domain_adaptation_experiment.py": "216d01c860cf977d7a8f9093605a90a5f4cda495c4d4f363b5862e8b69d63d2b",
+  "src/mediflow_datasets/domain_adaptation_data.py": "f47b647741751bf5e251f359b5cb64b4ac20d468ca1a5a9b16d8e8d1b9a3ac26",
+  "src/mediflow_datasets/domain_adaptation.py": "c48668d1fcb6d17e714a6a107996cad2b40a86c2609600e96a773fa2d5227dc6",
+  "scripts/build_adaptation_revised.py": "56de759444b2b0dbe8d142e69d24479cbd3dbd2d0553f2cd15f5f69e217066d8",
+  "tests/test_camera_refit.py": "173e2bc019def48d8f7d5f92807354bad692cdaf3226fc6158fd5111a24734e9"
+}

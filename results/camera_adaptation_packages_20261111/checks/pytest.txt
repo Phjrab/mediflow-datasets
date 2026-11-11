@@ -1,0 +1,25 @@
+...........................................................sss.......... [ 32%]
+........................................................................ [ 65%]
+........................................................................ [ 98%]
+...                                                                      [100%]
+============================== warnings summary ===============================
+tests/test_adaptation_packaging.py: 12 warnings
+tests/test_adaptation_stage1.py: 10 warnings
+tests/test_adaptation_strength.py: 12 warnings
+tests/test_candidate_packaging.py: 316 warnings
+tests/test_common_notebooks.py: 88 warnings
+tests/test_domain_adaptation.py: 12 warnings
+tests/test_domain_adaptation_preflight.py: 2 warnings
+tests/test_domain_adaptation_resolution.py: 20 warnings
+tests/test_domain_nine.py: 96 warnings
+tests/test_experiment_suite.py: 66 warnings
+tests/test_web_skin_training_contract.py: 20 warnings
+tests/test_web_skin_wsdan.py: 970 warnings
+  C:\Users\sejun\OneDrive\Documents\ChatGPT\mediflow\.venv\Lib\site-packages\keras\src\backend\tensorflow\core.py:171: DeprecationWarning: __array__ implementation doesn't accept a copy keyword, so passing copy=False failed. __array__ must implement 'dtype' and 'copy' keyword arguments. To learn more, see the migration guide https://numpy.org/devdocs/numpy_2_0_migration_guide.html#adapting-to-changes-in-the-copy-keyword
+    return np.array(x)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ===========================
+SKIPPED [2] tests\test_common_notebooks.py:54: could not import 'matplotlib': No module named 'matplotlib'
+SKIPPED [1] tests\test_common_notebooks.py:129: could not import 'matplotlib': No module named 'matplotlib'
+216 passed, 3 skipped, 1624 warnings in 85.85s (0:01:25)

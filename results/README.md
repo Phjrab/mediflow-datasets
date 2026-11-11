@@ -1,6 +1,29 @@
 # MediFlow 로컬 결과 구조
 
+연구 전체 과정·기본~4차 결과·후속 후보·자료 위치는 [프로젝트 정리](../docs/PROJECT_SUMMARY_20261111.md)를 먼저 확인한다.
+
 이 폴더는 **선정 모델과 평가 원본을 함께 보존**한다. 모델을 찾거나 팀원에게 전달할 때는 아래 순서로 읽는다.
+
+## 11월 실제 촬영 환경 적응 결과
+
+[피부 4차·얼굴 4차·두피 2차 사용 ZIP](camera_adaptation_packages_20261111/README.md)을 패키징하고
+실제 로드·원본 예측 일치·압축 해제본의 단독 실행을 확인했다. 각 ZIP에 클래스·전처리·사용 예시·
+원본 학습 및 평가 기록이 있다. 기존 공식 후보 색인과 공통 추론 경로는 유지했다.
+
+[4차 추가 Test 결과](camera_adaptation_stage4_test_20261111/README.md)를 회수했다. 신규 15개·이전 36개 재사용의 51개 비교를 검증했다. 모델 선정에 Test를 사용하지 않았고 실제 장비 질환 Accuracy는 미측정이다.
+
+[조정 전 4차 결과](camera_adaptation_stage4_before_refit_20261111/README.md)를 추가했다. 피부·얼굴은 이번 비교에서 4차, 두피는 2차가 선택됐다. 재설정 4차는 실행하지 않고 보관한다. [기본~4차 공통 Test](../docs/research/camera_adaptation/ADAPTATION_STAGE4_FINAL_TEST_20261111.md)는 완료한 실행의 재현용이다.
+
+| 완료한 작업 | 저장 위치 | 설명 |
+| --- | --- | --- |
+| 1차 6회 | [camera_adaptation_stage1_20261110](camera_adaptation_stage1_20261110) | 초기·선정 모델의 조명 적응, 분야별 후보 선정 |
+| 2차 3회 | [camera_adaptation_stage2_20261110](camera_adaptation_stage2_20261110) | 선택한 출발 모델에서 색·미세 대비·흐림 확장 |
+| 3차 3회 | [camera_adaptation_stage3_20261110](camera_adaptation_stage3_20261110) | 같은 출발점·확장 변환에 MMD·CORAL 결합 손실 |
+| 최종 Source Test 36비교 | [camera_adaptation_final_test_20261110](camera_adaptation_final_test_20261110) | 학습 전·1차·2차·3차 × 원본·조명·확장 조건 |
+
+[과정·결과 해석](../docs/research/camera_adaptation/CAMERA_ADAPTATION_RETROSPECTIVE_20261110.md), [최종 Test 분석](../docs/research/camera_adaptation/ADAPTATION_FINAL_TEST_RESULT_REVIEW_20261110.md), [완료 실험 노트북](../notebooks/camera_adaptation/completed/README.md)을 함께 확인한다. 조정 전 4차는 완료했고 재설정 4차는 사용자 결정으로 미실행 보관했다. 실제 촬영 자료에는 확인된 질환 정답이 없어 Target Accuracy를 측정하지 않았다.
+
+## 기존 공개 데이터 모델과 보고서
 
 | 찾을 것 | 기준 파일 |
 |---|---|
@@ -22,7 +45,7 @@
 
 2026-09-28 저장 모델 34개 실행 시간 측정의 원본 ZIP, 수치 CSV/JSON, 발표용 그림 12장은
 [runtime_benchmark_20260928_051423](runtime_benchmark_20260928_051423/README.md)에 정리했다.
-수치 해석과 비교 가능 범위는 [측정 결과 검토](../docs/research/RUNTIME_BENCHMARK_REVIEW_20260928.md)를 따른다.
+수치 해석과 비교 가능 범위는 [측정 결과 검토](../docs/research/public_data/RUNTIME_BENCHMARK_REVIEW_20260928.md)를 따른다.
 
 ```text
 results/

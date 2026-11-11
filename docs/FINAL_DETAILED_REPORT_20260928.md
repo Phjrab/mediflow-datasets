@@ -171,7 +171,7 @@ Hair Clean 증강 Train은 원본 10,032장 + 생성 5,015장 = **15,047장**이
 
 `dataset_validation_presentation` 3장은 중복 감사와 정제 의도를 설명한다. 각 도메인의 `*_all_training_curves_comparison.png`는 학습/Validation Accuracy·Loss가 epoch별로 어떻게 움직였는지 보여준다. `*_model_performance_dashboard.png`는 **당시의 후보 비교**다. 3차 v2와 4차 Hair 6종은 포함되지 않으므로 최종 선정표로 재사용하지 않는다. Hair 곡선 마지막 추가 5 epoch 구간은 별도 연장 실험이다.
 
-근거: [Hair·Web Skin 실험 해설](research/HAIR_WEB_SKIN_EXPERIMENT_EXPLAINED_20260908.md), [Hair 실험 요약](research/HAIR_EXPERIMENT_SUMMARY_20260907.md), [Web Skin 실험 요약](research/WEB_SKIN_FULL_SUMMARY_20260908.md), [Skin 비교](research/SKIN_ORIGINAL_VS_AUGMENTED_20260909.md), 원본 `results/` 보고서. 학습 이력 그림은 폴더 이름의 기록일을 따른다.
+근거: [Hair·Web Skin 실험 해설](research/public_data/HAIR_WEB_SKIN_EXPERIMENT_EXPLAINED_20260908.md), [Hair 실험 요약](research/public_data/hair/HAIR_EXPERIMENT_SUMMARY_20260907.md), [Web Skin 실험 요약](research/public_data/web_skin/WEB_SKIN_FULL_SUMMARY_20260908.md), [Skin 비교](research/public_data/skin/SKIN_ORIGINAL_VS_AUGMENTED_20260909.md), 원본 `results/` 보고서. 학습 이력 그림은 폴더 이름의 기록일을 따른다.
 
 ### 저장소를 먼저 정리한 이유
 
@@ -183,7 +183,7 @@ Hair Clean 증강 Train은 원본 10,032장 + 생성 5,015장 = **15,047장**이
 
 Hair에서는 원본을 다시 모으고 완전 동일 이미지·라벨 충돌을 정리해 12,536장으로 만들었다. 분할을 다시 정한 뒤 **Train 원본 10,032장에만** 새 증강 이미지 5,015장을 만들고 원본–증강 연결을 manifest로 기록했다. 기존 증강본을 그대로 복사해 쓰지 않은 이유는 원본이 새 Validation/Test에 들어간 파생 이미지가 Train에 남으면 누수가 다시 생길 수 있기 때문이다. 초기에 고른 14,500장과 Clean 원본 12,536장의 차이는 1,964장이지만, 이것도 교차 중복 쌍 합계로 설명할 수 없다.
 
-Skin에서는 Train–Val 10그룹, Train–Test 5그룹, Val–Test 1그룹의 완전 동일 RGB 중복이 확인됐다. Train 내부의 중복 그룹·초과 복사본도 있었고, 과거 증강 Train 안에서도 같은 사진의 반복이 발견됐다. 원본 9,000장에서 51장을 정리해 8,949장으로 만들고, Clean Train 7,249장 각각에 새 증강본 한 장을 만들어 **증강 Train 14,498장**으로 구성했다. 생성된 새 증강본의 픽셀 해시 중복·라벨 충돌 검사 기록은 0이었다. [Skin 감사 보고서](research/SKIN_DATA_AUDIT_20260909.md)에 검사 범위가 남아 있다.
+Skin에서는 Train–Val 10그룹, Train–Test 5그룹, Val–Test 1그룹의 완전 동일 RGB 중복이 확인됐다. Train 내부의 중복 그룹·초과 복사본도 있었고, 과거 증강 Train 안에서도 같은 사진의 반복이 발견됐다. 원본 9,000장에서 51장을 정리해 8,949장으로 만들고, Clean Train 7,249장 각각에 새 증강본 한 장을 만들어 **증강 Train 14,498장**으로 구성했다. 생성된 새 증강본의 픽셀 해시 중복·라벨 충돌 검사 기록은 0이었다. [Skin 감사 보고서](research/public_data/skin/SKIN_DATA_AUDIT_20260909.md)에 검사 범위가 남아 있다.
 
 Web Skin의 당시 감사에서는 읽을 수 없는 이미지, 완전 동일 파일·RGB 사진의 교차 분할 중복, 라벨 충돌을 발견하지 못해 기존 원본 분할을 유지했다. 그러나 어느 도메인이든 사람 ID·병변 ID·촬영 세션 ID가 충분하지 않았다. **같은 사람이 다른 각도에서 찍힌 사진, 연속 촬영 이미지, crop이나 재압축된 근사 중복까지 없다고 증명한 것은 아니다.** 이후의 공개 데이터 점수는 이 제한을 동반한다.
 
@@ -285,7 +285,7 @@ Skin은 이 단계의 논문 실험 대상으로 다시 학습하지 않았다. 
 
 원본 `results/`에 있는 Hair `supcon_performance_dashboard`, `paper_suite_dashboard`, `sam_performance_dashboard`를 부록에 순서대로 배치하면 가설 선별에서 최종 B1·384 채택까지 설명하기 좋다. Web Skin `paper_method_performance_dashboard`는 세 방법 비교, `pmg_scale_performance`는 B0·256 대 B1·384 비교다. MedSigLIP 두 `vs_*_validation` 그림은 **Validation 선별 결과**다. 두 최종 `final_test_confusion_matrix` 원본은 `results/`에 보존돼 있다. 선택을 고정한 뒤의 Test 결과이며, 발표 폴더의 네 장짜리 주요 비교 그림에는 넣지 않았다.
 
-상세 근거: [Hair 논문 실험 최종 분석](research/PAPER_EXPERIMENTS_FINAL_ANALYSIS_20260922.md), [Web Skin 세 방법](research/WEB_SKIN_PAPER_METHOD_RESULT_20260922.md), [Web Skin PMG 규모 비교](research/WEB_SKIN_PMG_B1_384_RESULT_20260923.md), [Hair MedSigLIP](research/HAIR_MEDSIGLIP_LINEAR_RESULT_20260924.md), [Web Skin MedSigLIP](research/WEB_SKIN_MEDSIGLIP_LINEAR_RESULT_20260924.md). 각 원본 `results/` 폴더에는 설정·예측 CSV·혼동행렬·곡선이 따로 보존되어 있다.
+상세 근거: [Hair 논문 실험 최종 분석](research/public_data/PAPER_EXPERIMENTS_FINAL_ANALYSIS_20260922.md), [Web Skin 세 방법](research/public_data/web_skin/WEB_SKIN_PAPER_METHOD_RESULT_20260922.md), [Web Skin PMG 규모 비교](research/public_data/web_skin/WEB_SKIN_PMG_B1_384_RESULT_20260923.md), [Hair MedSigLIP](research/public_data/hair/HAIR_MEDSIGLIP_LINEAR_RESULT_20260924.md), [Web Skin MedSigLIP](research/public_data/web_skin/WEB_SKIN_MEDSIGLIP_LINEAR_RESULT_20260924.md). 각 원본 `results/` 폴더에는 설정·예측 CSV·혼동행렬·곡선이 따로 보존되어 있다.
 
 ### 먼저 실험 기준을 어떻게 잡았나
 
@@ -299,11 +299,11 @@ Hair의 새 기준선 Val Accuracy `0.7755591054313099`, Macro F1 `0.77460284704
 
 [Supervised Contrastive Learning](https://papers.neurips.cc/paper_files/paper/2020/hash/d89a66c7c80a29b1bdbab0f2a1a94af8-Abstract.html)은 정답 라벨을 이용해 같은 클래스의 특징 표현은 가깝게, 다른 클래스는 멀게 배치한다. Hair에서 특히 **미세각질과 비듬**은 RGB 사진만 보면 둘 다 하얀 조각 패턴을 보일 수 있었다. 분류층의 경계만 조정하는 대신, 사진이 놓이는 **특징 공간 자체**를 분리해 보면 도움이 될 것이라는 가설이었다.
 
-우리 구현은 B1·256에서 사진의 두 view를 사용한 표현 학습 15 epoch 뒤 분류기를 15 epoch 학습했다. 같은 기준선과 비교한 SupCon Val Accuracy `0.7915335463258786`, Macro F1 `0.7910880666407202`로 기준선 Macro F1 `0.7746028470442391`보다 높았다. 다섯 클래스 F1이 모두 상승했고 미세각질↔비듬 양방향 혼동이 **74→69건**으로 줄었다. 이것은 우리 설정에서 실제 이득이 있었음을 보여준다. 다만 이후 B1·384 단일 모델의 Macro F1 `0.7957146810115047`보다 낮아 최종 공개 후보로 선택하지 않았다. [SupCon 실행 보고서](research/HAIR_SUPCON_RESULT_20260917.md).
+우리 구현은 B1·256에서 사진의 두 view를 사용한 표현 학습 15 epoch 뒤 분류기를 15 epoch 학습했다. 같은 기준선과 비교한 SupCon Val Accuracy `0.7915335463258786`, Macro F1 `0.7910880666407202`로 기준선 Macro F1 `0.7746028470442391`보다 높았다. 다섯 클래스 F1이 모두 상승했고 미세각질↔비듬 양방향 혼동이 **74→69건**으로 줄었다. 이것은 우리 설정에서 실제 이득이 있었음을 보여준다. 다만 이후 B1·384 단일 모델의 Macro F1 `0.7957146810115047`보다 낮아 최종 공개 후보로 선택하지 않았다. [SupCon 실행 보고서](research/public_data/hair/HAIR_SUPCON_RESULT_20260917.md).
 
 #### 2. DINOv2 Small — ImageNet CNN과 다른 사전학습 표현
 
-[DINOv2](https://arxiv.org/abs/2304.07193)는 라벨 없이 대규모 이미지의 범용 시각 표현을 배운다. 기존 ImageNet CNN과 다른 표현이 두피 미세 질감에 유리할지 확인했다. 이 실험에서는 DINOv2 Small 인코더를 **고정**하고 224 입력의 새 선형 분류층만 15 epoch 학습했다. Val Accuracy `0.7699680511182109`, Macro F1 `0.7705341251195019`로 Hair 기준선보다 낮았다. 이는 **224·고정 인코더·Linear Probe** 설정의 결과이며, DINOv2를 미세조정했을 때의 성능이나 다른 의료 데이터에서의 능력을 부정하는 결과가 아니다. [남은 방법 선별 보고서](research/HAIR_REMAINING_METHODS_RESULT_20260917.md).
+[DINOv2](https://arxiv.org/abs/2304.07193)는 라벨 없이 대규모 이미지의 범용 시각 표현을 배운다. 기존 ImageNet CNN과 다른 표현이 두피 미세 질감에 유리할지 확인했다. 이 실험에서는 DINOv2 Small 인코더를 **고정**하고 224 입력의 새 선형 분류층만 15 epoch 학습했다. Val Accuracy `0.7699680511182109`, Macro F1 `0.7705341251195019`로 Hair 기준선보다 낮았다. 이는 **224·고정 인코더·Linear Probe** 설정의 결과이며, DINOv2를 미세조정했을 때의 성능이나 다른 의료 데이터에서의 능력을 부정하는 결과가 아니다. [남은 방법 선별 보고서](research/public_data/hair/HAIR_REMAINING_METHODS_RESULT_20260917.md).
 
 #### 3. EfficientNetV2-S — 새 CNN 계열의 전이 가능성
 
@@ -313,13 +313,13 @@ Hair의 새 기준선 Val Accuracy `0.7755591054313099`, Macro F1 `0.77460284704
 
 2차에서 B0 224→256은 Hair에 유리했지만 B0→B1만으로 큰 이득이 나오지 않았다. 그래서 “더 큰 본체”보다 **입력의 작은 질감 보존**을 핵심 질문으로 삼았다. [EfficientNet의 해상도 설계](https://proceedings.mlr.press/v97/tan19a.html)와 [피부 병변 다중 해상도 연구](https://pubmed.ncbi.nlm.nih.gov/32292713/)는 이 가설을 검토할 이유였다. MediFlow는 해당 피부 병변 논문의 전체 앙상블을 재현하지 않았다.
 
-B1·384·Label Smoothing 0.05·Adam은 Val Accuracy `0.7963258785942492`, Macro F1 `0.7957146810115047`로 단일 모델 선두였다. Test 1,252장에서는 Accuracy `0.8003194888178914`, Macro F1 `0.8002222282821301`이었다. 5종 v1의 같은 Test Accuracy `0.7883386581469649`, F1 `0.7885764577048346`보다 높았다. 하지만 두 모델의 모든 학습 경로가 해상도만 다른 엄격한 단일 변수 실험은 아니므로 **B1·384 조합의 실증 결과**라고 설명한다. Test에서 비듬 F1 `0.75`, 미세각질 F1 `0.7807692308` 수준으로 어려운 클래스가 여전히 남았다. [최종 패키지 분석](research/HAIR_FINAL_CANDIDATE_V2_20260921.md).
+B1·384·Label Smoothing 0.05·Adam은 Val Accuracy `0.7963258785942492`, Macro F1 `0.7957146810115047`로 단일 모델 선두였다. Test 1,252장에서는 Accuracy `0.8003194888178914`, Macro F1 `0.8002222282821301`이었다. 5종 v1의 같은 Test Accuracy `0.7883386581469649`, F1 `0.7885764577048346`보다 높았다. 하지만 두 모델의 모든 학습 경로가 해상도만 다른 엄격한 단일 변수 실험은 아니므로 **B1·384 조합의 실증 결과**라고 설명한다. Test에서 비듬 F1 `0.75`, 미세각질 F1 `0.7807692308` 수준으로 어려운 클래스가 여전히 남았다. [최종 패키지 분석](research/public_data/hair/HAIR_FINAL_CANDIDATE_V2_20260921.md).
 
 #### 5. SAM과 앙상블 — 선두 모델을 더 개선할 수 있는가
 
-[SAM](https://openreview.net/pdf?id=6Tm1mposlrM)은 현재 한 점뿐 아니라 주변 파라미터에서도 손실이 낮은 방향을 찾는다. 데이터가 조금 달라져도 덜 예민할지 B1·384의 Adam과 비교했다. `rho=0.05`를 쓴 SAM의 Val Accuracy는 같은 `0.7963258785942492`, Macro F1은 `0.7954748920799393`으로 Adam보다 낮았다. 미세각질↔비듬 혼동은 **71→68건**으로 감소했지만 다른 클래스 F1이 낮아졌고 계산 경로도 복잡해 최종 후보를 바꾸지 않았다. [SAM 세부 기록](research/HAIR_SAM_RESULT_20260921.md).
+[SAM](https://openreview.net/pdf?id=6Tm1mposlrM)은 현재 한 점뿐 아니라 주변 파라미터에서도 손실이 낮은 방향을 찾는다. 데이터가 조금 달라져도 덜 예민할지 B1·384의 Adam과 비교했다. `rho=0.05`를 쓴 SAM의 Val Accuracy는 같은 `0.7963258785942492`, Macro F1은 `0.7954748920799393`으로 Adam보다 낮았다. 미세각질↔비듬 혼동은 **71→68건**으로 감소했지만 다른 클래스 F1이 낮아졌고 계산 경로도 복잡해 최종 후보를 바꾸지 않았다. [SAM 세부 기록](research/public_data/hair/HAIR_SAM_RESULT_20260921.md).
 
-앙상블은 SupCon과 B1·384의 softmax 출력을 **1:1 평균**해 오답이 서로 보완되는지 확인했다. 두 모델 중 하나라도 맞힌 Validation 사진은 1,052장이어서 결합 가능성이 있어 보였지만, 실제 평균의 Accuracy `0.7947284345047924`, Macro F1 `0.7942285283566071`은 B1·384 단일보다 낮았다. **최선의 두 모델을 합치면 항상 더 좋아지는 것은 아니다.** 두 모델을 모두 로드해야 하는 비용도 있어 미채택했다. [오답 보완성 기록](research/HAIR_CANDIDATE_COMPLEMENTARITY_20260921.md).
+앙상블은 SupCon과 B1·384의 softmax 출력을 **1:1 평균**해 오답이 서로 보완되는지 확인했다. 두 모델 중 하나라도 맞힌 Validation 사진은 1,052장이어서 결합 가능성이 있어 보였지만, 실제 평균의 Accuracy `0.7947284345047924`, Macro F1 `0.7942285283566071`은 B1·384 단일보다 낮았다. **최선의 두 모델을 합치면 항상 더 좋아지는 것은 아니다.** 두 모델을 모두 로드해야 하는 비용도 있어 미채택했다. [오답 보완성 기록](research/public_data/hair/HAIR_CANDIDATE_COMPLEMENTARITY_20260921.md).
 
 ### Web Skin: 얼굴 전체 속 중요한 부분과 환경 차이
 
@@ -331,7 +331,7 @@ B1·384·Label Smoothing 0.05·Adam은 Val Accuracy `0.7963258785942492`, Macro 
 
 [PMG 원논문](https://arxiv.org/abs/2003.03836)은 다양한 크기의 jigsaw 조각을 단계적으로 학습해 세밀한 부분과 전체 특징을 융합한다. 건선·아토피·여드름이 얼굴에서 비슷한 분포를 보여도 피부의 국소 질감과 병변 크기는 다를 수 있다는 가설을 시험했다. 우리 코드는 **8·4·2 격자**의 조각 경로와 전체 경로를 활용했다. 실제 사용에서는 사진을 별도로 네 번 찍지 않고 **원본 얼굴 사진 한 장**을 입력한다. 네 branch의 logits를 **합산한 뒤 softmax**하는 출력 규칙은 패키지 전처리 계약에 들어 있다.
 
-PMG B0·256은 Val Accuracy `0.85`, Macro F1 `0.8473279632397033`으로 기준선보다 각각 `+0.054`, `+0.0557884984830505` 높았다. Validation 500장의 오분류는 **102→75장**으로 줄었고 다섯 클래스 F1이 모두 상승했다. 특히 아토피·여드름 개선이 의미 있었다. 선택한 이 모델만 Test 400장에서 최종 평가해 Accuracy `0.915`, Macro F1 `0.9141049081029712`를 얻고 Web Skin **v2**로 패키징했다. 원 논문과 프로젝트 구현은 완전히 동일하지 않으므로 ‘PMG 아이디어의 응용’이라고 표현한다. [세 방법 비교 보고서](research/WEB_SKIN_PAPER_METHOD_RESULT_20260922.md).
+PMG B0·256은 Val Accuracy `0.85`, Macro F1 `0.8473279632397033`으로 기준선보다 각각 `+0.054`, `+0.0557884984830505` 높았다. Validation 500장의 오분류는 **102→75장**으로 줄었고 다섯 클래스 F1이 모두 상승했다. 특히 아토피·여드름 개선이 의미 있었다. 선택한 이 모델만 Test 400장에서 최종 평가해 Accuracy `0.915`, Macro F1 `0.9141049081029712`를 얻고 Web Skin **v2**로 패키징했다. 원 논문과 프로젝트 구현은 완전히 동일하지 않으므로 ‘PMG 아이디어의 응용’이라고 표현한다. [세 방법 비교 보고서](research/public_data/web_skin/WEB_SKIN_PAPER_METHOD_RESULT_20260922.md).
 
 #### 3. MixStyle — 얼굴 사진의 조명·색감 변화
 
@@ -339,7 +339,7 @@ PMG B0·256은 Val Accuracy `0.85`, Macro F1 `0.8473279632397033`으로 기준�
 
 #### 4. PMG B1·384 — 성능 1위인데 왜 배포 후보가 아닌가
 
-PMG가 유망했으므로 더 큰 backbone과 384 입력을 결합해 작은 단서가 더 잘 보이는지 시험했다. GPU 메모리 때문에 배치 크기 **32→16**도 함께 바뀌었다. 따라서 B0·256과 비교해 B1만의 효과 또는 해상도만의 효과를 따로 계산할 수 없다. Val Accuracy `0.866`, Macro F1 `0.8643216544321994`로 B0·256보다 높아 **연구상 Validation 선두**였다. 그러나 입력 픽셀은 2.25배, 모델 크기와 학습 시간이 증가했다. 이미 후보를 선택하던 때에 실행 비용을 고려해 B0·256을 v2로 고정했고, 뒤의 4차 Colab 측정은 B1·384의 p50 `419.9053944998923 ms`, B0·256의 `304.2439384998943 ms`를 기록해 비용 차이를 구체화했다. 이는 같은 Colab 환경의 지연 비교이지 실제 웹캠 전체 처리 시간은 아니다. [규모 비교 보고서](research/WEB_SKIN_PMG_B1_384_RESULT_20260923.md).
+PMG가 유망했으므로 더 큰 backbone과 384 입력을 결합해 작은 단서가 더 잘 보이는지 시험했다. GPU 메모리 때문에 배치 크기 **32→16**도 함께 바뀌었다. 따라서 B0·256과 비교해 B1만의 효과 또는 해상도만의 효과를 따로 계산할 수 없다. Val Accuracy `0.866`, Macro F1 `0.8643216544321994`로 B0·256보다 높아 **연구상 Validation 선두**였다. 그러나 입력 픽셀은 2.25배, 모델 크기와 학습 시간이 증가했다. 이미 후보를 선택하던 때에 실행 비용을 고려해 B0·256을 v2로 고정했고, 뒤의 4차 Colab 측정은 B1·384의 p50 `419.9053944998923 ms`, B0·256의 `304.2439384998943 ms`를 기록해 비용 차이를 구체화했다. 이는 같은 Colab 환경의 지연 비교이지 실제 웹캠 전체 처리 시간은 아니다. [규모 비교 보고서](research/public_data/web_skin/WEB_SKIN_PMG_B1_384_RESULT_20260923.md).
 
 ### MedSigLIP: 의료 사전학습 표현을 선별한 이유
 
@@ -413,13 +413,13 @@ B0에서는 증강이 Val Macro F1을 약 0.90%p 높였고, B1 묶음에서는 �
 
 기존 Hair 6종 Validation 막대·클래스 F1·선정 후보 Test 혼동행렬은 원본 보고서 ZIP에, 개별 런타임 그림은 `results/`와 발표 폴더에 보존한다. 발표 폴더에는 중복되는 Hair 6종 보조 그림을 별도로 복사하지 않았다. 네 도메인의 기존 `*_metrics_overview`에 표시된 분포는 **한 모델의 반복 실행 분포가 아니라 여러 모델 사이의 지연시간 분포**다. 새 정확도–지연시간 그림은 비교 가능한 정제 후 28개 조건만 표시하고, 전체 지연시간 그림은 34개를 모두 포함한다.
 
-근거: [Hair 5종/6종 종합 분석](research/HAIR_5CLASS_6CLASS_EXPERIMENT_ANALYSIS_20260928.md), [6종 네 실험 결과](research/HAIR_SIX_CLASS_FOUR_RESULTS_20260928.md), [런타임 검토](research/RUNTIME_BENCHMARK_REVIEW_20260928.md), [34개 원자료](../results/runtime_benchmark_20260928_051423/benchmark.csv), [선정 근거](../results/PUBLIC_MODEL_SELECTION_20260928.json). 실제 장비 측정과 사람·세션 단위 누수 검사는 로드맵에 남아 있다.
+근거: [Hair 5종/6종 종합 분석](research/public_data/hair/HAIR_5CLASS_6CLASS_EXPERIMENT_ANALYSIS_20260928.md), [6종 네 실험 결과](research/public_data/hair/HAIR_SIX_CLASS_FOUR_RESULTS_20260928.md), [런타임 검토](research/public_data/RUNTIME_BENCHMARK_REVIEW_20260928.md), [34개 원자료](../results/runtime_benchmark_20260928_051423/benchmark.csv), [선정 근거](../results/PUBLIC_MODEL_SELECTION_20260928.json). 실제 장비 측정과 사람·세션 단위 누수 검사는 로드맵에 남아 있다.
 
 ### 새 `양호` 데이터는 어떻게 확인했나
 
 처음 손으로 모은 `양호` 후보는 약 2,400장으로 생각됐지만 파일명이 같은 항목을 정리하고 실제 사진도 확인하면서 최종 업로드 ZIP에는 **534장**이 남았다. 새 사진은 사용자가 **여섯 증상 항목이 모두 0**인 자료라고 확인했다. 그러나 개별 이미지마다 원천 JSON이 있는 상태는 아니므로 보고서에는 “사용자 확인 라벨”이라고 적는다. 같은 파일명이 사람·사진의 모든 중복 기준은 아니어서, 새 ZIP과 기존 Hair Clean v1 ZIP을 다시 교차 검사했다.
 
-검사 결과 JPEG 파일 바이트 완전 일치 **0장**, 이미지를 RGB로 디코딩한 뒤의 픽셀 완전 일치 **0장**이었다. 새 사진 파일명의 첫 숫자 부분은 105개 ID로 묶을 수 있었다. 그러나 기존 12,536장의 파일명은 `탈모_01164.jpg`처럼 새 번호로 정리돼 **12,536장 중 원천 사람 ID를 복구할 수 있는 사진이 0장**이었다. 그래서 감사의 `shared_subject_ids: 0`은 “같은 사람이 0명”이 아니라 **비교할 ID가 없어 판정 불가**라는 뜻이다. 조금 다른 각도·색·압축의 유사 사진도 완전 동일 검사만으로 배제되지 않는다. [양호 교차 감사](research/HAIR_GOOD_CROSS_AUDIT_REVIEW_20260928.md).
+검사 결과 JPEG 파일 바이트 완전 일치 **0장**, 이미지를 RGB로 디코딩한 뒤의 픽셀 완전 일치 **0장**이었다. 새 사진 파일명의 첫 숫자 부분은 105개 ID로 묶을 수 있었다. 그러나 기존 12,536장의 파일명은 `탈모_01164.jpg`처럼 새 번호로 정리돼 **12,536장 중 원천 사람 ID를 복구할 수 있는 사진이 0장**이었다. 그래서 감사의 `shared_subject_ids: 0`은 “같은 사람이 0명”이 아니라 **비교할 ID가 없어 판정 불가**라는 뜻이다. 조금 다른 각도·색·압축의 유사 사진도 완전 동일 검사만으로 배제되지 않는다. [양호 교차 감사](research/public_data/hair/HAIR_GOOD_CROSS_AUDIT_REVIEW_20260928.md).
 
 분할할 때는 기존 다섯 질환 사진의 Train/Validation/Test 배치를 유지했다. 새 `양호`는 105개 파일명 ID를 묶어 Train **428**, Validation **53**, Test **53**장으로 나눴다. 같은 ID에서 파생된 사진을 새 `양호`의 여러 분할에 섞지 않으려는 설계다. 다만 이 ID가 실제 사람 ID인지 촬영 세션 ID인지는 원천 메타데이터로 독립 확인되지 않았다. 결과적으로 원본 5종 12,536장 + `양호` 534장 = 원본 6종 **13,070장**이 됐다. 이 새 데이터 ZIP은 기존 5종 ZIP을 덮어쓰지 않고 별도로 보관했다.
 
@@ -427,7 +427,7 @@ B0에서는 증강이 Val Macro F1을 약 0.90%p 높였고, B1 묶음에서는 �
 
 기존 다섯 질환의 원본 Train은 클래스별 수가 많지만 `양호` Train은 428장뿐이었다. 네 실험에서 원본과 증강 조건을 모두 비교하기 위해, 증강 조건은 기존 다섯 클래스의 Train 원본 약 **50%를 골라 각 한 장**씩 변형하고 `양호`는 원본마다 **5장씩** 파생시켰다. 그래서 생성분 7,155장 중 **2,140장**이 `양호`에서 왔다. 원본 428명 또는 428개 ID가 2,140명의 독립 사례로 늘었다는 뜻이 아니다.
 
-변형은 밝기·대비·색감·±10° 회전·좌우 반전·약한 블러 위주였다. 각 증강본이 어느 원본에서 나왔는지와 적용 설정을 manifest에 남겼다. Validation·Test는 전부 원본이었다. 소수 클래스의 반복을 너무 크게 하면 특정 원본의 색·배경을 외울 위험도 있어, 실제 효과는 같은 Validation에서 **원본 대 증강**으로 확인했다. [네 실험 사전 계약](research/HAIR_SIX_CLASS_FOUR_EXPERIMENTS_PLAN_20260928.md)은 데이터·모델·평가 방법을 고정한 기록이고 [실제 실행 결과](research/HAIR_SIX_CLASS_FOUR_RESULTS_20260928.md)는 그 뒤 완료 상태를 기록한다. 계획 문서의 ‘미실행’ 표기는 작성 당시 상태다.
+변형은 밝기·대비·색감·±10° 회전·좌우 반전·약한 블러 위주였다. 각 증강본이 어느 원본에서 나왔는지와 적용 설정을 manifest에 남겼다. Validation·Test는 전부 원본이었다. 소수 클래스의 반복을 너무 크게 하면 특정 원본의 색·배경을 외울 위험도 있어, 실제 효과는 같은 Validation에서 **원본 대 증강**으로 확인했다. [네 실험 사전 계약](research/public_data/hair/HAIR_SIX_CLASS_FOUR_EXPERIMENTS_PLAN_20260928.md)은 데이터·모델·평가 방법을 고정한 기록이고 [실제 실행 결과](research/public_data/hair/HAIR_SIX_CLASS_FOUR_RESULTS_20260928.md)는 그 뒤 완료 상태를 기록한다. 계획 문서의 ‘미실행’ 표기는 작성 당시 상태다.
 
 ### 4개 실험은 무엇을 비교했나
 
@@ -435,7 +435,7 @@ B0에서는 증강이 Val Macro F1을 약 0.90%p 높였고, B1 묶음에서는 �
 
 B0·256·CE 안에서 원본과 증강을 비교하면 Validation Macro F1이 `0.7729052037575177`→`0.7819142733310591`이었다. 반면 B1·384·LS 0.05 안에서는 원본 `0.8144942091318823`이 증강 `0.8019837806385383`보다 높았다. 따라서 “증강이 항상 좋다”는 결론을 내리지 않았다. 같은 묶음의 원본/증강 비교라도 **학습 이미지와 그 수량으로 계산한 클래스 가중치가 함께 달라졌다**. B0와 B1끼리의 차이는 backbone·해상도·Loss까지 동시에 달라져 구조 하나의 효과를 분리하지 못한다.
 
-네 실험 중 Val Macro F1이 가장 높은 B1·384·원본을 **성능 우선**으로 골랐다. B0 두 조건 중 Val이 높은 B0·256·증강은 **실행 비용을 비교할 경량 대안**으로 고정했다. 두 모델은 같은 Test 1,305장의 경로와 정답 라벨 집합이 일치했고 각각 후보 패키지의 모델 해시·예측 CSV를 확인했다. 이것은 같은 **6종 과제 안의 두 후보 비교**다. [두 패키지 대조](research/HAIR_SIX_CLASS_LIGHT_HEAVY_COMPARISON_20260928.md).
+네 실험 중 Val Macro F1이 가장 높은 B1·384·원본을 **성능 우선**으로 골랐다. B0 두 조건 중 Val이 높은 B0·256·증강은 **실행 비용을 비교할 경량 대안**으로 고정했다. 두 모델은 같은 Test 1,305장의 경로와 정답 라벨 집합이 일치했고 각각 후보 패키지의 모델 해시·예측 CSV를 확인했다. 이것은 같은 **6종 과제 안의 두 후보 비교**다. [두 패키지 대조](research/public_data/hair/HAIR_SIX_CLASS_LIGHT_HEAVY_COMPARISON_20260928.md).
 
 ### Test 결과에서 실제로 무엇을 알았나
 
@@ -467,7 +467,7 @@ Hair 6종의 네 조건은 같은 데이터 버전이므로 `hair6_tradeoff.png`
 
 Web Skin의 PMG B1·384는 Val Accuracy `0.866`으로 B0·256의 `0.85`보다 높지만 Colab p50은 `419.9053944998923 ms` 대 `304.2439384998943 ms`로 길다. 선택한 Web Skin v2가 비용 균형 후보라는 이유를 수치로 설명할 수 있다. Hair 5종에서 SupCon B1·256의 p50 `398.9703649999683 ms`는 같은 기준선 `399.0923975006808 ms`와 거의 같으면서 Validation Macro F1은 더 높았다. 하지만 최종 B1·384 v2의 Validation 성능이 더 높아 후보는 유지됐다. Skin은 Clean 증강의 Validation Accuracy `0.982`가 Clean 원본 `0.973`보다 높았고, p50은 거의 같았다. **서로 다른 분류기끼리의 Accuracy가 높은 순서**로 모델 기술의 우수성을 평가해서는 안 된다.
 
-`*_metrics_overview.png`의 색 지도는 각 열의 크기를 따로 정규화한다. 진한 색이 반드시 ‘좋음’을 뜻하지 않는다. 오른쪽 상자그림은 한 모델의 30회 변동이 아니라 **한 과제 안의 여러 모델 지연 시간 분포**다. `*_dashboard.png`의 초록 학습 시간 막대는 과거 실행 환경이 다른 기록이다. 초기에 만든 모델과 Clean 모델이 한 그림에 함께 있으면 **분할이 다른 점수는 연결선처럼 읽지 않는다**. 실제 해석은 [런타임 검토 보고서](research/RUNTIME_BENCHMARK_REVIEW_20260928.md)의 그래프 설명을 따른다.
+`*_metrics_overview.png`의 색 지도는 각 열의 크기를 따로 정규화한다. 진한 색이 반드시 ‘좋음’을 뜻하지 않는다. 오른쪽 상자그림은 한 모델의 30회 변동이 아니라 **한 과제 안의 여러 모델 지연 시간 분포**다. `*_dashboard.png`의 초록 학습 시간 막대는 과거 실행 환경이 다른 기록이다. 초기에 만든 모델과 Clean 모델이 한 그림에 함께 있으면 **분할이 다른 점수는 연결선처럼 읽지 않는다**. 실제 해석은 [런타임 검토 보고서](research/public_data/RUNTIME_BENCHMARK_REVIEW_20260928.md)의 그래프 설명을 따른다.
 
 > “새 양호 사진을 검토해 Hair 6종 과제를 만들고 네 조건을 같은 분할에서 비교했습니다. 정확도 우선 B1·384 원본과 실행 비용 대안 B0·256 증강을 별도로 보존했습니다. 이어 저장 모델 34개를 Colab GPU에서 동일한 합성 입력으로 측정해 분류 성능과 실행 시간의 교환 관계를 확인했습니다. 실제 장비·실사용 사진의 성능과 지연 시간은 아직 측정하지 않았습니다.”
 
@@ -477,7 +477,7 @@ Web Skin의 PMG B1·384는 Val Accuracy `0.866`으로 B0·256의 `0.85`보다 �
 
 ### 5.1 당시 확인한 키오스크 구조
 
-2026-09-13에 팀원의 [mediflow-kiosk-core 저장소](https://github.com/Phjrab/mediflow-kiosk-core)를 당시 고정 커밋 `2877e65f99bb1a3f9837b56c0736de57a4f66902`에서 검토했다. [검토 원문](research/KIOSK_CORE_REVIEW_20260913.md)은 웹·안구·LLM 코드와 피부·두피 모델을 연결할 위치를 추적한 **코드 분석**이지, 이후의 최신 원격 상태나 실제 장비 실행을 재확인한 기록이 아니다.
+2026-09-13에 팀원의 [mediflow-kiosk-core 저장소](https://github.com/Phjrab/mediflow-kiosk-core)를 당시 고정 커밋 `2877e65f99bb1a3f9837b56c0736de57a4f66902`에서 검토했다. [검토 원문](research/integration/KIOSK_CORE_REVIEW_20260913.md)은 웹·안구·LLM 코드와 피부·두피 모델을 연결할 위치를 추적한 **코드 분석**이지, 이후의 최신 원격 상태나 실제 장비 실행을 재확인한 기록이 아니다.
 
 당시 안구 경로에는 분류·분석 코드가 있었고 피부·두피는 촬영·표시 화면 중심이었다. 웹의 `skin`은 **얼굴 웹캠 피부**를 뜻했으므로 이 저장소의 `skin`(확대 피부)과 이름을 그대로 대응시키면 잘못된 모델이 호출된다. 두피 화면의 `scalp`는 여기의 `hair`에 해당한다. 확대 피부는 별도 검사 항목을 만들어야 한다. 검사 설정의 피부·두피 `not_configured`를 `ready`로 바꾸기만 해서는 추론이 구현되지 않는다. 당시 웹 업로드 이미지에는 최대 변 1280으로 축소하고 JPEG 재인코딩하는 경로가 있어, 저장된 연구 Test 이미지와 같은 입력이라고 가정할 수도 없다.
 
@@ -524,12 +524,12 @@ Web Skin의 PMG B1·384는 Val Accuracy `0.866`으로 B0·256의 `0.85`보다 �
 | 확인할 내용 | 우선 원본 |
 |---|---|
 | 현재 후보와 Test·Colab 비용 | [모델 최종 선정](../results/FINAL_MODEL_SELECTION_20260928.md), [선정 JSON](../results/PUBLIC_MODEL_SELECTION_20260928.json), 각 후보 `selection.json`·평가 JSON |
-| 데이터·초기부터 MedSigLIP까지 모든 실험 이유 | [전체 실험 대장](research/ALL_EXPERIMENTS_RATIONALE_AND_RESULTS_20260924.md), [프로젝트 배경](research/PROJECT_BACKGROUND.md) |
-| 초기 결과 재현의 범위 | [평가 재현 감사](research/EVALUATION_REPRODUCTION_AUDIT_20260927.md) |
-| Hair 5종→6종 데이터·네 조건 | [종합 분석](research/HAIR_5CLASS_6CLASS_EXPERIMENT_ANALYSIS_20260928.md), [네 실험 결과](research/HAIR_SIX_CLASS_FOUR_RESULTS_20260928.md) |
-| 34개 실행 시간 측정의 조건·한계 | [런타임 검토](research/RUNTIME_BENCHMARK_REVIEW_20260928.md), [측정 원자료](../results/runtime_benchmark_20260928_051423/benchmark.csv) |
-| 팀원 코드 분석의 정확한 시점 | [고정 커밋 분석](research/KIOSK_CORE_REVIEW_20260913.md) |
+| 데이터·초기부터 MedSigLIP까지 모든 실험 이유 | [전체 실험 대장](research/public_data/ALL_EXPERIMENTS_RATIONALE_AND_RESULTS_20260924.md), [프로젝트 배경](research/PROJECT_BACKGROUND.md) |
+| 초기 결과 재현의 범위 | [평가 재현 감사](research/public_data/EVALUATION_REPRODUCTION_AUDIT_20260927.md) |
+| Hair 5종→6종 데이터·네 조건 | [종합 분석](research/public_data/hair/HAIR_5CLASS_6CLASS_EXPERIMENT_ANALYSIS_20260928.md), [네 실험 결과](research/public_data/hair/HAIR_SIX_CLASS_FOUR_RESULTS_20260928.md) |
+| 34개 실행 시간 측정의 조건·한계 | [런타임 검토](research/public_data/RUNTIME_BENCHMARK_REVIEW_20260928.md), [측정 원자료](../results/runtime_benchmark_20260928_051423/benchmark.csv) |
+| 팀원 코드 분석의 정확한 시점 | [고정 커밋 분석](research/integration/KIOSK_CORE_REVIEW_20260913.md) |
 | 다음 실행과 완료 기준 | [로드맵](ROADMAP.md), [현재 상태](PROJECT_STATUS_20260928.md) |
 | 발표용 시각자료와 표 | [발표 자료실](../presentation/README.md) |
 
-방법의 출처 논문은 각 실험 본문과 [전체 실험 대장](research/ALL_EXPERIMENTS_RATIONALE_AND_RESULTS_20260924.md)에 원문 링크로 연결했다. **논문의 일반적 주장은 연구 가설의 근거이며 MediFlow에서의 성능 향상은 저장된 Validation/Test 기록으로만 설명한다.**
+방법의 출처 논문은 각 실험 본문과 [전체 실험 대장](research/public_data/ALL_EXPERIMENTS_RATIONALE_AND_RESULTS_20260924.md)에 원문 링크로 연결했다. **논문의 일반적 주장은 연구 가설의 근거이며 MediFlow에서의 성능 향상은 저장된 Validation/Test 기록으로만 설명한다.**

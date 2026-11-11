@@ -1,0 +1,92 @@
+{
+  "models": {
+    "skin": {
+      "status": "passed",
+      "model_sha256": "c62a76580a0d6658c934b993629a33605961b153d28ac1c6abc3205382815be2",
+      "input_shape": [
+        1,
+        224,
+        224,
+        3
+      ],
+      "output_shape": [
+        1,
+        10
+      ],
+      "classes": [
+        "광선각화증",
+        "기저세포암",
+        "보웬병",
+        "사마귀",
+        "지루각화증",
+        "편평세포암",
+        "표피낭종",
+        "피부섬유종",
+        "혈관종",
+        "흑색점"
+      ],
+      "model_input": "float32 RGB 0-255, no external division",
+      "adapter": "single output",
+      "model_unchanged": true,
+      "synthetic_input_only": true,
+      "accuracy_measured_locally": false,
+      "training_executed_locally": false
+    },
+    "web_skin": {
+      "status": "passed",
+      "model_sha256": "bbdfade5173c12d4076ab414c907821e21ee57fee2366f79d57adde4a8f74dc9",
+      "input_shape": [
+        1,
+        256,
+        256,
+        3
+      ],
+      "output_shape": [
+        1,
+        5
+      ],
+      "classes": [
+        "건선",
+        "아토피",
+        "여드름",
+        "정상",
+        "주사"
+      ],
+      "model_input": "float32 RGB 0-255, no external division",
+      "adapter": "sum four logits then softmax",
+      "model_unchanged": true,
+      "synthetic_input_only": true,
+      "accuracy_measured_locally": false,
+      "training_executed_locally": false
+    },
+    "hair": {
+      "status": "passed",
+      "model_sha256": "ddb123669956f4fbabea791d7815da7aa16101a3ed331ef4cbc7503848f5ed00",
+      "input_shape": [
+        1,
+        384,
+        384,
+        3
+      ],
+      "output_shape": [
+        1,
+        5
+      ],
+      "classes": [
+        "모낭사이홍반",
+        "미세각질",
+        "비듬",
+        "탈모",
+        "피지과다"
+      ],
+      "model_input": "float32 RGB 0-255, no external division",
+      "adapter": "single output",
+      "model_unchanged": true,
+      "synthetic_input_only": true,
+      "accuracy_measured_locally": false,
+      "training_executed_locally": false
+    }
+  },
+  "tensorflow": "2.20.0",
+  "keras": "3.13.2"
+}

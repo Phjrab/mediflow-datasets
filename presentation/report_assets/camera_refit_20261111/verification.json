@@ -1,0 +1,86 @@
+{
+  "status": "passed",
+  "notebook_reproduced_in_memory": true,
+  "embedded_runtime_modules_verified": 4,
+  "embedded_configuration_byte_identical": true,
+  "common_bundle_crc_and_sha256_verified": true,
+  "previous_stage_results_and_original_models_verified": {
+    "skin": {
+      "starting_model_sha256": "1b146a6a53742226ec677865aa71bd842a28c9db9c3174b352dd8bc87270770b",
+      "source_manifest_sha256": "36f79b61a42e9ed634ffa7d4c490efefe5e5031a8bbdce1daf630b1e01e7e27d",
+      "classes": [
+        "광선각화증",
+        "기저세포암",
+        "보웬병",
+        "사마귀",
+        "지루각화증",
+        "편평세포암",
+        "표피낭종",
+        "피부섬유종",
+        "혈관종",
+        "흑색점"
+      ],
+      "input_size": 224,
+      "batch_size": 16,
+      "epochs": 5,
+      "seed": 42,
+      "learning_rate": 1e-05,
+      "augmentation_probability": 0.5,
+      "source_zip_sha256": "db6cf59087b68d4534ff857bdb0eacc1a1a09ed5703772fefc75f038d4570e4b"
+    },
+    "web_skin": {
+      "starting_model_sha256": "83e659dd09a9355135ee0de0197037e81ece962777f59dedae8d9a37b49a3fc4",
+      "source_manifest_sha256": "7c8b41878883193e5dd340ab8a4b7f804a3ab7f37c8159093b663937d997a738",
+      "classes": [
+        "건선",
+        "아토피",
+        "여드름",
+        "정상",
+        "주사"
+      ],
+      "input_size": 256,
+      "batch_size": 8,
+      "epochs": 5,
+      "seed": 42,
+      "learning_rate": 1e-05,
+      "augmentation_probability": 0.5,
+      "source_zip_sha256": "f8908af3d54e521ad14c37a44b569d33fe92be3b8b9b66a8d80faf4ba964072d"
+    },
+    "hair": {
+      "starting_model_sha256": "9faa33b8f79f45ef6e7be415473e2ee5225f6195fff04d098828733db23ed3c2",
+      "source_manifest_sha256": "c6320fa7d2ef25332d508b3da868d2731d61ce7c8cd3ed2ebc505e6cd0b54717",
+      "classes": [
+        "모낭사이홍반",
+        "미세각질",
+        "비듬",
+        "탈모",
+        "피지과다"
+      ],
+      "input_size": 384,
+      "batch_size": 8,
+      "epochs": 5,
+      "seed": 42,
+      "learning_rate": 1e-05,
+      "augmentation_probability": 0.5,
+      "source_zip_sha256": "2ac7260663cf69835ba50edb6ae8c7e7ac13be9c73b9f7ea24f60e0342e7e156"
+    }
+  },
+  "study_sha256": "e6bc85bc0a7dc9a0d34d1affef912e3b2ef85a2f0106d5092c8e20680abadfa8",
+  "notebook_sha256": "c5d3b285a4eff7b14e2d0e9e3a97135f8be7e81e6809a06b33da9635cc438de0",
+  "analysis_code_sha256": "a089bf6a043f3cd96faeef9d5ca7ef70bb39f1db8522ee87a1e77a737f172573",
+  "figure_code_sha256": "e81770647177020c2ad84502b6799edf48e1838c1d14411bdc60d0fc1edcf4aa",
+  "old_configuration_preserved": true,
+  "full_training_executed": false,
+  "source_test_used": false,
+  "target_accuracy": null,
+  "drive_result_folder": "MediFlow_adaptation_runs/4ae6e07eb4af1225/measured_strength_e6bc85bc0a7d",
+  "environment": {
+    "python": "3.12.14",
+    "tensorflow": "2.20.0",
+    "keras": "3.13.2",
+    "numpy": "2.5.2",
+    "pillow": "12.3.0",
+    "opencv-python-headless": "4.14.0.94",
+    "plot_library_path": ".tmp/final-test-report-libraries"
+  }
+}

@@ -1,0 +1,449 @@
+{
+  "domains": {
+    "skin": {
+      "best_epoch": 3,
+      "classes": [
+        "광선각화증",
+        "기저세포암",
+        "보웬병",
+        "사마귀",
+        "지루각화증",
+        "편평세포암",
+        "표피낭종",
+        "피부섬유종",
+        "혈관종",
+        "흑색점"
+      ],
+      "model_config": {
+        "architecture": "b0",
+        "size": 224,
+        "label_smoothing": 0.0,
+        "initialization": "saved original-only early checkpoint",
+        "model": "results/skin/1_training/original/best_model.keras",
+        "model_sha256": "1b146a6a53742226ec677865aa71bd842a28c9db9c3174b352dd8bc87270770b",
+        "role": "basic"
+      },
+      "history_epochs": 5,
+      "selected_arm": "stronger_expanded",
+      "worst_condition_macro_f1": {
+        "initial": 0.9935152536910259,
+        "previous_expanded": 0.993168147190449,
+        "stronger_expanded": 0.9976017479221756
+      },
+      "gpu": [
+        {
+          "compute_capability": [
+            8,
+            9
+          ],
+          "device_name": "NVIDIA L4"
+        }
+      ],
+      "train_seconds_sum": 113.77474628600021,
+      "validation_seconds_sum": 25.5608985519998
+    },
+    "web_skin": {
+      "best_epoch": 3,
+      "classes": [
+        "건선",
+        "아토피",
+        "여드름",
+        "정상",
+        "주사"
+      ],
+      "model_config": {
+        "architecture": "pmg",
+        "size": 256,
+        "label_smoothing": 0.0,
+        "reference_candidate_id": "public_candidate_v2_pmg_b0_256_ce_20260922_235840_093d10de",
+        "initialization": "saved selected checkpoint",
+        "model": "results/web_skin/selected_models/v2/web_skin_model.keras",
+        "model_sha256": "83e659dd09a9355135ee0de0197037e81ece962777f59dedae8d9a37b49a3fc4",
+        "role": "selected"
+      },
+      "history_epochs": 5,
+      "selected_arm": "stronger_expanded",
+      "worst_condition_macro_f1": {
+        "initial": 0.7951552177660287,
+        "previous_expanded": 0.8041675654309934,
+        "stronger_expanded": 0.8196219458629163
+      },
+      "gpu": [
+        {
+          "compute_capability": [
+            8,
+            9
+          ],
+          "device_name": "NVIDIA L4"
+        }
+      ],
+      "train_seconds_sum": 265.085416464,
+      "validation_seconds_sum": 27.935577229000046
+    },
+    "hair": {
+      "best_epoch": 4,
+      "classes": [
+        "모낭사이홍반",
+        "미세각질",
+        "비듬",
+        "탈모",
+        "피지과다"
+      ],
+      "model_config": {
+        "architecture": "b1",
+        "size": 384,
+        "label_smoothing": 0.05,
+        "reference_candidate_id": "public_candidate_v2_b1_384_ls005_adam_20260921_155906_82311da4",
+        "initialization": "saved selected checkpoint",
+        "model": "results/hair/selected_models/v2/hair_model.keras",
+        "model_sha256": "9faa33b8f79f45ef6e7be415473e2ee5225f6195fff04d098828733db23ed3c2",
+        "training_source_sha256": "2ac7260663cf69835ba50edb6ae8c7e7ac13be9c73b9f7ea24f60e0342e7e156",
+        "role": "selected"
+      },
+      "history_epochs": 5,
+      "selected_arm": "previous_expanded",
+      "worst_condition_macro_f1": {
+        "initial": 0.7812966127563242,
+        "previous_expanded": 0.7820517795657131,
+        "stronger_expanded": 0.774844874001947
+      },
+      "gpu": [
+        {
+          "compute_capability": [
+            8,
+            9
+          ],
+          "device_name": "NVIDIA L4"
+        }
+      ],
+      "train_seconds_sum": 458.0561664229999,
+      "validation_seconds_sum": 122.78832446900014
+    }
+  },
+  "comparisons": [
+    {
+      "domain": "skin",
+      "model": "initial",
+      "condition": "clean",
+      "correct": 897,
+      "count": 900,
+      "accuracy": 0.9966666666666667,
+      "macro_f1": 0.9965963674000184
+    },
+    {
+      "domain": "skin",
+      "model": "initial",
+      "condition": "lighting",
+      "correct": 894,
+      "count": 900,
+      "accuracy": 0.9933333333333333,
+      "macro_f1": 0.992117503988746
+    },
+    {
+      "domain": "skin",
+      "model": "initial",
+      "condition": "expanded",
+      "correct": 895,
+      "count": 900,
+      "accuracy": 0.9944444444444445,
+      "macro_f1": 0.9935152536910259
+    },
+    {
+      "domain": "skin",
+      "model": "initial",
+      "condition": "weak",
+      "correct": 898,
+      "count": 900,
+      "accuracy": 0.9977777777777778,
+      "macro_f1": 0.9976017479221756
+    },
+    {
+      "domain": "skin",
+      "model": "previous_expanded",
+      "condition": "clean",
+      "correct": 898,
+      "count": 900,
+      "accuracy": 0.9977777777777778,
+      "macro_f1": 0.9976017479221756
+    },
+    {
+      "domain": "skin",
+      "model": "previous_expanded",
+      "condition": "lighting",
+      "correct": 895,
+      "count": 900,
+      "accuracy": 0.9944444444444445,
+      "macro_f1": 0.993168147190449
+    },
+    {
+      "domain": "skin",
+      "model": "previous_expanded",
+      "condition": "expanded",
+      "correct": 895,
+      "count": 900,
+      "accuracy": 0.9944444444444445,
+      "macro_f1": 0.993168147190449
+    },
+    {
+      "domain": "skin",
+      "model": "previous_expanded",
+      "condition": "weak",
+      "correct": 898,
+      "count": 900,
+      "accuracy": 0.9977777777777778,
+      "macro_f1": 0.9976017479221756
+    },
+    {
+      "domain": "skin",
+      "model": "stronger_expanded",
+      "condition": "clean",
+      "correct": 898,
+      "count": 900,
+      "accuracy": 0.9977777777777778,
+      "macro_f1": 0.9976017479221756
+    },
+    {
+      "domain": "skin",
+      "model": "stronger_expanded",
+      "condition": "lighting",
+      "correct": 898,
+      "count": 900,
+      "accuracy": 0.9977777777777778,
+      "macro_f1": 0.9976017479221756
+    },
+    {
+      "domain": "skin",
+      "model": "stronger_expanded",
+      "condition": "expanded",
+      "correct": 898,
+      "count": 900,
+      "accuracy": 0.9977777777777778,
+      "macro_f1": 0.9976017479221756
+    },
+    {
+      "domain": "skin",
+      "model": "stronger_expanded",
+      "condition": "weak",
+      "correct": 898,
+      "count": 900,
+      "accuracy": 0.9977777777777778,
+      "macro_f1": 0.9976017479221756
+    },
+    {
+      "domain": "web_skin",
+      "model": "initial",
+      "condition": "clean",
+      "correct": 424,
+      "count": 499,
+      "accuracy": 0.8496993987975952,
+      "macro_f1": 0.8471375958306038
+    },
+    {
+      "domain": "web_skin",
+      "model": "initial",
+      "condition": "lighting",
+      "correct": 420,
+      "count": 499,
+      "accuracy": 0.8416833667334669,
+      "macro_f1": 0.8400442327129337
+    },
+    {
+      "domain": "web_skin",
+      "model": "initial",
+      "condition": "expanded",
+      "correct": 398,
+      "count": 499,
+      "accuracy": 0.7975951903807615,
+      "macro_f1": 0.7951552177660287
+    },
+    {
+      "domain": "web_skin",
+      "model": "initial",
+      "condition": "weak",
+      "correct": 417,
+      "count": 499,
+      "accuracy": 0.8356713426853707,
+      "macro_f1": 0.8330199818760329
+    },
+    {
+      "domain": "web_skin",
+      "model": "previous_expanded",
+      "condition": "clean",
+      "correct": 422,
+      "count": 499,
+      "accuracy": 0.845691382765531,
+      "macro_f1": 0.8452139236284577
+    },
+    {
+      "domain": "web_skin",
+      "model": "previous_expanded",
+      "condition": "lighting",
+      "correct": 415,
+      "count": 499,
+      "accuracy": 0.8316633266533067,
+      "macro_f1": 0.8323272183186724
+    },
+    {
+      "domain": "web_skin",
+      "model": "previous_expanded",
+      "condition": "expanded",
+      "correct": 401,
+      "count": 499,
+      "accuracy": 0.8036072144288577,
+      "macro_f1": 0.8041675654309934
+    },
+    {
+      "domain": "web_skin",
+      "model": "previous_expanded",
+      "condition": "weak",
+      "correct": 414,
+      "count": 499,
+      "accuracy": 0.8296593186372746,
+      "macro_f1": 0.8297960345454877
+    },
+    {
+      "domain": "web_skin",
+      "model": "stronger_expanded",
+      "condition": "clean",
+      "correct": 422,
+      "count": 499,
+      "accuracy": 0.845691382765531,
+      "macro_f1": 0.8440681425959449
+    },
+    {
+      "domain": "web_skin",
+      "model": "stronger_expanded",
+      "condition": "lighting",
+      "correct": 416,
+      "count": 499,
+      "accuracy": 0.8336673346693386,
+      "macro_f1": 0.832568791097863
+    },
+    {
+      "domain": "web_skin",
+      "model": "stronger_expanded",
+      "condition": "expanded",
+      "correct": 415,
+      "count": 499,
+      "accuracy": 0.8316633266533067,
+      "macro_f1": 0.8309329752560016
+    },
+    {
+      "domain": "web_skin",
+      "model": "stronger_expanded",
+      "condition": "weak",
+      "correct": 410,
+      "count": 499,
+      "accuracy": 0.8216432865731463,
+      "macro_f1": 0.8196219458629163
+    },
+    {
+      "domain": "hair",
+      "model": "initial",
+      "condition": "clean",
+      "correct": 997,
+      "count": 1252,
+      "accuracy": 0.7963258785942492,
+      "macro_f1": 0.7957429931637543
+    },
+    {
+      "domain": "hair",
+      "model": "initial",
+      "condition": "lighting",
+      "correct": 984,
+      "count": 1252,
+      "accuracy": 0.7859424920127795,
+      "macro_f1": 0.7846213015924425
+    },
+    {
+      "domain": "hair",
+      "model": "initial",
+      "condition": "expanded",
+      "correct": 984,
+      "count": 1252,
+      "accuracy": 0.7859424920127795,
+      "macro_f1": 0.7846213015924425
+    },
+    {
+      "domain": "hair",
+      "model": "initial",
+      "condition": "weak",
+      "correct": 978,
+      "count": 1252,
+      "accuracy": 0.7811501597444089,
+      "macro_f1": 0.7812966127563242
+    },
+    {
+      "domain": "hair",
+      "model": "previous_expanded",
+      "condition": "clean",
+      "correct": 992,
+      "count": 1252,
+      "accuracy": 0.792332268370607,
+      "macro_f1": 0.7924812646314018
+    },
+    {
+      "domain": "hair",
+      "model": "previous_expanded",
+      "condition": "lighting",
+      "correct": 980,
+      "count": 1252,
+      "accuracy": 0.7827476038338658,
+      "macro_f1": 0.7820517795657131
+    },
+    {
+      "domain": "hair",
+      "model": "previous_expanded",
+      "condition": "expanded",
+      "correct": 980,
+      "count": 1252,
+      "accuracy": 0.7827476038338658,
+      "macro_f1": 0.7820517795657131
+    },
+    {
+      "domain": "hair",
+      "model": "previous_expanded",
+      "condition": "weak",
+      "correct": 989,
+      "count": 1252,
+      "accuracy": 0.7899361022364217,
+      "macro_f1": 0.7900578506535009
+    },
+    {
+      "domain": "hair",
+      "model": "stronger_expanded",
+      "condition": "clean",
+      "correct": 992,
+      "count": 1252,
+      "accuracy": 0.792332268370607,
+      "macro_f1": 0.7926449140430689
+    },
+    {
+      "domain": "hair",
+      "model": "stronger_expanded",
+      "condition": "lighting",
+      "correct": 987,
+      "count": 1252,
+      "accuracy": 0.7883386581469649,
+      "macro_f1": 0.7882173427367334
+    },
+    {
+      "domain": "hair",
+      "model": "stronger_expanded",
+      "condition": "expanded",
+      "correct": 987,
+      "count": 1252,
+      "accuracy": 0.7883386581469649,
+      "macro_f1": 0.7882173427367334
+    },
+    {
+      "domain": "hair",
+      "model": "stronger_expanded",
+      "condition": "weak",
+      "correct": 968,
+      "count": 1252,
+      "accuracy": 0.7731629392971247,
+      "macro_f1": 0.774844874001947
+    }
+  ]
+}

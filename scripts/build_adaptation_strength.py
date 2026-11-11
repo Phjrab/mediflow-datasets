@@ -263,7 +263,10 @@ def main():
         (ROOT / "configs/camera_strength_20261110.json", study_json),
         (
             ROOT
-            / "notebooks/camera_adaptation/MediFlow_Measured_Stronger_Adaptation_20261110.ipynb",
+            / (
+                "notebooks/camera_adaptation/archive/"
+                "MediFlow_Measured_Stronger_Adaptation_20261110.ipynb"
+            ),
             json.dumps(notebook(study_json), ensure_ascii=False, indent=1) + "\n",
         ),
     ):

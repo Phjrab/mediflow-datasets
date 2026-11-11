@@ -1,6 +1,6 @@
 # LLM과 VLM 착수 전 로컬 점검 근거
 
-실행일: 2026-10-26. [점검 보고서](../../docs/research/PRE_LLM_VLM_PROJECT_AUDIT_20261026.md)의 근거다.
+실행일: 2026-10-26. [점검 보고서](../../docs/research/integration/PRE_LLM_VLM_PROJECT_AUDIT_20261026.md)의 근거다.
 
 - `artifact_integrity.json`: 일곱 선정 모델의 실제 SHA-256, 원본 ZIP·발표 사본·클래스·전처리,
   Hair 6종 두 후보의 저장 예측 검증, 34개 측정 상태, 노트북과 주요 문서·발표 목록 확인.

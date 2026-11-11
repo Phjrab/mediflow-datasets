@@ -237,7 +237,7 @@ if __name__ == "__main__":
         "output/adaptation_preflight_v2_20261109/mediflow_preflight_runtime.zip"
     ))
     parser.add_argument("--review", type=Path, default=ROOT / (
-        "camera_capture/_review/preflight_v2_fbe37d44_bounded_review/hair"
+        "camera_capture/_review/checks/transform_review/hair"
     ))
     args = parser.parse_args()
     build(args.output, args.bundle, args.review)

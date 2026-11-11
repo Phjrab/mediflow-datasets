@@ -1,0 +1,23 @@
+{
+  "stage4_source_test_completed_in_colab": true,
+  "new_comparisons": 15,
+  "reused_comparisons": 36,
+  "combined_comparisons": 51,
+  "class_metric_rows_verified": 340,
+  "prediction_arrays_verified_against_confusion_matrices": 15,
+  "original_result_files_rehashed": 25,
+  "identical_previous_result_files_referenced": 5,
+  "runtime_code_files_verified": 5,
+  "csv_selection_flags_verified": 51,
+  "local_markdown_links_checked": 337,
+  "source_download_zip_unchanged": true,
+  "ruff": "passed",
+  "pytest_passed": 200,
+  "pytest_skipped": 3,
+  "skip_reason": "optional matplotlib unavailable in base local environment",
+  "local_source_test_inference_rerun": false,
+  "new_training_executed": false,
+  "real_device_disease_accuracy_measured": false,
+  "test_used_for_model_selection": false,
+  "official_candidate_index_changed": false
+}

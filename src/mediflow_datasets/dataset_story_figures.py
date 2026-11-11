@@ -141,7 +141,8 @@ def main():
         "개",
         ["원본 모으기", "중복·충돌 정리", "80:10:10 재분할", "Train만 새 증강"],
         "학습 구성: 원본 10,032장 + 새 증강 5,015장 = 15,047장 · 평가에는 원본만 사용",
-        "출처: docs/research/HAIR_EXPERIMENT_SUMMARY_20260907.md, §3–4 · 개: 완전 동일 파일 수",
+        "출처: docs/research/public_data/hair/HAIR_EXPERIMENT_SUMMARY_20260907.md, "
+        "§3–4 · 개: 완전 동일 파일 수",
     )
     detail(
         "Skin",
@@ -152,12 +153,13 @@ def main():
         "그룹",
         ["원본 모으기", "동일 픽셀 정리", "클래스별 재분할", "Train만 새 증강"],
         "생성 단계 검사: 분할 간 중복 0그룹 · 원본 7,249장 + 새 증강 7,249장 = 14,498장",
-        "출처: docs/research/SKIN_DATA_AUDIT_20260909.md · 생성 후 별도 공통 감사는 생략",
+        "출처: docs/research/public_data/skin/SKIN_DATA_AUDIT_20260909.md "
+        "· 생성 후 별도 공통 감사는 생략",
     )
     files = [
-        "HAIR_EXPERIMENT_SUMMARY_20260907.md",
-        "SKIN_DATA_AUDIT_20260909.md",
-        "HAIR_WEB_SKIN_EXPERIMENT_EXPLAINED_20260908.md",
+        "public_data/hair/HAIR_EXPERIMENT_SUMMARY_20260907.md",
+        "public_data/skin/SKIN_DATA_AUDIT_20260909.md",
+        "public_data/HAIR_WEB_SKIN_EXPERIMENT_EXPLAINED_20260908.md",
     ]
     manifest = {}
     for name in files:
