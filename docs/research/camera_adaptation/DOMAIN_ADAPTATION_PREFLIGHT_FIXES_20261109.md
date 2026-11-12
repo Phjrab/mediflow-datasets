@@ -1,5 +1,7 @@
 # 어댑테이션 학습 전 수정과 후속 원본 검토
 
+> 2026-11-12 보관 안내: 이 문서의 과거 실행 ZIP 링크는 복원 안내로 연결한다. 중복 모델을 포함한 ZIP은 작은 원본 구성과 유지한 모델로 정확히 복원할 수 있다. 아래 실험 수치와 당시 실행 이력은 보존했다.
+
 > 2026-11-11 정리 상태: **분석·검토 또는 과정 기록, 후속 학습 상태는 최신 로드맵 참조**. [현재 작업 안내](../../README.md) · [전체 문서 대조표](../../DOCUMENT_INDEX.md). 아래 본문은 작성 시점 기록이며, 본문·원본 JSON의 이전 경로는 정리 대조표로 추적한다.
 
 2026-11-09 · 로드맵 3단계 검토 및 4단계 추가 학습 준비
@@ -48,7 +50,7 @@ Source-only와 Brightness-only를 실행 후보로 남긴다. Target-guided는 �
 ## 3. 지금 바로 실행할 수 있는 후속 노트북
 
 - [새 노트북](../../../output/adaptation_preflight_v2_20261109/Adaptation_Preflight_Colab.ipynb)
-- [새 실행 ZIP](../../../output/adaptation_preflight_v2_20261109/mediflow_preflight_runtime.zip)
+- [새 실행 ZIP](../../../camera_capture/_review/history/project_cleanup_20261112/README.md)
 - [같은 내용의 Colab용 Python 코드](../../../output/adaptation_preflight_v2_20261109/Adaptation_Preflight_Colab.py)
 - [로컬 준비 결과](../../../output/adaptation_preflight_v2_20261109/local_preparation)
 - [검증 기록](../../../output/adaptation_preflight_v2_20261109/verification.json)

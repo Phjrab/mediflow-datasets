@@ -1,5 +1,7 @@
 # 촬영 환경 적응: 실제 실행 코드와 결과 대응표
 
+> 2026-11-12 보관 안내: 이 문서의 과거 실행 ZIP 링크는 복원 안내로 연결한다. 중복 모델을 포함한 ZIP은 작은 원본 구성과 유지한 모델로 정확히 복원할 수 있다. 아래 실험 수치와 당시 실행 이력은 보존했다.
+
 > 2026-11-11 정리 상태: **분석·검토 또는 과정 기록, 후속 학습 상태는 최신 로드맵 참조**. [현재 작업 안내](../../README.md) · [전체 문서 대조표](../../DOCUMENT_INDEX.md). 아래 본문은 작성 시점 기록이며, 본문·원본 JSON의 이전 경로는 정리 대조표로 추적한다.
 
 2026-11-10 작성. 사용자가 제시한 Colab 노트북 6개를 로컬 실행본과 회수한 결과에 대조했다.
@@ -29,7 +31,7 @@
 ### A. 얼굴 초기 분석
 
 - [로컬 노트북](../../../output/domain_adaptation_20261108_final/Domain_Adaptation_Colab.ipynb)
-- [함께 사용한 실행 ZIP](../../../output/domain_adaptation_20261108_final/mediflow_da_runtime.zip)
+- [함께 사용한 실행 ZIP](../../../camera_capture/_review/history/project_cleanup_20261112/README.md)
 - [회수한 얼굴 분석 결과](../../../camera_capture/_review/domain_adaptation_colab_20261109/web_skin/analysis/analysis.json)
 - [분포 그래프](../../../camera_capture/_review/domain_adaptation_colab_20261109/web_skin/analysis/metric_distributions.svg)
 - [PCA 그림](../../../camera_capture/_review/domain_adaptation_colab_20261109/web_skin/analysis/feature_pca.svg)
@@ -49,7 +51,7 @@
 
 - [로컬 노트북](../../../output/hair_skin_batch_20261109/Hair_Skin_Analysis_Colab.ipynb)
 - [같은 실행 코드의 Python 내보내기](../../../output/hair_skin_batch_20261109/Hair_Skin_Analysis_Colab.py)
-- [함께 사용한 실행 ZIP](../../../output/domain_adaptation_20261108_final/mediflow_da_runtime.zip)
+- [함께 사용한 실행 ZIP](../../../camera_capture/_review/history/project_cleanup_20261112/README.md)
 - [두피 분석 결과](../../../camera_capture/_review/domain_adaptation_colab_20261109/hair/analysis)
 - [피부 분석 결과](../../../camera_capture/_review/domain_adaptation_colab_20261109/skin/analysis)
 
@@ -69,7 +71,7 @@ Source 특징 표본은 두피 40장, 피부 80장이다.
 
 - [로컬 노트북](../../../output/adaptation_preflight_v2_20261109/Adaptation_Preflight_Colab.ipynb)
 - [같은 실행 코드의 Python 내보내기](../../../output/adaptation_preflight_v2_20261109/Adaptation_Preflight_Colab.py)
-- [함께 사용한 실행 ZIP](../../../output/adaptation_preflight_v2_20261109/mediflow_preflight_runtime.zip)
+- [함께 사용한 실행 ZIP](../../../camera_capture/_review/history/project_cleanup_20261112/README.md)
 - [세 분야 회수 결과](../../../camera_capture/_review/preflight_v2_fbe37d44)
 - [결과 요약](../../../camera_capture/_review/preflight_v2_fbe37d44/summary.json)
 - [기존 상세 검토 보고서](DOMAIN_ADAPTATION_PREFLIGHT_RESULT_REVIEW_20261109.md)

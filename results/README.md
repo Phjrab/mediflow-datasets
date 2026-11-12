@@ -1,6 +1,6 @@
 # MediFlow 로컬 결과 구조
 
-연구 전체 과정·기본~4차 결과·후속 후보·자료 위치는 [프로젝트 정리](../docs/PROJECT_SUMMARY_20261111.md)를 먼저 확인한다.
+현재 21회 학습·81개 Source Test·4개 패키지는 [전체 완료 정리](../docs/research/camera_adaptation/ADAPTATION_COMPLETION_20261112.md)를 먼저 확인한다. [폴더 안내](../docs/PROJECT_LAYOUT.md)와 [수치 비교](../docs/research/camera_adaptation/ADAPTATION_NUMERIC_COMPARISON_20261112.md)에서 현재 자료를 찾는다.
 
 이 폴더는 **선정 모델과 평가 원본을 함께 보존**한다. 모델을 찾거나 팀원에게 전달할 때는 아래 순서로 읽는다.
 
@@ -81,8 +81,7 @@ Hair 6-class의 두 폴더에도 모델과 사용 계약을 같은 형식으로 
 
 2026-09-28 로컬 점검에서 `.keras` 파일은 18개, 파일 내용 기준 서로 다른 모델은 13개였다.
 차이 5개는 Hair 5클래스 v1/v2, Skin v1, Web Skin v1/v2의 `candidates/` 원본과
-`selected_models/` 사용 사본이 같은 해시로 존재하기 때문이다. **중복을 이유로 어느 쪽도
-삭제하지 않는다.** 18개 모두 Keras 아카이브 구조 검사를 통과했고, 내용이 다른 13개 모델은
+`selected_models/` 사용 사본이 같은 해시로 존재하기 때문이다. 두 경로는 기존 프로그램·보고서의 참조 계약이 있어 이번에도 유지했다. 18개 모두 Keras 아카이브 구조 검사를 통과했고, 내용이 다른 13개 모델은
 TensorFlow 2.20.0에서 `compile=False`로 실제 로드되어 각 출력 차원을 확인했다. 결과 ZIP 18개는
 CRC 검사에 통과했고, 후보 ZIP의 SHA-256 확인 파일 7개는 모두 해당 ZIP과 일치했다.
 이 검사는 새 이미지 추론·정확도 재평가를 뜻하지 않는다.
@@ -123,3 +122,5 @@ ZIP은 `hair/archives`에 보존한다. 이 실험은 `selected_models`에 포�
 `Rescaling(1/255)`이 있으므로 입력은 RGB float32 0–255를 사용하고 외부 `/255`를 적용하지 않는다.
 Web Skin 후보는 네 PMG logit 출력을 합산한 뒤 softmax를 적용해야 하므로 후보 ZIP의
 `inference.py` 또는 공통 재현 모듈을 사용한다.
+
+2026-11-12 정리에서 Skin archives의 동일 ZIP 사본 하나만 정리했다. 선정 후보 ZIP과 모든 고유 모델·수치 결과는 유지했다. 필요하면 [복원 안내](../camera_capture/_review/history/project_cleanup_20261112/README.md)의 `skin_duplicate`로 원래 파일을 복원한다.

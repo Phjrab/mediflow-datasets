@@ -1,0 +1,48 @@
+{
+  "status": "passed",
+  "counts": {
+    "profiles": 17,
+    "training_runs": 21,
+    "parameter_rows": 221,
+    "device_gaps": 107,
+    "distributions": 133,
+    "features": 21,
+    "source_test": 81,
+    "webcam_phone": 9
+  },
+  "source_files_hash_verified": 37,
+  "code_sha256": "19c3324a8f3a43f3b9cef10c8fcbf813ad93fed41b08be137ec8668baf98a455",
+  "workbook_sha256": "efa6cba3854a7f42da23298409ee5b572ff585e36a5a52988716f319d46fb168",
+  "report_sha256": "15d2623698e635d7caa4d095f578311e6be1127041c5d988cf18d3f722332b59",
+  "sheets": [
+    "핵심 비교",
+    "적용값",
+    "장비거리",
+    "실제분포",
+    "특징거리",
+    "Test비교",
+    "웹캠과 휴대폰"
+  ],
+  "visual_review": "All 7 worksheet previews and 3 standalone plots reviewed; no clipped values or missing labels",
+  "formula_recalculation_proved": true,
+  "exported_formula_error_cells": 0,
+  "exact_accuracy_and_f1_text_rows_verified": 81,
+  "gap_calculation_rows_verified": 107,
+  "feature_rows_verified": 21,
+  "cross_camera_difference_rows_verified": 9,
+  "report_links_verified": 21,
+  "ruff_check_src_tests": "passed",
+  "pytest": {
+    "passed": 273,
+    "skipped": 3,
+    "failures": 0,
+    "errors": 0,
+    "skip_reason": "Optional pandas dependency unavailable for 3 existing notebook tests"
+  },
+  "test_environment_note": "An earlier run had a Windows long-path copy failure in an existing packaging test; an intermediate retry was interrupted after stalling on model save. Final full suite used shorter .tmp/anf2 with workspace TEMP/TMP and passed",
+  "new_training_or_inference": false,
+  "original_result_model_notebook_image_paths_changed_in_git_diff": [],
+  "existing_research_result_bodies_modified": false,
+  "target_accuracy_reported": false,
+  "repository_head_at_extraction": "57a50b53cb4ecf405de9243ed864cd6981962ce5"
+}

@@ -8,9 +8,9 @@
 **web_skin 전용이며 실제 학습은 5회다.** 2026-11-12 사용자 요청으로 2·3차에는 약한 질감·흐림,
 4차에는 더 강한 질감·흐림을 추가했다. [새 강도와 고정 조건](../../docs/research/camera_adaptation/SMARTPHONE_APPEARANCE_STRENGTH_20261112.md)을 따른다.
 ZIP·노트북을 이미 올렸다면 두 파일을 최신본으로 교체한다. 복호화 키는 그대로다.
-이 폴더는 실행 준비본이며 실제 Colab 학습 결과는 위 results에 있다. 새 Source Test·휴대폰 질환 정확도 평가는 아직 수행하지 않았다.
+이 폴더는 완료 실험의 실행 준비본이다. 이후 [Source Test](../../results/smartphone_final_test_20261112/README.md)와 [패키징](../../results/smartphone_adaptation_package_20261112/README.md)까지 완료했다. 실제 휴대폰 질환 정확도는 정답 자료가 없어 미측정이다.
 
-## 사용자가 할 일
+## 과거 실험을 재현할 때만
 
 1. [스마트폰 전용 실행 ZIP](MediFlow_Smartphone_WebSkin_Runtime_20261111.zip)을
    Drive의 `내 드라이브/mediflow_Project` 폴더에 업로드한다.

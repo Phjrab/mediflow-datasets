@@ -1,5 +1,7 @@
 # MediFlow 실제 촬영 기반 도메인 적응 구현과 실행 상태
 
+> 2026-11-12 보관 안내: 이 문서의 과거 실행 ZIP 링크는 복원 안내로 연결한다. 중복 모델을 포함한 ZIP은 작은 원본 구성과 유지한 모델로 정확히 복원할 수 있다. 아래 실험 수치와 당시 실행 이력은 보존했다.
+
 > 2026-11-11 정리 상태: **분석·검토 또는 과정 기록, 후속 학습 상태는 최신 로드맵 참조**. [현재 작업 안내](../../README.md) · [전체 문서 대조표](../../DOCUMENT_INDEX.md). 아래 본문은 작성 시점 기록이며, 본문·원본 JSON의 이전 경로는 정리 대조표로 추적한다.
 
 2026-11-08 · 로드맵 3단계 분석 및 4·6단계 비교 실험 준비
@@ -110,7 +112,7 @@ PC에서는 다음처럼 예시 참고 분석을 다시 실행할 수 있다. �
 
 전체 Source가 있는 환경에서는 실제 확인한 ZIP 경로를 `--source-zip`에 추가한다. `analyze`는 전체 ZIP 해시와 분할을 검증하고 Source Train 전체 측정값과 변환 초안을 만든다. `preview`로 클래스별 Train의 변환 전후를 확인한다. 이 검토 결과를 프로필의 `train_visual_review=approved`, `review_note`에 기록한 뒤 `train`을 실행한다. Source의 인물·세션 정보가 없으면 `--acknowledge-incomplete-identities`를 명시해야 한다. 독립 누수를 확인했다는 의미로 사용하지 않는다.
 
-[Colab 노트북](../../../output/domain_adaptation_20261108_final/Domain_Adaptation_Colab.ipynb)과 [실행 ZIP](../../../output/domain_adaptation_20261108_final/mediflow_da_runtime.zip)을 만들었다. 실행 ZIP은 현재 코드, 세 선정 모델과 메타데이터, Target 측정값과 기존 모델 특징을 포함한다. 참여자 얼굴·피부·두피 원본은 포함하지 않는다. 노트북을 Colab에 열고 실행 ZIP을 선택한 뒤 Drive를 연결한다. 실제 ZIP을 찾아 한 파일로 특정하고 해시를 검사한다. 대용량 Source를 로컬 PC로 내려받지 않고 Drive에서 직접 읽는다.
+[Colab 노트북](../../../output/domain_adaptation_20261108_final/Domain_Adaptation_Colab.ipynb)과 [실행 ZIP](../../../camera_capture/_review/history/project_cleanup_20261112/README.md)을 만들었다. 실행 ZIP은 현재 코드, 세 선정 모델과 메타데이터, Target 측정값과 기존 모델 특징을 포함한다. 참여자 얼굴·피부·두피 원본은 포함하지 않는다. 노트북을 Colab에 열고 실행 ZIP을 선택한 뒤 Drive를 연결한다. 실제 ZIP을 찾아 한 파일로 특정하고 해시를 검사한다. 대용량 Source를 로컬 PC로 내려받지 않고 Drive에서 직접 읽는다.
 
 Colab에서 학습 결과 ZIP을 받은 뒤 새 폴더에 보존하고, PC에서 `compare-target --domain ... --run 실제_결과_폴더 --output 새_출력_폴더`를 실행하면 같은 실제 촬영 사진의 모델별 예측과 특징 변화를 계산한다. Colab의 최종 Source 평가 배열이 함께 있으면 같은 기준 좌표의 MMD·CORAL도 비교한다. 학습·Test 평가가 끝나기 전에는 해당 수치가 결과에 나타나지 않는다.
 

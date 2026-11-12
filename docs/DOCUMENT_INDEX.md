@@ -1,11 +1,15 @@
-# 기존 문서 전체 대조표 · 2026-11-11
+# 문서 역할과 현재 위치
 
-정리 전 Markdown 85개, Word 2개와 과거 ZIP 안의 Markdown 13개를 읽어 제목·본문·상태 표현·연결 자료를 목록화했다. 표는 문서를 사용자가 직접 열었는지에 대한 추측이 아니라 **문서가 설명하는 작업의 확인 상태**다. 결과가 없는 준비본을 완료 실험으로 세지 않는다.
+2026-11-11 정리 당시 Markdown 85개, Word 2개와 과거 ZIP 안의 Markdown 13개를 읽어 제목·본문·상태 표현·연결 자료를 목록화했다. 표는 문서를 사용자가 직접 열었는지에 대한 추측이 아니라 **문서가 설명하는 작업의 확인 상태**다. 결과가 없는 준비본을 완료 실험으로 세지 않는다.
 
 [현재 작업 안내](README.md) · [실행 코드와 실제 결과](../notebooks/EXECUTION_INDEX.md) · [이동·삭제 기록](research/maintenance/PROJECT_ORGANIZATION_20261111.md)
 
 | 문서 | 확인된 역할·상태 |
 | --- | --- |
+| [현재 프로젝트 폴더 안내](PROJECT_LAYOUT.md) | 자주 쓰는 자료와 폴더별 역할·보존 이유 |
+| [2026-11-12 용량·문서 정리](research/maintenance/PROJECT_STORAGE_CLEANUP_20261112.md) | 큰 중복 ZIP·임시 파일 정리와 복원·보존 검사 |
+| [로드맵 이력 보관](research/maintenance/ROADMAP_HISTORY_20261112.md) | 날짜별 과거 준비·진행 기록, 현재 실행 지시와 분리 |
+| [조절값과 실제 장비 수치 비교](research/camera_adaptation/ADAPTATION_NUMERIC_COMPARISON_20261112.md) | 완료 21회·17프로필의 설정값·107개 분포 거리·특징 거리·81개 Source Test를 출처와 대조, 새 학습·추론 없음 |
 | [어댑테이션 전체 완료 정리](research/camera_adaptation/ADAPTATION_COMPLETION_20261112.md) | 촬영·분석·21회 학습·81개 비교 기록·4개 연구용 패키지·한계와 남은 일 |
 | [스마트폰 최종 Test 결과](research/camera_adaptation/SMARTPHONE_FINAL_TEST_RESULT_REVIEW_20261112.md) | 실제 30개 비교·예측 12,000개 검산·4차 고정 유지·패키징 완료 |
 | [스마트폰 고정 최종 Test](research/camera_adaptation/SMARTPHONE_FINAL_TEST_20261112.md) | 완료한 400장·6모델×5조건 실행의 사전 고정 계획, 최신 수치는 위 결과 |

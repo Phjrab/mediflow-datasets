@@ -1,9 +1,11 @@
 # MediFlow 문서 시작점
 
-현재는 **1~4차 학습과 기존 데이터 Source Test 비교 완료**다. 4차 신규 15개 평가와 기본~3차 36개 결과를 확인했다. 재설정 4차는 실행하지 않기로 했다. 실제 장비 질환 평가는 정답 자료가 필요하며 LLM·VLM과 장비 통합은 이후 작업이다.
+현재는 **기존 장비 15회·스마트폰 6회의 적응 학습, Source Test 81개 비교, 연구용 패키지 4개까지 완료**했다. 실제 장비 질환 정답 평가·실기기 속도·UI/LLM/VLM 통합은 후속 과제다. 날짜가 있는 준비 문서는 당시 이력이며 현재 진행 지시가 아니다.
 
 | 찾을 내용 | 안내 |
 | --- | --- |
+| 현재 폴더·자료 위치 | [프로젝트 폴더 안내](PROJECT_LAYOUT.md) |
+| 조절값·실제 장비 유사성·성능 수치 | [전후 값 비교 보고서·엑셀](research/camera_adaptation/ADAPTATION_NUMERIC_COMPARISON_20261112.md) |
 | 전체 어댑테이션 최종 정리 | [촬영부터 21회 학습·Test·4개 패키지까지](research/camera_adaptation/ADAPTATION_COMPLETION_20261112.md), [정확한 조절값](../presentation/report_assets/adaptation_completion_20261112/README.md) |
 | 스마트폰 최종 Test·패키징 완료 | [Test 결과 분석](research/camera_adaptation/SMARTPHONE_FINAL_TEST_RESULT_REVIEW_20261112.md), [사용 패키지](../results/smartphone_adaptation_package_20261112/README.md) |
 | 휴대폰 근접 후보 · 추가 1회 완료 | [5차 결과·기존 모델 비교](research/camera_adaptation/SMARTPHONE_JOINT_RESULT_REVIEW_20261112.md), [모델·원본 결과](../results/smartphone_joint_adaptation_20261112/README.md) |
@@ -22,7 +24,7 @@
 | 9월 공개 데이터 연구 전체 설명 | [최종 상세 보고서](FINAL_DETAILED_REPORT_20260928.md) |
 | 선정 모델과 원본 결과 | [results 안내](../results/README.md) |
 | 발표·보고서 그림 | [자료실](../presentation/README.md), [보고서 그림](../presentation/report_assets/README.md) |
-| 최신 이동·삭제 내역 | [완료 후 정리 기록](research/maintenance/PROJECT_WRAPUP_CLEANUP_20261111.md) |
+| 최신 용량·폴더 정리 | [중복 ZIP·임시 파일·문서 정리](research/maintenance/PROJECT_STORAGE_CLEANUP_20261112.md) |
 | 이전 전체 문서 재분류 | [전체 정리 기록](research/maintenance/PROJECT_ORGANIZATION_20261111.md) |
 
 ## 문서 폴더
@@ -31,4 +33,4 @@
 
 `PROJECT_BACKGROUND.md`는 기존 연구 배경의 기준 경로를 유지했다. 루트의 긴 보고서와 Word 두 개도 기존 상대 링크와 문서 내용을 보존하기 위해 위치를 유지했다. [9월 28일 상태](PROJECT_STATUS_20260928.md), [8주차 보고서](MEDIFLOW_8_WEEK_PROGRESS_REPORT_20260929.md), [발표 단계별 보고서](MEDIFLOW_4_PHASE_DETAILED_REPORT_20260930.md)는 해당 날짜의 기록이다. 현재 작업 순서는 위 로드맵을 따른다.
 
-과거 문서를 읽었다는 사실만으로 그 안의 모든 제안을 실행한 것은 아니다. 실행 완료 여부는 실제 결과 JSON/CSV·체크포인트·코드 사본에 대조한다. 실제 촬영 124장은 질환 정답이 없는 환경 조사 자료이므로 실제 장비 질환 정확도는 아직 측정하지 않았다.
+과거 문서를 읽었다는 사실만으로 그 안의 모든 제안을 실행한 것은 아니다. 실행 완료 여부는 실제 결과 JSON/CSV·체크포인트·코드 사본에 대조한다. 기존 장비 124장과 스마트폰 52장은 질환 정답이 없는 환경 조사 자료이므로 실제 장비 질환 정확도는 아직 측정하지 않았다.

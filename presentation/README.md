@@ -1,5 +1,7 @@
 # MediFlow 발표·보고서 자료실
 
+2026-11-12의 최신 어댑테이션 [전체 기록](../docs/research/camera_adaptation/ADAPTATION_COMPLETION_20261112.md)과 [조절값·장비 비교 엑셀](report_assets/adaptation_numeric_review_20261112/README.md)을 추가했다. 기존 발표자료·모델 사본·그림은 보존했다.
+
 현재 카메라 적응의 예시·분석 그림은 [report_assets 안내](report_assets/README.md), 학습·Test 결과는 [결과 안내](../results/README.md)에서 찾는다. 아래 `1차`~`4차` 폴더는 **9월 공개 데이터 연구의 발표 구간**이며, 11월 카메라 적응 1·2·3·4차와 별개의 번호다.
 
 2026-11-10 `output` 정리로 이동한 자료:

@@ -1,0 +1,10 @@
+﻿metric,metric_label,source_train,webcam,phone,phone_minus_webcam,source
+y_p50,밝기 중앙값,168.30550384521484,99.92862606048584,155.33774948120117,55.40912342071533,output/smartphone_web_skin_20261111/webcam_smartphone_comparison.json
+contrast,대비 P90−P10,25.39599609375,23.500749588012695,29.989588737487793,6.488839149475098,output/smartphone_web_skin_20261111/webcam_smartphone_comparison.json
+lab_a,Lab a 색상,15.8828125,15.8671875,16.447265625,0.580078125,output/smartphone_web_skin_20261111/webcam_smartphone_comparison.json
+lab_b,Lab b 색상,20.015625,14.10546875,18.265625,4.16015625,output/smartphone_web_skin_20261111/webcam_smartphone_comparison.json
+detail,미세 경계,0.45439691841602325,0.1053407397121191,0.5923888050019741,0.487048065289855,output/smartphone_web_skin_20261111/webcam_smartphone_comparison.json
+normalized_detail,대비 보정 미세 경계,0.019645489129725323,0.004606477745937259,0.021243221123748504,0.016636743377811243,output/smartphone_web_skin_20261111/webcam_smartphone_comparison.json
+side_light,좌우 조명,-2.1494903564453125,12.499250411987305,-2.5718765258789062,-15.071126937866211,output/smartphone_web_skin_20261111/webcam_smartphone_comparison.json
+lighting_range,조명 불균일,29.138519287109375,28.161378860473633,30.044998168945312,1.8836193084716797,output/smartphone_web_skin_20261111/webcam_smartphone_comparison.json
+face_w,얼굴 폭 비율,0.75,0.4833984375,0.626953125,0.1435546875,output/smartphone_web_skin_20261111/webcam_smartphone_comparison.json

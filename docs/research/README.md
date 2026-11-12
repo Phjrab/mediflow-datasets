@@ -4,7 +4,7 @@
 
 | 폴더 | 내용 |
 | --- | --- |
-| [camera_adaptation](camera_adaptation/README.md) | 실제 촬영·Source/Target 분석·1~4차 완료·현재 기본~4차 Test 준비 |
+| [camera_adaptation](camera_adaptation/README.md) | 기존 장비·스마트폰 수집·분석·21회 학습·81개 Source 비교·4개 패키징 완료 |
 | [camera_adaptation/archive](camera_adaptation/archive/README.md) | 대체된 초기 계획, 중단 실험, 별도 학습 준비 |
 | [public_data](public_data/README.md) | 기존 공개 데이터 연구, 공통 기준과 피부·얼굴·두피 결과 |
 | [integration](integration/README.md) | 키오스크·LLM·VLM 검토·설계, 실제 통합 미완료 |

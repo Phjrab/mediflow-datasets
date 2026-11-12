@@ -1,0 +1,84 @@
+{
+  "status": "passed",
+  "date": "2026-11-12",
+  "scope": "Local storage and documentation cleanup; no training, evaluation rerun, model reselection, commit or push",
+  "preservation": {
+    "removed_original_bytes": 438470982,
+    "local_preservation_bytes_so_far": 8678525,
+    "net_before_new_document_delta_bytes": 429792457,
+    "protected_unchanged": 5003,
+    "authorized_removed_protected_archives": [
+      "camera_capture/_review/smartphone_web_skin_20261111/history/appearance_before_d5220f4e163a/output/smartphone_web_skin_20261111/MediFlow_Smartphone_WebSkin_Runtime_20261111.zip",
+      "results/skin/archives/comparison_20260909_075056_72d865bf_c2d5923c.zip"
+    ],
+    "model_paths_preserved": 49,
+    "missing_protected": [],
+    "changed_protected": []
+  },
+  "word_documents_retained_same_size_and_mtime": 2,
+  "scientific_report_tables_unchanged": [
+    "docs/research/camera_adaptation/CAMERA_ADAPTATION_EXECUTED_CODE_INDEX_20261110.md",
+    "docs/research/camera_adaptation/DOMAIN_ADAPTATION_IMPLEMENTATION_20261108.md",
+    "docs/research/camera_adaptation/DOMAIN_ADAPTATION_PREFLIGHT_FIXES_20261109.md",
+    "docs/research/camera_adaptation/HAIR_SKIN_BATCH_ANALYSIS_20261109.md",
+    "docs/research/camera_adaptation/ADAPTATION_NUMERIC_COMPARISON_20261112.md"
+  ],
+  "zip_restore_proofs": [
+    {
+      "id": "preflight_v2",
+      "sha256": "d1c4636411de999630b06e338e9586be575ac9e5f12e5ad8e8af579f023dc49f",
+      "exact_restore_passed": true
+    },
+    {
+      "id": "domain_analysis",
+      "sha256": "144e9bf7d9087deb6bb75fcb193daf08f885733de2eff3b806a285fa946b41b3",
+      "exact_restore_passed": true
+    },
+    {
+      "id": "phone_superseded",
+      "sha256": "68b3a45d931dba60b190e6b312d7efce1cac2ec0c7cbda6d30d492559bc29609",
+      "exact_restore_passed": true
+    },
+    {
+      "id": "skin_duplicate",
+      "sha256": "9b3e3893a6cd89d58bd8ae3a4b85f4214f6a32a21586094ea416c552312f1686",
+      "exact_restore_passed": true
+    }
+  ],
+  "original_archives_retired_bytes": 302026071,
+  "removed_original_files_and_caches_bytes": 438470982,
+  "local_preservation_storage_bytes": 8944670,
+  "workbook": {
+    "path": "presentation/report_assets/adaptation_numeric_review_20261112/MediFlow_Adaptation_Numeric_Review_20261112.xlsx",
+    "sha256": "efa6cba3854a7f42da23298409ee5b572ff585e36a5a52988716f319d46fb168",
+    "zip_crc_passed": true
+  },
+  "numeric_source_hashes_unchanged": 37,
+  "documents_reviewed_for_status_and_index": 114,
+  "current_markdown_documents_link_checked": 196,
+  "current_markdown_missing_links": [],
+  "historical_local_markdown_snapshots": "Original historical paths retained; not current navigation",
+  "ruff_check_src_tests": "passed",
+  "pytest": {
+    "passed": 278,
+    "skipped": 3,
+    "failures": 0,
+    "skip_reason": "Optional pandas unavailable in 3 existing notebook tests"
+  },
+  "retained_unique_model_artifacts": "All 49 original .keras paths retained unchanged, including baselines, 21 adaptation runs and presentation/package copies",
+  "raw_images_notebooks_results_presentation_materials": "unchanged; Markdown navigation links revised where necessary",
+  "environment": {
+    "matplotlib": "3.11.2 in .venv",
+    "numpy": "2.5.2 in .venv",
+    "pillow": "12.3.0 in .venv",
+    "duplicate_plot_library_removed": true
+  },
+  "repository_and_venv_removed": false,
+  "net_size_measurement": "Logical file lengths; excludes .git, .venv and this cleanup's generated temporary working files. Not a free-disk-space measurement",
+  "before_logical_bytes": 3701932556,
+  "after_logical_bytes": 3272456401,
+  "net_logical_bytes_reduced": 429476155,
+  "temporary_working_copies_removed": true,
+  "empty_outputs_folder_removed": true,
+  "cleanup_report_sha256": "6a5e439624b31e12bb1dfbf3fda1e009a677b6696a215222f0df91a00e4971dd"
+}

@@ -1,5 +1,7 @@
 # Hair·Skin 일괄 분석과 결과 ZIP 다운로드
 
+> 2026-11-12 보관 안내: 이 문서의 과거 실행 ZIP 링크는 복원 안내로 연결한다. 중복 모델을 포함한 ZIP은 작은 원본 구성과 유지한 모델로 정확히 복원할 수 있다. 아래 실험 수치와 당시 실행 이력은 보존했다.
+
 > 2026-11-11 정리 상태: **분석·검토 또는 과정 기록, 후속 학습 상태는 최신 로드맵 참조**. [현재 작업 안내](../../README.md) · [전체 문서 대조표](../../DOCUMENT_INDEX.md). 아래 본문은 작성 시점 기록이며, 본문·원본 JSON의 이전 경로는 정리 대조표로 추적한다.
 
 2026-11-09 · 로드맵 3단계 실제 촬영 환경 차이 분석
@@ -12,7 +14,7 @@ Source Train 3,600장과 촬영 42장의 분석 결과를 확인했다. 이 노�
 
 - [Hair_Skin_Analysis_Colab.ipynb](../../../output/hair_skin_batch_20261109/Hair_Skin_Analysis_Colab.ipynb)
 - [같은 내용의 Colab용 Python 코드](../../../output/hair_skin_batch_20261109/Hair_Skin_Analysis_Colab.py)
-- [기존 실행 ZIP](../../../output/domain_adaptation_20261108_final/mediflow_da_runtime.zip)
+- [기존 실행 ZIP](../../../camera_capture/_review/history/project_cleanup_20261112/README.md)
 - [재사용 실행 모듈](../../../src/mediflow_datasets/domain_adaptation_batch.py)
 - [노트북 생성기](../../../scripts/build_domain_adaptation_batch_colab.py)
 - [자동 검사](../../../tests/test_domain_adaptation_batch.py)

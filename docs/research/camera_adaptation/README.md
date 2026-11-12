@@ -12,6 +12,7 @@
 
 | 문서 | 확인된 역할·상태 |
 | --- | --- |
+| [조절값·장비 거리·성능 수치 비교](ADAPTATION_NUMERIC_COMPARISON_20261112.md) | 실제 완료 설정값·분포 전후·웹캠/휴대폰·MMD/CORAL·Source Test, 엑셀 7개 시트와 그림 |
 | [어댑테이션 전체 완료 정리](ADAPTATION_COMPLETION_20261112.md) | 촬영 수집부터 21회 학습·81개 Source 비교·4개 패키지까지의 최신 종합 |
 | [스마트폰 최종 Test 결과](SMARTPHONE_FINAL_TEST_RESULT_REVIEW_20261112.md) | 30개 비교·12,000개 예측 검산·4차 유지·스마트폰 패키징 완료 |
 | [스마트폰 고정 최종 Test](SMARTPHONE_FINAL_TEST_20261112.md) | 완료한 6모델×5조건·원본 Test 400장의 사전 계획·실행 계약 |
